@@ -1,0 +1,89 @@
+
+[menu]
+  [[menu.main]]
+    identifier = "downlaod-aosc-os"
+    name = "下载AOSC OS"
+    url = "#"
+    weight = 10
+
+  [[menu.main]]
+    identifier = "about"
+    name = "关于社区"
+    url = "#"
+    weight = 12
+  [[menu.main]]
+    identifier = "lang"
+    name = "网站语言"
+    url = "#"
+    weight = 14
+
+
+[params]
+[[params.leftbar]]
+  title = "项目与下载"
+  [[params.leftbar.links]]
+    name = "AOSC OS"
+    url = "#"
+  [[params.leftbar.links]]
+    name = "AOSC OS/Retro"
+    url = "#"
+  [[params.leftbar.links]]
+    name = "LiveKit"
+    url = "#"
+  [[params.leftbar.links]]
+    name = "Omakase"
+    url = "#"
+
+[[params.leftbar]]
+  title = "咨询与支持"
+  [[params.leftbar.links]]
+    name = "新闻资讯"
+    url = "#"
+  [[params.leftbar.links]]
+    name = "活动相册"
+    url = "#"
+  [[params.leftbar.links]]
+    name = "安装指南"
+    url = "#"
+  [[params.leftbar.links]]
+    name = "系统需求"
+    url = "#"
+  [[params.leftbar.links]]
+    name = "联系方式"
+    url = "#"
+  
+[[params.leftbar]]
+  title = "事务与文化"
+  [[params.leftbar.links]]
+    name = "人际关系准则"
+    url = "#"
+  [[params.leftbar.links]]
+    name = "社区简介"
+    url = "#"
+  [[params.leftbar.links]]
+    name = "例会与投票"
+    url = "#"
+  [[params.leftbar.links]]
+    name = "赞助与众筹"
+    url = "#"
+  [[params.leftbar.links]]
+    name = "实习资源"
+    url = "#"
+
+[[params.leftbar]]
+  title = "服务设施"
+  [[params.leftbar.links]]
+    name = "文档"
+    url = "#"
+  [[params.leftbar.links]]
+    name = "代码"
+    url = "#"
+  [[params.leftbar.links]]
+    name = "邮箱"
+    url = "#"
+  [[params.leftbar.links]]
+    name = "镜像源"
+    url = "#"
+  [[params.leftbar.links]]
+    name = "公共剪贴板"
+    url = "#"
