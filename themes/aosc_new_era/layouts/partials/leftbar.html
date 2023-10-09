@@ -1,0 +1,9 @@
+{{ range .Site.Params.leftbar }}
+  <div class="category">{{.title}}</div>
+  <ul class="options">
+    {{ range .links }}
+    <li><a href="{{.url}}">{{.name}}</a></li>
+    {{ end }}
+  </ul>
+{{ end }}
+
