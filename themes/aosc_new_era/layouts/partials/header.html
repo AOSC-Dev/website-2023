@@ -1,0 +1,19 @@
+
+
+<!--TODO:此处遮盖层与设计稿有出入-->
+<div class="navbar">
+  {{ $menu := .Site.Menus.main }}
+  {{ range $idx, $item := $menu }}
+    <a href="{{ $item.URL }}">{{ $item.Name }}</a>
+    {{ if ne $idx (sub (len $menu) 1) }} | {{ end }}
+  {{ end }}
+</div>
+
+<div class="logo">
+  <!-- Logo细节待定 -->
+  <img src="/placeholder/800-100.jpg" alt="Logo">
+
+</div>
+
+
+      
