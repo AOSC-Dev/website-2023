@@ -1,9 +1,25 @@
-{{ partial "header.html" . }}
+<!DOCTYPE html>
+<html lang="en">
+{{ partial "head.html" . }}
+<body>
+  <div class="container">
+    {{ partial "header.html" . }}
+    <div class="main">
+      <!-- 主侧栏 -->
+      <div class="leftbar">
+        {{ partial "leftbar.html" . }}
+      </div>
+      <!-- 中栏 -->
+      <div class="content-post" style="background-color: white;">
+        <h1>Page Not Found</h1>
 
-<h1>Page Not Found</h1>
+        <p>This page doesn't exist.</p>
 
-<p>This page doesn't exist.</p>
+        <p><a href="/">Go back to the home page</a></p>
+      </div>
+    </div>
+  </div>
+  {{ partial "footer.html" . }}
+</body>
 
-<p><a href="/">Go back to the home page</a></p>
-
-{{ partial "footer.html" . }}
+</html>
