@@ -15,10 +15,15 @@ body {
   background-color: #002A3F;
   color: white;
   padding: 5px 10px;
-  display: block;
-  float: right;
+  position: absolute;
+  right: 0;
+  
 }
 
+.navbar > .navbar-placeholder{
+  width: calc(50vw - 640px);
+  display: inline-block;
+}
 .navbar a {
   color: white;
   text-decoration: none;
@@ -37,7 +42,7 @@ body {
 }
 
 .leftbar {
-  width: 150px;
+  width: 160px;
   /* TODO */
 }
 

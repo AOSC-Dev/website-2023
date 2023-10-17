@@ -5,15 +5,14 @@
   {{ $menu := .Site.Menus.main }}
   {{ range $idx, $item := $menu }}
     <a href="{{ $item.URL }}">{{ $item.Name }}</a>
-    {{ if ne $idx (sub (len $menu) 1) }} | {{ end }}
+    {{ if ne $idx (sub (len $menu) 1) }}<span> | </span>{{ end }}
   {{ end }}
+  <div class="navbar-placeholder"></div>
 </div>
 
 <div class="logo">
   <!-- Logo细节待定 -->
   <img src="/placeholder/800-100.jpg" alt="Logo">
-
 </div>
-
 
       
