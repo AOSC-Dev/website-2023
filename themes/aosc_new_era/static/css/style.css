@@ -3,6 +3,7 @@ body {
   padding: 0;
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
+  font-size: 24px;
 }
 
 .container {
@@ -42,12 +43,12 @@ body {
 }
 
 .leftbar {
-  width: 160px;
+  width: 256px;
   /* TODO */
 }
 
 .rightbar {
-  width: 250px;
+  width: 384px;
   /* TODO */
 }
 
@@ -85,7 +86,10 @@ body {
   flex: 1;
   padding: 20px;
 }
-
+.content-main {
+  flex: 1;
+  padding: 0px;
+}
 .info-key-point ul {
   list-style-type: disc;
 }
@@ -93,7 +97,7 @@ body {
 .info-key-point-footer {
   text-align: right;
   padding: 0 15px 15px 15px;
-  font-size: 14px;
+  font-size: 24px;
 }
 ul {
   padding-inline-start: 35px;
@@ -112,6 +116,7 @@ ul {
   display: flex;
   align-items: center;
   padding: 0 30px 0 0;
+  margin: 15px 0px;
 }
 .icon-component-icon {
   flex: 0 0 50px;
@@ -119,12 +124,12 @@ ul {
 }
 
 .icon-component-icon-title {
-  font-size: 16px;
+  font-size: 30px;
   font-weight: 800;
 }
 
 .icon-component-icon-description {
-  font-size: 14px;
+  font-size: 24px;
 }
 
 img{
