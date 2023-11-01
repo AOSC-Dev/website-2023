@@ -5,7 +5,6 @@
     name = "下载AOSC OS"
     url = "#"
     weight = 10
-
   [[menu.main]]
     identifier = "about"
     name = "关于社区"
