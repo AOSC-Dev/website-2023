@@ -89,6 +89,7 @@ body {
 .content-main {
   flex: 1;
   padding: 0px;
+  width: 1280px;
 }
 .info-key-point ul {
   list-style-type: disc;
