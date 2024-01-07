@@ -1,6 +1,6 @@
 :root {
-  --var-primary-color: #003049ff;
-  --var-secondary-color: #3f6075ff;
+  --var-primary-color: #003049;
+  --var-secondary-color: #3f6075;
 }
 
 body {
@@ -27,14 +27,19 @@ body {
   padding: 5px 10px;
   position: absolute;
   right: 0;
-  
+  padding-left: 400px;
 }
 
 .navbar > .navbar-placeholder{
-  width: calc(50vw - 640px);
+  width: calc(50vw - 530px);
   display: inline-block;
 }
 .navbar a {
+  color: white;
+  text-decoration: none;
+  margin: 12px;
+}
+.footer > .container a {
   color: white;
   text-decoration: none;
   margin: 12px;
@@ -64,7 +69,7 @@ body {
 }
 
 .rightbar-text > .icon-component {
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .category {
@@ -92,6 +97,9 @@ body {
   text-decoration: none;
   color: black;
 }
+.options a:hover {
+  color: #0056cc;
+}
 
 .main {
   display: flex;
@@ -118,7 +126,7 @@ body {
 .info-key-point-footer {
   text-align: right;
   padding: 0 15px 15px 15px;
-  font-size: 22px;
+  font-size: 18px;
 }
 ul {
   padding-inline-start: 35px;
@@ -141,12 +149,12 @@ ul {
 }
 .icon-component-icon {
   flex: 0 0 50px;
-  padding: 10px 30px 10px 10px;
+  padding: 10px 20px 10px 10px;
 }
 
 .icon-component-icon-title {
   font-size: 22px;
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .icon-component-icon-description {
