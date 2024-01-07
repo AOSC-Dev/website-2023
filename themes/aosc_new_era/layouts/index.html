@@ -10,8 +10,8 @@
         {{ partial "leftbar.html" . }}
       </div>
       <!-- 中栏 -->
-      <div class="content-main">
-        <img src="placeholder/L1.png" width="100%">
+      <div class="content-main">{{- $L1 := resources.Get "images/banner_main1.svg" | resources.Minify -}}
+        <img src="{{ $L1.Permalink }}" width="100%">
         <div class="info-key-point">
           <div class="category secondary">资讯要点</div>
           <article class="main-listing">
@@ -74,9 +74,9 @@
         
         <!-- {{ .Content }} -->
       </div>
-      <div class="rightbar">
-        <img src="placeholder/R1.png" width="100%">
-        <img src="placeholder/R2.png" width="100%">
+      <div class="rightbar">{{- $R1 := resources.Get "images/banner_minor1.svg" | resources.Minify -}}
+        <img src="{{ $R1.Permalink }}" width="100%">{{- $R2 := resources.Get "images/banner_minor2.svg" | resources.Minify -}}
+        <img src="{{ $R2.Permalink }}" width="100%">
         <div class="rightbar-text">
           <div class="category secondary">系统方案</div>
           <div class="icon-component">
