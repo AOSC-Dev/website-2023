@@ -8,7 +8,7 @@ body {
   padding: 0;
   font-family: 'Noto Sans CJK SC', sans-serif;
   background-color: white;
-  font-size: 22px;
+  font-size: 18px;
 }
 
 .main-listing {
@@ -16,13 +16,13 @@ body {
 }
 
 .container {
-  max-width: 1280px;
+  max-width: 1024px;
   margin: 0 auto;
   padding: 0 0px;
 }
 
 .navbar {
-  background-color: #002A3F;
+  background-color: var(--var-primary-color);
   color: white;
   padding: 5px 10px;
   position: absolute;
@@ -45,7 +45,7 @@ body {
 }
 
 .footer {
-  background-color: #355669;
+  background-color: var(--var-secondary-color);
   color: white;
   text-align: left;
   padding: 5px 10px;
@@ -118,7 +118,7 @@ body {
 .info-key-point-footer {
   text-align: right;
   padding: 0 15px 15px 15px;
-  font-size: 24px;
+  font-size: 22px;
 }
 ul {
   padding-inline-start: 35px;
@@ -145,12 +145,12 @@ ul {
 }
 
 .icon-component-icon-title {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 800;
 }
 
 .icon-component-icon-description {
-  font-size: 22px;
+  font-size: 18px;
 }
 
 img{
