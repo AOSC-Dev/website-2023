@@ -1,7 +1,7 @@
 
 [menu]
   [[menu.main]]
-    identifier = "downlaod-aosc-os"
+    identifier = "download-aosc-os"
     name = "下载AOSC OS"
     url = "#"
     weight = 10
@@ -24,17 +24,17 @@
     name = "AOSC OS"
     url = "#"
   [[params.leftbar.links]]
-    name = "AOSC OS/Retro"
+    name = "Afterglow"
     url = "#"
   [[params.leftbar.links]]
     name = "LiveKit"
     url = "#"
   [[params.leftbar.links]]
-    name = "Omakase"
+    name = "小熊猫包管理"
     url = "#"
 
 [[params.leftbar]]
-  title = "咨询与支持"
+  title = "资讯与支持"
   [[params.leftbar.links]]
     name = "新闻资讯"
     url = "#"
@@ -50,7 +50,7 @@
   [[params.leftbar.links]]
     name = "联系方式"
     url = "#"
-  
+
 [[params.leftbar]]
   title = "事务与文化"
   [[params.leftbar.links]]
