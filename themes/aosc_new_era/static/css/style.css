@@ -7,8 +7,12 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Noto Sans CJK SC', sans-serif;
-  background-color: #f0f0f0;
+  background-color: white;
   font-size: 22px;
+}
+
+.main-listing {
+  margin: 1em;
 }
 
 .container {
@@ -55,7 +59,12 @@ body {
 
 .rightbar {
   width: 30%;
+  background: #fcfcfc;
   /* TODO */
+}
+
+.rightbar-text > .icon-component {
+  margin-left: 20px;
 }
 
 .category {
@@ -72,6 +81,7 @@ body {
 .options {
   padding: 3px;
   margin: 0;
+  margin-left: 10px;
 }
 .options li {
   list-style-type: none;
@@ -96,6 +106,7 @@ body {
   padding: 20px;
 }
 .content-main {
+  background: #fcfcfc;
   flex: 1;
   padding: 0px;
   width: 50%;
@@ -114,7 +125,7 @@ ul {
 }
 
 .link {
-  color: CornFlowerBlue;
+  color: #0056cc;
   text-decoration: none;
 }
 
@@ -130,7 +141,7 @@ ul {
 }
 .icon-component-icon {
   flex: 0 0 50px;
-  padding: 10px;
+  padding: 10px 30px 10px 10px;
 }
 
 .icon-component-icon-title {
