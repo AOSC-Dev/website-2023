@@ -13,19 +13,19 @@
       <div class="content-main" style="background-color: white;" >
         <img src="placeholder/L1.png" width="100%">
         <div class="info-key-point">
-          <div class="category">资讯要点</div>
+          <div class="category secondary">资讯要点</div>
           <ul>
             <li>
-              资讯: <a href="" class="link">重返线下：AOSCC 2023 回顾【置顶】</a>
+              <span style="font-weight:600;">资讯</span> <a href="" class="link">重返线下：AOSCC 2023 回顾【置顶】</a>
             </li>
             <li>
-              公告: <a href="" class="link">tmux 更新可能导致默认行为变化</a>
+              <span style="font-weight:600;">公告</span> <a href="" class="link">tmux 更新可能导致默认行为变化</a>
             </li>
             <li>
-              公告: <a href="" class="link">更新 devel-base 后可能需要手动干预</a>
+              <span style="font-weight:600;">公告</span> <a href="" class="link">更新 devel-base 后可能需要手动干预</a>
             </li>
             <li>
-              公告: <a href="" class="link">MCFly 更新后残留的配置文件可能导致报错</a>
+              <span style="font-weight:600;">公告</span> <a href="" class="link">MCFly 更新后残留的配置文件可能导致报错</a>
             </li>
           </ul>
           <div class="info-key-point-footer">
@@ -33,10 +33,10 @@
           </div>
         </div>
         <div id="topic">
-          <div class="category">专栏：初识 AOSC OS</div>
+          <div class="category secondary">专栏：初识 AOSC OS</div>
           <div class="icon-component">
-            <div class="icon-component-icon">
-              <img src="placeholder/150*150.jpg" alt="Icon" width="80">
+            <div class="icon-component-icon">{{- $icon_monitor := resources.Get "icons/computer-monitor.svg" | resources.Minify -}}
+              <img src="{{ $icon_monitor.Permalink }}" alt="Icon" width="80">
             </div>
             <div class="content">
               <div class="icon-component-icon-title">高效工作</div>
@@ -44,8 +44,8 @@
             </div>
           </div>
           <div class="icon-component">
-            <div class="icon-component-icon">
-              <img src="placeholder/150*150.jpg" alt="Icon" width="80">
+            <div class="icon-component-icon">{{- $icon_global := resources.Get "icons/globe.svg" | resources.Minify -}}
+              <img src="{{ $icon_global.Permalink }}" alt="Icon" width="80">
             </div>
             <div class="content">
               <div class="icon-component-icon-title">走向世界</div>
@@ -54,8 +54,8 @@
             </div>
           </div>
           <div class="icon-component">
-            <div class="icon-component-icon">
-              <img src="placeholder/150*150.jpg" alt="Icon" width="80">
+            <div class="icon-component-icon">{{- $icon_shield := resources.Get "icons/shield.svg" | resources.Minify -}}
+              <img src="{{ $icon_shield.Permalink }}" alt="Icon" width="80">
             </div>
             <div class="content">
               <div class="icon-component-icon-title">有备无患</div>
@@ -74,7 +74,7 @@
         <img src="placeholder/R1.png" width="100%">
         <img src="placeholder/R2.png" width="100%">
         <div id="">
-          <div class="category">系统方案</div>
+          <div class="category secondary">系统方案</div>
           <div class="icon-component">
             <div class="icon-component-icon">
               <img src="placeholder/150*150.jpg" alt="Icon" width="80">
@@ -83,8 +83,8 @@
               <div class="icon-component-icon-title">AOSC OS</div>
               <div class="icon-component-icon-description">可靠、简明、精制</div>
               <div class="icon-component-icon-description">
-                <a class="link">下载</a>
-                <a class="link">发行说明</a>
+                <a href="#" class="link">下载</a>
+                <a href="#" class="link">发行说明</a>
               </div>
             </div>
           </div>
@@ -93,11 +93,11 @@
               <img src="placeholder/150*150.jpg" alt="Icon" width="80">
             </div>
             <div class="content">
-              <div class="icon-component-icon-title">AOSC OS/Retro</div>
+              <div class="icon-component-icon-title">Afterglow</div>
               <div class="icon-component-icon-description">承前启后</div>
               <div class="icon-component-icon-description">
-                <a class="link">下载</a>
-                <a class="link">发行说明</a>
+                <a href="#" class="link">下载</a>
+                <a href="#" class="link">发行说明</a>
               </div>
             </div>
           </div>
@@ -106,15 +106,15 @@
               <img src="placeholder/150*150.jpg" alt="Icon" width="80">
             </div>
             <div class="content">
-              <div class="icon-component-icon-title">Livekit</div>
+              <div class="icon-component-icon-title">LiveKit</div>
               <div class="icon-component-icon-description">备不时之需</div>
               <div class="icon-component-icon-description">
-                <a class="link">下载</a>
-                <a class="link">发行说明</a>
+                <a href="#" class="link">下载</a>
+                <a href="#" class="link">发行说明</a>
               </div>
             </div>
           </div>
-          <div class="category">常用链接</div>
+          <div class="category secondary">常用链接</div>
           <ul>
             <li>
               <a href="" class="link">报告系统使用问题</a>
