@@ -9,8 +9,9 @@
 </div>
 
 <div class="logo">
-  {{- $logo := resources.Get "heading/portal-logo.zh-cn.svg" | resources.Minify -}}
-  <!-- Logo细节待定 -->{{- $banner := resources.Get "heading/heading-wave.svg" | resources.Minify -}}
-  <img src="{{ $logo.Permalink }}" style="position: absolute; top: 50px;margin-left: 25px; width: 276px; z-index: 999;">
+  {{- $logo := resources.Get "heading/portal-logo.zh-cn.svg" | resources.Minify -}}{{- $banner := resources.Get "heading/heading-wave.svg" | resources.Minify -}}
+  <a href="/">
+    <img src="{{ $logo.Permalink }}" style="position: absolute; top: 50px;margin-left: 25px; width: 276px; z-index: 999;">
+  </a>
   <img src="{{ $banner.Permalink }}" alt="Logo" style="width: 1024px;object-fit: cover;height: 160px;">
 </div>

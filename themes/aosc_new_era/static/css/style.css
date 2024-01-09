@@ -111,7 +111,7 @@ body {
 }
 .content-post {
   flex: 1;
-  padding: 20px;
+  padding: 1em;
 }
 .content-main {
   background: #fcfcfc;
@@ -121,6 +121,9 @@ body {
 }
 .info-key-point ul {
   list-style-type: disc;
+}
+.highlight > pre {
+  overflow: scroll;
 }
 
 .info-key-point-footer {
