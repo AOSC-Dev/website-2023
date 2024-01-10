@@ -29,4 +29,7 @@ hasCJKLanguage = true
     weight = 2
     [languages.cn.params]
       subtitle = 'subtitle'
-    
+
+[markup]
+  [markup.highlight]
+    style = "monokailight"
