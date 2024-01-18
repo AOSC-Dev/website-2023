@@ -8,7 +8,7 @@
   [[menu.main]]
     identifier = "about"
     name = "关于社区"
-    url = "#"
+    url = "/about"
     weight = 12
   [[menu.main]]
     identifier = "lang"
