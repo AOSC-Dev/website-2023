@@ -15,7 +15,7 @@
         <div class="info-key-point">
           <div class="category secondary" style="border-right: 1px solid #fcfcfc;">资讯要点</div>
           <article class="main-listing">
-            <ul>
+            <ul class="news-bullets">
               <li>
                 <span style="font-weight:600;">资讯</span> <a href="" class="link">重返线下：AOSCC 2023 回顾【置顶】</a>
               </li>
@@ -79,6 +79,7 @@
         <img class="right-banner-img" src="{{ $R2.Permalink }}">
         <div class="rightbar-text">
           <div class="category secondary">系统方案</div>
+          <article class="right-listing">
           <div class="icon-component">
             <div class="icon-component-icon">{{- $icon_aoscos := resources.Get "distros/aosc-os.svg" | resources.Minify -}}
               <img src="{{ $icon_aoscos.Permalink }}" alt="Icon" width="80">
@@ -118,8 +119,9 @@
               </div>
             </div>
           </div>
+          </article>
           <div class="category secondary">常用链接</div>
-          <ul style="margin-left: 20px;">
+          <ul class="common-links" style="margin-left: 20px;">
             <li>
               <a href="" class="link">报告系统使用问题</a>
             </li>
