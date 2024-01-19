@@ -1,0 +1,3 @@
+<div class="icon-component-icon">{{- $name := .Get 0 -}}{{- $icon := resources.Get $name -}}
+    <img src="{{ $icon.Permalink }}" alt="Icon" style="width: 80px;">
+</div>

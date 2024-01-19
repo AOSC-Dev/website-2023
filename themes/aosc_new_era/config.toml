@@ -3,7 +3,7 @@
   [[menu.main]]
     identifier = "download-aosc-os"
     name = "下载 AOSC OS"
-    url = "#"
+    url = "/downloads"
     weight = 10
   [[menu.main]]
     identifier = "about"
