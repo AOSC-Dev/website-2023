@@ -9,10 +9,12 @@ body {
   font-family: 'Noto Sans CJK SC', sans-serif;
   background-color: white;
   font-size: 18px;
+  min-width: 1024px;
 }
 
 .main-listing {
-  margin: 1em;
+  padding: 1em;
+  border-right: 1px solid var(--var-primary-color);
 }
 
 .container {
@@ -45,6 +47,10 @@ body {
   margin: 12px;
 }
 
+.options a:hover {
+  background: #dcdcdc;
+}
+
 .logo {
   padding: 0;
 }
@@ -59,6 +65,10 @@ body {
 .leftbar {
   width: 20%;
   background: #ececec;
+  /* Prevent text from being selected */
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
   /* TODO */
 }
 
@@ -84,23 +94,20 @@ body {
 }
 
 .options {
-  padding: 3px;
+  padding: 3px 0;
   margin: 0;
-  margin-left: 10px;
 }
 .options li {
   list-style-type: none;
   padding: 0;
-  margin: 8px 10px;
 }
 .options a {
+  display: block;
+  width: initial;
   text-decoration: none;
   color: black;
+  padding: 4px 10px 4px 16px;
 }
-.options a:hover {
-  color: #0056cc;
-}
-
 .main {
   display: flex;
 }
@@ -119,6 +126,15 @@ body {
   padding: 0px;
   width: 50%;
 }
+
+.main-banner-img {
+  width: 100%;
+}
+
+.right-banner-img {
+  width: 100%;
+}
+
 .info-key-point ul {
   list-style-type: disc;
 }
