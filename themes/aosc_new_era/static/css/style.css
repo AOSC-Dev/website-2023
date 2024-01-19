@@ -14,7 +14,7 @@ body {
 
 .main-listing {
   padding: 1em;
-  border-right: 1px solid var(--var-primary-color);
+  border-right: 1px solid var(--var-secondary-color);
 }
 
 .container {

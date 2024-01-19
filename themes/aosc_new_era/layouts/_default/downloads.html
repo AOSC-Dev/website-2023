@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+{{ partial "head.html" . }}
+<body>
+  <style>
+    img { width: 100%; }
+    th { text-align: left; }
+    table {
+      border-collapse: collapse;
+    }
+    table, th, td {
+      border: 1px solid;
+    }
+    th, td {
+      padding: 10px;
+    }
+  </style>
+  <style>
+    button {
+        background: var(--var-secondary-color);
+        color: #fcfcfc;font-size: 18px;
+        padding: 5px 20px 5px 20px;
+        border: none;
+    }
+    button:hover {
+        opacity: 0.85;
+    }
+    select {
+        background: #ececec;
+        border: none;
+        font-size: 18px;
+        padding: 5px;
+        width: 50%;
+    }
+    .icon-component {
+        align-items: flex-start;
+        padding-left: 30px;
+    }
+</style>
+  <div id="top" class="container">
+    {{ partial "header.html" . }}
+    <div class="main">
+      <!-- 主侧栏 -->
+      <div class="leftbar">
+        {{ partial "leftbar.html" . }}
+      </div>
+      <!-- 中栏 -->
+      <div style="width: 80%; border-left: 1px solid #fcfcfc;">
+        <div class="category secondary">{{ .Title }}</div>{{- $L1 := resources.Get "images/banner_download.svg" | resources.Minify -}}
+        <img class="main-banner-img" src="{{ $L1.Permalink }}">
+        <div class="category secondary" id="aosc-os">AOSC OS</div>
+        <div class="icon-component">
+            <div class="icon-component-icon">{{- $icon := resources.Get "distros/aosc-os.svg" -}}
+                <img src="{{ $icon.Permalink }}" alt="Icon" style="width: 80px;">
+            </div>
+            <div class="content">
+                <div class="icon-component-icon-description">AOSC OS 是一款主要面向有一定 Linux 使用经验的用户，针对个人设备优化体验的操作系统。本系统致力于开箱即用、简化系统管理和提供可靠的工作环境。
+                    详见：<a class="link" href="#">AOSC OS 适合我吗？</a>
+                </div>
+                <br />
+                <div>
+                    <select>
+                        <optgroup label="安装盘" style="font-weight: 800;">
+                            <option>x86_64 个人电脑</option>
+                            <option>ARM64 个人电脑</option>
+                        </optgroup>
+                        <optgroup label="WSL 镜像">
+                            <option>x86_64 个人电脑</option>
+                            <option>ARM64 个人电脑</option>
+                        </optgroup>
+                        <optgroup label="Docker 镜像">
+                            <option>x86_64</option>
+                            <option>ARM64</option>
+                        </optgroup>
+                        <optgroup label="设备镜像">
+                            <option>Apple Silicon</option>
+                            <option>Raspberry Pi</option>
+                        </optgroup>
+                        <optgroup label="虚拟机镜像">
+                            <option>x86_64 (Hyper-V)</option>
+                            <option>x86_64 (QEMU)</option>
+                            <option>x86_64 (VirtualBox)</option>
+                        </optgroup>
+                    </select>
+                    <button>下载</button>
+                </div>
+            </div>
+        </div>
+        <div class="category secondary" id="livekit">LiveKit</div>
+        <div class="icon-component">
+            <div class="icon-component-icon">{{- $icon := resources.Get "distros/aosc-os.svg" -}}
+                <img src="{{ $icon.Permalink }}" alt="Icon" style="width: 80px;">
+            </div>
+            <div class="content">
+                <div class="icon-component-icon-description">系统恢复盘是每个电脑用户的必备法宝，搭载众多备份、恢复和系统修复工具的 LiveKit 更是您不可多得的救急利器。
+                </div>
+                <br />
+                <div>
+                    <select>
+                        <option>x86_64 个人电脑</option>
+                        <option>ARM64 个人电脑</option>
+                    </select>
+                    <button>下载</button>
+                </div>
+            </div>
+        </div>
+        <div class="category secondary" id="afterglow">Afterglow</div>
+        <div class="icon-component">
+            <div class="icon-component-icon">{{- $icon := resources.Get "distros/afterglow.svg" -}}
+                <img src="{{ $icon.Permalink }}" alt="Icon" style="width: 80px;">
+            </div>
+            <div class="content">
+                <div class="icon-component-icon-description">AOSC：“关爱您的奇妙开发板、迷之处理器和史前遗产。”
+                    无论性能多么有限，存储多么袖珍，内存多么紧俏，AOSC OS/Retro 竭诚为你的古董设备续命。 
+                </div>
+                <br />
+                <div>
+                    <select>
+                        <option>兼容 Intel 80486 的个人电脑</option>
+                    </select>
+                    <button>下载</button>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{ partial "footer.html" . }}
+</body>
+</html>
