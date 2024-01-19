@@ -120,6 +120,11 @@ body {
   flex: 1;
   padding: 1em;
 }
+
+.content-post p {
+  line-height: 1.5;
+}
+
 .content-main {
   background: #fcfcfc;
   flex: 1;
