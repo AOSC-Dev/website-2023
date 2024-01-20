@@ -39,7 +39,7 @@
           <article class="main-listing">
             <div class="icon-component">
               <div class="icon-component-icon">{{- $icon_monitor := resources.Get "icons/computer-monitor.svg" | resources.Minify -}}
-                <img src="{{ $icon_monitor.Permalink }}" alt="Icon" width="80">
+                <img class="icon-component-icon-img" src="{{ $icon_monitor.Permalink }}" alt="Icon" width="80">
               </div>
               <div class="content">
                 <div class="icon-component-icon-title">高效工作</div>
@@ -48,7 +48,7 @@
             </div>
             <div class="icon-component">
               <div class="icon-component-icon">{{- $icon_global := resources.Get "icons/globe.svg" | resources.Minify -}}
-                <img src="{{ $icon_global.Permalink }}" alt="Icon" width="80">
+                <img class="icon-component-icon-img" src="{{ $icon_global.Permalink }}" alt="Icon" width="80">
               </div>
               <div class="content">
                 <div class="icon-component-icon-title">走向世界</div>
@@ -58,7 +58,7 @@
             </div>
             <div class="icon-component">
               <div class="icon-component-icon">{{- $icon_shield := resources.Get "icons/shield.svg" | resources.Minify -}}
-                <img src="{{ $icon_shield.Permalink }}" alt="Icon" width="80">
+                <img class="icon-component-icon-img" src="{{ $icon_shield.Permalink }}" alt="Icon" width="80">
               </div>
               <div class="content">
                 <div class="icon-component-icon-title">有备无患</div>
@@ -82,7 +82,7 @@
           <article class="right-listing">
           <div class="icon-component">
             <div class="icon-component-icon">{{- $icon_aoscos := resources.Get "distros/aosc-os.svg" | resources.Minify -}}
-              <img src="{{ $icon_aoscos.Permalink }}" alt="Icon" width="80">
+              <img class="icon-component-icon-img" src="{{ $icon_aoscos.Permalink }}" alt="Icon" width="80">
             </div>
             <div class="content">
               <div class="icon-component-icon-title">AOSC OS</div>
@@ -95,7 +95,7 @@
           </div>
           <div class="icon-component">
             <div class="icon-component-icon">{{- $icon_afterglow := resources.Get "distros/afterglow.svg" | resources.Minify -}}
-              <img src="{{ $icon_afterglow.Permalink }}" alt="Icon" width="80">
+              <img class="icon-component-icon-img" src="{{ $icon_afterglow.Permalink }}" alt="Icon" width="80">
             </div>
             <div class="content">
               <div class="icon-component-icon-title">Afterglow</div>
@@ -108,7 +108,7 @@
           </div>
           <div class="icon-component">
             <div class="icon-component-icon">
-              <img src="{{ $icon_monitor.Permalink }}" alt="Icon" width="80">
+              <img class="icon-component-icon-img" src="{{ $icon_monitor.Permalink }}" alt="Icon" width="80">
             </div>
             <div class="content">
               <div class="icon-component-icon-title">LiveKit</div>
