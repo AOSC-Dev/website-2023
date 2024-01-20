@@ -20,7 +20,7 @@
   title = "社区项目"
   [[params.leftbar.links]]
     name = "AOSC OS"
-    url = "#"
+    url = "/aosc-os"
   [[params.leftbar.links]]
     name = "Afterglow"
     url = "#"
