@@ -23,7 +23,7 @@ AOSC OS 支持多种处理器架构，本表介绍支持的各类处理器架构
 | 处理器架构名       | 微架构指令集扩展支持要求 | 软件包架构名  | 编译器目标名                   |
 |--------------------|--------------------------|---------------|--------------------------------|
 | 基于 MIPS 的龙芯三号处理器[^2] | 无               | `loongson3`   | `mips64el-aosc-linux-gnuabi64` |
-| MIPS64 Release 6   | 无                       | `mips64r6el`  | `mipsisa64r6el-aosc-linux-gnuabi64` | 
+| MIPS64 Release 6   | MSA                      | `mips64r6el`  | `mipsisa64r6el-aosc-linux-gnuabi64` | 
 | IBM POWER（小端序）| AltiVec, VMX, VSX        | `ppc64el`     | `powerpc64le-aosc-linux-gnu`   |
 | RISC-V（64 位）    | G, C                     | `riscv64`     | `riscv64-aosc-linux-gnu`       |
 
