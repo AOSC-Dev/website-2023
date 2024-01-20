@@ -6,7 +6,7 @@ AOSC OS（中译：安同 OS）是一款以“简明可靠”为设计及维护�
 
 [下载系统](/download#aosc-os) | [系统特性](#) | [发行说明](relnotes) | [支持文档](#)
 
-![AOSC OS 默认桌面](images/aosc-os.zh-cn.jpg)
+![AOSC OS 默认桌面](/aosc-os/aosc-os.zh-cn.jpg)
 
 {{< category-block "系统特性" >}}
 
