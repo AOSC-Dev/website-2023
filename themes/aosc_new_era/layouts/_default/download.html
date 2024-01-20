@@ -46,7 +46,7 @@
       </div>
       <!-- 中栏 -->
       <div style="width: 80%; border-left: 1px solid #fcfcfc;">
-        <div class="category secondary">{{ .Title }}</div>{{- $L1 := resources.Get "images/banner_download.svg" | resources.Minify -}}
+        <div class="category secondary">{{ .Title }}</div>{{- $L1 := resources.Get "banners/banner_download.svg" | resources.Minify -}}
         <img class="main-banner-img" src="{{ $L1.Permalink }}">
         <div class="category secondary" id="aosc-os">AOSC OS</div>
         <div class="icon-component">
