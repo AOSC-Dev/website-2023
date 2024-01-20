@@ -2,7 +2,7 @@
   [[menu.main]]
     identifier = "download-aosc-os"
     name = "下载 AOSC OS"
-    url = "/downloads"
+    url = "/download"
     weight = 10
   [[menu.main]]
     identifier = "about"
@@ -17,7 +17,7 @@
 
 [params]
 [[params.leftbar]]
-  title = "项目与下载"
+  title = "社区项目"
   [[params.leftbar.links]]
     name = "AOSC OS"
     url = "#"
@@ -47,22 +47,22 @@
     url = "#"
   [[params.leftbar.links]]
     name = "联系方式"
-    url = "#"
+    url = "/contact"
 
 [[params.leftbar]]
   title = "事务与文化"
   [[params.leftbar.links]]
     name = "人际关系准则"
-    url = "#"
+    url = "/guidelines"
   [[params.leftbar.links]]
     name = "社区简介"
-    url = "#"
+    url = "/about"
   [[params.leftbar.links]]
     name = "例会与投票"
     url = "#"
   [[params.leftbar.links]]
     name = "赞助与众筹"
-    url = "#"
+    url = "/sponsoring"
   [[params.leftbar.links]]
     name = "实习资源"
     url = "#"
@@ -71,16 +71,16 @@
   title = "服务设施"
   [[params.leftbar.links]]
     name = "文档"
-    url = "#"
+    url = "https://wiki.aosc.io/"
   [[params.leftbar.links]]
     name = "代码"
-    url = "#"
+    url = "https://github.com/AOSC-Dev"
   [[params.leftbar.links]]
-    name = "邮箱"
-    url = "#"
+    name = "贡献者邮箱"
+    url = "https://mail20.mymailcheap.com/"
   [[params.leftbar.links]]
     name = "镜像源"
     url = "#"
   [[params.leftbar.links]]
     name = "公共剪贴板"
-    url = "#"
+    url = "https://paste.aosc.io"
