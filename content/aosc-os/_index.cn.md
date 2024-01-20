@@ -4,7 +4,7 @@ title: "AOSC OS"
 
 AOSC OS（中译：安同 OS）是一款以“简明可靠”为设计及维护目标的 Linux 发行版。本系统主要面向有一定 Linux 使用经验的用户，针对个人桌面设备优化体验，致力于为用户提供开箱即用和简便可靠的工作环境。
 
-[下载系统](/download#aosc-os) | [系统特性](#) | [发行说明](relnotes) | [支持文档](#)
+[下载系统](/download#aosc-os) | [系统特性](#) | [发行说明](relnotes) | [系统配置需求](support/sysreq) | [支持文档](#)
 
 ![AOSC OS 默认桌面](/aosc-os/aosc-os.zh-cn.jpg)
 
