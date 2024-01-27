@@ -1,3 +1,11 @@
+@media (max-width: 768px) {
+	.navbar {
+		position: fixed !important;
+		z-index: 999;
+		padding-left: 10% !important;
+	}
+}
+
 :root {
 	--var-primary-color: #003049;
 	--var-secondary-color: #3f6075;
@@ -45,6 +53,9 @@ body {
 	position: absolute;
 	right: 0;
 	padding-left: 400px;
+	text-overflow: clip;
+	white-space: nowrap;
+	z-index: 1;
 }
 
 .navbar > .navbar-placeholder{
@@ -69,6 +80,10 @@ body {
 
 .logo {
 	padding: 0;
+	position: relative;
+	min-width: 0;
+	max-width: 1024px;
+	overflow: clip;
 }
 
 .footer {
@@ -113,6 +128,7 @@ body {
 	color:white;
 	padding: 5px 10px;
 	margin: 0;
+	user-select: none;
 }
 
 .category.secondary {
@@ -147,7 +163,6 @@ body {
 	flex: 1;
 	padding: 1em;
 }
-
 
 .content-post h1 {
 	/* font-size: 24px; */
