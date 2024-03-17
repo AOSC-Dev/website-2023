@@ -1,2 +1,2 @@
-# website-2023
-2023 re-implementation of the community portal
+# AOSC Web Site
+> Vue3 + Vite
