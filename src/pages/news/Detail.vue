@@ -8,8 +8,10 @@ import { useRoute } from "vue-router";
 const mdRes = ref();
 const route = useRoute();
 const yamlDoc = ref({});
+const newsDate = ref('')
 onMounted(() => {
   const newsPath = route.params.newsPath;
+  newsDate.value = newsPath.substring(0, 10)
   axios.get(`/news/${newsPath}`).then((res) => {
     // 将头信息和内容分开，头信息为yml格式
     let mdContent = res.data.substring(4);
@@ -27,9 +29,11 @@ onMounted(() => {
 
 <template>
   <div class="pl-[1px]">
-    <category-second :title="yamlDoc['title']" />
+    <category-second :title="yamlDoc['title']" :right-text="newsDate" />
     <v-md-preview :text="mdRes"></v-md-preview>
   </div>
 </template>
 
-<style lang="css" scoped></style>
+<style lang="css" scoped>
+@import '/src/css/md.scss'
+</style>

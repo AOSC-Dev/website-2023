@@ -79,15 +79,6 @@ $green: #a7ecad;
     max-width: 100%;
   }
 
-  hr {
-    height: 1px;
-    border: none;
-    margin-top: 32px;
-    margin-bottom: 32px;
-    background-size: 4px 1px;
-    background-image: linear-gradient(to left, $blue 0%, $blue 25%, transparent 50%);
-  }
-
   code {
     margin: 0 4px;
     font-family: $ak-font;

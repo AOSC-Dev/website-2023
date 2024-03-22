@@ -10,7 +10,6 @@ import Sponsoring from './pages/sponsoring/Index.vue'
 import News from './pages/news/Index.vue'
 import NewsList from './pages/news/List.vue'
 import NewsDetail from './pages/news/Detail.vue'
-import Md from './pages/md/Index.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -59,10 +58,6 @@ const router = createRouter({
       path: '/news/detail/:newsPath/',
       name: 'newsDetail',
       component: NewsDetail,
-    }, {
-      path: '/md',
-      name: 'md',
-      component: Md
     }
   ]
 })
