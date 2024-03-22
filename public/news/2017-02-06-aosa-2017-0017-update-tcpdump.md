@@ -1,0 +1,19 @@
+---
+categories:
+  - news
+date: '2017-02-06'
+important: true
+title: 'AOSA-2017-0017: Update TCPDump'
+url: /news/2017/02/06/aosa-2017-0017-update-tcpdump.html
+---
+
+
+Please update your `tcpdump` package to version `4.9.0`.
+
+A recently released version of TCPDump has addressed the following security vulnerabilities:
+
+[CVE-2016-7922](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7922), [CVE-2016-7923](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7923), [CVE-2016-7924](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7924), [CVE-2016-7925](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7925), [CVE-2016-7926](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7926), [CVE-2016-7927](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7927), [CVE-2016-7928](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7928), [CVE-2016-7929](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7929), [CVE-2016-7930](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7930), [CVE-2016-7931](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7931), [CVE-2016-7932](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7932), [CVE-2016-7933](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7933), [CVE-2016-7934](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7934), [CVE-2016-7935](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7935), [CVE-2016-7936](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7936), [CVE-2016-7937](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7937), [CVE-2016-7938](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7938), [CVE-2016-7939](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7939), [CVE-2016-7940](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7940), [CVE-2016-7973](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7973), [CVE-2016-7974](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7974), [CVE-2016-7975](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7975), [CVE-2016-7983](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7983), [CVE-2016-7984](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7984), [CVE-2016-7985](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7985), [CVE-2016-7986](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7986), [CVE-2016-7992](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7992), [CVE-2016-7993](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-7993), [CVE-2016-8574](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8574), [CVE-2016-8575](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-8575), [CVE-2017-5202](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5202), [CVE-2017-5203](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5203), [CVE-2017-5204](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5204), [CVE-2017-5205](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5205), [CVE-2017-5341](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5341), [CVE-2017-5342](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5342), [CVE-2017-5482](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5482), [CVE-2017-5483](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5483), [CVE-2017-5484](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5484), [CVE-2017-5485](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5485), [CVE-2017-5486](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5486).
+
+Relevant documentation:
+
+- [Original Debian Security Advisory 3775](https://www.debian.org/security/2017/dsa-3775).
