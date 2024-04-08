@@ -10,6 +10,7 @@ $bg-secondary: #3f6075;
 
 .github-markdown-body {
   padding-top: 0;
+  margin-top: $line-space;
 
   h1 {
     background-color: $bg-secondary;
@@ -27,7 +28,6 @@ $bg-secondary: #3f6075;
 
   p {
     line-height: inherit;
-    margin-top: $line-space;
     margin-bottom: $line-space;
   }
 
