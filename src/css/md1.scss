@@ -55,7 +55,6 @@ $bg-secondary: #3f6075;
     overflow-x: auto;
     background-color: #fff7f7;
     color: #f06;
-    position: relative;
     font-size: 0.87em;
     padding: 0.065em 0.4em;
   }
@@ -64,7 +63,6 @@ $bg-secondary: #3f6075;
     margin: 15px 8px;
     border: 1px solid rgb(245, 245, 247);
     font-family: $ak-font;
-    position: relative;
     line-height: 1.75;
 
     &::before {
@@ -121,7 +119,6 @@ $bg-secondary: #3f6075;
     transition: 300ms;
     display: inline-block;
     vertical-align: bottom;
-    position: relative;
 
     &::before {
       content: 'READ MORE +';
