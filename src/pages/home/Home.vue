@@ -7,11 +7,11 @@ import { RouterView } from "vue-router";
 
 <template>
   <div>
-    <div class="p-0 my-0 mx-[10vw]">
-      <Header class="h-[15vh]" />
-      <div class="flex h-[82vh]">
-        <LeftBar class="w-[15%] overflow-y-auto" />
-        <router-view class="w-[85%] flex-1 overflow-y-auto"></router-view>
+    <div class="p-0 my-0 mx-[15vw]">
+      <Header class="h-[18vh]" />
+      <div class="flex h-[79vh]">
+        <LeftBar class="min-w-[15%] overflow-y-hidden hover:overflow-y-auto *:text-nowrap" />
+        <router-view class="flex-1 overflow-y-hidden hover:overflow-y-auto"></router-view>
       </div>
     </div>
     <Footer class="h-[3vh]" />
@@ -19,4 +19,3 @@ import { RouterView } from "vue-router";
 </template>
 
 <style scoped></style>
-./components/Header.vue
