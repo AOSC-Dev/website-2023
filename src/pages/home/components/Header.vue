@@ -8,9 +8,9 @@ const languageList = reactive([
 </script>
 
 <template>
-  <div>
+  <div class="bg-[url('/assets/heading/heading-wave.svg')]">
     <div
-      class="bg-primary text-white flex pl-[400px] py-[5px] z-1 whitespace-nowrap text-clip absolute right-0 *:ml-[12px] *:no-underline z-20"
+      class="bg-primary text-white flex justify-end pr-[9vw] py-[5px] whitespace-nowrap text-clip absolute right-0 w-[70vw] *:ml-[12px] *:no-underline z-20"
     >
       <router-link to="/download">下载AOSC OS</router-link>
       <span>|</span>
@@ -24,13 +24,11 @@ const languageList = reactive([
           </ul>
         </div>
       </section>
-      <div class="w-[calc(50vw-530px)] inline-block"></div>
     </div>
 
     <div class="p-0 relative min-w-0 max-w-[1024px] overflow-clip">
-      <img src="/assets/heading/heading-wave.svg" class="w-[1024px] object-cover h-[160px] z-10" alt="">
       <router-link to="/">
-        <img src="/assets/heading/portal-logo.zh-cn.svg" class="absolute top-[50px] ml-[25px] w-[276px]" alt="">
+        <img src="/assets/heading/portal-logo.zh-cn.svg" class="w-[15vw] pt-[5vh]" alt="">
       </router-link>
     </div>
   </div>
