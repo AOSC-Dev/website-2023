@@ -8,7 +8,7 @@ const languageList = reactive([
 </script>
 
 <template>
-  <div class="bg-[url('/assets/heading/heading-wave.svg')] bg-contain">
+  <div class="bg-[url('/assets/heading/heading-wave.svg')] bg-cover bg-no-repeat bg-[center_top_-7vh]">
     <div
       class="bg-primary text-white flex justify-end pr-[14vw] py-[5px] whitespace-nowrap text-clip absolute right-0 w-[68vw] *:ml-[12px] *:no-underline z-20"
     >
@@ -37,7 +37,7 @@ const languageList = reactive([
     <router-link to="/">
       <img
         src="/assets/heading/portal-logo.zh-cn.svg"
-        class="w-[15vw] pt-[8vh] pl-[1vw]"
+        class="w-[20vw] pt-[6vh] pl-[3vw]"
         alt=""
       />
     </router-link>

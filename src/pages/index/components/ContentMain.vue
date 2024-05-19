@@ -38,7 +38,7 @@ const zhuanlanList = reactive([
 <template>
   <div class="w-[62.5%] bg-content-main-bg p-0">
     <img src="/assets/banners/banner_main1.svg" alt="" class="w-full">
-    <!-- 咨询要点 -->
+    <!-- 咨讯要点 -->
     <div>
       <category-second title="资讯要点" class="border-r border-solid border-content-main-bg" />
       <article class="p-[1em] leading-6 border-r border-secondary">
