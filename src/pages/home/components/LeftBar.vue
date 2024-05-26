@@ -35,11 +35,11 @@ const linkArr = reactive([
   {
     title: "服务设施",
     children: [
-      { title: "文档", link: "#" },
-      { title: "代码", link: "#" },
-      { title: "贡献者邮箱", link: "#" },
+      { title: "文档", link: "https://wiki.aosc.io/" },
+      { title: "代码", link: "https://github.com/AOSC-Dev" },
+      { title: "贡献者邮箱", link: "https://mail20.mymailcheap.com/" },
       { title: "镜像源", link: "#" },
-      { title: "公共粘贴板", link: "#" },
+      { title: "公共粘贴板", link: "https://paste.aosc.io" },
     ],
   },
 ]);

@@ -40,10 +40,10 @@ const zhuanlanList = reactive([
     <img src="/assets/banners/banner_main1.svg" alt="" class="w-full">
     <!-- 咨讯要点 -->
     <div>
-      <category-second title="资讯要点" class="border-r border-solid border-content-main-bg" />
-      <article class="p-[1em] leading-6 border-r border-secondary">
+      <category-second title="资讯要点" />
+      <article class="p-[1em] leading-6">
         <ul class="ms-0 pl-[1.5em] list-disc">
-          <li v-for="item in infoKeyList" :key="item.title" class="leading-5">
+          <li v-for="item in infoKeyList" :key="item.title">
             <span class="font-semibold mr-2">
               {{ item.type }}
             </span>
@@ -60,7 +60,7 @@ const zhuanlanList = reactive([
     <!-- 专栏 -->
     <div id="topic">
       <category-second title="专栏: 初识AOSC OS" />
-      <article class="p-[1em] leading-6 border-r border-secondary">
+      <article class="p-[1em] leading-6">
         <div class="flex items-center pb-[15px]" v-for="item in zhuanlanList" :key="item.title">
           <div class="basis-[50px] mr-[20px] ml-[0.5em]">
             <img :src="item.img">

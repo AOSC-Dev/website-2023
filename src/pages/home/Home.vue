@@ -7,7 +7,7 @@ import { RouterView } from "vue-router";
 
 <template>
   <div>
-    <div class="p-0 my-0 mx-[15vw]">
+    <div class="p-0 my-0 xl:mx-[15vw] 2xl:mx-[15vw] ">
       <Header class="h-[18vh]" />
       <div class="flex h-[79vh]">
         <LeftBar class="min-w-[15%] overflow-y-hidden hover:overflow-y-auto *:text-nowrap" />

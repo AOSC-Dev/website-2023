@@ -13,7 +13,7 @@ import H2 from "/src/components/H2.vue";
       </p>
       <br />
       <i>&nbsp;&nbsp;“All the people who live in a particular area, or a group of people who are considered as a unit because of their shared interests or background.”</i>
-      <p>
+      <p class="py-2">
         — Community (n.), definition from the
         <router-link to="https://dictionary.cambridge.org/dictionary/english/community" class="text-link"> Cambridge English Dictionary</router-link>
       </p>
@@ -144,12 +144,12 @@ import H2 from "/src/components/H2.vue";
         <li>AOSC バカ（AOSC OS 开发及打包工作组）</li>
         <li>AOSC infra-wg（AOSC 网络设施维护工作组）</li>
       </ul>
-      <p>在这些场合，在遵守上面提到的所有社区规则同时，还请留意以下几条附加规则：</p>
+      <p class="pb-2">在这些场合，在遵守上面提到的所有社区规则同时，还请留意以下几条附加规则：</p>
 
       <H2>硬性规定</H2>
       <ul class="list-decimal pl-10 pb-8">
         <li>禁止使用 Telegram 贴纸或是 GIF 动图。 </li>
-        <ul class="list-disc pl-10 pb-8">
+        <ul class="list-disc pl-10">
           <li>您可以使用 Emoji 或颜文字作为替代。</li>
           <li>允许发布与技术或工作主题相关的图片和视频。</li>
           <li>管理员将制止并警告违规者（包括所有参与该主题的人）。多次违规者会被移出群聊（您可以立即重新加入，但必须停止您的违规行为）。</li>

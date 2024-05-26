@@ -47,12 +47,12 @@ const commonLinkList = reactive([
 </script>
 
 <template>
-  <div class="w-[37.5%] bg-right-bar-bg">
+  <div class="bg-right-bar-bg">
     <img src="/assets/banners/banner_minor1.svg" alt="" class="w-full" />
     <img src="/assets/banners/banner_minor2.svg" alt="" class="w-full" />
     <div>
-      <category-second title="系统方案" />
-      <article class="pt-[1em] pb-[0.5em] pl-[1em]">
+      <category-second title="系统方案" class="border-l border-solid border-content-main-bg" />
+      <article class="pt-[1em] pb-[0.5em] pl-[1em] border-l border-secondary">
         <div
           class="flex items-center pb-[15px]"
           v-for="item in distroList"
@@ -76,13 +76,13 @@ const commonLinkList = reactive([
         </div>
       </article>
       <category-second title="常用链接" />
-      <ul class="list-disc ml-[40px] mt-5">
-        <li v-for="item in commonLinkList" :key="item.title">
-          <a :href="item.url" class="text-link no-underline">
-            {{ item.title }}
-          </a>
-        </li>
-      </ul>
+        <ul class="list-disc pl-[40px] py-5 border-l border-secondary">
+          <li v-for="item in commonLinkList" :key="item.title">
+            <a :href="item.url" class="text-link no-underline">
+              {{ item.title }}
+            </a>
+          </li>
+        </ul>
     </div>
   </div>
 </template>

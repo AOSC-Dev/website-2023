@@ -8,7 +8,7 @@ const props = defineProps(['newsList'])
       暂无数据
     </div>
     <ul v-else class="list-disc">
-      <li v-for="item in newsList" :key="item.title">
+      <li v-for="item in newsList" :key="item.title" class="leading-8">
         <router-link :to="`/news/detail/${item.Path}`" class="text-link">
           <span>[{{ item.Date }}]</span>
           {{ item.Title }}
