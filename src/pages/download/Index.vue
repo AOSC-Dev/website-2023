@@ -19,7 +19,7 @@ import Select from "./components/Select.vue";
         class="w-[80px] ml-10 mr-6"
         alt=""
       />
-      <div class="heading-6">
+      <div class="heading-6 py-6">
         <p class="text-[12pt]">
           AOSC OS 是一款主要面向有一定 Linux
           使用经验的用户，针对个人设备优化体验的操作系统。本系统致力于开箱即用、简化系统管理和提供可靠的工作环境。
@@ -57,7 +57,7 @@ import Select from "./components/Select.vue";
     </div>
 
     <category-second title="LiveKit" />
-    <div class="flex mb-3">
+    <div class="flex mb-3 py-6">
       <img
         src="/assets/distros/aosc-os.svg"
         class="w-[80px] ml-10 mr-6"
@@ -80,7 +80,7 @@ import Select from "./components/Select.vue";
     </div>
 
     <category-second title="Afterglow" />
-    <div class="flex">
+    <div class="flex py-6">
       <img
         src="/assets/distros/afterglow.svg"
         class="w-[80px] ml-10 mr-6"

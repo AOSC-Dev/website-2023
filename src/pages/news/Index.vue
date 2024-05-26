@@ -23,7 +23,7 @@ onMounted(() => {
   <div class="pl-[1px]">
     <img src="/assets/banners/banner_news.svg" alt="" />
     <div class="flex flex-wrap *:w-1/2">
-      <div class="h-[20vw] border-r-[1px] border-r-solid border-r-secondary">
+      <div class="border-r-[1px] border-r-solid border-r-secondary">
         <category-second
           title="用户公告"
           rightText="查看全部"
@@ -31,10 +31,10 @@ onMounted(() => {
         />
         <news-category-list
           :newsList="categories.news || []"
-          class="py-6 pl-16 pr-10 overflow-y-auto h-[calc(18vw)]"
+          class="py-6 pl-16 pr-10 overflow-y-auto"
         />
       </div>
-      <div class="h-[20vw]">
+      <div class="">
         <category-second
           title="安全公告"
           rightText="查看全部"
@@ -42,10 +42,10 @@ onMounted(() => {
         />
         <news-category-list
           :newsList="categories.warning || []"
-          class="py-6 pl-16 pr-10 overflow-y-auto h-[calc(18vw)]"
+          class="py-6 pl-16 pr-10 overflow-y-auto"
         />
       </div>
-      <div class="h-[20vw] border-r-[1px] border-r-solid border-r-secondary">
+      <div class="border-r-[1px] border-r-solid border-r-secondary">
         <category-second
           title="社区新闻"
           rightText="查看全部"
@@ -53,10 +53,10 @@ onMounted(() => {
         />
         <news-category-list
           :newsList="categories.community || []"
-          class="py-6 pl-16 pr-10 overflow-y-auto h-[calc(18vw)]"
+          class="py-6 pl-16 pr-10 overflow-y-auto"
         />
       </div>
-      <div class="h-[20vw]">
+      <div class="">
         <category-second
           title="社区期刊"
           rightText="查看全部"
@@ -64,7 +64,7 @@ onMounted(() => {
         />
         <news-category-list
           :newsList="categories.book || []"
-          class="py-6 pl-16 pr-10 overflow-y-auto h-[calc(18vw)]"
+          class="py-6 pl-16 pr-10 overflow-y-auto"
         />
       </div>
       <div class="h-[20vw]" style="width: 100%">
