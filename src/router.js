@@ -28,7 +28,7 @@ const router = createRouter({
       name: 'download',
       component: Download
     }, {
-      path: '/aoscos',
+      path: '/aosc-os',
       name: 'aoscos',
       component: AoscOs
     }, {

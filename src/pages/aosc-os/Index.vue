@@ -9,16 +9,16 @@ const urlList = reactive([
     url: '/download'
   }, {
     title: '系统特性',
-    url: '/'
+    url: '#feature'
   }, {
     title: '发行说明',
-    url: '/'
+    url: '#releaseNote'
   }, {
     title: '系统配置需求',
-    url: '/'
+    url: '#requirement'
   }, {
     title: '支持文档',
-    url: '/'
+    url: '#wiki'
   }
 ])
 
@@ -46,14 +46,15 @@ const docList = reactive([
       <br />
       <div>
         <span v-for="(item, index) in urlList" :key="item.title">
-          <router-link :to="item.url" class="text-link">{{ item.title }}</router-link>
+          <router-link :to="item.url" class="text-link" v-if="item.url.indexOf('#') != 0">{{ item.title }}</router-link>
+          <a class="text-link" :href="item.url" v-else>{{ item.title }}</a>
           <span class="mx-1" v-if="index < urlList.length - 1">|</span>
         </span>
       </div>
       <img src="/assets/aosc-os/aosc-os.zh-cn.jpg" class="w-full h-auto mt-2" alt="">
     </div>
 
-    <category-second title="系统属性" />
+    <category-second title="系统属性" id="feature" />
     <div class="p-6">
       <H2>高效工作</H2>
       <p>以开箱即用作为主要设计目标，AOSC OS 是您日常工作的得力助手。从文字办公到服务器运维，摄影后期到 3D 建模，课堂笔记到文档翻译，我们的系统助您快速部署、高效工作、尽情创作。</p><br />
@@ -69,7 +70,7 @@ const docList = reactive([
       <p>我社一向以友好负责的支持工作著称。尊重用户的时间与精力是我们的工作准则，社区也是信息共享的强大后盾——在各社区聊天群组，我们时刻准备着为您排忧解难。</p><br />
     </div>
 
-    <category-second title="支持文档" />
+    <category-second title="支持文档" id="wiki" />
     <div class="pt-4 pb-[60px] px-16">
       <ul class="list-disc">
         <li v-for="item in docList" :key="item.title">
