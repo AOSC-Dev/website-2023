@@ -11,7 +11,7 @@ import { RouterView } from "vue-router";
       <Header class="h-[18vh]" />
       <div class="flex h-[79vh]">
         <LeftBar class="min-w-[15%] overflow-y-hidden hover:overflow-y-auto *:text-nowrap" />
-        <router-view class="flex-1 overflow-y-hidden hover:overflow-y-auto"></router-view>
+        <router-view class="flex-1 overflow-y-hidden hover:overflow-y-auto" style="scrollbar-gutter: stable;"></router-view>
       </div>
     </div>
     <Footer class="h-[3vh]" />
