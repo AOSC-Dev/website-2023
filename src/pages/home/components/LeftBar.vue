@@ -57,6 +57,10 @@ const linkArr = reactive([
 // 默认始终展开 “社区项目”
 const constExpandedMenu = linkArr.at(0);
 
+function isCurrentPage(str) {
+	return window.location.pathname.trim().startsWith(str.trim());
+}
+
 // 这里的值需要一直更新！
 switch (true) {
 	// 所有分类都展开的最小高度
@@ -84,7 +88,6 @@ switch (true) {
 
 if (document.documentElement.clientHeight < 980) {
 	// 可视区域高度不够的情况下，始终展开 “社区项目” 分类，及当前页面所属的分类
-	let curPath = window.location.pathname;
 	// 记录是否有分类被展开
 	let menuExpanded = false;
 	let menuToExpand;
@@ -93,7 +96,7 @@ if (document.documentElement.clientHeight < 980) {
 		let childrenHasCurPath = false;
 		value.children.forEach(function(linkitem) {
 			// 判断当前页面是否属于当前分类下
-			if (curPath.trim().startsWith(linkitem.link.trim())) {
+			if (isCurrentPage(linkitem.link)) {
 				childrenHasCurPath = true;
 			}
 		});
@@ -105,9 +108,11 @@ if (document.documentElement.clientHeight < 980) {
 	if (menuToExpand == null) {
 		menuToExpand = constExpandedMenu;
 	}
-	currentShowing = menuToExpand;
 	switch (allowedCategories) {
 		case 2:
+			if (menuToExpand == constExpandedMenu) {
+				menuToExpand = linkArr.at(1);
+			}
 			// 展开常驻分类和当前页面所属分类
 			constExpandedMenu.show = true;
 			menuToExpand.show = true;
@@ -121,6 +126,7 @@ if (document.documentElement.clientHeight < 980) {
 			// 不展开任何分类
 			break;
 	}
+	currentShowing = menuToExpand;
 }
 
 /**
@@ -137,19 +143,31 @@ function handleMenuItemClick(url) {
 function toggle(item) {
 	let lastShow = item.show;
 	if (allowedCategories < 0) {
+		setTimeout(() => {
+			item.show = !item.show;
+		}, 50);
 		return;
 	}
 	if (allowedCategories == 2 && item == linkArr.at(0)) {
+		setTimeout(() => {
+			item.show = !item.show;
+		}, 50);
 		// 不自动收缩其他分类
 		return;
 	}
 	if (allowedCategories <= 2) {
-		if (currentShowing != item) {
+		if (currentShowing != null && currentShowing != item) {
+			// Collapse the expanded one first
 			currentShowing.show = false;
 			currentShowing = item;
 		}
+		// HACK: 防止切换的过程中内容溢出（有一小段时间两者是同时展开的）
+		setTimeout(() => {
+			item.show = !item.show;
+		}, 50);
+
+		return;
 	}
-	item.show = !item.show;
 }
 
 </script>
@@ -158,12 +176,12 @@ function toggle(item) {
   <div class="bg-leftbar-bg">
     <div v-for="(item1, index) in linkArr" :key="item1.title">
       <div
-        class="bg-primary text-white px-[10px] py-[5px] m-0 select-none flex justify-between items-center cursor-pointer hover:bg-secondary"
+        class="bg-primary text-white px-[10px] py-[5px] m-0 select-none flex justify-between items-center cursor-pointer hover:bg-secondary select-none"
 	@click="toggle(item1)">
         <span>
           {{ item1.title }}
         </span>
-        <v-icon :name="item1.show ? 'bi-chevron-double-down' : 'bi-chevron-double-up'" inverse />
+        <v-icon :name="item1.show ? 'bi-chevron-double-up' : 'bi-chevron-double-down'" inverse />
       </div>
       <Transition name="menu">
       <ul class="py-[3px]" v-show="item1.show">
@@ -172,7 +190,8 @@ function toggle(item) {
           v-for="item2 in item1.children"
           :key="item2.title"
           :to="item2.link"
-          class="leading-8 hover:bg-[#dcdcdc] cursor-pointer pr-[10px] pl-[16px] block"
+	  :class=" { 'bg-[#dcdcdc]': $route.path.trim().startsWith(item2.link.trim()) }"
+          class="leading-8 hover:bg-[#dcdcdc] cursor-pointer pr-[10px] pl-[16px] block select-none"
           >{{ item2.title }}</span
         >
       </ul>
@@ -182,4 +201,26 @@ function toggle(item) {
 </template>
 
 <style scoped>
+.menu-enter {
+	overflow-y: hidden;
+	animation: menuslide-in .15s linear;
+}
+.menu-enter-active {
+	overflow-y: hidden;
+	animation: menuslide-in .15s linear;
+}
+.menu-leave-active {
+	overflow-y: hidden;
+	animation: menuslide-in .15s linear reverse;
+}
+
+@keyframes menuslide-in {
+	0% {
+		max-height: 0;
+	}
+	100% {
+		max-height: 16rem;
+	}
+}
+
 </style>
