@@ -21,7 +21,7 @@ onMounted(() => {
 
 <template>
   <div class="pl-[1px]">
-    <img src="/assets/banners/banner_news.svg" alt="" />
+    <img src="/assets/banners/banner_news.svg" alt="" width="100%" />
     <div class="flex flex-wrap *:w-1/2">
       <div class="border-r-[1px] border-r-solid border-r-secondary">
         <category-second

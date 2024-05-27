@@ -6,7 +6,7 @@ import RightBar from './components/RightBar.vue'
 <template>
   <div class="flex">
     <content-main />
-    <right-bar class="grow" />
+    <right-bar />
   </div>
 </template>
 

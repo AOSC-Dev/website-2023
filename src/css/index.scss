@@ -143,7 +143,9 @@ $bg-secondary: #3f6075;
       position: absolute;
     }
 
-    &:hover,
+    &:hover {
+      text-decoration:underline;
+    }
     &:active {
       &::before {
         max-width: 120px;

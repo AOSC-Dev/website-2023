@@ -1,6 +1,8 @@
 <script setup name="RightBar">
 import { reactive } from "vue";
 import CategorySecond from "/src/components/CategorySecond.vue";
+import{ toOutUrl } from "/src/utils/utils.js"
+
 const distroList = reactive([
   {
     img: "/assets/distros/aosc-os.svg",
@@ -47,9 +49,9 @@ const commonLinkList = reactive([
 </script>
 
 <template>
-  <div class="bg-right-bar-bg">
-    <img src="/assets/banners/banner_minor1.svg" alt="" class="w-full" />
-    <img src="/assets/banners/banner_minor2.svg" alt="" class="w-full" />
+  <div class="bg-right-bar-bg w-[37.5%]">
+    <img src="/assets/banners/banner_minor1.svg" alt="" class="w-full cursor-pointer" @click="toOutUrl('https://wiki.aosc.io/zh/aosc-os/is-aosc-os-right-for-me/')" />
+    <img src="/assets/banners/banner_minor2.svg" alt="" class="w-full cursor-pointer" @click="toOutUrl('https://wiki.aosc.io/')" />
     <div>
       <category-second title="系统方案" class="border-l border-solid border-content-main-bg" />
       <article class="pt-[1em] pb-[0.5em] pl-[1em] border-l border-secondary">
