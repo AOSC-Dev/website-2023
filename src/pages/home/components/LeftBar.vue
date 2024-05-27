@@ -8,7 +8,7 @@ const linkArr = reactive([
   {
     title: "社区项目",
     children: [
-      { title: "AOSC OS", link: "/aoscos" },
+      { title: "AOSC OS", link: "/aosc-os" },
       { title: "Afterglow", link: "/afterglow" },
       { title: "LiveKit", link: "#" },
       { title: "小熊猫包管理", link: "#" },
