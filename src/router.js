@@ -10,6 +10,7 @@ import Sponsoring from './pages/sponsoring/Index.vue'
 import News from './pages/news/Index.vue'
 import NewsList from './pages/news/List.vue'
 import NewsDetail from './pages/news/Detail.vue'
+import PageNotFound from './components/PageNotFound.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -58,6 +59,16 @@ const router = createRouter({
       path: '/news/detail/:newsPath/',
       name: 'newsDetail',
       component: NewsDetail,
+    }, {
+      path: '/404',
+      name: 'PageNotFound',
+      meta: {
+        title: '页面未找到'
+      },
+      component: PageNotFound
+    }, {
+      path: '/:pathMatch(.*)',
+      redirect: '/404'
     }
   ]
 })
