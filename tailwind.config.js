@@ -40,6 +40,11 @@ export default {
       'white': '#fff',
       'season': seasonColor,
       link: '#0056cc'
+    },
+    fontSize: {
+      '3xl': '2rem',
+      '4xl': '2.5rem',
+      '5xl': '3rem'
     }
   },
   plugins: [],
