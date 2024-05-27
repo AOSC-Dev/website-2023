@@ -11,3 +11,6 @@ body {
 	font-size: 12pt;
 	min-width: 800px;
 }
+a:hover {
+  text-decoration: underline;
+}

@@ -1,6 +1,9 @@
 <script setup name="ContentMain">
 import { reactive } from "vue";
 import CategorySecond from "/src/components/CategorySecond.vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter()
 
 const infoKeyList = reactive([
   {
@@ -33,11 +36,15 @@ const zhuanlanList = reactive([
     description: '内建 Rescuekit 助您排除故障恢复数据。亦可用于备份等预防式维护。'
   },
 ])
+
+function toHome() {
+  router.push('/')
+}
 </script>
 
 <template>
   <div class="w-[62.5%] bg-content-main-bg p-0">
-    <img src="/assets/banners/banner_main1.svg" alt="" class="w-full">
+    <img src="/assets/banners/banner_main1.svg" alt="" class="w-full cursor-pointer" @click="toHome">
     <!-- 咨讯要点 -->
     <div>
       <category-second title="资讯要点" />
@@ -75,7 +82,7 @@ const zhuanlanList = reactive([
           </div>
         </div>
         <div class="text-right px-[15px] text-[12pt] leading-6">
-            <a class="text-[#0056cc] no-underline">>> 详情请见：AOSC OS 适合我吗？</a>
+            <a class="text-[#0056cc] no-underline" href="https://wiki.aosc.io/zh/aosc-os/is-aosc-os-right-for-me/"> 详情请见：AOSC OS 适合我吗？</a>
           </div>
       </article>
     </div>

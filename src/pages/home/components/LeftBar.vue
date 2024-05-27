@@ -1,7 +1,9 @@
 <script setup name="LeftBar">
 import { reactive } from "vue";
 import { useRouter } from "vue-router";
+import {toOutUrl} from '/src/utils/utils.js'
 
+const router = useRouter()
 const linkArr = reactive([
   {
     title: "社区项目",
@@ -38,11 +40,22 @@ const linkArr = reactive([
       { title: "文档", link: "https://wiki.aosc.io/" },
       { title: "代码", link: "https://github.com/AOSC-Dev" },
       { title: "贡献者邮箱", link: "https://mail20.mymailcheap.com/" },
-      { title: "镜像源", link: "#" },
+      { title: "镜像源", link: "https://aosc.io/repo/" },
       { title: "公共粘贴板", link: "https://paste.aosc.io" },
     ],
   },
 ]);
+
+/**
+ * 点击菜单，http开头的，导航到外页，否则导航到内页
+ */
+function handleMenuItemClick(url) {
+  if (url.indexOf('http') == 0) {
+    toOutUrl(url)
+  } else {
+    router.push(url)
+  }
+}
 </script>
 
 <template>
@@ -52,12 +65,13 @@ const linkArr = reactive([
         {{ item1.title }}
       </div>
       <ul class="py-[3px]">
-        <router-link
+        <span
+        @click="handleMenuItemClick((item2.link))"
           v-for="item2 in item1.children"
           :key="item2.title"
           :to="item2.link"
           class="leading-8 hover:bg-[#dcdcdc] cursor-pointer pr-[10px] pl-[16px] block"
-          >{{ item2.title }}</router-link
+          >{{ item2.title }}</span
         >
       </ul>
     </div>
