@@ -37,14 +37,14 @@ const zhuanlanList = reactive([
   },
 ])
 
-function toHome() {
-  router.push('/')
+function toAoscOs() {
+  router.push('/aoscos')
 }
 </script>
 
 <template>
   <div class="w-[62.5%] bg-content-main-bg p-0">
-    <img src="/assets/banners/banner_main1.svg" alt="" class="w-full cursor-pointer" @click="toHome">
+    <img src="/assets/banners/banner_main1.svg" alt="" class="w-full cursor-pointer" @click="toAoscOs">
     <!-- 咨讯要点 -->
     <div>
       <category-second title="资讯要点" />

@@ -30,7 +30,7 @@ onMounted(() => {
 <template>
   <div class="pl-[1px]">
     <category-second :title="yamlDoc['title']" :right-text="newsDate" class="absolute w-[calc(59.5vw-1px)]" />
-    <v-md-preview :text="mdRes" class="pt-[20px]"></v-md-preview>
+    <v-md-preview :text="mdRes" class="pt-[50px]"></v-md-preview>
   </div>
 </template>
 
