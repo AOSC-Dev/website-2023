@@ -1,9 +1,9 @@
 <script setup name="LeftBar">
-import { reactive } from "vue";
+import { reactive, ref } from "vue";
 import { useRouter } from "vue-router";
-import {toOutUrl} from '/src/utils/utils.js'
+import { toOutUrl } from "/src/utils/utils.js";
 
-const router = useRouter()
+const router = useRouter();
 const linkArr = reactive([
   {
     title: "社区项目",
@@ -50,23 +50,39 @@ const linkArr = reactive([
  * 点击菜单，http开头的，导航到外页，否则导航到内页
  */
 function handleMenuItemClick(url) {
-  if (url.indexOf('http') == 0) {
-    toOutUrl(url)
+  if (url.indexOf("http") == 0) {
+    toOutUrl(url);
   } else {
-    router.push(url)
+    router.push(url);
+  }
+}
+
+/**
+ * 菜单折叠逻辑
+ */
+const curMenuItemIndex = ref(0)
+function toggleCurMenuItem(index) {
+  if (curMenuItemIndex.value != index) {
+    curMenuItemIndex.value = index
   }
 }
 </script>
 
 <template>
   <div class="bg-leftbar-bg">
-    <div v-for="item1 in linkArr" :key="item1.title">
-      <div class="bg-primary text-white px-[10px] py-[5px] m-0 select-none">
-        {{ item1.title }}
+    <div v-for="(item1, index) in linkArr" :key="item1.title" @click="toggleCurMenuItem(index)">
+      <div
+        class="bg-primary text-white px-[10px] py-[5px] m-0 select-none flex justify-between items-center cursor-pointer hover:bg-secondary"
+      >
+        <span>
+          {{ item1.title }}
+        </span>
+        <v-icon :name="index == curMenuItemIndex ? 'bi-chevron-double-down' : 'bi-chevron-double-up'" inverse />
       </div>
-      <ul class="py-[3px]">
+      <Transition name="menu">
+      <ul class="py-[3px]" v-show="index == curMenuItemIndex">
         <span
-        @click="handleMenuItemClick((item2.link))"
+          @click="handleMenuItemClick(item2.link)"
           v-for="item2 in item1.children"
           :key="item2.title"
           :to="item2.link"
@@ -74,8 +90,10 @@ function handleMenuItemClick(url) {
           >{{ item2.title }}</span
         >
       </ul>
+    </Transition>
     </div>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+</style>
