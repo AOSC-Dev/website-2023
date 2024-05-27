@@ -1,8 +1,13 @@
 <script setup name="LeftBar">
-import { reactive, ref } from "vue";
+import { reactive, ref, registerRuntimeCompiler } from "vue";
 import { useRouter } from "vue-router";
 import { toOutUrl } from "/src/utils/utils.js";
 
+// 该变量将在左侧边栏组件加载时设定
+// 记录有多少个分类可以被展开，由视图 (Viewport) 垂直高度决定
+let allowedCategories = 0;
+let currentShowing;
+const docHeight = document.documentElement.clientHeight;
 const router = useRouter();
 const linkArr = reactive([
   {
@@ -13,6 +18,7 @@ const linkArr = reactive([
       { title: "LiveKit", link: "#" },
       { title: "小熊猫包管理", link: "#" },
     ],
+    show: true,
   },
   {
     title: "咨询与支持",
@@ -23,6 +29,7 @@ const linkArr = reactive([
       { title: "系统需求", link: "#" },
       { title: "联系方式", link: "/contact" },
     ],
+    show: true,
   },
   {
     title: "事务与文化",
@@ -33,6 +40,7 @@ const linkArr = reactive([
       { title: "赞助与众筹", link: "/sponsoring" },
       { title: "实习资源", link: "#" },
     ],
+    show: true,
   },
   {
     title: "服务设施",
@@ -43,8 +51,77 @@ const linkArr = reactive([
       { title: "镜像源", link: "https://aosc.io/repo/" },
       { title: "公共粘贴板", link: "https://paste.aosc.io" },
     ],
+    show: true,
   },
 ]);
+// 默认始终展开 “社区项目”
+const constExpandedMenu = linkArr.at(0);
+
+// 这里的值需要一直更新！
+switch (true) {
+	// 所有分类都展开的最小高度
+	case (docHeight >= 980): {
+		allowedCategories = -1;
+		break;
+	}
+	// 能容纳两个展开的分类的最小高度
+	case (docHeight >= 680): {
+		// 常驻展开 “社区项目” 和其他任意一个分类
+		allowedCategories = 2;
+		break;
+	}
+	// 能容纳一个的最小高度
+	case (docHeight >= 520): {
+		allowedCategories = 1;
+		break;
+	}
+	// 屏幕实在小的不行，那也没办法；展开分类就得看滚动条了
+	default: {
+		allowedCategories = 0;
+		break;
+	}
+}
+
+if (document.documentElement.clientHeight < 980) {
+	// 可视区域高度不够的情况下，始终展开 “社区项目” 分类，及当前页面所属的分类
+	let curPath = window.location.pathname;
+	// 记录是否有分类被展开
+	let menuExpanded = false;
+	let menuToExpand;
+	// 决定需要展开哪一个
+	linkArr.forEach(function(value) {
+		let childrenHasCurPath = false;
+		value.children.forEach(function(linkitem) {
+			// 判断当前页面是否属于当前分类下
+			if (curPath.trim().startsWith(linkitem.link.trim())) {
+				childrenHasCurPath = true;
+			}
+		});
+		if (childrenHasCurPath) {
+			menuToExpand = value;
+		}
+		value.show = false;
+	});
+	if (menuToExpand == null) {
+		menuToExpand = constExpandedMenu;
+	}
+	currentShowing = menuToExpand;
+	switch (allowedCategories) {
+		case 2:
+			// 展开常驻分类和当前页面所属分类
+			constExpandedMenu.show = true;
+			menuToExpand.show = true;
+			break;
+		case 1:
+			// 展开当前页面所属分类
+			constExpandedMenu.show = false;
+			menuToExpand.show = true;
+			break;
+		default:
+			// 不展开任何分类
+			break;
+	}
+}
 
 /**
  * 点击菜单，http开头的，导航到外页，否则导航到内页
@@ -57,30 +134,39 @@ function handleMenuItemClick(url) {
   }
 }
 
-/**
- * 菜单折叠逻辑
- */
-const curMenuItemIndex = ref(0)
-function toggleCurMenuItem(index) {
-  if (curMenuItemIndex.value != index) {
-    curMenuItemIndex.value = index
-  }
+function toggle(item) {
+	let lastShow = item.show;
+	if (allowedCategories < 0) {
+		return;
+	}
+	if (allowedCategories == 2 && item == linkArr.at(0)) {
+		// 不自动收缩其他分类
+		return;
+	}
+	if (allowedCategories <= 2) {
+		if (currentShowing != item) {
+			currentShowing.show = false;
+			currentShowing = item;
+		}
+	}
+	item.show = !item.show;
 }
+
 </script>
 
 <template>
   <div class="bg-leftbar-bg">
-    <div v-for="(item1, index) in linkArr" :key="item1.title" @click="toggleCurMenuItem(index)">
+    <div v-for="(item1, index) in linkArr" :key="item1.title">
       <div
         class="bg-primary text-white px-[10px] py-[5px] m-0 select-none flex justify-between items-center cursor-pointer hover:bg-secondary"
-      >
+	@click="toggle(item1)">
         <span>
           {{ item1.title }}
         </span>
-        <v-icon :name="index == curMenuItemIndex ? 'bi-chevron-double-down' : 'bi-chevron-double-up'" inverse />
+        <v-icon :name="item1.show ? 'bi-chevron-double-down' : 'bi-chevron-double-up'" inverse />
       </div>
       <Transition name="menu">
-      <ul class="py-[3px]" v-show="index == curMenuItemIndex">
+      <ul class="py-[3px]" v-show="item1.show">
         <span
           @click="handleMenuItemClick(item2.link)"
           v-for="item2 in item1.children"
