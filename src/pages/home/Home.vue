@@ -7,21 +7,43 @@ import { RouterView } from "vue-router";
 
 <template>
   <div>
-    <div class="p-0 my-0 h-[100vh] flex flex-col">
+    <div class="bg-floral p-0 my-0 min-h-[100vh] flex flex-col">
       <Header />
-      <div class="flex pb-[20px] 2xl:mx-[15vw] flex-1">
-        <div class="min-w-[15%] *:text-nowrap sticky top-0 bg-leftbar-bg">
-          <LeftBar class="min-w-[100%] *:text-nowrap sticky top-0" />
-        </div>
+      <div class="main-content flex pb-[20px] flex-1">
+        <div class="horizontal-spacer"></div>
+        <div class="content-container flex">
+          <div class="min-w-[15%] *:text-nowrap sticky top-0 bg-leftbar-bg">
+            <LeftBar class="min-w-[100%] *:text-nowrap sticky top-0" />
+          </div>
 
-        <router-view
-          class="flex-1"
-          style="scrollbar-gutter: stable"
-        ></router-view>
+          <router-view
+            class="flex-1"
+            style="scrollbar-gutter: stable"
+          ></router-view>
+        </div>
+        <div class="horizontal-spacer"></div>
       </div>
     </div>
     <Footer class="fixed bottom-0" />
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.bg-floral {
+	background-color: #fffbf5;
+	background-image: url(http://mirrors.priv.cyano.uk/misc/floral.svg);
+	background-position: center;
+	background-attachment: fixed;
+}
+.horizontal-spacer {
+  flex-grow: 1;
+}
+.content-container {
+  width: 70%;
+  min-width: 1024px;
+  max-width: 1280px;
+  flex: 0 0 100%;
+  background: #fafafa;
+  box-shadow: 0px 0px 10px #999;
+}
+</style>
