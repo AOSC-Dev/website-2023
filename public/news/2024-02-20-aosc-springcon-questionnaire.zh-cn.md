@@ -6,6 +6,7 @@ date: 2024-02-20T22:19:13-08:00
 important: false
 draft: false
 ---
+![社区年度烙饼会](/assets/coffee-break/20240226/imgs/aosc-springcon-2024.png)
 
 感谢各位参与第一届烙饼会！
 
