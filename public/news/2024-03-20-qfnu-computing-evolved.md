@@ -7,7 +7,8 @@ important: false
 draft: false
 ---
 
-![](../imgs/jisuanjinhua.jpg)
+![](/assets/news/2024-03-20-qfnu-computing-evolved.jpg)
+
 **社区 · 开源 · 信创**
 
 爱好者社区如何与信创事业双向奔赴？
