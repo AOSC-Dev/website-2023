@@ -8,9 +8,9 @@ const languageList = reactive([
 </script>
 
 <template>
-  <div class="bg-[url('/assets/heading/heading-wave.svg')] bg-cover bg-no-repeat bg-[center_top_-15vh]">
+  <div class="bg-cover bg-no-repeat bg-[center_top_-15vh]">
     <div
-      class="bg-primary text-white flex justify-end pr-[0.5rem] 2xl:pr-[14vw] py-[5px] whitespace-nowrap text-clip absolute right-0 2xl:w-[68vw] w-[78vw] *:ml-[12px] *:no-underline z-20"
+      class="topbar bg-primary text-white flex justify-end pr-[0.5rem] 2xl:pr-[16vw] py-[5px] whitespace-nowrap text-clip absolute right-0 2xl:w-[36vw] w-[78vw] *:ml-[12px] *:no-underline z-20"
     >
       <router-link to="/download">下载 AOSC OS</router-link>
       <span>|</span>
@@ -37,11 +37,15 @@ const languageList = reactive([
     <router-link to="/">
       <img
         src="/assets/heading/portal-logo.zh-cn.svg"
-        class="2xl:w-[15vw] w-[20vw] pt-[3vh] pb-[2vh] 2xl:ml-[18vw] ml-[3vw]"
+        class="2xl:w-[15vw] w-[20vw] pt-[1.75rem] pb-[1.75rem] 2xl:ml-[18vw] ml-[3vw]"
         alt="logo"
       />
     </router-link>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.topbar {
+	box-shadow: 0px 0px 10px #666;
+}
+</style>
