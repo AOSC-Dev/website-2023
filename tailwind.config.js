@@ -8,17 +8,25 @@ const now = new Date()
 const month =now.getMonth() + 1
 if (month >=1 && month <= 3) {
   // 春天
-  seasonColor = '#517a47'
-  seasonColor2 = '#779f68'
+  // seasonColor = '#517a47'
+  // seasonColor2 = '#779f68'
+  seasonColor = '#7f9e7f'
+  seasonColor2 = '#7f9e7f'
 } else if (month >=4 && month <= 6) {
-  seasonColor = '#346c75'
-  seasonColor2 = '#6699a1'
+  // seasonColor = '#346c75'
+  // seasonColor2 = '#6699a1'
+  seasonColor = '#7f9e7f'
+  seasonColor2 = '#7f9e7f'
 } else if (month >=7 && month <= 9) {
-  seasonColor = '#422c24'
-  seasonColor2 = '#5c4b41'
+  // seasonColor = '#422c24'
+  // seasonColor2 = '#5c4b41'
+  seasonColor = '#7f9e7f'
+  seasonColor2 = '#7f9e7f'
 } else if (month >=10 && month <= 12) {
-  seasonColor = '#003049'
-  seasonColor2 = '#5c4b41'
+  // seasonColor = '#003049'
+  // seasonColor2 = '#5c4b41'
+  seasonColor = '#7f9e7f'
+  seasonColor2 = '#7f9e7f'
 }
 
 export default {
