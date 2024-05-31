@@ -37,7 +37,7 @@ const languageList = reactive([
     <router-link to="/">
       <img
         src="/assets/heading/portal-logo.zh-cn.svg"
-        class="w-[20vw] pt-[6vh] pl-[3vw]"
+        class="2xl:w-[15vw] w-[20vw] pt-[6vh] 2xl:ml-[18vw] ml-[3vw]"
         alt=""
       />
     </router-link>
