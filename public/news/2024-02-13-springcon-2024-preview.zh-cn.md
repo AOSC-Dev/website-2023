@@ -6,6 +6,7 @@ date: 2024-02-13T22:19:13-08:00
 important: false
 draft: false
 ---
+![社区年度烙饼会](/assets/coffee-break/20240226/imgs/aosc-springcon-2024.png)
 
 **农历新年在即，是时候筹划新一年的坑和白日梦了！**
 
