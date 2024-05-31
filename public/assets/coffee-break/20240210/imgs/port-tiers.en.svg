@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="3000"
+   height="1280"
+   viewBox="0 0 793.74999 338.66666"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   sodipodi:docname="port-tiers.en.svg"
+   inkscape:export-filename="port-tiers.en.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="1"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.35723204"
+     inkscape:cx="1401.0501"
+     inkscape:cy="746.01371"
+     inkscape:window-width="1920"
+     inkscape:window-height="995"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g2488" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="图层 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g2488"
+       transform="translate(-11.991731,-0.38100403)">
+      <g
+         id="g2591"
+         transform="translate(-15.169427)">
+        <rect
+           style="fill:#855da3;fill-opacity:1;stroke-width:0.264583"
+           id="rect111"
+           width="211.66667"
+           height="52.916668"
+           x="61.811756"
+           y="95.501228"
+           rx="3.175"
+           ry="3.175" />
+        <rect
+           style="fill:#855da3;fill-opacity:1;stroke-width:0.264583"
+           id="rect111-9"
+           width="211.66667"
+           height="52.916668"
+           x="61.811756"
+           y="214.60037"
+           rx="3.175"
+           ry="3.175" />
+        <rect
+           style="fill:#855da3;fill-opacity:1;stroke-width:0.264583"
+           id="rect111-2"
+           width="211.66667"
+           height="52.916668"
+           x="61.811756"
+           y="155.0508"
+           rx="3.175"
+           ry="3.175" />
+        <rect
+           style="fill:#836d93;fill-opacity:1;stroke-width:0.264583"
+           id="rect111-8"
+           width="211.66667"
+           height="52.916668"
+           x="321.7438"
+           y="155.0508"
+           rx="3.175"
+           ry="3.175" />
+        <rect
+           style="fill:#836d93;fill-opacity:1;stroke-width:0.264583"
+           id="rect111-2-4"
+           width="211.66667"
+           height="52.916668"
+           x="321.7438"
+           y="214.60039"
+           rx="3.175"
+           ry="3.175" />
+        <rect
+           style="fill:#836d93;fill-opacity:1;stroke-width:0.264583"
+           id="rect111-9-5"
+           width="211.66667"
+           height="52.916668"
+           x="321.7438"
+           y="274.14993"
+           rx="3.175"
+           ry="3.175" />
+        <rect
+           style="fill:#807d83;fill-opacity:1;stroke-width:0.264583"
+           id="rect111-8-3"
+           width="211.66667"
+           height="52.916668"
+           x="580.2663"
+           y="214.60039"
+           rx="3.175"
+           ry="3.175" />
+        <text
+           xml:space="preserve"
+           style="font-size:16.9333px;fill:#000000;stroke-width:0.264583"
+           x="54.09021"
+           y="26.09498"
+           id="text437"><tspan
+             sodipodi:role="line"
+             id="tspan435"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.9333px;font-family:'Noto Sans CJK SC';-inkscape-font-specification:'Noto Sans CJK SC Bold';stroke-width:0.264583"
+             x="54.09021"
+             y="26.09498">Primary Architectures</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:11.2889px;line-height:1.1;fill:#000000;stroke-width:0.264583"
+           x="58.107586"
+           y="46.012333"
+           id="text491"><tspan
+             sodipodi:role="line"
+             id="tspan489"
+             style="font-size:11.2889px;stroke-width:0.264583"
+             x="58.107586"
+             y="46.012333">・Our best-supported ports</tspan><tspan
+             sodipodi:role="line"
+             style="font-size:11.2889px;stroke-width:0.264583"
+             x="58.107586"
+             y="59.503979"
+             id="tspan493">・High levels of hardware availabillity and</tspan><tspan
+             sodipodi:role="line"
+             style="font-size:11.2889px;stroke-width:0.264583"
+             x="58.107586"
+             y="72.995621"
+             id="tspan2241">    community interest</tspan><tspan
+             sodipodi:role="line"
+             style="font-size:11.2889px;stroke-width:0.264583"
+             x="58.107586"
+             y="86.487267"
+             id="tspan495">・Timely updates and full feature sets</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:16.9333px;fill:#000000;stroke-width:0.264583"
+           x="311.56631"
+           y="85.782425"
+           id="text437-6"><tspan
+             sodipodi:role="line"
+             id="tspan435-5"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.9333px;font-family:'Noto Sans CJK SC';-inkscape-font-specification:'Noto Sans CJK SC Bold';stroke-width:0.264583"
+             x="311.56631"
+             y="85.782425">Secondary Architectures</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:11.2889px;line-height:1.1;fill:#000000;stroke-width:0.264583"
+           x="318.56876"
+           y="105.69978"
+           id="text491-6"><tspan
+             sodipodi:role="line"
+             style="font-size:11.2889px;stroke-width:0.264583"
+             x="318.56876"
+             y="105.69978"
+             id="tspan2243">・Relatively full feature sets</tspan><tspan
+             sodipodi:role="line"
+             style="font-size:11.2889px;stroke-width:0.264583"
+             x="318.56876"
+             y="119.19143"
+             id="tspan493-9">・If conditions allow, these ports can be</tspan><tspan
+             sodipodi:role="line"
+             style="font-size:11.2889px;stroke-width:0.264583"
+             x="318.56876"
+             y="132.68307"
+             id="tspan2247">    promoted as primary architectures</tspan><tspan
+             sodipodi:role="line"
+             style="font-size:11.2889px;stroke-width:0.264583"
+             x="318.56876"
+             y="146.17471"
+             id="tspan495-4">・No guarantee on updates and features</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:16.9333px;fill:#000000;stroke-width:0.264583"
+           x="569.72247"
+           y="156.22234"
+           id="text437-6-2"><tspan
+             sodipodi:role="line"
+             id="tspan435-5-9"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.9333px;font-family:'noto sans cjk sc';-inkscape-font-specification:'noto sans cjk sc Bold';stroke-width:0.264583"
+             x="569.72247"
+             y="156.22234">Tertiary Architectures</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-size:11.2889px;line-height:1.1;fill:#000000;stroke-width:0.264583"
+           x="575.81848"
+           y="176.13969"
+           id="text491-6-3"><tspan
+             sodipodi:role="line"
+             style="font-size:11.2889px;stroke-width:0.264583"
+             x="575.81848"
+             y="176.13969"
+             id="tspan2249">・New or experimental ports</tspan><tspan
+             sodipodi:role="line"
+             style="font-size:11.2889px;stroke-width:0.264583"
+             x="575.81848"
+             y="189.63133"
+             id="tspan493-9-0">・May lack quality assurance</tspan><tspan
+             sodipodi:role="line"
+             style="font-size:11.2889px;stroke-width:0.264583"
+             x="575.81848"
+             y="203.12299"
+             id="tspan495-4-8">・No guarantee on updates and features</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.9333px;line-height:0.9;font-family:'noto sans cjk sc';-inkscape-font-specification:'noto sans cjk sc Bold';fill:#807d83;fill-opacity:1;stroke-width:0.264583"
+           x="167.74669"
+           y="120.05739"
+           id="text1719"><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'noto sans cjk sc';-inkscape-font-specification:'noto sans cjk sc Bold';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+             x="167.74669"
+             y="120.05739"
+             id="tspan1827">x86-64/AMD64</tspan><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.2889px;font-family:'noto sans cjk sc';-inkscape-font-specification:'noto sans cjk sc';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+             x="167.74669"
+             y="135.29736"
+             id="tspan1831">(amd64)</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.9333px;line-height:0.9;font-family:'noto sans cjk sc';-inkscape-font-specification:'noto sans cjk sc Bold';fill:#807d83;fill-opacity:1;stroke-width:0.264583"
+           x="167.74669"
+           y="179.60695"
+           id="text1719-3"><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'noto sans cjk sc';-inkscape-font-specification:'noto sans cjk sc Bold';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+             x="167.74669"
+             y="179.60695"
+             id="tspan1827-6">AArch64</tspan><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.2889px;font-family:'noto sans cjk sc';-inkscape-font-specification:'noto sans cjk sc';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+             x="167.74669"
+             y="194.84692"
+             id="tspan1831-8">(arm64)</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.9333px;line-height:0.9;font-family:'noto sans cjk sc';-inkscape-font-specification:'noto sans cjk sc Bold';fill:#807d83;fill-opacity:1;stroke-width:0.264583"
+           x="167.74669"
+           y="239.15652"
+           id="text1719-0"><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'noto sans cjk sc';-inkscape-font-specification:'noto sans cjk sc Bold';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+             x="167.74669"
+             y="239.15652"
+             id="tspan1827-2">LoongArch</tspan><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.2889px;font-family:'noto sans cjk sc';-inkscape-font-specification:'noto sans cjk sc';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+             x="167.74669"
+             y="254.3965"
+             id="tspan1831-1">(loongarch64)</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.9333px;line-height:0.9;font-family:'noto sans cjk sc';-inkscape-font-specification:'noto sans cjk sc Bold';fill:#807d83;fill-opacity:1;stroke-width:0.264583"
+           x="427.67874"
+           y="179.60695"
+           id="text1719-05"><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'noto sans cjk sc';-inkscape-font-specification:'noto sans cjk sc Bold';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+             x="427.67874"
+             y="179.60695"
+             id="tspan1827-1">MIPS-based Loongson 3</tspan><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.2889px;font-family:'noto sans cjk sc';-inkscape-font-specification:'noto sans cjk sc';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+             x="427.67874"
+             y="194.84692"
+             id="tspan1831-10">(loongson3)</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.9333px;line-height:0.9;font-family:'noto sans cjk sc';-inkscape-font-specification:'noto sans cjk sc Bold';fill:#807d83;fill-opacity:1;stroke-width:0.264583"
+           x="427.67874"
+           y="239.15654"
+           id="text1719-8"><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'noto sans cjk sc';-inkscape-font-specification:'noto sans cjk sc Bold';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+             x="427.67874"
+             y="239.15654"
+             id="tspan1827-5">IBM POWER8+</tspan><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.2889px;font-family:'noto sans cjk sc';-inkscape-font-specification:'noto sans cjk sc';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+             x="427.67874"
+             y="254.39651"
+             id="tspan1831-0">(ppc64el)</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.9333px;line-height:0.9;font-family:'noto sans cjk sc';-inkscape-font-specification:'noto sans cjk sc Bold';fill:#807d83;fill-opacity:1;stroke-width:0.264583"
+           x="427.67874"
+           y="298.70609"
+           id="text1719-6"><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'noto sans cjk sc';-inkscape-font-specification:'noto sans cjk sc Bold';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+             x="427.67874"
+             y="298.70609"
+             id="tspan1827-4">RISC-V</tspan><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.2889px;font-family:'noto sans cjk sc';-inkscape-font-specification:'noto sans cjk sc';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+             x="427.67874"
+             y="313.94604"
+             id="tspan1831-6">(riscv64)</tspan></text>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16.9333px;line-height:0.9;font-family:'noto sans cjk sc';-inkscape-font-specification:'noto sans cjk sc Bold';fill:#807d83;fill-opacity:1;stroke-width:0.264583"
+           x="686.20123"
+           y="239.15654"
+           id="text1719-2"><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'noto sans cjk sc';-inkscape-font-specification:'noto sans cjk sc Bold';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+             x="686.20123"
+             y="239.15654"
+             id="tspan1827-58">MIPS64 Release 6</tspan><tspan
+             sodipodi:role="line"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.2889px;font-family:'noto sans cjk sc';-inkscape-font-specification:'noto sans cjk sc';text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+             x="686.20123"
+             y="254.39651"
+             id="tspan1831-62">(mips64r6el)</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>
