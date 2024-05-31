@@ -7,9 +7,9 @@ import { RouterView } from "vue-router";
 
 <template>
   <div>
-    <div class="p-0 my-0 2xl:mx-[15vw] ">
+    <div class="p-0 my-0 h-[100vh] flex flex-col">
       <Header />
-      <div class="flex h-[79vh]">
+      <div class="flex pb-[20px] 2xl:mx-[15vw] flex-1">
         <LeftBar class="min-w-[15%] overflow-y-hidden hover:overflow-y-auto *:text-nowrap" />
         <router-view class="flex-1" style="scrollbar-gutter: stable;"></router-view>
       </div>
