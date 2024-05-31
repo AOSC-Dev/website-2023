@@ -168,28 +168,6 @@ oma topics
 
 至截稿时，社区打包工具 [Autobuild4](https://github.com/AOSC-Dev/autobuild4) 发布了第 29 个修补版本，改善了各类功能的可用性并增强了各类 [Autobuild3](https://github.com/AOSC-Dev/autobuild3) 功能。在多位开发者的努力下，Autobuild4 已成为社区的默认打包工具。
 
-一起吹水
---------
-
-互联网是我社的主要活动场所，欢迎来社区各群聊及语音频道交流玩耍：
-
-### 微信群
-
-请扫描此二维码添加好友并说明来意：申请加入 AOSC 社区频道。
-
-![wechat](/assets/coffee-break/20240309/imgs/wechat.png)
-
-### QQ 群
-
-![qq](/assets/coffee-break/20240309/imgs/qq.jpg)
-
-### Telegram 群组
-
-![telegram](/assets/coffee-break/20240309/imgs/telegram.png)
-
-### Discord 语音频道
-
-![discord](/assets/coffee-break/20240309/imgs/discord.png)
 
 栏目介绍
 --------
