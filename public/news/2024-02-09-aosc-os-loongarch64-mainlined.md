@@ -6,7 +6,6 @@ date: 2024-02-09T22:19:13-08:00
 important: false
 draft: false
 ---
-  <a href="https://npmcharts.com/compare/@kangc/v-md-editor?minimal=true"><img src="https://img.shields.io/npm/dm/@kangc/v-md-editor.svg?sanitize=true" alt="Downloads"></a>
 
 龙年第一天，历时逾半年的龙架构移植已完成合并，正式“合龙”！
 
