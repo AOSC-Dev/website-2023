@@ -7,7 +7,6 @@ import { toOutUrl } from "/src/utils/utils.js";
 // 记录有多少个分类可以被展开，由视图 (Viewport) 垂直高度决定
 let allowedCategories = 0;
 let currentShowing;
-const docHeight = document.documentElement.clientHeight;
 const router = useRouter();
 const linkArr = reactive([
   {
@@ -61,74 +60,81 @@ function isCurrentPage(str) {
 	return window.location.pathname.trim().startsWith(str.trim());
 }
 
-// 这里的值需要一直更新！
-switch (true) {
-	// 所有分类都展开的最小高度
-	case (docHeight >= 980): {
-		allowedCategories = -1;
-		break;
-	}
-	// 能容纳两个展开的分类的最小高度
-	case (docHeight >= 680): {
-		// 常驻展开 “社区项目” 和其他任意一个分类
-		allowedCategories = 2;
-		break;
-	}
-	// 能容纳一个的最小高度
-	case (docHeight >= 520): {
-		allowedCategories = 1;
-		break;
-	}
-	// 屏幕实在小的不行，那也没办法；展开分类就得看滚动条了
-	default: {
-		allowedCategories = 0;
-		break;
-	}
-}
-
-if (document.documentElement.clientHeight < 980) {
-	// 可视区域高度不够的情况下，始终展开 “社区项目” 分类，及当前页面所属的分类
-	// 记录是否有分类被展开
-	let menuExpanded = false;
-	let menuToExpand;
-	// 决定需要展开哪一个
-	linkArr.forEach(function(value) {
-		let childrenHasCurPath = false;
-		value.children.forEach(function(linkitem) {
-			// 判断当前页面是否属于当前分类下
-			if (isCurrentPage(linkitem.link)) {
-				childrenHasCurPath = true;
-			}
-		});
-		if (childrenHasCurPath) {
-			menuToExpand = value;
+function updateAllowedCategories() {
+	// 这里的值需要一直更新！
+	let docHeight = document.documentElement.clientHeight;
+	switch (true) {
+		// 所有分类都展开的最小高度
+		case (docHeight >= 980): {
+			allowedCategories = -1;
+			linkArr.forEach(function(val) {
+				val.show = true;
+			});
+			break;
 		}
-		value.show = false;
-	});
-	if (menuToExpand == null) {
-		menuToExpand = constExpandedMenu;
+		// 能容纳两个展开的分类的最小高度
+		case (docHeight >= 680): {
+			// 常驻展开 “社区项目” 和其他任意一个分类
+			allowedCategories = 2;
+			break;
+		}
+		// 能容纳一个的最小高度
+		case (docHeight >= 520): {
+			allowedCategories = 1;
+			break;
+		}
+		// 屏幕实在小的不行，那也没办法；展开分类就得看滚动条了
+		default: {
+			allowedCategories = 0;
+			break;
+		}
 	}
-	switch (allowedCategories) {
-		case 2:
-			if (menuToExpand == constExpandedMenu) {
-				menuToExpand = linkArr.at(1);
+	if (document.documentElement.clientHeight < 980) {
+		// 可视区域高度不够的情况下，始终展开 “社区项目” 分类，及当前页面所属的分类
+		// 记录是否有分类被展开
+		let menuExpanded = false;
+		let menuToExpand;
+		// 决定需要展开哪一个
+		linkArr.forEach(function(value) {
+			let childrenHasCurPath = false;
+			value.children.forEach(function(linkitem) {
+				// 判断当前页面是否属于当前分类下
+				if (isCurrentPage(linkitem.link)) {
+					childrenHasCurPath = true;
+				}
+			});
+			if (childrenHasCurPath) {
+				menuToExpand = value;
 			}
-			// 展开常驻分类和当前页面所属分类
-			constExpandedMenu.show = true;
-			menuToExpand.show = true;
-			break;
-		case 1:
-			// 展开当前页面所属分类
-			constExpandedMenu.show = false;
-			menuToExpand.show = true;
-			break;
-		default:
-			// 不展开任何分类
-			break;
+			value.show = false;
+		});
+		if (menuToExpand == null) {
+			menuToExpand = constExpandedMenu;
+		}
+		switch (allowedCategories) {
+			case 2:
+				if (menuToExpand == constExpandedMenu) {
+					menuToExpand = linkArr.at(1);
+				}
+				// 展开常驻分类和当前页面所属分类
+				constExpandedMenu.show = true;
+				menuToExpand.show = true;
+				break;
+			case 1:
+				// 展开当前页面所属分类
+				constExpandedMenu.show = false;
+				menuToExpand.show = true;
+				break;
+			default:
+				// 不展开任何分类
+				break;
+		}
+		currentShowing = menuToExpand;
 	}
-	currentShowing = menuToExpand;
 }
 
+window.onresize = updateAllowedCategories;
+updateAllowedCategories();
 /**
  * 点击菜单，http开头的，导航到外页，否则导航到内页
  */
@@ -184,16 +190,15 @@ function toggle(item) {
         <v-icon :name="item1.show ? 'bi-chevron-double-up' : 'bi-chevron-double-down'" inverse />
       </div>
       <Transition name="menu">
-      <ul class="py-[3px]" v-show="item1.show">
+      <ul class="py-[3px] flex nav-container" v-show="item1.show">
         <span
           @click="handleMenuItemClick(item2.link)"
           v-for="item2 in item1.children"
           :key="item2.title"
           :to="item2.link"
 	  :class=" { 'bg-[#dcdcdc]': $route.path.trim().startsWith(item2.link.trim()) }"
-          class="leading-8 hover:bg-[#dcdcdc] cursor-pointer pr-[10px] pl-[16px] block select-none"
-          >{{ item2.title }}</span
-        >
+          class="leading-4 navitem-flex hover:bg-[#dcdcdc] cursor-pointer pr-[10px] pl-[16px] block text-wrap select-none"
+          >{{ item2.title }}</span>
       </ul>
     </Transition>
     </div>
@@ -222,5 +227,17 @@ function toggle(item) {
 		max-height: 16rem;
 	}
 }
+.nav-container {
+	flex-direction: column;
+	flex: 0 0 100%;
+}
 
+.navitem-flex {
+	display: flex;
+	flex: 0 0 100%;
+	justify-content: flex-start;
+	min-height: 2rem;
+	align-content: center;
+	flex-wrap: wrap;
+}
 </style>
