@@ -10,8 +10,14 @@ import { RouterView } from "vue-router";
     <div class="p-0 my-0 h-[100vh] flex flex-col">
       <Header />
       <div class="flex pb-[20px] 2xl:mx-[15vw] flex-1">
-        <LeftBar class="min-w-[15%] overflow-y-hidden hover:overflow-y-auto *:text-nowrap" />
-        <router-view class="flex-1" style="scrollbar-gutter: stable;"></router-view>
+        <div class="min-w-[15%] *:text-nowrap sticky top-0 bg-leftbar-bg">
+          <LeftBar class="min-w-[100%] *:text-nowrap sticky top-0" />
+        </div>
+
+        <router-view
+          class="flex-1"
+          style="scrollbar-gutter: stable"
+        ></router-view>
       </div>
     </div>
     <Footer class="fixed bottom-0" />
