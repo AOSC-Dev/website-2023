@@ -190,6 +190,8 @@ onMounted(() => {
 			lastStickyNavTop = top;
 		}
 	}
+	// 执行一次，避免刷新时看不见
+	handleBackToTopButton();
 	window.addEventListener('scroll', handleBackToTopButton);
 });
 
@@ -201,11 +203,11 @@ onMounted(() => {
     <div
       id="sticky-top-button"
       ref="stickyTopButton"
-      class="bg-primary text-white h-[2rem] px-[10px] m-0 select-none flex justify-between items-center cursor-pointer hover:bg-secondary"
+      class="bg-primary text-white h-[2rem] px-[10px] m-0 select-none flex justify-between items-center cursor-pointer hover:bg-secondary border-b border-b-white"
       onclick="window.scrollTo(0,0, 'smooth')"
       v-show="backToTopBtnShow"
       >
-    	    <v-icon name="bi-chevron-double-up" />
+            <v-icon name="bi-chevron-bar-up" />
     	    <span>Back to top</span>
     </div>
     </Transition>
