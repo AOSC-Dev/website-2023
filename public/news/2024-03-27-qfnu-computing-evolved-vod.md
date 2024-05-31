@@ -7,7 +7,7 @@ important: false
 draft: false
 ---
 
-![](../imgs/jisuanjinhua.jpg)
+![](/assets/news/2024-03-20-qfnu-computing-evolved.jpg)
 
 3 月 20 日，社区与曲阜师范大学计算机协会 (QFNU-ACE) 联合举办了名为“计算进化：安同曲阜师大行”的交流活动。
 
