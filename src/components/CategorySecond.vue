@@ -3,7 +3,7 @@ const props = defineProps(["title", "rightText", "rightUrl"]);
 </script>
 <template>
   <div
-    class="flex justify-between items-end bg-secondary text-white py-[5px] px-[10px] m-p select-none"
+    class="flex justify-between items-end bg-secondary text-white py-[5px] px-[10px] m-p select-none h-[2rem] leading-none items-center"
   >
     <span>
       {{ props.title }}
