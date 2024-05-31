@@ -2,7 +2,7 @@
 categories:
   - book
 title: "安记冰室・一月下"
-date: 2023-01-27T12:00:00+08:00
+date: 2024-01-27T12:00:00+08:00
 important: false
 draft: false
 ---
@@ -25,7 +25,7 @@ draft: false
 
 ### 安同“春晚”：首届年度“烙饼会”将于 2 月 15 日开幕
 
-![安同开源社区祝您新春快乐，龙年大吉！](/coffee-break/20240127/imgs/aosc-new-year.png)
+![安同开源社区祝您新春快乐，龙年大吉！](/assets/coffee-break/20240127/imgs/aosc-new-year.png)
 
 农历新年在即，是时候筹划新一年的坑和白日梦了。我们计划在 2 月 15 日（农历初六）下午至傍晚以视频会议的形式举办我社首届“烙饼会”，邀请社区各项目的主要贡献者介绍工作情况和未来一年的工作计划展望。届时，各讲者将以“闪电秀”的形式，用 10 - 20 分钟的时间介绍各自参与的项目，并在介绍完毕后接受来自社区的提问。“烙饼会”也将于 Bilibili 等视频平台全程推流直播。
 
@@ -55,7 +55,7 @@ draft: false
 
 ### AOSC 社区论坛 (AOSC BBS) 上线
 
-![社区论坛板块展示](/coffee-break/20240127/imgs/bbs.png)
+![社区论坛板块展示](/assets/coffee-break/20240127/imgs/bbs.png)
 
 年末，我们上线了社区论坛 (AOSC BBS) ，旨在为社区成员提供进行技术讨论和寻求技术支持的场合。本论坛亦用于发布社区新闻、活动公告和系统支持信息等。
 
@@ -74,14 +74,14 @@ draft: false
 
 本期内容是由[千须末 (OriginCode)](https://github.com/OriginCode) 编撰的“龙芯 3A5000 体验报告”，记录了其在九月初开始使用 3A5000 台式机的体验、遇到的问题和与社区好友们一同摸索到的各类解决方法。
 
-点此阅读：https://github.com/AOSC-Dev/newsroom/blob/master/sigill/20231231/zh_CN.md
+点此阅读：https://github.com/AOSC-Dev/newsroom/blob/master/sigill/20241231/zh_CN.md
 
 系统快讯
 --------
 
 ### AOSC OS on Windows 11.1.0 发布
 
-![AOSC OS on WSL 示意图](/coffee-break/20240127/imgs/aosc-os-on-wsl.png)
+![AOSC OS on WSL 示意图](/assets/coffee-break/20240127/imgs/aosc-os-on-wsl.png)
 
 月初，[Kexy Biscuit](https://github.com/KexyBiscuit) 发布了 AOSC OS on Windows 11.1.0，现可于微软商店获取。该项目基于微软的 [Windows Subsystem for Linux](https://learn.microsoft.com/zh-cn/windows/wsl/about) 技术构建，旨在方便用户在 Windows 上部署 AOSC OS 系统环境及各应用。
 
@@ -113,7 +113,7 @@ draft: false
 
 ### LiveKit 安装与维护环境新版展望
 
-![AOSC OS 图形化安装程序](/coffee-break/20240127/imgs/deploykit-gui.png)
+![AOSC OS 图形化安装程序](/assets/coffee-break/20240127/imgs/deploykit-gui.png)
 
 近期，在[傅孝元](https://github.com/eatradish)、[杨欣辉](https://github.com/Cyanoxygen)和[白铭骢](https://github.com/MingcongBai)等人的努力下，我们将在近期发布的 LiveKit 安装与维护环境中引入如下新特性：
 
@@ -124,7 +124,7 @@ draft: false
 
 ### 上半年新壁纸默认壁纸出炉
 
-![廿三年上半年默认壁纸图赏](/coffee-break/20240127/imgs/2023h1-wallpapers.jpg)
+![廿三年上半年默认壁纸图赏](/assets/coffee-break/20240127/imgs/2024h1-wallpapers.jpg)
 
 通过社区投票，我们选出了如下两张默认壁纸：
 
@@ -135,7 +135,7 @@ draft: false
 
 ### AOSC OS 将获芯动“风华”显卡官方支持
 
-![“风华二号”显卡样张（图转 PCBeta）](/coffee-break/20240127/imgs/fenghua-2.jpg)
+![“风华二号”显卡样张（图转 PCBeta）](/assets/coffee-break/20240127/imgs/fenghua-2.jpg)
 
 作为最早发布且功能相对完整的龙架构 (LoongArch)“新世界”发行版之一，AOSC OS 广受龙芯爱好者社区关注和喜爱。近日，我们的发行版也引起了国产显卡厂商芯动科技 (INNOSILICON) 的注意。上周，芯动的生态工程师与我社维护者[白铭骢](https://github.com/MingcongBai)和 Arch Linux、Debian 和 Gentoo 发行版龙架构版本的维护者接触，了解了适配上的各注意事项和预期。我社维护者也将参与该公司“风华”系列显卡的驱动测试、评估和反馈工作。
 
@@ -165,7 +165,7 @@ Mesa 24 的稳定版本预计将于二月发布，在此之前请保持该测试
 
 **字体更新后系统界面可能出现显示问题**
 
-![界面显示问题示意图](/coffee-break/20240127/imgs/font-issue.jpg)
+![界面显示问题示意图](/assets/coffee-break/20240127/imgs/font-issue.jpg)
 
 安装近期推送的字体更新，您可能会发现系统中某些程序界面上的字体渲染会出现问题（如图例）；该问题很可能是字体中数据结构发生变化导致的。
 
@@ -251,19 +251,19 @@ sudo chmod 444 /etc/machine-id
 
 请扫描此二维码添加好友并说明来意：申请加入 AOSC 社区频道。
 
-![wechat](/coffee-break/20240127/imgs/wechat.png)
+![wechat](/assets/coffee-break/20240127/imgs/wechat.png)
 
 ### QQ 群
 
-![qq](/coffee-break/20240127/imgs/qq.jpg)
+![qq](/assets/coffee-break/20240127/imgs/qq.jpg)
 
 ### Telegram 群组
 
-![telegram](/coffee-break/20240127/imgs/telegram.png)
+![telegram](/assets/coffee-break/20240127/imgs/telegram.png)
 
 ### Discord 语音频道
 
-![discord](/coffee-break/20240127/imgs/discord.png)
+![discord](/assets/coffee-break/20240127/imgs/discord.png)
 
 栏目介绍
 --------

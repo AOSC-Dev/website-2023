@@ -10,5 +10,5 @@ draft: false
 近日，社区好友蝰蛇设计 (Viperdesign) 提供了一台龙芯 3A6000 服务器，助力我社 AOSC OS 龙架构移植的维护工作；该服务器搭载 4 核 8 线程的龙芯 3A6000-HV 处理器及 32GiB 内存，目前该机器已开始接收 [BuildIt!](https://github.com/AOSC-Dev/buildit) 自动化框架分配的编译打包任务。
 
 ![](../imgs/viperdesign.jpg)
-[text](../../../website-2023/public/news/2024-03-01-loongarch-new-build-server.md)
+[text](../../../website-2024/public/news/2024-03-01-loongarch-new-build-server.md)
 感谢蝰蛇设计对社区工作的大力支持！

@@ -2,7 +2,7 @@
 categories:
   - book
 title: "安记冰室・五月上"
-date: 2023-05-12T12:00:00+08:00
+date: 2024-05-12T12:00:00+08:00
 important: false
 draft: false
 ---
@@ -17,11 +17,11 @@ draft: false
 
 ### AOSCC 2024：咱上长春去！
 
-![AOSCC 2024 东道主：吉林大学 Linux 用户协会！](/coffee-break/20240512/imgs/aoscc-2024-jlu.png)
+![AOSCC 2024 东道主：吉林大学 Linux 用户协会！](/assets/coffee-break/20240512/imgs/aoscc-2024-jlu.png)
 
 一年一度的社区线下聚会临近，来自多所院校的学生社团报名承办活动。最终，来自吉林大学和南阳理工学院的社团获得校方支持，角逐本年度 AOSCC 的东道主。为选出今年的活动场地，我们在 4 月 24 日至 5 月 1 日间组织了场地投票，期间有超过 500 人次参与了 AOSCC 2024 年的场地投票，足见社区对 AOSCC 的关注之高。
 
-![AOSCC 2024 投票结果](/coffee-break/20240512/imgs/aoscc-2024-poll.png)
+![AOSCC 2024 投票结果](/assets/coffee-break/20240512/imgs/aoscc-2024-poll.png)
 
 最终，吉林大学以 310:249 的优势胜出，成为 AOSCC 2024 的东道主！
 
@@ -29,7 +29,7 @@ draft: false
 
 ### 网络存储双加速：社区新软件源服务器即将上线
 
-![王邈与社区新软件源服务器在 Equinix HK5 机房前合影](/coffee-break/20240512/imgs/junko-in-transit.jpg)
+![王邈与社区新软件源服务器在 Equinix HK5 机房前合影](/assets/coffee-break/20240512/imgs/junko-in-transit.jpg)
 
 位于美国加利福尼亚州弗里蒙特市 [Hurricane Electric](https://he.net/) Fremont 2 数据中心的社区软件源服务器部署已逾四年，其带宽和存储性能均已出现明显局限。为保障服务质量和网络性能，我们决定组装部署新的软件源服务器。在 [Apernet Internet Laboratory（光圈网络）](https://apernet.io/)的大力支持下，我们在其位于香港特别行政区将军澳的 [Equinix](https://equinix.com/) HK5 数据中心完成了新软件源的组装上架，并将于近期上线服务安同 OS（英译：AOSC OS）用户。
 
@@ -47,7 +47,7 @@ draft: false
 
 ### 新世界很大：libLoL 0.1.5 发布
 
-![新世界很大，libLoL 带您去看看！](/coffee-break/20240512/imgs/liblol.png)
+![新世界很大，libLoL 带您去看看！](/assets/coffee-break/20240512/imgs/liblol.png)
 
 近日，社区开发者[王邈](https://github.com/shankerwangmiao)发布了龙架构旧世界 ABI 兼容运行时 libLoL 的 0.1.5 版：glibc 版本更新至 2.39，编译时新增 ABI 及符号完整性检查，并将 libcrypt 库实现更改为 libxcrypt；这些更改的主要目的是避免潜在的兼容性问题。
 
@@ -64,7 +64,7 @@ libLoL 支持如下新世界龙架构发行版：
 
 ### 流浪相机 2024 作品一瞥
 
-![流浪相机 2024 部分投稿作品图赏](/coffee-break/20240512/imgs/roaming-camera.jpg)
+![流浪相机 2024 部分投稿作品图赏](/assets/coffee-break/20240512/imgs/roaming-camera.jpg)
 
 于 3 月 25 日启动的社区“流浪相机”活动已完成四站接力，使用社区好友借用的相机在全国各地接力摄影。日前，前方参与者发回许多风格各异、赏心悦目的投稿作品，供各位读者欣赏。
 
@@ -75,7 +75,7 @@ libLoL 支持如下新世界龙架构发行版：
 
 ### 安同 OS 核心包集 Core 11.4.1 发布
 
-![Core 11 是安同 OS 在 2023 - 2024 周期的系统核心包集](/coffee-break/20240512/imgs/core-11-banner.png)
+![Core 11 是安同 OS 在 2024 - 2024 周期的系统核心包集](/assets/coffee-break/20240512/imgs/core-11-banner.png)
 
 近日，安同 OS 核心包集 (Core) 发布了 11.4.1 版，主要更新 glibc 运行时库至 2.38。该更新旨在改善与龙架构 (LoongArch) 新世界 ABI 商业软件（如龙芯 x86 架构转译器和风华二号显卡驱动）的兼容性。
 
@@ -88,7 +88,7 @@ libLoL 支持如下新世界龙架构发行版：
 
 ### 新技术，新优化：Core 12 前瞻
 
-![Core 12 将于今年暑期公开测试](/coffee-break/20240512/imgs/core-12-banner.png)
+![Core 12 将于今年暑期公开测试](/assets/coffee-break/20240512/imgs/core-12-banner.png)
 
 日前，[白铭骢](https://github.com/MingcongBai)和[陈嘉杰 (jiegec)](https://github.com/jiegec)发起了第 12 版系统核心包集 (Core 12) 的特性规划。该版核心包集将于今年暑期开启公测，包含诸如 glibc 2.39 和 GCC 编译器 14.1.0 等组件更新。
 
@@ -99,7 +99,7 @@ libLoL 支持如下新世界龙架构发行版：
 
 ### 功能增强，修复细化：一睹 Linux 内核 6.9 版更新内容
 
-![Linux 6.9 即将发布！](/coffee-break/20240512/imgs/kernel-6.9.png)
+![Linux 6.9 即将发布！](/assets/coffee-break/20240512/imgs/kernel-6.9.png)
 
 Linux 内核 6.9 版将在发布在即，安同 OS 已对该版本更新进行充分测试验证，预计将于本周正式推送更新。安同 OS 的 Linux 6.9 内核包含许多更新和修缮：
 
@@ -109,7 +109,7 @@ Linux 内核 6.9 版将在发布在即，安同 OS 已对该版本更新进行�
 
 ### 龙芯 x86 架构转译器 LATX 1.5 开放测试
 
-![LATX 可助您在龙架构设备上运行 x86 应用程序](/coffee-break/20240512/imgs/latx-logo-concept.png)
+![LATX 可助您在龙架构设备上运行 x86 应用程序](/assets/coffee-break/20240512/imgs/latx-logo-concept.png)
 
 近日，龙芯中科发布了龙芯 x86 架构转译器 LATX 1.5 的测试版，并创建了内测群和[工单系统](https://github.com/deuso/latx-build/issues)供用户和开发者反馈意见。LATX 1.5 引入了新的指令集扩展（如向量扩展和二进制转译指令集）支持，并加入 AOT（预编译）和运行时库直通等优化手段，可显著改善 x86 应用程序的运行性能。搭配 Wine 使用时，LATX 亦可运行为微软 Windows 设计发行的各类 x86 应用程序。
 
@@ -123,7 +123,7 @@ oma topics --opt-in latx-1.5.0
 
 ### Deb 系一家亲：小熊猫包管理 oma 初步实现 Debian/Ubuntu 支持
 
-![小熊猫包管理登陆 Ubuntu 24.04 LTS！](/coffee-break/20240512/imgs/oma-on-ubuntu.png)
+![小熊猫包管理登陆 Ubuntu 24.04 LTS！](/assets/coffee-break/20240512/imgs/oma-on-ubuntu.png)
 
 [傅孝元](https://github.com/eatradish)近日发布小熊猫包管理 [oma](https://github.com/AOSC-Dev/oma) 1.3.6 版更新，新增 Debian 和 Ubuntu 初步支持，让 Deb 系正统发行版也用上了来自安同“匪帮”的包管理前端，欢迎试用！
 
@@ -203,19 +203,19 @@ oma topics --opt-in latx-1.5.0
 
 请扫描此二维码添加好友**并说明来意：申请加入 AOSC 社区频道。**
 
-![wechat](coffee-break/20240323/imgs/wechat.png)
+![wechat](/assets/coffee-break/20240323/imgs/wechat.png)
 
 ### QQ 群
 
-![qq](coffee-break/20240323/imgs/qq.jpg)
+![qq](/assets/coffee-break/20240323/imgs/qq.jpg)
 
 ### Telegram 群组
 
-![telegram](coffee-break/20240323/imgs/telegram.png)
+![telegram](/assets/coffee-break/20240323/imgs/telegram.png)
 
 ### Discord 语音频道
 
-![discord](coffee-break/20240323/imgs/discord.png)
+![discord](/assets/coffee-break/20240323/imgs/discord.png)
 
 栏目介绍
 --------

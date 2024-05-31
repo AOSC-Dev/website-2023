@@ -2,7 +2,7 @@
 categories:
   - book
 title: "安记冰室・二月上"
-date: 2023-02-10T12:00:00+08:00
+date: 2024-02-10T12:00:00+08:00
 important: false
 draft: false
 ---
@@ -13,7 +13,7 @@ draft: false
 新春寄语
 --------
 
-![安同开源社区祝您新春快乐，龙年大吉！](/coffee-break/20240210/imgs/aosc-new-year.png)
+![安同开源社区祝您新春快乐，龙年大吉！](/assets/coffee-break/20240210/imgs/aosc-new-year.png)
 
 今天是龙年的第一天，希望大家都能与家人团聚、共享新春佳节的美好。
 
@@ -45,7 +45,7 @@ draft: false
 
 ### libLoL 主页上线
 
-![libLoL 主页](/coffee-break/20240210/imgs/liblol-home.png)
+![libLoL 主页](/assets/coffee-break/20240210/imgs/liblol-home.png)
 
 本周，社区贡献者[温柔](https://github.com/xunpod)完成并上线了龙架构新旧世界兼容层 libLoL 的主页，该站点将用于展示 libLoL 安装教程和各旧世界应用的兼容性信息、使用指南等。希望本站点的上线能帮助各位方便快捷地使用龙架构电脑完成日常工作；我们也同时希望开放、标准化和可持续的新世界软件生态能够日益壮大，取代当前商用软件仍在使用的封闭而不可持续的旧世界生态。
 
@@ -56,7 +56,7 @@ draft: false
 
 ### AOSC OS “合龙”工作圆满落幕
 
-![AOSC OS 架构支持示意](/coffee-break/20240210/imgs/port-tiers.zh-cn.png)
+![AOSC OS 架构支持示意](/assets/coffee-break/20240210/imgs/port-tiers.zh-cn.png)
 
 龙年第一天，历时逾半年的龙架构移植已完成合并，正式“合龙”。考虑到维护者和社区好友间用户之众，且该架构软件生态已基本成熟，龙架构将正式升格为 AOSC OS 支持水平最高的一级架构。
 
@@ -98,19 +98,19 @@ draft: false
 
 请扫描此二维码添加好友并说明来意：申请加入 AOSC 社区频道。
 
-![wechat](/coffee-break/20240210/imgs/wechat.png)
+![wechat](/assets/coffee-break/20240210/imgs/wechat.png)
 
 ### QQ 群
 
-![qq](/coffee-break/20240210/imgs/qq.jpg)
+![qq](/assets/coffee-break/20240210/imgs/qq.jpg)
 
 ### Telegram 群组
 
-![telegram](/coffee-break/20240210/imgs/telegram.png)
+![telegram](/assets/coffee-break/20240210/imgs/telegram.png)
 
 ### Discord 语音频道
 
-![discord](/coffee-break/20240210/imgs/discord.png)
+![discord](/assets/coffee-break/20240210/imgs/discord.png)
 
 栏目介绍
 --------

@@ -2,7 +2,7 @@
 categories:
   - book
 title: "安记冰室・二月下"
-date: 2023-02-26T12:00:00+08:00
+date: 2024-02-26T12:00:00+08:00
 important: false
 draft: false
 ---
@@ -29,11 +29,11 @@ draft: false
 
 报名链接：https://f.wps.cn/g/fHeWYf29/
 
-![亦可扫此二维码报名](/coffee-break/20240226/imgs/roaming-camera-signup.png)
+![亦可扫此二维码报名](/assets/coffee-break/20240226/imgs/roaming-camera-signup.png)
 
 ### “烙饼会”直播录像发布
 
-![社区年度烙饼会](/coffee-break/20240226/imgs/aosc-springcon-2024.png)
+![社区年度烙饼会](/assets/coffee-break/20240226/imgs/aosc-springcon-2024.png)
 
 社区贡献者[温柔](https://github.com/xunpod)和[王江津](https://github.com/RedL0tus)分别在 Bilibili 和 YouTube 上发布了我社“烙饼会”的现场录像，欢迎观看。
 
@@ -52,7 +52,7 @@ draft: false
 
 ### 龙架构新构建服务器上线
 
-![社区好友 Xinmudotmoe 贡献的龙架构构建服务器](/coffee-break/20240226/imgs/loongarch64-server-dragonfly.png)
+![社区好友 Xinmudotmoe 贡献的龙架构构建服务器](/assets/coffee-break/20240226/imgs/loongarch64-server-dragonfly.png)
 
 近日，社区好友 [Xinmudotmoe](http://t.me/xm_moe) 为社区提供了一台龙芯 3C5000 服务器，助力我社 AOSC OS 龙架构移植的维护工作；该机器搭载 16 个核心和 128GiB 内存，更通过修改固件[^1]将处理器主频超到了 2.5GHz，一跃成为我社性能最高的龙架构编译服务器。
 
@@ -65,7 +65,7 @@ draft: false
 
 ### AOSC OS 龙架构版发布！
 
-![AOSC OS 龙架构版发布！](/coffee-break/20240226/imgs/aosc-os-loongarch64.png)
+![AOSC OS 龙架构版发布！](/assets/coffee-break/20240226/imgs/aosc-os-loongarch64.png)
 
 日前，我们在龙芯开源社区论坛发布了 AOSC OS 的第一批龙架构稳定版系统，现可供下载，欢迎试用！
 
@@ -75,7 +75,7 @@ AOSC OS 以“简明可靠”为设计及维护目标的，面向有一定 Linux
 
 ### Debian/Ubuntu 软件兼容框架 Spiral 即将开放测试
 
-![本 AOSC OS 具有超级牛力](/coffee-break/20240226/imgs/spiral-cow-power.png)
+![本 AOSC OS 具有超级牛力](/assets/coffee-break/20240226/imgs/spiral-cow-power.png)
 
 社区开发者[王江津](https://github.com/RedL0tus)近日完成了 Spiral 软件兼容框架的初步开发，可为 AOSC OS 提供为 Debian、Ubuntu 及各类衍生发行版（如 Loongnix 和统信 UOS）开发的商用软件的兼容性。
 
@@ -118,19 +118,19 @@ AOSC OS 以“简明可靠”为设计及维护目标的，面向有一定 Linux
 
 请扫描此二维码添加好友并说明来意：申请加入 AOSC 社区频道。
 
-![wechat](/coffee-break/20240226/imgs/wechat.png)
+![wechat](/assets/coffee-break/20240226/imgs/wechat.png)
 
 ### QQ 群
 
-![qq](/coffee-break/20240226/imgs/qq.jpg)
+![qq](/assets/coffee-break/20240226/imgs/qq.jpg)
 
 ### Telegram 群组
 
-![telegram](/coffee-break/20240226/imgs/telegram.png)
+![telegram](/assets/coffee-break/20240226/imgs/telegram.png)
 
 ### Discord 语音频道
 
-![discord](/coffee-break/20240226/imgs/discord.png)
+![discord](/assets/coffee-break/20240226/imgs/discord.png)
 
 栏目介绍
 --------
