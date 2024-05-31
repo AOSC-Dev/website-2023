@@ -179,7 +179,7 @@ function toggle(item) {
 </script>
 
 <template>
-  <div class="bg-leftbar-bg min-h-[100%]">
+  <div>
     <div v-for="(item1, index) in linkArr" :key="item1.title">
       <div
         class="bg-primary text-white px-[10px] py-[5px] m-0 select-none flex justify-between items-center cursor-pointer hover:bg-secondary select-none"
