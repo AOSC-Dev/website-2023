@@ -1,10 +1,16 @@
 <script setup>
+
+/**
+ * 显示markdown内容，功能未完成...
+ */
 import { onMounted, ref } from "vue";
 import axios from "axios";
 import yaml from "js-yaml";
 import CategorySecond from "../../components/CategorySecond.vue";
-import { useRoute } from "vue-router";
+import { useRoute, useProps } from "vue-router";
 import { setTitle } from '../../utils/utils.js'
+
+const props = useProps(['mdPath'])
 
 const mdRes = ref();
 const route = useRoute();
