@@ -194,28 +194,6 @@ oma topics --opt-in latx-1.5.0
 - [Sharelter](https://github.com/Sharelter)
 - [Student Main](https://github.com/stdmnpkg)
 
-一起吹水
---------
-
-互联网是我社的主要活动场所，欢迎来社区各群聊及语音频道交流玩耍：
-
-### 微信群
-
-请扫描此二维码添加好友**并说明来意：申请加入 AOSC 社区频道。**
-
-![wechat](/assets/coffee-break/20240323/imgs/wechat.png)
-
-### QQ 群
-
-![qq](/assets/coffee-break/20240323/imgs/qq.jpg)
-
-### Telegram 群组
-
-![telegram](/assets/coffee-break/20240323/imgs/telegram.png)
-
-### Discord 语音频道
-
-![discord](/assets/coffee-break/20240323/imgs/discord.png)
 
 栏目介绍
 --------

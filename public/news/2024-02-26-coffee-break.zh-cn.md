@@ -109,28 +109,6 @@ AOSC OS 以“简明可靠”为设计及维护目标的，面向有一定 Linux
 
 - [skybird](https://github.com/SkyBird233)
 
-一起吹水
---------
-
-互联网是我社的主要活动场所，欢迎来社区各群聊及语音频道交流玩耍：
-
-### 微信群
-
-请扫描此二维码添加好友并说明来意：申请加入 AOSC 社区频道。
-
-![wechat](/assets/coffee-break/20240226/imgs/wechat.png)
-
-### QQ 群
-
-![qq](/assets/coffee-break/20240226/imgs/qq.jpg)
-
-### Telegram 群组
-
-![telegram](/assets/coffee-break/20240226/imgs/telegram.png)
-
-### Discord 语音频道
-
-![discord](/assets/coffee-break/20240226/imgs/discord.png)
 
 栏目介绍
 --------
