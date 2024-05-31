@@ -10,7 +10,7 @@ const languageList = reactive([
 <template>
   <div class="bg-[url('/assets/heading/heading-wave.svg')] bg-cover bg-no-repeat bg-[center_top_-7vh]">
     <div
-      class="bg-primary text-white flex justify-end pr-[14vw] py-[5px] whitespace-nowrap text-clip absolute right-0 w-[68vw] *:ml-[12px] *:no-underline z-20"
+      class="bg-primary text-white flex justify-end pr-[0.5rem] 2xl:pr-[14vw] py-[5px] whitespace-nowrap text-clip absolute right-0 w-[68vw] *:ml-[12px] *:no-underline z-20"
     >
       <router-link to="/download">下载 AOSC OS</router-link>
       <span>|</span>
