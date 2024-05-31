@@ -2,7 +2,7 @@
 categories:
   - book
 title: "安记冰室・五月下"
-date: 2023-05-26T12:00:00+08:00
+date: 2024-05-26T12:00:00+08:00
 important: false
 draft: false
 ---
@@ -17,7 +17,7 @@ draft: false
 
 ### 自白：安同开源社区、开源产业与全民信创
 
-![白铭骢在软件所“开源之夏校园行”吉林大学站分享](/coffee-break/20240526/imgs/ospp-jlu-2024.jpg)
+![白铭骢在软件所“开源之夏校园行”吉林大学站分享](/assets/coffee-break/20240526/imgs/ospp-jlu-2024.jpg)
 
 > 安同开源社区，一个由初中生创立的技术社区至今已走过超过 12 个年头。从“为中国创造”的初心、国际化接轨、本地化探索到与产业化和信创行业的互动，这个以志愿者组织、运作和管理的社区坚持用爱发电，推动国际开源软件和国产软硬件的民间关注与参与。在商业化社区与国家全力推进开源产业化的当今，安同开源社区要如何坚持自己的独特性、建设性乃至话语权？
 
@@ -27,7 +27,7 @@ draft: false
 
 ### AArch64 新构建服务器上线
 
-![又一 AArch64 构建服务器上线，由华为鲲鹏 920 驱动](/coffee-break/20240526/imgs/aarch64-new-server.png)
+![又一 AArch64 构建服务器上线，由华为鲲鹏 920 驱动](/assets/coffee-break/20240526/imgs/aarch64-new-server.png)
 
 近日，社区好友 quiccat 为社区提供了一台基于华为鲲鹏 920 处理器的 AArch64 服务器，搭载 16 个虚拟化核心和 64GiB 内存，将助力安同 OS (AOSC OS) AArch64 移植的维护工作。
 
@@ -38,7 +38,7 @@ draft: false
 
 ### 八面玲珑：安同 OS 启动玲珑软件生态测试预览
 
-![在安同 OS 上通过玲珑包管理安装的 deepin 浏览器、邮件客户端和日历应用](/coffee-break/20240526/imgs/linglong-on-aosc.png)
+![在安同 OS 上通过玲珑包管理安装的 deepin 浏览器、邮件客户端和日历应用](/assets/coffee-break/20240526/imgs/linglong-on-aosc.png)
 
 在发行版间软件生态割裂的当今，许多组织与单位都在探索应用容器化和标准化的分发方案，以期降低软件发行商的适配压力和用户的心智负担。[玲珑](https://linglong.dev/)是来自[统信软件技术有限公司](https://uniontech.com/)的又一跨发行版生态项目，主要提供各类国产及 deepin 第一方桌面应用。
 
@@ -117,19 +117,19 @@ BuildIt! 在解决构建和分发自动化之余，[傅孝元](https://github.co
 
 请扫描此二维码添加好友**并说明来意：申请加入 AOSC 社区频道。**
 
-![wechat](/coffee-break/20240526/imgs/wechat.png)
+![wechat](/assets/coffee-break/20240526/imgs/wechat.png)
 
 ### QQ 群
 
-![qq](/coffee-break/20240526/imgs/qq.jpg)
+![qq](/assets/coffee-break/20240526/imgs/qq.jpg)
 
 ### Telegram 群组
 
-![telegram](/coffee-break/20240526/imgs/telegram.png)
+![telegram](/assets/coffee-break/20240526/imgs/telegram.png)
 
 ### Discord 语音频道
 
-![discord](/coffee-break/20240526/imgs/discord.png)
+![discord](/assets/coffee-break/20240526/imgs/discord.png)
 
 栏目介绍
 --------

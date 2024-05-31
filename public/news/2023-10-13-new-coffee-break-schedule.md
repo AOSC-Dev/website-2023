@@ -1,6 +1,6 @@
 ---
 categories:
-  - news
+  - book
   - warning
 title: "New Publishing Schedule for \"Coffee Break\""
 date: 2023-10-13T23:00:00+08:00

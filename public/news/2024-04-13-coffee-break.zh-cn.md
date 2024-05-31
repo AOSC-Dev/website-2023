@@ -2,7 +2,7 @@
 categories:
   - book
 title: "安记冰室・四月上"
-date: 2023-04-13T12:00:00+08:00
+date: 2024-04-13T12:00:00+08:00
 important: false
 draft: false
 ---
@@ -15,7 +15,7 @@ draft: false
 用词说明
 --------
 
-![安同开源社区系统项目徽标与名称](/coffee-break/20240413/imgs/new-logos.png)
+![安同开源社区系统项目徽标与名称](/assets/coffee-break/20240413/imgs/new-logos.png)
 
 从本期《安记冰室》开始，我们将按照当前社区系统项目的中文命名指代 AOSC OS，即：安同 OS。为方便读者，我们会在首次使用“安同 OS”一词时附加“（英译名：AOSC OS）”说明。
 
@@ -24,7 +24,7 @@ draft: false
 
 ### 三个项目！我社已获批参与开源之夏
 
-![软件所“开源之夏”项目主页](/coffee-break/20240413/imgs/ospp-2024.jpg)
+![软件所“开源之夏”项目主页](/assets/coffee-break/20240413/imgs/ospp-2024.jpg)
 
 四月初，中科院软件所“开源之夏”活动组委会公布了 2024 年“开源之夏”活动的社区与组织，自 2020 年开始参与的我社也在列。今年，组委会为我社分配了三个项目配额。
 
@@ -41,7 +41,7 @@ draft: false
 
 ### AOSC 启动盘制作向导发布
 
-![基于 Fedora Media Writer 制作的 AOSC 启动盘制作向导](/coffee-break/20240413/imgs/media-writer.png)
+![基于 Fedora Media Writer 制作的 AOSC 启动盘制作向导](/assets/coffee-break/20240413/imgs/media-writer.png)
 
 应用户要求，我们基于 Fedora Media Writer 制作了启动盘制作向导，方便 Windows、macOS 和安同 OS 用户制作启动盘
 
@@ -65,7 +65,7 @@ oma install aosc-media-writer
 
 …… 什么，你说比例失调？你就说能不能原神启动吧（虽然是云原神）——
 
-![龙芯 NUC 小主机也可以（云）原神，启动！（摄影：轮子妈）](/coffee-break/20240413/imgs/loong-genshin.jpg)
+![龙芯 NUC 小主机也可以（云）原神，启动！（摄影：轮子妈）](/assets/coffee-break/20240413/imgs/loong-genshin.jpg)
 
 当然，能玩的原生游戏还是越多越好啦，这部分尚需努力。那么，近期龙架构版还有啥玩头呢？
 
@@ -81,7 +81,7 @@ oma topics --opt-in linux-kernel-6.9
 
 ### 超级小熊猫力：oma 1.3 开放测试
 
-![oma 1.3 终端管理界面](/coffee-break/20240413/imgs/oma-1.3.png)
+![oma 1.3 终端管理界面](/assets/coffee-break/20240413/imgs/oma-1.3.png)
 
 小熊猫包管理 oma 1.3 版本的特性开发业已完成，现开放测试！oma 1.3 引入了 TUI 界面，提供直观的搜索、安装和管理功能；亦改进了进程管理、测试源界面和依赖错误报告界面
 
@@ -132,19 +132,19 @@ oma topics --opt-in oma-1.3.0
 
 请扫描此二维码添加好友并说明来意：申请加入 AOSC 社区频道。
 
-![wechat](/coffee-break/20240323/imgs/wechat.png)
+![wechat](/assets/coffee-break/20240323/imgs/wechat.png)
 
 ### QQ 群
 
-![qq](/coffee-break/20240323/imgs/qq.jpg)
+![qq](/assets/coffee-break/20240323/imgs/qq.jpg)
 
 ### Telegram 群组
 
-![telegram](/coffee-break/20240323/imgs/telegram.png)
+![telegram](/assets/coffee-break/20240323/imgs/telegram.png)
 
 ### Discord 语音频道
 
-![discord](/coffee-break/20240323/imgs/discord.png)
+![discord](/assets/coffee-break/20240323/imgs/discord.png)
 
 栏目介绍
 --------
