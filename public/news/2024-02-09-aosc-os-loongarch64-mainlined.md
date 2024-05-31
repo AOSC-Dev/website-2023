@@ -7,6 +7,8 @@ important: false
 draft: false
 ---
 
+![](/assets/news/2024-02-09-aosc-os-loongarch64-mainlined.jpg)
+
 龙年第一天，历时逾半年的龙架构移植已完成合并，正式“合龙”！
 
 该架构软件源已从 `frontier` 移至 `stable`，后续更新将推送到此仓库。
