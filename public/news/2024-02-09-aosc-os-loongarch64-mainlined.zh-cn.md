@@ -6,6 +6,7 @@ date: 2024-02-09T22:19:13-08:00
 important: false
 draft: false
 ---
+![](/assets/news/2024-02-09-aosc-os-loongarch64-mainlined.jpg)
 
 龙年第一天，历时逾半年的龙架构移植已完成合并，正式“合龙”！
 
