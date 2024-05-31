@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { setTitle } from './utils/utils.js'
 import Index from '/src/pages/index/Index.vue'
 import About from './pages/about/Index.vue'
 import Download from './pages/download/Index.vue'
@@ -18,39 +19,66 @@ const router = createRouter({
     {
       path: '/',
       name: 'index',
-      component: Index
+      component: Index,
+      meta: {
+        title: '社区门户'
+      }
     }, {
       path: '/about',
       name: 'about',
-      component: About
+      component: About,
+      meta: {
+        title: '关于社区'
+      }
     }, {
       path: '/download',
       name: 'download',
-      component: Download
+      component: Download,
+      meta: {
+        title: '下载AOSC OS'
+      }
     }, {
       path: '/aosc-os',
       name: 'aoscos',
-      component: AoscOs
+      component: AoscOs,
+      meta: {
+        title: 'AOSC OS'
+      }
     }, {
       path: '/afterglow',
       name: 'afterglow',
-      component: Afterglow
+      component: Afterglow,
+      meta: {
+        title: 'Afterglow'
+      }
     }, {
       path: '/contact',
       name: 'contact',
-      component: Contact
+      component: Contact,
+      meta: {
+        title: '联系方式'
+      }
     }, {
       path: '/guidelines',
       name: 'guidelines',
-      component: Guidelines
+      component: Guidelines,
+      meta: {
+        title: '人际关系准则'
+      }
     }, {
       path: '/sponsoring',
       name: 'sponsoring',
-      component: Sponsoring
+      component: Sponsoring,
+      meta: {
+        title: '赞助与众筹'
+      }
     }, {
       path: '/news',
       name: 'news',
       component: News,
+      meta: {
+        title: '新闻资讯'
+      }
     }, {
       path: '/news/list/:category/:categoryTitle',
       name: 'newsList',
@@ -71,6 +99,13 @@ const router = createRouter({
       component: PageNotFound
     }
   ]
+})
+
+router.afterEach((to, from) => {
+  const meta = to.meta
+  if (meta && meta.title) {
+    setTitle(meta.title)
+  }
 })
 
 export default router
