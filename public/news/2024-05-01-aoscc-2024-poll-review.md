@@ -6,6 +6,7 @@ date: 2024-05-01T22:18:13-08:00
 important: false
 draft: false
 ---
+![AOSCC 2024 投票结果](/assets/coffee-break/20240512/imgs/aoscc-2024-poll.png)
 
 一周间，共有超过 500 人次参与了 AOSCC 2024 年的场地投票，足见各位对 AOSCC 的关注，感谢各位踊跃参与！
 
