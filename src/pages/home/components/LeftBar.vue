@@ -1,5 +1,5 @@
 <script setup name="LeftBar">
-import { reactive, ref, registerRuntimeCompiler } from "vue";
+import { reactive, ref, registerRuntimeCompiler, onMounted } from "vue";
 import { useRouter } from "vue-router";
 import { toOutUrl } from "/src/utils/utils.js";
 
@@ -176,13 +176,42 @@ function toggle(item) {
 	}
 }
 
+const stickyNav = ref(null);
+const backToTopBtnShow = ref(false);
+let lastStickyNavTop = 0;
+
+onMounted(() => {
+	function handleBackToTopButton() {
+		// 检测 sticky-nav 是否被钉住
+		// 被钉住了，显示 “返回页首” 按钮
+		let top = stickyNav.value.getBoundingClientRect().top;
+		if (lastStickyNavTop != top) {
+			backToTopBtnShow.value = (top == 0);
+			lastStickyNavTop = top;
+		}
+	}
+	window.addEventListener('scroll', handleBackToTopButton);
+});
+
 </script>
 
 <template>
-  <div>
+  <div id="sticky-nav" ref="stickyNav">
+    <Transition name="anim-button">
+    <div
+      id="sticky-top-button"
+      ref="stickyTopButton"
+      class="bg-primary text-white h-[2rem] px-[10px] m-0 select-none flex justify-between items-center cursor-pointer hover:bg-secondary"
+      onclick="window.scrollTo(0,0, 'smooth')"
+      v-show="backToTopBtnShow"
+      >
+    	    <v-icon name="bi-chevron-double-up" />
+    	    <span>Back to top</span>
+    </div>
+    </Transition>
     <div v-for="(item1, index) in linkArr" :key="item1.title">
       <div
-        class="bg-primary text-white px-[10px] py-[5px] m-0 select-none flex justify-between items-center cursor-pointer hover:bg-secondary select-none"
+        class="bg-primary text-white h-[2rem] px-[10px] py-[5px] m-0 select-none flex justify-between items-center cursor-pointer hover:bg-secondary"
 	@click="toggle(item1)">
         <span>
           {{ item1.title }}
@@ -206,10 +235,6 @@ function toggle(item) {
 </template>
 
 <style scoped>
-.menu-enter {
-	overflow-y: hidden;
-	animation: menuslide-in .15s linear;
-}
 .menu-enter-active {
 	overflow-y: hidden;
 	animation: menuslide-in .15s linear;
@@ -217,6 +242,25 @@ function toggle(item) {
 .menu-leave-active {
 	overflow-y: hidden;
 	animation: menuslide-in .15s linear reverse;
+}
+
+.anim-button-enter-active {
+	overflow-y: hidden;
+	animation: backtotop-slidein .15s linear;
+}
+
+.anim-button-leave-active {
+	overflow-y: hidden;
+	animation: backtotop-slidein .15s linear reverse;
+}
+
+@keyframes backtotop-slidein {
+	0% {
+		height: 0;
+	}
+	100% {
+		height: 2rem;
+	}
 }
 
 @keyframes menuslide-in {
