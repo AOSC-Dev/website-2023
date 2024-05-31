@@ -9,7 +9,7 @@ draft: false
 
 ## 2024-03-06: AOSC OS 龙架构版本系统发行更新公告
 
-![](../imgs/aosc-for-loongarch64-2024-03-06.jpg)
+![AOSC OS 龙架构版](/assets/coffee-break/20240309/imgs/aosc-os-loongarch64.png)
 
 龙架构版本发布系统发行更新：安装盘版本为 20240303，系统包版本为 20240304
 
