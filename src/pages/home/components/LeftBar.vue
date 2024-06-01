@@ -12,17 +12,19 @@ const linkArr = reactive([
   {
     title: "社区项目",
     children: [
-      { title: "AOSC OS", link: "/aosc-os" },
-      { title: "Afterglow", link: "/afterglow" },
-      { title: "LiveKit", link: "#" },
-      { title: "小熊猫包管理", link: "#" },
+      { title: "安同 OS", link: "/aosc-os" },
+      { title: "星霞 OS", link: "/afterglow" },
+      { title: "libLoL 兼容层", link: "/liblol" },
+      { title: "小熊猫包管理 (oma)", link: "/oma" },
+	    { title: "软件本地化", link: "/l10n" },
     ],
     show: true,
   },
   {
-    title: "咨询与支持",
+    title: "资讯与支持",
     children: [
       { title: "新闻资讯", link: "/news" },
+	    { title: "支持中心", link: "#" },
       { title: "活动相册", link: "#" },
       { title: "安装指南", link: "#" },
       { title: "系统需求", link: "#" },
@@ -33,11 +35,12 @@ const linkArr = reactive([
   {
     title: "事务与文化",
     children: [
-      { title: "人际关系准则", link: "/guidelines" },
-      { title: "社区简介", link: "#" },
-      { title: "例会与投票", link: "#" },
+	    { title: "社区简介", link: "/about" },
+      { title: "线下活动", link: "#" },
+	    { title: "例会与投票", link: "#" },
       { title: "赞助与众筹", link: "/sponsoring" },
       { title: "实习资源", link: "#" },
+      { title: "人际关系准则", link: "/guidelines" },
     ],
     show: true,
   },
@@ -46,9 +49,11 @@ const linkArr = reactive([
     children: [
       { title: "文档", link: "https://wiki.aosc.io/" },
       { title: "代码", link: "https://github.com/AOSC-Dev" },
-      { title: "贡献者邮箱", link: "https://mail20.mymailcheap.com/" },
+      { title: "邮箱", link: "https://mail20.mymailcheap.com/" },
       { title: "镜像源", link: "https://aosc.io/repo/" },
-      { title: "公共粘贴板", link: "https://paste.aosc.io" },
+      { title: "构建服务器", link: "https://aosc.io/repo/" },
+      { title: "自动化设施", link: "https://aosc.io/repo/" },
+      { title: "粘贴板", link: "https://paste.aosc.io" },
     ],
     show: true,
   },
@@ -198,7 +203,7 @@ onMounted(() => {
       v-show="backToTopBtnShow"
       >
             <v-icon name="bi-chevron-bar-up" />
-    	    <span>Back to top</span>
+    	    <span>返回页首</span>
     </div>
     </Transition>
     <div v-for="(item1, index) in linkArr" :key="item1.title">
