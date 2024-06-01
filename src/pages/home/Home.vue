@@ -9,9 +9,20 @@ import { RouterView } from "vue-router";
   <div>
     <div class="bg-floral p-0 my-0 min-h-[100vh] flex flex-col">
       <Header />
-      <div class="main-content flex pb-[20px] flex-1">
-        <div class="horizontal-spacer"></div>
-        <div class="content-container flex">
+      <div class="flex justify-center">
+        <div class="content-container">
+          <router-link to="/">
+            <img
+              src="/assets/heading/portal-logo.zh-cn.svg"
+              class="w-[15vw] pt-[30px] pb-[15px] ml-[3vw]"
+              alt="logo"
+            />
+          </router-link>
+        </div>
+      </div>
+
+      <div class="main-content flex pb-[20px] flex-1 justify-center">
+        <div class="content-container shadow flex">
           <div class="min-w-[15%] *:text-nowrap sticky top-0 bg-leftbar-bg">
             <LeftBar class="min-w-[100%] *:text-nowrap sticky top-0" />
           </div>
@@ -21,7 +32,6 @@ import { RouterView } from "vue-router";
             style="scrollbar-gutter: stable"
           ></router-view>
         </div>
-        <div class="horizontal-spacer"></div>
       </div>
     </div>
     <Footer class="fixed bottom-0" />
@@ -30,20 +40,9 @@ import { RouterView } from "vue-router";
 
 <style scoped>
 .bg-floral {
-	background-color: #fffbf5;
-	background-image: url(/assets/backgrounds/floral.svg);
-	background-position: center;
-	background-attachment: fixed;
-}
-.horizontal-spacer {
-  flex-grow: 1;
-}
-.content-container {
-  width: 70%;
-  min-width: 1024px;
-  max-width: 1280px;
-  flex: 0 0 100%;
-  background: #fafafa;
-  box-shadow: 0px 0px 10px #999;
+  background-color: #fffbf5;
+  background-image: url(/assets/backgrounds/floral.svg);
+  background-position: center;
+  background-attachment: fixed;
 }
 </style>

@@ -4,8 +4,8 @@ const nowYear = new Date().getFullYear();
 </script>
 
 <template>
-  <div class="bg-secondary">
-    <div class="footerbar text-white py-[2px] pl-[0.5rem] 2xl:pl-[15vw] w-[100vw]">
+  <div class="bg-secondary text-white py-[2px] flex justify-center w-[100vw] footerbar">
+    <div class="content-container">
       <span>&copy; 安同开源社区&nbsp;&nbsp;&nbsp;&nbsp;2011 - {{ nowYear }}</span>
       <span class="mx-[20px]">|</span>
       <a href="">网页源码</a>

@@ -8,44 +8,44 @@ const languageList = reactive([
 </script>
 
 <template>
-  <div class="bg-cover bg-no-repeat bg-[center_top_-15vh]">
-    <div
-      class="topbar bg-primary text-white flex justify-end pr-[0.5rem] 2xl:pr-[16vw] py-[5px] whitespace-nowrap text-clip absolute right-0 2xl:w-[36vw] w-[78vw] *:ml-[12px] *:no-underline z-20"
-    >
-      <router-link to="/download">下载 AOSC OS</router-link>
-      <span>|</span>
-      <router-link to="/about">关于社区</router-link>
-      <span>|</span>
-      <section class="flex flex-col">
-        <div
-          class="relative overflow-hidden hover:overflow-visible h-[calc(1em+10px)] *:cursor-pointer"
-        >
-          <span>网站语言</span>
-          <ul class="bg-primary pt-[7px]">
-            <li
-              v-for="item in languageList"
-              :key="item.value"
-              class="hover:bg-secondary text-white py-2 px-2"
-            >
-              {{ item.name }}
-            </li>
-          </ul>
-        </div>
-      </section>
+  <div class="flex">
+    <div class="grow"></div>
+    <div class="content-container flex justify-end">
+      <div
+        class="bg-primary text-white flex justify-end py-[5px] whitespace-nowrap text-clip *:ml-[12px] *:no-underline z-20 pl-[50px]"
+      >
+        <router-link to="/download">下载 AOSC OS</router-link>
+        <span>|</span>
+        <router-link to="/about">关于社区</router-link>
+        <span>|</span>
+        <section class="flex flex-col">
+          <div
+            class="relative overflow-hidden hover:overflow-visible h-[calc(1em+10px)] *:cursor-pointer"
+          >
+            <span>网站语言</span>
+            <ul class="bg-primary pt-[7px]">
+              <li
+                v-for="item in languageList"
+                :key="item.value"
+                class="hover:bg-secondary text-white py-2 px-2"
+              >
+                {{ item.name }}
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
     </div>
-
-    <router-link to="/">
-      <img
-        src="/assets/heading/portal-logo.zh-cn.svg"
-        class="2xl:w-[15vw] w-[20vw] pt-[1.75rem] pb-[1.75rem] 2xl:ml-[18vw] ml-[3vw]"
-        alt="logo"
-      />
-    </router-link>
+    <div class="bg-primary grow"></div>
   </div>
 </template>
 
 <style scoped>
 .topbar {
-	box-shadow: 0px 0px 10px #666;
+  box-shadow: 0px 0px 10px #666;
+}
+
+.topbar-r {
+  box-shadow: 10px 0px 10px #666;
 }
 </style>

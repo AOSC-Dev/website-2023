@@ -1,3 +1,5 @@
+import router from '../router.js'
+
 export function getImgUrl(url) {
   return new URL(`${url}`, import.meta.url).href
 }
@@ -10,4 +12,12 @@ export const title = '安同开源社区 (AOSC)'
 
 export function setTitle(titlePre) {
   document.title = titlePre + ' | ' + title
+}
+
+export function toUrl(url) {
+  if (url.indexOf("http") == 0) {
+    toOutUrl(url);
+  } else {
+    router.push(url);
+  }
 }
