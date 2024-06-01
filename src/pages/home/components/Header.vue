@@ -48,4 +48,12 @@ const languageList = reactive([
 .topbar-r {
   box-shadow: 10px 0px 10px #666;
 }
+
+@media (max-width: 1280px) {
+	.bg-cover {
+		background-image: url('/assets/backgrounds/floral.svg');
+		background-attachment: fixed;
+		background-position: center;
+	}
+}
 </style>
