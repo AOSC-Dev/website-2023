@@ -6,12 +6,6 @@ import Select from "./components/Select.vue";
 
 <template>
   <div class="pl-[1px]">
-    <category-second title="下载主页" />
-    <img
-      src="/assets/banners/banner_download.svg"
-      class="w-full h-auto"
-      alt=""
-    />
     <category-second title="AOSC OS" />
     <div class="flex mb-3">
       <img
