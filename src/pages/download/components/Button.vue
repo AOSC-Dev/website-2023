@@ -1,9 +1,14 @@
 <script setup>
 </script>
 <template>
-  <span class="bg-secondary text-leftbar-bg py-[5px] px-[20px] hover:opacity-85 ml-1 cursor-pointer">
+  <span class="button bg-secondary hover:opacity-85 ml-1 cursor-pointer">
     <slot></slot>
   </span>
 </template>
 
-<style scoped></style>
+<style scoped>
+.button {
+  border: #7f9e7f;
+  border-radius: 5px;
+}
+</style>
