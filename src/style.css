@@ -17,9 +17,9 @@ a:hover {
 
 .content-container {
   width: 70vw;
-  min-width: 1024px;
+  min-width: 960px;
   max-width: 1280px;
-  flex: 0 0 100%;
+  /* flex: 0 0 100%; */
 }
 
 .shadow {
