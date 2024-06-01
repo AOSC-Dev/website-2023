@@ -15,6 +15,12 @@ a:hover {
   text-decoration: underline;
 }
 
+@media (min-width: 960px) {
+	.content-container {
+		width: 90vw !important;
+	}
+}
+
 .content-container {
   width: 70vw;
   min-width: 960px;
