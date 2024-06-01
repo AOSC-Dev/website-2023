@@ -1,7 +1,7 @@
 <script setup name="LeftBar">
 import { reactive, ref, registerRuntimeCompiler, onMounted } from "vue";
 import { useRouter } from "vue-router";
-import { toOutUrl } from "/src/utils/utils.js";
+import { toUrl } from "/src/utils/utils.js";
 
 // 该变量将在左侧边栏组件加载时设定
 // 记录有多少个分类可以被展开，由视图 (Viewport) 垂直高度决定
@@ -135,16 +135,6 @@ function updateAllowedCategories() {
 
 window.onresize = updateAllowedCategories;
 updateAllowedCategories();
-/**
- * 点击菜单，http开头的，导航到外页，否则导航到内页
- */
-function handleMenuItemClick(url) {
-  if (url.indexOf("http") == 0) {
-    toOutUrl(url);
-  } else {
-    router.push(url);
-  }
-}
 
 function toggle(item) {
 	let lastShow = item.show;
@@ -223,10 +213,9 @@ onMounted(() => {
       <Transition name="menu">
       <ul class="py-[3px] flex nav-container" v-show="item1.show">
         <span
-          @click="handleMenuItemClick(item2.link)"
+          @click="toUrl(item2.link)"
           v-for="item2 in item1.children"
           :key="item2.title"
-          :to="item2.link"
 	  :class=" { 'bg-[#dcdcdc]': $route.path.trim().startsWith(item2.link.trim()) }"
           class="leading-4 navitem-flex hover:bg-[#dcdcdc] cursor-pointer pr-[10px] pl-[16px] block text-wrap select-none"
           >{{ item2.title }}</span>
