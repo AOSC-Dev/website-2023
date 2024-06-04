@@ -9,17 +9,7 @@ import { RouterView } from "vue-router";
   <div>
     <div class="bg-floral p-0 my-0 min-h-[100vh] flex flex-col">
       <Header />
-      <div class="flex justify-center">
-        <div class="content-container">
-          <router-link to="/">
-            <img
-              src="/assets/heading/portal-logo.zh-cn.svg"
-              class="w-[15vw] pt-[30px] pb-[15px] ml-[3vw]"
-              alt="logo"
-            />
-          </router-link>
-        </div>
-      </div>
+      
 
       <div class="main-content flex pb-[20px] flex-1 justify-center">
         <div class="content-container shadow flex">

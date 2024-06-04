@@ -26,36 +26,25 @@ onMounted(() => {
         <category-second
           title="用户公告"
           rightText="查看全部"
-          rightUrl="/news/list/news/用户公告"
-        />
-        <news-category-list
-          :newsList="categories.news || []"
-          class="py-6 pl-16 pr-10 overflow-y-auto"
-        />
-      </div>
-      <div class="">
-        <category-second
-          title="安全公告"
-          rightText="查看全部"
-          rightUrl="/news/list/warning/安全公告"
+          rightUrl="/news/list/warning/用户公告"
         />
         <news-category-list
           :newsList="categories.warning || []"
           class="py-6 pl-16 pr-10 overflow-y-auto"
         />
       </div>
-      <div class="border-r-[1px] border-r-solid border-r-secondary">
+      <div class="">
         <category-second
-          title="社区新闻"
+          title="新闻资讯"
           rightText="查看全部"
-          rightUrl="/news/list/community/社区新闻"
+          rightUrl="/news/list/news/新闻资讯"
         />
         <news-category-list
-          :newsList="categories.community || []"
+          :newsList="categories.news || []"
           class="py-6 pl-16 pr-10 overflow-y-auto"
         />
       </div>
-      <div class="">
+      <div class="border-r-[1px] border-r-solid border-r-secondary">
         <category-second
           title="社区期刊"
           rightText="查看全部"
@@ -63,6 +52,18 @@ onMounted(() => {
         />
         <news-category-list
           :newsList="categories.book || []"
+          class="py-6 pl-16 pr-10 overflow-y-auto"
+        />
+      </div>
+
+      <div class="">
+        <category-second
+          title="会议纪要"
+          rightText="查看全部"
+          rightUrl="/news/list/community/会议纪要"
+        />
+        <news-category-list
+          :newsList="categories.community || []"
           class="py-6 pl-16 pr-10 overflow-y-auto"
         />
       </div>
