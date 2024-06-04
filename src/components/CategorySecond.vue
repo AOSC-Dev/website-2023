@@ -1,5 +1,5 @@
 <script setup name="Header">
-const props = defineProps(["title", "rightText", "rightUrl"]);
+const props = defineProps(["title", "rightText", "rightUrl", 'showRightChevron']);
 </script>
 <template>
   <div
@@ -17,7 +17,7 @@ const props = defineProps(["title", "rightText", "rightUrl"]);
         {{ props.rightText }}
       </router-link>
       <!-- 右箭头 -->
-      <v-icon name="bi-chevron-double-right" />
+      <v-icon v-if="showRightChevron" name="bi-chevron-double-right" />
     </span>
   </div>
 </template>

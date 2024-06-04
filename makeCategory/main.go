@@ -71,7 +71,7 @@ func main() {
 		categoryContent = categoryContent[:index2]
 		categoryYaml, err := gyaml.Decode([]byte(categoryContent))
 		if err != nil {
-			log.Fatalln("解析yaml格式出粗: " + err.Error() + " - " + newsFile)
+			log.Fatalln("解析yaml格式出错: " + err.Error() + " - " + newsFile)
 			continue
 		}
 

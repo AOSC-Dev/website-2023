@@ -27,14 +27,11 @@ onMounted(() => {
           title="用户公告"
           rightText="查看全部"
           rightUrl="/news/list/warning/用户公告"
-        >
-      <template #right>
-        
-      </template>
-      </category-second>
+          :showRightChevron="true"
+        />
         <news-category-list
           :newsList="categories.warning || []"
-          class="py-6 pl-16 pr-10 overflow-y-auto"
+          class="overflow-y-auto"
         />
       </div>
       <div class="">
@@ -42,10 +39,11 @@ onMounted(() => {
           title="新闻资讯"
           rightText="查看全部"
           rightUrl="/news/list/news/新闻资讯"
+          :showRightChevron="true"
         />
         <news-category-list
           :newsList="categories.news || []"
-          class="py-6 pl-16 pr-10 overflow-y-auto"
+          class="overflow-y-auto"
         />
       </div>
       <div class="border-r-[1px] border-r-solid border-r-secondary">
@@ -53,10 +51,11 @@ onMounted(() => {
           title="社区期刊"
           rightText="查看全部"
           rightUrl="/news/list/book/社区期刊"
+          :showRightChevron="true"
         />
         <news-category-list
           :newsList="categories.book || []"
-          class="py-6 pl-16 pr-10 overflow-y-auto"
+          class="overflow-y-auto"
         />
       </div>
 
@@ -65,15 +64,17 @@ onMounted(() => {
           title="会议纪要"
           rightText="查看全部"
           rightUrl="/news/list/community/会议纪要"
+          :showRightChevron="true"
         />
         <news-category-list
           :newsList="categories.community || []"
-          class="py-6 pl-16 pr-10 overflow-y-auto"
+          class="overflow-y-auto"
         />
       </div>
-      <div class="h-[20vw]" style="width: 100%">
+      <!--  暂不实现 -->
+      <!-- <div class="h-[20vw]" style="width: 100%">
         <category-second title="社区相册" />
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
