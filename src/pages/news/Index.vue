@@ -27,7 +27,11 @@ onMounted(() => {
           title="用户公告"
           rightText="查看全部"
           rightUrl="/news/list/warning/用户公告"
-        />
+        >
+      <template #right>
+        
+      </template>
+      </category-second>
         <news-category-list
           :newsList="categories.warning || []"
           class="py-6 pl-16 pr-10 overflow-y-auto"
