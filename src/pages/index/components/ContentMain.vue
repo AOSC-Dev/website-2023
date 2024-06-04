@@ -70,8 +70,6 @@ function toAoscOs() {
             <span>查阅最新社区资讯</span>
             <v-icon name="bi-chevron-double-right" />
           </router-link>
-
-          <v-icon />
         </div>
       </article>
     </div>

@@ -15,6 +15,7 @@ import libLoL from './pages/liblol/Index.vue'
 import Oma from './pages/oma/Index.vue'
 import L10n from './pages/l10n/Index.vue'
 import Contact from './pages/contact/Index.vue'
+import Gallery from './pages/gallery/Index.vue'
 import Guidelines from './pages/guidelines/Index.vue'
 import Sponsoring from './pages/sponsoring/Index.vue'
 import News from './pages/news/Index.vue'
@@ -130,6 +131,13 @@ const router = createRouter({
       component: Contact,
       meta: {
         title: '联系方式'
+      }
+    }, {
+      path: '/gallery',
+      name: 'gallery',
+      component: Gallery,
+      meta: {
+        title: '活动相册'
       }
     }, {
       path: '/guidelines',
