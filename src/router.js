@@ -20,6 +20,7 @@ import Sponsoring from './pages/sponsoring/Index.vue'
 import News from './pages/news/Index.vue'
 import NewsList from './pages/news/List.vue'
 import NewsDetail from './pages/news/Detail.vue'
+import MdView from './pages/mdView/Index.vue'
 import PageNotFound from './components/PageNotFound.vue'
 
 const router = createRouter({
@@ -159,6 +160,10 @@ const router = createRouter({
       path: '/news/detail/:newsPath/',
       name: 'newsDetail',
       component: NewsDetail,
+    }, {
+      path: '/mdView/:mdPath/',
+      name: 'mdView',
+      component: MdView,
     }, {
       path: '/404',
       name: 'PageNotFound',

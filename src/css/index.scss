@@ -253,10 +253,10 @@ table {
   overflow: auto;
   border-collapse: collapse;
 
-  tr:hover {
+  tr {
     th,
     td {
-      border-bottom: 1px solid $yellow;
+      border: 1px solid $bg-secondary;
     }
   }
 }
@@ -273,10 +273,10 @@ tr:nth-child(2n) {
 }
 th,
 td {
-  padding: 12px 7px;
+  padding: 6px 7px;
   line-height: 24px;
 }
 td {
   min-width: 120px;
-  border-bottom: 1px dashed #fff;
+  border: 1px dashed #fff;
 }
