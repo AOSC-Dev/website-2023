@@ -1,7 +1,7 @@
 <script setup name="RightBar">
 import { reactive } from "vue";
 import CategorySecond from "/src/components/CategorySecond.vue";
-import{ toOutUrl } from "/src/utils/utils.js"
+import { toOutUrl } from "/src/utils/utils.js";
 
 const distroList = reactive([
   {
@@ -50,10 +50,25 @@ const commonLinkList = reactive([
 
 <template>
   <div class="bg-right-bar-bg w-[37.5%]">
-    <img src="/assets/banners/banner_minor1.svg" alt="" class="w-full cursor-pointer" @click="toOutUrl('https://wiki.aosc.io/zh/aosc-os/is-aosc-os-right-for-me/')" />
-    <img src="/assets/banners/banner_minor2.svg" alt="" class="w-full cursor-pointer" @click="toOutUrl('https://bbs.aosc.io/')" />
+    <img
+      src="/assets/banners/banner_minor1.svg"
+      alt=""
+      class="w-full cursor-pointer"
+      @click="
+        toOutUrl('https://wiki.aosc.io/zh/aosc-os/is-aosc-os-right-for-me/')
+      "
+    />
+    <img
+      src="/assets/banners/banner_minor2.svg"
+      alt=""
+      class="w-full cursor-pointer"
+      @click="toOutUrl('https://bbs.aosc.io/')"
+    />
     <div>
-      <category-second title="系统方案" class="border-l border-solid border-content-main-bg" />
+      <category-second
+        title="系统方案"
+        class="border-l border-solid border-content-main-bg"
+      />
       <article class="pt-[1em] pb-[0.5em] pl-[1em] border-l border-secondary">
         <div
           class="flex items-center pb-[15px]"
@@ -78,13 +93,16 @@ const commonLinkList = reactive([
         </div>
       </article>
       <category-second title="常用链接" />
-        <ul class="list-disc pl-[40px] py-5 border-l border-secondary">
-          <li v-for="item in commonLinkList" :key="item.title">
-            <a :href="item.url" class="text-link no-underline">
-              {{ item.title }}
-            </a>
-          </li>
-        </ul>
+      <div class="py-5 border-l border-secondary">
+        <div
+          v-for="item in commonLinkList"
+          :key="item.title"
+          @click="toOutUrl(item.url)"
+          class="hover:bg-leftbar-bg cursor-pointer pl-5"
+        >
+          {{ item.title }}
+        </div>
+      </div>
     </div>
   </div>
 </template>

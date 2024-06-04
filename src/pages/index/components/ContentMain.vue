@@ -1,28 +1,29 @@
 <script setup name="ContentMain">
-import { reactive } from "vue";
+import { onMounted, reactive, ref } from "vue";
 import CategorySecond from "/src/components/CategorySecond.vue";
+import NewsCategoryList from "/src/pages/news/components/NewsCategoryList.vue";
 import { useRouter } from "vue-router";
+import axios from "axios";
 
 const router = useRouter();
 
-const infoKeyList = reactive([
-  {
-    type: "资讯",
-    title: "重返线下：AOSCC 2023 回顾【置顶】",
-  },
-  {
-    type: "公告",
-    title: "tmux 更新可能导致默认行为变化",
-  },
-  {
-    type: "公告",
-    title: "更新 devel-base 后可能需要手动干预",
-  },
-  {
-    type: "公告",
-    title: "MCFly 更新后残留的配置文件可能导致报错",
-  },
-]);
+/**
+ * 新闻资讯列表
+ */
+const newsListLoading = ref(true);
+const newsList = ref([]);
+onMounted(() => {
+  axios
+    .get(`/newsCategories/home.zh-cn.json`)
+    .then((res) => {
+      newsList.value = res.data;
+      newsListLoading.value = false;
+    })
+    .catch((err) => {
+      console.log(err);
+      newsListLoading.value = false;
+    });
+});
 
 const zhuanlanList = reactive([
   {
@@ -60,18 +61,11 @@ function toAoscOs() {
     <!-- 咨讯要点 -->
     <div>
       <category-second title="资讯要点" />
-      <article class="p-[1em] leading-6">
-        <ul class="ms-0 pl-[1.5em] list-disc">
-          <li v-for="item in infoKeyList" :key="item.title">
-            <span class="font-semibold mr-2">
-              {{ item.type }}
-            </span>
-            <a href="" class="text-[#0056cc] no-underline">
-              {{ item.title }}
-            </a>
-          </li>
-        </ul>
-        <div class="text-right px-[15px] py-[10px] font-[12pt] leading-6 text-link">
+      <article class="">
+        <news-category-list :newsList="newsList" />
+        <div
+          class="text-right px-[15px] py-[10px] font-[12pt] leading-6 text-link"
+        >
           <router-link to="/news">
             <span>查阅最新社区资讯</span>
             <v-icon name="bi-chevron-double-right" />

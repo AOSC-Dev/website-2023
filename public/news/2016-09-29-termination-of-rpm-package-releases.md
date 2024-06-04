@@ -3,6 +3,7 @@ categories:
   - news
 date: '2016-09-29'
 important: true
+home: true
 title: Termination of RPM Package Releases
 url: /news/2016/09/29/termination-of-rpm-package-releases.html
 ---
