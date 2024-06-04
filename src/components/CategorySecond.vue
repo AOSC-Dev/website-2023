@@ -8,13 +8,16 @@ const props = defineProps(["title", "rightText", "rightUrl"]);
     <span>
       {{ props.title }}
     </span>
-    <span v-if="props.rightText" class="text-xs">
+
+    <span v-if="props.rightText">
       <span v-if="props.rightUrl == undefined">
         {{ props.rightText }}
       </span>
       <router-link :to="props.rightUrl" v-else>
         {{ props.rightText }}
       </router-link>
+      <!-- 右箭头 -->
+      <v-icon name="bi-chevron-double-right" />
     </span>
   </div>
 </template>
