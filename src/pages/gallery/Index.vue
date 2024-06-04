@@ -2,7 +2,7 @@
 import axios from "axios";
 import { onMounted, ref } from "vue";
 import yaml from "js-yaml";
-import CategorySecond from '/src/components/CategorySecond.vue';
+import CategorySecond from "/src/components/CategorySecond.vue";
 
 const galleryList = ref([]);
 onMounted(() => {
@@ -28,23 +28,34 @@ function closeBigImg() {
 </script>
 
 <template>
-  <div class="p-4">
-    <div v-for="gallery in galleryList.gallery" :key="gallery.title">
+  <div>
+    <div
+      v-for="gallery in galleryList.gallery"
+      :key="gallery.title"
+      class="pl-[1px]"
+    >
       <category-second :title="gallery.title" class="sticky top-0" />
-      <div class="grid grid-cols-4 gap-2 mb-8 mt-2">
-        <img
+      <div class="grid grid-cols-4 gap-2 p-2">
+        <div
+          class="mb-2"
           v-for="(photo, index) in gallery.album"
           :key="photo.file"
-          :src="`https://aosc.io/assets/i/gallery/thumbs/${photo.file}.jpg`"
-          :alt="photo.desc"
-          class="cursor-pointer"
-          @click="clickImg(gallery, index)"
-        />
+        >
+          <img
+            :src="`https://aosc.io/assets/i/gallery/thumbs/${photo.file}.jpg`"
+            :alt="photo.desc"
+            class="cursor-pointer w-[100%] h-[auto]"
+            @click="clickImg(gallery, index)"
+          />
+        </div>
       </div>
     </div>
 
     <!-- 弹出框 -->
-    <div v-if="showBig" class="fixed content-center top-0 left-0 w-[100vw] h-[100vh] bg-gray/[.9]">
+    <div
+      v-if="showBig"
+      class="fixed content-center top-0 left-0 w-[100vw] h-[100vh] bg-gray/[.9]"
+    >
       <el-carousel
         height="100vh"
         indicator-position="outside"
