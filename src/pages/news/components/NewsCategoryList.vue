@@ -1,22 +1,25 @@
 <script setup>
-const props = defineProps(['newsList'])
+import {toUrl} from '/src/utils/utils.js'
+
+const props = defineProps(["newsList"]);
 </script>
 
 <template>
-  <div>
+  <div class="py-5">
     <div v-if="props.newsList == undefined || props.newsList.length == 0">
       暂无数据
     </div>
-    <ul v-else class="list-disc">
-      <li v-for="item in newsList" :key="item.title" class="leading-8">
-        <router-link :to="`/news/detail/${item.Path}`" class="text-link">
-          <span>[{{ item.Date }}]</span>
-          {{ item.Title }}
-        </router-link>
-      </li>
-    </ul>
+    <div v-else class="">
+      <div v-for="item in newsList" :key="item.title" class="my-2">
+        <div @click="toUrl(`/news/detail/${item.Path}`)" class="hover:bg-leftbar-bg flex cursor-pointer pl-6">
+          <span class="truncate flex-1">
+            {{ item.Title }}
+          </span>
+          <span class="flex-0 pr-6">[{{ item.Date }}]</span>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

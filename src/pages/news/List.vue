@@ -9,8 +9,6 @@ const categories = ref({});
 const categoryTitle = ref("");
 const route = useRoute();
 onMounted(() => {
-  console.log("新闻列表页面: ");
-  console.log(route.params);
   const category = route.params.category;
   categoryTitle.value = route.params.categoryTitle;
   axios
@@ -32,7 +30,7 @@ onMounted(() => {
       :title="categoryTitle"
       class="border-r-[1px] border-r-solid border-r-white"
     />
-    <news-category-list :newsList="categories || []" class="py-6 pl-16 pr-10" />
+    <news-category-list :newsList="categories || []" class="py-6 pr-10" />
   </div>
 </template>
 
