@@ -1,5 +1,5 @@
 <script setup name="LeftBar">
-import { reactive, ref, registerRuntimeCompiler, onMounted } from "vue";
+import { reactive, ref, onMounted } from "vue";
 import { useRouter } from "vue-router";
 import { toUrl } from "/src/utils/utils.js";
 
@@ -25,7 +25,7 @@ const linkArr = reactive([
     children: [
       { title: "新闻资讯", link: "/news" },
 	    { title: "支持中心", link: "#" },
-      { title: "活动相册", link: "#" },
+      { title: "活动相册", link: "/gallery" },
       { title: "安装指南", link: "#" },
       { title: "系统需求", link: "#" },
       { title: "联系方式", link: "/contact" },

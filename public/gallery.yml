@@ -1,0 +1,465 @@
+gallery:
+  - title: AOSCC 2022
+    album:
+      - desc: "Attending Virtual AOSCC 2022 at CIP United (1)"
+        date: September 17, 2022
+        file: 2022-aoscc-cip-1.jpg
+      - desc: "Attending Virtual AOSCC 2022 at CIP United (2)"
+        date: September 17, 2022
+        file: 2022-aoscc-cip-2.jpg
+      - desc: "Attending Virtual AOSCC 2022 at CIP United (3)"
+        date: September 17, 2022
+        file: 2022-aoscc-cip-3.jpg
+      - desc: "Attending Virtual AOSCC 2022 at CIP United (4)"
+        date: September 17, 2022
+        file: 2022-aoscc-cip-4.jpg
+      - desc: "Attending Virtual AOSCC 2022 at CIP United (5)"
+        date: September 17, 2022
+        file: 2022-aoscc-cip-5.jpg
+      - desc: "Attending Virtual AOSCC 2022 at CIP United (6)"
+        date: September 17, 2022
+        file: 2022-aoscc-cip-6.jpg
+      - desc: "Attending Virtual AOSCC 2022 (Telegram: @atCamber)"
+        date: September 17, 2022
+        file: 2022-aoscc-atcamber.jpg
+      - desc: "Attending Virtual AOSCC 2022 (Telegram: @moe_canary)"
+        date: September 17, 2022
+        file: 2022-aoscc-canarypwn.jpg
+      - desc: "Attending Virtual AOSCC 2022 (Telegram: @catten)"
+        date: September 17, 2022
+        file: 2022-aoscc-catten.jpg
+      - desc: "Attending Virtual AOSCC 2022 (Telegram: @cth451)"
+        date: September 17, 2022
+        file: 2022-aoscc-cth451.jpg
+      - desc: "Attending Virtual AOSCC 2022 (Telegram: Cyanoxygen)"
+        date: September 17, 2022
+        file: 2022-aoscc-cyanoxygen.jpg
+      - desc: "Attending Virtual AOSCC 2022 (Telegram: @DowXu3)"
+        date: September 17, 2022
+        file: 2022-aoscc-dowxu3.jpg
+      - desc: "Attending Virtual AOSCC 2022 (Telegram: @FlyGoat)"
+        date: September 17, 2022
+        file: 2022-aoscc-flygoat.jpg
+      - desc: "Attending Virtual AOSCC 2022 (Telegram: @Hulotte)"
+        date: September 17, 2022
+        file: 2022-aoscc-hulotte.jpg
+      - desc: "Attending Virtual AOSCC 2022 (Telegram: @Icenowy)"
+        date: September 17, 2022
+        file: 2022-aoscc-icenowy-zheng.jpg
+      - desc: "Attending Virtual AOSCC 2022 (Telegram: @liushuyu)"
+        date: September 17, 2022
+        file: 2022-aoscc-liushuyu.jpg
+      - desc: "Attending Virtual AOSCC 2022 (Telegram: @JeffBai)"
+        date: September 17, 2022
+        file: 2022-aoscc-mingcong-bai.jpg
+      - desc: "Attending Virtual AOSCC 2022 (Telegram: @OriginCode)"
+        date: September 17, 2022
+        file: 2022-aoscc-origincode.jpg
+      - desc: "Attending Virtual AOSCC 2022 (Telegram: @rickliu2000)"
+        date: September 17, 2022
+        file: 2022-aoscc-rick-liu.jpg
+      - desc: "Attending Virtual AOSCC 2022 (Telegram: @realYangff)"
+        date: September 17, 2022
+        file: 2022-aoscc-yangff.jpg
+  - title: Community Mascots (2022)
+    album:
+      -
+        desc: "Community Mascots - Main Visual"
+        date: May 14, 2022
+        file: mascots-full.png
+      -
+        desc: "Community Mascots - Main Visual (without Background)"
+        date: May 14, 2022
+        file: mascots-no-bg.png
+      -
+        desc: "Community Mascots - An-An"
+        date: May 14, 2022
+        file: anan.png
+      -
+        desc: "Community Mascots - Tong-Tong"
+        date: May 14, 2022
+        file: tongtong.png
+  - title: AOSCC 2021
+    album:
+      -
+        desc: "Attending Virtual AOSCC 2021 (Telegram: @moe_canary)."
+        date: September 19, 2021
+        file: 2021-aoscc-canary-pwn.jpg
+      -
+        desc: "Attending Virtual AOSCC 2021 (Telegram: @Icenowy)."
+        date: September 19, 2021
+        file: 2021-aoscc-icenowy-zheng.jpg
+      -
+        desc: "Attending Virtual AOSCC 2021 (Telegram: @neruthes)."
+        date: September 19, 2021
+        file: 2021-aoscc-joy-neop.jpg
+      -
+        desc: "Attending Virtual AOSCC 2021 (Telegram: @OriginCode)."
+        date: September 19, 2021
+        file: 2021-aoscc-kaiyang-wu.jpg
+      -
+        desc: "Attending Virtual AOSCC 2021 (Telegram: @o0_0b)."
+        date: September 19, 2021
+        file: 2021-aoscc-lion-yang.jpg
+      -
+        desc: "Attending Virtual AOSCC 2021 (Telegram: @liushuyu)."
+        date: September 19, 2021
+        file: 2021-aoscc-liushuyu.jpg
+      -
+        desc: "Attending Virtual AOSCC 2021 (Telegram: @jyuzoungaangengjan)."
+        date: September 19, 2021
+        file: 2021-aoscc-mag-mell.jpg
+      -
+        desc: "Attending Virtual AOSCC 2021 (Telegram: @MariaBombardier)."
+        date: September 19, 2021
+        file: 2021-aoscc-maria-bombardier.jpg
+      -
+        desc: "Attending Virtual AOSCC 2021 (Telegram: @JeffBai)."
+        date: September 19, 2021
+        file: 2021-aoscc-mingcong-bai.jpg
+      -
+        desc: "Attending Virtual AOSCC 2021 (Telegram: @JeffBai)."
+        date: September 19, 2021
+        file: 2021-aoscc-mingcong-bai-noodles.jpg
+      -
+        desc: "Attending Virtual AOSCC 2021 (Telegram: @rickliu2000)."
+        date: September 19, 2021
+        file: 2021-aoscc-rick-liu.jpg
+      -
+        desc: "Attending Virtual AOSCC 2021 (Telegram: @TheSaltedFish)."
+        date: September 19, 2021
+        file: 2021-aoscc-thesaltedfish.jpg
+      -
+        desc: "Attending Virtual AOSCC 2021 (Telegram: @cth451)."
+        date: September 19, 2021
+        file: 2021-aoscc-tianhao-chai.jpg
+      -
+        desc: "Attending Virtual AOSCC 2021 (Discord: @Fearyncess)."
+        date: September 19, 2021
+        file: 2021-aoscc-fearyncess.jpg
+      -
+        desc: "Attending Virtual AOSCC 2021 (IRC: WPlanck)."
+        date: September 19, 2021
+        file: 2021-aoscc-wplank.jpg
+      -
+        desc: "Attending Virtual AOSCC 2021 (Telegram: @yangff)."
+        date: September 19, 2021
+        file: 2021-aoscc-yangff.jpg
+      -
+        desc: "Attending Virtual AOSCC 2021 (Telegram: @JerryXiao)."
+        date: September 19, 2021
+        file: 2021-aoscc-jerry-xiao.png
+      -
+        desc: "Attending Virtual AOSCC 2021 (Telegram: @KexyBiscuit)."
+        date: September 19, 2021
+        file: 2021-aoscc-kexy-biscuit.jpg
+      -
+        desc: "Attending Virtual AOSCC 2021 (Telegram: @yichen0104)."
+        date: September 19, 2021
+        file: 2021-aoscc-yichen-li.jpg
+  - title: An-An
+    album:
+      -
+        desc: "An-An (安安) with Her Laptop (credit: Tyson Tan)."
+        date: November 11, 2020
+        file: anan-laptop.png
+      -
+        desc: "An-An (安安) Holding A Retro Computer (credit: Tyson Tan)."
+        date: November 11, 2020
+        file: anan-mac.png
+      -
+        desc: "An-An (安安) Playing with the AOSC Logo (credit: Tyson Tan)."
+        date: November 11, 2020
+        file: anan-playing.png
+  - title: OSPP 2020
+    album:
+      -
+        desc: "AOSC Reporting at the Open Source Software Supply Chain Summit 2020 (credit: Ruikai Liu)."
+        date: November 15, 2020
+        file: 2020-ospp-aosc-reporting.jpg
+      -
+        desc: "Our Stall at the Open Source Software Supply Chain Summit 2020 (credit: Ruikai Liu)."
+        date: November 15, 2020
+        file: 2020-ospp-aosc-stall.jpg
+      -
+        desc: "Demo Devices at Our Stall (credit: Ruikai Liu)."
+        date: November 15, 2020
+        file: 2020-ospp-aosc-stall-devices.jpg
+      -
+        desc: "Demo Devices at Our Stall, Alt. Angle (credit: Ruikai Liu)."
+        date: November 15, 2020
+        file: 2020-ospp-aosc-stall-devices-alt.jpg
+      -
+        desc: "PowerBook G4 (AOSC OS/Retro PowerPC 32-bit) at Our Stall (credit: Ruikai Liu)."
+        date: November 15, 2020
+        file: 2020-ospp-aosc-stall-g4.jpg
+      -
+        desc: "Olimex TERES-I (AOSC OS AArch64) at Our Stall (credit: Ruikai Liu)."
+        date: November 15, 2020
+        file: 2020-ospp-aosc-stall-teres-i.jpg
+      -
+        desc: "The Open Source Software Supply Chain Summit 2020 'Hall of Fame' (credit: Ruikai Liu)."
+        date: November 15, 2020
+        file: 2020-ospp-hall-of-fame.jpg
+  - title: AOSCC 2020
+    album:
+      -
+        desc: "Attending Virtual AOSCC 2020 (Telegram: @atCamber)."
+        date: September 26, 2020 (AOSCC 2020 Day 1)
+        file: 2020-day1-atcamber.jpg
+      -
+        desc: "Attending Virtual AOSCC 2020 (Telegram: @szc1sya)."
+        date: September 26, 2020 (AOSCC 2020 Day 1)
+        file: 2020-day1-szc1sya.jpg
+      -
+        desc: "Attending Virtual AOSCC 2020 (Telegram: @Gowee)."
+        date: September 26, 2020 (AOSCC 2020 Day 1)
+        file: 2020-day1-gowee.jpg
+      -
+        desc: "Attending Virtual AOSCC 2020 (Telegram: @JeffBai)."
+        date: September 26, 2020 (AOSCC 2020 Day 1)
+        file: 2020-day1-jeffbai-0.jpg
+      -
+        desc: "Attending Virtual AOSCC 2020 (Telegram: @JeffBai)."
+        date: September 26, 2020 (AOSCC 2020 Day 1)
+        file: 2020-day1-jeffbai-1.jpg
+      -
+        desc: "Attending Virtual AOSCC 2020 (Telegram: @liushuyu)."
+        date: September 26, 2020 (AOSCC 2020 Day 1)
+        file: 2020-day1-liushuyu.jpg
+      -
+        desc: "Attending Virtual AOSCC 2020 (Telegram: @Megabits_mzq)."
+        date: September 26, 2020 (AOSCC 2020 Day 1)
+        file: 2020-day1-megabits_mzq.jpg
+      -
+        desc: "Attending Virtual AOSCC 2020 (Telegram: @moe_canary)."
+        date: September 26, 2020 (AOSCC 2020 Day 1)
+        file: 2020-day1-moe_canary.jpg
+      -
+        desc: "Attending Virtual AOSCC 2020 (Telegram: @neruthes)."
+        date: September 26, 2020 (AOSCC 2020 Day 1)
+        file: 2020-day1-neruthes-0.jpg
+      -
+        desc: "Attending Virtual AOSCC 2020 (Telegram: @neruthes)."
+        date: September 26, 2020 (AOSCC 2020 Day 1)
+        file: 2020-day1-neruthes-1.jpg
+      -
+        desc: "Attending Virtual AOSCC 2020 (Telegram: @o0_0b)."
+        date: September 26, 2020 (AOSCC 2020 Day 1)
+        file: 2020-day1-o0_0b.jpg
+      -
+        desc: "Attending Virtual AOSCC 2020 (Telegram: @Relie)."
+        date: September 26, 2020 (AOSCC 2020 Day 1)
+        file: 2020-day1-relie.jpg
+      -
+        desc: "Attending Virtual AOSCC 2020 (Telegram: @nobootleg)."
+        date: September 26, 2020 (AOSCC 2020 Day 1)
+        file: 2020-day1-nobootleg.jpg
+      -
+        desc: "Attending Virtual AOSCC 2020 (Telegram: @Staph)."
+        date: September 26, 2020 (AOSCC 2020 Day 1)
+        file: 2020-day1-staph.jpg
+      -
+        desc: "Attending Virtual AOSCC 2020 (Telegram: @eatradish_wtf)."
+        date: September 26, 2020 (AOSCC 2020 Day 1)
+        file: 2020-day1-eatradish_wtf.jpg
+      -
+        desc: "Attending Virtual AOSCC 2020 (Telegram: @TheSaltedFish)."
+        date: September 26, 2020 (AOSCC 2020 Day 1)
+        file: 2020-day1-thesaltedfish.jpg
+  - title: AOSCC 2019
+    album:
+      -
+        desc: USTC's Jiawei Fu's presentation on the history and future of the USTC Open Source Software Mirror.
+        date: July 14, 2019 (AOSCC 2019 Day 3)
+        file: 2019-jiawei-fu-on-the-ustc-mirror.JPG
+      -
+        desc: Junde Yhi demonstrating the UI designs of DeployKit - our system deployment toolkit to come early next year.
+        date: July 14, 2019 (AOSCC 2019 Day 3)
+        file: 2019-junde-yhi-deploykit-demo.JPG
+      -
+        desc: Trinitron (her ID on Telegram) working on Coreboot-ing a Lenovo ThinkPad X220.
+        date: July 14, 2019 (AOSCC 2019 Day 3)
+        file: 2019-trinitron-on-site-coreboot-flashing.jpg
+      -
+        desc: Xiaoxing, our resident webmaster, wins one of the Apple PowerBook G4's running AOSC OS from Day 2's lucky draw.
+        date: July 13, 2019 (AOSCC 2019 Day 2)
+        file: 2019-xiaoxing-lucky-draw.jpg
+      -
+        desc: Kexy Biscuit on improving the AOSC OS iteration model.
+        date: July 13, 2019 (AOSCC 2019 Day 2)
+        file: 2019-kexy-on-iteration-planning.JPG
+      -
+        desc: TheSaltedFish's live streaming station.
+        date: July 13, 2019 (AOSCC 2019 Day 2)
+        file: 2019-livestream-console.JPG
+      -
+        desc: On-site ColorHug service.
+        date: July 13, 2019 (AOSCC 2019 Day 2)
+        file: 2019-colorhug2.JPG
+      -
+        desc: Gumblex's talk on the future AOSC OS quality assurance procedures.
+        date: July 13, 2019 (AOSCC 2019 Day 2)
+        file: 2019-gumblex-on-quality-assurance.JPG
+      -
+        desc: A vintage Hai'ou camera used to take our collective photograph on Day 1 and 3.
+        date: July 12, 2019 (AOSCC 2019 Day 1)
+        file: 2019-haiou-camera.jpg
+      -
+        desc: Voting on the next codename (congratulations to Gumblex!).
+        date: July 12, 2019 (AOSCC 2019 Day 1)
+        file: 2019-codename-voting.jpg
+      -
+        desc: Stickers and souvenirs, a staple of our annual gatherings.
+        date: July 12, 2019 (AOSCC 2019 Day 1)
+        file: 2019-stickers-and-souvenir.JPG
+      -
+        desc: Day 2's lucky draw prize - a 12'' Apple PowerBook G4 running AOSC OS.
+        date: July 12, 2019 (AOSCC 2019 Day 1)
+        file: 2019-lucky-draw-preparation-g4.JPG
+      -
+        desc: AOSC OS/Retro demo devices - an Apple iBook G3 "Clamshell" and a Sony Vaio C1VN.
+        date: July 12, 2019 (AOSCC 2019 Day 1)
+        file: 2019-retro-demos.JPG
+      -
+        desc: Staph deploying AOSC OS on the Apple PowerBook G4's, preparing for Day 's lucky draw.
+        date: July 12, 2019 (AOSCC 2019 Day 1)
+        file: 2019-staph-lucky-draw-preparation.JPG
+      -
+        desc: Junde Yhi on deploying multi-payload LibreBoot on the Lenovo ThinkPad X200.
+        date: July 12, 2019 (AOSCC 2019 Day 1)
+        file: 2019-junde-yhi-libreboot.JPG
+  - title: AOSCC 2017
+    album:
+      -
+        desc: A case (finally) for our community ARMv7 + AArch64 build host!
+        date: July 16, 2017 (AOSCC 2017 Day 3)
+        file: 2017-day3-tegra-has-a-home.jpg
+      -
+        desc: Pair of vintage ThinkPads running Windows 98... Vintage computing - an unofficial pasttime of community members.
+        date: July 15, 2017 (AOSCC 2017 Day 2)
+        file: 2017-day2-vintage-duo.jpg
+      -
+        desc: Tianhao (James) Chai's Linux/Android Surface Pro 3 tablet.
+        date: July 15, 2017 (AOSCC 2017 Day 2)
+        file: 2017-day2-unusual-surface.jpg
+      -
+        desc: ThinkPads are probably the most popular computer brand in the community!
+        date: July 15, 2017 (AOSCC 2017 Day 2)
+        file: 2017-day2-thinkpad-family.jpg
+      -
+        desc: Icenowy Zheng's Orange Pi running AOSC OS with LXDE.
+        date: July 15, 2017 (AOSCC 2017 Day 2)
+        file: 2017-day2-orange-pi-demo.jpg
+      -
+        desc: Lion Yang introducing the problems with BuildKit and Ciel, the answer?
+        date: July 15, 2017 (AOSCC 2017 Day 2)
+        file: 2017-day2-ciel.jpg
+      -
+        desc: Lion Yang casting his doubt on the values of AOSC OS's numerous ports.
+        date: July 15, 2017 (AOSCC 2017 Day 2)
+        file: 2017-day2-casting-my-doubt.jpg
+      -
+        desc: Junde Yhi handing out Banana Pi's to lucky dip winners.
+        date: July 15, 2017 (AOSCC 2017 Day 2)
+        file: 2017-day2-bananapi.jpg
+      -
+        desc: Zamir Sun connecting in from Beijing, sharing his pathway to employment in an open-source company (Red Hat).
+        date: July 14, 2017 (AOSCC 2017 Day 1)
+        file: 2017-day1-zamir-sun-connection.jpg
+      -
+        desc: AOSCC 2018 will be held in Wuhan!
+        date: July 14, 2017 (AOSCC 2017 Day 1)
+        file: 2017-day1-wuhan.jpg
+      -
+        desc: Old laptop makes a great mini desktop!
+        date: July 14, 2017 (AOSCC 2017 Day 1)
+        file: 2017-day1-vintage-desktop.jpg
+      -
+        desc: Mingcong Bai talking about upstream involvement by AOSC developers in the past year.
+        date: July 14, 2017 (AOSCC 2017 Day 1)
+        file: 2017-day1-upstream-involvement.jpg
+      -
+        desc: Lion Yang and couple others working hard for Internet connection in the venue.
+        date: July 14, 2017 (AOSCC 2017 Day 1)
+        file: 2017-day1-networking.jpg
+      -
+        desc: Forgive Loongson, (possibly) an advanced piece of hardware.
+        date: July 14, 2017 (AOSCC 2017 Day 1)
+        file: 2017-day1-forgive-loongson.jpg
+      -
+        desc: Junde Yhi's presentation on AOSC OS's performance overlays.
+        date: July 14, 2017 (AOSCC 2017 Day 1)
+        file: 2017-day1-aosc-os-overlay.jpg
+      -
+        desc: Voting on AOSC OS Core 5's codename... Turns out to be "eMMC".
+        date: July 14, 2017 (AOSCC 2017 Day 1)
+        file: 2017-day1-aosc-os-codename.jpg
+      -
+        desc: Day 1's lucky dip - Staph Zhang's optical backup of old AOSC OS packages and releases.
+        date: July 14, 2017 (AOSCC 2017 Day 1)
+        file: 2017-day1-aosc-optical-storage.jpg
+      -
+        desc: Havin' a blast playing Legend of Zelda with an Allwinner tablet running RetroArch.
+        date: July 14, 2017 (AOSCC 2017 Day 1)
+        file: 2017-day1-allwinner-nintendo.jpg
+  - title: 5th Anniversay (2016)
+    album:
+      -
+        desc: 5th anniversay banner!
+        date: December 1, 2016
+        file: 2016-5th-anniversary-banner.jpg
+      -
+        desc: Tianhao (James) Chai taking a selfie in front of the 5th anniversay banner.
+        date: December 1, 2016
+        file: 2016-5th-anniversary-selfie.jpg
+  - title: AOSCC 2016
+    album:
+      -
+        desc: A warm note from the Geekpie Association.
+        date: July 16, 2016 (AOSCC 2016 Day 1)
+        file: 2016-aoscc-day1-a-warm-note-from-geekpie.jpg
+      -
+        desc: Random hack-around before the conference began.
+        date: July 16, 2016 (AOSCC 2016 Day 1)
+        file: 2016-aoscc-day1-goofing-around.jpg
+      -
+        desc: Junde Yhi's concept presentation for AST's Startup Toolkit development reboot.
+        date: July 17, 2016 (AOSCC 2016 Day 2)
+        file: 2016-aoscc-day2-ast-startup-toolkit-lmy441900.jpg
+      -
+        desc: Lion Yang plays around Android's buggy Skia library.
+        date: July 17, 2016 (AOSCC 2016 Day 2)
+        file: 2016-aoscc-day2-goofing-around-buggy-skia.jpg
+      -
+        desc: HD Remake using Inkscape with Dingyuan Wang (gumblex)
+        date: July 17, 2016 (AOSCC 2016 Day 2)
+        file: 2016-aoscc-day2-hd-remake-with-inkscape-gumblex.jpg
+      -
+        desc: Our lovely audience watching gumblex's demonstration.
+        date: July 17, 2016 (AOSCC 2016 Day 2)
+        file: 2016-aoscc-day2-hd-remake-with-inkscape-audience.jpg
+      -
+        desc: Introduction to AOSC OS packaging with Jeff Bai.
+        date: July 18, 2016 (AOSCC 2016 Day 3)
+        file: 2016-aoscc-day3-introduction-to-packaging-jeffbai.jpg
+      -
+        desc: Introduction to AOSC OS packaging (demonstration using VBA-M)
+        date: July 18, 2016 (AOSCC 2016 Day 3)
+        file: 2016-aoscc-day3-introduction-to-packaging-vbam-jeffbai.jpg
+      -
+        desc: Shanghai Surface User Group!
+        date: July 18, 2016 (AOSCC 2016 Day 3)
+        file: 2016-aoscc-day3-shanghai-surface-user-group.jpg
+      -
+        desc: Putting the AOSC 2016 sticker pack into good use (idea 1).
+        date: August 23, 2016
+        file: 2016-aoscc-stickers-1.jpg
+      -
+        desc: Putting the AOSC 2016 sticker pack into good use (idea 2).
+        date: August 23, 2016
+        file: 2016-aoscc-stickers-2.jpg
+      -
+        desc: Putting the AOSC 2016 sticker pack into good use (idea 3).
+        date: August 23, 2016
+        file: 2016-aoscc-stickers-3.jpg

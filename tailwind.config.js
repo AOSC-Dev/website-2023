@@ -47,7 +47,9 @@ export default {
       'content-main-bg': '#fcfcfc',
       'white': '#fff',
       'season': seasonColor,
-      link: '#0056cc'
+      link: '#0056cc',
+      gray: '#333',
+      black: '#000'
     },
     fontSize: {
       '3xl': '2rem',

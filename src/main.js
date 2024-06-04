@@ -9,9 +9,9 @@ import githubTheme from '@kangc/v-md-editor/lib/theme/github.js';
 import '@kangc/v-md-editor/lib/theme/style/github.css';
 import './css/index.scss';
 import { OhVueIcon, addIcons } from "oh-vue-icons";
-import { BiChevronDoubleUp, BiChevronDoubleDown, BiChevronBarUp, BiChevronDoubleRight } from "oh-vue-icons/icons";
+import { BiChevronDoubleUp, BiChevronDoubleDown, BiChevronBarUp, BiChevronDoubleRight, IoCloseCircleOutline } from "oh-vue-icons/icons";
 
-addIcons(BiChevronDoubleUp, BiChevronDoubleDown, BiChevronBarUp, BiChevronDoubleRight);
+addIcons(BiChevronDoubleUp, BiChevronDoubleDown, BiChevronBarUp, BiChevronDoubleRight, IoCloseCircleOutline);
 
 // highlightjs
 import hljs from 'highlight.js';
