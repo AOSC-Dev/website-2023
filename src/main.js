@@ -5,19 +5,19 @@ import router from './router'
 
 import VMdPreview from '@kangc/v-md-editor/lib/preview';
 import '@kangc/v-md-editor/lib/style/preview.css';
-import githubTheme from '@kangc/v-md-editor/lib/theme/github.js';
-import '@kangc/v-md-editor/lib/theme/style/github.css';
+import vuepressTheme from '@kangc/v-md-editor/lib/theme/vuepress.js';
+import '@kangc/v-md-editor/lib/theme/style/vuepress.css';
 import './css/index.scss';
 import { OhVueIcon, addIcons } from "oh-vue-icons";
 import { BiChevronDoubleUp, BiChevronDoubleDown, BiChevronBarUp, BiChevronDoubleRight, IoCloseCircleOutline } from "oh-vue-icons/icons";
 
 addIcons(BiChevronDoubleUp, BiChevronDoubleDown, BiChevronBarUp, BiChevronDoubleRight, IoCloseCircleOutline);
 
-// highlightjs
-import hljs from 'highlight.js';
+// prismjs
+import Prism from 'prismjs';
 
-VMdPreview.use(githubTheme, {
-  Hljs: hljs,
+VMdPreview.use(vuepressTheme, {
+  Prism,
 });
 
 const app = createApp(App)

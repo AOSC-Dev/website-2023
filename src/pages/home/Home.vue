@@ -19,7 +19,7 @@ import { RouterView } from "vue-router";
 
           <router-view
             class="flex-1"
-            style="scrollbar-gutter: stable"
+            style="scrollbar-gutter: stable; min-width: 0;"
           ></router-view>
         </div>
       </div>
