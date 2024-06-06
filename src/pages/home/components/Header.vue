@@ -8,7 +8,7 @@ const languageList = reactive([
 </script>
 
 <template>
-  <div>
+  <div class="bg-cover">
     <div class="flex">
       <div class="grow"></div>
       <div class="content-container flex justify-end">
@@ -44,7 +44,7 @@ const languageList = reactive([
         <router-link to="/">
           <img
             src="/assets/heading/portal-logo.zh-cn.svg"
-            class="w-[15vw] pb-[10px] pl-[20px]"
+            class="w-[12rem] pb-[10px] pl-[0.5rem]"
             alt="logo"
           />
         </router-link>
@@ -62,11 +62,13 @@ const languageList = reactive([
   box-shadow: 10px 0px 10px #666;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1000px) {
 	.bg-cover {
-		background-image: url('/assets/backgrounds/floral.svg');
+		background-image: url('/assets/backgrounds/floral-landscape.svg');
 		background-attachment: fixed;
-		background-position: center;
+		background-position-y: center;
+		background-size: contain;
+		background-color: #fffbf5;
 	}
 }
 </style>

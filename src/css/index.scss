@@ -1,6 +1,6 @@
-$ak-font: -apple-system, system-ui, Menlo, Monaco, Consolas, 'Courier New';
 $line-space: 22px;
 $bg-color: rgba(224, 224, 224, 0.1);
+$th-bg-color: rgba(224, 224, 224, 0.3);
 $blue: #37b2ff;
 $yellow: #feea1e;
 $orange: orange;
@@ -8,10 +8,18 @@ $purple: #e699e6;
 $green: #a7ecad;
 $bg-secondary: #3f6075;
 
-.github-markdown-body {
-  padding-top: 0;
-  margin-top: $line-space;
+:root {
+  --font-family-monospace: "Source Code Pro", "Menlo", "Consolas", "DejaVu Sans Mono", -apple-system, monospace;
+}
 
+@media (min-width: 1280px) {
+  .vuepress-markdown-body {
+    padding: 2rem 10% !important;
+  }
+}
+
+.vuepress-markdown-body {
+  background: none;
   h1 {
     background-color: $bg-secondary;
     color: #fff;
@@ -32,7 +40,10 @@ $bg-secondary: #3f6075;
   }
 
   img {
-    max-width: 100%;
+    max-width: 70% !important;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 2px 2px 5px #777;
   }
 
   hr:first-of-type {
@@ -50,7 +61,7 @@ $bg-secondary: #3f6075;
 
   code {
     margin: 0 4px;
-    font-family: $ak-font;
+    font-family: var(--font-family-monospace);
     word-break: break-word;
     overflow-x: auto;
     background-color: #fff7f7;
@@ -62,32 +73,8 @@ $bg-secondary: #3f6075;
   pre {
     margin: 15px 8px;
     border: 1px solid rgb(245, 245, 247);
-    font-family: $ak-font;
+    font-family: var(--font-family-monospace);
     line-height: 1.75;
-
-    &::before {
-      top: -4px;
-      left: -4px;
-      width: 20px;
-      height: 20px;
-      content: '';
-      border-top: 8px solid $yellow;
-      border-left: 8px solid $yellow;
-      z-index: 10;
-      position: absolute;
-    }
-
-    &::after {
-      right: -4px;
-      bottom: -4px;
-      width: 20px;
-      height: 20px;
-      content: '';
-      z-index: 10;
-      border-right: 8px solid $blue;
-      border-bottom: 8px solid $blue;
-      position: absolute;
-    }
 
     > code {
       font-size: 12px;
@@ -98,18 +85,7 @@ $bg-secondary: #3f6075;
       display: block;
       color: #333;
       background-color: #fff;
-      position: unset !important;
-    }
-
-    &:nth-child(2n + 1) {
-      &::before {
-        border-top-color: $green;
-        border-left-color: $green;
-      }
-      &::after {
-        border-right-color: $purple;
-        border-bottom-color: $purple;
-      }
+      overflow-x: auto;
     }
   }
 
@@ -248,7 +224,7 @@ $bg-secondary: #3f6075;
 table {
   width: 100%;
   max-width: 100%;
-  font-size: 12px;
+  font-size: 12pt;
   background-color: #fff;
   overflow: auto;
   border-collapse: collapse;
@@ -264,10 +240,11 @@ thead {
   text-align: left;
 }
 th {
-  font-size: 1.2em;
+  font-weight: bold;
+  background-color: $th-bg-color;
   border-bottom: 1px dashed #eee;
 }
-tr:nth-child(2n) {
+tr:nth-child(2n+1) {
   background-color: $bg-color;
   border-bottom: 1px solid #fff;
 }
@@ -279,4 +256,13 @@ td {
 td {
   min-width: 120px;
   border: 1px dashed #fff;
+}
+
+.vuepress-markdown-body div[class*="v-md-pre-wrapper-"] pre,
+.vuepress-markdown-body div[class*="v-md-pre-wrapper-"] pre[class*="v-md-prism-"] {
+  z-index: 0;
+}
+
+.vuepress-markdown-body div[class*="v-md-pre-wrapper-"]::before {
+  z-index: 0;
 }

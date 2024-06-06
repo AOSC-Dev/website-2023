@@ -28,11 +28,11 @@ onMounted(() => {
 
 <template>
   <div class="pl-[1px]">
-    <category-second :title="yamlDoc['title']" :right-text="newsDate" class="sticky top-0" />
-    <v-md-preview :text="mdRes" class="pt-[50px]"></v-md-preview>
+    <category-second :title="yamlDoc['title']" :right-text="newsDate" class="sticky top-0 z-[1]" />
+    <v-md-preview :text="mdRes"></v-md-preview>
   </div>
 </template>
 
 <style lang="css" scoped>
-@import '/src/css/md.scss'
+@import '/src/css/index.scss'
 </style>

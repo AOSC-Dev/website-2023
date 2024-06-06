@@ -49,7 +49,7 @@ const commonLinkList = reactive([
 </script>
 
 <template>
-  <div class="bg-right-bar-bg w-[37.5%]">
+  <div class="bg-right-bar-bg w-[37.5%] flex flex-col">
     <img
       src="/assets/banners/banner_minor1.svg"
       alt=""
@@ -64,7 +64,7 @@ const commonLinkList = reactive([
       class="w-full cursor-pointer"
       @click="toOutUrl('https://bbs.aosc.io/')"
     />
-    <div>
+    <div class="flex flex-col flex-grow">
       <category-second
         title="系统方案"
         class="border-l border-solid border-content-main-bg"
@@ -93,7 +93,7 @@ const commonLinkList = reactive([
         </div>
       </article>
       <category-second title="常用链接" />
-      <div class="py-5 border-l border-secondary">
+      <div class="py-5 border-l border-secondary flex flex-col flex-grow">
         <div
           v-for="item in commonLinkList"
           :key="item.title"

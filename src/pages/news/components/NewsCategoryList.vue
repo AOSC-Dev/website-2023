@@ -5,13 +5,13 @@ const props = defineProps(["newsList"]);
 </script>
 
 <template>
-  <div class="py-5">
+  <div>
     <div v-if="props.newsList == undefined || props.newsList.length == 0">
       暂无数据
     </div>
-    <div v-else class="">
-      <div v-for="item in newsList" :key="item.title" class="my-2">
-        <div @click="toUrl(`/news/detail/${item.Path}`)" class="hover:bg-leftbar-bg flex cursor-pointer pl-6">
+    <div v-else class="flex flex-col">
+      <div v-for="item in newsList" :key="item.title" class="newslist-item">
+        <div @click="toUrl(`/news/detail/${item.Path}`)" class="hover:bg-leftbar-bg flex cursor-pointer pl-6 h-[2rem] leading-8">
           <span class="truncate flex-1">
             {{ item.Title }}
           </span>
@@ -22,4 +22,11 @@ const props = defineProps(["newsList"]);
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.newslist-item:nth-child(2n) {
+	background-color: #fefaf6;
+}
+.newslist-item:nth-child(2n+1) {
+	background-color: white;
+}
+</style>
