@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="svg2" width="1e3" height="1e3" version="1.1" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <title id="title3336">Logo of Anthon Open Source Community</title>
+ <metadata id="metadata7">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title>Logo of Anthon Open Source Community</dc:title>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Junde Yi</dc:title>
+     </cc:Agent>
+    </dc:creator>
+    <cc:license rdf:resource="http://creativecommons.org/licenses/by-sa/3.0/"/>
+    <dc:contributor>
+     <cc:Agent>
+      <dc:title>Tom Yan, Jeff Bai, Junde Yi</dc:title>
+     </cc:Agent>
+    </dc:contributor>
+   </cc:Work>
+   <cc:License rdf:about="http://creativecommons.org/licenses/by-sa/3.0/">
+    <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+    <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+    <cc:requires rdf:resource="http://creativecommons.org/ns#Notice"/>
+    <cc:requires rdf:resource="http://creativecommons.org/ns#Attribution"/>
+    <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+    <cc:requires rdf:resource="http://creativecommons.org/ns#ShareAlike"/>
+   </cc:License>
+  </rdf:RDF>
+ </metadata>
+ <g id="layer1" transform="translate(0 -52.362)">
+  <circle id="path8317" cx="501.58" cy="552.36" r="475.19" color="#000000"/>
+  <circle id="circle8306" cx="524" cy="550.36" r="54.066" color="#000000" fill="#fff" stroke="#fff" stroke-width=".9638"/>
+  <path id="circle8373" d="m513.84 176.91a373.65 373.65 0 0 0-373.65 373.65 373.65 373.65 0 0 0 373.65 373.65v-182.49a191.87 191.87 0 0 1-181.71-191.36 191.87 191.87 0 0 1 181.71-191.51v-181.94z" color="#000000" fill="#c00000"/>
+  <path id="path8382" d="m514.77 394.05a156.09 156.09 0 0 0-156.08 156.09 156.09 156.09 0 0 0 156.08 156.08v-74.271a82.154 82.154 0 0 1-72.922-81.588 82.154 82.154 0 0 1 72.922-81.533v-74.777z" color="#000000" fill="#0070c0"/>
+  <path id="path8387" d="m531.57 230.53v160.87a159.34 159.34 0 0 1 151.77 158.96 159.34 159.34 0 0 1-151.77 159.07v160.87a319.89 319.89 0 0 0 319.88-319.88 319.89 319.89 0 0 0-319.88-319.88z" color="#000000" fill="#ffc000"/>
+ </g>
+</svg>
