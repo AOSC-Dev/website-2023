@@ -25,6 +25,8 @@ jobs:
             ${{ runner.OS }}-npm-cache
       - name: Install Dependencies
         run: npm install
+      - name: MakeCategory
+        run: ./public/makeCategory
       - name: Build
         run: npm run build
       - name: Deploy
