@@ -26,7 +26,10 @@ jobs:
       - name: Install Dependencies
         run: npm install
       - name: MakeCategory
-        run: ./public/makeCategory
+        run: |
+          cd ./public
+          ./makeCategory
+          cd ../
       - name: Build
         run: npm run build
       - name: Deploy
