@@ -93,14 +93,15 @@ const commonLinkList = reactive([
         </div>
       </article>
       <category-second title="常用链接" />
-      <div class="py-5 border-l border-secondary flex flex-col flex-grow">
+      <div class="border-l border-secondary flex flex-col flex-grow">
         <div
           v-for="item in commonLinkList"
           :key="item.title"
           @click="toOutUrl(item.url)"
-          class="hover:bg-leftbar-bg cursor-pointer pl-5"
+          class="hover:bg-leftbar-bg cursor-pointer flex flex-row justify-between items-center px-[1rem] h-[2rem] odd:bg-[#fefaf6] bg-white"
         >
-          {{ item.title }}
+          <span>{{ item.title }}</span>
+          <v-icon name="hi-solid-external-link" />
         </div>
       </div>
     </div>

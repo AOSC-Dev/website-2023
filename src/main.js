@@ -9,9 +9,9 @@ import vuepressTheme from '@kangc/v-md-editor/lib/theme/vuepress.js';
 import '@kangc/v-md-editor/lib/theme/style/vuepress.css';
 import './css/index.scss';
 import { OhVueIcon, addIcons } from "oh-vue-icons";
-import { BiChevronDoubleUp, BiChevronDoubleDown, BiChevronBarUp, BiChevronDoubleRight, IoCloseCircleOutline } from "oh-vue-icons/icons";
+import { BiChevronDoubleUp, BiChevronDoubleDown, BiChevronBarUp, BiChevronDoubleRight, HiSolidExternalLink, IoCloseCircleOutline } from "oh-vue-icons/icons";
 
-addIcons(BiChevronDoubleUp, BiChevronDoubleDown, BiChevronBarUp, BiChevronDoubleRight, IoCloseCircleOutline);
+addIcons(BiChevronDoubleUp, BiChevronDoubleDown, BiChevronBarUp, BiChevronDoubleRight, HiSolidExternalLink, IoCloseCircleOutline);
 
 // prismjs
 import Prism from 'prismjs';
