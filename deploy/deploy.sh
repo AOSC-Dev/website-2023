@@ -1,5 +1,5 @@
 #!/bin/bash
 
-cd deply
+cd deploy
 ./upload.sh
 ./unzipServer.sh
