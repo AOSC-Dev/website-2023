@@ -9,7 +9,7 @@ import { RouterView } from "vue-router";
   <div class="min-w-[960px] min-h-[100vh]">
     <div class="bg-floral p-0 my-0 min-h-[100vh] flex flex-col">
       <Header />
-      <div class="main-content flex pb-[2rem] flex-1 justify-center">
+      <div class="main-content flex pb-[2.5rem] flex-1 justify-center">
         <div class="content-container shadow flex">
           <div class="min-w-[12rem] w-[15%] *:text-nowrap sticky top-0 bg-leftbar-bg">
             <LeftBar class="min-w-[100%] *:text-nowrap sticky top-0" />
