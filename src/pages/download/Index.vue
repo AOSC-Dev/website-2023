@@ -1,7 +1,12 @@
 <script setup>
 import CategorySecond from "/src/components/CategorySecond.vue";
 import Button from "./components/Button.vue";
+let msStoreScript = document.createElement('script');
+msStoreScript.setAttribute('src', "https://get.microsoft.com/badge/ms-store-badge.bundled.js");
+document.head.appendChild(msStoreScript);
+
 </script>
+<!-- <script type="module" src="https://get.microsoft.com/badge/ms-store-badge.bundled.js"></script> -->
 
 <template>
   <div class="pl-[1px] flex flex-col">
@@ -124,15 +129,17 @@ import Button from "./components/Button.vue";
           </p>
         </div>
         <div id="wsl-buttons" class="buttons-col flex flex-col justify-between gap-2 my-[1rem] pr-[8rem] ml-auto">
-          <button
-            class="w-[224px] mt-auto text-white bg-black hover:opacity-85 ml-1 cursor-pointer"
-          >
-            <p style="button-p">前往</p>
-            <p style="button-p">Microsoft Store</p>
-          </button>
+          <ms-store-badge
+            class="mt-auto h-[60px]"
+            style="max-width: 224px"
+                productid="9NMDF21NV65Z"
+                window-mode="popup"
+                theme="dark"
+                language="en-us"
+                animation="on">
+          </ms-store-badge>
         </div>
       </div>
-
     </div>
     <category-second title="二级架构下载" />
   </div>
@@ -209,6 +216,11 @@ import Button from "./components/Button.vue";
 }
 .buttons-col button {
   padding: .25rem 0;
+}
+ms-store-badge::part(img) {
+  width: 160px;
+  display: block;
+  height: 60px;
 }
 </style>
 ./components/Header.vue
