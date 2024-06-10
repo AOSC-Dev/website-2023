@@ -210,9 +210,14 @@ document.head.appendChild(msStoreScript);
 
 .livekit-container {
   background: linear-gradient(90deg, #f6d5ac, 75%, transparent), url('/assets/backgrounds/livekit.jpg');
+  background-position-x: 0%, 100%;
 }
 .wsl-container {
-  background: linear-gradient(90deg, #b7e4fc, 75%, transparent);
+  background: linear-gradient(90deg, #b7e4fc, 75%, transparent), url('/assets/backgrounds/aosc-os-wsl.jpg');
+  background-color: #000;
+  background-position-x: 0%, 30rem;
+  background-size: 100%, 50rem;
+  background-repeat: no-repeat;
 }
 .buttons-col button {
   padding: .25rem 0;
