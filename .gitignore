@@ -13,6 +13,7 @@ dist-ssr
 website
 website.zip
 deply/website.zip
+public/newsCategories
 *.local
 
 # Editor directories and files
@@ -25,3 +26,4 @@ deply/website.zip
 *.njsproj
 *.sln
 *.sw?
+
