@@ -16,7 +16,7 @@ const linkArr = reactive([
       { title: "星霞 OS", link: "/afterglow" },
       { title: "libLoL 兼容层", link: "/liblol" },
       { title: "小熊猫包管理 (oma)", link: "/oma" },
-	    { title: "软件本地化", link: "/l10n" },
+	  { title: "软件本地化", link: "/l10n" },
     ],
     show: true,
   },
@@ -24,7 +24,7 @@ const linkArr = reactive([
     title: "资讯与支持",
     children: [
       { title: "新闻资讯", link: "/news" },
-	    { title: "支持中心", link: "#" },
+	  { title: "支持中心", link: "#" },
       { title: "活动相册", link: "/gallery" },
       { title: "安装指南", link: "#" },
       { title: "系统需求", link: "#" },
@@ -35,9 +35,8 @@ const linkArr = reactive([
   {
     title: "事务与文化",
     children: [
-	    { title: "社区简介", link: "/about" },
+	  { title: "社区简介", link: "/about" },
       { title: "线下活动", link: "#" },
-	    { title: "例会与投票", link: "#" },
       { title: "赞助与众筹", link: "/sponsoring" },
       { title: "实习资源", link: "#" },
       { title: "人际关系准则", link: "/guidelines" },
