@@ -37,14 +37,14 @@ function closeBigImg() {
       <category-second :title="gallery.title" class="sticky top-0" />
       <div class="grid grid-cols-4 gap-2 p-2">
         <div
-          class="mb-2"
           v-for="(photo, index) in gallery.album"
           :key="photo.file"
         >
           <img
+            loading="lazy"
             :src="`https://aosc.io/assets/i/gallery/thumbs/${photo.file}.jpg`"
             :alt="photo.desc"
-            class="cursor-pointer w-[100%] h-[auto]"
+            class="cursor-pointer w-[100%] max-w-[100%] object-cover aspect-video"
             @click="clickImg(gallery, index)"
           />
         </div>
