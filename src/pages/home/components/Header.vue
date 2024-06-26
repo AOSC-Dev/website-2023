@@ -21,7 +21,7 @@ const languageList = reactive([
           <span>|</span>
           <section class="flex flex-col">
             <div
-              class="relative overflow-hidden hover:overflow-visible h-[calc(1em+10px)] *:cursor-pointer"
+              class="relative overflow-hidden hover:overflow-visible h-[calc(1em+10px)] *:cursor-pointer z-[2]"
             >
               <span>网站语言</span>
               <ul class="bg-primary pt-[7px]">
