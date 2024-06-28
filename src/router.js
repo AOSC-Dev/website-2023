@@ -21,6 +21,7 @@ import Sponsoring from './pages/sponsoring/Index.vue'
 import News from './pages/news/Index.vue'
 import NewsList from './pages/news/List.vue'
 import NewsDetail from './pages/news/Detail.vue'
+import Paste from './pages/paste/Index.vue'
 import MdView from './pages/mdView/Index.vue'
 import PageNotFound from './components/PageNotFound.vue'
 
@@ -172,6 +173,13 @@ const router = createRouter({
       path: '/mdView/:mdPath/',
       name: 'mdView',
       component: MdView,
+    }, {
+      path: '/paste',
+      name: 'paste',
+      component: Paste,
+      meta: {
+        title: '粘贴板'
+      }
     }, {
       path: '/404',
       name: 'PageNotFound',
