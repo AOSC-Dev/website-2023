@@ -1,7 +1,7 @@
 <script setup>
 import { reactive } from "vue";
 import CategorySecond from "/src/components/CategorySecond.vue";
-import H2 from "/src/components/H2.vue";
+import {toUrl} from "/src/utils/utils.js";
 
 const urlList = reactive([
   {
@@ -36,8 +36,8 @@ const docList = reactive([
     <category-second title="支持文档" id="support" />
     <div class="pt-4 pb-[60px] px-16">
       <ul class="list-disc">
-        <li v-for="item in docList" :key="item.title">
-          <router-link class="text-link" :to="item.url">{{ item.title }}</router-link>
+        <li v-for="item in docList" :key="item.title" class="text-link cursor-pointer" @click="toUrl(item.url)">
+          {{ item.title }}
         </li>
       </ul>
     </div>
@@ -46,4 +46,3 @@ const docList = reactive([
 </template>
 
 <style scoped></style>
-./components/Header.vue
