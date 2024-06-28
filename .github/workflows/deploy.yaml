@@ -1,4 +1,4 @@
-name: Pages
+name: Deploy
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
     branches:
       - master # default branch
 jobs:
-  pages:
+  build:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -34,8 +34,17 @@ jobs:
           cd ../
       - name: Build
         run: npm run build
+      - name: Setup SSH Private Key
+        env:
+          KEY: ${{ secrets.KEY }}
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$KEY" > ~/.ssh/id_rsa 
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan 20.115.186.5 >> ~/.ssh/known_hosts
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./website
+        run: |
+          sudo apt install expect tcl -y
+          cd ./deploy
+          chmod +x deploy.sh unzipServer.sh upload.sh
+          ./deploy.sh
