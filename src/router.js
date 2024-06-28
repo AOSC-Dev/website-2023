@@ -17,6 +17,7 @@ import L10n from './pages/l10n/Index.vue'
 import Contact from './pages/contact/Index.vue'
 import Gallery from './pages/gallery/Index.vue'
 import Guidelines from './pages/guidelines/Index.vue'
+import Internship from './pages/internship/Index.vue'
 import Sponsoring from './pages/sponsoring/Index.vue'
 import News from './pages/news/Index.vue'
 import NewsList from './pages/news/List.vue'
@@ -138,6 +139,13 @@ const router = createRouter({
       component: Gallery,
       meta: {
         title: '活动相册'
+      }
+    },  {
+      path: '/internship',
+      name: 'internship',
+      component: Internship,
+      meta: {
+        title: '参与贡献'
       }
     }, {
       path: '/guidelines',
