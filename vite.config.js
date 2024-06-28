@@ -26,4 +26,13 @@ export default defineConfig({
       languages: prismEnabledLangauges,
     }),
   ],
+  server: {
+    proxy: {
+      '/pasteApi': {
+        target: 'https://pastebin.aosc.io/',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/pasteApi/, ''),
+      },
+    },
+  }
 })

@@ -52,7 +52,7 @@ const linkArr = reactive([
       { title: "镜像源", link: "https://aosc.io/repo/" },
       { title: "构建服务器", link: "https://aosc.io/repo/" },
       { title: "自动化设施", link: "https://aosc.io/repo/" },
-      { title: "粘贴板", link: "https://paste.aosc.io" },
+      { title: "粘贴板", link: "/paste" },
     ],
     show: true,
   },
