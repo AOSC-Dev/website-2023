@@ -12,6 +12,7 @@ function downloadIso() {
 <template>
   <button
     class="w-[224px] m-0 text-white bg-secondary hover:opacity-85 ml-1 cursor-pointer text-[10pt]"
+    @click="downloadIso"
   >
     <div>{{ props.title }}</div>
     <p>{{ byteToGb(props.isoInfo.downloadSize) }}GB ISO</p>
