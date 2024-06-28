@@ -243,7 +243,7 @@ const languageList = ref([
   "Zephir",
 ]);
 
-const selectDateTime = ref()
+const selectDateTime = ref();
 const pasteFormData = ref({
   title: "",
   contents: "",
@@ -252,7 +252,9 @@ const pasteFormData = ref({
   password: "",
   attachments: [],
 });
-const pasteRes = ref(null)
+const pasteRes = ref(null);
+
+const linkPre = `${window.location.protocol}//${window.location.host}`
 
 const submiting = ref(false);
 function submit() {
@@ -261,13 +263,13 @@ function submit() {
     .post("/pasteApi/api/paste/submit", pasteFormData.value)
     .then((res) => {
       submiting.value = false;
-      pasteRes.value = res.data
+      pasteRes.value = res.data;
       console.log(res.data);
     })
     .catch((err) => {
       submiting.value = false;
       console.log(err);
-      pasteRes.value = {res: 'fail'}
+      pasteRes.value = { res: "fail" };
     });
 }
 
@@ -292,11 +294,22 @@ function removeFile() {
 }
 function expTimeChange(v) {
   if (v == null) {
-    pasteFormData.value.expiry_time = 0
+    pasteFormData.value.expiry_time = 0;
   } else {
-    pasteFormData.value.expiry_time = v.getTime() / 1000
+    pasteFormData.value.expiry_time = v.getTime() / 1000;
   }
-  
+}
+function back() {
+  pasteRes.value = null
+  pasteFormData.value = {
+    title: "",
+    language: 'text',
+    content: "",
+    expiry_time: 0,
+    password: "",
+    attachments: [],
+  };
+  selectDateTime.value = ''
 }
 </script>
 
@@ -331,7 +344,11 @@ function expTimeChange(v) {
         >
       </el-form-item>
       <el-form-item label="到期时间">
-        <el-date-picker type="datetime" v-model="selectDateTime" @change="expTimeChange" />
+        <el-date-picker
+          type="datetime"
+          v-model="selectDateTime"
+          @change="expTimeChange"
+        />
       </el-form-item>
       <el-form-item label="密码">
         <el-input v-model="pasteFormData.password" />
@@ -349,15 +366,26 @@ function expTimeChange(v) {
 
     <div v-else>
       <el-result icon="success" title="成功" v-if="pasteRes.contents">
-      <template #sub-title>
-        <a :href="`https://website-2023.aosc.io/paste/detail?id=${pasteRes.paste_id_expr}`" class="text-link">
-          {{ `https://website-2023.aosc.io/paste/detail?id=${pasteRes.paste_id_repr}` }}
-        </a>
-      </template>
-    </el-result>
-    <el-result v-else icon="error" sub-title="失败"></el-result>
+        <template #sub-title>
+          <a
+            :href="`${linkPre}paste/detail?id=${pasteRes.paste_id_repr}`"
+            class="text-link"
+          >
+            {{
+              `${linkPre}paste/detail?id=${pasteRes.paste_id_repr}`
+            }}
+          </a>
+        </template>
+        <template #extra>
+          <el-button type="primary" @click="back">返回</el-button>
+        </template>
+      </el-result>
+      <el-result v-else icon="error" sub-title="失败">
+        <template #extra>
+          <el-button type="primary" @click="back">返回</el-button>
+        </template>
+      </el-result>
     </div>
-    
   </div>
 </template>
 
