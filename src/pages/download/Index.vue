@@ -275,6 +275,7 @@ function getNewVersioArch(arch) {
       <div class="text-[14pt] mb-[20px]">
         我们为Docker用户提供了容器镜像，您可以通过如下命令抓取安同OS容器
       </div>
+      <p>docker pull aosc/aosc-os</p>
     </div>
   </div>
 </template>
