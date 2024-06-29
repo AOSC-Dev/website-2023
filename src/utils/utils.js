@@ -17,7 +17,7 @@ export function setTitle(titlePre) {
 export function toUrl(url) {
   if (url.indexOf("http") == 0) {
     toOutUrl(url);
-  } else {
+  } else if (url.indexOf("/") == 0) {
     router.push(url);
   }
 }

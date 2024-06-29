@@ -1,7 +1,7 @@
 <script setup>
 import { reactive } from "vue";
 import CategorySecond from "/src/components/CategorySecond.vue";
-import H2 from "/src/components/H2.vue";
+import {toUrl} from "/src/utils/utils.js";
 
 const urlList = reactive([
   {
@@ -54,8 +54,7 @@ const docList = reactive([
       </p><br />
       <div>
         <span v-for="(item, index) in urlList" :key="item.title">
-          <router-link :to="item.url" class="text-link" v-if="item.url.indexOf('#') != 0">{{ item.title }}</router-link>
-          <a class="text-link" :href="item.url" v-else>{{ item.title }}</a>
+          <span class="text-link cursor-pointer" @click="toUrl(item.url)">{{ item.title }}</span>
           <span class="mx-1" v-if="index < urlList.length - 1">|</span>
         </span>
       </div>
@@ -65,8 +64,8 @@ const docList = reactive([
     <category-second title="支持文档" id="support" />
     <div class="pt-4 pb-[60px] px-16">
       <ul class="list-disc">
-        <li v-for="item in docList" :key="item.title">
-          <router-link class="text-link" :to="item.url">{{ item.title }}</router-link>
+        <li v-for="item in docList" :key="item.title" class="text-link cursor-pointer" @click="toUrl(item.url)">
+          {{ item.title }}
         </li>
       </ul>
     </div>
