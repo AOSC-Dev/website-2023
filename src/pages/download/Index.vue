@@ -12,7 +12,7 @@
 import CategorySecond from "/src/components/CategorySecond.vue";
 import DownloadButton from "./components/DownloadButton.vue";
 import { onMounted, ref } from "vue";
-import axios from "axios";
+import VCodeBlock from '@wdns/vue-code-block';
 let msStoreScript = document.createElement("script");
 msStoreScript.setAttribute(
   "src",
@@ -56,48 +56,74 @@ onMounted(() => {
 const antong1List = ref([
   {
     title: "amd64",
+    zhLabel: 'x86-64/amd64',
+    enLabel: 'x86-64/amd64'
   },
   {
     title: "arm64",
+    zhLabel: 'AArch64/arm64',
+    enLabel: 'AArch64/arm64',
   },
   {
     title: "loongarch64",
+    zhLabel: '龙架构 (LoongArch)/loongarch64',
+    enLabel: 'LoongArch/loongarch64',
   },
 ]);
 const antong2List = ref([
   {
     title: "ppc64el",
+    zhLabel: 'IBM POWER（小端序）/ppc64el',
+    enLabel: 'IBM POWER/ppc64el',
   },
   {
     title: "riscv64",
+    zhLabel: 'RISC-V（64 位）/riscv64',
+    enLabel: 'RISC-V（64 位）/riscv64'
   },
   {
     title: "loongson3",
+    zhLabel: '基于 MIPS 的龙芯三号处理器/loongson3',
+    enLabel: '基于 MIPS 的龙芯三号处理器/loongson3'
   },
 ]);
 const xingxia1List = ref([
   {
     title: "i486",
+    zhLabel: 'Intel 80486 或更新/i486',
+    enLabel: 'Intel 80486 or new/i486'
   },
   {
     title: "loongson2f",
+    zhLabel: '基于 MIPS 的龙芯二号处理器/loongson2f',
+    enLabel: '基于 MIPS 的龙芯二号处理器/loongson2f'
   },
   {
     title: "powerpc",
+    zhLabel: 'PowerPC（32 位，大端序）/powerpc',
+    enLabel: 'PowerPC/powerpc'
   },
 ]);
 const xingxia2List = ref([
   {
     title: "m68k",
+    zhLabel: 'Motorola 68000 系列处理器**/m68k',
+    enLabel: 'Motorola 68000/m68k'
   },
   {
     title: "armv4",
+    zhLabel: 'ARMv4',
+    enLabel: 'ARMv4'
   },
   {
     title: "armv6hf",
+    zhLabel: 'ARMv6（硬浮点）',
+    enLabel: 'ARMv6'
   },
   {
     title: "armv7hf",
+    zhLabel: 'ARMv7（硬浮点）',
+    enLabel: 'ARMv7'
   },
 ]);
 
@@ -131,8 +157,7 @@ function getNewVersioArch(arch) {
             <div class="button-container-aoscos buttons-col">
               <span v-for="item in antong1List" :key="item.title">
                 <download-button
-                  :title="item.title"
-                  :isoInfo="item.info"
+                  :isaInfo="item"
                 ></download-button>
               </span>
             </div>
@@ -154,8 +179,7 @@ function getNewVersioArch(arch) {
               <span v-for="item in xingxia1List" :key="item.title">
                 <download-button
                   v-if="item.info != undefined"
-                  :title="item.title"
-                  :isoInfo="item.info"
+                  :isaInfo="item"
                 ></download-button>
               </span>
             </div>
@@ -175,8 +199,7 @@ function getNewVersioArch(arch) {
         <span v-for="item in antong2List" :key="item.title">
           <download-button
             v-if="item.info != undefined"
-            :title="item.title"
-            :isoInfo="item.info"
+            :isaInfo="item"
           />
         </span>
       </div>
@@ -190,8 +213,7 @@ function getNewVersioArch(arch) {
         <span v-for="item in xingxia2List" :key="item.title">
           <download-button
             v-if="item.info != undefined"
-            :title="item.title"
-            :isoInfo="item.info"
+            :isaInfo="item"
           />
         </span>
       </div>
@@ -201,7 +223,7 @@ function getNewVersioArch(arch) {
       <div class="text-[14pt] mb-[20px]">
         我们为Docker用户提供了容器镜像，您可以通过如下命令抓取安同OS容器
       </div>
-      <p>docker pull aosc/aosc-os</p>
+      <VCodeBlock code="docker pull aosc/aosc-os" lang="shell" highlightjs theme="gradient-light" />
     </div>
   </div>
 </template>
@@ -291,4 +313,3 @@ ms-store-badge::part(img) {
   height: 60px;
 }
 </style>
-./components/Header.vue

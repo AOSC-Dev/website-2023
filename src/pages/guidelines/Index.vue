@@ -15,7 +15,7 @@ import H2 from "/src/components/H2.vue";
       <i>&nbsp;&nbsp;“All the people who live in a particular area, or a group of people who are considered as a unit because of their shared interests or background.”</i>
       <p class="py-2">
         — Community (n.), definition from the
-        <router-link to="https://dictionary.cambridge.org/dictionary/english/community" class="text-link"> Cambridge English Dictionary</router-link>
+        <a href="https://dictionary.cambridge.org/dictionary/english/community" class="text-link" target="_blank"> Cambridge English Dictionary</a>
       </p>
       <p>
         作为安同开源社区的一分子，我们共同的爱好就是探索计算机技术，特别是开源软件的发展和本地化。数年来，安同开源社区将大部分的精力放在了 AOSC OS 这一发行版及多个社区成员们的兴趣项目。例如在 2019 年我们创建了 AOSC 古董计算机兴趣小组 (AOSC Retro Computing Group)，为古董电脑爱好者提供了一个购买、折腾、把玩古董电脑的交流平台，我们甚至为这些电脑移植和适配了 AOSC OS。

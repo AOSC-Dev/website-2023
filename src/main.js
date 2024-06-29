@@ -20,8 +20,15 @@ VMdPreview.use(vuepressTheme, {
   Prism,
 });
 
+import { createVCodeBlock } from '@wdns/vue-code-block';
+
+const VCodeBlock = createVCodeBlock({
+  // options
+});
+
 const app = createApp(App)
 app.component("v-icon", OhVueIcon);
+app.use(VCodeBlock)
 app.use(router)
 app.use(VMdPreview)
 app.mount('#app')

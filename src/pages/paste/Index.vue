@@ -1,7 +1,7 @@
 <script setup>
 import axios from "axios";
 import { onMounted, ref } from "vue";
-import { VAceEditor } from "vue3-ace-editor";
+import VCodeBlock from '@wdns/vue-code-block';
 
 const languageList = ref([
   "1C",
@@ -259,8 +259,16 @@ const linkPre = `${window.location.protocol}//${window.location.host}`
 const submiting = ref(false);
 function submit() {
   submiting.value = true;
+  let data = {}
+  Object.assign(data, pasteFormData.value);
+  if (data.expiry_time == 0) {
+    delete data.expiry_time
+  }
+  if (data.password == "") {
+    delete data.password
+  }
   axios
-    .post("/pasteApi/api/paste/submit", pasteFormData.value)
+    .post("/pasteApi/api/paste/submit", data)
     .then((res) => {
       submiting.value = false;
       pasteRes.value = res.data;
@@ -278,12 +286,13 @@ function setFile(event) {
   // 读取文件内容为base64
   const reader = new FileReader();
   reader.onload = (v) => {
+    console.log(v.target.result)
     pasteFormData.value.attachments = [
       {
         name: event.name,
         size: event.size,
-        data: v.target.result,
-        mime_type: "application/octet-stream",
+        data: v.target.result.substring(5),
+        mime_type: "image/png",
       },
     ];
   };
@@ -304,7 +313,7 @@ function back() {
   pasteFormData.value = {
     title: "",
     language: 'text',
-    content: "",
+    contents: "",
     expiry_time: 0,
     password: "",
     attachments: [],
@@ -332,6 +341,9 @@ function back() {
       </el-form-item>
       <el-form-item label="内容*">
         <el-input v-model="pasteFormData.contents" type="textarea" />
+      </el-form-item>
+      <el-form-item label="预览">
+        <VCodeBlock class="w-full" v-if="pasteFormData.contents != ''" :code="pasteFormData.contents" :lang="pasteFormData.language" highlightjs theme="gradient-light" />
       </el-form-item>
       <el-form-item label="附件*">
         <el-upload
@@ -368,11 +380,11 @@ function back() {
       <el-result icon="success" title="成功" v-if="pasteRes.contents">
         <template #sub-title>
           <a
-            :href="`${linkPre}paste/detail?id=${pasteRes.paste_id_repr}`"
+            :href="`${linkPre}/paste/detail?id=${pasteRes.paste_id_repr}${pasteFormData.password != '' ? '&needPassword=true' : ''}`"
             class="text-link"
           >
             {{
-              `${linkPre}paste/detail?id=${pasteRes.paste_id_repr}`
+              `${linkPre}/paste/detail?id=${pasteRes.paste_id_repr}${pasteFormData.password != '' ? '&needPassword=true' : ''}`
             }}
           </a>
         </template>

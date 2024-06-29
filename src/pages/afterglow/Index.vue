@@ -28,7 +28,7 @@ const docList = reactive([
     url: '/'
   }, {
     title: '系统需求与架构支持指南',
-    url: '/'
+    url: '/afterglow/isa'
   }, {
     title: '其他支持文档',
     url: '/'
