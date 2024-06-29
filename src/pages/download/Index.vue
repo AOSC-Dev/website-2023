@@ -56,59 +56,59 @@ onMounted(() => {
 const antong1List = ref([
   {
     title: "amd64",
-    zhLabel: 'x86-64/amd64',
-    enLabel: 'x86-64/amd64'
+    zhLabel: 'x86-64',
+    enLabel: 'x86-64'
   },
   {
     title: "arm64",
-    zhLabel: 'AArch64/arm64',
-    enLabel: 'AArch64/arm64',
+    zhLabel: 'AArch64',
+    enLabel: 'AArch64',
   },
   {
     title: "loongarch64",
-    zhLabel: '龙架构 (LoongArch)/loongarch64',
-    enLabel: 'LoongArch/loongarch64',
+    zhLabel: '龙架构 (LoongArch)',
+    enLabel: 'LoongArch',
   },
 ]);
 const antong2List = ref([
   {
     title: "ppc64el",
-    zhLabel: 'IBM POWER（小端序）/ppc64el',
-    enLabel: 'IBM POWER/ppc64el',
+    zhLabel: 'IBM POWER（小端序）',
+    enLabel: 'IBM POWER',
   },
   {
     title: "riscv64",
-    zhLabel: 'RISC-V（64 位）/riscv64',
-    enLabel: 'RISC-V（64 位）/riscv64'
+    zhLabel: 'RISC-V（64 位）',
+    enLabel: 'RISC-V（64 位）'
   },
   {
     title: "loongson3",
-    zhLabel: '基于 MIPS 的龙芯三号处理器/loongson3',
-    enLabel: '基于 MIPS 的龙芯三号处理器/loongson3'
+    zhLabel: '基于 MIPS 的龙芯三号处理器',
+    enLabel: '基于 MIPS 的龙芯三号处理器'
   },
 ]);
 const xingxia1List = ref([
   {
     title: "i486",
-    zhLabel: 'Intel 80486 或更新/i486',
-    enLabel: 'Intel 80486 or new/i486'
+    zhLabel: 'Intel 80486 或更新',
+    enLabel: 'Intel 80486 or new'
   },
   {
     title: "loongson2f",
-    zhLabel: '基于 MIPS 的龙芯二号处理器/loongson2f',
-    enLabel: '基于 MIPS 的龙芯二号处理器/loongson2f'
+    zhLabel: '基于 MIPS 的龙芯二号处理器',
+    enLabel: '基于 MIPS 的龙芯二号处理器'
   },
   {
     title: "powerpc",
-    zhLabel: 'PowerPC（32 位，大端序）/powerpc',
+    zhLabel: 'PowerPC（32 位，大端序）',
     enLabel: 'PowerPC/powerpc'
   },
 ]);
 const xingxia2List = ref([
   {
     title: "m68k",
-    zhLabel: 'Motorola 68000 系列处理器**/m68k',
-    enLabel: 'Motorola 68000/m68k'
+    zhLabel: 'Motorola 68000 系列处理器**',
+    enLabel: 'Motorola 68000'
   },
   {
     title: "armv4",
@@ -223,7 +223,7 @@ function getNewVersioArch(arch) {
       <div class="text-[14pt] mb-[20px]">
         我们为Docker用户提供了容器镜像，您可以通过如下命令抓取安同OS容器
       </div>
-      <VCodeBlock code="docker pull aosc/aosc-os" lang="shell" highlightjs theme="gradient-light" />
+      <VCodeBlock code="docker pull aosc/aosc-os" lang="shell" highlightjs theme="github" />
     </div>
   </div>
 </template>
