@@ -37,7 +37,8 @@ const linkArr = reactive([
     children: [
 	  { title: "社区简介", link: "/about" },
       { title: "线下活动", link: "#" },
-      { title: "赞助与众筹", link: "/sponsoring" },
+      { title: "赞助", link: "/sponsoring" },
+      { title: "众筹", link: "/fund" },
       { title: "实习资源", link: "#" },
       { title: "人际关系准则", link: "/guidelines" },
     ],
