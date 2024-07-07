@@ -18,6 +18,7 @@ import Contact from './pages/contact/Index.vue'
 import Gallery from './pages/gallery/Index.vue'
 import Guidelines from './pages/guidelines/Index.vue'
 import Sponsoring from './pages/sponsoring/Index.vue'
+import Fund from './pages/fund/Index.vue'
 import News from './pages/news/Index.vue'
 import NewsList from './pages/news/List.vue'
 import NewsDetail from './pages/news/Detail.vue'
@@ -153,7 +154,14 @@ const router = createRouter({
       name: 'sponsoring',
       component: Sponsoring,
       meta: {
-        title: '赞助与众筹'
+        title: '赞助'
+      }
+    }, {
+      path: '/fund',
+      name: 'fund',
+      component: Fund,
+      meta: {
+        title: '众筹'
       }
     }, {
       path: '/news',
