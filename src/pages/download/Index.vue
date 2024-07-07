@@ -13,6 +13,8 @@ import CategorySecond from "/src/components/CategorySecond.vue";
 import DownloadButton from "./components/DownloadButton.vue";
 import { onMounted, ref } from "vue";
 import VCodeBlock from '@wdns/vue-code-block';
+import {toUrl} from '/src/utils/utils.js'
+
 let msStoreScript = document.createElement("script");
 msStoreScript.setAttribute(
   "src",
@@ -127,6 +129,11 @@ const xingxia2List = ref([
   },
 ]);
 
+function getAntongDate() {
+  let dateStr = versionArch.value.filter((v) => v.arch == "amd64")[0].date;
+  return `${dateStr.substring(0, 4)}/${dateStr.substring(4, 6)}/${dateStr.substring(6, 8)}`;
+}
+
 /**
  * 根据架构找出最新的下载信息
  */
@@ -152,7 +159,10 @@ function getNewVersioArch(arch) {
             <div class="text-aosc-os">
               <p style="font-size: 32pt">安同 OS</p>
               <p style="font-size: 14pt">称心得意的桌面操作系统</p>
-              <p style="font-size: 10pt">2024/3/3·发行说明·配置需求</p>
+              <p style="font-size: 10pt">
+                {{getAntongDate()}}·
+                <span class="cursor-pointer" @click="toUrl('/aosc-os/relnote')">发行说明</span>·
+                <span class="cursor-pointer" @click="toUrl('/aosc-os/requirements')">配置需求</span></p>
             </div>
             <div class="button-container-aoscos buttons-col">
               <span v-for="item in antong1List" :key="item.title">
@@ -172,17 +182,17 @@ function getNewVersioArch(arch) {
               <p style="font-size: 32pt; color: #fff">星霞 OS</p>
               <p style="font-size: 14pt; color: #fff">老设备也能发光发热</p>
               <p style="font-size: 10pt; color: #fff">
-                2024/3/3·发行说明·配置需求
+                敬请期待...
               </p>
             </div>
-            <div class="button-container-afterglow buttons-col">
+            <!-- <div class="button-container-afterglow buttons-col">
               <span v-for="item in xingxia1List" :key="item.title">
                 <download-button
                   v-if="item.info != undefined"
                   :isaInfo="item"
                 ></download-button>
               </span>
-            </div>
+            </div> -->
           </div>
           <div class="pt-[4.5rem] min-w-[96px] w-[30%]">
             <img src="/assets/download/afterglow-web.svg" />
@@ -204,7 +214,7 @@ function getNewVersioArch(arch) {
         </span>
       </div>
     </div>
-    <category-second title="星霞 OS（其他版本）" />
+    <!-- <category-second title="星霞 OS（其他版本）" />
     <div class="pt-[20px] pb-[30px] px-[30px]">
       <div class="text-[14pt] mb-[20px]">
         星霞OS支持许多来自不同年代和不同形式的设备，点击下方对应您设备的下载按钮即可。
@@ -217,7 +227,7 @@ function getNewVersioArch(arch) {
           />
         </span>
       </div>
-    </div>
+    </div> -->
     <category-second title="容器镜像" />
     <div class="pt-[20px] pb-[30px] px-[30px]">
       <div class="text-[14pt] mb-[20px]">
