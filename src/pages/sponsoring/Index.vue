@@ -236,7 +236,7 @@ const sponsorList = ref([
         >
           <img
             loading="lazy"
-            :src="`/public/assets/sponsors/${sponsor.img}.svg`"
+            :src="`/assets/sponsors/${sponsor.img}.svg`"
             :alt="sponsor.name"
             class="w-[100%] max-w-[100%]"
           />
