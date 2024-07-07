@@ -1,5 +1,4 @@
 <script setup DownloadButton>
-import { defineProps } from "vue";
 const props = defineProps(["isaInfo"]);
 
 function byteToGb(bytes) {
