@@ -11,6 +11,17 @@ const route = useRoute()
 const details = ref(null)
 import VCodeBlock from '@wdns/vue-code-block';
 const status = ref(0)
+const imgSuffixList = ['jpg', 'jpeg', 'png', 'gif']
+
+function isImg(name) {
+  const suffixIndex = name.lastIndexOf('.')
+  const suffix = name.substring(suffixIndex + 1)
+  return imgSuffixList.find(v => v == suffix) !== undefined
+}
+
+function getAttachUrl(name) {
+  return `https://pastebin.aosc.io/paste/${id.value}/attachment/${name}`
+}
 
 onMounted(() => {
   id.value = route.query.id
@@ -37,7 +48,7 @@ function getPaste() {
       status.value = 0
     })
     .catch((err) => {
-      console.log('获取异常', err.response);
+      console.log('获取异常', err);
       if (err.response.status == 404) {
         ElMessage({message: '粘贴板不存在', type: 'warning'})
       }
@@ -64,7 +75,8 @@ function getPaste() {
       </h1>
       <VCodeBlock class="w-full" :code="details.contents" :lang="details.language" highlightjs theme="gradient-light" />
       <div v-for="item in details.attachments">
-        <img :src="item.url" class="w-full" />
+        <img :src="getAttachUrl(item.file_name)" class="w-full" v-if="isImg(item.file_name)" />
+        <a v-else class="text-link" :href="getAttachUrl(item.file_name)" target="_blank">{{ item.file_name }}</a>
       </div>
     </div>
 

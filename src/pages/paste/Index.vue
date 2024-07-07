@@ -282,17 +282,23 @@ function submit() {
 }
 
 function setFile(event) {
-  console.log(event);
+  console.log(window.btoa(event.raw));
   // 读取文件内容为base64
   const reader = new FileReader();
   reader.onload = (v) => {
-    console.log(v.target.result)
+    const base64Full = v.target.result
+    // 从base64前面获取文件的mine
+    let index1 = base64Full.indexOf(':')
+    let index2 = base64Full.indexOf(';')
+    const mine = base64Full.substring(index1 + 1, index2)
+    // base64需要删掉从,开始前面的部分
+    const base64Index = base64Full.indexOf(',')
     pasteFormData.value.attachments = [
       {
         name: event.name,
         size: event.size,
-        data: v.target.result.substring(5),
-        mime_type: "image/png",
+        data: base64Full.substring(base64Index + 1),
+        mime_type: 'application/octet-stream',
       },
     ];
   };
@@ -382,6 +388,7 @@ function back() {
           <a
             :href="`${linkPre}/paste/detail?id=${pasteRes.paste_id_repr}${pasteFormData.password != '' ? '&needPassword=true' : ''}`"
             class="text-link"
+            target="_blank"
           >
             {{
               `${linkPre}/paste/detail?id=${pasteRes.paste_id_repr}${pasteFormData.password != '' ? '&needPassword=true' : ''}`
