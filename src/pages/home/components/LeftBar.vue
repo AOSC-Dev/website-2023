@@ -1,7 +1,6 @@
 <script setup name="LeftBar">
 import { reactive, ref, onMounted } from "vue";
-import { useRouter } from "vue-router";
-import { toUrl } from "/src/utils/utils.js";
+import { useRouter, RouterLink } from "vue-router";
 
 // 该变量将在左侧边栏组件加载时设定
 // 记录有多少个分类可以被展开，由视图 (Viewport) 垂直高度决定
@@ -215,14 +214,14 @@ onMounted(() => {
       </div>
       <Transition name="menu">
       <ul class="py-[3px] flex nav-container" v-show="item1.show">
-        <a
-          @click.prevent="toUrl(item2.link)"
+        <router-link
+          :to="item2.link"
           v-for="item2 in item1.children"
           :key="item2.title"
 		  :href="item2.link"
 	  :class=" { 'bg-[#dcdcdc]': $route.path.trim().startsWith(item2.link.trim()) }"
           class="leading-4 navitem-flex hover:bg-[#dcdcdc] cursor-pointer pr-[10px] pl-[16px] block text-wrap select-none href-noline"
-          >{{ item2.title }}</a>
+          >{{ item2.title }}</router-link>
       </ul>
     </Transition>
     </div>
