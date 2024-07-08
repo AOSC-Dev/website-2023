@@ -17,8 +17,8 @@ import L10n from './pages/l10n/Index.vue'
 import Contact from './pages/contact/Index.vue'
 import Gallery from './pages/gallery/Index.vue'
 import Guidelines from './pages/guidelines/Index.vue'
-import Sponsoring from './pages/sponsoring/Index.vue'
-import Fund from './pages/fund/Index.vue'
+import Sponsors from './pages/sponsors/Index.vue'
+import Crowdsourcing from './pages/crowdsourcing/Index.vue'
 import News from './pages/news/Index.vue'
 import NewsList from './pages/news/List.vue'
 import NewsDetail from './pages/news/Detail.vue'
@@ -150,16 +150,16 @@ const router = createRouter({
         title: '人际关系准则'
       }
     }, {
-      path: '/sponsoring',
-      name: 'sponsoring',
-      component: Sponsoring,
+      path: '/sponsors',
+      name: 'sponsors',
+      component: Sponsors,
       meta: {
         title: '赞助方一览'
       }
     }, {
-      path: '/fund',
-      name: 'fund',
-      component: Fund,
+      path: '/crowdsourcing',
+      name: 'crowdsourcing',
+      component: Crowdsourcing,
       meta: {
         title: '社区众筹'
       }

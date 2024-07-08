@@ -172,8 +172,8 @@ const sponsorList = ref([
         img: "ossplanet",
       },
       {
-        name: "QingCloud",
-        web: "https://ossplanet.net/",
+        name: "青云 QingCloud",
+        web: "https://www.qingcloud.com/",
         img: "qingcloud",
       },
       {
