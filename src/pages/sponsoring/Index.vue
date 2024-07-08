@@ -50,7 +50,7 @@ const sponsorList = ref([
       {
         name: "哈尔滨工业大学 Linux 开源学生俱乐部",
         web: "https://lug.hit.edu.cn",
-        img: "hit",
+        img: "hit-lug",
       },
       {
         name: "Hexhu",
@@ -132,6 +132,11 @@ const sponsorList = ref([
         web: "https://plctlab.org/zh/",
         img: "plct",
       },
+      {
+        name: "PINE64",
+        web: "https://pine64.org/",
+        img: "pine64",
+      },
     ],
   },
   {
@@ -140,17 +145,12 @@ const sponsorList = ref([
       {
         name: "CodeWeavers",
         web: "https://www.codeweavers.com/",
-        img: "codeweavers",
+        img: "crossover",
       },
       {
         name: "JetBrains",
         web: "https://www.jetbrains.com/",
         img: "jetbrains",
-      },
-      {
-        name: "PINE64",
-        web: "https://pine64.org/",
-        img: "pine64",
       },
     ],
   },
@@ -200,7 +200,7 @@ const sponsorList = ref([
       {
         name: "重庆大学蓝盟",
         web: "http://lanunion.cqu.edu.cn/",
-        img: "cqu-launion",
+        img: "cqu-lanunion",
       },
       {
         name: "重庆邮电大学 Linux 用户组",

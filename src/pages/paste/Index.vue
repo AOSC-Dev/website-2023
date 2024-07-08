@@ -1,7 +1,8 @@
 <script setup>
 import axios from "axios";
-import { onMounted, ref } from "vue";
+import { onMounted, ref, toRaw } from "vue";
 import VCodeBlock from '@wdns/vue-code-block';
+import dayjs from 'dayjs'
 
 const languageList = ref([
   "1C",
@@ -248,9 +249,8 @@ const pasteFormData = ref({
   title: "",
   contents: "",
   language: "Text",
-  expiry_time: 0,
   password: "",
-  attachments: [],
+  expDate: null
 });
 const pasteRes = ref(null);
 
@@ -259,60 +259,55 @@ const linkPre = `${window.location.protocol}//${window.location.host}`
 const submiting = ref(false);
 function submit() {
   submiting.value = true;
-  let data = {}
-  Object.assign(data, pasteFormData.value);
-  if (data.expiry_time == 0) {
-    delete data.expiry_time
+  const formdata = new FormData()
+
+  formdata.append("title", pasteFormData.value.title)
+  formdata.append("content", pasteFormData.value.contents)
+  formdata.append("language", pasteFormData.value.language)
+  formdata.append("password", pasteFormData.value.password)
+  if (selectedFileList.length > 0) {
+    selectedFileList.forEach(v => {
+      console.log(toRaw(v))
+      formdata.append('fileList', toRaw(v).raw)
+    })
   }
-  if (data.password == "") {
-    delete data.password
+  if (pasteFormData.value.expDate != null) {
+    formdata.append('expDate', pasteFormData.value.expDate)
+  } else {
+    // 如果不选择日期，默认保留一年
+    const nextYear = dayjs().add(1, 'year').format('YYYYMMDD')
+    formdata.append('expDate', nextYear)
   }
+  
+  const isSuccess = ref(true)
+  const failReason = ref('')
   axios
-    .post("/pasteApi/api/paste/submit", data)
+    .post("/pasteApi/paste", formdata)
     .then((res) => {
-      submiting.value = false;
-      pasteRes.value = res.data;
-      console.log(res.data);
+      const results = res.data
+      console.log('服务器结果: ', results)
+      if (results.code == 0) {
+        isSuccess.value = true
+        pasteRes.value = results.data.id;
+      } else {
+        isSuccess.value = false
+        failReason.value = results.message
+      }
     })
     .catch((err) => {
-      submiting.value = false;
-      console.log(err);
-      pasteRes.value = { res: "fail" };
+      isSuccess.value = false
+      failReason.value = '网络异常'
+    }).finally(() => {
+      submiting.value = false
     });
 }
 
-function setFile(event) {
-  console.log(window.btoa(event.raw));
-  // 读取文件内容为base64
-  const reader = new FileReader();
-  reader.onload = (v) => {
-    const base64Full = v.target.result
-    // 从base64前面获取文件的mine
-    let index1 = base64Full.indexOf(':')
-    let index2 = base64Full.indexOf(';')
-    const mine = base64Full.substring(index1 + 1, index2)
-    // base64需要删掉从,开始前面的部分
-    const base64Index = base64Full.indexOf(',')
-    pasteFormData.value.attachments = [
-      {
-        name: event.name,
-        size: event.size,
-        data: base64Full.substring(base64Index + 1),
-        mime_type: 'application/octet-stream',
-      },
-    ];
-  };
-  reader.readAsDataURL(event.raw);
+let selectedFileList = []
+function setFile(file, fileList) {
+  selectedFileList = fileList
 }
-function removeFile() {
-  pasteFormData.value.attachments = [];
-}
-function expTimeChange(v) {
-  if (v == null) {
-    pasteFormData.value.expiry_time = 0;
-  } else {
-    pasteFormData.value.expiry_time = v.getTime() / 1000;
-  }
+function removeFile(f, fileList) {
+  selectedFileList = fileList
 }
 function back() {
   pasteRes.value = null
@@ -320,10 +315,10 @@ function back() {
     title: "",
     language: 'text',
     contents: "",
-    expiry_time: 0,
     password: "",
-    attachments: [],
+    expDate: null
   };
+  selectedFileList = []
   selectDateTime.value = ''
 }
 </script>
@@ -349,23 +344,24 @@ function back() {
         <el-input v-model="pasteFormData.contents" type="textarea" />
       </el-form-item>
       <el-form-item label="预览">
-        <VCodeBlock class="w-full" v-if="pasteFormData.contents != ''" :code="pasteFormData.contents" :lang="pasteFormData.language" highlightjs theme="gradient-light" />
+        <VCodeBlock class="w-full" v-if="pasteFormData.contents != ''" :code="pasteFormData.contents" :lang="pasteFormData.language" highlightjs theme="github" />
       </el-form-item>
       <el-form-item label="附件*">
         <el-upload
+          class="w-full"
           :on-change="setFile"
           :on-remove="removeFile"
           :auto-upload="false"
-          :limit="1"
+          :limit="10"
         >
           <el-button type="success">选择文件</el-button></el-upload
         >
       </el-form-item>
       <el-form-item label="到期时间">
         <el-date-picker
-          type="datetime"
-          v-model="selectDateTime"
-          @change="expTimeChange"
+          value-format="YYYYMMDD"
+          format="YYYY-MM-DD"
+          v-model="pasteFormData.expDate"
         />
       </el-form-item>
       <el-form-item label="密码">
@@ -383,15 +379,15 @@ function back() {
     </el-form>
 
     <div v-else>
-      <el-result icon="success" title="成功" v-if="pasteRes.contents">
+      <el-result icon="success" title="成功" v-if="!isSuccess">
         <template #sub-title>
           <a
-            :href="`${linkPre}/paste/detail?id=${pasteRes.paste_id_repr}${pasteFormData.password != '' ? '&needPassword=true' : ''}`"
+            :href="`${linkPre}/paste/detail?id=${pasteRes}${pasteFormData.password != '' ? '&needPassword=true' : ''}`"
             class="text-link"
             target="_blank"
           >
             {{
-              `${linkPre}/paste/detail?id=${pasteRes.paste_id_repr}${pasteFormData.password != '' ? '&needPassword=true' : ''}`
+              `${linkPre}/paste/detail?id=${pasteRes}${pasteFormData.password != '' ? '&needPassword=true' : ''}`
             }}
           </a>
         </template>
@@ -399,7 +395,7 @@ function back() {
           <el-button type="primary" @click="back">返回</el-button>
         </template>
       </el-result>
-      <el-result v-else icon="error" sub-title="失败">
+      <el-result v-else icon="error" :sub-title="failReason">
         <template #extra>
           <el-button type="primary" @click="back">返回</el-button>
         </template>
