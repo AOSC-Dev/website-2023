@@ -13,7 +13,6 @@ import CategorySecond from "/src/components/CategorySecond.vue";
 import DownloadButton from "./components/DownloadButton.vue";
 import { onMounted, ref } from "vue";
 import VCodeBlock from "@wdns/vue-code-block";
-import { toUrl } from "/src/utils/utils.js";
 import { ElMessage } from "element-plus";
 
 let msStoreScript = document.createElement("script");
@@ -171,13 +170,13 @@ function getNewVersioArch(arch) {
               <p style="font-size: 14pt">称心得意的桌面操作系统</p>
               <p style="font-size: 10pt">
                 {{ getAntongDate() }}·
-                <span class="cursor-pointer" @click="toUrl('/aosc-os/relnote')"
-                  >发行说明</span
+                <a class="cursor-pointer" href="/aosc-os/relnote"
+                  >发行说明</a
                 >·
-                <span
+                <a
                   class="cursor-pointer"
-                  @click="toUrl('/aosc-os/requirements')"
-                  >配置需求</span
+                  href="/aosc-os/requirements"
+                  >配置需求</a
                 >
               </p>
             </div>

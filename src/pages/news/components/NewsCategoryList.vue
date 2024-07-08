@@ -1,5 +1,4 @@
 <script setup>
-import {toUrl} from '/src/utils/utils.js'
 
 const props = defineProps(["newsList"]);
 </script>
@@ -11,12 +10,12 @@ const props = defineProps(["newsList"]);
     </div>
     <div v-else class="flex flex-col">
       <div v-for="item in newsList" :key="item.title" class="newslist-item">
-        <div @click="toUrl(`/news/detail/${item.Path}`)" class="hover:bg-leftbar-bg flex cursor-pointer pl-6 h-[2rem] leading-8">
+        <a :href="'/news/detail/' + item.Path" class="hover:bg-leftbar-bg flex cursor-pointer pl-6 h-[2rem] leading-8">
           <span class="truncate flex-1">
             {{ item.Title }}
           </span>
           <span class="flex-0 pr-6">[{{ item.Date }}]</span>
-        </div>
+        </a>
       </div>
     </div>
   </div>

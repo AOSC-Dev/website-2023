@@ -1,6 +1,5 @@
 <script setup>
 import CategorySecond from "/src/components/CategorySecond.vue";
-import {toUrl} from "/src/utils/utils.js";
 import {ref} from 'vue'
 
 const sponsorList = ref([
