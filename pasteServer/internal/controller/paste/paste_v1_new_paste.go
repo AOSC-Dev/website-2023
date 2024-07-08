@@ -33,7 +33,7 @@ func (c *ControllerV1) NewPaste(ctx context.Context, req *v1.NewPasteReq) (res *
 	}
 
 	if req.FileList != nil {
-		filenames, e := req.FileList.Save("paste/content/"+pasteId+"/", false)
+		filenames, e := req.FileList.Save("paste/content/"+pasteId+"/files/", false)
 		if e != nil {
 			err = gerror.NewCode(gcode.CodeInternalError, "保存附件文件失败")
 			g.Log("保存附件文件失败: ", e.Error())

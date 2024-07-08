@@ -20,7 +20,7 @@ function isImg(name) {
 }
 
 function getAttachUrl(name) {
-  return `/paste/content/${id.value}/${name}`;
+  return `/pasteContent/${id.value}/files/${name}`;
 }
 
 onMounted(() => {
