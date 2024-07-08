@@ -44,18 +44,19 @@ const commonLinkList = reactive([
 
 <template>
   <div class="bg-right-bar-bg w-[37.5%] flex flex-col">
-    <img
-      src="/assets/banners/banner_minor1.svg"
-      alt=""
-      class="w-full cursor-pointer"
-      href="https://wiki.aosc.io/zh/aosc-os/is-aosc-os-right-for-me"
-    />
-    <img
-      src="/assets/banners/banner_minor2.svg"
-      alt=""
-      class="w-full cursor-pointer"
-      href="https://bbs.aosc.io/"
-    />
+    <a href="https://wiki.aosc.io/zh/aosc-os/is-aosc-os-right-for-me">
+      <img
+        src="/assets/banners/banner_minor1.svg"
+        class="w-full cursor-pointer"
+      />
+    </a>
+    <a href="https://bbs.aosc.io/">
+      <img
+        src="/assets/banners/banner_minor2.svg"
+        class="w-full cursor-pointer"
+        href="https://bbs.aosc.io/"
+      />
+    </a>
     <div class="flex flex-col flex-grow">
       <category-second
         title="系统方案"

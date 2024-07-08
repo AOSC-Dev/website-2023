@@ -44,20 +44,17 @@ const zhuanlanList = reactive([
       "内建 Rescuekit 助您排除故障恢复数据。亦可用于备份等预防式维护。",
   },
 ]);
-
-function toAoscOs() {
-  router.push("/aoscos");
-}
 </script>
 
 <template>
   <div class="w-[62.5%] bg-content-main-bg p-0">
-    <img
+    <a href="/aoscos">
+      <img
       src="/assets/banners/banner_main1.svg"
       alt=""
       class="w-full cursor-pointer"
-      @click="toAoscOs"
     />
+    </a>
     <!-- 咨讯要点 -->
     <div>
       <category-second title="资讯要点" />
