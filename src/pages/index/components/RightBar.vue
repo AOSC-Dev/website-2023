@@ -48,15 +48,13 @@ const commonLinkList = reactive([
       src="/assets/banners/banner_minor1.svg"
       alt=""
       class="w-full cursor-pointer"
-      @click="
-        toOutUrl('https://wiki.aosc.io/zh/aosc-os/is-aosc-os-right-for-me/')
-      "
+      href="https://wiki.aosc.io/zh/aosc-os/is-aosc-os-right-for-me"
     />
     <img
       src="/assets/banners/banner_minor2.svg"
       alt=""
       class="w-full cursor-pointer"
-      @click="toOutUrl('https://bbs.aosc.io/')"
+      href="https://bbs.aosc.io/"
     />
     <div class="flex flex-col flex-grow">
       <category-second
