@@ -215,13 +215,14 @@ onMounted(() => {
       </div>
       <Transition name="menu">
       <ul class="py-[3px] flex nav-container" v-show="item1.show">
-        <span
-          @click="toUrl(item2.link)"
+        <a
+          @click.prevent="toUrl(item2.link)"
           v-for="item2 in item1.children"
           :key="item2.title"
+		  :href="item2.link"
 	  :class=" { 'bg-[#dcdcdc]': $route.path.trim().startsWith(item2.link.trim()) }"
-          class="leading-4 navitem-flex hover:bg-[#dcdcdc] cursor-pointer pr-[10px] pl-[16px] block text-wrap select-none"
-          >{{ item2.title }}</span>
+          class="leading-4 navitem-flex hover:bg-[#dcdcdc] cursor-pointer pr-[10px] pl-[16px] block text-wrap select-none href-noline"
+          >{{ item2.title }}</a>
       </ul>
     </Transition>
     </div>
@@ -229,6 +230,10 @@ onMounted(() => {
 </template>
 
 <style scoped>
+.href-noline {
+	text-decoration: none;
+}
+
 .menu-enter-active {
 	overflow-y: hidden;
 	animation: menuslide-in .15s linear;
