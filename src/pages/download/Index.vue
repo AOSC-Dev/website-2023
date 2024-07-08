@@ -401,7 +401,7 @@ function getNewVersioArch(arch) {
 }
 .wsl-container {
   background: linear-gradient(90deg, #b7e4fc, 75%, transparent),
-    url("/assets/backgrounds/aosc-os-wsl.jpg");
+    url("/assets/backgrounds/aosc-os-wsl.webp");
   background-color: #000;
   background-position-x: 0%, 30rem;
   background-size: 100%, 50rem;
