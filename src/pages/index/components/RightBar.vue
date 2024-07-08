@@ -1,7 +1,6 @@
 <script setup name="RightBar">
 import { reactive } from "vue";
 import CategorySecond from "/src/components/CategorySecond.vue";
-import { toOutUrl } from "/src/utils/utils.js";
 
 const distroList = reactive([
   {
@@ -89,15 +88,15 @@ const commonLinkList = reactive([
       </article>
       <category-second title="常用链接" />
       <div class="border-l border-secondary flex flex-col flex-grow">
-        <div
+        <a
           v-for="item in commonLinkList"
           :key="item.title"
-          @click="toOutUrl(item.url)"
+          :href="item.url"
           class="hover:bg-leftbar-bg cursor-pointer flex flex-row justify-between items-center px-[1rem] h-[2rem] odd:bg-[#fefaf6] bg-white"
         >
           <span>{{ item.title }}</span>
           <v-icon name="hi-solid-external-link" />
-        </div>
+        </a>
       </div>
     </div>
   </div>
