@@ -3,58 +3,68 @@ import axios from "axios";
 import { onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
 
-const id = ref('')
-const needPassword = ref(false)
-const password = ref('')
-const loading = ref(false)
-const route = useRoute()
-const details = ref(null)
-import VCodeBlock from '@wdns/vue-code-block';
-const status = ref(0)
-const imgSuffixList = ['jpg', 'jpeg', 'png', 'gif']
+const id = ref("");
+const needPassword = ref(false);
+const password = ref("");
+const loading = ref(false);
+const route = useRoute();
+const details = ref(null);
+import VCodeBlock from "@wdns/vue-code-block";
+import { ElMessage } from "element-plus";
+const imgSuffixList = ["jpg", "jpeg", "png", "gif"];
 
 function isImg(name) {
-  const suffixIndex = name.lastIndexOf('.')
-  const suffix = name.substring(suffixIndex + 1)
-  return imgSuffixList.find(v => v == suffix) !== undefined
+  const suffixIndex = name.lastIndexOf(".");
+  const suffix = name.substring(suffixIndex + 1);
+  return imgSuffixList.find((v) => v == suffix) !== undefined;
 }
 
 function getAttachUrl(name) {
-  return `https://pastebin.aosc.io/paste/${id.value}/attachment/${name}`
+  return `/paste/content/${id.value}/${name}`;
 }
 
 onMounted(() => {
-  id.value = route.query.id
-  needPassword.value = route.query.needPassword
+  id.value = route.query.id;
+  needPassword.value = route.query.needPassword;
   if (!route.query.needPassword) {
-    getPaste(route.query.id)
+    getPaste(route.query.id);
   }
-})
+});
 
+const failReason = ref("");
 function getPaste() {
   const data = {
-    paste_id: id.value,
-  }
+    id: id.value,
+  };
   if (needPassword.value) {
-    data.password = password.value
+    data.password = password.value;
   }
-  loading.value = true
+  loading.value = true;
   axios
-    .post("/pasteApi/api/paste/details", data)
+    .get("/pasteApi/paste", { params: data })
     .then((res) => {
-      loading.value = false
-      details.value = res.data.details
-      needPassword.value = false
-      status.value = 0
+      const results = res.data;
+      console.log(results);
+      if (results.code != 0) {
+        failReason.value = results.message;
+      } else {
+        details.value = JSON.parse(results.data.json);
+      }
+
+      needPassword.value = false;
     })
     .catch((err) => {
-      console.log('获取异常', err);
-      if (err.response.status == 404) {
-        ElMessage({message: '粘贴板不存在', type: 'warning'})
-      }
-      status.value = err.response.status
-      loading.value = false
+      console.log("获取异常", err);
+      failReason.value = "获取粘贴板异常";
+    })
+    .finally(() => {
+      loading.value = false;
     });
+}
+
+function back() {
+  needPassword.value = true
+  failReason.value = ""
 }
 </script>
 
@@ -69,19 +79,35 @@ function getPaste() {
       </el-form-item>
     </el-form>
 
-    <div v-if="details != null" >
+    <div v-if="details != null">
       <h1 class="text-3xl font-bold">
         {{ details.title }}
       </h1>
-      <VCodeBlock class="w-full" :code="details.contents" :lang="details.language" highlightjs theme="gradient-light" />
-      <div v-for="item in details.attachments">
-        <img :src="getAttachUrl(item.file_name)" class="w-full" v-if="isImg(item.file_name)" />
-        <a v-else class="text-link" :href="getAttachUrl(item.file_name)" target="_blank">{{ item.file_name }}</a>
+      <VCodeBlock
+        class="w-full"
+        :code="details.content"
+        :lang="details.language"
+        highlightjs
+        theme="github"
+      />
+      <div v-if="details.fileList != null">
+        <div v-for="item in details.fileList">
+          <img :src="getAttachUrl(item)" class="w-full" v-if="isImg(item)" />
+          <a
+            v-else
+            class="text-link"
+            :href="getAttachUrl(item)"
+            target="_blank"
+            >{{ item }}</a
+          >
+        </div>
       </div>
     </div>
-
-    <el-result v-if="status == 404" icon="warning" title="粘贴板不存在" />
-    <el-result v-if="status == 401" icon="warning" title="密码错误" />
+    <el-result v-if="failReason != ''" icon="warning" :title="failReason">
+      <template #extra>
+          <el-button v-if="failReason == '密码错误' || failReason == '需要密码'" type="primary" @click="back">返回</el-button>
+        </template>
+    </el-result>
   </div>
 </template>
 

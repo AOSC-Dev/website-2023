@@ -26,4 +26,5 @@ public/newsCategories
 *.njsproj
 *.sln
 *.sw?
+pasteServer/paste/*
 

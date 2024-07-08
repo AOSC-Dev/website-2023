@@ -29,7 +29,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/pasteApi': {
-        target: 'https://pastebin.aosc.io/',
+        target: 'http://localhost:8000',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/pasteApi/, ''),
       },
