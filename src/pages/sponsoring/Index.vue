@@ -18,14 +18,14 @@ const sponsorList = ref([
         img: "globalsign",
       },
       {
-        name: "Microsoft Open Source",
-        web: "https://opensource.microsoft.com/",
-        img: "microsoft",
-      },
-      {
         name: "龙芯中科（武汉）技术有限公司",
         web: "https://www.loongson.cn/",
         img: "loongson",
+      },
+      {
+        name: "Microsoft Open Source",
+        web: "https://opensource.microsoft.com/",
+        img: "microsoft",
       },
     ],
   },
@@ -38,9 +38,9 @@ const sponsorList = ref([
         img: "bfsu",
       },
       {
-        name: "南阳理工学院计算机与信息化处理协会",
-        web: "https://cips.nyist.edu.cn/",
-        img: "nyist-cips",
+        name: "电子科技大学 Linux 用户组",
+        web: "https://uestclug.org/",
+        img: "uestclug",
       },
       {
         name: "Fastly CDN",
@@ -53,6 +53,11 @@ const sponsorList = ref([
         img: "hit-lug",
       },
       {
+        name: "荷兰本地 Unix 用户组 (NLUUG)",
+        web: "https://nluug.nl/",
+        img: "nluug",
+      },
+      {
         name: "Hexhu",
         web: "https://arch.hu.fo/",
         img: "hexhu",
@@ -63,19 +68,9 @@ const sponsorList = ref([
         img: "jlu-lug",
       },
       {
-        name: "中国科学技术大学 Linux 用户组 (LUG@USTC)",
-        web: "https://lug.ustc.edu.cn/",
-        img: "lug-ustc",
-      },
-      {
         name: "兰州大学开源社区 (LZUOSS)",
         web: "https://github.com/lzuoss",
         img: "lzuoss",
-      },
-      {
-        name: "上海科技大学 Geekpie 协会",
-        web: "https://geekpie.club/",
-        img: "geekpie",
       },
       {
         name: "南京大学 e-Science 中心",
@@ -83,9 +78,14 @@ const sponsorList = ref([
         img: "nju-lug",
       },
       {
-        name: "荷兰本地 Unix 用户组 (NLUUG)",
-        web: "https://nluug.nl/",
-        img: "nluug",
+        name: "南阳理工学院计算机与信息化处理协会",
+        web: "https://cips.nyist.edu.cn/",
+        img: "nyist-cips",
+      },
+      {
+        name: "清华大学 TUNA 协会",
+        web: "https://tuna.moe/",
+        img: "tuna",
       },
       {
         name: "QVQNetwork",
@@ -98,19 +98,19 @@ const sponsorList = ref([
         img: "sjtug",
       },
       {
+        name: "上海科技大学 Geekpie 协会",
+        web: "https://geekpie.club/",
+        img: "geekpie",
+      },
+      {
         name: "腾讯云",
         web: "https://cloud.tencent.com/",
         img: "tencent-cloud",
       },
       {
-        name: "清华大学 TUNA 协会",
-        web: "https://tuna.moe/",
-        img: "tuna",
-      },
-      {
-        name: "电子科技大学 Linux 用户组",
-        web: "https://uestclug.org/",
-        img: "uestclug",
+        name: "中国科学技术大学 Linux 用户组 (LUG@USTC)",
+        web: "https://lug.ustc.edu.cn/",
+        img: "lug-ustc",
       },
     ],
   },
@@ -193,11 +193,6 @@ const sponsorList = ref([
     title: "历史赞助方（镜像源）",
     list: [
       {
-        name: "首都在线",
-        web: "http://mirrors.capitalonline.net/",
-        img: "cods",
-      },
-      {
         name: "重庆大学蓝盟",
         web: "http://lanunion.cqu.edu.cn/",
         img: "cqu-lanunion",
@@ -211,6 +206,11 @@ const sponsorList = ref([
         name: "上海大学开源社区",
         web: "https://www.shuosc.org/",
         img: "shuosc",
+      },
+      {
+        name: "首都在线",
+        web: "http://mirrors.capitalonline.net/",
+        img: "cods",
       },
     ],
   },
