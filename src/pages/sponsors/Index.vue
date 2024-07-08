@@ -232,6 +232,7 @@ const sponsorList = ref([
           :key="sponsor.name"
           class="cursor-pointer text-center"
           :href="sponsor.web"
+          target="_blank"
         >
           <img
             loading="lazy"
