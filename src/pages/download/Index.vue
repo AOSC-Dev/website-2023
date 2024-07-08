@@ -194,7 +194,7 @@ function getNewVersioArch(arch) {
                 </span>
               </div>
             </div>
-            <span style="font-size: 10pt; display: flex; text-align: right"
+            <span style="font-size: 10pt; display: flex; text-align: right; margin-top: 0.5rem"
               >二级架构、Docker 及虚拟机镜像等其他下载</span
             >
           </div>
