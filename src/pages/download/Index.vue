@@ -297,7 +297,7 @@ function getNewVersioArch(arch) {
       <div class="w-full" v-loading="loading">
         <div class="flex justify-between" v-if="versionArch.length > 0">
           <span v-for="item in antong2List" :key="item.title">
-            <download-button v-if="item.info != undefined" :isaInfo="item" />
+            <download-button class="py-[0.25rem]" v-if="item.info != undefined" :isaInfo="item" />
           </span>
         </div>
       </div>
