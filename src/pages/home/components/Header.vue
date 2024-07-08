@@ -18,7 +18,8 @@ const languageList = reactive([
           <router-link to="/download">下载 AOSC OS</router-link>
           <span>|</span>
           <router-link to="/about">关于社区</router-link>
-          <span>|</span>
+          <!-- 尚未实现 -->
+          <!-- <span>|</span>
           <section class="flex flex-col">
             <div
               class="relative overflow-hidden hover:overflow-visible h-[calc(1em+10px)] *:cursor-pointer z-[2]"
@@ -34,7 +35,7 @@ const languageList = reactive([
                 </li>
               </ul>
             </div>
-          </section>
+          </section> -->
         </div>
       </div>
       <div class="bg-primary grow"></div>

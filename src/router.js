@@ -154,14 +154,14 @@ const router = createRouter({
       name: 'sponsoring',
       component: Sponsoring,
       meta: {
-        title: '赞助'
+        title: '赞助方一览'
       }
     }, {
       path: '/fund',
       name: 'fund',
       component: Fund,
       meta: {
-        title: '众筹'
+        title: '社区众筹'
       }
     }, {
       path: '/news',

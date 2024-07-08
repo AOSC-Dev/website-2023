@@ -14,11 +14,6 @@ const distroList = reactive([
     title: "Afterglow",
     description: "承前启后",
   },
-  {
-    img: "/assets/icons/computer-monitor.min.svg",
-    title: "LiveKit",
-    description: "备不时之需",
-  },
 ]);
 const commonLinkList = reactive([
   {

@@ -24,9 +24,7 @@ const linkArr = reactive([
     title: "资讯与支持",
     children: [
       { title: "新闻资讯", link: "/news" },
-	  { title: "支持中心", link: "#" },
       { title: "活动相册", link: "/gallery" },
-      { title: "安装指南", link: "#" },
       { title: "系统需求", link: "#" },
       { title: "联系方式", link: "/contact" },
     ],
@@ -37,9 +35,9 @@ const linkArr = reactive([
     children: [
 	  { title: "社区简介", link: "/about" },
       { title: "线下活动", link: "#" },
-      { title: "赞助", link: "/sponsoring" },
-      { title: "众筹", link: "/fund" },
       { title: "实习资源", link: "#" },
+	  { title: "赞助方一览", link: "/sponsoring" },
+      { title: "社区众筹", link: "/fund" },
       { title: "人际关系准则", link: "/guidelines" },
     ],
     show: true,
