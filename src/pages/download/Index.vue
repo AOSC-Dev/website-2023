@@ -161,7 +161,7 @@ function getNewVersioArch(arch) {
     <category-second title="系统下载" />
     <div class="flex flex-col flex-1">
       <div class="flex flex-row">
-        <div class="flex flex-row w-[47%] justify-around bg-white px-[1rem]">
+        <div class="aosc-os-container flex flex-row w-[47%] justify-around bg-white px-[1rem]">
           <div class="pt-[4.5rem] min-w-[96px] w-[30%]">
             <img src="/assets/download/aosc-os-web.svg" style="width: 150px" />
           </div>
@@ -359,6 +359,9 @@ function getNewVersioArch(arch) {
 }
 
 .afterglow {
+  background: linear-gradient(90deg, rgb(0 0 0 / 65%), 100%, transparent),
+                url(/assets/backgrounds/afterglow.webp);
+  background-size: cover;
   background-color: black;
   width: 53%;
   display: flex;
@@ -394,11 +397,21 @@ function getNewVersioArch(arch) {
   margin-top: 1em;
 }
 
+.aosc-os-container {
+  background: linear-gradient(90deg, rgb(255 255 255 / 40%), 100%, transparent),
+                url(/assets/backgrounds/aosc-os.webp);
+  background-size: cover;
+}
+
+.afterglow-container {
+}
+
 .livekit-container {
   background: linear-gradient(90deg, #f6d5ac, 75%, transparent),
     url("/assets/backgrounds/livekit.jpg");
   background-position-x: 0%, 100%;
 }
+
 .wsl-container {
   background: linear-gradient(90deg, #b7e4fc, 75%, transparent),
     url("/assets/backgrounds/aosc-os-wsl.webp");
