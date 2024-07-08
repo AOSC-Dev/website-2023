@@ -228,11 +228,11 @@ const sponsorList = ref([
       <category-second :title="item.title" />
       <div class="p-6">
         <div class="grid grid-cols-4 gap-6 p-2">
-        <div
+        <a
           v-for="(sponsor) in item.list"
           :key="sponsor.name"
           class="cursor-pointer text-center"
-          @click="toUrl(sponsor.web)"
+          :href="sponsor.web"
         >
           <img
             loading="lazy"
@@ -247,7 +247,7 @@ const sponsorList = ref([
             </span>
             
           </div>
-        </div>
+        </a>
       </div>
       </div>
     </div>
