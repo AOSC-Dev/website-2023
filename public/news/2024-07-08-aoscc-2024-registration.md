@@ -6,7 +6,7 @@ date: 2024-07-08T23:00:00+08:00
 important: false
 draft: false
 ---
-![](/assets/coffee-break/aoscc-2024-jlu.png)
+![](/assets/coffee-break/20240623/imgs/aoscc-2024-jlu.png)
 
 截至 7 月 8 日零时，AOSCC 2024 共注册了 133 位与会者，创下历史新高。
 
