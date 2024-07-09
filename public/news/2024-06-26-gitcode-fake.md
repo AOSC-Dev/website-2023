@@ -7,7 +7,7 @@ important: false
 draft: false
 ---
 
-![]((/assets/news/gitcode-fake.svg)
+![](/assets/news/gitcode-fake.svg)
 
 今日在社区好友的提醒下，我们留意到由[长沙开发者科技有限公司](https://www.tianyancha.com/company/3470940218)旗下[北京创新乐知网络技术有限公司](https://www.tianyancha.com/company/3049500520)（[CSDN](https://www.csdn.net/) 运营方）及[重庆开源共创科技有限公司](https://www.tianyancha.com/company/5924520331)（下附邮件中称之为“贵司”）所搭建的 [GitCode](https://gitcode.com/) 代码托管平台在未告知我社贡献者的情况下镜像了我社于 GitHub 平台的组织 [AOSC-Dev](https://github.com/AOSC-Dev/) 及 [AOSC-Archive](https://github.com/AOSC-Archive) 的数个活跃仓库、工单及合并请求。我们在此声明：
 
