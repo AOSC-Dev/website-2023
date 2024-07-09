@@ -38,6 +38,7 @@ const linkArr = reactive([
       { title: "赞助方一览", link: "/sponsors" },
       { title: "社区众筹", link: "/crowdsourcing" },
       { title: "人际关系准则", link: "/guidelines" },
+      { title: "社区吉祥物", link: "/mascot" },
     ],
     show: true,
   },
