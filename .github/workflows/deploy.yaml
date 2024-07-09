@@ -12,12 +12,12 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js 18
+      - name: Use Node.js 20
         uses: actions/setup-node@v2
         with:
-          node-version: "18"
+          node-version: "20"
       - name: Install pnpm
-        uses: pnpm/action-setup@v2.0.1
+        uses: pnpm/action-setup@v4
         with:
           version: 9
       - name: Cache NPM dependencies
@@ -38,15 +38,18 @@ jobs:
       - name: Setup SSH Private Key
         env:
           KEY: ${{ secrets.KEY }}
+          IP: ${{ secrets.IP }}
         run: |
           mkdir -p ~/.ssh/
           echo "$KEY" > ~/.ssh/id_rsa 
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan 20.115.186.5 >> ~/.ssh/known_hosts
+          ssh-keyscan $IP >> ~/.ssh/known_hosts
       - name: Install deps
         run: |
           sudo apt install expect tcl-expect -y
       - name: Upload website
+        env:
+          IP: ${{ secrets.IP }}
         run: |
           rm -rf website*
 
@@ -54,7 +57,7 @@ jobs:
           pnpm i
           pnpm run build
           zip -r website.zip website/
-          scp website.zip aosc@20.115.186.5:/home/aosc/web/
+          scp website.zip aosc@$IP:/home/aosc/web/
       - name: Unzip website
         run: |
           cd deploy
