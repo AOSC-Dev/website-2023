@@ -217,7 +217,7 @@ onMounted(() => {
       </div>
       <Transition name="menu">
         <ul class="py-[3px] flex nav-container" v-show="item1.show">
-          <template v-for="(item2, index) in item1.children">
+          <template v-for="item2 in item1.children">
             <router-link
               v-if="!item2.link.startsWith('http')"
               :to="item2.link"
