@@ -217,11 +217,10 @@ onMounted(() => {
       </div>
       <Transition name="menu">
         <ul class="py-[3px] flex nav-container" v-show="item1.show">
-          <template v-for="item2 in item1.children">
+          <template v-for="(item2, index) in item1.children">
             <router-link
               v-if="!item2.link.startsWith('http')"
               :to="item2.link"
-              :key="item2.title"
               :href="item2.link"
               :class="{
                 'bg-[#dcdcdc]': $route.path
@@ -234,7 +233,6 @@ onMounted(() => {
             <a
               v-else
               :href="item2.link"
-              :key="index + 1"
               :class="{
                 'bg-[#dcdcdc]': $route.path
                   .trim()
