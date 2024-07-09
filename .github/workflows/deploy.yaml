@@ -3,7 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-      - master # default branch
+      - improve-ci-2 # default branch
 
 jobs:
   build:
@@ -43,9 +43,19 @@ jobs:
           echo "$KEY" > ~/.ssh/id_rsa 
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan 20.115.186.5 >> ~/.ssh/known_hosts
-      - name: Deploy
+      - name: Install deps
         run: |
-          sudo apt install expect tcl -y
-          cd ./deploy
-          chmod +x deploy.sh unzipServer.sh upload.sh
-          ./deploy.sh
+          sudo apt install expect tcl-expect -y
+      - name: Upload website
+        run: |
+          rm -rf website*
+
+          # Build website
+          pnpm i
+          pnpm run build
+          zip -r website.zip website/
+          scp website.zip aosc@20.115.186.5:/home/aosc/web/
+      - name: Unzip website
+        run: |
+          cd deploy
+          ./unzipServer.sh
