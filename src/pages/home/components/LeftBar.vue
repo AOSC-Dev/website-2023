@@ -234,6 +234,7 @@ onMounted(() => {
             <a
               v-else
               :href="item2.link"
+              target="_blank"
               :class="{
                 'bg-[#dcdcdc]': $route.path
                   .trim()
