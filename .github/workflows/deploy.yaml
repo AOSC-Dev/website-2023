@@ -4,9 +4,7 @@ on:
   push:
     branches:
       - master # default branch
-  pull_request:
-    branches:
-      - master # default branch
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -29,11 +27,12 @@ jobs:
         run: npm install
       - name: MakeCategory
         run: |
-          cd ./public
+          pushd ./makeCategory
+          ./build.sh
+          popd
+          pushd ./public
           ./makeCategory
-          cd ../
-      - name: Build
-        run: npm run build
+          popd
       - name: Setup SSH Private Key
         env:
           KEY: ${{ secrets.KEY }}
