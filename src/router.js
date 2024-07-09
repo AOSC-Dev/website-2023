@@ -17,6 +17,7 @@ import L10n from './pages/l10n/Index.vue'
 import Contact from './pages/contact/Index.vue'
 import Gallery from './pages/gallery/Index.vue'
 import Guidelines from './pages/guidelines/Index.vue'
+import Mascot from './pages/mascot/Index.vue'
 import Sponsors from './pages/sponsors/Index.vue'
 import Crowdsourcing from './pages/crowdsourcing/Index.vue'
 import News from './pages/news/Index.vue'
@@ -148,6 +149,13 @@ const router = createRouter({
       component: Guidelines,
       meta: {
         title: '人际关系准则'
+      }
+    }, {
+      path: '/mascot',
+      name: 'mascot',
+      component: Mascot,
+      meta: {
+        title: '社区吉祥物'
       }
     }, {
       path: '/sponsors',
