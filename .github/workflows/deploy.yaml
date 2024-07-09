@@ -3,7 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-      - improve-ci-2 # default branch
+      - master # default branch
 
 jobs:
   build:
