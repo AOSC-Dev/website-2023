@@ -3,7 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-      - ci-rework # default branch
+      - master # default branch
 
 jobs:
   build:
