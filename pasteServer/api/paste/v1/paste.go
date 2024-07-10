@@ -10,7 +10,7 @@ type NewPasteReq struct {
 	Title    string             `v:"required" json:"title"`
 	Language string             `v:"required" json:"language"`
 	Content  string             `v:"required" json:"content"`
-	FileList *ghttp.UploadFiles `json:"fileList[]"`
+	FileList *ghttp.UploadFiles `json:"fileList"`
 	ExpDate  string             `v:"required" json:"expDate"`
 	Password string             `json:"password"`
 }
