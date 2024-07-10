@@ -3,6 +3,7 @@ package paste
 import (
 	"context"
 
+	"github.com/gogf/gf/v2/encoding/gjson"
 	"github.com/gogf/gf/v2/errors/gcode"
 	"github.com/gogf/gf/v2/errors/gerror"
 	"github.com/gogf/gf/v2/os/gfile"
@@ -22,21 +23,14 @@ func (c *ControllerV1) Paste(ctx context.Context, req *v1.PasteReq) (res *v1.Pas
 		return
 	}
 
-	passwordPath := pastePath + "/password"
-	if gfile.Exists(passwordPath) {
-		if req.Password == "" {
-			err = gerror.NewCode(gcode.CodeMissingParameter, "需要密码")
-			return
-		}
-		if req.Password != gfile.GetContents(passwordPath) {
-			err = gerror.NewCode(gcode.CodeMissingParameter, "密码错误")
-			return
-		}
+	res = &v1.PasteRes{}
+	jsonObj, e := gjson.DecodeToJson(gfile.GetContents(pastePath + "/content.json"))
+	if e != nil {
+		err = gerror.NewCode(gcode.CodeInternalError, "服务器解析json失败: "+e.Error())
+		return
 	}
 
-	res = &v1.PasteRes{
-		Json: gfile.GetContents(pastePath + "/content.json"),
-	}
+	jsonObj.Scan(res)
 
 	return
 }

@@ -14,9 +14,9 @@ const btnHeight = ref(70);
       <div>
         <category-second title="贴图包" class="border-r border-r-white" />
         <div
-          class="p-[1.5rem] flex justify-between border-r-[1px] border-r-solid border-r-secondary"
+          class="p-[2rem] flex justify-between border-r-[1px] border-r-solid border-r-secondary"
         >
-          <div class="basis-1/2 mr-[10px]">
+          <div class="basis-1/2 mr-[1em]">
             <img src="/assets/mascot/qr.png" alt="二维码" />
 
             <p
@@ -25,7 +25,7 @@ const btnHeight = ref(70);
               扫码获取微信贴图包
             </p>
           </div>
-          <div class="basis-1/2 ml-[10px] flex flex-col justify-between">
+          <div class="basis-1/2 ml-[1em] flex flex-col justify-between">
             <link-button
               class="basis-1/4"
               text="QQ 表情包"
@@ -49,7 +49,7 @@ const btnHeight = ref(70);
 
       <div>
         <category-second title="设定稿" />
-        <div class="p-[1.5em] flex flex-col justify-between h-[calc(100%-2em)]">
+        <div class="p-[2em] flex flex-col justify-between h-[calc(100%-2em)]">
           <div class="lg:text-[0.7em] xl:text-[1.1em] 2xl:text-[1.2em]">
             本设定稿由钛山设计，使用 CC-BY-SA 4.0International
             许可证进行授权。钛山为自由及开源软件项目提供免费且许可开放的吉祥物设计服务。有意者敬请联系：
@@ -73,9 +73,9 @@ const btnHeight = ref(70);
       </div>
     </div>
     <category-second title="安安的故事" />
-    <div class="flex p-[20px]">
+    <div class="flex p-[2em]">
       <!-- 左边 -->
-      <div class="basis-1/2 *:mb-[10px] pr-[20px]">
+      <div class="basis-1/2 *:mb-[10px] pr-[2em]">
         <p>&nbsp;&nbsp;&nbsp;&nbsp;“龙虾龙虾龙虾！”</p>
         <p>
           安安本来是只兔子，但有一天早上醒来发现自己变成了长着兔耳和兔尾巴的人类……
@@ -104,7 +104,7 @@ const btnHeight = ref(70);
       </div>
 
       <!-- 右边 -->
-      <div class="basis-1/2 *:mb-[10px] pr-[20px]">
+      <div class="basis-1/2 *:mb-[10px] pl-[2em]">
         <ul class="list-disc list-inside">
           <li>
             她认为社区的意义在于分享乐趣和技能，自己也为了让 Linux

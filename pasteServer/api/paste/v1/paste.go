@@ -7,12 +7,11 @@ import (
 
 type NewPasteReq struct {
 	g.Meta   `path:"/paste" tags:"Paste" method:"post" summary:"创建粘贴板"`
-	Title    string             `v:"required" json:"title"`
+	Title    string             `json:"title"`
 	Language string             `v:"required" json:"language"`
 	Content  string             `v:"required" json:"content"`
 	FileList *ghttp.UploadFiles `json:"fileList"`
 	ExpDate  string             `v:"required" json:"expDate"`
-	Password string             `json:"password"`
 }
 type NewPasteRes struct {
 	g.Meta `mime:"text/html" example:"string"`
@@ -20,11 +19,18 @@ type NewPasteRes struct {
 }
 
 type PasteReq struct {
-	g.Meta   `path:"/paste" tags:"Paste" method:"get" summary:"获取粘贴板数据"`
-	Id       string `v:"required" json:"id"`
-	Password string `json:"password"`
+	g.Meta `path:"/paste" tags:"Paste" method:"get" summary:"获取粘贴板数据"`
+	Id     string `v:"required" json:"id"`
+}
+
+type PasteContent struct {
+	Title    string   `v:"required" json:"title"`
+	Language string   `v:"required" json:"language"`
+	Content  string   `v:"required" json:"content"`
+	ExpDate  string   `json:"expDate"`
+	FileList []string `json:"fileList"`
 }
 type PasteRes struct {
 	g.Meta `mime:"text/html" example:"string"`
-	Json   string `v:"required" json:"json"`
+	PasteContent
 }
