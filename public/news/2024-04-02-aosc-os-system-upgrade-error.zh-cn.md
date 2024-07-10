@@ -1,7 +1,7 @@
 ---
 categories:
   - warning
-title: "[已修复]近期一轮系统更新可能安装失败"
+title: "[已修复] 近期一轮系统更新可能安装失败"
 date: 2024-04-02T22:19:13-08:00
 important: true
 draft: false
