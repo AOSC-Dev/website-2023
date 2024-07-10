@@ -1,7 +1,7 @@
 ---
 categories:
   - warning
-title: "[已修复]AOSC OS 社区源服务器故障"
+title: "[已修复] AOSC OS 社区源服务器故障"
 date: 2024-02-23T22:19:13-08:00
 important: true
 draft: false
