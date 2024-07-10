@@ -13,23 +13,16 @@ import (
 	v1 "pasteServer/api/paste/v1"
 )
 
-type PasteContent struct {
-	Title    string   `v:"required" json:"title"`
-	Language string   `v:"required" json:"language"`
-	Content  string   `v:"required" json:"content"`
-	FileList []string `json:"fileList"`
-	Password string   `json:"password"`
-}
-
 func (c *ControllerV1) NewPaste(ctx context.Context, req *v1.NewPasteReq) (res *v1.NewPasteRes, err error) {
 	pasteId := uuid.New().String()
 	res = &v1.NewPasteRes{Id: pasteId}
 
 	gfile.Mkdir("paste/content/" + pasteId)
-	pasteContent := PasteContent{
+	pasteContent := v1.PasteContent{
 		Content:  req.Content,
 		Language: req.Language,
 		Title:    req.Title,
+		ExpDate:  req.ExpDate,
 	}
 
 	if req.FileList != nil {
@@ -40,10 +33,8 @@ func (c *ControllerV1) NewPaste(ctx context.Context, req *v1.NewPasteReq) (res *
 			return
 		}
 		pasteContent.FileList = filenames
-	}
-
-	if req.Password != "" {
-		gfile.PutContents("paste/content/"+pasteId+"/password", req.Password)
+	} else {
+		pasteContent.FileList = make([]string, 0)
 	}
 
 	json := gjson.New(pasteContent)

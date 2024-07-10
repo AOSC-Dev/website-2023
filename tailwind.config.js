@@ -45,8 +45,8 @@ export default {
       'leftbar-bg': '#ececec',
       'rightbar-bg': '#fcfcfc',
       'content-main-bg': '#fcfcfc',
-      'white': '#fff',
-      'season': seasonColor,
+      white: '#fff',
+      season: seasonColor,
       link: '#0056cc',
       gray: '#333',
       black: '#000'

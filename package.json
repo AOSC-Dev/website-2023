@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@guolao/vue-monaco-editor": "^1.5.1",
     "@highlightjs/vue-plugin": "^2.1.0",
     "@kangc/v-md-editor": "^2.3.18",
     "@wdns/vue-code-block": "^2.3.2",
@@ -19,6 +20,7 @@
     "oh-vue-icons": "1.0.0-rc3",
     "v-md-editor": "^1.0.6",
     "vue": "^3.4.19",
+    "vue-clipboard3": "^2.0.0",
     "vue-router": "4"
   },
   "devDependencies": {
