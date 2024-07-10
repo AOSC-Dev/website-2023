@@ -14,28 +14,31 @@ const btnHeight = ref(70);
       <div>
         <category-second title="贴图包" class="border-r border-r-white" />
         <div
-          class="p-[1.5rem] flex border-r-[1px] border-r-solid border-r-secondary"
+          class="p-[1.5rem] flex justify-between border-r-[1px] border-r-solid border-r-secondary"
         >
-          <div class="basis-1/2">
+          <div class="basis-1/2 mr-[10px]">
             <img src="/assets/mascot/qr.png" alt="二维码" />
 
-            <p class="lg:text-[1em] xl:text-[1.3em] 2xl:text-[1.5em] text-center">扫码获取微信贴图包</p>
+            <p
+              class="lg:text-[1em] xl:text-[1.3em] 2xl:text-[1.5em] text-center"
+            >
+              扫码获取微信贴图包
+            </p>
           </div>
-          <div class="basis-1/2 flex flex-col justify-between grow">
+          <div class="basis-1/2 ml-[10px] flex flex-col justify-between">
             <link-button
-            class="basis-1/4"
+              class="basis-1/4"
               text="QQ 表情包"
-              
               link="https://zb.vip.qq.com/hybrid/emoticonmall/detail?id=239191"
             />
             <link-button
-            class="basis-1/4"
+              class="basis-1/4"
               text="Telegram 贴图包"
               :height="btnHeight"
               link="https://t.me/addstickers/AnAnTongTong"
             />
             <link-button
-            class="basis-1/4"
+              class="basis-1/4"
               text="贴图包素材"
               :height="btnHeight"
               link="https://repo.aosc.io/mascots/zhaxia-stickers-v1.zip"
@@ -46,14 +49,14 @@ const btnHeight = ref(70);
 
       <div>
         <category-second title="设定稿" />
-        <div
-          class="p-[1.5em] flex flex-col justify-between h-[calc(100%-2em)]"
-        >
-          <b class="lg:text-[0.8em] xl:text-[1.2em] 2xl:text-[1.3em]">
+        <div class="p-[1.5em] flex flex-col justify-between h-[calc(100%-2em)]">
+          <b class="lg:text-[0.7em] xl:text-[1.1em] 2xl:text-[1.2em]">
             本设定稿由钛山设计，使用 CC-BY-SA 4.0International
             许可证进行授权。钛山为自由及开源软件项目提供免费且许可开放的吉祥物设计服务。有意者敬请联系：
           </b>
-          <div class="my-[10px] lg:text-[0.8em] xl:text-[1.2em] 2xl:text[1.3em]">
+          <div
+            class="my-[10px] lg:text-[0.7em] xl:text-[1.1em] 2xl:text[1.2em]"
+          >
             <a href="https://tysontan.com" class="text-link"
               >https://tysontan.com</a
             >/
@@ -62,7 +65,7 @@ const btnHeight = ref(70);
             >
           </div>
           <link-button
-          class="w-1/2 basis-1/4"
+            class="w-1/2 basis-1/4"
             text="设定稿"
             link="https://repo.aosc.io/mascots/mascots.zip"
           />
