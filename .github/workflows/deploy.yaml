@@ -12,16 +12,12 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js 20
-        uses: actions/setup-node@v2
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
         with:
-          node-version: "20"
-      - name: Install npm
-        uses: npm/action-setup@v4
-        with:
-          version: 9
+          node-version: "22"
       - name: Cache NPM dependencies
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: node_modules
           key: ${{ runner.OS }}-npm-cache
