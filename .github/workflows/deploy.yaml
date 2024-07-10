@@ -16,8 +16,8 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: "20"
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
+      - name: Install npm
+        uses: npm/action-setup@v4
         with:
           version: 9
       - name: Cache NPM dependencies
@@ -54,8 +54,8 @@ jobs:
           rm -rf website*
 
           # Build website
-          pnpm i
-          pnpm run build
+          npm i
+          npm run build
           zip -r website.zip website/
           scp website.zip aosc@$IP:/home/aosc/web/
       - name: Unzip website
