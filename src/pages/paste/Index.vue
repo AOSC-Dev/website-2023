@@ -24,7 +24,6 @@ const submiting = ref(false);
 function submit() {
   if (pasteFormData.value.content == '') {
     ElMessage.error('内容不能为空')
-    alert('内容不能为空')
     return
   }
   submiting.value = true;
