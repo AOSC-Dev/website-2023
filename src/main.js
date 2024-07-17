@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import './style.css'
+import 'element-plus/dist/index.css'
 import App from './App.vue'
 import router from './router'
 import { install as VueMonacoEditorPlugin } from '@guolao/vue-monaco-editor'
@@ -20,8 +21,6 @@ import Prism from 'prismjs';
 VMdPreview.use(vuepressTheme, {
   Prism,
 });
-
-
 
 // highlightjs
 import 'highlight.js/styles/stackoverflow-light.css'
