@@ -10,12 +10,10 @@
   },
   "dependencies": {
     "@guolao/vue-monaco-editor": "^1.5.1",
-    "@highlightjs/vue-plugin": "^2.1.0",
     "@kangc/v-md-editor": "^2.3.18",
-    "@wdns/vue-code-block": "^2.3.2",
     "axios": "^1.6.8",
     "element-plus": "^2.7.4",
-    "highlight.js": "^11.0.1",
+    "highlight.js": "^11.10.0",
     "js-yaml": "^4.1.0",
     "oh-vue-icons": "1.0.0-rc3",
     "v-md-editor": "^1.0.6",

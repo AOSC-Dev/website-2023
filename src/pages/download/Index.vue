@@ -12,8 +12,8 @@
 import CategorySecond from "/src/components/CategorySecond.vue";
 import DownloadButton from "./components/DownloadButton.vue";
 import { onMounted, ref } from "vue";
-import VCodeBlock from "@wdns/vue-code-block";
 import { ElMessage } from "element-plus";
+import Highlight from "../../components/Highlight.vue";
 
 let msStoreScript = document.createElement("script");
 msStoreScript.setAttribute(
@@ -320,12 +320,7 @@ function getNewVersioArch(arch) {
       <div class="text-[14pt] mb-[20px]">
         我们为Docker用户提供了容器镜像，您可以通过如下命令抓取安同OS容器
       </div>
-      <VCodeBlock
-        code="docker pull aosc/aosc-os"
-        lang="shell"
-        highlightjs
-        theme="github"
-      />
+      <highlight lang="bash" code="docker pull aosc/aosc-os" />
     </div>
   </div>
 </template>
