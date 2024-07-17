@@ -21,11 +21,13 @@ VMdPreview.use(vuepressTheme, {
   Prism,
 });
 
-import { createVCodeBlock } from '@wdns/vue-code-block';
 
-const VCodeBlock = createVCodeBlock({
-  // options
-});
+
+// highlightjs
+import 'highlight.js/styles/stackoverflow-light.css'
+// import hljs from 'highlight.js/lib/core';
+import './utils/highlightjs'
+
 
 const app = createApp(App)
 app.use(VueMonacoEditorPlugin, {
@@ -35,7 +37,6 @@ app.use(VueMonacoEditorPlugin, {
   },
 })
 app.component("v-icon", OhVueIcon);
-app.use(VCodeBlock)
 app.use(router)
 app.use(VMdPreview)
 app.mount('#app')

@@ -3,13 +3,13 @@ import axios from "axios";
 import { onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
 import useClipboard from "vue-clipboard3";
+import Highlight from "../../components/Highlight.vue";
 
 const { toClipboard } = useClipboard();
 const id = ref("");
 const loading = ref(false);
 const route = useRoute();
 const details = ref(null);
-import VCodeBlock from "@wdns/vue-code-block";
 const imgSuffixList = ["jpg", "jpeg", "png", "gif"];
 
 function isImg(name) {
@@ -79,12 +79,10 @@ function copyLink() {
             复制共享链接
           </button>
         </div>
-        <VCodeBlock
+        <highlight
           class="w-full my-[20px]"
           :code="details.content"
           :lang="details.language"
-          highlightjs
-          theme="github"
         />
         <div v-for="item in details.fileList">
           <img :src="getAttachUrl(item)" class="w-full" v-if="isImg(item)" />
