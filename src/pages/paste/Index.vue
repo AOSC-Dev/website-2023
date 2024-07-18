@@ -109,12 +109,12 @@ function deleteFile(index) {
           <input
             required
             type="date"
-            class="border-2 border-primary rounded-none w-[12vw] lg:w-[16vw]"
+            class="border-2 border-primary rounded-none"
             v-model="selectDateTime"
             :min="minExpDate"
           />
         </div>
-        <button class="rounded-none lg:px-[30px] xl:px-[50px] 2xl:px-[50px] py-[10px] bg-primary text-white" @click="submit">
+        <button class="rounded-none px-[50px] py-[10px] bg-primary text-white" @click="submit">
           提交
         </button>
       </div>
