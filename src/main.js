@@ -11,9 +11,9 @@ import vuepressTheme from '@kangc/v-md-editor/lib/theme/vuepress.js';
 import '@kangc/v-md-editor/lib/theme/style/vuepress.css';
 import './css/index.scss';
 import { OhVueIcon, addIcons } from "oh-vue-icons";
-import { BiChevronDoubleUp, BiChevronDoubleDown, BiChevronBarUp, BiChevronDoubleRight, HiSolidExternalLink, IoCloseCircleOutline, MdDeleteforeverOutlined } from "oh-vue-icons/icons";
+import { BiChevronDoubleUp, BiChevronDoubleDown, BiChevronBarUp, BiChevronDoubleRight, HiSolidExternalLink, IoCloseCircleOutline, MdDeleteforeverOutlined, FaCopy } from "oh-vue-icons/icons";
 
-addIcons(BiChevronDoubleUp, BiChevronDoubleDown, BiChevronBarUp, BiChevronDoubleRight, HiSolidExternalLink, IoCloseCircleOutline, MdDeleteforeverOutlined);
+addIcons(BiChevronDoubleUp, BiChevronDoubleDown, BiChevronBarUp, BiChevronDoubleRight, HiSolidExternalLink, IoCloseCircleOutline, MdDeleteforeverOutlined, FaCopy);
 
 // prismjs
 import Prism from 'prismjs';
