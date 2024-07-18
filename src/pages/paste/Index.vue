@@ -9,7 +9,8 @@ import hljs from "highlight.js/lib/core";
 const languageList = ref(hljs.listLanguages());
 
 const router = useRouter()
-const selectDateTime = ref();
+const selectDateTime = ref(dayjs().add(7, "day").format("YYYY-MM-DD"));
+const minExpDate = ref(dayjs().add(1, "day").format("YYYY-MM-DD"));
 const pasteFormData = ref({
   title: "",
   content: "",
@@ -106,9 +107,11 @@ function deleteFile(index) {
           </select>
 
           <input
+            required
             type="date"
             class="border-2 border-primary rounded-none w-[12vw] lg:w-[16vw]"
             v-model="selectDateTime"
+            :min="minExpDate"
           />
         </div>
         <button class="rounded-none lg:px-[30px] xl:px-[50px] 2xl:px-[50px] py-[10px] bg-primary text-white" @click="submit">
