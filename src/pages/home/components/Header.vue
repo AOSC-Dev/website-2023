@@ -13,7 +13,7 @@ const languageList = reactive([
       <div class="grow"></div>
       <div class="content-container flex justify-end">
         <div
-          class="bg-primary text-white flex justify-end py-[5px] whitespace-nowrap text-clip *:ml-[12px] *:no-underline pl-[50px]"
+          class="bg-primary text-white flex justify-end py-[5px] whitespace-nowrap text-clip *:ml-[12px] *:no-underline pl-[50px] pr-[0.5rem]"
         >
           <router-link to="/download">下载 AOSC OS</router-link>
           <span>|</span>
