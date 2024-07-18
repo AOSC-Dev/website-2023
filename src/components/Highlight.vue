@@ -37,7 +37,7 @@ function copy() {
     <pre class="relative">
     <code :class="`hljs ${props.lang}`" ref="codeRef">
     </code>
-    <div class="absolute top-[2em] right-[1em] cursor-pointer text-link" @click="copy">复制</div>
+    <v-icon class="text-primary absolute top-[2em] right-[1em] cursor-pointer" name="fa-copy" @click="copy" />
   </pre>
     
 </template>
