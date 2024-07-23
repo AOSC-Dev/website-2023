@@ -147,6 +147,7 @@ function getAntongDate() {
 function isoVersionCmp(v1, v2) {
     let d1 = v1.date;
     let d2 = v2.date;
+    let c;
     let l = d1.length > d2.length ? d2.length : d1.length
     for (c = 0; c < l; c++) {
         if (d1[c] > d2[c]) {
