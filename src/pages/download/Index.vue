@@ -35,20 +35,18 @@ onMounted(() => {
       console.log("架构: ", res);
       versionArch.value = res;
       antong1List.value.forEach((v) => {
-        v.info = getNewVersioArch(v.title);
-        console.log(v.info);
+        v.installer = getNewVersioArch(v.title, 'installer');
+        v.livekit = getNewVersioArch(v.title, 'livekit');
       });
       antong2List.value.forEach((v) => {
-        v.info = getNewVersioArch(v.title);
-        console.log(v.info);
+        v.installer = getNewVersioArch(v.title, 'installer');
+        v.livekit = getNewVersioArch(v.title, 'livekit');
       });
       xingxia1List.value.forEach((v) => {
-        v.info = getNewVersioArch(v.title);
-        console.log(v.info);
+        v.livekit = getNewVersioArch(v.title, 'livekit');
       });
       xingxia2List.value.forEach((v) => {
-        v.info = getNewVersioArch(v.title);
-        console.log(v.info);
+        v.livekit = getNewVersioArch(v.title, 'livekit');
       });
     })
     .catch((err) => {
@@ -136,7 +134,7 @@ const xingxia2List = ref([
 
 function getAntongDate() {
   if (versionArch.value.length == 0) return '...'
-  let dateStr = versionArch.value.filter((v) => v.arch == "amd64")[0].date;
+  let dateStr = getNewVersioArch("amd64", "installer").date;
   return `${dateStr.substring(0, 4)}/${dateStr.substring(
     4,
     6
@@ -144,13 +142,37 @@ function getAntongDate() {
 }
 
 /**
+ * 比较 ISO 的日期（或版本）
+ */
+function isoVersionCmp(v1, v2) {
+    let d1 = v1.date;
+    let d2 = v2.date;
+    let l = d1.length > d2.length ? d2.length : d1.length
+    for (c = 0; c < l; c++) {
+        if (d1[c] > d2[c]) {
+            return -1;
+        }
+        if (d1[c] < d2[c]) {
+            return 1;
+        }
+        if (c == l - 1) {
+            if (d1.length > d2.length) {
+                return -1;
+            } else {
+                return 1;
+            }
+        }
+    }
+    return 0;
+}
+
+/**
  * 根据架构找出最新的下载信息
  */
-function getNewVersioArch(arch) {
+function getNewVersioArch(arch, type) {
   let list = versionArch.value.filter((v) => v.arch == arch);
-  list = list.sort((v1, v2) => {
-    return v1.date < v2.date;
-  });
+  list = list.filter((v) => v.path.includes(type));
+  list = list.sort(isoVersionCmp)
   return list[0];
 }
 </script>
@@ -189,7 +211,7 @@ function getNewVersioArch(arch) {
                 v-if="versionArch.length > 0"
               >
                 <span v-for="item in antong1List" :key="item.title">
-                  <download-button :isaInfo="item"></download-button>
+                  <download-button :labelInfo="item" :isaInfo="item.installer"></download-button>
                 </span>
               </div>
             </div>
@@ -248,7 +270,7 @@ function getNewVersioArch(arch) {
             v-if="versionArch.length > 0"
           >
             <span v-for="item in antong1List" :key="item.title">
-              <download-button :isaInfo="item"></download-button>
+              <download-button :labelInfo="item" :isaInfo="item.livekit"></download-button>
             </span>
           </div>
         </div>
@@ -296,7 +318,7 @@ function getNewVersioArch(arch) {
       <div class="w-full" v-loading="loading">
         <div class="flex justify-between" v-if="versionArch.length > 0">
           <span v-for="item in antong2List" :key="item.title">
-            <download-button class="py-[0.25rem]" v-if="item.info != undefined" :isaInfo="item" />
+            <download-button class="py-[0.25rem]" v-if="item.livekit != undefined" :labelInfo="item" :isaInfo="item.livekit" />
           </span>
         </div>
       </div>
