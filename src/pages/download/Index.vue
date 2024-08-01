@@ -14,6 +14,10 @@ import DownloadButton from "./components/DownloadButton.vue";
 import { onMounted, ref } from "vue";
 import { ElMessage } from "element-plus";
 import Highlight from "../../components/Highlight.vue";
+import { useRouter, useRoute } from 'vue-router'
+
+const router = useRouter()
+const route = useRoute()
 
 let msStoreScript = document.createElement("script");
 msStoreScript.setAttribute(
@@ -186,6 +190,7 @@ function getNewVersioArch(arch, type) {
         <div class="aosc-os-container flex flex-row w-[47%] justify-around bg-white px-[1rem]">
           <div class="pt-[4.5rem] min-w-[96px] w-[30%]">
             <img src="/assets/download/aosc-os-web.svg" style="width: 150px" />
+            
           </div>
           <div class="download-container my-[2rem]">
             <div class="text-aosc-os">
@@ -203,22 +208,27 @@ function getNewVersioArch(arch, type) {
                 >
               </p>
             </div>
+            
             <div
               class="button-container-aoscos buttons-col"
               v-loading="loading"
             >
+            
               <div
                 class="button-container-aoscos buttons-col"
                 v-if="versionArch.length > 0"
               >
+              
                 <span v-for="item in antong1List" :key="item.title">
                   <download-button :labelInfo="item" :isaInfo="item.installer"></download-button>
                 </span>
+                <button class=" text-white hover:opacity-85 ml-1 cursor-pointer text-[10pt]" style="background: #549c97; text-align: center; border: #7f979e;"
+              onclick="location.href='#tier-2-downloads'">
+                二级架构、Docker<br/>及虚拟机镜像等其他下载
+          </button>
+          
               </div>
             </div>
-            <span style="font-size: 10pt; display: flex; text-align: right; margin-top: 0.5rem"
-              >二级架构、Docker 及虚拟机镜像等其他下载</span
-            >
           </div>
         </div>
         <div class="afterglow px-[1rem]">
@@ -263,7 +273,7 @@ function getNewVersioArch(arch, type) {
       </div>
       <div
         id="livekit-buttons"
-        class="buttons-col flex flex-col justify-between gap-2 mb-[1rem] pr-[8rem] ml-auto"
+        class="buttons-col flex flex-col justify-between gap-2 mb-[1rem] pr-[2rem] ml-auto"
       >
         <div class="button-container-aoscos buttons-col" v-loading="loading">
           <div
@@ -296,7 +306,7 @@ function getNewVersioArch(arch, type) {
       </div>
       <div
         id="wsl-buttons"
-        class="buttons-col flex flex-col justify-between gap-2 my-[1rem] pr-[8rem] ml-auto"
+        class="buttons-col flex flex-col justify-between gap-2 my-[1rem] pr-[2rem] ml-auto"
       >
         <ms-store-badge
           class="mt-auto h-[60px]"
@@ -311,7 +321,7 @@ function getNewVersioArch(arch, type) {
       </div>
     </div>
 
-    <category-second title="安同 OS（二级架构）" />
+    <category-second id="tier-2-downloads" title="安同 OS（二级架构）" />
     <div class="pt-[20px] pb-[30px] px-[30px]">
       <div class="text-[14pt] mb-[20px]">
         安同OS支持支持众多处理器微架构，除x86-64、AArch64及龙架构外，我们还支持一众存量较少或软件支持尚未完善的架构供各位玩家试用和评估。
@@ -417,7 +427,8 @@ function getNewVersioArch(arch, type) {
 .aosc-os-container {
   background: linear-gradient(90deg, rgb(255 255 255 / 40%), 100%, transparent),
                 url(/assets/backgrounds/aosc-os.webp);
-  background-size: cover;
+  background-size: auto 150%;
+
 }
 
 .afterglow-container {
