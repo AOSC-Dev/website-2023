@@ -183,20 +183,17 @@ function getNewVersioArch(arch, type) {
 </script>
 
 <template>
-  <div class="pl-[1px] flex flex-col">
+  <div class="pl-[1px] flex flex-col min-w-[1148px] ss">
     <category-second title="系统下载" />
-    <div class="flex flex-col flex-1">
-      <div class="flex flex-row">
-        <div class="aosc-os-container flex flex-row w-[47%] justify-around bg-white px-[1rem]">
-          <div class="pt-[4.5rem] min-w-[96px] w-[30%]">
-            <img src="/assets/download/aosc-os-web.svg" style="width: 150px" />
-            
+      <div class="flex flex-row flex-1 ">
+        <div class="aosc-os-container justify-between flex flex-row w-[50%] justify-around bg-white px-[1rem]" style="flex-wrap: wrap;">
+          <div class="mt-[1.5rem] min-w-[96px] w-[30%] flex">
+            <img src="/assets/download/aosc-os-web.svg" />
           </div>
-          <div class="download-container my-[2rem]">
-            <div class="text-aosc-os">
+          <div class="text-aosc-os my-[2rem]" >
               <p style="font-size: 32pt">安同 OS</p>
               <p style="font-size: 14pt">称心得意的桌面操作系统</p>
-              <p style="font-size: 10pt">
+              <p style="width: 210px;font-size: 10pt">
                 {{ getAntongDate() }}·
                 <a class="cursor-pointer" href="/aosc-os/relnote"
                   >发行说明</a
@@ -208,36 +205,32 @@ function getNewVersioArch(arch, type) {
                 >
               </p>
             </div>
+          <div class="download-container mt-0">
             
             <div
-              class="button-container-aoscos buttons-col"
               v-loading="loading"
-            >
+            > 
             
               <div
-                class="button-container-aoscos buttons-col"
+                class="button-container-aoscos-multicolumn buttons-col mb-3 mt-1 flex justify-center"
                 v-if="versionArch.length > 0"
               >
-              
-                <span v-for="item in antong1List" :key="item.title">
-                  <download-button :labelInfo="item" :isaInfo="item.installer"></download-button>
-                </span>
-                <button class=" text-white hover:opacity-85 ml-1 cursor-pointer text-[10pt]" style="background: #549c97; text-align: center; border: #7f979e;"
+                  <download-button v-for="item in antong1List" :key="item.title" :labelInfo="item" :isaInfo="item.installer"/>
+                <button class="w-[224px] text-white hover:opacity-85 cursor-pointer mx-1 text-[10pt]" style="background: #549c97; text-align: center; border: #7f979e;"
               onclick="location.href='#tier-2-downloads'">
-                二级架构、Docker<br/>及虚拟机镜像等其他下载
+              <p>二级架构、Docker</p>
+              <p>及虚拟机镜像等其他下载</p>
           </button>
           
               </div>
             </div>
           </div>
         </div>
-        <div class="afterglow px-[1rem]">
-          <div class="download-container my-[2rem]">
-            <div class="text-afterglow">
+        <div class="afterglow  px-[1rem]">
+          <div class="download-container my-[2rem] text-afterglow">
               <p style="font-size: 32pt; color: #fff">星霞 OS</p>
               <p style="font-size: 14pt; color: #fff">老设备也能发光发热</p>
-              <p style="font-size: 10pt; color: #fff">敬请期待...</p>
-            </div>
+              <p style="font-size: 10pt; color: #fff;width: 210px;">敬请期待...</p>
             <!-- <div class="button-container-afterglow buttons-col">
               <span v-for="item in xingxia1List" :key="item.title">
                 <download-button
@@ -247,48 +240,53 @@ function getNewVersioArch(arch, type) {
               </span>
             </div> -->
           </div>
-          <div class="pt-[4.5rem] min-w-[96px] w-[30%]">
-            <img src="/assets/download/afterglow-web.svg" />
+          <div class="mt-[2rem] min-w-[96px] w-[30%]">
+            <img src="/assets/download/afterglow-web.svg"  />
           </div>
         </div>
       </div>
-    </div>
+    
 
     <div class="livekit-container w-[100%] flex flex-row">
-      <div id="livekit-title" class="flex flex-col pl-[2rem] py-[1rem]">
-        <p>
+      <div class="flex flex-col">
+      <div id="livekit-title" class="flex-col my-auto pl-[2rem] py-[1rem] my-0 flex" >
+        <div class="flex flex-col">
           <span id="livekit" class="text-[24pt] leading-none">LiveKit</span>
-          <span id="livekit-alt" class="flex leading-6 text-[14pt]"
+          <span id="livekit-alt" class="leading-6 text-[14pt]"
             >安同 OS 安装及救援环境</span
           >
-          <span id="livekit" class="text-[16pt] leading-8"
+        </div>
+
+        <div class="flex flex-col mt-1">
+          <span id="livekit" class="leading-8 text-[16pt]"
             >功能完备，应不时之需</span
           >
-        </p>
-        <p>
+          <div>
           <a href="#">发行说明</a>
           <span class="px-[.25rem]">·</span>
           <a href="#">配置需求</a>
-        </p>
+        </div>
+        </div>
       </div>
+    </div>
       <div
         id="livekit-buttons"
-        class="buttons-col flex flex-col justify-between gap-2 mb-[1rem] pr-[2rem] ml-auto"
+        class="buttons-col flex flex-col flex justify-between gap-2  pr-[2rem] ml-auto"
       >
-        <div class="button-container-aoscos buttons-col" v-loading="loading">
+        <div  v-loading="loading" class="my-auto">
           <div
-            class="button-container-aoscos buttons-col"
+            class="button-container-aoscos buttons-col "
             v-if="versionArch.length > 0"
           >
             <span v-for="item in antong1List" :key="item.title">
-              <download-button :labelInfo="item" :isaInfo="item.livekit"></download-button>
+              <download-button :secondLineFontSize=5 :width=140 :firstLineFontSize="8" :labelInfo="item" :isaInfo="item.livekit"></download-button>
             </span>
           </div>
         </div>
       </div>
     </div>
     <div class="wsl-container w-[100%] flex flex-row min-h-[12rem]">
-      <div id="wsl-title" class="flex flex-col pl-[2rem] py-[1rem]">
+      <div id="wsl-title" class="flex flex-col pl-[2rem] py-[1rem]" style="margin: auto 0;">
         <p>
           <span id="wsl" class="text-[24pt] leading-none">WSL 环境</span>
           <span id="wsl-alt" class="flex leading-6 text-[14pt]"
@@ -306,16 +304,17 @@ function getNewVersioArch(arch, type) {
       </div>
       <div
         id="wsl-buttons"
-        class="buttons-col flex flex-col justify-between gap-2 my-[1rem] pr-[2rem] ml-auto"
+        class="buttons-col flex flex-col justify-between gap-2 my-[1rem] pr-[38px] ml-auto"
       >
-        <ms-store-badge
-          class="mt-auto h-[60px]"
-          style="max-width: 224px"
+        <ms-store-badge 
+          class="mt-auto h-[62px]"
+          style="max-width: 224px;background-color: black;border-style: solid;border-width: 2px; border-color:lightgray; box-shadow: -1px 1px 2px 1px #00000036 ;"
           productid="9NMDF21NV65Z"
           window-mode="popup"
           theme="dark"
           language="en-us"
-          animation="on"
+          animation="off"
+
         >
         </ms-store-badge>
       </div>
@@ -370,7 +369,6 @@ function getNewVersioArch(arch, type) {
 .download-container {
   display: flex;
   flex-flow: column;
-  margin-left: -0.75em;
 }
 
 .text-aosc-os {
@@ -388,9 +386,9 @@ function getNewVersioArch(arch, type) {
 .afterglow {
   background: linear-gradient(90deg, rgb(0 0 0 / 65%), 100%, transparent),
                 url(/assets/backgrounds/afterglow.webp);
-  background-size: cover;
+  background-size: auto 150%;
   background-color: black;
-  width: 53%;
+  width: 50%;
   display: flex;
   flex-flow: row;
   justify-content: space-around;
@@ -413,7 +411,14 @@ function getNewVersioArch(arch, type) {
   flex-flow: column;
   row-gap: 0.5em;
   align-self: flex-end;
-  margin-top: 1em;
+  margin: 0 auto;
+}
+
+.button-container-aoscos-multicolumn {
+  display: flex;
+  row-gap: 0.5em;
+  flex-wrap: wrap;
+  align-self: flex-end;
 }
 
 .button-container-afterglow {
@@ -425,10 +430,9 @@ function getNewVersioArch(arch, type) {
 }
 
 .aosc-os-container {
-  background: linear-gradient(90deg, rgb(255 255 255 / 40%), 100%, transparent),
+  background: linear-gradient(90deg, rgb(255 255 255 / 0%), 100%, transparent),
                 url(/assets/backgrounds/aosc-os.webp);
-  background-size: auto 150%;
-
+  background-size: auto 185%;
 }
 
 .afterglow-container {
