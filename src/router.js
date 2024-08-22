@@ -179,6 +179,13 @@ const router = createRouter({
         title: '新闻资讯'
       }
     }, {
+      path: '/oma',
+      name: 'oma',
+      component: Oma,
+      meta: {
+        title: '小熊猫包管理器'
+      }
+    }, {
       path: '/news/list/:category/:categoryTitle',
       name: 'newsList',
       component: NewsList,
@@ -215,7 +222,18 @@ const router = createRouter({
       path: '/:pathMatch(.*)',
       component: PageNotFound
     }
-  ]
+  ], scrollBehavior(to, from, savedPosition) {
+    if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: 'smooth'
+      }
+    } else {
+      return {
+        top: 0
+      }
+    }
+  }
 })
 
 router.afterEach((to, from) => {
