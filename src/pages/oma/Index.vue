@@ -1,14 +1,23 @@
 <script setup>
 import { reactive } from "vue";
 import CategorySecond from "/src/components/CategorySecond.vue";
+import { RouterLink, RouterView } from "vue-router";
 
-const urlList = reactive([
+const urlAList = reactive([
   {
     title: '代码仓库',
     url: 'https://github.com/AOSC-Dev/oma'
-  }, {
+  }
+])
+const urlRouterList = reactive([
+  {
     title: '支持文档',
-    url: '#support'
+    path: '/oma',
+    hash: '#support'
+  },{
+    title: '下载oma',
+    path: '/download',
+    hash: '#oma-download'
   }
 ])
 
@@ -31,7 +40,8 @@ const docList = reactive([
     <category-second title="小熊猫包管理 (oma)" />
     <div class="p-6">
       <p>
-        小熊猫包管理 (oma) 是一款为使用 <a class="text-link" href="https://wiki.debian.org/Teams/Dpkg">dpkg</a> 的发行版设计的软件包管理前端，也是<a class="text-link" href="/aosc-os">安同 OS</a> 的默认包管理界面。小熊猫包管理的主要设计目标有：
+        小熊猫包管理 (oma) 是一款为使用 <a class="text-link" href="https://wiki.debian.org/Teams/Dpkg">dpkg</a> 的发行版设计的软件包管理前端，也是<a
+          class="text-link" href="/aosc-os">安同 OS</a> 的默认包管理界面。小熊猫包管理的主要设计目标有：
       </p>
       <div class="pt-4 pb-4 px-16">
         <ul class="list-disc">
@@ -44,9 +54,15 @@ const docList = reactive([
         </ul>
       </div>
       <div>
-        <span v-for="(item, index) in urlList" :key="item.title">
+        <span v-for="(item, index) in urlAList" :key="item.title">
           <a class="text-link cursor-pointer" :href="item.url">{{ item.title }}</a>
-          <span class="mx-1" v-if="index < urlList.length - 1">|</span>
+          <span class="mx-1" v-if="index < urlAList.length - 1">|</span>
+        </span>
+        <span v-for="(item, index) in urlRouterList" :key="item.title">
+          <span class="mx-1" v-if="index < urlRouterList.length">|</span>
+          <RouterLink class="text-link cursor-pointer" :to="{ path: item.path, hash: item.hash }">{{ item.title }}
+          </RouterLink>
+          <RouterView />
         </span>
       </div>
       <img src="/assets/oma/oma.png" class="w-full h-auto mt-2" alt="">
