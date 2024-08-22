@@ -175,7 +175,24 @@ $bg-secondary: #3f6075;
   }
 
   input[type='checkbox'] {
-    position: relative;
+    position: relative;@keyframes router-highlight {
+  0% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 0.3;
+  }
+
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.router-highlight-animation {
+  animation: router-highlight 3s;
+}
 
     &::before {
       top: 0;
