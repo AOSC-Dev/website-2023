@@ -34,11 +34,11 @@ const versionArch = ref([]);
 const aoscOsDownload = ref()
 const omaDownload = ref();
 
-onUpdated(()=>{
+onUpdated(() => {
   switch (route.hash) {
-      case "#oma-download": highlightElement(omaDownload);break
-      case "#aosc-os-download": highlightElement(aoscOsDownload);break
-    }
+    case "#oma-download": highlightElement(omaDownload); break
+    case "#aosc-os-download": highlightElement(aoscOsDownload); break
+  }
 })
 
 onMounted(() => {
@@ -199,7 +199,8 @@ function getNewVersioArch(arch, type) {
   <div class="pl-[1px] flex flex-col min-w-[1148px] ss">
     <category-second title="系统下载" />
     <div class="flex flex-row flex-1">
-      <div ref="aoscOsDownload" class="aosc-os-container justify-between flex flex-row w-[50%] justify-around bg-white px-[1rem] flex-wrap">
+      <div ref="aoscOsDownload"
+        class="aosc-os-container justify-between flex flex-row w-[50%] justify-around bg-white px-[1rem] flex-wrap">
         <div class="mt-[1.5rem] min-w-[96px] w-[30%] flex">
           <img src="/assets/download/aosc-os-web.svg" />
         </div>
@@ -326,14 +327,9 @@ function getNewVersioArch(arch, type) {
       </div>
       <div class="w-[80px] mr-[4rem] ml-auto mt-auto mb-[-2px]">
         <a href="">
-          <img src="../../../public/assets/download/oma-item-2.svg">
+          <img src="../../../public/assets/download/oma-mascot.svg">
         </a>
       </div>
-      <!-- <div id="oma-buttons" class="my-2 buttons-col flex flex-col flex justify-between gap-2  pr-[2rem] ml-auto">
-        <div class=" w-[80px]">
-            <img src="../../../public/assets/download/oma-item-2.svg" />
-          </div>
-      </div> -->
     </div>
 
     <category-second id="tier-2-downloads" title="安同 OS（二级架构）" />
@@ -460,14 +456,6 @@ function getNewVersioArch(arch, type) {
   background-position-x: 0%, 100%;
 }
 
-/* .oma-container {
-  background-color: rgb(218 206 187 / 100%);
-  background-image: url(/public/assets/download/oma.svg), url(/public/assets/download/oma-item-2.svg);
-  background-size: 100% auto, 7em;
-  background-repeat: no-repeat;
-  background-position-x: center, 92%;
-  background-position-y: center, top;
-} */
 .oma-container {
   background-color: rgb(218 206 187 / 100%);
   background-image: url(/public/assets/download/oma.svg);
@@ -499,5 +487,4 @@ ms-store-badge::part(img) {
   display: block;
   height: 60px;
 }
-
 </style>
