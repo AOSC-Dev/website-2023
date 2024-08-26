@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
+import { createPinia } from 'pinia'
 import './style.css'
 import 'element-plus/dist/index.css'
 import App from './App.vue'
@@ -11,6 +12,7 @@ import vuepressTheme from '@kangc/v-md-editor/lib/theme/vuepress.js';
 import '@kangc/v-md-editor/lib/theme/style/vuepress.css';
 import './css/index.scss';
 import { OhVueIcon, addIcons } from "oh-vue-icons";
+import AppLink from './components/AppLink.vue'
 import { BiChevronDoubleUp, BiChevronDoubleDown, BiChevronBarUp, BiChevronDoubleRight, HiSolidExternalLink, IoCloseCircleOutline, MdDeleteforeverOutlined, FaCopy } from "oh-vue-icons/icons";
 
 addIcons(BiChevronDoubleUp, BiChevronDoubleDown, BiChevronBarUp, BiChevronDoubleRight, HiSolidExternalLink, IoCloseCircleOutline, MdDeleteforeverOutlined, FaCopy);
@@ -27,7 +29,7 @@ import 'highlight.js/styles/stackoverflow-light.css'
 // import hljs from 'highlight.js/lib/core';
 import './utils/highlightjs'
 
-
+const pinia = createPinia()
 const app = createApp(App)
 app.use(VueMonacoEditorPlugin, {
   paths: {
@@ -36,6 +38,8 @@ app.use(VueMonacoEditorPlugin, {
   },
 })
 app.component("v-icon", OhVueIcon);
+app.component("AppLink", AppLink)
 app.use(router)
+app.use(pinia)
 app.use(VMdPreview)
 app.mount('#app')

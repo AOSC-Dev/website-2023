@@ -1,25 +1,39 @@
 <script setup>
-import { reactive } from "vue";
+import { reactive, ref, watch } from "vue";
 import CategorySecond from "/src/components/CategorySecond.vue";
-import { RouterLink, RouterView } from "vue-router";
+import { RouterView, useRoute, useRouter } from "vue-router";
+import highlightElement from "../../utils/animation";
+import AppLink from "../../components/AppLink.vue";
+import { useHighBrightnessControllerStore } from "../../stores/miscellaneous"
 
-const urlAList = reactive([
-  {
-    title: '代码仓库',
-    url: 'https://github.com/AOSC-Dev/oma'
-  }
+const router = useRouter()
+const route = useRoute()
+const support = ref()
+
+const highBrightnessControllerStore = useHighBrightnessControllerStore()
+
+
+const navigationList = reactive([{
+  title: '代码仓库',
+  url: 'https://github.com/AOSC-Dev/oma'
+}, {
+  title: '支持文档',
+  path: '/oma',
+  hash: '#support'
+}, {
+  title: '下载oma',
+  path: '/download',
+  hash: '#oma-download'
+}
 ])
-const urlRouterList = reactive([
-  {
-    title: '支持文档',
-    path: '/oma',
-    hash: '#support'
-  },{
-    title: '下载oma',
-    path: '/download',
-    hash: '#oma-download'
+
+watch(() => highBrightnessControllerStore.obj[route.path], () => {
+  switch (route.hash) {
+    case "#support": highlightElement(support); break
   }
-])
+}, {
+  flush: 'post'
+})
 
 const docList = reactive([
   {
@@ -54,14 +68,10 @@ const docList = reactive([
         </ul>
       </div>
       <div>
-        <span v-for="(item, index) in urlAList" :key="item.title">
-          <a class="text-link cursor-pointer" :href="item.url">{{ item.title }}</a>
-          <span class="mx-1" v-if="index < urlAList.length - 1">|</span>
-        </span>
-        <span v-for="(item, index) in urlRouterList" :key="item.title">
-          <span class="mx-1" v-if="index < urlRouterList.length">|</span>
-          <RouterLink class="text-link cursor-pointer" :to="{ path: item.path, hash: item.hash }">{{ item.title }}
-          </RouterLink>
+        <span v-for="(item, index) in navigationList" :key="item.title">
+          <AppLink :url="item.url" :to="{ path: item.path, hash: item.hash }" class="text-link cursor-pointer">
+            {{ item.title }}</AppLink>
+          <span class="mx-1" v-if="index < navigationList.length - 1">|</span>
           <RouterView />
         </span>
       </div>
@@ -69,7 +79,7 @@ const docList = reactive([
     </div>
 
     <category-second title="支持文档" id="support" />
-    <div class="pt-4 pb-[60px] px-16">
+    <div ref="support" class="pt-4 pb-[60px] px-16">
       <ul class="list-disc">
         <li v-for="item in docList" :key="item.title" class="text-link cursorpointer">
           <a :href="item.url">{{ item.title }}</a>

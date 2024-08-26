@@ -1,9 +1,11 @@
 <script setup>
-import { reactive, onUpdated, ref } from "vue";
+import { reactive, onUpdated, ref, watch } from "vue";
 import CategorySecond from "/src/components/CategorySecond.vue";
 import H2 from "/src/components/H2.vue";
 import { RouterLink, RouterView, useRoute, useRouter } from "vue-router";
 import highlightElement from "../../utils/animation";
+import AppLink from "../../components/AppLink.vue";
+import { useHighBrightnessControllerStore } from "../../stores/miscellaneous"
 
 const route = useRoute()
 const router = useRouter()
@@ -11,15 +13,18 @@ const router = useRouter()
 const support = ref()
 const features = ref()
 
-onUpdated(() => {
+const highBrightnessControllerStore = useHighBrightnessControllerStore()
+
+watch(() => highBrightnessControllerStore.obj[route.path], () => {
   switch (route.hash) {
-    case "": break;
     case "#support": highlightElement(support); break
     case "#features": highlightElement(features); break
   }
+}, {
+  flush: 'post'
 })
 
-const routePathList = reactive([{
+const navigationList = reactive([{
   title: '下载系统',
   hash: '#aosc-os-download',
   path: '/download'
@@ -53,15 +58,6 @@ const docList = reactive([
   }
 ])
 
-const clickToJump = (path, hash) => {
-  router.push({ path, hash })
-  switch (hash) {
-    case undefined: break;
-    case "#support": highlightElement(support); break
-    case "#features": highlightElement(features); break
-  }
-}
-
 </script>
 
 <template>
@@ -73,10 +69,11 @@ const clickToJump = (path, hash) => {
       </p>
       <br />
       <div>
-        <span v-for="(item, index) in routePathList" :key="item.title">
-          <button class="text-link" @click="clickToJump(item.path, item.hash)">{{ item.title }}</button>
+        <span v-for="(item, index) in navigationList" :key="item.title">
+          <AppLink :url="item.url" :to="{ path: item.path, hash: item.hash }" class="text-link cursor-pointer">
+            {{ item.title }}</AppLink>
+          <span class="mx-1" v-if="index < navigationList.length - 1">|</span>
           <RouterView />
-          <span class="mx-1" v-if="index < routePathList.length - 1">|</span>
         </span>
       </div>
       <img src="/assets/aosc-os/aosc-os.zh-cn.jpg" class="w-full h-auto mt-2" alt="">
