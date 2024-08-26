@@ -11,12 +11,13 @@
  */
 import CategorySecond from "../../../src/components/CategorySecond.vue";
 import DownloadButton from "./components/DownloadButton.vue";
-import { onMounted, ref, nextTick, onUpdated } from "vue";
+import { onMounted, ref, watch } from "vue";
 import { ElMessage } from "element-plus";
-import highlightElement from "../../utils/animation.ts"
-
+import { highlightElement } from "../../utils/animation.ts"
 import Highlight from "../../components/Highlight.vue";
 import { useRouter, useRoute, RouterLink, RouterView } from 'vue-router'
+import { requestJson } from "../../utils/utils.js"
+import { useHighBrightnessControllerStore } from "../../stores/miscellaneous"
 
 const router = useRouter()
 const route = useRoute()
@@ -30,49 +31,50 @@ document.head.appendChild(msStoreScript);
 
 const loading = ref(true);
 const versionArch = ref([]);
-
 const aoscOsDownload = ref()
+const afterglowDownload = ref()
 const omaDownload = ref();
 
-onUpdated(() => {
+const highBrightnessControllerStore = useHighBrightnessControllerStore()
+
+const switchHash = () => {
   switch (route.hash) {
     case "#oma-download": highlightElement(omaDownload); break
     case "#aosc-os-download": highlightElement(aoscOsDownload); break
+    case "#afterglow-download": highlightElement(afterglowDownload); break
   }
+}
+
+watch(() => highBrightnessControllerStore.obj[route.path], () => {
+  switchHash()
+}, {
+  flush: 'post'
 })
 
-onMounted(() => {
-  fetch("https://releases.aosc.io/manifest/livekit.json", {
-    headers: {
-      Origin: "*",
-    },
-  })
-    .then((res) => res.json())
-    .then((res) => {
-      console.log("架构: ", res);
-      versionArch.value = res;
-      antong1List.value.forEach((v) => {
-        v.installer = getNewVersioArch(v.title, 'installer');
-        v.livekit = getNewVersioArch(v.title, 'livekit');
-      });
-      antong2List.value.forEach((v) => {
-        v.installer = getNewVersioArch(v.title, 'installer');
-        v.livekit = getNewVersioArch(v.title, 'livekit');
-      });
-      xingxia1List.value.forEach((v) => {
-        v.livekit = getNewVersioArch(v.title, 'livekit');
-      });
-      xingxia2List.value.forEach((v) => {
-        v.livekit = getNewVersioArch(v.title, 'livekit');
-      });
-    })
-    .catch((err) => {
-      ElMessage.warning("版本信息获取失败");
-      console.log("获取异常: ", err);
-    })
-    .finally(() => {
-      loading.value = false;
+onMounted(async () => {
+  switchHash()
+  let [res, err] = await requestJson('https://releases.aosc.io/manifest/livekit.json');
+  if (res) {
+    versionArch.value = res;
+    antong1List.value.forEach((v) => {
+      v.installer = getNewVersioArch(v.title, 'installer');
+      v.livekit = getNewVersioArch(v.title, 'livekit');
     });
+    antong2List.value.forEach((v) => {
+      v.installer = getNewVersioArch(v.title, 'installer');
+      v.livekit = getNewVersioArch(v.title, 'livekit');
+    });
+    xingxia1List.value.forEach((v) => {
+      v.livekit = getNewVersioArch(v.title, 'livekit');
+    });
+    xingxia2List.value.forEach((v) => {
+      v.livekit = getNewVersioArch(v.title, 'livekit');
+    });
+  } else if (err) {
+    ElMessage.warning("版本信息获取失败");
+    console.log("获取异常: ", err);
+  }
+  loading.value = false;
 });
 
 const antong1List = ref([
@@ -232,7 +234,7 @@ function getNewVersioArch(arch, type) {
           </div>
         </div>
       </div>
-      <div class="afterglow  px-[1rem]">
+      <div class="afterglow  px-[1rem]" ref="afterglowDownload">
         <div class="download-container my-[2rem] text-afterglow">
           <p style="font-size: 32pt; color: #fff">星霞 OS</p>
           <p style="font-size: 14pt; color: #fff">老设备也能发光发热</p>

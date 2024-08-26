@@ -11,11 +11,12 @@
   "dependencies": {
     "@guolao/vue-monaco-editor": "^1.5.1",
     "@kangc/v-md-editor": "^2.3.18",
-    "axios": "^1.6.8",
+    "axios": "^1.7.4",
     "element-plus": "^2.7.4",
     "highlight.js": "^11.10.0",
     "js-yaml": "^4.1.0",
     "oh-vue-icons": "1.0.0-rc3",
+    "pinia": "^2.2.2",
     "v-md-editor": "^1.0.6",
     "vue": "^3.4.19",
     "vue-clipboard3": "^2.0.0",
