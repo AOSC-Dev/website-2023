@@ -1,8 +1,8 @@
 <script setup>
-import { reactive, onUpdated, ref, watch } from "vue";
+import { reactive, ref, watch } from "vue";
 import CategorySecond from "/src/components/CategorySecond.vue";
 import H2 from "/src/components/H2.vue";
-import { RouterLink, RouterView, useRoute, useRouter } from "vue-router";
+import { RouterView, useRoute, useRouter } from "vue-router";
 import highlightElement from "../../utils/animation";
 import AppLink from "../../components/AppLink.vue";
 import { useHighBrightnessControllerStore } from "../../stores/miscellaneous"
@@ -102,7 +102,7 @@ const docList = reactive([
     <div ref="support" class="pt-4 pb-[60px] px-16">
       <ul class="list-disc">
         <li v-for="item in docList" :key="item.title">
-          <router-link class="text-link" :to="item.url">{{ item.title }}</router-link>
+          <AppLink class="text-link" :to="item.url">{{ item.title }}</AppLink>
         </li>
       </ul>
     </div>
