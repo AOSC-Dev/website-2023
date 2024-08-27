@@ -11,13 +11,15 @@
  */
 import CategorySecond from "../../../src/components/CategorySecond.vue";
 import DownloadButton from "./components/DownloadButton.vue";
-import { onMounted, ref, watch } from "vue";
+import { onMounted, ref, watch, nextTick, onUnmounted, reactive } from "vue";
 import { ElMessage } from "element-plus";
 import { highlightElement } from "../../utils/animation.ts"
 import Highlight from "../../components/Highlight.vue";
-import { useRouter, useRoute, RouterLink, RouterView } from 'vue-router'
+import { useRouter, useRoute, RouterView } from 'vue-router'
 import { requestJson } from "../../utils/utils.js"
 import { useHighBrightnessControllerStore } from "../../stores/miscellaneous"
+import AppLink from "../../components/AppLink.vue";
+import { tr } from "element-plus/es/locales.mjs";
 
 const router = useRouter()
 const route = useRoute()
@@ -34,6 +36,7 @@ const versionArch = ref([]);
 const aoscOsDownload = ref()
 const afterglowDownload = ref()
 const omaDownload = ref();
+const tier2Downloads = ref()
 
 const highBrightnessControllerStore = useHighBrightnessControllerStore()
 
@@ -42,6 +45,7 @@ const switchHash = () => {
     case "#oma-download": highlightElement(omaDownload); break
     case "#aosc-os-download": highlightElement(aoscOsDownload); break
     case "#afterglow-download": highlightElement(afterglowDownload); break
+    case "#tier-2-downloads": highlightElement(tier2Downloads); break
   }
 }
 
@@ -51,7 +55,46 @@ watch(() => highBrightnessControllerStore.obj[route.path], () => {
   flush: 'post'
 })
 
+const aoscOsDownloadStyle = reactive({
+  secondLineFontSize: 10,
+  firstLineFontSize: 12,
+  width: 224,
+  singleLineDisplay: false
+})
+
+const longDescription = ref(true)
+
+const vss = (() => {
+  let lessThen = true
+  return () => {
+    if (lessThen) {
+      lessThen = false
+      if (aoscOsDownload.value.clientWidth <= 496) {
+        longDescription.value = false
+        if (aoscOsDownload.value.clientWidth > 384) {
+          aoscOsDownloadStyle.width = 224 - 0.55 * (496 - aoscOsDownload.value.clientWidth)
+        }
+        else
+          aoscOsDownloadStyle.width = 157
+      } else {
+        longDescription.value = true
+        aoscOsDownloadStyle.width = 224
+      }
+      lessThen = true
+    }
+  }
+})()
+
+
+onUnmounted(() => {
+  window.removeEventListener('resize', vss);
+})
+
 onMounted(async () => {
+  nextTick(() => {
+    window.addEventListener('resize', vss);
+    vss()
+  })
   switchHash()
   let [res, err] = await requestJson('https://releases.aosc.io/manifest/livekit.json');
   if (res) {
@@ -90,7 +133,7 @@ const antong1List = ref([
   },
   {
     title: "loongarch64",
-    zhLabel: "龙架构 (LoongArch)",
+    zhLabel: "LoongArch",
     enLabel: "LoongArch",
   },
 ]);
@@ -189,7 +232,7 @@ function isoVersionCmp(v1, v2) {
 /**
  * 根据架构找出最新的下载信息
  */
-function getNewVersioArch(arch, type) {
+const getNewVersioArch = (arch, type) => {
   let list = versionArch.value.filter((v) => v.arch == arch);
   list = list.filter((v) => v.path.includes(type));
   list = list.sort(isoVersionCmp)
@@ -221,15 +264,16 @@ function getNewVersioArch(arch, type) {
 
             <div class="button-container-aoscos-multicolumn buttons-col mb-3 mt-1 flex justify-center"
               v-if="versionArch.length > 0">
-              <download-button v-for="item in antong1List" :key="item.title" :labelInfo="item"
+              <download-button v-for="item in antong1List" :secondLineFontSize="aoscOsDownloadStyle.secondLineFontSize"
+                :width=aoscOsDownloadStyle.width :singleLineDisplay="aoscOsDownloadStyle.singleLineDisplay"
+                :firstLineFontSize="aoscOsDownloadStyle.firstLineFontSize" :key="item.title" :labelInfo="item"
                 :isaInfo="item.installer" />
-              <button class="w-[224px] text-white hover:opacity-85 cursor-pointer mx-1 text-[10pt]"
-                style="background: #549c97; text-align: center; border: #7f979e;"
+              <button class="text-white hover:opacity-85 cursor-pointer mx-1 text-[10pt]"
+                :style="{ width: aoscOsDownloadStyle.width + 'px', background: '#549c97', textAlign: center, border: '#7f979e' }"
                 onclick="location.href='#tier-2-downloads'">
-                <p>二级架构、Docker</p>
-                <p>及虚拟机镜像等其他下载</p>
+                <p>其他下载</p>
+                <p v-if="longDescription">二级架构、Docker，及虚拟机镜像等</p>
               </button>
-
             </div>
           </div>
         </div>
@@ -239,14 +283,6 @@ function getNewVersioArch(arch, type) {
           <p style="font-size: 32pt; color: #fff">星霞 OS</p>
           <p style="font-size: 14pt; color: #fff">老设备也能发光发热</p>
           <p style="font-size: 10pt; color: #fff;width: 210px;">敬请期待...</p>
-          <!-- <div class="button-container-afterglow buttons-col">
-              <span v-for="item in xingxia1List" :key="item.title">
-                <download-button
-                  v-if="item.info != undefined"
-                  :isaInfo="item"
-                ></download-button>
-              </span>
-            </div> -->
         </div>
         <div class="mt-[2rem] min-w-[96px] w-[30%]">
           <img src="/assets/download/afterglow-web.svg" />
@@ -273,11 +309,11 @@ function getNewVersioArch(arch, type) {
           </div>
         </div>
       </div>
-      <div id="livekit-buttons" class=" flex flex-col flex pr-[2rem] ml-auto">
+      <div id="livekit-buttons" class=" flex flex-col flex pr-[2rem] ml-auto my-2">
         <div v-loading="loading" class="my-auto">
-          <div class="button-container-aoscos buttons-col " v-if="versionArch.length > 0">
+          <div class="button-container-aoscos buttons-col" v-if="versionArch.length > 0">
             <span v-for="item in antong1List" :key="item.title">
-              <download-button :secondLineFontSize=5 :width=140 :firstLineFontSize="8" :labelInfo="item"
+              <download-button :secondLineFontSize=8 :width=160 :firstLineFontSize="10" :labelInfo="item"
                 :isaInfo="item.livekit"></download-button>
             </span>
           </div>
@@ -319,23 +355,18 @@ function getNewVersioArch(arch, type) {
             <p>
               <a href="#">GitHub</a>
               <span class="px-[.25rem]">·</span>
-              <RouterLink to="/oma">详细介绍</RouterLink>
+              <AppLink to="/oma">详细介绍</AppLink>
               <RouterView />
               <span class="px-[.25rem]">·</span>
-              <a href="">下载oma</a>
+              <a href="#">下载oma</a>
             </p>
           </div>
         </div>
       </div>
-      <div class="w-[80px] mr-[4rem] ml-auto mt-auto mb-[-2px]">
-        <a href="">
-          <img src="../../../public/assets/download/oma-mascot.svg">
-        </a>
-      </div>
     </div>
 
     <category-second id="tier-2-downloads" title="安同 OS（二级架构）" />
-    <div class="pt-[20px] pb-[30px] px-[30px]">
+    <div ref="tier2Downloads" class="pt-[20px] pb-[30px] px-[30px]">
       <div class="text-[14pt] mb-[20px]">
         安同OS支持支持众多处理器微架构，除x86-64、AArch64及龙架构外，我们还支持一众存量较少或软件支持尚未完善的架构供各位玩家试用和评估。
       </div>
@@ -348,20 +379,6 @@ function getNewVersioArch(arch, type) {
         </div>
       </div>
     </div>
-    <!-- <category-second title="星霞 OS（其他版本）" />
-    <div class="pt-[20px] pb-[30px] px-[30px]">
-      <div class="text-[14pt] mb-[20px]">
-        星霞OS支持许多来自不同年代和不同形式的设备，点击下方对应您设备的下载按钮即可。
-      </div>
-      <div class="flex justify-between">
-        <span v-for="item in xingxia2List" :key="item.title">
-          <download-button
-            v-if="item.info != undefined"
-            :isaInfo="item"
-          />
-        </span>
-      </div>
-    </div> -->
     <category-second title="容器镜像" />
     <div class="pt-[20px] pb-[30px] px-[30px]">
       <div class="text-[14pt] mb-[20px]">
@@ -460,10 +477,10 @@ function getNewVersioArch(arch, type) {
 
 .oma-container {
   background-color: rgb(218 206 187 / 100%);
-  background-image: url(/public/assets/download/oma.svg);
-  background-size: 100% auto;
-  background-position-x: center;
-  background-position-y: center;
+  background-image: url(../../../public/assets/download/oma-mascot.svg), url(/public/assets/download/oma.svg);
+  background-size: 112px auto, 100% auto;
+  background-position: right 64px bottom -4px, center;
+  background-repeat: no-repeat, no-repeat;
 }
 
 .oma-mascot {
