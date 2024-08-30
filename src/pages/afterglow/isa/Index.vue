@@ -1,31 +1,40 @@
 <script setup>
-import { reactive } from "vue";
+import { onMounted, reactive, ref, watch } from "vue";
 import CategorySecond from "/src/components/CategorySecond.vue";
-import H2 from "/src/components/H2.vue";
+import { useRoute } from "vue-router";
+import highlightElement from "../../../utils/animation";
+import Support from "../../../components/Support.vue";
 
 const docList = reactive([
   {
     title: '星霞 OS 系统需求配置表',
-    url: '/afterglow/requirements'
+    path: '/afterglow/requirements',
+    hash: '#afterLowRequirementsTitle'
   }
 ])
+
+const route = useRoute()
+
+onMounted(() => {
+  switch (route.hash) {
+    case "#afterLowIsaTitle": highlightElement(afterLowIsaList); break
+  }
+})
+
+const afterLowIsaList = ref()
 </script>
 
 <template>
   <div class="pl-[1px]">
-    <category-second title="星霞 OS 架构支持规格表" />
+    <category-second title="星霞 OS 架构支持规格表" id="afterLowIsaTitle" />
     <div class="p-6">
       <p>
         星霞 OS 支持多种处理器架构，本表介绍支持的各类处理器架构及相应的微架构指令集扩展支持、软件包架构名及编译器目标名等信息。
-      </p><br />
-    </div>
-    
-    <category-second title="架构支持规格一览" id="isa-overview" />
-    <div class="p-6">
-      <p>
-        如下是星霞 OS 支持的处理器架构一览表。
-      </p><br />
-      <table>
+      </p>
+      <table class="mt-6" ref="afterLowIsaList" id="afterLowIsaList">
+        <caption class="text-[12pt] font-semibold">
+          星霞 OS 支持处理器架构一览表
+        </caption>
         <tr>
           <th>处理器架构名</th>
           <th>微架构指令集扩展支持要求</th>
@@ -102,7 +111,9 @@ const docList = reactive([
         **: 该架构移植仅支持 68020 及更新的，带有内存管理单元 (MMU) 的处理器型号
       </p><br />
     </div>
+    <Support :navigationList="docList" />
   </div>
+
 </template>
 
 <style scoped></style>

@@ -1,8 +1,19 @@
 <script setup>
 import { ref } from "vue";
+import LinkButton from "../../components/LinkButton.vue"
 
 const btnWidth = ref(240);
-const btnHeight = ref(70);
+
+const navigationList = [{
+  text: 'QQ 表情包',
+  path: 'https://zb.vip.qq.com/hybrid/emoticonmall/detail?id=239191'
+}, {
+  text: 'Telegram 贴图包',
+  path: 'https://t.me/addstickers/AnAnTongTong'
+}, {
+  text: '贴图包素材',
+  path: 'https://repo.aosc.io/mascots/zhaxia-stickers-v1.zip'
+}]
 </script>
 
 <template>
@@ -13,36 +24,17 @@ const btnHeight = ref(70);
     <div class="flex flex-wrap *:w-1/2">
       <div>
         <category-second title="贴图包" class="border-r border-r-white" />
-        <div
-          class="p-[2rem] flex justify-between border-r-[1px] border-r-solid border-r-secondary"
-        >
+        <div class="p-[2rem] flex justify-between border-r-[1px] border-r-solid border-r-secondary">
           <div class="basis-1/2 mr-[1em]">
             <img src="/assets/mascot/qr.png" alt="二维码" />
 
-            <p
-              class="lg:text-[1em] xl:text-[1.3em] 2xl:text-[1.5em] text-center"
-            >
+            <p class="lg:text-[1em] xl:text-[1.3em] 2xl:text-[1.5em] text-center">
               扫码获取微信贴图包
             </p>
           </div>
           <div class="basis-1/2 ml-[1em] flex flex-col justify-between">
-            <link-button
-              class="basis-1/4"
-              text="QQ 表情包"
-              link="https://zb.vip.qq.com/hybrid/emoticonmall/detail?id=239191"
-            />
-            <link-button
-              class="basis-1/4"
-              text="Telegram 贴图包"
-              :height="btnHeight"
-              link="https://t.me/addstickers/AnAnTongTong"
-            />
-            <link-button
-              class="basis-1/4"
-              text="贴图包素材"
-              :height="btnHeight"
-              link="https://repo.aosc.io/mascots/zhaxia-stickers-v1.zip"
-            />
+            <LinkButton v-for="item in navigationList" :link="item.path" :text="item.text">
+            </LinkButton>
           </div>
         </div>
       </div>
@@ -54,21 +46,11 @@ const btnHeight = ref(70);
             本设定稿由钛山设计，使用 CC-BY-SA 4.0International
             许可证进行授权。钛山为自由及开源软件项目提供免费且许可开放的吉祥物设计服务。有意者敬请联系：
           </div>
-          <div
-            class="my-[10px] lg:text-[0.7em] xl:text-[1.1em] 2xl:text[1.2em]"
-          >
-            <a href="https://tysontan.com" class="text-link"
-              >https://tysontan.com</a
-            >/
-            <a href="mailto:tysontan@tysontan.com" class="text-link"
-              >tysontan@tysontan.com</a
-            >
+          <div class="my-[10px] lg:text-[0.7em] xl:text-[1.1em] 2xl:text[1.2em] flex">
+            <a href="https://tysontan.com" class="text-link">https://tysontan.com</a>
+            <a href="mailto:tysontan@tysontan.com" class="ml-auto text-link">tysontan@tysontan.com</a>
           </div>
-          <link-button
-            class="w-1/2 basis-1/4"
-            text="设定稿"
-            link="https://repo.aosc.io/mascots/mascots.zip"
-          />
+          <link-button class="w-1/2" text="设定稿" link="https://repo.aosc.io/mascots/mascots.zip" />
         </div>
       </div>
     </div>

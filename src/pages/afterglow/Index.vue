@@ -6,25 +6,23 @@ import { useRoute, useRouter } from "vue-router";
 import { highlightElement } from "../../utils/animation";
 import AppLink from "../../components/AppLink.vue";
 import { useHighBrightnessControllerStore } from "../../stores/miscellaneous"
-
+import AccordionNavigation from "../../components/AccordionNavigation.vue";
 const route = useRoute()
 const router = useRouter()
 
-const support = ref()
 const features = ref()
 
 const highBrightnessControllerStore = useHighBrightnessControllerStore()
 
 watch(() => highBrightnessControllerStore.obj[route.path], () => {
   switch (route.hash) {
-    case "#support": highlightElement(support); break
     case "#features": highlightElement(features); break
   }
 }, {
   flush: 'post'
 })
 
-const navigationList = reactive([{
+const navigationList = [{
   title: '下载系统',
   path: '/download',
   hash: '#afterglow-download'
@@ -41,15 +39,20 @@ const navigationList = reactive([{
   title: '支持文档',
   hash: '#support'
 }
-])
+]
 
 const docList = reactive([
   {
     title: '安装指南',
     url: '#'
   }, {
-    title: '系统需求与架构支持指南',
-    path: '/afterglow/isa'
+    title: '系统配置需求表',
+    path: '/afterglow/requirements',
+    hash: '#afterLowRequirementsTitle'
+  }, {
+    title: '架构支持规格表',
+    path: '/afterglow/isa',
+    hash: '#afterLowIsaTitle'
   }, {
     title: '其他支持文档',
     url: '#'
@@ -66,12 +69,7 @@ const docList = reactive([
       </p>
       <br />
       <div>
-        <span v-for="(item, index) in navigationList" :key="item.title">
-          <AppLink :url="item.url" :to="{ path: item.path, hash: item.hash }" class="text-link cursor-pointer">
-            {{ item.title }}</AppLink>
-          <span class="mx-1" v-if="index < navigationList.length - 1">|</span>
-          <RouterView />
-        </span>
+        <AccordionNavigation :navigationList="navigationList" />
       </div>
       <img src="/assets/afterglow/afterglow.zh-cn.jpg" class="w-full h-auto mt-2" alt="">
     </div>
@@ -80,22 +78,14 @@ const docList = reactive([
     <div ref="features" class="p-6">
       <H2>因地制宜</H2>
       <p>星霞 OS 支持已经年近三旬的设备，如搭载 486 处理器的 PC 机和 m68k 处理器麦金塔 (Macintosh) 电脑，也支持较新的设备，如来自 2010 年前后搭载的 Intel 凌动 (Atom) 上网本或
-        PowerPC 处理器的 Mac。通过配置调优和特性分级等手段，Afterglow 可确保各类老旧设备上良好的使用体验。</p><br />
+        PowerPC 处理器的 Mac。通过配置调优和特性分级等手段，Afterglow 可确保各类老旧设备上良好的使用体验。</p>
       <H2>持续维护</H2>
-      <p>让老旧设备继续发光发热的基本前提就是持续且完整的软件支持，星霞 OS 提供持续的特性更新和安全漏洞修复，让您放心地在各类场景继续使用老旧设备。</p><br />
+      <p>让老旧设备继续发光发热的基本前提就是持续且完整的软件支持，星霞 OS 提供持续的特性更新和安全漏洞修复，让您放心地在各类场景继续使用老旧设备。</p>
       <H2>面向未来</H2>
-      <p>我们计划在未来数年继续维护星霞 OS 并周期性地发布更新包，让您安心地继续享用和把玩曾经给您带来过快乐和承载早年记忆的电脑。</p><br />
+      <p>我们计划在未来数年继续维护星霞 OS 并周期性地发布更新包，让您安心地继续享用和把玩曾经给您带来过快乐和承载早年记忆的电脑。</p>
     </div>
 
-    <category-second title="支持文档" id="support" />
-    <div ref="support" class="pt-4 pb-[60px] px-16">
-      <ul class="list-disc">
-        <li v-for="item in docList" :key="item.title">
-          <AppLink :url="item.url" :to="{ path: item.path, hash: item.hash }" class="text-link">{{ item.title }}
-          </AppLink>
-        </li>
-      </ul>
-    </div>
+    <Support :navigationList="docList" />
 
   </div>
 </template>
