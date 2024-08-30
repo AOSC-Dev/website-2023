@@ -4,6 +4,7 @@ import CategorySecond from "/src/components/CategorySecond.vue";
 import { useRoute, useRouter } from "vue-router";
 import AppLink from "../../components/AppLink.vue";
 import { useHighBrightnessControllerStore } from "../../stores/miscellaneous"
+import AccordionNavigation from "../../components/AccordionNavigation.vue";
 
 const router = useRouter()
 const route = useRoute()
@@ -65,7 +66,7 @@ const docList = reactive([
         </ul>
       </div>
       <div>
-        <AccordionNavigation :navigationList="navigationList" />
+        <AccordionNavigation :navigationList="navigationList"/>
       </div>
       <img src="/assets/oma/oma.png" class="w-full h-auto mt-2" alt="">
     </div>
