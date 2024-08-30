@@ -16,7 +16,7 @@ import { ElMessage } from "element-plus";
 import { highlightElement } from "../../utils/animation.ts"
 import Highlight from "../../components/Highlight.vue";
 import { useRouter, useRoute, RouterView } from 'vue-router'
-import { requestJson } from "../../utils/utils.js"
+import { requestJson, title } from "../../utils/utils.js"
 import { useHighBrightnessControllerStore } from "../../stores/miscellaneous"
 import AppLink from "../../components/AppLink.vue";
 import { tr } from "element-plus/es/locales.mjs";
@@ -38,6 +38,41 @@ const afterglowDownload = ref()
 const omaDownload = ref();
 const tier2Downloads = ref()
 
+const omaNavigationList = [{
+  title: 'GitHub',
+  url: 'https://github.com/AOSC-Dev/oma'
+}, {
+  title: '详细介绍',
+  path: '/oma'
+}, {
+  title: '下载oma',
+  url: 'https://github.com/AOSC-Dev/oma/releases/tag/v1.6.0'
+}]
+
+const aoscOsNavigationList = [{
+  title: '发行说明',
+  path: '/aosc-os/relnote'
+}, {
+  title: '配置需求',
+  path: '/aosc-os/requirements'
+}]
+
+const liveKitNavigationList = [{
+  title: '发行说明',
+  path: ''
+}, {
+  title: '配置需求',
+  path: ''
+}]
+
+const wslNavigationList = [{
+  title: '发行说明',
+  path: ''
+}, {
+  title: '配置需求',
+  path: ''
+}]
+
 const highBrightnessControllerStore = useHighBrightnessControllerStore()
 
 const switchHash = () => {
@@ -56,10 +91,7 @@ watch(() => highBrightnessControllerStore.obj[route.path], () => {
 })
 
 const aoscOsDownloadStyle = reactive({
-  secondLineFontSize: 10,
-  firstLineFontSize: 12,
-  width: 224,
-  singleLineDisplay: false
+  width: 224
 })
 
 const longDescription = ref(true)
@@ -96,7 +128,7 @@ onMounted(async () => {
     vss()
   })
   switchHash()
-  let [res, err] = await requestJson('https://releases.aosc.io/manifest/livekit.json');
+  let [res, err] = await requestJson('https://releases.aosc.io/manifest/livekit.json', 'downloadLivekit');
   if (res) {
     versionArch.value = res;
     antong1List.value.forEach((v) => {
@@ -252,10 +284,9 @@ const getNewVersioArch = (arch, type) => {
         <div class="text-aosc-os my-[2rem]">
           <p style="font-size: 32pt">安同 OS</p>
           <p style="font-size: 14pt">称心得意的桌面操作系统</p>
-          <p style="width: 210px;font-size: 10pt">
+          <p style="width: 220px;font-size: 10pt">
             {{ getAntongDate() }}·
-            <a class="cursor-pointer" href="/aosc-os/relnote">发行说明</a>·
-            <a class="cursor-pointer" href="/aosc-os/requirements">配置需求</a>
+            <AccordionNavigation :navigationList="aoscOsNavigationList" />
           </p>
         </div>
         <div class="download-container mt-0 min-h-[129.97px] min-w-[150px]">
@@ -264,10 +295,8 @@ const getNewVersioArch = (arch, type) => {
 
             <div class="button-container-aoscos-multicolumn buttons-col mb-3 mt-1 flex justify-center"
               v-if="versionArch.length > 0">
-              <download-button v-for="item in antong1List" :secondLineFontSize="aoscOsDownloadStyle.secondLineFontSize"
-                :width=aoscOsDownloadStyle.width :singleLineDisplay="aoscOsDownloadStyle.singleLineDisplay"
-                :firstLineFontSize="aoscOsDownloadStyle.firstLineFontSize" :key="item.title" :labelInfo="item"
-                :isaInfo="item.installer" />
+              <download-button v-for="item in antong1List" :width=aoscOsDownloadStyle.width :key="item.title"
+                :labelInfo="item" :isaInfo="item.installer" />
               <button class="text-white hover:opacity-85 cursor-pointer mx-1 text-[10pt]"
                 :style="{ width: aoscOsDownloadStyle.width + 'px', background: '#549c97', textAlign: center, border: '#7f979e' }"
                 onclick="location.href='#tier-2-downloads'">
@@ -282,7 +311,7 @@ const getNewVersioArch = (arch, type) => {
         <div class="download-container my-[2rem] text-afterglow">
           <p style="font-size: 32pt; color: #fff">星霞 OS</p>
           <p style="font-size: 14pt; color: #fff">老设备也能发光发热</p>
-          <p style="font-size: 10pt; color: #fff;width: 210px;">敬请期待...</p>
+          <p style="font-size: 10pt; color: #fff">敬请期待...</p>
         </div>
         <div class="mt-[2rem] min-w-[96px] w-[30%]">
           <img src="/assets/download/afterglow-web.svg" />
@@ -302,9 +331,7 @@ const getNewVersioArch = (arch, type) => {
           <div class="flex flex-col mt-1">
             <span id="livekit" class="leading-8 text-[16pt]">功能完备，应不时之需</span>
             <div>
-              <a href="#">发行说明</a>
-              <span class="px-[.25rem]">·</span>
-              <a href="#">配置需求</a>
+              <AccordionNavigation :navigationList="liveKitNavigationList" />
             </div>
           </div>
         </div>
@@ -331,9 +358,7 @@ const getNewVersioArch = (arch, type) => {
         <div class="mt-1">
           <span id="wsl-description" class="text-[16pt] leading-8">Windows 与安同双双联手，生产力触手可及</span>
           <p>
-            <a href="#">发行说明</a>
-            <span class="px-[.25rem]">·</span>
-            <a href="#">配置需求</a>
+            <AccordionNavigation :navigationList="wslNavigationList" />
           </p>
         </div>
       </div>
@@ -353,12 +378,7 @@ const getNewVersioArch = (arch, type) => {
           <div class="mt-1">
             <span id="wsl-description" class="text-[16pt] leading-8">同时兼容其他基于dpkg的发行版</span>
             <p>
-              <a href="#">GitHub</a>
-              <span class="px-[.25rem]">·</span>
-              <AppLink to="/oma">详细介绍</AppLink>
-              <RouterView />
-              <span class="px-[.25rem]">·</span>
-              <a href="#">下载oma</a>
+              <AccordionNavigation :navigationList="omaNavigationList" />
             </p>
           </div>
         </div>
@@ -374,7 +394,7 @@ const getNewVersioArch = (arch, type) => {
         <div class="flex justify-between" v-if="versionArch.length > 0">
           <span v-for="item in antong2List" :key="item.title">
             <download-button :secondLineFontSize=5 :width=170 :firstLineFontSize="8" class="py-[0.25rem]"
-              v-if="item.livekit != undefined" :labelInfo="item" :isaInfo="item.livekit" />
+              v-if="item.livekit !== undefined" :labelInfo="item" :isaInfo="item.livekit" />
           </span>
         </div>
       </div>
