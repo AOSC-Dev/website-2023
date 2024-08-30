@@ -18,8 +18,7 @@ import Highlight from "../../components/Highlight.vue";
 import { useRouter, useRoute, RouterView } from 'vue-router'
 import { requestJson, title } from "../../utils/utils.js"
 import { useHighBrightnessControllerStore } from "../../stores/miscellaneous"
-import AppLink from "../../components/AppLink.vue";
-import { tr } from "element-plus/es/locales.mjs";
+import AccordionNavigation from "../../components/AccordionNavigation.vue";
 
 const router = useRouter()
 const route = useRoute()
@@ -37,6 +36,7 @@ const aoscOsDownload = ref()
 const afterglowDownload = ref()
 const omaDownload = ref();
 const tier2Downloads = ref()
+const downloadDocker = ref()
 
 const omaNavigationList = [{
   title: 'GitHub',
@@ -81,6 +81,11 @@ const switchHash = () => {
     case "#aosc-os-download": highlightElement(aoscOsDownload); break
     case "#afterglow-download": highlightElement(afterglowDownload); break
     case "#tier-2-downloads": highlightElement(tier2Downloads); break
+    case "#otherDownload": {
+      highlightElement(downloadDocker);
+      highlightElement(tier2Downloads);
+      break;
+    }
   }
 }
 
@@ -94,22 +99,18 @@ const aoscOsDownloadStyle = reactive({
   width: 224
 })
 
-const longDescription = ref(true)
-
 const vss = (() => {
   let lessThen = true
   return () => {
     if (lessThen) {
       lessThen = false
       if (aoscOsDownload.value.clientWidth <= 496) {
-        longDescription.value = false
         if (aoscOsDownload.value.clientWidth > 384) {
           aoscOsDownloadStyle.width = 224 - 0.55 * (496 - aoscOsDownload.value.clientWidth)
         }
         else
           aoscOsDownloadStyle.width = 157
       } else {
-        longDescription.value = true
         aoscOsDownloadStyle.width = 224
       }
       lessThen = true
@@ -282,11 +283,11 @@ const getNewVersioArch = (arch, type) => {
           <img src="/assets/download/aosc-os-web.svg" />
         </div>
         <div class="text-aosc-os my-[2rem]">
-          <p style="font-size: 32pt">安同 OS</p>
-          <p style="font-size: 14pt">称心得意的桌面操作系统</p>
-          <p style="width: 220px;font-size: 10pt">
+          <p class="text-[32pt]">安同 OS</p>
+          <p class="text-[14pt]">称心得意的桌面操作系统</p>
+          <p class="width-[220px] text-[10pt]">
             {{ getAntongDate() }}·
-            <AccordionNavigation :navigationList="aoscOsNavigationList" />
+            <AccordionNavigation :navigationList="aoscOsNavigationList" linkClass="">·</AccordionNavigation>
           </p>
         </div>
         <div class="download-container mt-0 min-h-[129.97px] min-w-[150px]">
@@ -295,13 +296,11 @@ const getNewVersioArch = (arch, type) => {
 
             <div class="button-container-aoscos-multicolumn buttons-col mb-3 mt-1 flex justify-center"
               v-if="versionArch.length > 0">
-              <download-button v-for="item in antong1List" :width=aoscOsDownloadStyle.width :key="item.title"
+              <DownloadButton v-for="item in antong1List" :width=aoscOsDownloadStyle.width :key="item.title"
                 :labelInfo="item" :isaInfo="item.installer" />
-              <button class="text-white hover:opacity-85 cursor-pointer mx-1 text-[10pt]"
-                :style="{ width: aoscOsDownloadStyle.width + 'px', background: '#549c97', textAlign: center, border: '#7f979e' }"
-                onclick="location.href='#tier-2-downloads'">
+              <button class="text-white hover:opacity-85 cursor-pointer mx-1 text-[10pt] text-center bg-[#549c97]"
+                :style="{ width: aoscOsDownloadStyle.width + 'px' }" onclick="location.href='#otherDownload'">
                 <p>其他下载</p>
-                <p v-if="longDescription">二级架构、Docker，及虚拟机镜像等</p>
               </button>
             </div>
           </div>
@@ -309,9 +308,9 @@ const getNewVersioArch = (arch, type) => {
       </div>
       <div class="afterglow  px-[1rem]" ref="afterglowDownload">
         <div class="download-container my-[2rem] text-afterglow">
-          <p style="font-size: 32pt; color: #fff">星霞 OS</p>
-          <p style="font-size: 14pt; color: #fff">老设备也能发光发热</p>
-          <p style="font-size: 10pt; color: #fff">敬请期待...</p>
+          <p class="text-white text-[32pt]">星霞 OS</p>
+          <p class="text-white text-[14pt]">老设备也能发光发热</p>
+          <p class="text-white text-[10pt]">敬请期待...</p>
         </div>
         <div class="mt-[2rem] min-w-[96px] w-[30%]">
           <img src="/assets/download/afterglow-web.svg" />
@@ -323,25 +322,20 @@ const getNewVersioArch = (arch, type) => {
     <div class="livekit-container w-[100%] flex flex-row">
       <div class="flex flex-col">
         <div id="livekit-title" class="flex-col my-auto pl-[2rem] py-[1rem] flex">
-          <div class="flex flex-col">
-            <span id="livekit" class="text-[24pt] leading-none">LiveKit</span>
-            <span id="livekit-alt" class="leading-6 text-[14pt]">安同 OS 安装及救援环境</span>
-          </div>
-
-          <div class="flex flex-col mt-1">
-            <span id="livekit" class="leading-8 text-[16pt]">功能完备，应不时之需</span>
-            <div>
-              <AccordionNavigation :navigationList="liveKitNavigationList" />
-            </div>
-          </div>
+          <p id="livekit" class="text-[24pt]">LiveKit</p>
+          <p id="livekit-alt" class="text-[14pt]">安同 OS 安装及救援环境</p>
+          <p id="livekit" class="mt-2 text-[16pt]">功能完备，应不时之需</p>
+          <p class="mt-1">
+            <AccordionNavigation :navigationList="liveKitNavigationList" linkClass="">·</AccordionNavigation>
+          </p>
         </div>
       </div>
       <div id="livekit-buttons" class=" flex flex-col flex pr-[2rem] ml-auto my-2">
         <div v-loading="loading" class="my-auto">
           <div class="button-container-aoscos buttons-col" v-if="versionArch.length > 0">
             <span v-for="item in antong1List" :key="item.title">
-              <download-button :secondLineFontSize=8 :width=160 :firstLineFontSize="10" :labelInfo="item"
-                :isaInfo="item.livekit"></download-button>
+              <DownloadButton :secondLineFontSize=8 :width=160 :firstLineFontSize="10" :labelInfo="item"
+                :isaInfo="item.livekit"></DownloadButton>
             </span>
           </div>
         </div>
@@ -349,18 +343,12 @@ const getNewVersioArch = (arch, type) => {
     </div>
     <div class="wsl-container w-[100%] flex flex-row ">
       <div class="flex flex-col pl-[2rem] py-[1rem]">
-        <div id="wsl-title">
-
-          <span id="wsl" class="text-[24pt] leading-none">WSL 环境</span>
-          <span id="wsl-alt" class="flex leading-6 text-[14pt]">适用于 WSL 的安同 OS</span>
-
-        </div>
-        <div class="mt-1">
-          <span id="wsl-description" class="text-[16pt] leading-8">Windows 与安同双双联手，生产力触手可及</span>
-          <p>
-            <AccordionNavigation :navigationList="wslNavigationList" />
-          </p>
-        </div>
+        <p id="wsl" class="text-[24pt]">WSL 环境</p>
+        <p id="wsl-alt" class="text-[14pt]">适用于 WSL 的安同 OS</p>
+        <p id="wsl-description" class="mt-2 text-[16pt]">Windows 与安同双双联手，生产力触手可及</p>
+        <p class="mt-1">
+          <AccordionNavigation :navigationList="wslNavigationList" linkClass="">·</AccordionNavigation>
+        </p>
       </div>
       <div id="wsl-buttons" class="buttons-col flex flex-col justify-between gap-2 my-[1rem] mt-auto pr-[36px] ml-auto">
         <ms-store-badge class=" h-[62px]"
@@ -370,41 +358,41 @@ const getNewVersioArch = (arch, type) => {
       </div>
     </div>
     <category-second class="highlight" title="实用工具" />
-    <div id="oma-download" ref="omaDownload" class="oma-container w-[100%] flex flex-row ">
-      <div class="flex flex-row my-auto pl-[1rem] py-[1rem]">
-        <div id="oma-title" class="my-auto pl-[0.5rem]">
-          <span id="oma" class="text-[24pt] leading-none">小熊猫(oma)</span>
-          <span id="oma-alt" class="flex leading-6 text-[14pt]">安同 OS 默认包管理器 </span>
-          <div class="mt-1">
-            <span id="wsl-description" class="text-[16pt] leading-8">同时兼容其他基于dpkg的发行版</span>
-            <p>
-              <AccordionNavigation :navigationList="omaNavigationList" />
-            </p>
-          </div>
-        </div>
+    <div id="oma-download" ref="omaDownload" class="oma-container w-[100%] flex flex-row py-[1rem]">
+      <div id="oma-title" class="pl-[2rem] my-auto">
+        <p class="text-[24pt] ">小熊猫(oma)</p>
+        <p class="text-[14pt] ">安同 OS 默认包管理器 </p>
+        <p class="mt-2 text-[16pt] ">同时兼容其他基于dpkg的发行版</p>
+        <p class="mt-1">
+          <AccordionNavigation :navigationList="omaNavigationList" linkClass="">·</AccordionNavigation>
+        </p>
       </div>
     </div>
-
-    <category-second id="tier-2-downloads" title="安同 OS（二级架构）" />
-    <div ref="tier2Downloads" class="pt-[20px] pb-[30px] px-[30px]">
-      <div class="text-[14pt] mb-[20px]">
-        安同OS支持支持众多处理器微架构，除x86-64、AArch64及龙架构外，我们还支持一众存量较少或软件支持尚未完善的架构供各位玩家试用和评估。
-      </div>
-      <div class="w-full" v-loading="loading">
-        <div class="flex justify-between" v-if="versionArch.length > 0">
+    <div id="otherDownload">
+      <category-second id="tier-2-downloads" title="安同 OS（二级架构）" />
+      <div ref="tier2Downloads" class="w-[100%] flex-row py-[1rem] flex">
+        <div class="pl-[2rem] my-auto">
+          <p class="text-[14pt]">
+            安同OS支持支持众多处理器微架构
+          </p>
+          <p class="text-[14pt]">除x86-64、AArch64及LoongArch外</p>
+          <p class="text-[14pt]">我们还支持一众存量较少或软件支持尚未完善的架构供各位玩家试用和评估。</p>
+        </div>
+        <div class=" flex flex-col pr-[2rem] gap-y-[0.5rem] ml-auto my-2" v-loading="loading"
+          v-if="versionArch.length > 0">
           <span v-for="item in antong2List" :key="item.title">
-            <download-button :secondLineFontSize=5 :width=170 :firstLineFontSize="8" class="py-[0.25rem]"
+            <DownloadButton  :secondLineFontSize=8 :width=200 :firstLineFontSize="10"  class="py-[0.25rem]"
               v-if="item.livekit !== undefined" :labelInfo="item" :isaInfo="item.livekit" />
           </span>
         </div>
       </div>
-    </div>
-    <category-second title="容器镜像" />
-    <div class="pt-[20px] pb-[30px] px-[30px]">
-      <div class="text-[14pt] mb-[20px]">
-        我们为Docker用户提供了容器镜像，您可以通过如下命令抓取安同OS容器
+      <category-second id="downloadDocker" title="容器镜像" />
+      <div ref="downloadDocker" class="pt-[20px] pb-[30px] px-[30px]">
+        <div class="text-[14pt] mb-[20px]">
+          我们为Docker用户提供了容器镜像，您可以通过如下命令抓取安同OS容器
+        </div>
+        <highlight lang="bash" code="docker pull aosc/aosc-os" />
       </div>
-      <highlight lang="bash" code="docker pull aosc/aosc-os" />
     </div>
   </div>
 </template>
@@ -421,6 +409,10 @@ const getNewVersioArch = (arch, type) => {
 .download-container {
   display: flex;
   flex-flow: column;
+}
+
+p {
+  line-height: 1.2;
 }
 
 .text-aosc-os {
