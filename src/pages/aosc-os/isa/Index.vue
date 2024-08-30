@@ -1,18 +1,37 @@
 <script setup>
-import { reactive } from "vue";
+import { reactive, onMounted, ref } from "vue";
 import CategorySecond from "/src/components/CategorySecond.vue";
-import H2 from "/src/components/H2.vue";
+import highlightElement from "../../../utils/animation";
+import { useRoute } from "vue-router";
 
 const docList = reactive([
   {
     title: '安同 OS 系统需求配置表',
-    url: '/aosc-os/requirements'
+    path: '/aosc-os/requirements',
+    hash: '#aoscOsRequirementsTitle'
   },
   {
     title: '舒心畅玩：设备选购建议',
-    url: '/aosc-os/better-devices'
+    path: '/aosc-os/better-devices'
   }
 ])
+
+const route = useRoute()
+
+onMounted(() => {
+  switch (route.hash) {
+    case "#aoscOsIsaTableTitle": {
+      highlightElement(aoscOsIsaList1);
+      highlightElement(aoscOsIsaList2);
+      break
+    }
+    case "#aoscOsIsaTableTitle1": highlightElement(aoscOsIsaList1); break
+    case "#aoscOsIsaTableTitle2": highlightElement(aoscOsIsaList2); break
+  }
+})
+
+const aoscOsIsaList1 = ref()
+const aoscOsIsaList2 = ref()
 </script>
 
 <template>
@@ -23,13 +42,17 @@ const docList = reactive([
         AOSC OS 支持多种处理器架构，本表介绍支持的各类处理器架构及相应的微架构指令集扩展支持、软件包架构名及编译器目标名等信息。本表分为一级架构、二级架构和实验性架构三组，对应不同支持和维护水平。
       </p><br />
     </div>
-    
-    <category-second title="一级架构" id="tier1" />
+    <div id="aoscOsIsaTableTitle">
+      <category-second title="一级架构" id="aoscOsIsaTableTitle1" />
+    </div>
     <div class="p-6">
       <p>
         一级架构包含 AOSC OS 支持水平最高的一类处理器架构，支持的软件及特性最为完整，更新也最为及时。此类架构在开发者间用户较多，有条件进行较为完整的使用测试。
-      </p><br />
-      <table>
+      </p>
+      <table class="mt-6" ref="aoscOsIsaList1">
+        <caption class="text-[12pt] font-semibold">
+          安同 OS 支持处理器架构（一级架构）表
+        </caption>
         <tr>
           <th>处理器架构名</th>
           <th>微架构指令集扩展支持要求</th>
@@ -60,12 +83,15 @@ const docList = reactive([
       </p><br />
     </div>
 
-    <category-second title="二级架构" id="tier2" />
+    <category-second title="二级架构" id="aoscOsIsaTableTitle2" />
     <div class="p-6">
       <p>
         二级架构包含 AOSC OS 支持较为完整的一类处理器架构，支持的软件和特性可能受限，更新也时有延误。此类架构在开发者间用户可能较少，且由于使用机会较少等各类因素，使用测试可能不完整。
-      </p><br />
-      <table>
+      </p>
+      <table class="mt-6" ref="aoscOsIsaList2">
+        <caption class="text-[12pt] font-semibold">
+          安同 OS 支持处理器架构（二级架构）表
+        </caption>
         <tr>
           <th>处理器架构名</th>
           <th>微架构指令集扩展支持要求</th>
@@ -92,11 +118,12 @@ const docList = reactive([
         </tr>
       </table><br />
       <p>
-        *: 这一系列处理器包括龙芯 3A1000, 3A1500-I, 3A2000(C), 3A3000, 3A4000, 3B1000, 3B1500, 3B2000, 3B3000, 3B4000 等型号；型号为 5000 或更高的均为基于龙架构 (LoongArch) 的处理器
+        *: 这一系列处理器包括龙芯 3A1000, 3A1500-I, 3A2000(C), 3A3000, 3A4000, 3B1000, 3B1500, 3B2000, 3B3000, 3B4000 等型号；型号为 5000
+        或更高的均为基于龙架构 (LoongArch) 的处理器
       </p>
     </div>
-  
-    <category-second title="实验性架构" id="tier3" />
+    <Support :navigationList="docList" />
+    <!-- <category-second title="实验性架构" id="tier3" />
     <div class="p-6">
       <p>
         实验性架构包含初步进行移植的架构，对软件、特性和更新支持等均无保障。
@@ -115,18 +142,9 @@ const docList = reactive([
           <td><code>mipsisa64r6el-aosc-linux-gnuabi64</code></td>
         </tr>
       </table>
-    </div>
+    </div> -->
 
-  <category-second title="支持文档" id="support" />
-  <div class="pt-4 pb-4 px-16">
-    <ul class="list-disc">
-      <li v-for="item in docList" :key="item.title">
-        <router-link class="text-link" :to="item.url">{{ item.title }}</router-link>
-      </li>
-    </ul>
   </div>
-
-</div>
 </template>
 
 <style scoped></style>

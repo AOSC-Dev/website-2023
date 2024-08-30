@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { setTitle } from './utils/utils.js'
-import Index from '/src/pages/index/Index.vue'
+import Index from './pages/index/Index.vue'
 import About from './pages/about/Index.vue'
 import Download from './pages/download/Index.vue'
 import AoscOs from './pages/aosc-os/Index.vue'
@@ -27,6 +27,7 @@ import Paste from './pages/paste/Index.vue'
 import PasteDetail from './pages/paste/Detail.vue'
 import MdView from './pages/mdView/Index.vue'
 import PageNotFound from './components/PageNotFound.vue'
+import Support from './components/Support.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -58,7 +59,13 @@ const router = createRouter({
       component: AoscOs,
       meta: {
         title: '安同 OS'
-      }
+      },
+      children: [{
+        path: '',
+        name: 'aosc-os-support',
+        components: { support: Support },
+        props: true
+      }]
     }, {
       path: '/aosc-os/requirements',
       name: 'aoscossysreq',

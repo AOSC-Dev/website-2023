@@ -9,19 +9,17 @@ import { useHighBrightnessControllerStore } from "../../stores/miscellaneous"
 const router = useRouter()
 const route = useRoute()
 
-const support = ref()
-
 const highBrightnessControllerStore = useHighBrightnessControllerStore()
 
 watch(() => highBrightnessControllerStore.obj[route.path], () => {
   switch (route.hash) {
-    case "#support": highlightElement(support); break
+
   }
 }, {
   flush: 'post'
 })
 
-const navigationList = reactive([{
+const navigationList = [{
   title: '项目主页',
   url: 'https://liblol.aosc.io/'
 }, {
@@ -33,7 +31,7 @@ const navigationList = reactive([{
 }, {
   title: '支持文档',
   hash: '#support'
-}])
+}]
 
 const docList = reactive([
   {
@@ -70,24 +68,12 @@ const docList = reactive([
         安装 libLoL 后，您可以直接安装运行旧世界 ABI 应用程序。
       </p><br />
       <div>
-        <span v-for="(item, index) in navigationList" :key="item.title">
-          <AppLink :url="item.url" :to="{ path: item.path, hash: item.hash }" class="text-link cursor-pointer">
-            {{ item.title }}</AppLink>
-          <RouterView />
-          <span class="mx-1" v-if="index < navigationList.length - 1">|</span>
-        </span>
+        <AccordionNavigation :navigationList="navigationList" />
       </div>
       <img src="/assets/liblol/liblol.svg" class="w-full h-auto mt-2" alt="">
     </div>
 
-    <category-second title="支持文档" id="support" />
-    <div ref="support" class="pt-4 pb-[60px] px-16">
-      <ul class="list-disc">
-        <li v-for="item in docList" :key="item.title" class="text-link cursor-pointer">
-          <a :href="item.url">{{ item.title }}</a>
-        </li>
-      </ul>
-    </div>
+    <Support :navigationList="docList" />
 
   </div>
 </template>

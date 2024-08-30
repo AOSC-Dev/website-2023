@@ -1,19 +1,17 @@
 <script setup>
 import { reactive, ref, watch } from "vue";
 import CategorySecond from "/src/components/CategorySecond.vue";
-import { RouterView, useRoute, useRouter } from "vue-router";
-import highlightElement from "../../utils/animation";
+import { useRoute, useRouter } from "vue-router";
 import AppLink from "../../components/AppLink.vue";
 import { useHighBrightnessControllerStore } from "../../stores/miscellaneous"
 
 const router = useRouter()
 const route = useRoute()
-const support = ref()
 
 const highBrightnessControllerStore = useHighBrightnessControllerStore()
 
 
-const navigationList = reactive([{
+const navigationList = [{
   title: '代码仓库',
   url: 'https://github.com/AOSC-Dev/oma'
 }, {
@@ -25,11 +23,10 @@ const navigationList = reactive([{
   path: '/download',
   hash: '#oma-download'
 }
-])
+]
 
 watch(() => highBrightnessControllerStore.obj[route.path], () => {
   switch (route.hash) {
-    case "#support": highlightElement(support); break
   }
 }, {
   flush: 'post'
@@ -54,8 +51,8 @@ const docList = reactive([
     <category-second title="小熊猫包管理 (oma)" />
     <div class="p-6">
       <p>
-        小熊猫包管理 (oma) 是一款为使用 <a class="text-link" href="https://wiki.debian.org/Teams/Dpkg">dpkg</a> 的发行版设计的软件包管理前端，也是<a
-          class="text-link" href="/aosc-os">安同 OS</a> 的默认包管理界面。小熊猫包管理的主要设计目标有：
+        小熊猫包管理 (oma) 是一款为使用 <AppLink to="https://wiki.debian.org/Teams/Dpkg">dpkg</AppLink>
+        的发行版设计的软件包管理前端，也是<AppLink to="/aosc-os">安同 OS</AppLink> 的默认包管理界面。小熊猫包管理的主要设计目标有：
       </p>
       <div class="pt-4 pb-4 px-16">
         <ul class="list-disc">
@@ -68,24 +65,12 @@ const docList = reactive([
         </ul>
       </div>
       <div>
-        <span v-for="(item, index) in navigationList" :key="item.title">
-          <AppLink :url="item.url" :to="{ path: item.path, hash: item.hash }" class="text-link cursor-pointer">
-            {{ item.title }}</AppLink>
-          <span class="mx-1" v-if="index < navigationList.length - 1">|</span>
-          <RouterView />
-        </span>
+        <AccordionNavigation :navigationList="navigationList" />
       </div>
       <img src="/assets/oma/oma.png" class="w-full h-auto mt-2" alt="">
     </div>
 
-    <category-second title="支持文档" id="support" />
-    <div ref="support" class="pt-4 pb-[60px] px-16">
-      <ul class="list-disc">
-        <li v-for="item in docList" :key="item.title" class="text-link cursorpointer">
-          <a :href="item.url">{{ item.title }}</a>
-        </li>
-      </ul>
-    </div>
+    <Support :navigationList="docList" />
 
   </div>
 </template>

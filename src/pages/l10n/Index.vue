@@ -32,14 +32,7 @@ const docList = reactive([
       </p><br />
     </div>
 
-    <category-second title="支持文档" id="support" />
-    <div class="pt-4 pb-[60px] px-16">
-      <ul class="list-disc">
-        <li v-for="item in docList" :key="item.title" class="text-link cursor-pointer">
-          <a :href="item.url">{{ item.title }}</a>
-        </li>
-      </ul>
-    </div>
+    <Support :navigationList="docList" />
 
   </div>
 </template>

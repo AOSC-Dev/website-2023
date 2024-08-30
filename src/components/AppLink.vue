@@ -4,16 +4,19 @@ import { RouterLink } from 'vue-router'
 
 const props = defineProps({
     ...RouterLink.props,
-    url: String
+    class: {
+        type: String,
+        default: 'text-link'
+    }
 })
 
 const isExternalLink = computed(() => {
-    return typeof props.url === 'string'
+    return typeof props.to === 'string' && props.to.startsWith('http')
 })
 </script>
 
 <template>
-    <a v-if="isExternalLink" :href="url">
+    <a v-if="isExternalLink" :href="to" :class>
         <slot></slot>
     </a>
     <router-link v-else v-bind="$props">

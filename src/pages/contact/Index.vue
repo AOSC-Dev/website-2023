@@ -1,7 +1,65 @@
 <script setup>
+import { reactive } from "vue";
 import CategorySecond from "/src/components/CategorySecond.vue";
-import H2 from "/src/components/H2.vue";
+import AppLink from "../../components/AppLink.vue";
 
+const mainGroup = reactive([{
+  liText: 'QQ — 群号 875059676'
+}, {
+  liText: '微信 — 请联系公众号“安同开源”'
+}, {
+  spanText: 'Telegram — ',
+  url: 'https://t.me/aosc_main',
+  aText: '加入群组'
+}, {
+  spanText: 'Discord — ',
+  url: 'https://discord.gg/VYPHgt9',
+  aText: '加入聊天室'
+}, {
+  spanText: 'IRC: #aosc @ Libera Chat — ',
+  url: 'irc://irc.libera.chat:6697/aosc',
+  aText: '加入频道'
+}, {
+  spanText: 'Matrix: #aosc:matrix.aosc.io — ',
+  url: 'https://matrix.to/#/%23aosc:matrix.aosc.io',
+  aText: '加入聊天室'
+}])
+
+const antiqueComputer = reactive([{
+  spanText: 'Telegram — ',
+  url: 'https://t.me/aosc_retro',
+  aText: '加入群组'
+}, {
+  spanText: 'Discord — ',
+  url: 'https://discord.gg/VYPHgt9',
+  aText: '加入聊天室'
+}, {
+  spanText: 'IRC: #aosc @ Libera Chat — ',
+  url: 'irc://irc.libera.chat:6697/aosc-retro',
+  aText: '加入频道'
+}, {
+  spanText: 'Matrix: #aosc:matrix.aosc.io — ',
+  url: 'https://matrix.to/#/%23retro:matrix.aosc.io',
+  aText: '加入聊天室'
+}])
+
+const waterGroup = reactive([{
+  spanText: 'Telegram — ',
+  url: 'https://t.me/aosc_tuosai',
+  aText: '加入群组'
+}, {
+  spanText: 'Discord — ',
+  url: 'https://discord.gg/VYPHgt9',
+  aText: '加入聊天室'
+}, {
+  spanText: 'IRC: #aosc @ Libera Chat — ',
+  url: 'irc://irc.libera.chat:6697/aosc-offtopic',
+  aText: '加入频道'
+}, {
+  spanText: 'Matrix: #aosc:matrix.aosc.io — ',
+  url: 'https://matrix.to/#/%23offtopic:matrix.aosc.io',
+  aText: '加入聊天室'
+}])
 </script>
 
 <template>
@@ -20,48 +78,26 @@ import H2 from "/src/components/H2.vue";
 
     <category-second title="主群组" />
     <div class="p-6">
-      <p>社区主群组用于开发交流、技术支持及相关技术话题讨论：</p><br />
-      <ul class="list-disc pl-10">
-        <li>QQ — 群号 875059676</li>
-        <li>微信 — 请联系公众号“安同开源”</li>
-        <li>
-          <span>Telegram — </span>
-          <a href="https://t.me/aosc_main" class="text-link">加入群组</a>
-        </li>
-        <li>
-          <span>Discord — </span>
-          <a href="https://discord.gg/VYPHgt9" class="text-link">加入聊天室</a>
-        </li>
-        <li>
-          <span>IRC: #aosc @ Libera Chat — </span>
-          <a href="irc://irc.libera.chat:6697/aosc" class="text-link">加入频道</a>
-        </li>
-        <li>
-          <span>Matrix: #aosc:matrix.aosc.io — </span>
-          <a href="https://matrix.to/#/%23aosc:matrix.aosc.io" class="text-link">加入聊天室</a>
+      <p>社区主群组用于开发交流、技术支持及相关技术话题讨论：</p>
+      <ul class="list-disc pl-10 mt-2">
+        <li v-for="item in mainGroup">
+          <span v-if="item.spanText">{{ item.spanText }}</span>
+          <AppLink v-if="item.url" :to="item.url">{{
+            item.aText }}</AppLink>
+          {{ item.liText }}
         </li>
       </ul>
     </div>
 
     <category-second title="古董计算机兴趣小组" />
     <div class="p-6">
-      <p>该小组用于讨论各类古董软硬件及 Afterglow（星霞 OS）开发。</p><br />
-      <ul class="list-disc pl-10">
-        <li>
-          <span>Telegram — </span>
-          <a href="https://t.me/aosc_retro" class="text-link">加入群组</a>
-        </li>
-        <li>
-          <span>Discord — </span>
-          <a href="https://discord.gg/VYPHgt9" class="text-link">加入聊天室</a>
-        </li>
-        <li>
-          <span>IRC: #aosc @ Libera Chat — </span>
-          <a href="irc://irc.libera.chat:6697/aosc-retro" class="text-link">加入频道</a>
-        </li>
-        <li>
-          <span>Matrix: #aosc:matrix.aosc.io — </span>
-          <a href="https://matrix.to/#/%23retro:matrix.aosc.io" class="text-link">加入聊天室</a>
+      <p>该小组用于讨论各类古董软硬件及 Afterglow（星霞 OS）开发。</p>
+      <ul class="list-disc pl-10 mt-2">
+        <li v-for="item in antiqueComputer">
+          <span v-if="item.spanText">{{ item.spanText }}</span>
+          <AppLink v-if="item.url" :to="item.url">{{
+            item.aText }}</AppLink>
+          {{ item.liText }}
         </li>
       </ul>
     </div>
@@ -70,24 +106,14 @@ import H2 from "/src/components/H2.vue";
     <div class="p-6">
       <p>
         水群用于讨论各式话题，但需注意遵守我社
-        <router-link to="/guidelines">人际关系准则</router-link>
-      </p><br />
-      <ul class="list-disc pl-10">
-        <li>
-          <span>Telegram — </span>
-          <a href="https://t.me/aosc_tuosai" class="text-link">加入群组</a>
-        </li>
-        <li>
-          <span>Discord — </span>
-          <a href="https://discord.gg/VYPHgt9" class="text-link">加入聊天室</a>
-        </li>
-        <li>
-          <span>IRC: #aosc @ Libera Chat — </span>
-          <a href="irc://irc.libera.chat:6697/aosc-offtopic" class="text-link">加入频道</a>
-        </li>
-        <li>
-          <span>Matrix: #aosc:matrix.aosc.io — </span>
-          <a href="https://matrix.to/#/%23offtopic:matrix.aosc.io" class="text-link">加入聊天室</a>
+        <AppLink to="/guidelines">人际关系准则</AppLink>
+      </p>
+      <ul class="list-disc pl-10 mt-2">
+        <li v-for="item in waterGroup">
+          <span v-if="item.spanText">{{ item.spanText }}</span>
+          <AppLink v-if="item.url" :to="item.url">{{
+            item.aText }}</AppLink>
+          {{ item.liText }}
         </li>
       </ul>
     </div>
