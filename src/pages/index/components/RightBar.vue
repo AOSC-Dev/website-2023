@@ -5,38 +5,30 @@ import CategorySecond from "/src/components/CategorySecond.vue";
 const distroList = reactive([
   {
     img: "/assets/distros/aosc-os.svg",
-    title: "AOSC OS",
+    title: "安同 OS",
     description: "可靠、简明、精制",
   },
   {
     img: "/assets/distros/afterglow.svg",
-    title: "Afterglow",
+    title: "星霞 OS",
     description: "承前启后",
   },
 ]);
 const commonLinkList = reactive([
   {
-    url: "#",
+    url: "/contact#main",
     title: "报告系统使用问题",
   },
   {
-    url: "#",
+    url: "https://github.com/AOSC-Dev/aosc-os-abbs/issues/new?assignees=&labels=security&projects=&template=security-vulnerabilities-report.yml",
     title: "报告安全漏洞",
   },
   {
-    url: "#",
-    title: "寻求现场或远程协助",
-  },
-  {
-    url: "#",
+    url: "https://wiki.aosc.io/zh/developer/infrastructure/knowledge-base/00002-how-to-mirror/",
     title: "镜像源支持",
   },
   {
-    url: "#",
-    title: "参与社区投票",
-  },
-  {
-    url: "#",
+    url: "/crowdsourcing",
     title: "赞助硬件或服务",
   },
 ]);
@@ -79,8 +71,8 @@ const commonLinkList = reactive([
               {{ item.description }}
             </div>
             <div class="text-[12pt]">
-              <a href="" class="text-link on-underline mr-2">下载</a>
-              <a href="" class="text-link on-underline">发行说明</a>
+              <a href="/download#aosc-os-download" class="text-link on-underline mr-2">系统下载</a>
+              <a href="/aosc-os/relnote" class="text-link on-underline">发行说明</a>
             </div>
           </div>
         </div>

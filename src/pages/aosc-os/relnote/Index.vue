@@ -8,7 +8,7 @@ import H2 from "/src/components/H2.vue";
   <div class="pl-[1px]">
     <category-second title="发行说明：2023 年 10 月" />
     <div class="p-6">
-      <p>近日，我们发布了新一批 AOSC OS 系统发行，包含一年以来的系统组件更新，在引入更新和修复系统中存在的问题的同时，还改善了硬件支持。</p><br />
+      <p>近日，我们发布了新一批安同 OS 系统发行，包含一年以来的系统组件更新，在引入更新和修复系统中存在的问题的同时，还改善了硬件支持。</p><br />
     </div>
     
     <category-second title="新特性与更改" id="features" />
