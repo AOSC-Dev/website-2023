@@ -50,7 +50,7 @@ const navigationList = [
           <li><b>2018 年：</b>聚会取消</li>
           <li><b>2017 年：</b><a class="text-[#0056cc] no-underline" href="https://wiki.aosc.io/zh/community/aoscc/2017/">广东工业大学（2019 年 7 月 14 - 16 日）</a></li>
           <li><b>2016 年：</b>上海科技大学（2016 年 7 月）</li>
-          <li><b>2015 年：</b>深圳（2015 年 7 月）</li>
+          <li><b>2015 年：</b>深圳长虹科技大厦（2015 年 7 月）</li>
         </ul>
       </div>
     </div>
