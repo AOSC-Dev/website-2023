@@ -7,6 +7,8 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    AccordionNavigation: typeof import('./src/components/AccordionNavigation.vue')['default']
+    AppLink: typeof import('./src/components/AppLink.vue')['default']
     CategorySecond: typeof import('./src/components/CategorySecond.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCarousel: typeof import('element-plus/es')['ElCarousel']
@@ -19,6 +21,7 @@ declare module 'vue' {
     PageNotFound: typeof import('./src/components/PageNotFound.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Support: typeof import('./src/components/Support.vue')['default']
   }
   export interface ComponentCustomProperties {
     vLoading: typeof import('element-plus/es')['ElLoadingDirective']

@@ -12,10 +12,11 @@ const docList = reactive([
     path: '/aosc-os/isa',
     hash: '#aoscOsIsaTableTitle'
   },
+  /* TODO
   {
     title: '舒心畅玩：设备选购建议',
-    path: '#'
-  }
+    path: '/aosc-os/better-devices'
+  } */
 ])
 
 const route = useRoute()
@@ -76,7 +77,7 @@ const aoscOsRequirementsList = ref()
         <li>一般来说，4K 分辨率的屏幕需要 2GiB 显存的显卡才能流畅使用安同 OS 桌面界面</li>
         <li>关于存储需求的建议是基于系统安装后还有足够空间进行日常工作和系统更新设定的；如果您的设备内存较大，安装程序创建的默认交换空间（虚拟内存文件）尺寸也会随之变大，因此您在分区时也要进行相关的考虑</li>
         <li>如有可能，建议使用固态硬盘作为系统主存储：固态硬盘在随机读写性能上的优势将显著提升系统响应、软件安装和多任务场景下的使用体验</li>
-        <li>安同 OS 通过互联网获取更新且可能需要从国际互联网获取相关数据，请确保互联网连接畅通以便及时获得系统更新</li>
+        <li>安同 OS 通过互联网获取更新，请确保互联网连接畅通以便及时获得系统更新</li>
       </ul>
     </div>
     <br />

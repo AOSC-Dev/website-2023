@@ -29,7 +29,7 @@ const afterLowRequirementsList = ref()
     <category-second title="星霞 OS 系统配置需求表" id="afterLowRequirementsTitle"/>
     <div class="p-6">
       <p>
-        Afterglow 是一款面向老旧设备、功能受限的操作系统，预装软件和基础管理特性等对设备处理器、显卡、存储和互联网连接等均有一定的需求。根据我们的测试，我们总结出了如下以使用体验良好为基本基准的系统配置需求表。
+       星霞 OS 是一款面向老旧设备、功能受限的操作系统，预装软件和基础管理特性等对设备处理器、显卡、存储和互联网连接等均有一定的需求。根据我们的测试，我们总结出了如下以使用体验良好为基本基准的系统配置需求表。
       </p>
       <table class="mt-6" ref="afterLowRequirementsList" id="afterLowRequirementsList">
         <caption class="text-[12pt] font-semibold">

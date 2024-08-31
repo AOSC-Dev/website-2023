@@ -2,15 +2,15 @@
 import { reactive } from "vue";
 import CategorySecond from "/src/components/CategorySecond.vue";
 
-const urlList = reactive([
+const navigationList = [
   {
-    title: '阅读《大陆简中自由软件本地化工作指南》1.5.4 版',
-    url: 'https://repo.aosc.io/aosc-l10n/zh_CN_l10n_1.5.4.pdf'
-  }, {
     title: '支持文档',
-    url: '#support'
+    hash: '#support'
+  }, {
+    title: '社区 Weblate 平台',
+    url: 'https://weblate.aosc.io/'
   }
-])
+]
 
 const docList = reactive([
   {
@@ -30,6 +30,9 @@ const docList = reactive([
       <p>
         在推动这些工作的同时，我们还肩负起了《大陆简中自由软件本地化工作指南》这一本地化工作规范文档的编辑维护工作，指引各路同仁正确、高效地推进本地化工作。此外，自 2020 年开始，我们还通过中科院软件所“开源之夏”发布本地化工作的实习项目，吸引各路新人参与到我社的本地化工作中。
       </p><br />
+      <div>
+        <AccordionNavigation :navigationList="navigationList"/>
+      </div>
     </div>
 
     <Support :navigationList="docList" />

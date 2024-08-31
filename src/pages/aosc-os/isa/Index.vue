@@ -10,10 +10,11 @@ const docList = reactive([
     path: '/aosc-os/requirements',
     hash: '#aoscOsRequirementsTitle'
   },
+  /* TODO
   {
     title: '舒心畅玩：设备选购建议',
     path: '/aosc-os/better-devices'
-  }
+  } */
 ])
 
 const route = useRoute()
@@ -39,7 +40,7 @@ const aoscOsIsaList2 = ref()
     <category-second title="安同 OS 架构支持规格表" />
     <div class="p-6">
       <p>
-        AOSC OS 支持多种处理器架构，本表介绍支持的各类处理器架构及相应的微架构指令集扩展支持、软件包架构名及编译器目标名等信息。本表分为一级架构、二级架构和实验性架构三组，对应不同支持和维护水平。
+       安同 OS 支持多种处理器架构，本表介绍支持的各类处理器架构及相应的微架构指令集扩展支持、软件包架构名及编译器目标名等信息。本表分为一级架构、二级架构和实验性架构三组，对应不同支持和维护水平。
       </p><br />
     </div>
     <div id="aoscOsIsaTableTitle">
@@ -47,7 +48,7 @@ const aoscOsIsaList2 = ref()
     </div>
     <div class="p-6">
       <p>
-        一级架构包含 AOSC OS 支持水平最高的一类处理器架构，支持的软件及特性最为完整，更新也最为及时。此类架构在开发者间用户较多，有条件进行较为完整的使用测试。
+        一级架构包含安同 OS 支持水平最高的一类处理器架构，支持的软件及特性最为完整，更新也最为及时。此类架构在开发者间用户较多，有条件进行较为完整的使用测试。
       </p>
       <table class="mt-6" ref="aoscOsIsaList1">
         <caption class="text-[12pt] font-semibold">
@@ -86,7 +87,7 @@ const aoscOsIsaList2 = ref()
     <category-second title="二级架构" id="aoscOsIsaTableTitle2" />
     <div class="p-6">
       <p>
-        二级架构包含 AOSC OS 支持较为完整的一类处理器架构，支持的软件和特性可能受限，更新也时有延误。此类架构在开发者间用户可能较少，且由于使用机会较少等各类因素，使用测试可能不完整。
+        二级架构包含安同 OS 支持较为完整的一类处理器架构，支持的软件和特性可能受限，更新也时有延误。此类架构在开发者间用户可能较少，且由于使用机会较少等各类因素，使用测试可能不完整。
       </p>
       <table class="mt-6" ref="aoscOsIsaList2">
         <caption class="text-[12pt] font-semibold">
@@ -99,7 +100,7 @@ const aoscOsIsaList2 = ref()
           <th>编译器目标名</th>
         </tr>
         <tr>
-          <td>基于 MIPS 的龙芯三号处理器*</td>
+          <td>基于 MIPS 的龙芯三号*</td>
           <td>无</td>
           <td><code>loongson3</code></td>
           <td><code>mips64el-aosc-linux-gnuabi64</code></td>
