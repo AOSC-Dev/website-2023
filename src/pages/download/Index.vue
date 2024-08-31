@@ -280,7 +280,7 @@ const getNewVersioArch = (arch, type) => {
 
 <template>
   <div class="pl-[1px] flex flex-col min-w-[1148px] ss">
-    <category-second title="系统下载" />
+    <category-second title="操作系统" />
     <div class="flex flex-row flex-1">
       <div ref="aoscOsDownload"
         class="aosc-os-container justify-between flex flex-row w-[50%] justify-around bg-white px-[1rem] flex-wrap">
