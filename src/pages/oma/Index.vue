@@ -15,12 +15,12 @@ const highBrightnessControllerStore = useHighBrightnessControllerStore()
 const navigationList = [{
   title: '代码仓库',
   url: 'https://github.com/AOSC-Dev/oma'
-}, {
+}, /* TODO, OSPP 2024 {
   title: '支持文档',
   path: '/oma',
   hash: '#support'
-}, {
-  title: '下载oma',
+}, */ {
+  title: '下载 oma',
   path: '/download',
   hash: '#oma-download'
 }
@@ -71,7 +71,9 @@ const docList = reactive([
       <img src="/assets/oma/oma.png" class="w-full h-auto mt-2" alt="">
     </div>
 
+    <!-- TODO, OSPP 2024
     <Support :navigationList="docList" />
+    -->
 
   </div>
 </template>

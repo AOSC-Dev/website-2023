@@ -28,6 +28,8 @@ import PasteDetail from './pages/paste/Detail.vue'
 import MdView from './pages/mdView/Index.vue'
 import PageNotFound from './components/PageNotFound.vue'
 import Support from './components/Support.vue'
+import Internship from './pages/internship/Index.vue'
+import Events from './pages/events/Index.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -217,6 +219,20 @@ const router = createRouter({
       component: PasteDetail,
       meta: {
         title: '粘贴板'
+      }
+    }, {
+      path: '/internship',
+      name: 'Internship',
+      component: Internship,
+      meta: {
+        title: '实习资源'
+      }
+    }, {
+      path: '/events',
+      name: 'Events',
+      component: Events,
+      meta: {
+        title: '社区活动'
       }
     }, {
       path: '/404',

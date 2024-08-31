@@ -24,7 +24,6 @@ const linkArr = reactive([
     children: [
       { title: "新闻资讯", link: "/news" },
       { title: "活动相册", link: "/gallery" },
-      { title: "系统需求", link: "#" },
       { title: "联系方式", link: "/contact" },
     ],
     show: true,
@@ -32,9 +31,9 @@ const linkArr = reactive([
   {
     title: "事务与文化",
     children: [
-      { title: "社区简介", link: "/about" },
-      { title: "线下活动", link: "#" },
-      { title: "实习资源", link: "#" },
+      { title: "关于社区", link: "/about" },
+      { title: "社区活动", link: "/events" },
+      { title: "实习资源", link: "/internship" },
       { title: "赞助方一览", link: "/sponsors" },
       { title: "社区众筹", link: "/crowdsourcing" },
       { title: "人际关系准则", link: "/guidelines" },
@@ -45,12 +44,12 @@ const linkArr = reactive([
   {
     title: "服务设施",
     children: [
+      { title: "论坛", link: "https://bbs.aosc.io/"},
       { title: "文档", link: "https://wiki.aosc.io/" },
       { title: "代码", link: "https://github.com/AOSC-Dev" },
       { title: "邮箱", link: "https://mail20.mymailcheap.com/" },
-      { title: "镜像源", link: "https://aosc.io/repo/" },
-      { title: "构建服务器", link: "https://aosc.io/repo/" },
-      { title: "自动化设施", link: "https://aosc.io/repo/" },
+      { title: "构建服务器", link: "https://wiki.aosc.io/developer/infrastructure/buildbots/" },
+      { title: "自动化设施", link: "https://buildit.aosc.io/" },
       { title: "粘贴板", link: "/paste" },
     ],
     show: true,

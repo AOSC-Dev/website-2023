@@ -10,7 +10,7 @@ const navigationList = [{
   title: '报告内容问题',
   url: 'https://github.com/AOSC-Dev/website-2023/issues'
 }, {
-  title: '回到主页',
+  title: '返回主页',
   path: '/'
 }]
 </script>

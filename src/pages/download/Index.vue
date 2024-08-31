@@ -39,14 +39,14 @@ const tier2Downloads = ref()
 const downloadDocker = ref()
 
 const omaNavigationList = [{
-  title: 'GitHub',
-  url: 'https://github.com/AOSC-Dev/oma'
-}, {
   title: '详细介绍',
   path: '/oma'
 }, {
-  title: '下载oma',
-  url: 'https://github.com/AOSC-Dev/oma/releases/tag/v1.6.0'
+  title: '源代码',
+  url: 'https://github.com/AOSC-Dev/oma'
+}, {
+  title: '下载 Debian/Ubuntu 安装包',
+  url: 'https://github.com/AOSC-Dev/oma/releases/tag/v1.8.2'
 }]
 
 const aoscOsNavigationList = [{
@@ -173,35 +173,40 @@ const antong1List = ref([
 const antong2List = ref([
   {
     title: "ppc64el",
-    zhLabel: "IBM POWER（小端序）",
-    enLabel: "IBM POWER",
+    zhLabel: "IBM POWER（64 位，小端序）",
+    enLabel: "IBM POWER (64-bit, little endian)",
   },
   {
     title: "riscv64",
     zhLabel: "RISC-V（64 位）",
-    enLabel: "RISC-V（64 位）",
+    enLabel: "RISC-V (64-bit)",
   },
   {
     title: "loongson3",
-    zhLabel: "基于 MIPS 的龙芯三号处理器",
-    enLabel: "基于 MIPS 的龙芯三号处理器",
+    zhLabel: "基于 MIPS 的龙芯三号",
+    enLabel: "MIPS-based Loongson 3",
   },
 ]);
 const xingxia1List = ref([
   {
     title: "i486",
     zhLabel: "Intel 80486 或更新",
-    enLabel: "Intel 80486 or new",
+    enLabel: "Intel 80486 or newer",
   },
   {
     title: "loongson2f",
-    zhLabel: "基于 MIPS 的龙芯二号处理器",
-    enLabel: "基于 MIPS 的龙芯二号处理器",
+    zhLabel: "龙芯 2F",
+    enLabel: "Loongson 2F",
   },
   {
     title: "powerpc",
     zhLabel: "PowerPC（32 位，大端序）",
-    enLabel: "PowerPC/powerpc",
+    enLabel: "PowerPC (32-bit, big endian)",
+  },
+  {
+    title: "ppc64",
+    zhLabel: "PowerPC（64 位，大端序）",
+    enLabel: "PowerPC (64-bit, big endian)",
   },
 ]);
 const xingxia2List = ref([
@@ -218,12 +223,12 @@ const xingxia2List = ref([
   {
     title: "armv6hf",
     zhLabel: "ARMv6（硬浮点）",
-    enLabel: "ARMv6",
+    enLabel: "ARMv6 (hard-float)",
   },
   {
     title: "armv7hf",
-    zhLabel: "ARMv7（硬浮点）",
-    enLabel: "ARMv7",
+    zhLabel: "ARMv7（硬浮点，带有 NEON 指令集支持）",
+    enLabel: "ARMv7 (hard-float, with NEON support)",
   },
 ]);
 
@@ -360,9 +365,9 @@ const getNewVersioArch = (arch, type) => {
     <category-second class="highlight" title="实用工具" />
     <div id="oma-download" ref="omaDownload" class="oma-container w-[100%] flex flex-row py-[1rem]">
       <div id="oma-title" class="pl-[2rem] my-auto">
-        <p class="text-[24pt] ">小熊猫(oma)</p>
-        <p class="text-[14pt] ">安同 OS 默认包管理器 </p>
-        <p class="mt-2 text-[16pt] ">同时兼容其他基于dpkg的发行版</p>
+        <p class="text-[24pt] ">小熊猫 (oma)</p>
+        <p class="text-[14pt] ">简明好用的 APT 软件包管理界面</p>
+        <p class="mt-2 text-[16pt] ">轻松管，轻松用！</p>
         <p class="mt-1">
           <AccordionNavigation :navigationList="omaNavigationList" linkClass="">·</AccordionNavigation>
         </p>
@@ -372,11 +377,10 @@ const getNewVersioArch = (arch, type) => {
       <category-second id="tier-2-downloads" title="安同 OS（二级架构）" />
       <div ref="tier2Downloads" class="w-[100%] flex-row py-[1rem] flex">
         <div class="pl-[2rem] my-auto">
-          <p class="text-[14pt]">
-            安同OS支持支持众多处理器微架构
-          </p>
-          <p class="text-[14pt]">除x86-64、AArch64及LoongArch外</p>
-          <p class="text-[14pt]">我们还支持一众存量较少或软件支持尚未完善的架构供各位玩家试用和评估。</p>
+          <p class="text-[14pt]">安同 OS 支持支持众多处理器微架构</p>
+          <p class="text-[14pt]">除 x86-64、AArch64 及 LoongArch 外</p>
+          <p class="text-[14pt]">我们还支持一众存量较少或软件支持尚未完善的架构</p>
+          <p class="text-[14pt]">供各位玩家试用和评估</p>
         </div>
         <div class=" flex flex-col pr-[2rem] gap-y-[0.5rem] ml-auto my-2" v-loading="loading"
           v-if="versionArch.length > 0">
@@ -388,7 +392,7 @@ const getNewVersioArch = (arch, type) => {
       </div>
       <category-second id="downloadDocker" title="容器镜像" />
       <div ref="downloadDocker" class="pt-[20px] pb-[30px] px-[30px]">
-        <div class="text-[14pt] mb-[20px]">
+        <div class="text-[14pt]">
           我们为Docker用户提供了容器镜像，您可以通过如下命令抓取安同OS容器
         </div>
         <highlight lang="bash" code="docker pull aosc/aosc-os" />
