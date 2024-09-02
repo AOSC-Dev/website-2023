@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "Recent Update Introduces PolyMC as Replacement for MultiMC 5"
 date: 2022-07-27T15:23:41-07:00
 important: false

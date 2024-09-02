@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "AOSC OS 社区源服务器恢复服务"
 date: 2024-02-23T22:19:13-08:00
 important: true

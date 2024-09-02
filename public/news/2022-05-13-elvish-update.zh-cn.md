@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "Elvish 0.18.0 更新说明及预警"
 date: 2022-05-13T11:28:17-07:00
 important: true

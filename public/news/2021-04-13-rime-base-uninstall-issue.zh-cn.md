@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "[已解决] 卸载 rime-base 可能会导致配置错误"
 date: 2021-04-13T11:49:26+08:00
 important: false

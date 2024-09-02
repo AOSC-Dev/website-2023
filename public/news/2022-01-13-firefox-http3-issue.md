@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "HTTP3 Feature in Firefox May Cause Usability Issues"
 date: 2022-01-13T10:42:39-08:00
 important: true

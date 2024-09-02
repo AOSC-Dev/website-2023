@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: 上游建议迁移至 `shadowsocks-rust`
 date: 2021-03-28T09:51:00+08:00
 important: false

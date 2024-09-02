@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "有关 Let's Encrypt 主要根证书迁移的注意事项"
 date: 2021-09-27T09:54:24-07:00
 important: true

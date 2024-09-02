@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "Cutefish 配置文件可能影响 KDE 用户配置"
 date: 2021-09-04T16:34:35+08:00
 important: false

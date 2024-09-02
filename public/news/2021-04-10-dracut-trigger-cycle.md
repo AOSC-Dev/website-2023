@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "Dracut Trigger May Fail with Error while Updating System"
 date: 2021-04-10T17:03:31+08:00
 important: false

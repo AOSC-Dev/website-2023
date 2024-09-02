@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "在树莓派上更新内核时需要手动干预"
 date: 2021-07-21T16:27:01+08:00
 important: true

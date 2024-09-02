@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "Brise Users May Need to Migrate to Schema Packages"
 date: 2021-09-24T07:51:01+08:00
 important: false

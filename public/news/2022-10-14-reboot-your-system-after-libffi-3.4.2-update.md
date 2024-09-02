@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "System Reboot May Be Required After libffi 3.4.2 Update to Prevent Stability Issues"
 date: 2022-10-14T09:14:20-07:00
 important: false

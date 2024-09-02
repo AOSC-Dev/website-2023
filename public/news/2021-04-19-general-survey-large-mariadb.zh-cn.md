@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "general-survey-20210301 更新中 MariaDB 包大小异常"
 date: 2021-04-19T19:30:17+08:00
 important: false

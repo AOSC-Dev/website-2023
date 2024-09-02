@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "Recent `devel-base` Update May Require Manual Intervention"
 date: 2023-06-23T21:00:00+08:00
 important: false
