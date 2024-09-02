@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "Firefox 及 Thunderbird 更新后需要重新启动系统"
 date: 2023-03-09T01:30:48-07:00
 important: true

@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "近期内核更新可能导致虚拟机在 Intel 11 代（或更新）平台上不可用"
 date: 2022-08-26T11:49:37-07:00
 important: true

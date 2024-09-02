@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "升级系统时可能遇到触发器循环"
 date: 2021-07-03T19:48:54+08:00
 important: false

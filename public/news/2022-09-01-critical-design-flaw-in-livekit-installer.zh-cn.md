@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "LiveKit 安装程序存在严重问题"
 date: 2022-08-31T23:12:55-07:00
 important: true

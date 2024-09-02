@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "Community Repository Server Maintenance"
 date: 2021-08-18T15:42:32+08:00
 important: true

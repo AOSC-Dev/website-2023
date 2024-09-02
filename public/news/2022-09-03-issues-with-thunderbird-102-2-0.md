@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "Issues with Thunderbird 102.2.0"
 date: 2022-09-02T23:12:55-07:00
 important: true

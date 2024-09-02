@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "关于 Python 3.10 更新潜在问题的说明"
 date: 2021-11-29T22:41:42-08:00
 important: true

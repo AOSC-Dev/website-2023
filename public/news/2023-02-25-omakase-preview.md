@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "Experimental AOSC OS Package Manager \"Omakase\" Now Available for Testing"
 date: 2023-02-25T00:55:48-07:00
 important: false

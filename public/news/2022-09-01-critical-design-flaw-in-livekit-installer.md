@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "Critical Design Flaw in LiveKit Installer"
 date: 2022-08-31T23:12:55-07:00
 important: true

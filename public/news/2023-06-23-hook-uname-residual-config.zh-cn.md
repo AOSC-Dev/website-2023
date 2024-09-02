@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "近期更新 `devel-base` 后可能需要手动干预"
 date: 2023-06-23T21:00:00+08:00
 important: false

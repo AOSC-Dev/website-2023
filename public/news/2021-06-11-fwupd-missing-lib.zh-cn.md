@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "[已解决] fwupd 可能无法更新及安装设备固件"
 date: 2021-06-11T14:09:45+08:00
 important: false

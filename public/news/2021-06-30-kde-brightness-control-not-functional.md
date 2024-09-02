@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "[SOLVED] KDE Brightness Control May Not Function Due to D-Bus Permission Issue"
 date: 2021-06-30T08:34:30+08:00
 important: false

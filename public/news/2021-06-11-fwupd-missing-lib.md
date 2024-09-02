@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "[SOLVED] fwupd May Not Be Able to Update and Install Device Firmwares"
 date: 2021-06-11T14:09:42+08:00
 important: false

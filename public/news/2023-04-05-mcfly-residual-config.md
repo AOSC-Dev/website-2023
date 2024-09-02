@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "Residual Configuration After McFly Update May Cause Errors"
 date: 2023-04-05T13:43:01+08:00
 important: false

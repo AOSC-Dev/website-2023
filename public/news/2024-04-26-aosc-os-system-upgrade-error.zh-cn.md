@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "[已修复] 从较老的系统版本更新时可能遇到错误"
 date: 2024-04-26T22:19:13-08:00
 important: true
