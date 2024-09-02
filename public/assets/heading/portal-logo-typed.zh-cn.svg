@@ -24,9 +24,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="1.1101449"
      inkscape:cx="182.85901"
-     inkscape:cy="112.14752"
-     inkscape:window-width="1920"
-     inkscape:window-height="1021"
+     inkscape:cy="111.69713"
+     inkscape:window-width="1536"
+     inkscape:window-height="886"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -75,25 +75,5 @@
        id="tspan5">社区门户</tspan></text>
   <g
      id="g6"
-     transform="matrix(0.74999998,0,0,0.74999998,49.113252,-7.9374995)">
-    <rect
-       style="fill:#c00000;fill-opacity:1;stroke-width:0.723;stroke-linecap:round;stroke-linejoin:round;-inkscape-stroke:none;paint-order:stroke fill markers"
-       id="rect5"
-       width="21.166668"
-       height="8.4666672"
-       x="35.057167"
-       y="10.583333"
-       rx="1.4111112" />
-    <text
-       xml:space="preserve"
-       style="font-size:6.58519px;line-height:1.1;font-family:MiSans;-inkscape-font-specification:MiSans;text-decoration-color:#000000;letter-spacing:0px;fill:#ffffff;fill-opacity:1;stroke-width:0.723;stroke-linecap:round;stroke-linejoin:round;-inkscape-stroke:none;paint-order:stroke fill markers"
-       x="38.462639"
-       y="17.190628"
-       id="text6"><tspan
-         sodipodi:role="line"
-         id="tspan6"
-         style="font-size:6.58519px;fill:#ffffff;fill-opacity:1;stroke-width:0.723"
-         x="38.462639"
-         y="17.190628">Beta</tspan></text>
-  </g>
+     transform="matrix(0.74999998,0,0,0.74999998,49.113252,-7.9374995)" />
 </svg>
