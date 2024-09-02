@@ -1,6 +1,6 @@
 ---
 categories:
-  - book
+  - journals
 title: "安记冰室・八月上｜创刊号"
 date: 2023-08-11T12:00:00+08:00
 important: false

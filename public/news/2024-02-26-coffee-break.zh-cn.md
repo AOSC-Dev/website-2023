@@ -1,6 +1,6 @@
 ---
 categories:
-  - book
+  - journals
 title: "安记冰室・二月下"
 date: 2024-02-26T12:00:00+08:00
 important: false

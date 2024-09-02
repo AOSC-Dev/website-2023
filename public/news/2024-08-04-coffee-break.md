@@ -1,6 +1,6 @@
 ---
 categories:
-  - book
+  - journals
 title: "安记冰室・八月上"
 date: 2024-08-04T23:00:00+08:00
 important: false
