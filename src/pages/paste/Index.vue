@@ -5,6 +5,9 @@ import dayjs from "dayjs";
 import { ElMessage } from "element-plus";
 import { useRouter } from "vue-router";
 import hljs from "highlight.js/lib/core";
+import { useThemeStore } from "../../stores/miscellaneous";
+
+const themeStore = useThemeStore()
 
 const languageList = ref(hljs.listLanguages());
 
@@ -56,9 +59,11 @@ function submit() {
       if (results.code == 0) {
         isSuccess.value = true;
         pasteRes.value = results.data.id;
-        router.push({path: '/paste/detail', query: {
-          id: results.data.id
-        }})
+        router.push({
+          path: '/paste/detail', query: {
+            id: results.data.id
+          }
+        })
       } else {
         alert(results.message)
       }
@@ -81,7 +86,7 @@ const editorOptions = ref({
 });
 
 function fileChange(event) {
-  for(let i=0; i<event.target.files.length; i++) {
+  for (let i = 0; i < event.target.files.length; i++) {
     selectedFileList.value.push(event.target.files[i])
   }
 }
@@ -96,56 +101,30 @@ function deleteFile(index) {
     <div class="py-[30px] px-[100px]">
       <div class="flex justify-between mb-[10px]">
         <div class="flex">
-          <select
-            v-model="pasteFormData.language"
-            filterable
-            class="border-2 border-primary rounded-none mr-[20px]"
-          >
+          <select v-model="pasteFormData.language" filterable class="border-2 border-primary rounded-none mr-[20px]">
             <option v-for="item in languageList" :key="item" :value="item">
               {{ item }}
             </option>
           </select>
 
-          <input
-            required
-            type="date"
-            class="border-2 border-primary rounded-none"
-            v-model="selectDateTime"
-            :min="minExpDate"
-          />
+          <input required type="date" class="border-2 border-primary rounded-none" v-model="selectDateTime"
+            :min="minExpDate" />
         </div>
-        <button class="rounded-none px-[50px] py-[10px] bg-primary text-white" @click="submit">
+        <button :style="{ backgroundColor: themeStore.primary }" class="rounded-none px-[50px] py-[10px]text-white"
+          @click="submit">
           提交
         </button>
       </div>
-      <input
-        type="text"
-        class="border-2 border-primary rounded-none w-full mb-[10px] py-[10px]"
-        placeholder="标题"
-        v-model="pasteFormData.title"
-      />
+      <input type="text" class="border-2 border-primary rounded-none w-full mb-[10px] py-[10px]" placeholder="标题"
+        v-model="pasteFormData.title" />
       <!-- 内容编辑器 -->
-      <vue-monaco-editor
-        class="border-2 border-primary rounded-none"
-        :language="pasteFormData.language"
-        v-model:value="pasteFormData.content"
-        :options="editorOptions"
-        height="50vh"
-      />
+      <vue-monaco-editor class="border-2 border-primary rounded-none" :language="pasteFormData.language"
+        v-model:value="pasteFormData.content" :options="editorOptions" height="50vh" />
 
       <!-- 选择文件 -->
-      <label
-        for="selectFile"
-        class="rounded-none w-full block text-center cursor-pointer py-[10px] mt-[10px] bg-primary text-white"
-        >选择附件</label
-      >
-      <input
-        id="selectFile"
-        type="file"
-        class="hidden"
-        multiple
-        @change="fileChange"
-      />
+      <label for="selectFile" :style="{ backgroundColor: themeStore.primary }"
+        class="rounded-none w-full block text-center cursor-pointer py-[10px] mt-[10px]text-white">选择附件</label>
+      <input id="selectFile" type="file" class="hidden" multiple @change="fileChange" />
 
       <!-- 已选择的文件列表 -->
       <div v-for="(file, index) in selectedFileList" :key="file.name">
@@ -162,9 +141,11 @@ function deleteFile(index) {
 input:focus {
   outline: none;
 }
+
 input {
   padding: 5px;
 }
+
 select {
   padding: 5px;
 }

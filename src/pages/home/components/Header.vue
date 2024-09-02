@@ -1,10 +1,15 @@
 <script setup name="Header">
-import { reactive } from "vue";
+import { reactive, ref } from "vue";
+import { useThemeStore } from "../../../stores/miscellaneous";
+import { setBackgroundColor } from "../../../utils/utils";
+
+const themeStore = useThemeStore()
 
 const languageList = reactive([
   { name: "English", value: "en" },
   { name: "简体中文", value: "cn" },
 ]);
+
 </script>
 
 <template>
@@ -13,13 +18,13 @@ const languageList = reactive([
       <div class="grow"></div>
       <div class="content-container flex justify-end">
         <div
-          class="bg-primary text-white flex justify-end py-[5px] whitespace-nowrap text-clip *:ml-[12px] *:no-underline pl-[50px] pr-[0.5rem]"
-        >
+          class="theme-bg-color-trends text-white flex justify-end py-[5px] whitespace-nowrap text-clip *:ml-[12px] *:no-underline pl-[50px] pr-[0.5rem]">
           <router-link to="/download">下载中心</router-link>
           <span>|</span>
           <a href="https://bbs.aosc.io/" target="_blank">社区论坛 </a>
           <span>|</span>
           <router-link to="/about">关于社区</router-link>
+          <button @click="themeStore.set('spring', 'night')">aa</button>
           <!-- 尚未实现 -->
           <!-- <span>|</span>
           <section class="flex flex-col">
@@ -31,7 +36,7 @@ const languageList = reactive([
                 <li
                   v-for="item in languageList"
                   :key="item.value"
-                  class="hover:bg-secondary text-white py-2 px-2"
+                  class=" text-white py-2 px-2"
                 >
                   {{ item.name }}
                 </li>
@@ -40,16 +45,12 @@ const languageList = reactive([
           </section> -->
         </div>
       </div>
-      <div class="bg-primary grow"></div>
+      <div :style="{ backgroundColor: themeStore.primary }" class="grow"></div>
     </div>
     <div class="flex justify-center">
       <div class="content-container">
         <router-link to="/">
-          <img
-            src="/assets/heading/portal-logo.zh-cn.svg"
-            class="w-[12rem] pb-[18px] pl-[0.5rem]"
-            alt="logo"
-          />
+          <img src="/assets/heading/portal-logo.zh-cn.svg" class="w-[12rem] pb-[18px] pl-[0.5rem]" alt="logo" />
         </router-link>
       </div>
     </div>
