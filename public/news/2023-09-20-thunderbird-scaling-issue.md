@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "[SOLVED] Recent Thunderbird Update May Have Incorrect UI Scaling"
 date: 2023-09-21T01:00:00+08:00
 important: false

@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "[SOLVED] GLib's FAM Module May Cause Stability Issues in Firefox"
 date: 2022-01-26T14:58:13-08:00
 important: false

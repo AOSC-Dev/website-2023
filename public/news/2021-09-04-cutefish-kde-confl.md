@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "Cutefish Configuration Files May Interfere with KDE User Configurations"
 date: 2021-09-04T16:34:31+08:00
 important: false

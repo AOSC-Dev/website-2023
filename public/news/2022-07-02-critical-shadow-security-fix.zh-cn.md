@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "紧急安全更新：Shadow"
 date: 2022-07-02T17:14:19-07:00
 important: true

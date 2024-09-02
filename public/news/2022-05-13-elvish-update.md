@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "Cautions and Considerations Regarding the Upcoming Elvish 0.18.0 Update"
 date: 2022-05-13T11:28:14-07:00
 important: true

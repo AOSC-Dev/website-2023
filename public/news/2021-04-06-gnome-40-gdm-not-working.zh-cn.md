@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "[已解决] GNOME 40 上 GDM 不工作"
 date: 2021-04-06T18:34:00+08:00
 important: false

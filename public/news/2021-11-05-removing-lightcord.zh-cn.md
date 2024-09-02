@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "Lightcord 即将从源中移除"
 date: 2021-11-05T12:12:05-07:00
 important: true

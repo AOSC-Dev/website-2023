@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "[已解决] SDDM 无法记住上次登录使用的会话"
 date: 2023-04-03T01:30:48+08:00
 important: true

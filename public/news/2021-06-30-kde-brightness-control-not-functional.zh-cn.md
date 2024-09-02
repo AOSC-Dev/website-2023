@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "[已解决] D-Bus 权限问题可能导致 KDE 屏幕亮度控制故障"
 date: 2021-06-30T08:34:30+08:00
 important: false

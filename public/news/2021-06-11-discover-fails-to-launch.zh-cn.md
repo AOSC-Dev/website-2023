@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "[已解决] Discover 因运行时库缺失无法启动"
 date: 2021-06-11T12:24:11+08:00
 important: false

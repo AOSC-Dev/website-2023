@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "[已修复] oma 可能接收不到软件包更新"
 date: 2024-05-29T22:19:13-08:00
 important: false

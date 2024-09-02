@@ -1,7 +1,7 @@
 ---
 categories:
   - journals
-  - warning
+  - advisories
 title: "《安记冰室》发布日程更改"
 date: 2023-10-13T23:00:00+08:00
 important: false

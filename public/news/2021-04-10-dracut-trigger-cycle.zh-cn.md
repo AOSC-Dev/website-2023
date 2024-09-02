@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "Dracut 触发器在更新系统时可能会失效"
 date: 2021-04-10T17:03:31+08:00
 important: false

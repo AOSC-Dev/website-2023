@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "[已解决] GLib 的 FAM 模块可能导致 Firefox 稳定性问题"
 date: 2022-01-26T14:58:15-08:00
 important: false

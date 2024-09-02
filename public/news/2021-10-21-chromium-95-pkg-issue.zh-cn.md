@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "[已解决] Chromium 95.0.4638.54 无法正常启动"
 date: 2021-10-21T21:20:18-07:00
 important: false

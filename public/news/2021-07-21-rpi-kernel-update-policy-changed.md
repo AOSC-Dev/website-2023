@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "Updating Kernel on Raspberry Pi Requires Manual Intervention"
 date: 2021-07-21T16:26:57+08:00
 important: true

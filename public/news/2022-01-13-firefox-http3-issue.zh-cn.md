@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "Firefox 的 HTTP3 特性可能导致可用性问题"
 date: 2022-01-13T10:37:33-08:00
 important: true

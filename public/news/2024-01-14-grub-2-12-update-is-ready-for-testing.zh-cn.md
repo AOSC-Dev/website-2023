@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "GRUB 2.12 更新可供测试"
 date: 2024-01-14T18:47:12+08:00
 important: true

@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "AOSC OS POWER (ppc64el) 架构移植重启"
 date: 2022-06-14T16:50:06-07:00
 important: true

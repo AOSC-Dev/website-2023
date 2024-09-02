@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "Usability Notes on Let's Encrypt's Primary Root Certificate Migration"
 date: 2021-09-27T09:54:21-07:00
 important: true

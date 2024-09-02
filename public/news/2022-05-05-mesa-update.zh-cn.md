@@ -1,6 +1,6 @@
 ---
 categories:
-  - warning
+  - advisories
 title: "Mesa 22.0.2 设备支持变更预报"
 date: 2022-05-05T23:31:12-07:00
 important: true
