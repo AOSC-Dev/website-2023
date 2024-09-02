@@ -31,7 +31,7 @@ const byteToGb = (bytes) => {
 }
 </script>
 <template>
-  <button class="text-white bg-secondary hover:opacity-85 cursor-pointer mx-1" :style="{ width: $props.width + 'px' }"
+  <button class="text-white bg-secondary cursor-pointer mx-1" :style="{ width: $props.width + 'px' }"
     @click="props.myClick">
     <slot></slot>
     <p :style="{ fontSize: $props.firstLineFontSize + 'pt' }">{{ props.labelInfo.zhLabel }}</p>

@@ -2,7 +2,6 @@
 import { ref } from "vue";
 import LinkButton from "../../components/LinkButton.vue"
 
-const btnWidth = ref(240);
 
 const navigationList = [{
   text: 'QQ 表情包',
@@ -28,7 +27,7 @@ const navigationList = [{
           <div class="basis-1/2 mr-[1em]">
             <img src="/assets/mascot/qr.png" alt="二维码" />
 
-            <p class="lg:text-[1em] xl:text-[1.3em] 2xl:text-[1.5em] text-center">
+            <p class="text-[0.95em] xl:text-[1.3em] 2xl:text-[1.5em] text-center">
               扫码获取微信贴图包
             </p>
           </div>
@@ -42,11 +41,11 @@ const navigationList = [{
       <div>
         <category-second title="设定稿" />
         <div class="p-[2em] flex flex-col justify-between h-[calc(100%-2em)]">
-          <div class="text-[0.8em] lg:text-[0.80em] xl:text-[1.07em] 2xl:text-[1.2em]">
+          <div class="text-[0.8em] xl:text-[1.07em] 2xl:text-[1.2em]">
             本设定稿由钛山设计，使用 CC-BY-SA 4.0International
             许可证进行授权。钛山为自由及开源软件项目提供免费且许可开放的吉祥物设计服务。有意者敬请联系：
           </div>
-          <div class="my-[10px] lg:text-[0.7em] xl:text-[1.1em] 2xl:text[1.2em] flex">
+          <div class="my-[10px] text-[0.8em] xl:text-[1.07em] 2xl:text-[1.2em] flex">
             <a href="https://tysontan.com" class="text-link">https://tysontan.com</a>
             <a href="mailto:tysontan@tysontan.com" class="ml-auto text-link">tysontan@tysontan.com</a>
           </div>
