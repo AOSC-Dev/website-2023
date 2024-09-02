@@ -1,0 +1,35 @@
+---
+categories:
+  - news
+title: "小熊猫包管理 oma 1.7 版发布"
+date: 2024-08-15T12:00:00+08:00
+important: true
+draft: false
+---
+![](/assets/oma/oma-slim.png)
+
+oma 1.7 版发布啦！相对于先前发布的 1.6 版，本次更新带来数个新特性、设计修缮和问题修复！
+
+## 新特性
+
+- 添加下载 zstd 元数据文件的支持，使用 oma files 及 oma provides 反查软件包内容及可执行文件列表的速度大幅提升
+- 改进 command-not-found 结果，更加优先显示完整匹配的包名和文件名，并按相关度排序（如有完整匹配的包名或可执行文件名，则只显示符合该条件其一的结果）
+- oma provides 及 oma files 会在没有 rg 二进制的情况下回退至内部字符串搜索功能（性能略比 rg 低）
+
+## 问题修复
+
+- 修复进度条在进度达到 100% 时未正确对齐的问题
+- 修复终端宽度较小（< 100 列）时全局进度条未正确显示下载进度的问题（200 / 300 MiB 的显示缺少 /）
+- 取消 oma remove 默认 --fix-broken 的行为，与 APT 行为更一致
+
+## 发布说明
+
+oma 1.7 版已推送安同 OS 稳定源，更新系统即可获取 oma 1.7 版；我们亦同步发布了 Debian/Ubuntu 安装包，支持如下系统：
+
+- Debian 12
+- Debian 11
+- Ubuntu 24.04 LTS
+- Ubuntu 22.04 LTS
+- Ubuntu 20.04 LTS
+
+[下载 Debian/Ubuntu 版 oma 安装包 >>](https://github.com/AOSC-Dev/oma/releases/tag/v1.7.0)
