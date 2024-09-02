@@ -1,0 +1,12 @@
+---
+categories:
+  - news
+title: "小熊猫包管理 (oma) v1.4.2 更新日志"
+date: 2024-08-08T12:00:00+08:00
+important: true
+draft: false
+---
+![](/assets/oma/oma-slim.png)
+
+- 添加了 oma 测试源管理器 (oma topics) 对 file:/// 及 file:/ 协议本地源的支持
+- 修复了简单软件源 (flat repository) 的刷新行为
