@@ -1,6 +1,6 @@
 ---
 categories:
-  - community
+  - minutes
 title: "纪要：AOSCC 2024 工作组例会（5 月 4 日）"
 date: 2024-05-04T22:19:13-08:00
 important: false

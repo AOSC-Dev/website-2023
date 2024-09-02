@@ -1,6 +1,6 @@
 ---
 categories:
-  - community
+  - minutes
 title: "预告：AOSCC 2024 场地和日期投票"
 date: 2024-04-22T22:19:13-08:00
 important: false
