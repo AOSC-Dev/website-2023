@@ -27,11 +27,6 @@ import { RouterView } from "vue-router";
 </template>
 
 <style scoped>
-@media (max-width: 960px) {
-	.bg-floral {
-		background-image: none !important;
-	}
-}
 .bg-floral {
   background-color: #fffbf5;
   background-image: url(/assets/backgrounds/floral.svg);
