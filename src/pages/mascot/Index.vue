@@ -42,7 +42,7 @@ const navigationList = [{
       <div>
         <category-second title="设定稿" />
         <div class="p-[2em] flex flex-col justify-between h-[calc(100%-2em)]">
-          <div class="lg:text-[0.7em] xl:text-[1.1em] 2xl:text-[1.2em]">
+          <div class="text-[0.8em] lg:text-[0.80em] xl:text-[1.07em] 2xl:text-[1.2em]">
             本设定稿由钛山设计，使用 CC-BY-SA 4.0International
             许可证进行授权。钛山为自由及开源软件项目提供免费且许可开放的吉祥物设计服务。有意者敬请联系：
           </div>
