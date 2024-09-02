@@ -24,9 +24,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="2.2202899"
      inkscape:cx="170.24804"
-     inkscape:cy="59.2265"
-     inkscape:window-width="1920"
-     inkscape:window-height="1021"
+     inkscape:cy="59.001304"
+     inkscape:window-width="1536"
+     inkscape:window-height="886"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -94,30 +94,7 @@
          id="text3"><tspan
            sodipodi:role="line"
            id="tspan3"
-           style="stroke-width:0.723484"></tspan></text>
+           style="stroke-width:0.723484" /></text>
     </g>
-  </g>
-  <g
-     id="g6-5"
-     transform="matrix(0.74999998,0,0,0.74999998,41.546708,-7.9374995)">
-    <rect
-       style="fill:#c00000;fill-opacity:1;stroke-width:0.723;stroke-linecap:round;stroke-linejoin:round;-inkscape-stroke:none;paint-order:stroke fill markers"
-       id="rect5"
-       width="21.166668"
-       height="8.4666672"
-       x="35.057167"
-       y="10.583333"
-       rx="1.4111112" />
-    <text
-       xml:space="preserve"
-       style="font-size:7.76111px;line-height:1.1;font-family:MiSans;-inkscape-font-specification:MiSans;text-decoration-color:#000000;letter-spacing:0px;fill:#ffffff;fill-opacity:1;stroke-width:0.723;stroke-linecap:round;stroke-linejoin:round;-inkscape-stroke:none;paint-order:stroke fill markers"
-       x="37.180885"
-       y="17.614548"
-       id="text6"><tspan
-         sodipodi:role="line"
-         id="tspan6"
-         style="font-size:7.76111px;fill:#ffffff;fill-opacity:1;stroke-width:0.723"
-         x="37.180885"
-         y="17.614548">Beta</tspan></text>
   </g>
 </svg>
