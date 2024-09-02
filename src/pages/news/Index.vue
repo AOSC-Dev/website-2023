@@ -26,11 +26,11 @@ onMounted(() => {
         <category-second
           title="用户公告"
           rightText="查看全部"
-          rightUrl="/news/list/warning/用户公告"
+          rightUrl="/news/list/advisories/用户公告"
           :showRightChevron="true"
         />
         <news-category-list
-          :newsList="categories.warning || []"
+          :newsList="categories.advisories || []"
           class="overflow-y-auto"
         />
       </div>
@@ -51,11 +51,11 @@ onMounted(() => {
         <category-second
           title="社区期刊"
           rightText="查看全部"
-          rightUrl="/news/list/book/社区期刊"
+          rightUrl="/news/list/journals/社区期刊"
           :showRightChevron="true"
         />
         <news-category-list
-          :newsList="categories.book || []"
+          :newsList="categories.journals || []"
           class="overflow-y-auto"
         />
       </div>
@@ -64,12 +64,12 @@ onMounted(() => {
         <category-second
           title="会议纪要"
           rightText="查看全部"
-          rightUrl="/news/list/community/会议纪要"
+          rightUrl="/news/list/minutes/会议纪要"
           :showRightChevron="true"
           class="border-l border-l-white"
         />
         <news-category-list
-          :newsList="categories.community || []"
+          :newsList="categories.minutes || []"
           class="overflow-y-auto border-l-[1px] border-l-solid border-l-secondary"
         />
       </div>
