@@ -1,6 +1,6 @@
 ---
 categories:
-  - book
+  - journals
 title: "安记冰室・三月上"
 date: 2024-03-09T12:00:00+08:00
 important: false
