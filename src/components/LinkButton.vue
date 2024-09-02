@@ -1,4 +1,6 @@
 <script setup>
+import { useThemeStore } from '../stores/miscellaneous';
+
 const props = defineProps({
   link: {
     type: String,
@@ -9,11 +11,14 @@ const props = defineProps({
     default: "",
   },
 });
+
+const themeStore = useThemeStore()
 </script>
 
 <template>
   <a target="_blank" :href="link"
-    class="basis-1/4 flex justify-center items-center bg-primary text-white block hover:no-underline hover:opacity-85">{{ text
+    class="basis-1/4 flex justify-center items-center text-white block hover:no-underline hover:opacity-85"
+    :style="{ backgroundColor: themeStore.primary }">{{ text
     }}</a>
 </template>
 

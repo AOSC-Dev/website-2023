@@ -1,6 +1,10 @@
 <script setup name="LeftBar">
 import { reactive, ref, onMounted } from "vue";
 import { useRouter, RouterLink } from "vue-router";
+import { useThemeStore } from "../../../stores/miscellaneous";
+import "../../../css/index.scss"
+
+const themeStore = useThemeStore()
 
 // 该变量将在左侧边栏组件加载时设定
 // 记录有多少个分类可以被展开，由视图 (Viewport) 垂直高度决定
@@ -44,7 +48,7 @@ const linkArr = reactive([
   {
     title: "服务设施",
     children: [
-      { title: "论坛", link: "https://bbs.aosc.io/"},
+      { title: "论坛", link: "https://bbs.aosc.io/" },
       { title: "文档", link: "https://wiki.aosc.io/" },
       { title: "代码", link: "https://github.com/AOSC-Dev" },
       { title: "邮箱", link: "https://mail20.mymailcheap.com/" },
@@ -155,7 +159,7 @@ function toggle(item) {
   }
   if (allowedCategories <= 2) {
     if (currentShowing != null && currentShowing != item) {
-      // Collapse the expanded one first
+      // Collapse the expanded one firstbg-secondary
       currentShowing.show = false;
       currentShowing = item;
     }
@@ -191,57 +195,39 @@ onMounted(() => {
 <template>
   <div id="sticky-nav" ref="stickyNav">
     <Transition name="anim-button">
-      <div
-        id="sticky-top-button"
-        ref="stickyTopButton"
-        class="bg-primary text-white h-[2rem] px-[10px] m-0 select-none flex justify-between items-center cursor-pointer hover:bg-secondary border-b border-b-white"
-        onclick="window.scrollTo(0,0, 'smooth')"
-        v-show="backToTopBtnShow"
-      >
+      <div id="sticky-top-button" ref="stickyTopButton"
+        class="theme-bg-color text-white h-[2rem] px-[10px] m-0 select-none flex justify-between items-center cursor-pointer border-b border-b-white"
+        onclick="window.scrollTo(0,0, 'smooth')" v-show="backToTopBtnShow">
         <v-icon name="bi-chevron-bar-up" />
         <span>返回页首</span>
       </div>
     </Transition>
     <div v-for="item1 in linkArr" :key="item1.title">
       <div
-        class="bg-primary text-white h-[2rem] px-[10px] py-[5px] m-0 select-none flex justify-between items-center cursor-pointer hover:bg-secondary"
-        @click="toggle(item1)"
-      >
+        class="theme-bg-color text-white h-[2rem] px-[10px] py-[5px] m-0 select-none flex justify-between items-center cursor-pointer"
+        @click="toggle(item1)">
         <span>
           {{ item1.title }}
         </span>
-        <v-icon
-          :name="item1.show ? 'bi-chevron-double-up' : 'bi-chevron-double-down'"
-          inverse
-        />
+        <v-icon :name="item1.show ? 'bi-chevron-double-up' : 'bi-chevron-double-down'" inverse />
       </div>
       <Transition name="menu">
         <ul class="py-[3px] flex nav-container" v-show="item1.show">
           <template v-for="item2 in item1.children">
-            <router-link
-              v-if="!item2.link.startsWith('http')"
-              :to="item2.link"
-              :href="item2.link"
-              :class="{
-                'bg-[#dcdcdc]': $route.path
-                  .trim()
-                  .startsWith(item2.link.trim()),
-              }"
-              class="leading-4 navitem-flex hover:bg-[#dcdcdc] cursor-pointer pr-[10px] pl-[16px] block text-wrap select-none href-noline"
-              >{{ item2.title }}</router-link
-            >
-            <a
-              v-else
-              :href="item2.link"
-              target="_blank"
-              :class="{
-                'bg-[#dcdcdc]': $route.path
-                  .trim()
-                  .startsWith(item2.link.trim()),
-              }"
-              class="leading-4 navitem-flex hover:bg-[#dcdcdc] cursor-pointer pr-[10px] pl-[16px] block text-wrap select-none href-noline"
-              >{{ item2.title }}</a
-            >
+            <router-link v-if="!item2.link.startsWith('http')" :to="item2.link" :href="item2.link" :class="{
+              'bg-[#dcdcdc]': $route.path
+                .trim()
+                .startsWith(item2.link.trim()),
+            }"
+              class="leading-4 navitem-flex hover:bg-[#dcdcdc] cursor-pointer pr-[10px] pl-[16px] block text-wrap select-none href-noline">{{
+                item2.title }}</router-link>
+            <a v-else :href="item2.link" target="_blank" :class="{
+              'bg-[#dcdcdc]': $route.path
+                .trim()
+                .startsWith(item2.link.trim()),
+            }"
+              class="leading-4 navitem-flex hover:bg-[#dcdcdc] cursor-pointer pr-[10px] pl-[16px] block text-wrap select-none href-noline">{{
+                item2.title }}</a>
           </template>
         </ul>
       </Transition>
@@ -258,6 +244,7 @@ onMounted(() => {
   overflow-y: hidden;
   animation: menuslide-in 0.15s linear;
 }
+
 .menu-leave-active {
   overflow-y: hidden;
   animation: menuslide-in 0.15s linear reverse;
@@ -277,6 +264,7 @@ onMounted(() => {
   0% {
     height: 0;
   }
+
   100% {
     height: 2rem;
   }
@@ -286,10 +274,12 @@ onMounted(() => {
   0% {
     max-height: 0;
   }
+
   100% {
     max-height: 16rem;
   }
 }
+
 .nav-container {
   flex-direction: column;
   flex: 0 0 100%;

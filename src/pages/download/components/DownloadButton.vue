@@ -7,9 +7,12 @@ export default {
 }
 </script>
 <script setup>
+import { useThemeStore } from '../../../stores/miscellaneous';
+
+const themeStore = useThemeStore()
 const props = defineProps({
-  labelInfo: {
-    type: Object
+  archName: {
+    type: String
   }, isaInfo: {
     type: Object
   }, secondLineFontSize: {
@@ -24,6 +27,10 @@ const props = defineProps({
   }, myClick: {
     type: Function,
     default: downloadIso
+  }, popoverData: {
+    type: Object
+  }, buttonColor: {
+    type: String
   }
 })
 const byteToGb = (bytes) => {
@@ -31,12 +38,18 @@ const byteToGb = (bytes) => {
 }
 </script>
 <template>
-  <button class="text-white bg-secondary hover:opacity-85 cursor-pointer mx-1" :style="{ width: $props.width + 'px' }"
-    @click="props.myClick">
-    <slot></slot>
-    <p :style="{ fontSize: $props.firstLineFontSize + 'pt' }">{{ props.labelInfo.zhLabel }}</p>
-    <p :style="{ fontSize: $props.secondLineFontSize + 'pt' }">{{ byteToGb(props.isaInfo.downloadSize) }}GB ISO</p>
-  </button>
+  <el-popover :placement="popoverData.placement" :width="200" trigger="hover" :content="popoverData.conten">
+    <template #reference>
+      <button :style="{ backgroundColor: buttonColor ? buttonColor : themeStore.secondary, width: $props.width + 'px' }"
+        class="text-white cursor-pointer mx-1" @click="props.myClick">
+        <slot></slot>
+        <p v-if="archName" :style="{ fontSize: $props.firstLineFontSize + 'pt' }">{{ props.archName }}</p>
+        <p v-if="isaInfo" :style="{ fontSize: $props.secondLineFontSize + 'pt' }">{{
+          byteToGb(props.isaInfo.downloadSize) }}GB
+          ISO</p>
+      </button>
+    </template>
+  </el-popover>
 </template>
 
 <style scoped>

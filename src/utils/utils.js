@@ -25,7 +25,7 @@ export function toUrl(url) {
 
 export const requestJson = (() => {
   let keys = {}
-  let promise={}
+  let promise = {}
   return (url, parameterObj, key) => {
     if (!key) {
       key = url;
@@ -49,3 +49,7 @@ export const requestJson = (() => {
     }
   }
 })()
+
+export const setBackgroundColor = (color) => {
+  return 'bg-[' + color + ']'
+}
