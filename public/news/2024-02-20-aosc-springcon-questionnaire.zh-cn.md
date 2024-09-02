@@ -1,6 +1,6 @@
 ---
 categories:
-  - community
+  - minutes
 title: "[直播回放] AOSC 廿四年烙饼会直播回放及反馈问卷"
 date: 2024-02-20T22:19:13-08:00
 important: false

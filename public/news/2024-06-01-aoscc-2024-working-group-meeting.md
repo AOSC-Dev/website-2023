@@ -1,6 +1,6 @@
 ---
 categories:
-  - community
+  - minutes
 title: "预告：AOSCC 2024 工作组例会"
 date: 2024-06-01T23:19:13-08:00
 important: false
