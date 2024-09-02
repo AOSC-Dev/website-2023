@@ -1,0 +1,22 @@
+---
+categories:
+  - news
+title: "小熊猫包管理 (oma) v1.5.2 更新日志"
+date: 2024-08-15T12:00:00+08:00
+important: true
+draft: false
+---
+![](/assets/oma/oma-slim.png)
+
+- 新增通过检测终端背景色自动调整 oma 输出配色的功能，修复在亮色主题下显示对比度不足的问题
+- 重新设计了 command-not-found（未知命令提示）的输出
+- 修复在未支持语言环境下运行 oma，某些界面打开时会崩溃的问题
+- 修复 oma remove 审阅界面中“大小” 误写为 “版本号” 的问题（感谢 @OriginCode 提交修复！）
+- 修复当测试源数据同步不完整（如测试源文件夹存在，但内容不存在）时，oma 会误认为测试源可用的问题
+- 在主配置文件 oma.toml 中添加了 follow_terminal_color 参数：当该值设置为 true 时，oma 的彩色输出显示跟随终端主题配色
+
+安同 OS 用户可通过更新系统获取 oma 1.5.2 版，Debian、Ubuntu 及衍生版用户亦可通过下方链接下载 1.5.2 版的安装包
+
+[下载 Debian/Ubuntu 版 oma >>](https://github.com/AOSC-Dev/oma/releases/tag/v1.5.2)
+
+![演示：根据终端背景自动调节配色](/assets/oma/oma-1.5-termbg.mp4)
