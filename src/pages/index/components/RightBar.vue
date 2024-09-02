@@ -77,7 +77,7 @@ const commonLinkList = reactive([
           </div>
         </div>
       </article>
-      <category-second title="常用链接" class="border-l border-solid border-content-main-bg" />
+      <category-second title="常用链接" />
       <div class="border-l border-secondary flex flex-col flex-grow">
         <a
           v-for="item in commonLinkList"
