@@ -38,10 +38,10 @@ const byteToGb = (bytes) => {
 }
 </script>
 <template>
-  <el-popover :placement="popoverData.placement" :width="200" trigger="hover" :content="popoverData.conten">
+  <el-popover :placement="popoverData.placement" transition="no" :hide-after="0" trigger="hover" :content="popoverData.conten">
     <template #reference>
       <button :style="{ backgroundColor: buttonColor ? buttonColor : themeStore.secondary, width: $props.width + 'px' }"
-        class="text-white cursor-pointer mx-1" @click="props.myClick">
+        class="text-white cursor-pointer mx-1 py-1" @click="props.myClick">
         <slot></slot>
         <p v-if="archName" :style="{ fontSize: $props.firstLineFontSize + 'pt' }">{{ props.archName }}</p>
         <p v-if="isaInfo" :style="{ fontSize: $props.secondLineFontSize + 'pt' }">{{
