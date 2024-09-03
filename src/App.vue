@@ -1,7 +1,7 @@
 <script setup>
 import Home from './pages/home/Home.vue'
 import { useRouter } from 'vue-router';
-import { useHighBrightnessControllerStore } from "./stores/miscellaneous.js"
+import { useHighBrightnessControllerStore, useThemeStore } from "./stores/miscellaneous.js"
 
 const highBrightnessControllerStore = useHighBrightnessControllerStore()
 const router = useRouter()
@@ -9,10 +9,14 @@ const router = useRouter()
 router.afterEach((to, from) => {
   highBrightnessControllerStore.obj[to.path] = !highBrightnessControllerStore.obj[to.path]
 })
+
+
+const themeStore = useThemeStore()
+
 </script>
 
 <template>
-  <Home />
+  <Home :style="{ '--primary': themeStore.primary, '--secondary': themeStore.secondary }" />
 </template>
 
 <style scoped>

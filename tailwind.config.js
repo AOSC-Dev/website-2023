@@ -7,12 +7,6 @@ let seasonColor2 = ''
 const now = new Date()
 const month = now.getMonth() + 1
 
-const topicList = [{
-  seasonColor: '#517a47',
-  seasonColor2: '#779f68'
-},{
-  
-}]
 if (month >= 1 && month <= 3) {
   // 春天
   // seasonColor = '#517a47'
@@ -35,6 +29,7 @@ if (month >= 1 && month <= 3) {
   seasonColor = '#757791'
   seasonColor2 = '#80829b'
 }
+
 
 export default {
 

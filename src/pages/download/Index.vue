@@ -153,21 +153,37 @@ onMounted(async () => {
   loading.value = false;
 });
 
+const livkitPPlacement = [
+  'top', 'left', 'bottom'
+]
+
 const antong1List = ref([
   {
     title: "amd64",
     zhLabel: "x86-64",
     enLabel: "x86-64",
+    popoverData: {
+      conten: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备',
+      placement: 'top'
+    }
   },
   {
     title: "arm64",
     zhLabel: "AArch64",
     enLabel: "AArch64",
+    popoverData: {
+      conten: '适用于兼容 Armv8-A 及以上版本的 64 位 Arm 设备',
+      placement: 'top'
+    }
   },
   {
     title: "loongarch64",
     zhLabel: "LoongArch",
     enLabel: "LoongArch",
+    popoverData: {
+      conten: '适用于兼容龙架构 (LoongArch) 指令集及 128 位向量扩展 (LSX) 的 64 位设备',
+      placement: 'bottom'
+    }
   },
 ]);
 const antong2List = ref([
@@ -175,16 +191,28 @@ const antong2List = ref([
     title: "ppc64el",
     zhLabel: "IBM POWER（64 位，小端序）",
     enLabel: "IBM POWER (64-bit, little endian)",
+    popoverData: {
+      conten: '适用于兼容 Power ISA v2.07 及以上版本的 64 位、小端序模式设备',
+      placement: 'top'
+    }
   },
   {
     title: "riscv64",
     zhLabel: "RISC-V（64 位）",
     enLabel: "RISC-V (64-bit)",
+    popoverData: {
+      conten: '适用于兼容 RVA20 Architecture Profile 的 64 位 RISC-V 设备',
+      placement: 'left'
+    }
   },
   {
     title: "loongson3",
     zhLabel: "基于 MIPS 的龙芯三号",
     enLabel: "MIPS-based Loongson 3",
+    popoverData: {
+      conten: '适用于基于 MIPS 的龙芯三号设备',
+      placement: 'bottom'
+    }
   },
 ]);
 const xingxia1List = ref([
@@ -192,21 +220,31 @@ const xingxia1List = ref([
     title: "i486",
     zhLabel: "Intel 80486 或更新",
     enLabel: "Intel 80486 or newer",
+    popoverData: {
+      conten: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
+    }
   },
   {
     title: "loongson2f",
     zhLabel: "龙芯 2F",
     enLabel: "Loongson 2F",
+    popoverData: {
+      conten: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
+    }
   },
   {
     title: "powerpc",
     zhLabel: "PowerPC（32 位，大端序）",
     enLabel: "PowerPC (32-bit, big endian)",
+    popoverData: {
+      conten: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
+    }
   },
   {
     title: "ppc64",
     zhLabel: "PowerPC（64 位，大端序）",
     enLabel: "PowerPC (64-bit, big endian)",
+    popoverData: { conten: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备' }
   },
 ]);
 const xingxia2List = ref([
@@ -214,21 +252,25 @@ const xingxia2List = ref([
     title: "m68k",
     zhLabel: "Motorola 68000 系列处理器**",
     enLabel: "Motorola 68000",
+    popoverData: { conten: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备' }
   },
   {
     title: "armv4",
     zhLabel: "ARMv4",
     enLabel: "ARMv4",
+    popoverData: { conten: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备' }
   },
   {
     title: "armv6hf",
     zhLabel: "ARMv6（硬浮点）",
     enLabel: "ARMv6 (hard-float)",
+    popoverData: { conten: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备' }
   },
   {
     title: "armv7hf",
     zhLabel: "ARMv7（硬浮点，带有 NEON 指令集支持）",
     enLabel: "ARMv7 (hard-float, with NEON support)",
+    popoverData: { conten: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备' }
   },
 ]);
 
@@ -301,12 +343,16 @@ const getNewVersioArch = (arch, type) => {
 
             <div class="button-container-aoscos-multicolumn buttons-col mb-3 mt-1 flex justify-center"
               v-if="versionArch.length > 0">
-              <DownloadButton v-for="item in antong1List" :width=aoscOsDownloadStyle.width :key="item.title"
-                :labelInfo="item" :isaInfo="item.installer" />
-              <button class="text-white hover:opacity-85 cursor-pointer mx-1 text-[10pt] text-center bg-[#549c97]"
+              <DownloadButton v-for="item in antong1List" :popoverData="item.popoverData"
+                :width=aoscOsDownloadStyle.width :key="item.title" :archName="item.zhLabel" :isaInfo="item.installer" />
+              <!-- <button class="text-white hover:opacity-85 cursor-pointer mx-1 text-[10pt] text-center bg-[#549c97]"
                 :style="{ width: aoscOsDownloadStyle.width + 'px' }" onclick="location.href='#otherDownload'">
                 <p>其他下载</p>
-              </button>
+              </button> -->
+              <DownloadButton buttonColor="#549c97" :width=aoscOsDownloadStyle.width :popoverData="{
+                conten: '二级架构、Docker,及虚拟机镜像等其他下载',
+                placement: 'bottom'
+              }" :myClick="() => { location.href = '#otherDownload' }" archName="其他下载" />
             </div>
           </div>
         </div>
@@ -338,9 +384,10 @@ const getNewVersioArch = (arch, type) => {
       <div id="livekit-buttons" class=" flex flex-col flex pr-[2rem] ml-auto my-2">
         <div v-loading="loading" class="my-auto">
           <div class="button-container-aoscos buttons-col" v-if="versionArch.length > 0">
-            <span v-for="item in antong1List" :key="item.title">
-              <DownloadButton :secondLineFontSize=8 :width=160 :firstLineFontSize="10" :labelInfo="item"
-                :isaInfo="item.livekit"></DownloadButton>
+            <span v-for="(item, index) in antong1List" :key="item.title">
+              <DownloadButton :popoverData="{ ...item.popoverData, placement: livkitPPlacement[index] }"
+                :secondLineFontSize=8 :width=160 :firstLineFontSize="10" :archName="item.zhLabel"
+                :isaInfo="item.livekit" />
             </span>
           </div>
         </div>
@@ -385,8 +432,8 @@ const getNewVersioArch = (arch, type) => {
         <div class=" flex flex-col pr-[2rem] gap-y-[0.5rem] ml-auto my-2" v-loading="loading"
           v-if="versionArch.length > 0">
           <span v-for="item in antong2List" :key="item.title">
-            <DownloadButton  :secondLineFontSize=8 :width=200 :firstLineFontSize="10"  class="py-[0.25rem]"
-              v-if="item.livekit !== undefined" :labelInfo="item" :isaInfo="item.livekit" />
+            <DownloadButton :popoverData="item.popoverData" :secondLineFontSize=8 :width=200 :firstLineFontSize="10"
+              class="py-[0.25rem]" v-if="item.livekit !== undefined" :archName="item.zhLabel" :isaInfo="item.livekit" />
           </span>
         </div>
       </div>

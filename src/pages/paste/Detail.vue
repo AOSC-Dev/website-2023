@@ -4,6 +4,9 @@ import { onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
 import useClipboard from "vue-clipboard3";
 import Highlight from "../../components/Highlight.vue";
+import { useThemeStore } from "../../stores/miscellaneous";
+
+const themeStore = useThemeStore()
 
 const { toClipboard } = useClipboard();
 const id = ref("");
@@ -72,38 +75,21 @@ function copyLink() {
             <div>标题: {{ details.title }}</div>
             <div>过期时间: {{ details.expDate }}</div>
           </div>
-          <button
-            class="bg-primary text-white px-[3em] py-[1em]"
-            @click="copyLink"
-          >
+          <button :style="{ backgroundColor: themeStore.primary }" class="text-white px-[3em] py-[1em]"
+            @click="copyLink">
             复制共享链接
           </button>
         </div>
-        <highlight
-          class="w-full my-[20px]"
-          :code="details.content"
-          :lang="details.language"
-        />
+        <highlight class="w-full my-[20px]" :code="details.content" :lang="details.language" />
         <div v-for="item in details.fileList">
           <img :src="getAttachUrl(item)" class="w-full" v-if="isImg(item)" />
-          <a
-            v-else
-            class="text-link"
-            :href="getAttachUrl(item)"
-            target="_blank"
-            >{{ item }}</a
-          >
+          <a v-else class="text-link" :href="getAttachUrl(item)" target="_blank">{{ item }}</a>
         </div>
       </div>
     </div>
     <el-result v-if="failReason != ''" icon="warning" :title="failReason">
       <template #extra>
-        <el-button
-          v-if="failReason == '密码错误' || failReason == '需要密码'"
-          type="primary"
-          @click="back"
-          >返回</el-button
-        >
+        <el-button v-if="failReason == '密码错误' || failReason == '需要密码'" type="primary" @click="back">返回</el-button>
       </template>
     </el-result>
   </div>
