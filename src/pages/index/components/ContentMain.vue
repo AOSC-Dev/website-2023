@@ -1,8 +1,9 @@
 <script setup name="ContentMain">
-import { onMounted, reactive, ref } from "vue";
+import { onMounted, reactive, ref, computed, onUnmounted } from "vue";
 import CategorySecond from "/src/components/CategorySecond.vue";
 import NewsCategoryList from "/src/pages/news/components/NewsCategoryList.vue";
 import { useRouter } from "vue-router";
+import { ElIcon } from "element-plus";
 import axios from "axios";
 
 const router = useRouter();
@@ -50,25 +51,54 @@ const zhuanlanList = reactive([
       "我社一向以友好负责的支持工作著称，尊重用户的时间与精力是我们的工作准则。社区也是信息共享的强大后盾——在各社区聊天群组，我们时刻准备着为您排忧解难。",
   },
 ]);
+
+const aoscOsImg = ref()
+
+const imgHeight = ref()
+
+let observer = null
+onMounted(() => {
+  observer = new ResizeObserver(() => {
+    imgHeight.value = aoscOsImg.value.clientWidth / 1.4545 + 'px'
+  })
+  observer.observe(aoscOsImg.value)
+})
+
+const onImgLoad = () => {
+  if (observer) {
+    observer.disconnect();
+  }
+  imgHeight.value='auto'
+}
+
+onUnmounted(() => {
+  // 在组件销毁前取消观察
+  if (observer) {
+    observer.disconnect();
+  }
+});
 </script>
 
 <template>
   <div class="w-[62.5%] bg-content-main-bg p-0">
-    <a href="/aoscos">
-      <img
-      src="/assets/banners/banner_main1.svg"
-      alt=""
-      class="w-full cursor-pointer"
-    />
+    <a :style="{ '--homepage-img-height1': imgHeight }" ref="aoscOsImg" href="/aoscos" class="imgHeight w-full flex">
+      <!-- <div class="flex w-full" :class="'h-[' + imgHeight + 'px]'"></div> -->
+      <el-image @load="onImgLoad()" class="w-full" src="/assets/banners/banner_main1.svg">
+        <template #error>
+          <div class="image-slot cursor-pointer">
+            <el-icon>
+              <Picture />
+            </el-icon>
+          </div>
+        </template>
+      </el-image>
     </a>
     <!-- 咨讯要点 -->
     <div>
       <category-second title="资讯要点" />
       <article class="">
         <news-category-list :newsList="newsList" />
-        <div
-          class="text-right px-[15px] py-[10px] font-[12pt] leading-6 text-link"
-        >
+        <div class="text-right px-[15px] py-[10px] font-[12pt] leading-6 text-link">
           <router-link to="/news">
             <span>查阅最新社区资讯</span>
             <v-icon name="bi-chevron-double-right" />
@@ -80,11 +110,7 @@ const zhuanlanList = reactive([
     <div id="topic">
       <category-second title="专栏：初识安同 OS" />
       <article class="p-[1em] leading-6">
-        <div
-          class="flex items-center pb-[15px]"
-          v-for="item in zhuanlanList"
-          :key="item.title"
-        >
+        <div class="flex items-center pb-[15px]" v-for="item in zhuanlanList" :key="item.title">
           <div class="basis-[50px] mr-[20px] ml-[0.5em]">
             <img :src="item.img" />
           </div>
@@ -98,17 +124,17 @@ const zhuanlanList = reactive([
           </div>
         </div>
         <div class="text-right px-[15px] text-[12pt] leading-6">
-          <a
-            class="text-[#0056cc] no-underline"
-            href="https://wiki.aosc.io/zh/aosc-os/is-aosc-os-right-for-me/"
-          >
-            详情请见：安同 OS 适合我吗？</a
-          >
+          <a class="text-[#0056cc] no-underline" href="https://wiki.aosc.io/zh/aosc-os/is-aosc-os-right-for-me/">
+            详情请见：安同 OS 适合我吗？</a>
         </div>
       </article>
     </div>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.imgHeight {
+  height: var(--homepage-img-height1);
+}
+</style>
 ../../../components/CategorySecond.vue

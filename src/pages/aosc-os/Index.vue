@@ -1,6 +1,6 @@
 <script setup>
 import { reactive, ref, watch } from "vue";
-import CategorySecond from "/src/components/CategorySecond.vue";
+import CategorySecond from "../../components/CategorySecond.vue";
 import H2 from "/src/components/H2.vue";
 import { RouterView, useRoute, useRouter } from "vue-router";
 import highlightElement from "../../utils/animation";
