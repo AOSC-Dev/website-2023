@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
     "@guolao/vue-monaco-editor": "^1.5.1",
     "@kangc/v-md-editor": "^2.3.18",
     "axios": "^1.7.4",
@@ -17,6 +18,7 @@
     "js-yaml": "^4.1.0",
     "oh-vue-icons": "1.0.0-rc3",
     "pinia": "^2.2.2",
+    "pinia-plugin-persistedstate": "^3.2.3",
     "v-md-editor": "^1.0.6",
     "vue": "^3.4.19",
     "vue-clipboard3": "^2.0.0",

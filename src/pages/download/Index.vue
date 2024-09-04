@@ -322,7 +322,7 @@ const getNewVersioArch = (arch, type) => {
 
 <template>
   <div class="pl-[1px] flex flex-col min-w-[1148px] ss">
-    <category-second title="操作系统" />
+    <category-second id="aosc-os-download" title="操作系统" />
     <div class="flex flex-row flex-1">
       <div ref="aoscOsDownload"
         class="aosc-os-container justify-between flex flex-row w-[50%] justify-around bg-white px-[1rem] flex-wrap">
@@ -386,7 +386,7 @@ const getNewVersioArch = (arch, type) => {
           <div class="button-container-aoscos buttons-col" v-if="versionArch.length > 0">
             <span v-for="(item, index) in antong1List" :key="item.title">
               <DownloadButton :popoverData="{ ...item.popoverData, placement: livkitPPlacement[index] }"
-                :secondLineFontSize=8 :width=160 :firstLineFontSize="10" :archName="item.zhLabel"
+                :secondLineFontSize=8 :width=200 :firstLineFontSize="10" :archName="item.zhLabel"
                 :isaInfo="item.livekit" />
             </span>
           </div>
@@ -402,10 +402,9 @@ const getNewVersioArch = (arch, type) => {
           <AccordionNavigation :navigationList="wslNavigationList" linkClass="">·</AccordionNavigation>
         </p>
       </div>
-      <div id="wsl-buttons" class="buttons-col flex flex-col justify-between gap-2 my-[1rem] mt-auto pr-[36px] ml-auto">
-        <ms-store-badge class=" h-[62px]"
-          style="max-width: 224px;background-color: black;border-style: solid;border-width: 2px; border-color:lightgray; box-shadow: -1px 1px 2px 1px #00000036 ;"
-          productid="9NMDF21NV65Z" window-mode="popup" theme="dark" language="en-us" animation="off">
+      <div id="wsl-buttons" class="flex mt-auto mr-9 ml-auto">
+        <ms-store-badge 
+          productid="9NMDF21NV65Z" window-mode="popup"  theme="dark" language="en-us" animation="on">
         </ms-store-badge>
       </div>
     </div>
@@ -449,14 +448,6 @@ const getNewVersioArch = (arch, type) => {
 </template>
 
 <style scoped>
-.aosc-os {
-  display: flex;
-  flex-flow: row;
-  background-color: white;
-  width: 47%;
-  justify-content: space-around;
-}
-
 .download-container {
   display: flex;
   flex-flow: column;
@@ -565,8 +556,7 @@ p {
 }
 
 ms-store-badge::part(img) {
-  width: 160px;
+  width: 200px;
   display: block;
-  height: 60px;
 }
 </style>

@@ -11,8 +11,10 @@ import '@kangc/v-md-editor/lib/style/preview.css';
 import vuepressTheme from '@kangc/v-md-editor/lib/theme/vuepress.js';
 import '@kangc/v-md-editor/lib/theme/style/vuepress.css';
 import './css/index.scss';
+import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import { OhVueIcon, addIcons } from "oh-vue-icons";
 import AppLink from './components/AppLink.vue'
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 import { BiChevronDoubleUp, BiChevronDoubleDown, BiChevronBarUp, BiChevronDoubleRight, HiSolidExternalLink, IoCloseCircleOutline, MdDeleteforeverOutlined, FaCopy } from "oh-vue-icons/icons";
 
 addIcons(BiChevronDoubleUp, BiChevronDoubleDown, BiChevronBarUp, BiChevronDoubleRight, HiSolidExternalLink, IoCloseCircleOutline, MdDeleteforeverOutlined, FaCopy);
@@ -30,7 +32,11 @@ import 'highlight.js/styles/stackoverflow-light.css'
 import './utils/highlightjs'
 
 const pinia = createPinia()
+pinia.use(piniaPluginPersistedstate);
 const app = createApp(App)
+for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+  app.component(key, component)
+}
 app.use(VueMonacoEditorPlugin, {
   paths: {
     // The recommended CDN config
