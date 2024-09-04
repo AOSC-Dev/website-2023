@@ -45,7 +45,7 @@ const languageList = reactive([
           </section> -->
         </div>
       </div>
-      <div :style="{ backgroundColor: themeStore.primary }" class="grow"></div>
+      <div class="grow theme-bg-color-trends"></div>
     </div>
     <div class="flex justify-center">
       <div class="content-container">

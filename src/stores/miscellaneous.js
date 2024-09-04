@@ -96,24 +96,14 @@ export const useThemeStore = defineStore('themeStore', {
     state: () => {
         const now = new Date()
         const month = now.getMonth() + 1
-        let primary = '#718c71'
-        let secondary = '#7f9e7f'
         if (month >= 1 && month <= 3) {
-            primary = '#718c71'
-            secondary = '#7f9e7f'
+            return themeList['springNight']
         } else if (month >= 4 && month <= 6) {
-            primary = '#577c8a'
-            secondary = '#6a8a96'
+            return themeList['summerNight']
         } else if (month >= 7 && month <= 9) {
-            primary = '#a59571'
-            secondary = '#b4a582'
+            return themeList['autumnNight']
         } else if (month >= 10 && month <= 12) {
-            primary = '#757791'
-            secondary = '#80829b'
-        }
-        return {
-            primary,
-            secondary
+            return themeList['winterNight']
         }
     },
     actions: {
@@ -123,5 +113,6 @@ export const useThemeStore = defineStore('themeStore', {
             this.primary = newColor.primary
             this.secondary = newColor.secondary
         }
-    }
+    },
+    persist: true
 })
