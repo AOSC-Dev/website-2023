@@ -1,6 +1,6 @@
 ---
 categories:
-  - news
+  - advisories
 title: "小熊猫包管理 (oma) Debian 及 Ubuntu 版安装包发布"
 date: 2024-08-12T12:00:00+08:00
 important: true
