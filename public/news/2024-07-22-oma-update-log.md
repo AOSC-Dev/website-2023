@@ -1,6 +1,6 @@
 ---
 categories:
-  - news
+  - advisories
 title: "小熊猫包管理 (oma) v1.3.30 更新日志"
 date: 2024-07-22T12:00:00+08:00
 important: false
