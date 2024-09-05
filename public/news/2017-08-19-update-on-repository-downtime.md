@@ -4,7 +4,6 @@ categories:
 date: '2017-08-19'
 important: true
 title: Update on Repository Downtime
-url: /news/2017/08/19/update-on-repository-downtime.html
 ---
 
 

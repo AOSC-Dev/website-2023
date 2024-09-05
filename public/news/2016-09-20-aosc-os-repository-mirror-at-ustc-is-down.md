@@ -4,7 +4,6 @@ categories:
 date: '2016-09-20'
 important: true
 title: AOSC OS Repository Mirror at USTC is Down
-url: /news/2016/09/20/aosc-os-repository-mirror-at-ustc-is-down.html
 ---
 
 

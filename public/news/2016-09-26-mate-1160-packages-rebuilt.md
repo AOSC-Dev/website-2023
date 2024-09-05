@@ -4,7 +4,6 @@ categories:
 date: '2016-09-26'
 important: true
 title: MATE 1.16.0 Packages Rebuilt
-url: /news/2016/09/26/mate-1160-packages-rebuilt.html
 ---
 
 

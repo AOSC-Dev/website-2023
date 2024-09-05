@@ -4,7 +4,6 @@ categories:
 date: '2016-09-24'
 important: false
 title: Core 4.0.1 Released
-url: /news/2016/09/24/core-401-released.html
 ---
 
 

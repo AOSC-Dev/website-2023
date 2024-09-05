@@ -4,7 +4,6 @@ categories:
 date: '2017-04-28'
 important: true
 title: 'AOSA-2017-0036: Update Chromium and Google Chrome'
-url: /news/2017/04/28/aosa-2017-0036-update-chromium-and-google-chrome.html
 ---
 
 

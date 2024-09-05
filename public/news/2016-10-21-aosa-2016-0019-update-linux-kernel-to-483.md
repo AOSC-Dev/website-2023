@@ -4,7 +4,6 @@ categories:
 date: '2016-10-21'
 important: true
 title: 'AOSA-2016-0019: update Linux Kernel to 4.8.3'
-url: /news/2016/10/21/aosa-2016-0019-update-linux-kernel-to-483.html
 ---
 
 

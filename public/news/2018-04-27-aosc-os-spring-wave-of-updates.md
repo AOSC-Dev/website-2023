@@ -4,7 +4,6 @@ categories:
 date: '2018-04-27'
 important: false
 title: AOSC OS Spring Wave of Updates!
-url: /news/2018/04/27/aosc-os-spring-wave-of-updates.html
 ---
 
 

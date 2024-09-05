@@ -4,7 +4,6 @@ categories:
 date: '2016-12-31'
 important: true
 title: 'AOSA-2016-0042: Update Apache HTTP Server'
-url: /news/2016/12/31/aosa-2016-0042-update-apache-http-server.html
 ---
 
 

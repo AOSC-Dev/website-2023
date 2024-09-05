@@ -4,7 +4,6 @@ categories:
 date: '2018-01-05'
 important: false
 title: AOSC OS End-of-2017 Wave of Updates!
-url: /news/2018/01/05/aosc-os-end-of-2017-wave-of-updates.html
 ---
 
 

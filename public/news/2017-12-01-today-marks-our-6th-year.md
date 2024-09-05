@@ -4,7 +4,6 @@ categories:
 date: '2017-12-01'
 important: false
 title: Today... Marks Our 6th Year!
-url: /news/2017/12/01/today-marks-our-6th-year.html
 ---
 
 

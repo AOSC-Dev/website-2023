@@ -4,7 +4,6 @@ categories:
 date: '2017-04-29'
 important: false
 title: Updates to Our Community Infrastructure!
-url: /news/2017/04/29/updates-to-our-community-infrastructure.html
 ---
 
 

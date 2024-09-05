@@ -4,7 +4,6 @@ categories:
 date: '2016-09-19'
 important: false
 title: Pre-built AOSC OS Wallpapers now available
-url: /news/2016/09/19/pre-built-aosc-os-wallpapers-now-available.html
 ---
 
 

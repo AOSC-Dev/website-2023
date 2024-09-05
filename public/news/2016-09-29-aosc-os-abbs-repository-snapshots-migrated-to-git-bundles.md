@@ -4,7 +4,6 @@ categories:
 date: '2016-09-29'
 important: false
 title: '"aosc-os-abbs" Repository Snapshots Migrated to Git bundles'
-url: /news/2016/09/29/aosc-os-abbs-repository-snapshots-migrated-to-git-bundles.html
 ---
 
 

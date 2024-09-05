@@ -4,7 +4,6 @@ categories:
 date: '2016-09-24'
 important: true
 title: 'AOSA-2016-0004: update OpenSSL to 1.0.2i'
-url: /news/2016/09/24/aosa-2016-0004-update-openssl-to-102i.html
 ---
 
 

@@ -4,7 +4,6 @@ categories:
 date: '2016-11-04'
 important: true
 title: 'AOSA-2016-0022: Update Chromium and Google Chrome to 54.0.2840.90'
-url: /news/2016/11/04/aosa-2016-0022-update-chromium-and-google-chrome-to-540284090.html
 ---
 
 

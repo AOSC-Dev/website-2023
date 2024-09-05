@@ -4,7 +4,6 @@ categories:
 date: '2019-04-01'
 important: true
 title: 'Proposal: Solve Food Supply Crisis by Initiation of the Idol Project'
-url: /news/2019/04/01/proposal-solve-food-supply-crisis-by-initiation-of-the-idol-project.html
 ---
 
 

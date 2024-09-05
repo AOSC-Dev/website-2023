@@ -4,7 +4,6 @@ categories:
 date: '2016-10-02'
 important: true
 title: 'AOSA-2016-0009: update Jansson to 2.9'
-url: /news/2016/10/02/aosa-2016-0009-update-jansson-to-29.html
 ---
 
 

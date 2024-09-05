@@ -4,7 +4,6 @@ categories:
 date: '2017-02-06'
 important: true
 title: 'AOSA-2017-0012: Update Firefox'
-url: /news/2017/02/06/aosa-2017-0012-update-firefox.html
 ---
 
 

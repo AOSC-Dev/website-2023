@@ -4,7 +4,6 @@ categories:
 date: '2017-09-24'
 important: false
 title: 'Goings On: A Quick Mid-September Update'
-url: /news/2017/09/24/goings-on-a-quick-mid-september-update.html
 ---
 
 

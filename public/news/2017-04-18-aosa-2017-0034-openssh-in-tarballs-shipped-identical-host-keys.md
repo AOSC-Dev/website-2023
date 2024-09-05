@@ -4,7 +4,6 @@ categories:
 date: '2017-04-18'
 important: true
 title: 'AOSA-2017-0034: OpenSSH in Tarballs Shipped Identical Host Keys'
-url: /news/2017/04/18/aosa-2017-0034-openssh-in-tarballs-shipped-identical-host-keys.html
 ---
 
 

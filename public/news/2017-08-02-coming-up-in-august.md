@@ -4,7 +4,6 @@ categories:
 date: '2017-08-02'
 important: false
 title: Coming Up in August...
-url: /news/2017/08/02/coming-up-in-august.html
 ---
 
 

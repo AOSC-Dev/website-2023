@@ -4,7 +4,6 @@ categories:
 date: '2016-09-24'
 important: false
 title: MATE 1.16 Now Available
-url: /news/2016/09/24/mate-116-now-available.html
 ---
 
 

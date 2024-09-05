@@ -4,7 +4,6 @@ categories:
 date: '2017-01-01'
 important: false
 title: Update on Wine and x86 Support for ARM Devices
-url: /news/2017/01/01/update-on-wine-and-x86-support-for-arm-devices.html
 ---
 
 

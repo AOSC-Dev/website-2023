@@ -4,7 +4,6 @@ categories:
 date: '2020-03-29'
 important: true
 title: Security Announcements Mailing List Migration
-url: /news/2020/03/29/security-announcements-mailing-list-migration.html
 ---
 
 

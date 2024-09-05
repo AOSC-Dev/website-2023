@@ -4,7 +4,6 @@ categories:
 date: '2016-09-20'
 important: false
 title: Enlightenment updated to 0.21 series (E21)
-url: /news/2016/09/20/enlightenment-updated-to-021-series-e21.html
 ---
 
 

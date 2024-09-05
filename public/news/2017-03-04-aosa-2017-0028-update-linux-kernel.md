@@ -4,7 +4,6 @@ categories:
 date: '2017-03-04'
 important: true
 title: 'AOSA-2017-0028: Update Linux Kernel'
-url: /news/2017/03/04/aosa-2017-0028-update-linux-kernel.html
 ---
 
 

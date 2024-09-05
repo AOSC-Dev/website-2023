@@ -4,7 +4,6 @@ categories:
 date: '2016-09-25'
 important: false
 title: GNOME 3.22 Now Available
-url: /news/2016/09/25/gnome-322-now-available.html
 ---
 
 

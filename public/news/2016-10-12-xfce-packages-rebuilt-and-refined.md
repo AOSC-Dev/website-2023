@@ -4,7 +4,6 @@ categories:
 date: '2016-10-12'
 important: false
 title: Xfce Packages Rebuilt and Refined
-url: /news/2016/10/12/xfce-packages-rebuilt-and-refined.html
 ---
 
 
