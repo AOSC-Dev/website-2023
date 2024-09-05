@@ -2,6 +2,7 @@
 categories:
   - news
 date: '2019-04-22'
+important: false
 title: 'Weekly Community Report: Issue 17, 2019'
 ---
 

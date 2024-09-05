@@ -2,6 +2,7 @@
 categories:
   - news
 date: '2017-02-06'
+important: true
 title: 'AOSA-2017-0010: Update WebKit2GTK+'
 ---
 

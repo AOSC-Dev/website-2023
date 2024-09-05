@@ -2,6 +2,7 @@
 categories:
   - news
 date: '2016-09-29'
+important: false
 title: AOSC's Google+ Page is here!
 ---
 

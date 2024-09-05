@@ -2,6 +2,7 @@
 categories:
   - news
 date: '2016-09-25'
+important: false
 title: GNOME 3.22 Now Available
 ---
 

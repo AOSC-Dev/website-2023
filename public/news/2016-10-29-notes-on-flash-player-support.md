@@ -2,6 +2,7 @@
 categories:
   - news
 date: '2016-10-29'
+important: false
 title: Notes on Flash Player Support
 ---
 

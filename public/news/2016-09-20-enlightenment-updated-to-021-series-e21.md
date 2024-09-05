@@ -2,6 +2,7 @@
 categories:
   - news
 date: '2016-09-20'
+important: false
 title: Enlightenment updated to 0.21 series (E21)
 ---
 

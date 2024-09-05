@@ -3,6 +3,7 @@ categories:
   - advisories
 title: 上游建议迁移至 `shadowsocks-rust`
 date: 2021-03-28T09:51:00+08:00
+important: false
 ---
 
 `shadowsocks-libev` 上游已宣布进入了[“只修复 Bug 状态”](https://github.com/shadowsocks/shadowsocks-libev)，

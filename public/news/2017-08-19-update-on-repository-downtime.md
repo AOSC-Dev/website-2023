@@ -2,6 +2,7 @@
 categories:
   - news
 date: '2017-08-19'
+important: true
 title: Update on Repository Downtime
 ---
 

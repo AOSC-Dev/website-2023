@@ -2,6 +2,7 @@
 categories:
   - news
 date: '2017-04-18'
+important: true
 title: 'AOSA-2017-0034: OpenSSH in Tarballs Shipped Identical Host Keys'
 ---
 

@@ -3,6 +3,7 @@ categories:
   - news
 title: Winter Cycle Complete!
 date: '2020-05-03'
+important: false
 ---
 
 We are happy to report that the Winter 2020 development cycle is now complete and updates have been made available for AMD64 and AArch64! This cycle brought thousands of features updates, as well as stability and reliability improvements.

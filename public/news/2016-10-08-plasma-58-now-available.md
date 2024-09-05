@@ -2,6 +2,7 @@
 categories:
   - news
 date: '2016-10-08'
+important: false
 title: Plasma 5.8 Now Available!
 ---
 

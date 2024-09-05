@@ -3,6 +3,7 @@ categories:
   - advisories
 title: "[SOLVED] Chromium 95.0.4638.54 Fails to Launch"
 date: 2021-10-21T21:20:15-07:00
+important: false
 ---
 
 Chromium 95.0.4638.54 in the repository fails to launch due to a packaging issue:

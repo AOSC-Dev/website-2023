@@ -3,6 +3,7 @@ categories:
   - advisories
 title: "[SOLVED] SDDM Does Not Remember Recently Used Session"
 date: 2023-04-03T15:43:01+08:00
+important: true
 
 ---
 

@@ -2,6 +2,7 @@
 categories:
   - news
 date: '2017-01-01'
+important: false
 title: Update on Wine and x86 Support for ARM Devices
 ---
 

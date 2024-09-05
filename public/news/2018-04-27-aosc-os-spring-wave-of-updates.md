@@ -2,6 +2,7 @@
 categories:
   - news
 date: '2018-04-27'
+important: false
 title: AOSC OS Spring Wave of Updates!
 ---
 

@@ -3,6 +3,7 @@ categories:
   - news
 title: "关于 GitCode 近日以我社名义镜像 GitHub 组织及仓库内容的声明"
 date: 2024-06-26T23:00:00+08:00
+important: false
 
 ---
 

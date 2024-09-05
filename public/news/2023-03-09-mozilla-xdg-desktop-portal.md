@@ -3,6 +3,7 @@ categories:
   - advisories
 title: "Firefox and Thunderbird Update May Require System Reboot"
 date: 2023-03-09T01:30:48-07:00
+important: true
 
 ---
 

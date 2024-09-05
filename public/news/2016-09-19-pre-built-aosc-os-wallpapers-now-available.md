@@ -2,6 +2,7 @@
 categories:
   - news
 date: '2016-09-19'
+important: false
 title: Pre-built AOSC OS Wallpapers now available
 ---
 

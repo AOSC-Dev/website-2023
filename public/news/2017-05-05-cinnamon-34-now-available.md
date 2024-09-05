@@ -2,6 +2,7 @@
 categories:
   - news
 date: '2017-05-05'
+important: false
 title: Cinnamon 3.4 Now Available!
 ---
 

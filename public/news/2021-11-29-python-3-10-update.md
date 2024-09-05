@@ -3,6 +3,7 @@ categories:
   - advisories
 title: "Python 3.10 Availability and Possible Issues"
 date: 2021-11-29T22:41:40-08:00
+important: true
 ---
 
 Here comes the Python 3.10 update! This update affects over 20% of all packages in the repository.

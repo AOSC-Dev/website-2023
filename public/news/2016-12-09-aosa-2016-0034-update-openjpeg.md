@@ -2,6 +2,7 @@
 categories:
   - news
 date: '2016-12-09'
+important: true
 title: 'AOSA-2016-0034: Update OpenJPEG'
 ---
 

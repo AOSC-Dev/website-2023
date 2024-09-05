@@ -2,6 +2,7 @@
 categories:
   - news
 date: '2016-10-02'
+important: false
 title: Security Advisory Numbering
 ---
 

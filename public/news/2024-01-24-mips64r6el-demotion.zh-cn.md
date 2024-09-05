@@ -3,6 +3,7 @@ categories:
   - advisories
 title: "MIPS64 Release 6 版本降级为实验性架构移植"
 date: 2024-01-24T18:47:12+08:00
+important: false
 
 ---
 

@@ -3,6 +3,7 @@ categories:
   - news
 title: "安同 OS 测试源现已推送 Chromium 127.0.6533.72"
 date: 2024-07-30T12:00:00+08:00
+important: true
 
 ---
 

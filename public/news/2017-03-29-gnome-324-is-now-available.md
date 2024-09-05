@@ -2,6 +2,7 @@
 categories:
   - news
 date: '2017-03-29'
+important: false
 title: GNOME 3.24 is Now Available!
 ---
 

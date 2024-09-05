@@ -3,6 +3,7 @@ categories:
   - news
 title: Suspending Stale AOSC OS Ports and Initiating the AOSC OS/Retro Project
 date: '2020-05-03'
+important: true
 ---
 
 Effective April 27, 2020, AOSC OS has suspended development on various stale ports, including the following:

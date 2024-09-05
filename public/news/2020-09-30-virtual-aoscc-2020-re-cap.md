@@ -3,6 +3,7 @@ categories:
 - news
 title: Virtual AOSCC 2020 Re-cap
 date: '2020-09-30'
+important: false
 ---
 
 *With [over 20 attendees on Discord](https://aosc.io/news/gallery/), live
