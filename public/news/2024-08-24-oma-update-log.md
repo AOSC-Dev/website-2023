@@ -1,6 +1,6 @@
 ---
 categories:
-  - news
+  - advisories
 title: "小熊猫包管理 oma 1.7 版发布"
 date: 2024-08-15T12:00:00+08:00
 important: true
