@@ -23,10 +23,10 @@ export function toUrl(url) {
   }
 }
 
-export const requestJson = (() => {
+export const requestGetJson = (() => {
   let keys = {}
   let promise = {}
-  return (url, parameterObj, key) => {
+  return (url, params, key) => {
     if (!key) {
       key = url;
     }
@@ -35,7 +35,35 @@ export const requestJson = (() => {
       promise[key] = axios({
         url,
         method: 'get',
-        data: parameterObj
+        params
+      }).then(resolve => {
+        return [resolve, null];
+      }).catch(error => {
+        [null, error];
+      }).finally(() => {
+        keys[key] = false;
+      })
+      return promise[key]
+    } else {
+      return promise[key];
+    }
+  }
+})()
+
+export const requestPostJson = (() => {
+  let keys = {}
+  let promise = {}
+  return (url, data, params, key) => {
+    if (!key) {
+      key = url;
+    }
+    if (!keys[key]) {
+      keys[key] = true;
+      promise[key] = axios({
+        url,
+        method: 'post',
+        data,
+        params
       }).then(resolve => {
         return [resolve.data, null];
       }).catch(error => {
@@ -49,6 +77,14 @@ export const requestJson = (() => {
     }
   }
 })()
+
+export const requestToYaml = (res) => {
+  // 将头信息和内容分开，头信息为yml格式
+  let mdContent = res.data.substring(4);
+  let i = mdContent.indexOf("---");
+  let ymlContent = mdContent.substring(0, i);
+  return [mdContent.substring(i), yaml.load(ymlContent)];
+}
 
 export const setBackgroundColor = (color) => {
   return 'bg-[' + color + ']'

@@ -1,19 +1,22 @@
 <script setup>
-import axios from "axios";
-import { onMounted, ref } from "vue";
+import { ref } from "vue";
 import yaml from "js-yaml";
 import CategorySecond from "/src/components/CategorySecond.vue";
 import { useThemeStore } from "../../stores/miscellaneous";
+import { requestGetJson } from "../../utils/utils";
 
 const themeStore = useThemeStore()
 
 const galleryList = ref([]);
-onMounted(() => {
-  axios.get("/gallery.yml").then((res) => {
-    const yamlContent = res.data;
-    galleryList.value = yaml.load(yamlContent);
-  });
-});
+
+(async () => {
+  let [res, err] = await requestGetJson("/gallery.yml");
+  if (res) {
+    galleryList.value = yaml.load(res.data);
+  } else if (err) {
+    console.log(err);
+  }
+})()
 
 const curGallery = ref({});
 const curIndex = ref(0);
