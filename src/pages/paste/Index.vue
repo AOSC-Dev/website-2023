@@ -1,11 +1,11 @@
 <script setup>
-import axios from "axios";
 import { ref, toRaw } from "vue";
 import dayjs from "dayjs";
 import { ElMessage } from "element-plus";
 import { useRouter } from "vue-router";
 import hljs from "highlight.js/lib/core";
 import { useThemeStore } from "../../stores/miscellaneous";
+import { requestPostJson } from "../../utils/utils";
 
 const themeStore = useThemeStore()
 
@@ -25,7 +25,7 @@ const pasteRes = ref(null);
 const linkPre = `${window.location.protocol}//${window.location.host}`;
 
 const submiting = ref(false);
-function submit() {
+const submit = async () => {
   if (pasteFormData.value.content == '') {
     ElMessage.error('内容不能为空')
     return
@@ -51,30 +51,26 @@ function submit() {
   }
 
   const isSuccess = ref(true);
-  axios
-    .post("/pasteApi/paste", formdata)
-    .then((res) => {
-      const results = res.data;
-      console.log("服务器结果: ", results);
-      if (results.code == 0) {
-        isSuccess.value = true;
-        pasteRes.value = results.data.id;
-        router.push({
-          path: '/paste/detail', query: {
-            id: results.data.id
-          }
-        })
-      } else {
-        alert(results.message)
-      }
-    })
-    .catch((err) => {
-      isSuccess.value = false;
-      alert("网络异常")
-    })
-    .finally(() => {
-      submiting.value = false;
-    });
+  let [res, err] = await requestPostJson("/pasteApi/paste", formdata)
+  if (res) {
+    const results = res.data;
+    console.log("服务器结果: ", results);
+    if (results.code == 0) {
+      isSuccess.value = true;
+      pasteRes.value = results.data.id;
+      router.push({
+        path: '/paste/detail', query: {
+          id: results.data.id
+        }
+      })
+    } else {
+      alert(results.message)
+    }
+  } else if (err) {
+    isSuccess.value = false;
+    alert("网络异常")
+  }
+  submiting.value = false;
 }
 
 let selectedFileList = ref([]);

@@ -3,8 +3,8 @@ import { onMounted, reactive, ref, computed, onUnmounted } from "vue";
 import CategorySecond from "/src/components/CategorySecond.vue";
 import NewsCategoryList from "/src/pages/news/components/NewsCategoryList.vue";
 import { useRouter } from "vue-router";
+import { requestGetJson } from "../../../utils/utils";
 import { ElIcon } from "element-plus";
-import axios from "axios";
 
 const router = useRouter();
 
@@ -13,18 +13,16 @@ const router = useRouter();
  */
 const newsListLoading = ref(true);
 const newsList = ref([]);
-onMounted(() => {
-  axios
-    .get(`/newsCategories/home.zh-cn.json`)
-    .then((res) => {
-      newsList.value = res.data;
-      newsListLoading.value = false;
-    })
-    .catch((err) => {
-      console.log(err);
-      newsListLoading.value = false;
-    });
-});
+(async () => {
+  let [res, err] = await requestGetJson(`/newsCategories/home.zh-cn.json`);
+  if (res) {
+    newsList.value = res.data;
+    newsListLoading.value = false;
+  } else if (err) {
+    console.log(err);
+    newsListLoading.value = false;
+  }
+})()
 
 const zhuanlanList = reactive([
   {
@@ -68,7 +66,7 @@ const onImgLoad = () => {
   if (observer) {
     observer.disconnect();
   }
-  imgHeight.value='auto'
+  imgHeight.value = 'auto'
 }
 
 onUnmounted(() => {
