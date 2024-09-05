@@ -41,18 +41,20 @@ const navigationList = [{
         <category-second title="设定稿" />
         <div class="p-[2em]  justify-between h-[calc(100%-2em)] flex">
           <div class="my-auto">
-              <p class="text-[0.8em] xl:text-[1.07em] 2xl:text-[1.2em]">
-                本设定稿由钛山设计，使用 CC-BY-SA 4.0International
-                许可证进行授权。钛山为自由及开源软件项目提供免费且许可开放的吉祥物设计服务。有意者敬请联系：
-              </p>
-              <div class="flex flex-row">
-                <div class="flex flex-col w-full py-[19px] mr-12">
-                  <link-button class="h-full my-auto" text="设定稿" link="https://repo.aosc.io/mascots/mascots.zip" />
-                </div>
-                <ul class="text-[0.8em] xl:text-[1.07em] 2xl:text-[1.2em]">
-                  <li><a href="https://tysontan.com" class="text-link">https://tysontan.com</a></li>
-                  <li><a href="mailto:tysontan@tysontan.com" class="ml-auto text-link">tysontan@tysontan.com</a></li>
-                </ul>
+            <p class="text-[0.8em] xl:text-[1.07em] 2xl:text-[1.2em]">
+              本设定稿由钛山设计，使用 CC-BY-SA 4.0International
+              许可证进行授权。钛山为自由及开源软件项目提供免费且许可开放的吉祥物设计服务。有意者敬请联系：
+            </p>
+            <div class="flex flex-row">
+              <div class="flex flex-col w-full py-[18px] mr-12">
+                <link-button class="h-full my-auto" text="设定稿" link="https://repo.aosc.io/mascots/mascots.zip" />
+              </div>
+              <ul class="text-[0.8em] xl:text-[1.07em] 2xl:text-[1.2em]">
+                <li ><a href="https://tysontan.com" class="text-link">https://tysontan.com</a></li>
+                <li >
+                  <a href="mailto:tysontan@tysontan.com" class=" text-link">tysontan@tysontan.com</a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -125,5 +127,9 @@ const navigationList = [{
 li {
   margin-top: 15px;
   margin-bottom: 15px;
+}
+
+.a-li{
+margin: 12px 0;
 }
 </style>

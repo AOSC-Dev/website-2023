@@ -1,5 +1,5 @@
 <script setup name="RightBar">
-import { reactive } from "vue";
+import { reactive, ref, useTemplateRef, onMounted, onUnmounted } from "vue";
 import CategorySecond from "/src/components/CategorySecond.vue";
 import AppLink from "../../../components/AppLink.vue";
 
@@ -41,15 +41,44 @@ const commonLinkList = reactive([
     title: "赞助硬件或服务",
   },
 ]);
+
+const imgHeight = ref()
+
+const img = useTemplateRef('bgImg')
+
+let observer = null
+onMounted(() => {
+  observer = new ResizeObserver(() => {
+    imgHeight.value = (img.value.clientWidth / 1.7455).toFixed(2) + 'px'
+    console.log(imgHeight.value)
+  })
+  observer.observe(img.value)
+})
+
+const onImgLoad = () => {
+  if (observer) {
+    observer.disconnect();
+  }
+  imgHeight.value = 'auto'
+}
+
+onUnmounted(() => {
+  // 在组件销毁前取消观察
+  if (observer) {
+    observer.disconnect();
+  }
+});
 </script>
 
-<template>
+<template :style="{ '--homepage-img-height2': imgHeight }">
   <div class="bg-right-bar-bg w-[37.5%] flex flex-col">
     <a href="https://wiki.aosc.io/zh/aosc-os/is-aosc-os-right-for-me">
-      <img src="/assets/banners/banner_minor1.svg" class="w-full cursor-pointer" />
+      <img @load="onImgLoad" ref="bgImg" src="/assets/banners/banner_minor1.svg"
+        class="bg-img-height w-full cursor-pointer" />
     </a>
     <a href="https://bbs.aosc.io/">
-      <img src="/assets/banners/banner_minor2.svg" class="w-full cursor-pointer" href="https://bbs.aosc.io/" />
+      <img src="/assets/banners/banner_minor2.svg" class="bg-img-height w-full cursor-pointer"
+        href="https://bbs.aosc.io/" />
     </a>
     <div class="flex flex-col flex-grow">
       <category-second title="系统方案" class="border-l border-solid border-content-main-bg" />
@@ -66,8 +95,7 @@ const commonLinkList = reactive([
               {{ item.description }}
             </div>
             <div class="text-[12pt]">
-              <AppLink :to="{ path: item.downloadPath, hash: item.downloadHash }"
-                class="text-link  mr-2">系统下载</AppLink>
+              <AppLink :to="{ path: item.downloadPath, hash: item.downloadHash }" class="text-link  mr-2">系统下载</AppLink>
               <AppLink :to="{ path: item.relnotePath, hash: item.relnoteHash }">发行说明</AppLink>
             </div>
           </div>
@@ -85,4 +113,8 @@ const commonLinkList = reactive([
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.bg-img-height {
+  height: var(--homepage-img-height2);
+}
+</style>
