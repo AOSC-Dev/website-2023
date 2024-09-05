@@ -4,7 +4,7 @@ categories:
 title: "AOSCC 2024 纪念衫开启订购！"
 date: 2024-07-02T23:00:00+08:00
 important: false
-draft: false
+
 ---
 ![](/assets/news/T-shirt.png)
 

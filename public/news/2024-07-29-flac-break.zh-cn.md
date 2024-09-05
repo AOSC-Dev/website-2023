@@ -4,7 +4,7 @@ categories:
 title: "【已解决】FLAC 1.4.3 更新可能导致桌面启动失败"
 date: 2024-07-29T12:00:00+08:00
 important: true
-draft: false
+
 ---
 
 根据用户反馈，更新 FLAC 1.4.3 后龙架构系统无法进入桌面，症状为登录后短暂黑屏并返回登录界面。

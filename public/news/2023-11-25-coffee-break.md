@@ -4,7 +4,7 @@ categories:
 title: "Coffee Break: November Issue 2/2 | Celebrating 12 Years of AOSC"
 date: 2023-11-25T12:00:00+08:00
 important: false
-draft: false
+
 ---
 
 > "What would y'all like to drink today?"

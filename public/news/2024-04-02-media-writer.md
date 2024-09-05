@@ -4,7 +4,7 @@ categories:
 title: "AOSC 启动盘制作向导发布"
 date: 2024-04-02T22:19:13-08:00
 important: false
-draft: false
+
 ---
 ![基于 Fedora Media Writer 制作的 AOSC 启动盘制作向导](/assets/coffee-break/20240413/imgs/media-writer.png)
 

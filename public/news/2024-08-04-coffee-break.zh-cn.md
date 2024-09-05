@@ -4,7 +4,7 @@ categories:
 title: "安记冰室・七月下"
 date: 2024-08-04T23:00:00+08:00
 important: false
-draft: false
+
 ---
 
 [afterglow]: https://website-2023.aosc.io/afterglow

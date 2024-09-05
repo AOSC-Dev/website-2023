@@ -4,7 +4,7 @@ categories:
 title: "安同 OS 图形安装程序预览镜像发布"
 date: 2024-06-04T22:19:13-08:00
 important: false
-draft: false
+
 ---
 
 ![](/assets/news/2024-06-04-aoscos-livekit-pre.jpg)
@@ -21,4 +21,3 @@ draft: false
 如果您在测试时遇到问题或困难，请通过社区[各聊天群组](https://aosc.io/zh-cn/contact/)或社区[论坛](https://bbs.aosc.io/)与我们联系。
 
 感谢您的测试！
-

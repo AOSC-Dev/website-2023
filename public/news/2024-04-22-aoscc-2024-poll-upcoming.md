@@ -4,7 +4,7 @@ categories:
 title: "预告：AOSCC 2024 场地和日期投票"
 date: 2024-04-22T22:19:13-08:00
 important: false
-draft: false
+
 ---
 ![AOSCC 2024 倒计时正式开始！](/assets/coffee-break/20240427/imgs/aoscc-2024.png)
 

@@ -4,7 +4,7 @@ categories:
 title: "700+ Packages Retired - What You Should Know"
 date: 2023-02-11T22:55:48-07:00
 important: true
-draft: false
+
 ---
 
 Rationale

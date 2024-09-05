@@ -4,7 +4,7 @@ categories:
 title: "AOSC OS 软件源服务器恢复服务"
 date: 2024-02-27T22:19:13-08:00
 important: true
-draft: false
+
 ---
 
 我们已成功通过 TUNA 恢复了先前误删的软件包，软件源服务器已恢复服务！以下是本次故障发生和修复的过程及反思：

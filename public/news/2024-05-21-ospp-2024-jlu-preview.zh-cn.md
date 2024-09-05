@@ -4,7 +4,7 @@ categories:
 title: "OSPP2024 校园行走进吉林大学"
 date: 2024-05-21T22:19:13-08:00
 important: false
-draft: false
+
 ---
 
 友情转发吉林大学 Linux 用户协会：
