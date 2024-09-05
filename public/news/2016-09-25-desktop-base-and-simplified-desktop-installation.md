@@ -3,7 +3,6 @@ categories:
   - news
 date: '2016-09-25'
 important: false
-home: true
 title: '"desktop-base" and Simplified Desktop Installation'
 url: /news/2016/09/25/desktop-base-and-simplified-desktop-installation.html
 ---
