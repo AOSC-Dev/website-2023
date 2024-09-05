@@ -4,7 +4,7 @@ categories:
 title: "Two New AArch64 Build Servers Deployed for AOSC OS Maintenance"
 date: 2023-10-11T13:00:00+08:00
 important: false
-draft: false
+
 ---
 
 ![Two new servers deployed for AOSC OS AArch64 maintenance.](https://raw.githubusercontent.com/AOSC-Dev/newsroom/master/special-issue/20231011/imgs/new-aarch64-servers.jpg)

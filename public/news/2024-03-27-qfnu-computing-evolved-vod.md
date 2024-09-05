@@ -4,7 +4,7 @@ categories:
 title: "[直播回放] 安同曲阜师大行：计算进化！"
 date: 2024-03-27T22:19:13-08:00
 important: false
-draft: false
+
 ---
 
 ![](/assets/news/2024-03-20-qfnu-computing-evolved.jpg)

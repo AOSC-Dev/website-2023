@@ -4,7 +4,7 @@ categories:
 title: "预告：AOSCC 2024 工作组例会"
 date: 2024-06-01T23:19:13-08:00
 important: false
-draft: false
+
 ---
 ![AOSCC 2024 倒计时正式开始！](/assets/coffee-break/20240427/imgs/aoscc-2024.png)
 AOSCC 2024 场地手续即将完成，社区线下聚会筹备工作正在加速。

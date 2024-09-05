@@ -4,7 +4,7 @@ categories:
 title: "Thunderbird 102.2.0 有问题需要关注"
 date: 2022-09-02T23:12:55-07:00
 important: true
-draft: false
+
 ---
 
 我们最近将 Thunderbird 软件更新到了 102.2.0 版本，但是我们发现在某些情况下，Thunderbird 可能会在打开 HTML 富文本邮件时崩溃。我们目前已确定此问题的原因是 LLVM 编译器设施在启用了跨语言优化时存在代码优化错误。不过我们计划在之后的 Thunderbird 更新中修正该优化错误，敬请期待！

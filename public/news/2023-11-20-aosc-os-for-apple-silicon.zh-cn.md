@@ -4,7 +4,7 @@ categories:
 title: "Apple Silicon 版 AOSC OS 系统发布"
 date: 2023-11-20T12:00:00+08:00
 important: false
-draft: false
+
 ---
 
 ![安同OS，启动！](https://raw.githubusercontent.com/AOSC-Dev/newsroom/master/special-issue/20231120/imgs/apple-silicon.jpg)

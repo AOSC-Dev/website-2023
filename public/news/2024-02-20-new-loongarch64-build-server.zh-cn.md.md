@@ -4,7 +4,7 @@ categories:
 title: "龙架构新构建服务器上线"
 date: 2024-02-20T22:19:13-08:00
 important: false
-draft: false
+
 ---
 ![社区好友 Xinmudotmoe 贡献的龙架构构建服务器](/assets/coffee-break/20240226/imgs/loongarch64-server-dragonfly.png)
 

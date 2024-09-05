@@ -4,7 +4,7 @@ categories:
 title: "tmux 更新可能导致默认行为变化"
 date: 2023-07-06T16:00:00+08:00
 important: false
-draft: false
+
 ---
 
 tmux 是一款终端复用器，预装于所有 AOSC OS 发行上。

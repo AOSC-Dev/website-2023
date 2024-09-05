@@ -4,7 +4,7 @@ categories:
 title: "Recent `devel-base` Update May Require Manual Intervention"
 date: 2023-06-23T21:00:00+08:00
 important: false
-draft: false
+
 ---
 
 A recent update to `devel-base` removed the `hook-uname` dependency, which

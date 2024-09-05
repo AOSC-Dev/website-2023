@@ -4,7 +4,7 @@ categories:
 title: "我社停止维护 WPS Office for Linux 软件包"
 date: 2024-04-05T22:19:13-08:00
 important: false
-draft: false
+
 ---
 ![](/assets/news/2024-04-05-wps-office-dropped.png)
 

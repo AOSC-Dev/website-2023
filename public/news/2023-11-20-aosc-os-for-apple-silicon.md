@@ -4,7 +4,7 @@ categories:
 title: "AOSC OS for Apple Silicon Now Available"
 date: 2023-11-20T12:00:00+08:00
 important: false
-draft: false
+
 ---
 
 ![AOSC OS at the Apple Startup Manager.](https://raw.githubusercontent.com/AOSC-Dev/newsroom/master/special-issue/20231120/imgs/apple-silicon.jpg)

@@ -4,7 +4,7 @@ categories:
 title: "AOSCC 2024 协议酒店入住确认"
 date: 2024-07-06T23:00:00+08:00
 important: false
-draft: false
+
 ---
 
 >此项工作已完成

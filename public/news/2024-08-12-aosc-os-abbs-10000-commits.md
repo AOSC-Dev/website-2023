@@ -4,7 +4,7 @@ categories:
 title: "安同 OS 软件包树 (aosc-os-abbs) 喜迎第十万个提交！"
 date: 2024-08-12T12:00:00+08:00
 important: true
-draft: false
+
 ---
 ![](/assets/news/hundred-thousandth.png)
 

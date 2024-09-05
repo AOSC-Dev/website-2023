@@ -4,7 +4,7 @@ categories:
 title: "OpenSSL 3 Update Now Available"
 date: 2023-10-06T21:00:00+08:00
 important: true
-draft: false
+
 ---
 
 After almost two months of rebuilding, tweaking, and updating, the OpenSSL 3 runtime update is now available in the stable repository. This update replaces the OpenSSL 1.1 runtime, which had [lost upstream support](https://www.openssl.org/blog/blog/2023/09/11/eol-111/).

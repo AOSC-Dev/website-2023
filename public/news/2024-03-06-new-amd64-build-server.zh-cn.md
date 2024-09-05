@@ -4,7 +4,7 @@ categories:
 title: "x86 新构建服务器上线！"
 date: 2024-03-06T22:19:13-08:00
 important: false
-draft: false
+
 ---
 ![](/assets/news/lcpu-x86.jpg)
 

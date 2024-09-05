@@ -4,7 +4,7 @@ categories:
 title: "[已解决] 更新至 LLVM 15 后 AMD 显卡可能出现显示错误"
 date: 2023-02-10T22:58:58-07:00
 important: false
-draft: false
+
 ---
 
 该问题已通过早前推送的 `mesa` v1:22.3.1-2 修复。该问题是 Mesa 和链接时优化 (LTO, Link-Time Optimisation) 存在相容性问题造成的。

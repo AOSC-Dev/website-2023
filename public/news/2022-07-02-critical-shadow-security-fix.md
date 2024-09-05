@@ -4,7 +4,7 @@ categories:
 title: "Critical Shadow Security Fix"
 date: 2022-07-02T17:14:19-07:00
 important: true
-draft: false
+
 ---
 
 It has recently came to our attention that `/etc/shadow` in all recent AOSC OS

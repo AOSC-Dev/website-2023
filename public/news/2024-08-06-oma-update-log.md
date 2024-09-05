@@ -4,7 +4,7 @@ categories:
 title: "小熊猫包管理 (oma) v1.4.1 更新日志"
 date: 2024-08-06T12:00:00+08:00
 important: true
-draft: false
+
 ---
 ![](/assets/oma/oma-slim.png)
 

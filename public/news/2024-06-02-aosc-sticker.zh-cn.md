@@ -4,7 +4,7 @@ categories:
 title: "好耶！安安同同贴图包来啦"
 date: 2024-06-02T00:19:13-08:00
 important: false
-draft: false
+
 ---
 
 ![aosc-sticker](/assets/news/2024-06-02-aosc-sticker.jpg)
