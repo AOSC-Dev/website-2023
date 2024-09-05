@@ -3,7 +3,6 @@ categories:
   - advisories
 title: "Trigger Looping While Upgrading the System"
 date: 2021-07-03T19:48:57+08:00
-important: false
 ---
 
 If you encountered the following error when upgrading the system:

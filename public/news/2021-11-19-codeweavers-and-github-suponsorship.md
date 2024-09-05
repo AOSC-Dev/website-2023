@@ -3,7 +3,6 @@ categories:
   - news
 title: CodeWeavers Sponsorship and GitHub Sponsors
 date: '2021-11-19'
-important: false
 ---
 
 With sincere gratitude, I would like to announce our new sponsor - [CodeWeavers](https://www.codeweavers.com/)!

@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2018-12-25'
-important: true
 title: Repository Migration
 ---
 

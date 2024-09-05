@@ -3,7 +3,6 @@ categories:
   - minutes
 title: "预告：AOSCC 2024 工作组例会"
 date: 2024-05-03T22:19:13-08:00
-important: false
 
 ---
 ![AOSCC 2024 倒计时正式开始！](/assets/coffee-break/20240427/imgs/aoscc-2024.png)

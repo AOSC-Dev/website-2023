@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2016-10-21'
-important: false
 title: System Release Update - Oct. 21st, 2016
 ---
 

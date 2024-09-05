@@ -3,7 +3,6 @@ categories:
   - advisories
 title: "Mesa 22.0.2 设备支持变更预报"
 date: 2022-05-05T23:31:12-07:00
-important: true
 ---
 
 AOSC OS 将于近期引入 Mesa 22.0.2 图形栈。该版本中基于 Gallium 框架重写了大多数老设备支持模块，也有一部分设备支持被丢弃。

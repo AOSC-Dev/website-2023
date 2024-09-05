@@ -3,7 +3,6 @@ categories:
   - news
 title: 'Migrating #aosc to Libera Chat, and IRC Cloaks'
 date: '2021-06-08'
-important: false
 ---
 
 IRC channels under the AOSC project namespace (#aosc and #aosc-offtopic) are now migrated to [Libera Chat](https://libera.chat/). We will no longer maintain a presence on freenode due to [a hostile takeover by its corporate owner](https://libera.chat/news/welcome-to-libera-chat). If you have been participating in community chats using Telegram or Discord, your experience will not be affected. Messages from these two platforms will continue to be bridged to the new Libera channels.

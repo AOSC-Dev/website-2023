@@ -3,7 +3,6 @@ categories:
   - news
 title: "NIT-CIPS Now Mirroring Our Community Repository!"
 date: 2023-08-28T21:00:00+08:00
-important: false
 
 ---
 

@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2019-07-07'
-important: true
 title: Unexpected Downtime on Repository Server
 ---
 

@@ -3,7 +3,6 @@ categories:
   - news
 title: "安同 OS 图形安装预览镜像更新（6 月 7 日）"
 date: 2024-06-07T22:19:13-08:00
-important: false
 
 ---
 

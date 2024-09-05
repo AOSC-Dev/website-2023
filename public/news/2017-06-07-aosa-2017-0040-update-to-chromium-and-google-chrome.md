@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2017-06-07'
-important: true
 title: 'AOSA-2017-0040: Update to Chromium and Google Chrome'
 ---
 

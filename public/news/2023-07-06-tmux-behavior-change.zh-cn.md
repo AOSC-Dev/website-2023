@@ -3,7 +3,6 @@ categories:
   - advisories
 title: "tmux 更新可能导致默认行为变化"
 date: 2023-07-06T16:00:00+08:00
-important: false
 
 ---
 

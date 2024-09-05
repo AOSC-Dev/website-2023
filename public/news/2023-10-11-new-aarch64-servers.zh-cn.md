@@ -3,7 +3,6 @@ categories:
   - news
 title: "社区友人捐赠的两台新 AArch64 构建服务器投入使用"
 date: 2023-10-11T13:00:00+08:00
-important: false
 
 ---
 

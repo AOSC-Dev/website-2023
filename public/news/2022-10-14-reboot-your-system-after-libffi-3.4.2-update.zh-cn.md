@@ -3,7 +3,6 @@ categories:
   - advisories
 title: "安装 libffi 3.4.2 更新后若不重启系统可能造成可靠性问题"
 date: 2022-10-14T09:14:20-07:00
-important: false
 
 ---
 

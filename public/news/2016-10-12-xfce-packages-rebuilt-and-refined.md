@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2016-10-12'
-important: false
 title: Xfce Packages Rebuilt and Refined
 ---
 

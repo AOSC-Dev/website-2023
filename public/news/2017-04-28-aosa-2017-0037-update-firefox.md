@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2017-04-28'
-important: true
 title: 'AOSA-2017-0037: Update Firefox'
 ---
 

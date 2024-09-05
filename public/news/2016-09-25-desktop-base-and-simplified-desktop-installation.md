@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2016-09-25'
-important: false
 title: '"desktop-base" and Simplified Desktop Installation'
 ---
 

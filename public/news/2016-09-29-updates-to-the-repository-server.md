@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2016-09-29'
-important: false
 title: Updates to the Repository Server
 ---
 

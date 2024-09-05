@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2016-09-24'
-important: false
 title: Core 4.0.1 Released
 ---
 
