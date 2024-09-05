@@ -4,7 +4,7 @@ categories:
 title: "安同 OS 重返系统软件包版本监测网站 Repology"
 date: 2024-08-15T12:00:00+08:00
 important: true
-
+home: true
 ---
 ![](/assets/news/repology.png)
 
