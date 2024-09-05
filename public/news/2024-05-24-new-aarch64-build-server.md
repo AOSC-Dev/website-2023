@@ -1,6 +1,6 @@
 ---
 categories:
-  - community
+  - news
 title: "AArch64 新构建服务器上线"
 date: 2024-05-21T22:19:13-08:00
 important: false

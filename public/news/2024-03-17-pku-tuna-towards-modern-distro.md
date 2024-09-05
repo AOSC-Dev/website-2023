@@ -1,6 +1,6 @@
 ---
 categories:
-  - community
+  - news
 title: "发行版沙龙来啦！"
 date: 2024-03-17T22:19:13-08:00
 important: false
@@ -23,4 +23,3 @@ draft: false
 > 直播已结束，[查看回放 >>](https://www.bilibili.com/video/BV1Vq421P7RP)
 
 直播已开启，[点击直达 >> ](https://www.youtube.com/watch?v=TOJdlx2TbYk)
-

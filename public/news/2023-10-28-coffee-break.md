@@ -109,12 +109,12 @@ We introduced a few packages into the AOSC OS repository in the past two weeks:
 #### Peripheral Projects
 
 - The system installer ([DeployKit](https://github.com/AOSC-Dev/aoscdk-rs)) version 0.9.9 was released, with improved wapfile size calculation, the default value on devices with small RAM should now be more reasonable.
-- Community developer [Xiaoyuan "Mag Mell" Fu](https://github.com/eatradish) and  [Xinhui Yang](https://github.com/Cyanoxygen) commenced work to port the backend of our [packages information site](https://packages.aosc.io/) to PostgreSQL. The new backend is expected to be more reliable than our current implementation.
-- Community developer [Xinhui Yang](https://github.com/Cyanoxygen) developed a [dpkg](https://wiki.debian.org/dpkg) package version comparison implementation in PL/pgSQL - [dpkg-vercmp-plpgsql](https://github.com/AOSC-Dev/dpkg-vercmp-plpgsql).
-- Community developer [Tianhao Chai](https://github.com/cthbleachbit) implemented logic for listing newest and outdated packages in our package repository management toolkit, [p-vector-rs](https://github.com/AOSC-Dev/p-vector-rs).
+- news developer [Xiaoyuan "Mag Mell" Fu](https://github.com/eatradish) and  [Xinhui Yang](https://github.com/Cyanoxygen) commenced work to port the backend of our [packages information site](https://packages.aosc.io/) to PostgreSQL. The new backend is expected to be more reliable than our current implementation.
+- news developer [Xinhui Yang](https://github.com/Cyanoxygen) developed a [dpkg](https://wiki.debian.org/dpkg) package version comparison implementation in PL/pgSQL - [dpkg-vercmp-plpgsql](https://github.com/AOSC-Dev/dpkg-vercmp-plpgsql).
+- news developer [Tianhao Chai](https://github.com/cthbleachbit) implemented logic for listing newest and outdated packages in our package repository management toolkit, [p-vector-rs](https://github.com/AOSC-Dev/p-vector-rs).
 - Repository manifest management toolkit [RepoKit](https://github.com/AOSC-Dev/repokit) saw fixes in its incremental scanner and a much faster implementation for calculating system release sizes using .xz metadata.
 - Our lucky draw utility, [choupiaotoujiang](https://github.com/AOSC-Dev/choupiaotoujiang), switched to use the lighter `fastrand` random number generator library.
-- Community developer [Tianhao Chai](https://github.com/cthbleachbit) implemented a [Dracut module](https://github.com/AOSC-Dev/dracut-stressapptest) to integrate `stressapptest` in the initramfs. This will be useful for testing memory on non-x86 devices.
+- news developer [Tianhao Chai](https://github.com/cthbleachbit) implemented a [Dracut module](https://github.com/AOSC-Dev/dracut-stressapptest) to integrate `stressapptest` in the initramfs. This will be useful for testing memory on non-x86 devices.
 
 #### Development Tools
 

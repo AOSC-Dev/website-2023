@@ -1,6 +1,6 @@
 ---
 categories:
-  - community
+  - news
 title: "有你更精彩：AOSCC 2024 诚招志愿者！"
 date: 2024-05-01T22:19:13-08:00
 important: false

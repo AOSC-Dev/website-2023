@@ -1,6 +1,6 @@
 ---
 categories:
-  - community
+  - news
   - news
 title: Virtual AOSCC 2020 Re-cap
 date: '2020-09-30'

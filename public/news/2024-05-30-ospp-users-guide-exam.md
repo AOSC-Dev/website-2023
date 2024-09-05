@@ -1,6 +1,6 @@
 ---
 categories:
-  - community
+  - news
 title: "《设计编写安同 OS 用户手册及编写规范》摸底考核"
 date: 2024-05-29T22:19:13-08:00
 important: false
