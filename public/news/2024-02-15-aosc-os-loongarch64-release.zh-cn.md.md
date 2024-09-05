@@ -1,6 +1,7 @@
 ---
 categories:
   - news
+  - advisories
 title: "2024-02-15: AOSC OS 龙架构版发布！"
 date: 2024-02-15T22:19:13-08:00
 important: false

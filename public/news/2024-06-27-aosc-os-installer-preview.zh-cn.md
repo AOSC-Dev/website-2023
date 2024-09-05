@@ -1,6 +1,7 @@
 ---
 categories:
   - news
+  - advisories
 title: "安同 OS 预览版离线安装盘发布！"
 date: 2024-06-27T23:00:00+08:00
 important: false

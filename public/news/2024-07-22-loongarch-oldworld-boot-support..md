@@ -1,6 +1,7 @@
 ---
 categories:
   - news
+  - advisories
 title: "世界线“合龙”：龙架构旧世界固件启动新世界系统已成现实！"
 date: 2024-07-22T12:00:00+08:00
 important: true
