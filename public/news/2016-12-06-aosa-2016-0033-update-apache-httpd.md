@@ -4,7 +4,6 @@ categories:
 date: '2016-12-06'
 important: true
 title: 'AOSA-2016-0033: Update Apache HTTPD'
-url: /news/2016/12/06/aosa-2016-0033-update-apache-httpd.html
 ---
 
 

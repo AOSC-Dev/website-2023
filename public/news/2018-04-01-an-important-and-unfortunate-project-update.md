@@ -4,7 +4,6 @@ categories:
 date: '2018-04-01'
 important: true
 title: An Important (and Unfortunate) Project Update
-url: /news/2018/04/01/an-important-and-unfortunate-project-update.html
 ---
 
 

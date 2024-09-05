@@ -4,7 +4,6 @@ categories:
 date: '2018-12-25'
 important: true
 title: Repository Migration
-url: /news/2018/12/25/repository-migration.html
 ---
 
 

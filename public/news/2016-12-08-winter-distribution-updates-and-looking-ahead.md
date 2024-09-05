@@ -4,7 +4,6 @@ categories:
 date: '2016-12-08'
 important: false
 title: Winter Distribution Updates (and Looking Ahead)!
-url: /news/2016/12/08/winter-distribution-updates-and-looking-ahead.html
 ---
 
 

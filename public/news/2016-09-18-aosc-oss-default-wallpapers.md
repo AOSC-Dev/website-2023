@@ -4,7 +4,6 @@ categories:
 date: '2016-09-18'
 important: false
 title: AOSC OS's Default Wallpapers
-url: /news/2016/09/18/aosc-oss-default-wallpapers.html
 ---
 
 

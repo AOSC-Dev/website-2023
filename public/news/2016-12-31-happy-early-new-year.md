@@ -4,7 +4,6 @@ categories:
 date: '2016-12-31'
 important: false
 title: Happy (Early) New Year!
-url: /news/2016/12/31/happy-early-new-year.html
 ---
 
 

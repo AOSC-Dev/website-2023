@@ -4,7 +4,6 @@ categories:
 date: '2017-01-26'
 important: true
 title: 'AOSA-2017-0001: Update PCSC-Lite'
-url: /news/2017/01/26/aosa-2017-0001-update-pcsc-lite.html
 ---
 
 

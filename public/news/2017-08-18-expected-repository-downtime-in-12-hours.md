@@ -4,7 +4,6 @@ categories:
 date: '2017-08-18'
 important: true
 title: Expected Repository Downtime in ~12 Hours
-url: /news/2017/08/18/expected-repository-downtime-in-12-hours.html
 ---
 
 

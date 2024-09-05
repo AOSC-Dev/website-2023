@@ -4,7 +4,6 @@ categories:
 date: '2016-10-03'
 important: false
 title: 'A New Mirror: At LZUOSS'
-url: /news/2016/10/03/a-new-mirror-at-lzuoss.html
 ---
 
 

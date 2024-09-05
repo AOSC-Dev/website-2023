@@ -4,7 +4,6 @@ categories:
 date: '2017-04-17'
 important: true
 title: Manual Input Needed with Upcoming iana-etc Update
-url: /news/2017/04/17/manual-input-needed-with-upcoming-iana-etc-update.html
 ---
 
 

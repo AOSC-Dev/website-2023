@@ -4,7 +4,6 @@ categories:
 date: '2017-04-15'
 important: false
 title: AArch64/ARM64 Images Update for Allwinner Devices
-url: /news/2017/04/15/aarch64arm64-images-update-for-allwinner-devices.html
 ---
 
 

@@ -4,7 +4,6 @@ categories:
 date: '2019-08-05'
 important: true
 title: 'AOSC OS Stable Branch: Dependency Issues'
-url: /news/2019/08/05/aosc-os-stable-branch-dependency-issues.html
 ---
 
 

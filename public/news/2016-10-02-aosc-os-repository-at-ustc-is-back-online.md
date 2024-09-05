@@ -4,7 +4,6 @@ categories:
 date: '2016-10-02'
 important: false
 title: AOSC OS Repository at USTC is Back Online
-url: /news/2016/10/02/aosc-os-repository-at-ustc-is-back-online.html
 ---
 
 

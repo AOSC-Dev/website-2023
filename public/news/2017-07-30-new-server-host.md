@@ -4,7 +4,6 @@ categories:
 date: '2017-07-30'
 important: false
 title: New Server Host!
-url: /news/2017/07/30/new-server-host.html
 ---
 
 

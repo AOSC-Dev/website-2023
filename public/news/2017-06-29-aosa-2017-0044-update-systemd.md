@@ -4,7 +4,6 @@ categories:
 date: '2017-06-29'
 important: true
 title: 'AOSA-2017-0044: Update Systemd'
-url: /news/2017/06/29/aosa-2017-0044-update-systemd.html
 ---
 
 

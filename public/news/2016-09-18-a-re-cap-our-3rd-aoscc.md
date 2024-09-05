@@ -4,7 +4,6 @@ categories:
 date: '2016-09-18'
 important: false
 title: 'A Re-cap: Our 3rd AOSCC'
-url: /news/2016/09/18/a-re-cap-our-3rd-aoscc.html
 ---
 
 

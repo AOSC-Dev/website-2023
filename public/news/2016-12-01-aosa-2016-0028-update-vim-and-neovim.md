@@ -4,7 +4,6 @@ categories:
 date: '2016-12-01'
 important: true
 title: 'AOSA-2016-0028: Update Vim and Neovim'
-url: /news/2016/12/01/aosa-2016-0028-update-vim-and-neovim.html
 ---
 
 

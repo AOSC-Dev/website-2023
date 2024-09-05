@@ -4,7 +4,6 @@ categories:
 date: '2017-06-30'
 important: false
 title: 'Dev. Updates Issue #3: New Update Pattern!'
-url: /news/2017/06/30/dev-updates-issue-3-new-update-pattern.html
 ---
 
 

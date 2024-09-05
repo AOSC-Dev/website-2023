@@ -4,7 +4,6 @@ categories:
 date: '2017-06-14'
 important: false
 title: AOSCC 2017 Now Up for Sign Up!
-url: /news/2017/06/14/aoscc-2017-now-up-for-sign-up.html
 ---
 
 

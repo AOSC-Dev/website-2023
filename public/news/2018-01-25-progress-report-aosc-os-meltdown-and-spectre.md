@@ -4,7 +4,6 @@ categories:
 date: '2018-01-25'
 important: true
 title: 'Progress Report: AOSC OS, "Meltdown" and "Spectre"'
-url: /news/2018/01/25/progress-report-aosc-os-meltdown-and-spectre.html
 ---
 
 

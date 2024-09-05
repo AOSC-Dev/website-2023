@@ -4,7 +4,6 @@ categories:
 date: '2017-01-07'
 important: false
 title: On AOSC OS Ports...
-url: /news/2017/01/07/on-aosc-os-ports.html
 ---
 
 

@@ -4,7 +4,6 @@ categories:
 date: '2019-04-22'
 important: false
 title: 'Weekly Community Report: Issue 17, 2019'
-url: /news/2019/04/22/weekly-community-report-issue-17-2019.html
 ---
 
 
