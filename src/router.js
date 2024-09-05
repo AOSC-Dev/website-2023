@@ -30,6 +30,10 @@ import PageNotFound from './components/PageNotFound.vue'
 import Support from './components/Support.vue'
 import Internship from './pages/internship/Index.vue'
 import Events from './pages/events/Index.vue'
+import LiveKitRelNote from './pages/aosc-os/livekit/relnote/Index.vue'
+import WSLRelNote from './pages/aosc-os/wsl/relnote/Index.vue'
+import LiveKitSysReq from './pages/aosc-os/livekit/requirements/Index.vue'
+import WSLSysReq from './pages/aosc-os/wsl/requirements/Index.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -53,7 +57,7 @@ const router = createRouter({
       name: 'download',
       component: Download,
       meta: {
-        title: '下载系统'
+        title: '下载中心'
       }
     }, {
       path: '/aosc-os',
@@ -73,21 +77,49 @@ const router = createRouter({
       name: 'aoscossysreq',
       component: AoscOsSysReq,
       meta: {
-        title: '系统配置需求表'
+        title: '系统配置需求表（安同 OS）'
+      }
+    }, {
+      path: '/aosc-os/livekit/requirements',
+      name: 'livekitsysreq',
+      component: LiveKitSysReq,
+      meta: {
+        title: '系统配置需求表 (LiveKit)'
+      }
+    }, {
+      path: '/aosc-os/wsl/requirements',
+      name: 'wslsysreq',
+      component: WSLSysReq,
+      meta: {
+        title: '系统配置需求表 (AOSC OS on WSL)'
       }
     }, {
       path: '/aosc-os/isa',
       name: 'aoscosisamatrix',
       component: AoscOsIsaMatrix,
       meta: {
-        title: '架构支持规格表'
+        title: '架构支持规格表（安同 OS）'
       }
     }, {
       path: '/aosc-os/relnote',
       name: 'aoscosrelnote',
       component: AoscOsRelNote,
       meta: {
-        title: '发行说明'
+        title: '发行说明（安同 OS）'
+      }
+    }, {
+      path: '/aosc-os/livekit/relnote',
+      name: 'livekitrelnote',
+      component: LiveKitRelNote,
+      meta: {
+        title: '发行说明 (LiveKit)'
+      }
+    }, {
+      path: '/aosc-os/wsl/relnote',
+      name: 'WSLrelnote',
+      component: WSLRelNote,
+      meta: {
+        title: '发行说明 (AOSC OS on WSL)'
       }
     }, {
       path: '/afterglow',
@@ -101,21 +133,21 @@ const router = createRouter({
       name: 'afterglowsysreq',
       component: AfterglowSysReq,
       meta: {
-        title: '系统配置需求表'
+        title: '系统配置需求表（星霞 OS）'
       }
     }, {
       path: '/afterglow/isa',
       name: 'afterglowisamatrix',
       component: AfterglowIsaMatrix,
       meta: {
-        title: '架构支持规格表'
+        title: '架构支持规格表（星霞 OS）'
       }
     }, {
       path: '/afterglow/relnote',
       name: 'afterglowrelnote',
       component: AfterglowRelNote,
       meta: {
-        title: '发行说明'
+        title: '发行说明（星霞 OS）'
       }
     }, {
       path: '/liblol',

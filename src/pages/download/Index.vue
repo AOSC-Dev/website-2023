@@ -59,18 +59,18 @@ const aoscOsNavigationList = [{
 
 const liveKitNavigationList = [{
   title: '发行说明',
-  path: ''
+  path: '/aosc-os/livekit/relnote'
 }, {
   title: '配置需求',
-  path: ''
+  path: '/aosc-os/livekit/requirements'
 }]
 
 const wslNavigationList = [{
   title: '发行说明',
-  path: ''
+  path: '/aosc-os/wsl/relnote'
 }, {
   title: '配置需求',
-  path: ''
+  path: '/aosc-os/wsl/requirements'
 }]
 
 const highBrightnessControllerStore = useHighBrightnessControllerStore()
