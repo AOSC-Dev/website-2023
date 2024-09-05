@@ -1,6 +1,7 @@
 ---
 categories:
   - news
+  - advisories
 title: "Mesa 上游合并 llvmpipe OrcJIT 及 RISC-V 支持"
 date: 2024-07-16T23:00:00+08:00
 important: true

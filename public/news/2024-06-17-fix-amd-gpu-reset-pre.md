@@ -1,6 +1,7 @@
 ---
 categories:
   - news
+  - advisories
 title: "请您测试：龙架构 AMD 显卡稳定性修复"
 date: 2024-06-17T22:19:13-08:00
 important: false

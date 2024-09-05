@@ -1,6 +1,6 @@
 ---
 categories:
-  - news
+  - advisories
 title: "安同 OS 离线安装盘发布说明"
 date: 2024-08-04T23:00:00+08:00
 important: false

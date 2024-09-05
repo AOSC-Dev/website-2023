@@ -1,6 +1,6 @@
 ---
 categories:
-  - news
+  - advisories
 title: "GStreamer 更新可能无法正常完成"
 date: 2024-08-20T12:00:00+08:00
 important: true

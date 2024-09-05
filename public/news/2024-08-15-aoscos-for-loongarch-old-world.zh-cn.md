@@ -1,6 +1,7 @@
 ---
 categories:
   - news
+  - advisories
 title: "安同 OS 龙架构“旧世界”设备兼容方案正式发布"
 date: 2024-08-15T12:00:00+08:00
 important: true

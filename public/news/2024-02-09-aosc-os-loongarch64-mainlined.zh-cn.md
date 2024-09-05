@@ -1,6 +1,7 @@
 ---
 categories:
   - news
+  - advisories
 title: "AOSC OS 合龙工程圆满收官！"
 date: 2024-02-09T22:19:13-08:00
 important: false
