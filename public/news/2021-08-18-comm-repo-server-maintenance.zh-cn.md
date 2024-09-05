@@ -1,6 +1,6 @@
 ---
 categories:
-  - news
+  - advisories
 title: "社区源服务器维护"
 date: 2021-08-18T15:42:26+08:00
 important: true

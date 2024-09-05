@@ -1,6 +1,6 @@
 ---
 categories:
-  - news
+  - advisories
 title: "VSCode 1.59.1 更新或需人为干预"
 date: 2021-09-02T16:52:16+08:00
 important: false
