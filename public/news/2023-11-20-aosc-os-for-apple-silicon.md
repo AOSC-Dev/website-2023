@@ -1,6 +1,7 @@
 ---
 categories:
   - news
+  - advisories
 title: "AOSC OS for Apple Silicon Now Available"
 date: 2023-11-20T12:00:00+08:00
 important: false
