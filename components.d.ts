@@ -13,7 +13,6 @@ declare module 'vue' {
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCarousel: typeof import('element-plus/es')['ElCarousel']
     ElCarouselItem: typeof import('element-plus/es')['ElCarouselItem']
-    ElIcon: typeof import('element-plus/es')['ElIcon']
     ElImage: typeof import('element-plus/es')['ElImage']
     ElPopover: typeof import('element-plus/es')['ElPopover']
     ElResult: typeof import('element-plus/es')['ElResult']
