@@ -4,7 +4,6 @@ categories:
 date: '2016-11-18'
 important: false
 title: Trinity Desktop Environment Now Available!
-url: /news/2016/11/18/trinity-desktop-environment-now-available.html
 ---
 
 

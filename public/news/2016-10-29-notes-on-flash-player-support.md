@@ -4,7 +4,6 @@ categories:
 date: '2016-10-29'
 important: false
 title: Notes on Flash Player Support
-url: /news/2016/10/29/notes-on-flash-player-support.html
 ---
 
 

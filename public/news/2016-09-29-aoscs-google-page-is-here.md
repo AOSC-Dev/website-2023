@@ -4,7 +4,6 @@ categories:
 date: '2016-09-29'
 important: false
 title: AOSC's Google+ Page is here!
-url: /news/2016/09/29/aoscs-google-page-is-here.html
 ---
 
 

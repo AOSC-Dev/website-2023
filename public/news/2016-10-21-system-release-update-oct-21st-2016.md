@@ -4,7 +4,6 @@ categories:
 date: '2016-10-21'
 important: false
 title: System Release Update - Oct. 21st, 2016
-url: /news/2016/10/21/system-release-update-oct-21st-2016.html
 ---
 
 

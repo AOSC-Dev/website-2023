@@ -4,7 +4,6 @@ categories:
 date: '2017-08-01'
 important: false
 title: July Wave is Here!
-url: /news/2017/08/01/july-wave-is-here.html
 ---
 
 

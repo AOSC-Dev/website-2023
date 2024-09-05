@@ -4,7 +4,6 @@ categories:
 date: '2016-12-31'
 important: true
 title: 'AOSA-2016-0043: Update OpenSSH'
-url: /news/2016/12/31/aosa-2016-0043-update-openssh.html
 ---
 
 

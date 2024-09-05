@@ -4,7 +4,6 @@ categories:
 date: '2020-02-14'
 important: false
 title: This Week in AOSC OS Development
-url: /news/2020/02/14/this-week-in-aosc-os-development.html
 ---
 
 

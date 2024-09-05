@@ -4,7 +4,6 @@ categories:
 date: '2016-12-09'
 important: true
 title: 'AOSA-2016-0034: Update OpenJPEG'
-url: /news/2016/12/09/aosa-2016-0034-update-openjpeg.html
 ---
 
 

@@ -4,7 +4,6 @@ categories:
 date: '2016-10-09'
 important: true
 title: 'AOSA-2016-0015: update kcoreaddons to 5.27.0'
-url: /news/2016/10/09/aosa-2016-0015-update-kcoreaddons-to-5270.html
 ---
 
 

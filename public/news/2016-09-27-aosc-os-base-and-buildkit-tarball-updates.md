@@ -4,7 +4,6 @@ categories:
 date: '2016-09-27'
 important: false
 title: AOSC OS Base and BuildKit Tarball Updates
-url: /news/2016/09/27/aosc-os-base-and-buildkit-tarball-updates.html
 ---
 
 

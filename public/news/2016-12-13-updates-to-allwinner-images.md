@@ -4,7 +4,6 @@ categories:
 date: '2016-12-13'
 important: false
 title: Updates to Allwinner Images
-url: /news/2016/12/13/updates-to-allwinner-images.html
 ---
 
 

@@ -4,7 +4,6 @@ categories:
 date: '2019-03-18'
 important: false
 title: New Mirror at CQU-Lanunion!
-url: /news/2019/03/18/new-mirror-at-cqu-lanunion.html
 ---
 
 

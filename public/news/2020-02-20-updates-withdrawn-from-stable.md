@@ -4,7 +4,6 @@ categories:
 date: '2020-02-20'
 important: true
 title: Updates Withdrawn from the Stable Repository
-url: /news/2020/02/20/updates-withdrawn-from-stable.html
 ---
 
 

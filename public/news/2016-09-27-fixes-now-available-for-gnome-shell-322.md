@@ -4,7 +4,6 @@ categories:
 date: '2016-09-27'
 important: true
 title: Fixes Now Available for GNOME Shell 3.22
-url: /news/2016/09/27/fixes-now-available-for-gnome-shell-322.html
 ---
 
 

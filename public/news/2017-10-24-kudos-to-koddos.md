@@ -4,7 +4,6 @@ categories:
 date: '2017-10-24'
 important: false
 title: Kudos to KoDDoS!
-url: /news/2017/10/24/kudos-to-koddos.html
 ---
 
 

@@ -4,7 +4,6 @@ categories:
 date: '2017-10-01'
 important: false
 title: August-September Unified Wave and Core 5!
-url: /news/2017/10/01/august-september-unified-wave-and-core-5.html
 ---
 
 

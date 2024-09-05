@@ -4,7 +4,6 @@ categories:
 date: '2016-10-08'
 important: false
 title: Plasma 5.8 Now Available!
-url: /news/2016/10/08/plasma-58-now-available.html
 ---
 
 

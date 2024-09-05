@@ -4,7 +4,6 @@ categories:
 date: '2019-04-01'
 important: false
 title: April Update!
-url: /news/2019/04/01/april-update.html
 ---
 
 

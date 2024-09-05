@@ -4,7 +4,6 @@ categories:
 date: '2016-11-14'
 important: true
 title: 'Package Update Advisory: Nov. 14, 2016'
-url: /news/2016/11/14/package-update-advisory-nov-14-2016.html
 ---
 
 

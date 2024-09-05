@@ -4,7 +4,6 @@ categories:
 date: '2016-09-18'
 important: false
 title: Welcome to AOSC Portal
-url: /news/2016/09/18/welcome-to-aosc-portal.html
 ---
 
 

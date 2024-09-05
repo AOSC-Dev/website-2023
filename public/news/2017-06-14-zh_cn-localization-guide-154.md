@@ -4,7 +4,6 @@ categories:
 date: '2017-06-14'
 important: false
 title: zh_CN Localization Guide 1.5.4
-url: /news/2017/06/14/zh_cn-localization-guide-154.html
 ---
 
 

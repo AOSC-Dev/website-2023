@@ -4,7 +4,6 @@ categories:
 date: '2017-03-29'
 important: false
 title: 'Dev. Updates (Issue #2, 2017)'
-url: /news/2017/03/29/dev-updates-issue-2-2017.html
 ---
 
 

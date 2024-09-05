@@ -4,7 +4,6 @@ categories:
 date: '2017-07-13'
 important: false
 title: It's Happening...!
-url: /news/2017/07/13/its-happening.html
 ---
 
 

@@ -4,7 +4,6 @@ categories:
 date: '2017-04-10'
 important: true
 title: Firmware Package Split
-url: /news/2017/04/10/firmware-package-split.html
 ---
 
 

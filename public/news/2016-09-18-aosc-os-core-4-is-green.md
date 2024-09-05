@@ -4,7 +4,6 @@ categories:
 date: '2016-09-18'
 important: false
 title: AOSC OS Core 4 is Green!
-url: /news/2016/09/18/aosc-os-core-4-is-green.html
 ---
 
 
