@@ -1,5 +1,6 @@
 import router from '../router.js'
 import axios from 'axios'
+import yaml from 'js-yaml';
 
 export function getImgUrl(url) {
   return new URL(`${url}`, import.meta.url).href
