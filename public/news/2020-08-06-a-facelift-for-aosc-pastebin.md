@@ -3,6 +3,7 @@ categories:
   - news
 title: A Facelift for AOSC Pastebin
 date: '2020-08-06'
+important: false
 ---
 
 The AOSC Pastebin has recently gone through a facelift.

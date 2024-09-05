@@ -2,6 +2,7 @@
 categories:
   - news
 date: '2016-12-03'
+important: true
 title: 'AOSA-2016-0031: Update Mozilla software'
 ---
 

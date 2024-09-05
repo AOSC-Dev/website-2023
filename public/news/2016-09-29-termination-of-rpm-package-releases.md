@@ -2,6 +2,7 @@
 categories:
   - news
 date: '2016-09-29'
+important: true
 title: Termination of RPM Package Releases
 ---
 

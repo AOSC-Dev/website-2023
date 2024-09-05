@@ -3,6 +3,7 @@ categories:
   - advisories
 title: "User Interface May Present Display Issues Following Recent Font Updates"
 date: 2024-01-25T15:55:00+08:00
+important: true
 
 ---
 

@@ -2,6 +2,7 @@
 categories:
   - news
 date: '2016-11-20'
+important: true
 title: 'Package Update Advisory: Nov. 20, 2016'
 ---
 

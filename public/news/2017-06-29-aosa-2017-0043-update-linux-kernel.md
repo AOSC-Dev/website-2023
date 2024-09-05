@@ -2,6 +2,7 @@
 categories:
   - news
 date: '2017-06-29'
+important: true
 title: 'AOSA-2017-0043: Update Linux Kernel'
 ---
 

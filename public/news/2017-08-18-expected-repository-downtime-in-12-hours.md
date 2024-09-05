@@ -2,6 +2,7 @@
 categories:
   - news
 date: '2017-08-18'
+important: true
 title: Expected Repository Downtime in ~12 Hours
 ---
 

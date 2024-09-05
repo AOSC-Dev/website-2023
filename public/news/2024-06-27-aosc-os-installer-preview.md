@@ -3,6 +3,7 @@ categories:
   - news
 title: "安同 OS 预览版离线安装盘发布！"
 date: 2024-06-27T23:00:00+08:00
+important: false
 
 ---
 ![](/assets/news/2024-06-27-aosc-os-installer-preview.png)

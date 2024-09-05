@@ -3,6 +3,7 @@ categories:
   - advisories
 title: "Elvish 0.18.0 更新说明及预警"
 date: 2022-05-13T11:28:17-07:00
+important: true
 ---
 
 AOSC OS 将于近期的更新中将 Elvish 从版本 0.14.1 更新至版本 0.18.0。因本次更新版本跨度较大且包括较多行为改变。如果您正在使用 Elvish，可能会在更新后遇到程序行为更改或特性增减等变化导致的问题。

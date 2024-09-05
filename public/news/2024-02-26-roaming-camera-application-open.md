@@ -3,6 +3,7 @@ categories:
   - news
 title: "廿四年“流浪相机”报名开放"
 date: 2024-02-26T22:19:13-08:00
+important: false
 
 ---
 ![流浪相机——到远方去！](/assets/coffee-break/20240323/imgs/roaming-camera.png)

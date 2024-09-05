@@ -2,6 +2,7 @@
 categories:
   - news
 date: '2017-09-24'
+important: false
 title: 'Goings On: A Quick Mid-September Update'
 ---
 

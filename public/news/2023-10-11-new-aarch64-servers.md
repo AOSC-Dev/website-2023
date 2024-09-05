@@ -3,6 +3,7 @@ categories:
   - news
 title: "Two New AArch64 Build Servers Deployed for AOSC OS Maintenance"
 date: 2023-10-11T13:00:00+08:00
+important: false
 
 ---
 

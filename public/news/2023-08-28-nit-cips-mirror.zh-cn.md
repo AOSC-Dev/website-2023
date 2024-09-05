@@ -3,6 +3,7 @@ categories:
   - news
 title: "南阳理工学院 CIPS 新镜像上线！"
 date: 2023-08-28T21:00:00+08:00
+important: false
 
 ---
 

@@ -3,6 +3,7 @@ categories:
   - advisories
 title: "有关 Let's Encrypt 主要根证书迁移的注意事项"
 date: 2021-09-27T09:54:24-07:00
+important: true
 ---
 
 由于 Let's Encrypt 先前的主要根证书 DST Root CA X3 将于 2021 年 9 月 30 日过期，Let's Encrypt 在更换根证书后采取了一系列补救措施，以避免老设备和系统无法正常访问由新证书保护的站点。

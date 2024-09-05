@@ -2,6 +2,7 @@
 categories:
   - news
 date: '2019-08-05'
+important: true
 title: 'AOSC OS Stable Branch: Dependency Issues'
 ---
 

@@ -3,6 +3,7 @@ categories:
   - news
 title: "AOSCC 2024 开放报名！"
 date: 2024-06-09T23:19:13-08:00
+important: false
 
 ---
 

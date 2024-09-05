@@ -3,6 +3,7 @@ categories:
   - news
 title: "AOSCC 2024 周边预告之：帆布袋"
 date: 2024-07-02T23:00:00+08:00
+important: false
 
 ---
 ![](/assets/news/canvas-bag.jpg)

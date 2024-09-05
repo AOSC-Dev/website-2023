@@ -3,6 +3,7 @@ categories:
   - advisories
 title: "general-survey-20210301 更新中 MariaDB 包大小异常"
 date: 2021-04-19T19:30:17+08:00
+important: false
 ---
 
 AMD64 用户现可获取 `general-survey-20210301` topic 的测试更新，本次更新包含大量数据库、开发工具及登录管理器相关的组件更新。

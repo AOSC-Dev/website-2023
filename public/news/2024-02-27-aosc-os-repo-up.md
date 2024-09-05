@@ -3,6 +3,7 @@ categories:
   - advisories
 title: "AOSC OS 软件源服务器恢复服务"
 date: 2024-02-27T22:19:13-08:00
+important: true
 
 ---
 

@@ -3,6 +3,7 @@ categories:
   - advisories
 title: "Updating Kernel on Raspberry Pi Requires Manual Intervention"
 date: 2021-07-21T16:26:57+08:00
+important: true
 ---
 
 The mainline kernel and boot firmware for Raspberry Pi have been updated, and we added a LTS kernel flavor (5.10).

@@ -2,6 +2,7 @@
 categories:
   - news
 date: '2020-01-30'
+important: false
 title: New Wave of Updates Available (Fall 2019)!
 ---
 
