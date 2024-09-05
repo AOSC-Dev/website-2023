@@ -1,6 +1,6 @@
 ---
 categories:
-  - community
+  - news
 title: "龙架构新构建服务器上线"
 date: 2024-06-03T22:19:13-08:00
 important: false

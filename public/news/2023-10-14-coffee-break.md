@@ -137,7 +137,7 @@ We removed the following packages from the AOSC OS repository in the past two we
 
 - [treevsrepo](https://github.com/AOSC-Dev/treevsrepo) (`treevsrepo`), a package version comparison and auditing tool, was updated to 0.3.4 with LoongArch support.
 - [p-vector](https://github.com/AOSC-Dev/p-vector-rs) (`p-vector`), an APT/Oma repository manager, was updated to 0.3.6, fixing compatibility with OpenSSL 3 and introducing support LoongArch.
-- Community contributor [Jiangjin Wang](https://github.com/RedL0tus) developed a new wallpaper metadata manager and generator, [wpmeta](https://github.com/AOSC-Dev/wpmeta). The new toolkit comes with multilingual support. Future AOSC OS wallpaper packages will come with translations for titles and author names.
+- news contributor [Jiangjin Wang](https://github.com/RedL0tus) developed a new wallpaper metadata manager and generator, [wpmeta](https://github.com/AOSC-Dev/wpmeta). The new toolkit comes with multilingual support. Future AOSC OS wallpaper packages will come with translations for titles and author names.
 
 #### Development Tools
 
