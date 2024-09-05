@@ -1,6 +1,6 @@
 ---
 categories:
-  - community
+  - news
 title: "社区“开源之夏”项目正式上线"
 date: 2024-04-22T22:19:13-08:00
 important: false

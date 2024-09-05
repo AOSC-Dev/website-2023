@@ -1,6 +1,6 @@
 ---
 categories:
-  - community
+  - news
 date: '2016-12-01'
 important: false
 title: Happy Birthday, AOSC (for the fifth time)!

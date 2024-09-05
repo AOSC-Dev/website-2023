@@ -1,6 +1,6 @@
 ---
 categories:
-  - community
+  - news
 title: "首届年度“烙饼会”将于 2 月 15 日开幕"
 date: 2024-02-13T22:19:13-08:00
 important: false
