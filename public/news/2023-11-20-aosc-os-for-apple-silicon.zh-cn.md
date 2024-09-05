@@ -3,6 +3,7 @@ categories:
   - news
 title: "Apple Silicon 版 AOSC OS 系统发布"
 date: 2023-11-20T12:00:00+08:00
+important: false
 
 ---
 

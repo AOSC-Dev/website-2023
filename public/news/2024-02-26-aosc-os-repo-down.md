@@ -3,6 +3,7 @@ categories:
   - advisories
 title: "[已修复] AOSC OS 软件源服务器故障：文件误删"
 date: 2024-02-26T22:19:13-08:00
+important: true
 
 ---
 

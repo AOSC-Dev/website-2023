@@ -2,6 +2,7 @@
 categories:
   - news
 date: '2017-10-24'
+important: false
 title: Kudos to KoDDoS!
 ---
 

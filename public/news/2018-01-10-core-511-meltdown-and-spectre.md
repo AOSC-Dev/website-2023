@@ -2,6 +2,7 @@
 categories:
   - news
 date: '2018-01-10'
+important: true
 title: Core 5.1.1, "Meltdown", and "Spectre"
 ---
 

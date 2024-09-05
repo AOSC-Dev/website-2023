@@ -2,6 +2,7 @@
 categories:
   - news
 date: '2017-03-04'
+important: true
 title: 'AOSA-2017-0029: Update Util-Linux'
 ---
 

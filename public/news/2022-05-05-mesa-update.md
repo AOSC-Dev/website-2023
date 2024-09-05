@@ -3,6 +3,7 @@ categories:
   - advisories
 title: "Device Support Changes in the Upcoming Mesa 22.0.2 Update"
 date: 2022-05-05T23:31:07-07:00
+important: true
 ---
 
 AOSC OS will soon ship the Mesa 22.0.2 graphics stack. This version includes

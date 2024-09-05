@@ -3,6 +3,7 @@ categories:
   - advisories
 title: "近期更新引入 PolyMC 作为 MultiMC 5 替代"
 date: 2022-07-27T15:23:43-07:00
+important: false
 ---
 
 因 MultiMC 5 [重分发及版权政策](https://github.com/MultiMC/Launcher#forkingredistributingcustom-builds-policy) 问题，我们将不再提供 MultiMC 5 的软件包（`multimc5`)。在该软件包移除后，请使用 PolyMC（社区维护的基于 MultiMC 5 的启动器）替代 MultiMC 5。

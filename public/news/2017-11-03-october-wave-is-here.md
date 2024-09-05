@@ -2,6 +2,7 @@
 categories:
   - news
 date: '2017-11-03'
+important: false
 title: October Wave is Here!
 ---
 

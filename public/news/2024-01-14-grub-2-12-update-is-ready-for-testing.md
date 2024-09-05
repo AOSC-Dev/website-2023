@@ -3,6 +3,7 @@ categories:
   - advisories
 title: "GRUB 2.12 Now Available for Testing"
 date: 2024-01-14T18:47:12+08:00
+important: true
 
 ---
 

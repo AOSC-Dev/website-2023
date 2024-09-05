@@ -2,6 +2,7 @@
 categories:
   - news
 date: '2016-12-06'
+important: true
 title: 'AOSA-2016-0033: Update Apache HTTPD'
 ---
 

@@ -2,6 +2,7 @@
 categories:
   - news
 date: '2017-02-06'
+important: false
 title: 'New package additions: Feb. 6, 2017'
 ---
 

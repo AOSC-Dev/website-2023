@@ -2,6 +2,7 @@
 categories:
   - news
 date: '2017-03-31'
+important: false
 title: 'Dev. Updates Issue #2.1'
 ---
 

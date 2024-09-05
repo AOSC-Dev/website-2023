@@ -2,6 +2,7 @@
 categories:
   - news
 date: '2017-07-30'
+important: false
 title: New Server Host!
 ---
 

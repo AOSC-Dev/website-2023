@@ -3,6 +3,7 @@ categories:
   - news
 title: 'Decennial Thesis: Prologue'
 date: '2021-12-01'
+important: false
 ---
 
 Ten years has thus passed since we named our collective “Anthon,” a

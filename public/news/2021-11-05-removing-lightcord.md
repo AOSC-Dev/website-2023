@@ -3,6 +3,7 @@ categories:
   - advisories
 title: "Removal of Lightcord from the Community Repository"
 date: 2021-11-05T12:12:11-07:00
+important: true
 ---
 
 Lightcord users be advised:

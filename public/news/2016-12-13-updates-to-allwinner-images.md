@@ -2,6 +2,7 @@
 categories:
   - news
 date: '2016-12-13'
+important: false
 title: Updates to Allwinner Images
 ---
 

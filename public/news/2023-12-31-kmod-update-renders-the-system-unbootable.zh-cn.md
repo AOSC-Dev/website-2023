@@ -3,6 +3,7 @@ categories:
   - advisories
 title: "[已解决] 近期 kmod 31 更新可能导致系统无法启动"
 date: 2023-12-31T02:26:59+08:00
+important: true
 
 ---
 

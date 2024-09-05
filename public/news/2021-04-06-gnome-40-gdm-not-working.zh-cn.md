@@ -3,6 +3,7 @@ categories:
   - advisories
 title: "[已解决] GNOME 40 上 GDM 不工作"
 date: 2021-04-06T18:34:00+08:00
+important: false
 ---
 
 目前 GNOME 40 测试用更新可以通过 [ATM](https://github.com/AOSC-Dev/atm/) 打开 `gnome-40` topic 获取，但是 GDM 目前因为认证配置不正确，无法启动。如果依然想尝鲜，可以考虑使用 LightDM 或 SDDM 启动 GNOME / GNOME on Xorg 会话。

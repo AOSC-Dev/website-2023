@@ -2,6 +2,7 @@
 categories:
   - news
 date: '2016-10-02'
+important: true
 title: 'AOSA-2016-0011: update Chromium and Google Chrome to 53.0.2785.143'
 ---
 

@@ -2,6 +2,7 @@
 categories:
   - news
 date: '2018-01-13'
+important: true
 title: 'Progress Report: AOSC OS, "Meltdown" and "Spectre"'
 ---
 

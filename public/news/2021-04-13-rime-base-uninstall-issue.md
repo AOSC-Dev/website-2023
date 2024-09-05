@@ -3,6 +3,7 @@ categories:
   - advisories
 title: "[SOLVED] Uninstalling rime-base May Result in Configuration Errors"
 date: 2021-04-13T11:49:26+08:00
+important: false
 ---
 
 We are aware of an issue where uninstalling `rime-base` will result in an error.

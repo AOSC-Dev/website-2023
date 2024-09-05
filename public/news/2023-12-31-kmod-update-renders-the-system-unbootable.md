@@ -3,6 +3,7 @@ categories:
   - advisories
 title: "[SOLVED] Recent kmod 31 Update May Prevent System from Booting"
 date: 2023-12-31T02:26:59+08:00
+important: true
 
 ---
 

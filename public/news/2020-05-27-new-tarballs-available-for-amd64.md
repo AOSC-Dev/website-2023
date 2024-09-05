@@ -3,6 +3,7 @@ categories:
   - news
 title: New AOSC OS Tarballs Available for AMD64 (x86_64)
 date: '2020-05-27'
+important: false
 ---
 
 It's been over a year since we last updated our AOSC OS releases, and it's about time we changed that! This batch of releases contains the newest stable packages from the [Winter Cycle](https://aosc.io/news/posts/2020-05-03-winter-cycle-complete/) along with a large amount of [package quality](https://packages.aosc.io/qa/) and quality-of-life improvements.
