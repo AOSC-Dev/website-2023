@@ -3,7 +3,6 @@ categories:
   - news
 title: "GStreamer 更新可能无法正常完成"
 date: 2024-08-20T12:00:00+08:00
-important: true
 
 ---
 由于维护者疏忽，x86-64 (amd64) 架构的 gstreamer 包由于与 dssim-c 包存在文件冲突，可能无法完成更新；发现问题后，我们已推送更新修复这一问题

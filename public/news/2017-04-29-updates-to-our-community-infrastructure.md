@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2017-04-29'
-important: false
 title: Updates to Our Community Infrastructure!
 ---
 

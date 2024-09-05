@@ -3,7 +3,6 @@ categories:
   - news
 title: "2024-02-15: AOSC OS 龙架构版发布！"
 date: 2024-02-15T22:19:13-08:00
-important: false
 
 ---
 ![AOSC OS 龙架构版发布！](/assets/coffee-break/20240226/imgs/aosc-os-loongarch64.png)

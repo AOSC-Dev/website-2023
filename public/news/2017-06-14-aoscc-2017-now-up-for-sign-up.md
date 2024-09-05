@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2017-06-14'
-important: false
 title: AOSCC 2017 Now Up for Sign Up!
 ---
 

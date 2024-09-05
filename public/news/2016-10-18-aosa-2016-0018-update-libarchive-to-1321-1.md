@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2016-10-18'
-important: true
 title: 'AOSA-2016-0018: update libarchive to 1:3.2.1-1'
 ---
 

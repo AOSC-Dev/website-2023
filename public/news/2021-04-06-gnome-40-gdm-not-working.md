@@ -3,7 +3,6 @@ categories:
   - advisories
 title: "[SOLVED] GDM Not Working on GNOME 40"
 date: 2021-04-06T18:34:00+08:00
-important: false
 ---
 
 The GNOME 40 update is now available for testing via the `gnome-40` topic. You may enable this topic in

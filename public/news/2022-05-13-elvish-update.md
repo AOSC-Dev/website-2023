@@ -3,7 +3,6 @@ categories:
   - advisories
 title: "Cautions and Considerations Regarding the Upcoming Elvish 0.18.0 Update"
 date: 2022-05-13T11:28:14-07:00
-important: true
 ---
 
 An upcoming Elvish update from 0.14.1 to 0.18.0 may contain program behavior

@@ -3,7 +3,6 @@ categories:
   - advisories
 title: "在树莓派上更新内核时需要手动干预"
 date: 2021-07-21T16:27:01+08:00
-important: true
 ---
 
 目前树莓派的主线内核以及启动用固件已经更新完毕，并新增了 LTS 内核（5.10）。

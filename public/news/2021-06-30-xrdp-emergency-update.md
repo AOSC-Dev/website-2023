@@ -3,7 +3,6 @@ categories:
   - advisories
 title: "[SOLVED] EMERGENCY UPDATE: xrdp Contains Pre-generated Private Keys"
 date: 2021-06-30T08:28:30+08:00
-important: false
 ---
 
 In a report from Void Linux maintainer "Chocimier [\<chocimier@tlen.pl\>](mailto:chocimier@tlen.pl),"

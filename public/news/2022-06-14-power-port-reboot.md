@@ -3,7 +3,6 @@ categories:
   - advisories
 title: "AOSC OS POWER (ppc64el) Port Reboot"
 date: 2022-06-14T16:50:06-07:00
-important: true
 ---
 
 In order to transition to the more upstream compliant 128-bit IEEE long double

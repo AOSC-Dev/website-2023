@@ -3,7 +3,6 @@ categories:
   - minutes
 title: "例会预告：OSPP 2024 审核筹备"
 date: 2024-05-27T22:19:13-08:00
-important: false
 
 ---
 

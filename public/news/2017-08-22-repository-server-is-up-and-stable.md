@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2017-08-22'
-important: false
 title: Repository Server is Up and Stable
 ---
 

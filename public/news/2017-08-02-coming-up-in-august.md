@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2017-08-02'
-important: false
 title: Coming Up in August...
 ---
 

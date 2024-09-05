@@ -3,7 +3,6 @@ categories:
   - advisories
 title: "Brise 用户可能需要手动迁移至分拆后的 Rime 方案包"
 date: 2021-09-24T07:51:04+08:00
-important: false
 ---
 
 使用 Brise 的用戶请注意：

@@ -3,7 +3,6 @@ categories:
   - news
 title: "AOSC OS 龙架构版本系统发行更新公告"
 date: 2024-03-06T22:19:13-08:00
-important: false
 
 ---
 

@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2019-07-30'
-important: true
 title: 'AOSC Community Repository: Unexpected Downtime'
 ---
 

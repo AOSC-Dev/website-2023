@@ -3,7 +3,6 @@ categories:
   - advisories
 title: "McFly 更新后残留的命令行配置文件可能导致报错"
 date: 2023-04-05T13:43:01+08:00
-important: false
 
 ---
 

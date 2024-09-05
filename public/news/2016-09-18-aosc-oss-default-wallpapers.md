@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2016-09-18'
-important: false
 title: AOSC OS's Default Wallpapers
 ---
 

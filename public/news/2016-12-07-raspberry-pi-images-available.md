@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2016-12-07'
-important: false
 title: Raspberry Pi images available!
 ---
 

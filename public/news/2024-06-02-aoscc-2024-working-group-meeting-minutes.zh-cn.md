@@ -3,7 +3,6 @@ categories:
   - minutes
 title: "会议纪要：AOSCC 2024 工作组例会"
 date: 2024-06-02T23:19:13-08:00
-important: false
 
 ---
 

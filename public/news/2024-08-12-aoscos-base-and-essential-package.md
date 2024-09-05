@@ -3,7 +3,6 @@ categories:
   - news
 title: "测试公告：系统套件与关键组件调整"
 date: 2024-08-12T12:00:00+08:00
-important: true
 
 ---
 

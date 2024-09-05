@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2017-07-13'
-important: false
 title: It's Happening...!
 ---
 

@@ -3,7 +3,6 @@ categories:
   - news
 title: Introducing ATM (AOSC OS APT Topic Manager)
 date: '2020-11-18'
-important: false
 ---
 
 With the closing of the Summer 2020 iteration cycle, we have now transitioned

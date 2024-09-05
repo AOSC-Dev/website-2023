@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2017-06-14'
-important: false
 title: zh_CN Localization Guide 1.5.4
 ---
 

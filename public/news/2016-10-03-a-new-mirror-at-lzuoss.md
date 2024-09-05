@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2016-10-03'
-important: false
 title: 'A New Mirror: At LZUOSS'
 ---
 

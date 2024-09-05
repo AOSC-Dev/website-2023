@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2016-09-30'
-important: false
 title: zh_CN L10n Guide 1.5.3 Released
 ---
 

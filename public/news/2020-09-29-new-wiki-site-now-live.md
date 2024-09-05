@@ -3,7 +3,6 @@ categories:
   - news
 title: New Wiki Site Now Live!
 date: '2020-09-29'
-important: false
 ---
 
 Thanks to the hard work from Leo Shen along with other community contributors,

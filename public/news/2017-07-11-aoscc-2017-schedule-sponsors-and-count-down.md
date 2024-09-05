@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2017-07-11'
-important: false
 title: AOSCC 2017 Schedule, Sponsors, and Count Down!
 ---
 

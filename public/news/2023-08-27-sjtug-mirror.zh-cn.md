@@ -3,7 +3,6 @@ categories:
   - news
 title: "上交大 Linux 用户组新镜像上线！"
 date: 2023-08-27T22:00:00+08:00
-important: false
 
 ---
 

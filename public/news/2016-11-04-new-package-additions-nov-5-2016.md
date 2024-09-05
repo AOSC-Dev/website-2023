@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2016-11-04'
-important: false
 title: 'New package additions: Nov. 5, 2016'
 ---
 

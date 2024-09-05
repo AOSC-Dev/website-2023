@@ -3,7 +3,6 @@ categories:
   - news
 title: New Loongson Development Board
 date: '2020-05-18'
-important: false
 ---
 
 This month we received a sponsored [Loongson Pi Gen 2][lpi2] development board from [Windows1089][w], who is an active member of the Loongson community. In addition to the board, an extra set of peripheral equipments, including a case, three extra NVMe SSDs, and a USB EJTAG debugger, are offered for the ease of future debugging on the platform. Thank you!

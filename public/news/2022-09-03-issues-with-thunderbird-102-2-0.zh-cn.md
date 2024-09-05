@@ -3,7 +3,6 @@ categories:
   - advisories
 title: "Thunderbird 102.2.0 有问题需要关注"
 date: 2022-09-02T23:12:55-07:00
-important: true
 
 ---
 

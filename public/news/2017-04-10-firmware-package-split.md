@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2017-04-10'
-important: true
 title: Firmware Package Split
 ---
 

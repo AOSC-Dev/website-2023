@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2016-10-02'
-important: true
 title: 'AOSA-2016-0006: update OpenSSL to 1.0.2j'
 ---
 

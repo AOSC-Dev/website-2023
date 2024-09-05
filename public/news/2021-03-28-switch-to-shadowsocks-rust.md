@@ -3,7 +3,6 @@ categories:
   - advisories
 title: Upstream Advises Migration to `shadowsocks-rust`
 date: 2021-03-28T09:51:00+08:00
-important: false
 ---
 
 The `shadowsocks-libev` upstream announced that the project is now under ["Bug-fix-only"](https://github.com/shadowsocks/shadowsocks-libev) maintenance,
