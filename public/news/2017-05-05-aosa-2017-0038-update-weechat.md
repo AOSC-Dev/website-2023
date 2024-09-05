@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2017-05-05'
-important: true
 title: 'AOSA-2017-0038: Update WeeChat'
 ---
 

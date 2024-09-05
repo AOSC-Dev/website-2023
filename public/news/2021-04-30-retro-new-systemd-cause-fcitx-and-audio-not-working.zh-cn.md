@@ -3,7 +3,6 @@ categories:
   - advisories
 title: "AOSC OS/Retro 上的新版 systemd 可能导致 Fcitx 及音频无法使用"
 date: 2021-04-30T07:38:20+08:00
-important: false
 
 ---
 

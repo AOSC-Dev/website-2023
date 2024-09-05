@@ -3,7 +3,6 @@ categories:
   - news
 title: "OSPP2024 校园行走进吉林大学"
 date: 2024-05-21T22:19:13-08:00
-important: false
 
 ---
 

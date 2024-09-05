@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2016-10-18'
-important: true
 title: 'AOSA-2016-0018: update GD Graphics Library to 2.2.3-1'
 ---
 

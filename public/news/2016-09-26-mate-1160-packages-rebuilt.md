@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2016-09-26'
-important: true
 title: MATE 1.16.0 Packages Rebuilt
 ---
 

@@ -3,7 +3,6 @@ categories:
   - news
 title: "【已解决】PostgreSQL 推送事故说明"
 date: 2024-07-29T12:00:00+08:00
-important: true
 home: true
 ---
 

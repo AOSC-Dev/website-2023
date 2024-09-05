@@ -3,7 +3,6 @@ categories:
   - news
 title: AOSC OS Core 8 "Hotfix" Now Available!
 date: '2020-12-06'
-important: true
 ---
 
 ![welcome-to-core-8](https://i.imgur.com/PpSCv5F.png)

@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2017-01-26'
-important: true
 title: 'AOSA-2017-0001: Update PCSC-Lite'
 ---
 

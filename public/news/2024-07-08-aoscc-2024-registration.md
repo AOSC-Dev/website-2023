@@ -3,7 +3,6 @@ categories:
   - news
 title: "AOSCC 2024 正式注册截止"
 date: 2024-07-08T23:00:00+08:00
-important: false
 
 ---
 ![](/assets/coffee-break/20240623/imgs/aoscc-2024-jlu.png)

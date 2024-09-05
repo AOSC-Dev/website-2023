@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2017-02-14'
-important: true
 title: Repository key expiration!
 ---
 

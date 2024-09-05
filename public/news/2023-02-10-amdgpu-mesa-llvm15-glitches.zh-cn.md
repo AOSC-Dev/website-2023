@@ -3,7 +3,6 @@ categories:
   - advisories
 title: "[已解决] 更新至 LLVM 15 后 AMD 显卡可能出现显示错误"
 date: 2023-02-10T22:58:58-07:00
-important: false
 
 ---
 

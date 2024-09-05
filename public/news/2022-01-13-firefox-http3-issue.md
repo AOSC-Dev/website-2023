@@ -3,7 +3,6 @@ categories:
   - advisories
 title: "HTTP3 Feature in Firefox May Cause Usability Issues"
 date: 2022-01-13T10:42:39-08:00
-important: true
 ---
 
 At present, Firefox browser may suddenly stop loading when browsing web pages, or get stuck while loading pages, accompanied by high CPU usage.

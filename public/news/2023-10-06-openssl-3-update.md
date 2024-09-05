@@ -3,7 +3,6 @@ categories:
   - advisories
 title: "OpenSSL 3 Update Now Available"
 date: 2023-10-06T21:00:00+08:00
-important: true
 
 ---
 

@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2016-12-31'
-important: true
 title: 'AOSA-2016-0040: Update FlightGear'
 ---
 

@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2016-09-27'
-important: false
 title: AOSC OS Base and BuildKit Tarball Updates
 ---
 

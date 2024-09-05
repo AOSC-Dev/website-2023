@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2019-03-18'
-important: false
 title: New Mirror at CQU-Lanunion!
 ---
 

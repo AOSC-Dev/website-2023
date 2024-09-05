@@ -3,7 +3,6 @@ categories:
   - news
 title: "AOSCC 2024 会场照片征集"
 date: 2024-07-18T23:00:00+08:00
-important: false
 home: true
 ---
 ![](/assets/news/2024-07-18-aoscc-2024-call-for-photos.jpg)

@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2016-12-01'
-important: true
 title: 'AOSA-2016-0028: Update Vim and Neovim'
 ---
 

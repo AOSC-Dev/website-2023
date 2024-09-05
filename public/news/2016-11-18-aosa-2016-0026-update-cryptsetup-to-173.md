@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2016-11-18'
-important: true
 title: 'AOSA-2016-0026: Update Cryptsetup to 1.7.3'
 ---
 

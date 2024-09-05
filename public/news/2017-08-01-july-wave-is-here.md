@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2017-08-01'
-important: false
 title: July Wave is Here!
 ---
 

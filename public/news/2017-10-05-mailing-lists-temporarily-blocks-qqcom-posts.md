@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2017-10-05'
-important: true
 title: Mailing Lists Temporarily Blocks QQ.com Posts
 ---
 

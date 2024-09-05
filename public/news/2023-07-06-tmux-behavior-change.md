@@ -3,7 +3,6 @@ categories:
   - advisories
 title: "Recent tmux Update May Change Its Default Behaviors"
 date: 2023-07-06T16:00:00+08:00
-important: false
 
 ---
 

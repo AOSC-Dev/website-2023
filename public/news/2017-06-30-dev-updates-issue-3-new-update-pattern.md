@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2017-06-30'
-important: false
 title: 'Dev. Updates Issue #3: New Update Pattern!'
 ---
 

@@ -3,7 +3,6 @@ categories:
   - advisories
 title: "Critical Shadow Security Fix"
 date: 2022-07-02T17:14:19-07:00
-important: true
 
 ---
 

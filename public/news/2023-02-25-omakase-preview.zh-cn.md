@@ -3,7 +3,6 @@ categories:
   - advisories
 title: "AOSC OS 实验性软件包管理器 Omakase 可供测试"
 date: 2023-02-25T00:55:48-07:00
-important: false
 
 ---
 

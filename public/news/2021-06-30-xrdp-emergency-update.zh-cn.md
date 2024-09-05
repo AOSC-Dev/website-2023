@@ -3,7 +3,6 @@ categories:
   - advisories
 title: "[已解决] 紧急更新：xrdp 包含预生成私钥"
 date: 2021-06-30T08:28:30+08:00
-important: false
 ---
 
 据 Void Linux 维护者 Chocimier [\<chocimier@tlen.pl\>](mailto:chocimier@tlen.pl)

@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2016-10-21'
-important: true
 title: 'AOSA-2016-0019: update Linux Kernel to 4.8.3'
 ---
 

@@ -3,7 +3,6 @@ categories:
   - journals
 title: "《安记冰室》八月下号休刊公告"
 date: 2024-08-28T23:00:00+08:00
-important: false
 home: true
 ---
 

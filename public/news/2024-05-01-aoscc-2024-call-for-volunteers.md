@@ -3,7 +3,6 @@ categories:
   - news
 title: "有你更精彩：AOSCC 2024 诚招志愿者！"
 date: 2024-05-01T22:19:13-08:00
-important: false
 
 ---
 ![AOSCC 2024 倒计时正式开始！](/assets/coffee-break/20240427/imgs/aoscc-2024.png)

@@ -2,7 +2,6 @@
 categories:
   - news
 date: '2016-09-18'
-important: false
 title: Welcome to AOSC Portal
 ---
 

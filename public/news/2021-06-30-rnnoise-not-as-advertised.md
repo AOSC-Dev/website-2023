@@ -3,7 +3,6 @@ categories:
   - advisories
 title: "[SOLVED] Incorrect Software Packaged in rnnoise"
 date: 2021-06-30T08:28:30+08:00
-important: false
 ---
 
 Due to a mistake, the rnnoise package in the community repository does not

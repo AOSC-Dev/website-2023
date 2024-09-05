@@ -3,7 +3,6 @@ categories:
   - advisories
 title: "Unusually Large MariaDB Package in general-survey-20210301"
 date: 2021-04-19T19:30:13+08:00
-important: false
 ---
 
 AMD64 updates from the `general-survey-20210301` topic are now available for testing.
