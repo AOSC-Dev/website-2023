@@ -1,10 +1,9 @@
 <script setup>
-import { reactive, ref, watch } from "vue";
+import { reactive, watch } from "vue";
 import CategorySecond from "/src/components/CategorySecond.vue";
-import highlightElement from "../../utils/animation";
-import { RouterView, useRouter, useRoute } from "vue-router";
-import AppLink from "../../components/AppLink.vue";
+import { useRouter, useRoute } from "vue-router";
 import { useHighBrightnessControllerStore } from "../../stores/miscellaneous"
+import AccordionNavigation from "../../components/AccordionNavigation.vue";
 
 const router = useRouter()
 const route = useRoute()

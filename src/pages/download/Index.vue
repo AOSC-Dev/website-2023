@@ -11,12 +11,12 @@
  */
 import CategorySecond from "../../../src/components/CategorySecond.vue";
 import DownloadButton from "./components/DownloadButton.vue";
-import { onMounted, ref, watch, nextTick, onUnmounted, reactive } from "vue";
+import { onMounted, ref, watch, nextTick, onUnmounted, reactive, useTemplateRef } from "vue";
 import { ElMessage } from "element-plus";
 import { highlightElement } from "../../utils/animation.ts"
 import Highlight from "../../components/Highlight.vue";
-import { useRouter, useRoute, RouterView } from 'vue-router'
-import { requestJson, title } from "../../utils/utils.js"
+import { useRouter, useRoute } from 'vue-router'
+import { requestGetJson } from "../../utils/utils.js"
 import { useHighBrightnessControllerStore } from "../../stores/miscellaneous"
 import AccordionNavigation from "../../components/AccordionNavigation.vue";
 
@@ -32,11 +32,11 @@ document.head.appendChild(msStoreScript);
 
 const loading = ref(true);
 const versionArch = ref([]);
-const aoscOsDownload = ref()
-const afterglowDownload = ref()
-const omaDownload = ref();
-const tier2Downloads = ref()
-const downloadDocker = ref()
+const aoscOsRef = useTemplateRef('aoscOsDownload')
+const afterglowRef = useTemplateRef('afterglowDownload')
+const omaRef = useTemplateRef('omaDownload');
+const tier2Ref = useTemplateRef('tier2Downloads')
+const dockerRef = useTemplateRef('downloadDocker')
 
 const omaNavigationList = [{
   title: '详细介绍',
@@ -77,13 +77,13 @@ const highBrightnessControllerStore = useHighBrightnessControllerStore()
 
 const switchHash = () => {
   switch (route.hash) {
-    case "#oma-download": highlightElement(omaDownload); break
-    case "#aosc-os-download": highlightElement(aoscOsDownload); break
-    case "#afterglow-download": highlightElement(afterglowDownload); break
-    case "#tier-2-downloads": highlightElement(tier2Downloads); break
+    case "#oma-download": highlightElement(omaRef); break
+    case "#aosc-os-download": highlightElement(aoscOsRef); break
+    case "#afterglow-download": highlightElement(afterglowRef); break
+    case "#tier-2-downloads": highlightElement(tier2Ref); break
     case "#otherDownload": {
-      highlightElement(downloadDocker);
-      highlightElement(tier2Downloads);
+      highlightElement(dockerRef);
+      highlightElement(tier2Ref);
       break;
     }
   }
@@ -95,43 +95,33 @@ watch(() => highBrightnessControllerStore.obj[route.path], () => {
   flush: 'post'
 })
 
-const aoscOsDownloadStyle = reactive({
+const aoscOsButtonStyle = reactive({
   width: 224
 })
 
-const vss = (() => {
+const downloadButtonLength = (() => {
   let lessThen = true
   return () => {
     if (lessThen) {
       lessThen = false
-      if (aoscOsDownload.value.clientWidth <= 496) {
-        if (aoscOsDownload.value.clientWidth > 384) {
-          aoscOsDownloadStyle.width = 224 - 0.55 * (496 - aoscOsDownload.value.clientWidth)
+      if (aoscOsRef.value.clientWidth <= 496) {
+        if (aoscOsRef.value.clientWidth > 384) {
+          aoscOsButtonStyle.width = 224 - 0.55 * (496 - aoscOsRef.value.clientWidth)
         }
         else
-          aoscOsDownloadStyle.width = 157
+          aoscOsButtonStyle.width = 157
       } else {
-        aoscOsDownloadStyle.width = 224
+        aoscOsButtonStyle.width = 224
       }
       lessThen = true
     }
   }
-})()
+})();
 
-
-onUnmounted(() => {
-  window.removeEventListener('resize', vss);
-})
-
-onMounted(async () => {
-  nextTick(() => {
-    window.addEventListener('resize', vss);
-    vss()
-  })
-  switchHash()
-  let [res, err] = await requestJson('https://releases.aosc.io/manifest/livekit.json', 'downloadLivekit');
+(async () => {
+  let [res, err] = await requestGetJson('https://releases.aosc.io/manifest/livekit.json');
   if (res) {
-    versionArch.value = res;
+    versionArch.value = res.data;
     antong1List.value.forEach((v) => {
       v.installer = getNewVersioArch(v.title, 'installer');
       v.livekit = getNewVersioArch(v.title, 'livekit');
@@ -151,7 +141,19 @@ onMounted(async () => {
     console.log("获取异常: ", err);
   }
   loading.value = false;
+})()
+
+onMounted(async () => {
+  nextTick(() => {
+    window.addEventListener('resize', downloadButtonLength);
+    downloadButtonLength()
+  })
+  switchHash()
 });
+
+onUnmounted(() => {
+  window.removeEventListener('resize', downloadButtonLength);
+})
 
 const livkitPPlacement = [
   'top', 'left', 'bottom'
@@ -318,6 +320,14 @@ const getNewVersioArch = (arch, type) => {
   list = list.sort(isoVersionCmp)
   return list[0];
 }
+
+const downloadIso = (path) => {
+  window.open(`https://releases.aosc.io/${path}`);
+}
+
+const otherButtonClick = () => {
+  location.href = '#otherDownload'
+}
 </script>
 
 <template>
@@ -343,16 +353,17 @@ const getNewVersioArch = (arch, type) => {
 
             <div class="button-container-aoscos-multicolumn buttons-col mb-3 mt-1 flex justify-center"
               v-if="versionArch.length > 0">
-              <DownloadButton v-for="item in antong1List" :popoverData="item.popoverData"
-                :width=aoscOsDownloadStyle.width :key="item.title" :archName="item.zhLabel" :isaInfo="item.installer" />
+              <DownloadButton v-for="item in antong1List" :popoverData="item.popoverData" :width=aoscOsButtonStyle.width
+                :key="item.title" @myClick="downloadIso(item.installer.path)" :archName="item.zhLabel"
+                :isaInfo="item.installer" />
               <!-- <button class="text-white hover:opacity-85 cursor-pointer mx-1 text-[10pt] text-center bg-[#549c97]"
-                :style="{ width: aoscOsDownloadStyle.width + 'px' }" onclick="location.href='#otherDownload'">
+                :style="{ width: aoscOsButtonStyle.width + 'px' }" onclick="location.href='#otherDownload'">
                 <p>其他下载</p>
               </button> -->
-              <DownloadButton buttonColor="#549c97" :width=aoscOsDownloadStyle.width :popoverData="{
+              <DownloadButton buttonColor="#549c97" :width=aoscOsButtonStyle.width :popoverData="{
                 conten: '二级架构、Docker,及虚拟机镜像等其他下载',
                 placement: 'bottom'
-              }" :myClick="() => { location.href = '#otherDownload' }" archName="其他下载" />
+              }" @myClick="otherButtonClick" archName="其他下载" />
             </div>
           </div>
         </div>
@@ -403,8 +414,7 @@ const getNewVersioArch = (arch, type) => {
         </p>
       </div>
       <div id="wsl-buttons" class="flex mt-auto mr-9 ml-auto">
-        <ms-store-badge 
-          productid="9NMDF21NV65Z" window-mode="popup"  theme="dark" language="en-us" animation="on">
+        <ms-store-badge productid="9NMDF21NV65Z" window-mode="popup" theme="dark" language="en-us" animation="on">
         </ms-store-badge>
       </div>
     </div>

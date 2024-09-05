@@ -20,7 +20,7 @@
     "pinia": "^2.2.2",
     "pinia-plugin-persistedstate": "^3.2.3",
     "v-md-editor": "^1.0.6",
-    "vue": "^3.4.19",
+    "vue": "^3.5.1",
     "vue-clipboard3": "^2.0.0",
     "vue-router": "4"
   },
