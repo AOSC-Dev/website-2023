@@ -4,7 +4,7 @@ categories:
 title: "南阳理工学院 CIPS 新镜像上线！"
 date: 2023-08-28T21:00:00+08:00
 important: false
-draft: false
+
 ---
 
 ![南阳理工学院 CIPS 镜像上线！](https://raw.githubusercontent.com/AOSC-Dev/newsroom/master/special-issue/20230828/imgs/new-mirror-nit-cips.png)

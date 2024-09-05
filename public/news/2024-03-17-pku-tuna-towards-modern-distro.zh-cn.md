@@ -4,7 +4,7 @@ categories:
 title: "发行版沙龙来啦！"
 date: 2024-03-17T22:19:13-08:00
 important: false
-draft: false
+
 ---
 
 由北京大学学生 Linux 俱乐部（LCPU）和清华大学 TUNA 协会联合举办的 Linux 发行版沙龙为您打开 Linux 发行版的大门！

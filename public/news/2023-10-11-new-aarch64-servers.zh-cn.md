@@ -4,7 +4,7 @@ categories:
 title: "社区友人捐赠的两台新 AArch64 构建服务器投入使用"
 date: 2023-10-11T13:00:00+08:00
 important: false
-draft: false
+
 ---
 
 ![近期上线的两台 AArch64 构建服务器](https://raw.githubusercontent.com/AOSC-Dev/newsroom/master/special-issue/20231011/imgs/new-aarch64-servers.jpg)

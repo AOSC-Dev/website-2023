@@ -4,7 +4,7 @@ categories:
 title: "例会预告：软件包信息站与 p-vector-rs 更改审阅"
 date: 2024-06-01T22:19:13-08:00
 important: false
-draft: false
+
 ---
 例会预告：软件包信息站与 p-vector-rs 更改审阅
 

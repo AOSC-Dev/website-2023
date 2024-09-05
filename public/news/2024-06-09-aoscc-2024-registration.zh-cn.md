@@ -4,7 +4,7 @@ categories:
 title: "AOSCC 2024 开放报名！"
 date: 2024-06-09T23:19:13-08:00
 important: false
-draft: false
+
 ---
 
 ![AOSCC 2024，咱上吉林大学去！](/assets/coffee-break/20240609/imgs/aoscc-2024-jlu.png)

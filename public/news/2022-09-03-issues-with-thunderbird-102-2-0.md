@@ -4,7 +4,7 @@ categories:
 title: "Issues with Thunderbird 102.2.0"
 date: 2022-09-02T23:12:55-07:00
 important: true
-draft: false
+
 ---
 
 We recently updated Thunderbird to version 102.2.0, but unfortunately, 

@@ -4,7 +4,7 @@ categories:
 title: "On Linux.CN's Closure and the Future of Open Source Communities in China"
 date: 2024-01-31T22:18:05-08:00
 important: false
-draft: false
+
 ---
 
 Today, we were deeply shocked and saddened by [the news about Linux.CN's closure](https://linux.cn/article-16602-1.html). While it is no coincidence that open source became increasingly commercialised as it became an industry here in China, we strongly believe in the value open source communities bring in facilitating experimentation and knowledge application, networking new contributors, and in fostering the continuation of an open source culture. Open source, however commercialised, will not stand without communities.

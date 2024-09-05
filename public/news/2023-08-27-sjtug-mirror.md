@@ -4,7 +4,7 @@ categories:
 title: "Shanghai Jiao Tong University's *NIX User Group Now Mirroring Our Community Repository!"
 date: 2023-08-27T22:00:00+08:00
 important: false
-draft: false
+
 ---
 
 ![SJTUG Mirror Now Live!](https://raw.githubusercontent.com/AOSC-Dev/newsroom/master/special-issue/20230827/imgs/new-mirror-sjtug.png)

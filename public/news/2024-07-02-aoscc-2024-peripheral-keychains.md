@@ -4,7 +4,7 @@ categories:
 title: "AOSCC 2024 周边预告之：钥匙扣"
 date: 2024-07-02T23:00:00+08:00
 important: false
-draft: false
+
 ---
 ![](/assets/news/keychains.png)
 

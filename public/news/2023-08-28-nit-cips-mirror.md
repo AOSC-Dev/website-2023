@@ -4,7 +4,7 @@ categories:
 title: "NIT-CIPS Now Mirroring Our Community Repository!"
 date: 2023-08-28T21:00:00+08:00
 important: false
-draft: false
+
 ---
 
 ![Nanyang Institute of Technology-CIPS Mirror Now Live!](https://raw.githubusercontent.com/AOSC-Dev/newsroom/master/special-issue/20230828/imgs/new-mirror-nit-cips.png)

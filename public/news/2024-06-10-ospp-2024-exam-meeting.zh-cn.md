@@ -4,7 +4,7 @@ categories:
 title: "例会：开源之夏（OSPP） 2024 社区实习项目考核结果讨论"
 date: 2024-05-27T22:19:13-08:00
 important: false
-draft: false
+
 ---
 
 ## 预告：开源之夏（OSPP） 2024 社区实习项目考核结果讨论

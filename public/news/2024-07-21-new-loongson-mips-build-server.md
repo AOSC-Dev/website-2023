@@ -4,7 +4,7 @@ categories:
 title: "MIPS 龙芯新构建服务器上线！"
 date: 2024-07-21T22:19:13-08:00
 important: false
-draft: false
+
 ---
 ![](/assets/news/katyusha-mips.png)
 

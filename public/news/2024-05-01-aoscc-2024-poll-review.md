@@ -4,7 +4,7 @@ categories:
 title: "紧张刺激：AOSCC 2024 投票结果"
 date: 2024-05-01T22:18:13-08:00
 important: false
-draft: false
+
 ---
 ![AOSCC 2024 投票结果](/assets/coffee-break/20240512/imgs/aoscc-2024-poll.png)
 

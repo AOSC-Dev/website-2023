@@ -4,7 +4,7 @@ categories:
 title: "安同 OS 图形安装预览镜像更新（6 月 7 日）"
 date: 2024-06-07T22:19:13-08:00
 important: false
-draft: false
+
 ---
 
 ![](/assets/news/2024-06-04-aoscos-livekit-pre.jpg)
@@ -38,4 +38,3 @@ draft: false
 - 目标存储选择界面依然列出了安装盘（应剔除）
 
 如果您在测试时遇到问题或困难，请通过社区[各聊天群组](https://aosc.io/zh-cn/contact/ "各聊天群组")或社区[论坛](https://bbs.aosc.io/ "论坛")与我们联系。
-
