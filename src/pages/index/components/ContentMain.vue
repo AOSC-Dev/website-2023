@@ -1,5 +1,5 @@
 <script setup name="ContentMain">
-import { onMounted, reactive, ref, computed, onUnmounted } from "vue";
+import { onMounted, reactive, ref, useTemplateRef, onUnmounted } from "vue";
 import CategorySecond from "/src/components/CategorySecond.vue";
 import NewsCategoryList from "/src/pages/news/components/NewsCategoryList.vue";
 import { useRouter } from "vue-router";
@@ -13,6 +13,8 @@ const router = useRouter();
  */
 const newsListLoading = ref(true);
 const newsList = ref([]);
+const isLoad = ref(false);
+
 (async () => {
   let [res, err] = await requestGetJson(`/newsCategories/home.zh-cn.json`);
   if (res) {
@@ -22,6 +24,7 @@ const newsList = ref([]);
     console.log(err);
     newsListLoading.value = false;
   }
+  isLoad.value = true
 })()
 
 const zhuanlanList = reactive([
@@ -50,16 +53,16 @@ const zhuanlanList = reactive([
   },
 ]);
 
-const aoscOsImg = ref()
-
 const imgHeight = ref()
+
+const img = useTemplateRef('bgImg')
 
 let observer = null
 onMounted(() => {
   observer = new ResizeObserver(() => {
-    imgHeight.value = aoscOsImg.value.clientWidth / 1.4545 + 'px'
+    imgHeight.value = (img.value.clientWidth / 1.4545).toFixed(2) + 'px'
   })
-  observer.observe(aoscOsImg.value)
+  observer.observe(img.value)
 })
 
 const onImgLoad = () => {
@@ -79,7 +82,7 @@ onUnmounted(() => {
 
 <template>
   <div class="w-[62.5%] bg-content-main-bg p-0">
-    <a :style="{ '--homepage-img-height1': imgHeight }" ref="aoscOsImg" href="/aoscos" class="imgHeight w-full flex">
+    <a :style="{ '--homepage-img-height1': imgHeight }" ref="bgImg" href="/aoscos" class="bg-img-height1 w-full flex">
       <!-- <div class="flex w-full" :class="'h-[' + imgHeight + 'px]'"></div> -->
       <el-image @load="onImgLoad()" class="w-full" src="/assets/banners/banner_main1.svg">
         <template #error>
@@ -94,7 +97,7 @@ onUnmounted(() => {
     <!-- 咨讯要点 -->
     <div>
       <category-second title="资讯要点" />
-      <article class="">
+      <article v-if="isLoad">
         <news-category-list :newsList="newsList" />
         <div class="text-right px-[15px] py-[10px] font-[12pt] leading-6 text-link">
           <router-link to="/news">
@@ -105,7 +108,7 @@ onUnmounted(() => {
       </article>
     </div>
     <!-- 专栏 -->
-    <div id="topic">
+    <div v-if="isLoad" id="topic">
       <category-second title="专栏：初识安同 OS" />
       <article class="p-[1em] leading-6">
         <div class="flex items-center pb-[15px]" v-for="item in zhuanlanList" :key="item.title">
@@ -131,7 +134,7 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
-.imgHeight {
+.bg-img-height1 {
   height: var(--homepage-img-height1);
 }
 </style>

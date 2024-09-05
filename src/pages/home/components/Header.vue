@@ -1,7 +1,6 @@
 <script setup name="Header">
 import { reactive, ref } from "vue";
 import { useThemeStore } from "../../../stores/miscellaneous";
-import { setBackgroundColor } from "../../../utils/utils";
 
 const themeStore = useThemeStore()
 
