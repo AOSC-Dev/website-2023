@@ -3,10 +3,7 @@ categories:
   - advisories
 title: "Recent Kernel Update May Break Virtual Machines on Intel 11th Gen (or Newer) Platforms"
 date: 2022-08-26T11:49:37-07:00
-<<<<<<< HEAD
 important: true
-=======
->>>>>>> parent of 3535e9c (news: remove unless attribute)
 
 ---
 
