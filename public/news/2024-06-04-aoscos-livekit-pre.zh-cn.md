@@ -1,6 +1,6 @@
 ---
 categories:
-  - news
+  - advisories
 title: "安同 OS 图形安装程序预览镜像发布"
 date: 2024-06-04T22:19:13-08:00
 important: false

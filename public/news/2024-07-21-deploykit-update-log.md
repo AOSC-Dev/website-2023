@@ -1,6 +1,6 @@
 ---
 categories:
-  - news
+  - advisories
 title: "安同 OS 图形安装器（Deploykit）更新日志"
 date: 2024-07-21T13:00:00+08:00
 important: false

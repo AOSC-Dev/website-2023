@@ -1,6 +1,7 @@
 ---
 categories:
   - news
+  - advisories
 title: "紫华不再：安同 OS MIPS64 Release 6 移植停止维护"
 date: 2024-07-29T12:00:00+08:00
 important: true
