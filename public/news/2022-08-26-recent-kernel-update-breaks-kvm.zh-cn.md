@@ -3,7 +3,6 @@ categories:
   - advisories
 title: "近期内核更新可能导致虚拟机在 Intel 11 代（或更新）平台上不可用"
 date: 2022-08-26T11:49:37-07:00
-
 ---
 
 今日推送的 5.19.3 内核更新在 Intel 11 代或更新的处理器可能会导致使用 BIOS/UEFI CSM 模式启动的 KVM 虚拟机无法启动，该问题可以在 Qemu 及 VirtualBox 上复现。在某些情况下，甚至可能导致宿主机锁死。
