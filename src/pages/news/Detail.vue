@@ -3,7 +3,7 @@ import {  ref } from "vue";
 import CategorySecond from "../../components/CategorySecond.vue";
 import { useRoute } from "vue-router";
 import { setTitle } from '../../utils/utils.js'
-import { requestGetJson } from "../../utils/utils.js";
+import { requestGetJson, requestToYaml } from "../../utils/utils.js";
 
 const mdRes = ref();
 const route = useRoute();
