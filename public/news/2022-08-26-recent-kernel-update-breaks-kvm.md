@@ -3,7 +3,6 @@ categories:
   - advisories
 title: "Recent Kernel Update May Break Virtual Machines on Intel 11th Gen (or Newer) Platforms"
 date: 2022-08-26T11:49:37-07:00
-
 ---
 
 The Kernel 5.19.3 update, which recently made available, may result in boot
