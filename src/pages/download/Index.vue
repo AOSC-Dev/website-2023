@@ -19,6 +19,7 @@ import { useRouter, useRoute } from 'vue-router'
 import { requestGetJson } from "../../utils/utils.js"
 import { useHighBrightnessControllerStore } from "../../stores/miscellaneous"
 import AccordionNavigation from "../../components/AccordionNavigation.vue";
+import useClipboard from "vue-clipboard3";
 
 const router = useRouter()
 const route = useRoute()
@@ -44,10 +45,21 @@ const omaNavigationList = [{
 }, {
   title: '源代码',
   url: 'https://github.com/AOSC-Dev/oma'
-}, {
-  title: '下载 Debian/Ubuntu 安装包',
-  url: 'https://github.com/AOSC-Dev/oma/releases/tag/v1.8.2'
-}]
+}
+  // , {
+  //   title: '下载 Debian/Ubuntu 安装包',
+  //   url: 'https://github.com/AOSC-Dev/oma/releases/tag/v1.8.2'
+  // }
+]
+
+const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sh'
+
+const { toClipboard } = useClipboard();
+
+const copy = () => {
+  toClipboard(omaInstallScript)
+  ElMessage.success("复制成功")
+}
 
 const aoscOsNavigationList = [{
   title: '发行说明',
@@ -140,7 +152,7 @@ const downloadButtonLength = (() => {
     ElMessage.warning("版本信息获取失败");
     console.log("获取异常: ", err);
   }
-  console.log(antong1List,antong2List)
+  console.log(antong1List, antong2List)
   loading.value = false;
 })()
 
@@ -377,11 +389,10 @@ const getNewVersioArch = (arch, type) => {
 
     <div class="livekit-container w-[100%] flex flex-row">
       <div class="flex flex-col">
-        <div id="livekit-title" class="flex-col my-auto pl-[2rem] py-[1rem] flex">
+        <div id="livekit-title" class="flex-col my-auto pl-[2rem] flex">
           <p id="livekit" class="text-[24pt]">LiveKit</p>
-          <p id="livekit-alt" class="text-[14pt]">安同 OS 安装及救援环境</p>
-          <p id="livekit" class="mt-2 text-[16pt]">功能完备，应不时之需</p>
-          <p class="mt-1">
+          <p id="livekit-alt" class="text-[14pt]">功能完备的安同 OS 救援环境</p>
+          <p class="mt-8">
             <AccordionNavigation :navigationList="liveKitNavigationList" linkClass="">·</AccordionNavigation>
           </p>
         </div>
@@ -402,24 +413,30 @@ const getNewVersioArch = (arch, type) => {
       <div class="flex flex-col pl-[2rem] py-[1rem]">
         <p id="wsl" class="text-[24pt]">WSL 环境</p>
         <p id="wsl-alt" class="text-[14pt]">适用于 WSL 的安同 OS</p>
-        <p id="wsl-description" class="mt-2 text-[16pt]">Windows 与安同双双联手，生产力触手可及</p>
-        <p class="mt-1">
+        <p class="mt-8">
           <AccordionNavigation :navigationList="wslNavigationList" linkClass="">·</AccordionNavigation>
         </p>
       </div>
       <div id="wsl-buttons" class="flex mt-auto mr-9 ml-auto">
-        <ms-store-badge productid="9NMDF21NV65Z" window-mode="popup" theme="dark" language="en-us" animation="on">
+        <ms-store-badge productid="9NMDF21NV65Z" window-mode="popup" theme="dark" animation="on">
         </ms-store-badge>
       </div>
     </div>
     <category-second class="highlight" title="实用工具" />
     <div id="oma-download" ref="omaDownload" class="oma-container w-[100%] flex flex-row py-[1rem]">
-      <div id="oma-title" class="pl-[2rem] my-auto">
+      <div class="pl-[2rem]">
         <p class="text-[24pt] ">小熊猫 (oma)</p>
         <p class="text-[14pt] ">简明好用的 APT 软件包管理界面</p>
-        <p class="mt-2 text-[16pt] ">轻松管，轻松用！</p>
-        <p class="mt-1">
+        <p class="mt-2">
           <AccordionNavigation :navigationList="omaNavigationList" linkClass="">·</AccordionNavigation>
+        </p>
+        <p class="mt-6">
+        <div class="bg-black/60 py-2 pr-14">
+          <code class=" text-white pl-[1em]">{{ omaInstallScript }}
+            <v-icon name="fa-copy" class="ml-6 mt-[2px] absolute cursor-pointer" @click="copy()"></v-icon>
+          </code>
+        </div>
+        <p class="mt-[6px]">使用终端运行该命令可在 Debian、Ubuntu 及衍生版安装 oma</p>
         </p>
       </div>
     </div>
