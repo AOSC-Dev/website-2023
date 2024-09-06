@@ -4,15 +4,15 @@ import { useThemeStore } from '../stores/miscellaneous';
 const props = defineProps({
   link: {
     type: String,
-    default: "#",
+    default: '#',
   },
   text: {
     type: String,
-    default: "",
+    default: '',
   },
 });
 
-const themeStore = useThemeStore()
+const themeStore = useThemeStore();
 </script>
 
 <template>

@@ -1,27 +1,29 @@
 <script setup>
-import { onMounted, reactive, ref, watch } from "vue";
-import CategorySecond from "/src/components/CategorySecond.vue";
-import { useRoute } from "vue-router";
-import highlightElement from "../../../utils/animation";
-import Support from "../../../components/Support.vue";
+import {
+  onMounted, reactive, ref, watch,
+} from 'vue';
+import { useRoute } from 'vue-router';
+import highlightElement from '@/utils/animation.ts';
+import Support from '@/components/Support.vue';
+import CategorySecond from '@/components/CategorySecond.vue';
 
 const docList = reactive([
   {
     title: '星霞 OS 系统需求配置表',
     path: '/afterglow/requirements',
-    hash: '#afterLowRequirementsTitle'
-  }
-])
+    hash: '#afterLowRequirementsTitle',
+  },
+]);
 
-const route = useRoute()
+const route = useRoute();
 
 onMounted(() => {
   switch (route.hash) {
-    case "#afterLowIsaTitle": highlightElement(afterLowIsaList); break
+    case '#afterLowIsaTitle': highlightElement(afterLowIsaList); break;
   }
-})
+});
 
-const afterLowIsaList = ref()
+const afterLowIsaList = ref();
 </script>
 
 <template>

@@ -1,9 +1,9 @@
 <script setup name="Header">
 import { useThemeStore } from '../stores/miscellaneous';
 
-const themeStore = useThemeStore()
+const themeStore = useThemeStore();
 
-const props = defineProps(["title", "rightText", "rightUrl", 'showRightChevron']);
+const props = defineProps(['title', 'rightText', 'rightUrl', 'showRightChevron']);
 </script>
 <template>
   <div

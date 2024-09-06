@@ -1,38 +1,38 @@
 <script setup>
-import { reactive, onMounted, ref } from "vue";
-import CategorySecond from "/src/components/CategorySecond.vue";
-import highlightElement from "../../../utils/animation";
-import { useRoute } from "vue-router";
+import { reactive, onMounted, ref } from 'vue';
+import { useRoute } from 'vue-router';
+import CategorySecond from '@/components/CategorySecond.vue';
+import highlightElement from '@/utils/animation.ts';
 
 const docList = reactive([
   {
     title: '安同 OS 系统需求配置表',
     path: '/aosc-os/requirements',
-    hash: '#aoscOsRequirementsTitle'
+    hash: '#aoscOsRequirementsTitle',
   },
   /* TODO
   {
     title: '舒心畅玩：设备选购建议',
     path: '/aosc-os/better-devices'
   } */
-])
+]);
 
-const route = useRoute()
+const route = useRoute();
 
 onMounted(() => {
   switch (route.hash) {
-    case "#aoscOsIsaTableTitle": {
+    case '#aoscOsIsaTableTitle': {
       highlightElement(aoscOsIsaList1);
       highlightElement(aoscOsIsaList2);
-      break
+      break;
     }
-    case "#aoscOsIsaTableTitle1": highlightElement(aoscOsIsaList1); break
-    case "#aoscOsIsaTableTitle2": highlightElement(aoscOsIsaList2); break
+    case '#aoscOsIsaTableTitle1': highlightElement(aoscOsIsaList1); break;
+    case '#aoscOsIsaTableTitle2': highlightElement(aoscOsIsaList2); break;
   }
-})
+});
 
-const aoscOsIsaList1 = ref()
-const aoscOsIsaList2 = ref()
+const aoscOsIsaList1 = ref();
+const aoscOsIsaList2 = ref();
 </script>
 
 <template>

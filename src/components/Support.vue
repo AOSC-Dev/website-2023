@@ -1,30 +1,30 @@
 <script setup>
-import AppLink from './AppLink.vue';
-import CategorySecond from '../components/CategorySecond.vue'
-import highlightElement from '../utils/animation';
 import { ref, watch, defineProps } from 'vue';
-import { useHighBrightnessControllerStore } from '../stores/miscellaneous';
 import { useRoute } from 'vue-router';
+import AppLink from './AppLink.vue';
+import CategorySecond from './CategorySecond.vue';
+import highlightElement from '../utils/animation.ts';
+import { useHighBrightnessControllerStore } from '../stores/miscellaneous';
 
-const route = useRoute()
+const route = useRoute();
 
 const props = defineProps({
   navigationList: {
     type: Array,
-    required: true
-  }
-})
-const highBrightnessControllerStore = useHighBrightnessControllerStore()
+    required: true,
+  },
+});
+const highBrightnessControllerStore = useHighBrightnessControllerStore();
 
 watch(() => highBrightnessControllerStore.obj[route.path], () => {
   switch (route.hash) {
-    case "#support": highlightElement(support); break
+    case '#support': highlightElement(support); break;
   }
 }, {
-  flush: 'post'
-})
+  flush: 'post',
+});
 
-const support = ref()
+const support = ref();
 </script>
 <template>
   <CategorySecond title="支持文档" id="support" />

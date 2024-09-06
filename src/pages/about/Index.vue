@@ -1,6 +1,6 @@
 <script setup>
-import CategorySecond from "/src/components/CategorySecond.vue";
-import H2 from "/src/components/H2.vue";
+import CategorySecond from '@/components/CategorySecond.vue';
+import H2 from '@/components/H2.vue';
 </script>
 
 <template>

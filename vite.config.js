@@ -4,6 +4,7 @@ import vue from '@vitejs/plugin-vue'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+import { fileURLToPath, URL } from 'url';
 
 // Enabled highlight languages for Prism
 const prismEnabledLangauges = ['ada', 'awk', 'bash', 'batch', 'bison', 'c', 'cmake', 'cpp', 'css', 'd', 'html', 'java', 'javascript', 'json', 'kotlin', 'llvm', 'makefile', 'python', 'rust', 'toml', 'vim', 'yaml'];
@@ -11,7 +12,7 @@ const prismEnabledLangauges = ['ada', 'awk', 'bash', 'batch', 'bison', 'c', 'cma
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
-    outDir: 'website'
+    outDir: 'website',
   },
   plugins: [
     // ...
@@ -33,6 +34,11 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/pasteApi/, ''),
       },
+    },
+  },
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   }
 })

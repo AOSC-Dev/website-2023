@@ -1,60 +1,61 @@
 <script setup>
-import { reactive, ref, watch } from "vue";
-import CategorySecond from "/src/components/CategorySecond.vue";
-import H2 from "/src/components/H2.vue";
-import { useRoute, useRouter } from "vue-router";
-import { highlightElement } from "../../utils/animation";
-import AppLink from "../../components/AppLink.vue";
-import { useHighBrightnessControllerStore } from "../../stores/miscellaneous"
-import AccordionNavigation from "../../components/AccordionNavigation.vue";
-const route = useRoute()
-const router = useRouter()
+import { reactive, ref, watch } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
+import CategorySecond from '@/components/CategorySecond.vue';
+import H2 from '@/components/H2.vue';
+import { highlightElement } from '@/utils/animation.ts';
+import AppLink from '../../components/AppLink.vue';
+import { useHighBrightnessControllerStore } from '../../stores/miscellaneous';
+import AccordionNavigation from '../../components/AccordionNavigation.vue';
 
-const features = ref()
+const route = useRoute();
+const router = useRouter();
 
-const highBrightnessControllerStore = useHighBrightnessControllerStore()
+const features = ref();
+
+const highBrightnessControllerStore = useHighBrightnessControllerStore();
 
 watch(() => highBrightnessControllerStore.obj[route.path], () => {
   switch (route.hash) {
-    case "#features": highlightElement(features); break
+    case '#features': highlightElement(features); break;
   }
 }, {
-  flush: 'post'
-})
+  flush: 'post',
+});
 
 const navigationList = [{
   title: '下载系统',
   path: '/download',
-  hash: '#afterglow-download'
+  hash: '#afterglow-download',
 }, {
   title: '系统特性',
-  hash: '#features'
+  hash: '#features',
 }, {
   title: '发行说明',
-  path: '/afterglow/relnote'
+  path: '/afterglow/relnote',
 }, {
   title: '系统配置需求',
-  path: '/afterglow/requirements'
+  path: '/afterglow/requirements',
 }, {
   title: '支持文档',
-  hash: '#support'
-}
-]
+  hash: '#support',
+},
+];
 
 const docList = reactive([
   {
     title: '系统配置需求表',
     path: '/afterglow/requirements',
-    hash: '#afterLowRequirementsTitle'
+    hash: '#afterLowRequirementsTitle',
   }, {
     title: '架构支持规格表',
     path: '/afterglow/isa',
-    hash: '#afterLowIsaTitle'
+    hash: '#afterLowIsaTitle',
   }, {
     title: '其他支持文档',
-    url: '#'
-  }
-])
+    url: '#',
+  },
+]);
 </script>
 
 <template>

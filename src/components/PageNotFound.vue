@@ -1,15 +1,15 @@
 <script setup>
 import { useRoute } from 'vue-router';
-import CategorySecond from './CategorySecond.vue';
 import { onMounted, ref } from 'vue';
+import CategorySecond from './CategorySecond.vue';
 import AppLink from './AppLink.vue';
 
-const route = useRoute()
-const curUrl = ref('')
+const route = useRoute();
+const curUrl = ref('');
 
 onMounted(() => {
-  curUrl.value = route.path
-})
+  curUrl.value = route.path;
+});
 </script>
 <template>
   <div class="pl-[1px]">

@@ -1,7 +1,7 @@
 <script setup>
-import { reactive } from "vue";
-import CategorySecond from "/src/components/CategorySecond.vue";
-import H2 from "/src/components/H2.vue";
+import { reactive } from 'vue';
+import CategorySecond from '@/components/CategorySecond.vue';
+import H2 from '@/components/H2.vue';
 </script>
 
 <template>
@@ -11,7 +11,7 @@ import H2 from "/src/components/H2.vue";
       <p>
         （敬请期待）
       </p><br />
-    </div>    
+    </div>
   </div>
 </template>
 

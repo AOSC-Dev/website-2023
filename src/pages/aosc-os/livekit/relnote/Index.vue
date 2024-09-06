@@ -1,7 +1,7 @@
 <script setup>
-import { reactive } from "vue";
-import CategorySecond from "/src/components/CategorySecond.vue";
-import H2 from "/src/components/H2.vue";
+import { reactive } from 'vue';
+import CategorySecond from '@/components/CategorySecond.vue';
+import H2 from '@/components/H2.vue';
 </script>
 
 <template>
@@ -12,7 +12,7 @@ import H2 from "/src/components/H2.vue";
         LiveKit 是用于维护安同 OS 和进行故障修复的可移动环境，本次发行包含的新特性与更改如下。
       </p><br />
     </div>
-    
+
     <category-second title="新特性与更改" id="features" />
     <div class="p-6">
       <p>

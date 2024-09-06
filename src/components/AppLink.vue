@@ -1,18 +1,16 @@
 <script setup>
-import { computed } from 'vue'
-import { RouterLink } from 'vue-router'
+import { computed } from 'vue';
+import { RouterLink } from 'vue-router';
 
 const props = defineProps({
-    ...RouterLink.props,
-    class: {
-        type: String,
-        default: 'text-link'
-    }
-})
+  ...RouterLink.props,
+  class: {
+    type: String,
+    default: 'text-link',
+  },
+});
 
-const isExternalLink = computed(() => {
-    return typeof props.to === 'string' && props.to.startsWith('http')
-})
+const isExternalLink = computed(() => typeof props.to === 'string' && props.to.startsWith('http'));
 </script>
 
 <template>

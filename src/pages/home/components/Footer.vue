@@ -2,20 +2,20 @@
 import { useThemeStore } from '../../../stores/miscellaneous';
 import AccordionNavigation from '../../../components/AccordionNavigation.vue';
 
-const themeStore = useThemeStore()
+const themeStore = useThemeStore();
 
 const nowYear = new Date().getFullYear();
 
 const navigationList = [{
   title: '网页源码',
-  url: 'https://github.com/AOSC-Dev/website-2023'
+  url: 'https://github.com/AOSC-Dev/website-2023',
 }, {
   title: '报告内容问题',
-  url: 'https://github.com/AOSC-Dev/website-2023/issues'
+  url: 'https://github.com/AOSC-Dev/website-2023/issues',
 }, {
   title: '返回主页',
-  path: '/'
-}]
+  path: '/',
+}];
 </script>
 
 <template>

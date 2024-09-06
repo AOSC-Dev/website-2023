@@ -1,17 +1,16 @@
 <script setup>
-import Home from './pages/home/Home.vue'
 import { useRouter } from 'vue-router';
-import { useHighBrightnessControllerStore, useThemeStore } from "./stores/miscellaneous.js"
+import Home from './pages/home/Home.vue';
+import { useHighBrightnessControllerStore, useThemeStore } from './stores/miscellaneous';
 
-const highBrightnessControllerStore = useHighBrightnessControllerStore()
-const router = useRouter()
+const highBrightnessControllerStore = useHighBrightnessControllerStore();
+const router = useRouter();
 
-router.afterEach((to, from) => {
-  highBrightnessControllerStore.obj[to.path] = !highBrightnessControllerStore.obj[to.path]
-})
+router.afterEach((to) => {
+  highBrightnessControllerStore.obj[to.path] = !highBrightnessControllerStore.obj[to.path];
+});
 
-
-const themeStore = useThemeStore()
+const themeStore = useThemeStore();
 
 </script>
 
