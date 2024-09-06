@@ -116,9 +116,9 @@ const downloadButtonLength = (() => {
   return () => {
     if (lessThen) {
       lessThen = false
-      if (aoscOsRef.value.clientWidth <= 496) {
+      if (aoscOsRef.value.clientWidth <= 498) {
         if (aoscOsRef.value.clientWidth > 384) {
-          aoscOsButtonStyle.width = 224 - 0.55 * (496 - aoscOsRef.value.clientWidth)
+          aoscOsButtonStyle.width = (224 - 0.55 * (498 - aoscOsRef.value.clientWidth)).toFixed(2)
         }
         else
           aoscOsButtonStyle.width = 157
