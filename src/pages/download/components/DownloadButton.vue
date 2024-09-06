@@ -1,4 +1,5 @@
 <script setup>
+import AppLink from '../../../components/AppLink.vue';
 import { useThemeStore } from '../../../stores/miscellaneous';
 
 const themeStore = useThemeStore()
@@ -20,6 +21,8 @@ const props = defineProps({
     type: Object
   }, buttonColor: {
     type: String
+  }, url: {
+    type: String
   }
 })
 
@@ -28,26 +31,38 @@ const byteToGb = (bytes) => {
 }
 </script>
 <template>
-  <el-popover :placement="popoverData.placement" :hide-after="0" trigger="hover" :content="popoverData.conten">
-    <template #reference>
-      <button :style="{ backgroundColor: buttonColor, width: $props.width + 'px' }"
-        class="text-white theme-bg-color cursor-pointer mx-1 py-1" @click="$emit('myClick')">
-        <slot></slot>
-        <p v-if="archName" :style="{ fontSize: $props.firstLineFontSize + 'pt' }">{{ props.archName }}</p>
-        <p v-if="isaInfo" :style="{ fontSize: $props.secondLineFontSize + 'pt' }">{{
-          byteToGb(props.isaInfo.downloadSize) }}GB
-          ISO</p>
-      </button>
-    </template>
-  </el-popover>
+  <div :style="{
+    '--download-button-p-fount-size1': $props.firstLineFontSize + 'pt',
+    '--download-button-p-fount-size2': $props.secondLineFontSize + 'pt'
+  }">
+    <el-popover :placement="popoverData.placement" :hide-after="0" trigger="hover" :content="popoverData.conten">
+      <template #reference>
+        <AppLink :to="url" :style="{ backgroundColor: buttonColor, width: $props.width + 'px' }"
+          class="theme-bg-color flex h-full flex-col hover:no-underline cursor-pointer mx-1 py-1">
+          <slot></slot>
+          <p v-if="archName" class="first-line-p">{{
+            archName }}</p>
+          <p v-if="isaInfo" class="second-line-p">{{
+            byteToGb(isaInfo.downloadSize) }}GB
+            ISO</p>
+        </AppLink>
+      </template>
+    </el-popover>
+  </div>
 </template>
 
 <style scoped>
-.button {
-  border: #7f9e7f;
+.first-line-p {
+  font-size: var(--download-button-p-fount-size1);
 }
 
-.button-p {
-  font-size: 10pt;
+.second-line-p {
+  font-size: var(--download-button-p-fount-size2);
+}
+
+p {
+  margin: auto 0;
+  text-align: center;
+  color: white;
 }
 </style>
