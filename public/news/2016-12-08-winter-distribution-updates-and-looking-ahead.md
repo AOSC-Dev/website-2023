@@ -16,7 +16,7 @@ You might have already noticed by looking at the [Downloads](/os-download) page 
 
 Also, GTK+ based desktop variants are now released with a brand new look, incorporating the elegance of the [Arc](https://github.com/horst3180/Arc-Theme) GTK+ theme, and the simplicity of the [Flat-Remix](https://github.com/daniruiz/Flat-Remix) icon theme. As seen in this screenshot of our new GNOME release below.
 
-![gnome-preview](/assets/i/de-preview/gnome/thumbs/4.png.jpg)
+![gnome-preview](/assets/news/de-preview/gnome/thumbs/4.png.jpg)
 
 --------------------------------------------
 

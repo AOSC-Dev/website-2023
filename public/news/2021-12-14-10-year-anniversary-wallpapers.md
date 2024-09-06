@@ -10,9 +10,9 @@ Happy birthday, AOSC! For the past few weeks, [@Megabits](https://megabits.xyz/)
 
 10 year is only a starting point. We will work along side you in the future to provide a stable and elegant Linux experience.
 
-[![Dark Wallpaper](//aosc.io/assets/i/gallery/thumbs/aosc10-dark.png.jpg)](//aosc.io/assets/i/gallery/aosc10-dark.png)
+[![Dark Wallpaper](//aosc.io/assets/news/gallery/thumbs/aosc10-dark.png.jpg)](//aosc.io/assets/news/gallery/aosc10-dark.png)
 
-[![Light Wallpaper](//aosc.io/assets/i/gallery/thumbs/aosc10-light.png.jpg)](//aosc.io/assets/i/gallery/aosc10-light.png)
+[![Light Wallpaper](//aosc.io/assets/news/gallery/thumbs/aosc10-light.png.jpg)](//aosc.io/assets/news/gallery/aosc10-light.png)
 
 ---
 

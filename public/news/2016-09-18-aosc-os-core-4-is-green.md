@@ -7,7 +7,7 @@ title: AOSC OS Core 4 is Green!
 ---
 
 
-![core4-banner](/assets/i/core4.jpg)
+![core4-banner](/assets/news/core4.jpg)
 
 And... Duang! It's here.
 
