@@ -18,6 +18,7 @@ const highBrightnessControllerStore = useHighBrightnessControllerStore();
 watch(() => highBrightnessControllerStore.obj[route.path], () => {
   switch (route.hash) {
     case '#features': highlightElement(features); break;
+    default: break;
   }
 }, {
   flush: 'post',
@@ -63,7 +64,8 @@ const docList = reactive([
     <category-second title="星霞 OS" />
     <div class="p-6">
       <p>
-        星霞 OS（英译：Afterglow）基于安同 OS 开发，通过精简特性、配置调优和软件精选等手段，致力于为各类老旧设备提供持续软件和技术更新，通过持续维护良好体验和性能让老旧设备焕发新生、让用户们“重拾旧爱”。
+        星霞 OS（英译：Afterglow）基于安同 OS 开发，通过精简特性、配置调优和软件精选等手段，
+        致力于为各类老旧设备提供持续软件和技术更新，通过持续维护良好体验和性能让老旧设备焕发新生、让用户们“重拾旧爱”。
       </p>
       <br />
       <div>
@@ -75,7 +77,8 @@ const docList = reactive([
     <category-second title="系统特性" id="features" />
     <div ref="features" class="p-6">
       <H2>因地制宜</H2>
-      <p>星霞 OS 支持已经年近三旬的设备，如搭载 486 处理器的 PC 机和 m68k 处理器麦金塔 (Macintosh) 电脑，也支持较新的设备，如来自 2010 年前后搭载的 Intel 凌动 (Atom) 上网本或
+      <p>星霞 OS 支持已经年近三旬的设备，
+        如搭载 486 处理器的 PC 机和 m68k 处理器麦金塔 (Macintosh) 电脑，也支持较新的设备，如来自 2010 年前后搭载的 Intel 凌动 (Atom) 上网本或
         PowerPC 处理器的 Mac。通过配置调优和特性分级等手段，星霞 OS 可确保各类老旧设备上良好的使用体验。</p>
       <H2>持续维护</H2>
       <p>让老旧设备继续发光发热的基本前提就是持续且完整的软件支持，星霞 OS 提供持续的特性更新和安全漏洞修复，让您放心地在各类场景继续使用老旧设备。</p>

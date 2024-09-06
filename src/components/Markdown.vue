@@ -1,5 +1,4 @@
 <script setup>
-
 /**
  * 显示markdown内容，功能未完成...
  */
@@ -27,11 +26,15 @@ const newsDate = ref('');
 
 <template>
   <div class="pl-[1px]">
-    <category-second :title="yamlDoc['title']" :right-text="newsDate" class="absolute w-[calc(59.5vw-1px)]" />
+    <category-second
+      :title="yamlDoc['title']"
+      :right-text="newsDate"
+      class="absolute w-[calc(59.5vw-1px)]"
+    />
     <v-md-preview :text="mdRes" class="pt-[50px]"></v-md-preview>
   </div>
 </template>
 
 <style lang="css" scoped>
-@import '/src/css/index.scss'
+@import "/src/css/index.scss";
 </style>

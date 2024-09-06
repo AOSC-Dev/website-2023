@@ -1,6 +1,6 @@
 <script setup>
 import { useRouter } from 'vue-router';
-import Home from './pages/home/Home.vue';
+import Home from './pages/home/HomePage.vue';
 import { useHighBrightnessControllerStore, useThemeStore } from './stores/miscellaneous';
 
 const highBrightnessControllerStore = useHighBrightnessControllerStore();

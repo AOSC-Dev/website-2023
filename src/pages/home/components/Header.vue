@@ -1,14 +1,13 @@
 <script setup name="Header">
-import { reactive, ref } from "vue";
-import { useThemeStore } from "../../../stores/miscellaneous";
+import { reactive } from 'vue';
+import { useThemeStore } from '../../../stores/miscellaneous';
 
-const themeStore = useThemeStore()
+const themeStore = useThemeStore();
 
 const languageList = reactive([
-  { name: "English", value: "en" },
-  { name: "简体中文", value: "cn" },
+  { name: 'English', value: 'en' },
+  { name: '简体中文', value: 'cn' },
 ]);
-
 </script>
 
 <template>
@@ -17,7 +16,8 @@ const languageList = reactive([
       <div class="grow"></div>
       <div class="content-container flex justify-end">
         <div
-          class="theme-bg-color-trends text-white flex justify-end py-[5px] whitespace-nowrap text-clip *:ml-[12px] *:no-underline pl-[50px] pr-[0.5rem]">
+          class="theme-bg-color-trends text-white flex justify-end py-[5px] whitespace-nowrap text-clip *:ml-[12px] *:no-underline pl-[50px] pr-[0.5rem]"
+        >
           <router-link to="/download">下载中心</router-link>
           <span>|</span>
           <a href="https://bbs.aosc.io/" target="_blank">社区论坛 </a>
@@ -49,7 +49,11 @@ const languageList = reactive([
     <div class="flex justify-center">
       <div class="content-container">
         <router-link to="/">
-          <img src="/assets/heading/portal-logo.zh-cn.svg" class="w-[12rem] pb-[18px] pl-[0.5rem]" alt="logo" />
+          <img
+            src="/assets/heading/portal-logo.zh-cn.svg"
+            class="w-[12rem] pb-[18px] pl-[0.5rem]"
+            alt="logo"
+          />
         </router-link>
       </div>
     </div>

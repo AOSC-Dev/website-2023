@@ -115,6 +115,8 @@ export const useThemeStore = defineStore('themeStore', {
     } if (month >= 10 && month <= 12) {
       return themeList.winterNight;
     }
+
+    return themeList.springNight;
   },
   actions: {
     set(solarTerms, time) {

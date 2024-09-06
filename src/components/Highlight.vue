@@ -34,14 +34,15 @@ function copy() {
 </script>
 
 <template>
-    <pre class="relative">
+  <pre class="relative">
     <code :class="`hljs ${props.lang}`" ref="codeRef">
     </code>
-    <v-icon class="text-primary absolute top-[2em] right-[1em] cursor-pointer" name="fa-copy" @click="copy" />
+    <v-icon
+      class="text-primary absolute top-[2em] right-[1em] cursor-pointer"
+      name="fa-copy"
+      @click="copy"
+    />
   </pre>
-
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

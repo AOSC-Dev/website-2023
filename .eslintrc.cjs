@@ -23,7 +23,9 @@ module.exports = {
     parser: '@typescript-eslint/parser',
   },
   plugins: ['vue'],
-  rules: {},
+  rules: {
+    'vue/multi-word-component-names': 'off',
+  },
   settings: {
     'import/resolver': {
       alias: {

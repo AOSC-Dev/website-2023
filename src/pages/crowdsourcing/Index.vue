@@ -1,5 +1,5 @@
 <script setup>
-import CategorySecond from "/src/components/CategorySecond.vue";
+import CategorySecond from '@/components/CategorySecond.vue';
 
 </script>
 

@@ -1,18 +1,20 @@
 <script setup>
-import { ref } from "vue";
-import LinkButton from "../../components/LinkButton.vue"
+import LinkButton from '../../components/LinkButton.vue';
 
-
-const navigationList = [{
-  text: 'QQ 表情包',
-  path: 'https://zb.vip.qq.com/hybrid/emoticonmall/detail?id=239191'
-}, {
-  text: 'Telegram 贴图包',
-  path: 'https://t.me/addstickers/AnAnTongTong'
-}, {
-  text: '贴图包素材',
-  path: 'https://repo.aosc.io/mascots/zhaxia-stickers-v1.zip'
-}]
+const navigationList = [
+  {
+    text: 'QQ 表情包',
+    path: 'https://zb.vip.qq.com/hybrid/emoticonmall/detail?id=239191',
+  },
+  {
+    text: 'Telegram 贴图包',
+    path: 'https://t.me/addstickers/AnAnTongTong',
+  },
+  {
+    text: '贴图包素材',
+    path: 'https://repo.aosc.io/mascots/zhaxia-stickers-v1.zip',
+  },
+];
 </script>
 
 <template>
@@ -23,23 +25,32 @@ const navigationList = [{
     <div class="flex flex-wrap *:w-1/2">
       <div>
         <category-second title="贴图包" class="border-r border-r-white" />
-        <div class="p-[2rem] flex justify-between border-r-[1px] border-r-solid border-r-secondary">
+        <div
+          class="p-[2rem] flex justify-between border-r-[1px] border-r-solid border-r-secondary"
+        >
           <div class="basis-1/2 mr-[1em]">
             <img src="/assets/mascot/qr.png" alt="二维码" />
 
-            <p class="text-[0.95em] xl:text-[1.3em] 2xl:text-[1.5em] text-center">
+            <p
+              class="text-[0.95em] xl:text-[1.3em] 2xl:text-[1.5em] text-center"
+            >
               扫码获取微信贴图包
             </p>
           </div>
           <div class="basis-1/2 ml-[1em] flex flex-col justify-between">
-            <LinkButton class="basis-1/4" v-for="item in navigationList" :link="item.path" :text="item.text" />
+            <LinkButton
+              class="basis-1/4"
+              v-for="item in navigationList"
+              :link="item.path"
+              :text="item.text"
+            />
           </div>
         </div>
       </div>
 
       <div>
         <category-second title="设定稿" />
-        <div class="p-[2em]  justify-between h-[calc(100%-2em)] flex">
+        <div class="p-[2em] justify-between h-[calc(100%-2em)] flex">
           <div class="my-auto">
             <p class="text-[0.8em] xl:text-[1.07em] 2xl:text-[1.2em]">
               本设定稿由钛山设计，使用 CC-BY-SA 4.0International
@@ -47,12 +58,22 @@ const navigationList = [{
             </p>
             <div class="flex flex-row">
               <div class="flex flex-col w-full py-[18px] mr-12">
-                <link-button class="h-full my-auto" text="设定稿" link="https://repo.aosc.io/mascots/mascots.zip" />
+                <link-button
+                  class="h-full my-auto"
+                  text="设定稿"
+                  link="https://repo.aosc.io/mascots/mascots.zip"
+                />
               </div>
               <ul class="text-[0.8em] xl:text-[1.07em] 2xl:text-[1.2em]">
-                <li ><a href="https://tysontan.com" class="text-link">https://tysontan.com</a></li>
-                <li >
-                  <a href="mailto:tysontan@tysontan.com" class=" text-link">tysontan@tysontan.com</a>
+                <li>
+                  <a href="https://tysontan.com" class="text-link"
+                    >https://tysontan.com</a
+                  >
+                </li>
+                <li>
+                  <a href="mailto:tysontan@tysontan.com" class="text-link"
+                    >tysontan@tysontan.com</a
+                  >
                 </li>
               </ul>
             </div>
@@ -129,7 +150,7 @@ li {
   margin-bottom: 15px;
 }
 
-.a-li{
-margin: 12px 0;
+.a-li {
+  margin: 12px 0;
 }
 </style>

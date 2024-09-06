@@ -1,6 +1,5 @@
 <script setup>
-
-const props = defineProps(["newsList"]);
+const props = defineProps(['newsList']);
 </script>
 
 <template>
@@ -10,7 +9,10 @@ const props = defineProps(["newsList"]);
     </div>
     <div v-else class="flex flex-col">
       <div v-for="item in newsList" :key="item.title" class="newslist-item">
-        <a :href="'/news/detail/' + item.Path" class="hover:bg-leftbar-bg flex cursor-pointer pl-6 h-[2rem] leading-8">
+        <a
+          :href="'/news/detail/' + item.Path"
+          class="hover:bg-leftbar-bg flex cursor-pointer pl-6 h-[2rem] leading-8"
+        >
           <span class="truncate flex-1">
             {{ item.Title }}
           </span>
@@ -23,9 +25,9 @@ const props = defineProps(["newsList"]);
 
 <style scoped>
 .newslist-item:nth-child(2n) {
-	background-color: #fefaf6;
+  background-color: #fefaf6;
 }
-.newslist-item:nth-child(2n+1) {
-	background-color: white;
+.newslist-item:nth-child(2n + 1) {
+  background-color: white;
 }
 </style>
