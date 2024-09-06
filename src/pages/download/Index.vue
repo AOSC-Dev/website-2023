@@ -140,6 +140,7 @@ const downloadButtonLength = (() => {
     ElMessage.warning("版本信息获取失败");
     console.log("获取异常: ", err);
   }
+  console.log(antong1List,antong2List)
   loading.value = false;
 })()
 
@@ -155,7 +156,7 @@ onUnmounted(() => {
   window.removeEventListener('resize', downloadButtonLength);
 })
 
-const livkitPPlacement = [
+const livekitPPlacement = [
   'top', 'left', 'bottom'
 ]
 
@@ -321,13 +322,6 @@ const getNewVersioArch = (arch, type) => {
   return list[0];
 }
 
-const downloadIso = (path) => {
-  window.open(`https://releases.aosc.io/${path}`);
-}
-
-const otherButtonClick = () => {
-  location.href = '#otherDownload'
-}
 </script>
 
 <template>
@@ -354,7 +348,7 @@ const otherButtonClick = () => {
             <div class="button-container-aoscos-multicolumn buttons-col mb-3 mt-1 flex justify-center"
               v-if="versionArch.length > 0">
               <DownloadButton v-for="item in antong1List" :popoverData="item.popoverData" :width=aoscOsButtonStyle.width
-                :key="item.title" @myClick="downloadIso(item.installer.path)" :archName="item.zhLabel"
+                :key="item.title" :url="`https://releases.aosc.io/${item.installer.path}`" :archName="item.zhLabel"
                 :isaInfo="item.installer" />
               <!-- <button class="text-white hover:opacity-85 cursor-pointer mx-1 text-[10pt] text-center bg-[#549c97]"
                 :style="{ width: aoscOsButtonStyle.width + 'px' }" onclick="location.href='#otherDownload'">
@@ -363,7 +357,7 @@ const otherButtonClick = () => {
               <DownloadButton buttonColor="#549c97" :width=aoscOsButtonStyle.width :popoverData="{
                 conten: '二级架构、Docker,及虚拟机镜像等其他下载',
                 placement: 'bottom'
-              }" @myClick="otherButtonClick" archName="其他下载" />
+              }" url="#otherDownload" archName="其他下载" />
             </div>
           </div>
         </div>
@@ -396,9 +390,9 @@ const otherButtonClick = () => {
         <div v-loading="loading" class="my-auto">
           <div class="button-container-aoscos buttons-col" v-if="versionArch.length > 0">
             <span v-for="(item, index) in antong1List" :key="item.title">
-              <DownloadButton :popoverData="{ ...item.popoverData, placement: livkitPPlacement[index] }"
+              <DownloadButton :popoverData="{ ...item.popoverData, placement: livekitPPlacement[index] }"
                 :secondLineFontSize=8 :width=200 :firstLineFontSize="10" :archName="item.zhLabel"
-                :isaInfo="item.livekit" />
+                :url="`https://releases.aosc.io/${item.livekit.path}`" :isaInfo="item.livekit" />
             </span>
           </div>
         </div>
