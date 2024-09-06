@@ -11,7 +11,7 @@ A long over due batch of updates is now available for the AMD64 architecture, wi
 
 --------
 
-![plasma-20180128](/assets/i/de-preview/kde/1.png)
+![plasma-20180128](/assets/news/de-preview/kde/1.png)
 
 Finally, some new looks!
 

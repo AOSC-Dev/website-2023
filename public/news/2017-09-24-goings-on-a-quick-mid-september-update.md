@@ -15,7 +15,7 @@ We have now finished preparing a semi-final set (well, final if we didn't find a
 
 --------
 
-![core5-banner](/assets/i/news/core5-banner.jpg)
+![core5-banner](/assets/news/news/core5-banner.jpg)
 
 --------
 

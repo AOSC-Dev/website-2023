@@ -38,7 +38,7 @@ Various MATE components have been updated and ported from Ubuntu MATE to further
 
 ----
 
-![mate-tweak](/assets/i/news/2018-spring-mate-tweak.png)
+![mate-tweak](/assets/news/news/2018-spring-mate-tweak.png)
 
 MATE Tweak, showing possible customisations with desktop layouts and extra panel features.
 
@@ -65,7 +65,7 @@ As mentioned in our last Wave's [announcement](https://aosc.io/news/AOSC-OS-End-
 
 ----
 
-![ibook-g4](/assets/i/news/2018-spring-ibook-g4.jpg)
+![ibook-g4](/assets/news/news/2018-spring-ibook-g4.jpg)
 
 Apple iBook G4, freshly updated to the Spring Wave.
 
@@ -82,7 +82,7 @@ We are looking to release new tarballs for all architectures in the coming month
 
 ----
 
-![n900](/assets/i/news/2018-spring-n900.jpg)
+![n900](/assets/news/news/2018-spring-n900.jpg)
 
 A sneak-peek at our new project device, Nokia N900, running on mainline Linux Kernel.
 

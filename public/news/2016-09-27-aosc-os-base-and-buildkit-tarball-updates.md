@@ -19,8 +19,8 @@ Some changes to the "GET AOSC OS" page were made as well:
 - Finally, we've got screenshot for Base and BuildKit.
 - "MIPS" has been renamed as "MIPS32" to avoid confusion.
 
-![aosc-base](/assets/i/de-preview/base/thumbs/1.png.jpg)
+![aosc-base](/assets/news/de-preview/base/thumbs/1.png.jpg)
 (Screenshot of AOSC OS Base)
 
-![aosc-buildkit](/assets/i/de-preview/buildkit/thumbs/1.png.jpg)
+![aosc-buildkit](/assets/news/de-preview/buildkit/thumbs/1.png.jpg)
 (Screenshot of AOSC OS BuildKit)

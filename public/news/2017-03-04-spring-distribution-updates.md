@@ -17,15 +17,15 @@ Another batch of tarballs are now available for AOSC OS, available to users of t
 
 Here below is the default look to the AOSC OS i3wm variant, powered by the i3 window manager, Conky, and i3blocks - a configuration based on Manjaro's i3 edition. This is our first i3wm distribution, so this release may still contain some inconsistency and shortcomings in design - tell us what you think!
 
-![i3wm-desktop](/assets/i/de-preview/i3wm/thumbs/1.png.jpg)
+![i3wm-desktop](/assets/news/de-preview/i3wm/thumbs/1.png.jpg)
 
 Budgie, the "flagship" desktop environment of the [Solus Project](https://solus-project.com/) - this is their own take on the GNOME desktop experience.
 
-![budgie-desktop](/assets/i/de-preview/budgie/thumbs/4.png.jpg)
+![budgie-desktop](/assets/news/de-preview/budgie/thumbs/4.png.jpg)
 
 Neofetch is now installed with every AOSC OS distribution to provide you with some basic system information - and a chance to show off your distro!
 
-![neofetch](/assets/i/de-preview/lxde/thumbs/7.png.jpg)
+![neofetch](/assets/news/de-preview/lxde/thumbs/7.png.jpg)
 
 ----------------------------
 

@@ -10,9 +10,9 @@ important: false
 
 十年，是一个新的开始。我们将始终伴您左右，为您提供稳定而优雅的 Linux 体验。
 
-[![暗色背景](//aosc.io/assets/i/gallery/thumbs/aosc10-dark.png.jpg)](//aosc.io/assets/i/gallery/aosc10-dark.png)
+[![暗色背景](//aosc.io/assets/news/gallery/thumbs/aosc10-dark.png.jpg)](//aosc.io/assets/news/gallery/aosc10-dark.png)
 
-[![亮色背景](//aosc.io/assets/i/gallery/thumbs/aosc10-light.png.jpg)](//aosc.io/assets/i/gallery/aosc10-light.png)
+[![亮色背景](//aosc.io/assets/news/gallery/thumbs/aosc10-light.png.jpg)](//aosc.io/assets/news/gallery/aosc10-light.png)
 
 ---
 

@@ -9,7 +9,7 @@ title: Cinnamon 3.4 Now Available!
 
 Just a quick notice that Cinnamon 3.4 is now available in our community repository (along with the new Slick Greeter)! Here's a screenshot...
 
-![cinnamon-3.4](/assets/i/news/cinnamon34.png)
+![cinnamon-3.4](/assets/news/news/cinnamon34.png)
 
 --------
 
