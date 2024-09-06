@@ -50,7 +50,6 @@ let observer = null
 onMounted(() => {
   observer = new ResizeObserver(() => {
     imgHeight.value = (img.value.clientWidth / 1.7455).toFixed(2) + 'px'
-    console.log(imgHeight.value)
   })
   observer.observe(img.value)
 })
