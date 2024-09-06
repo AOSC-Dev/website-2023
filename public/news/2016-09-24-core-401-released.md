@@ -7,7 +7,7 @@ title: Core 4.0.1 Released
 ---
 
 
-![Core4-Banner](/assets/i/core4.jpg)
+![Core4-Banner](/assets/news/core4.jpg)
 
 Core 4.0.1 is now available for all architectures supported by AOSC OS:
 

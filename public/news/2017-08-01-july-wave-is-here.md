@@ -11,7 +11,7 @@ Today marks the conclusion to our first AOSC OS monthly update cycle - yes, we a
 
 --------
 
-![tegra](/assets/i/news/2017-july-tegra-building.jpg)
+![tegra](/assets/news/news/2017-july-tegra-building.jpg)
 
 This NVIDIA Jetson TX1 development kit has handled most of the packaging work, computing resources on non-PC platform is still quite scarce in AOSC.
 
@@ -26,7 +26,7 @@ The first part could be seen with updates made to our two ARM ports, which inclu
 
 --------
 
-![krita-orange-pi](/assets/i/news/2017-july-calligra.jpg)
+![krita-orange-pi](/assets/news/news/2017-july-calligra.jpg)
 Krita running on an AArch64-capable board, Orange Pi PRIME - AOSC OS image is available in the [download page](https://aosc.io/os-download).
 
 --------
@@ -37,7 +37,7 @@ Working upon the Ciel will be ACID, which is a simple script running on our serv
 
 --------
 
-![acid-netdata](/assets/i/news/2017-july-acid-status.jpg)
+![acid-netdata](/assets/news/news/2017-july-acid-status.jpg)
 
 Lion Yang's laptop looking at a [netdata](https://my-netdata.io/) page of our buildbot (compiling host).
 

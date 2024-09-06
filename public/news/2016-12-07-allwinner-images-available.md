@@ -9,7 +9,7 @@ title: Allwinner images available!
 
 Our ARM/SunXi guru Icenowy Zheng has just released a big batch of system images for ARMv7-based Allwinner boards and tablets. The images are based on the "Base" variant of AOSC OS releases and they can now be obtained in the respective section in the [Download](/os-download) page.
 
-![icenowy-opi1](/assets/i/news/opi1.jpg)
+![icenowy-opi1](/assets/news/news/opi1.jpg)
 
 Icenowy Zheng's Orange Pi One runnning on mainline kernel, and of course, AOSC OS.
 

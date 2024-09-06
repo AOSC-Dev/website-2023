@@ -11,21 +11,21 @@ With a vote during AOSCC 2016, we have chosen the wallpaper design from Yitong H
 
 ### "Day"
 
-![day](/assets/i/day.jpg)
+![day](/assets/news/day.jpg)
 
 ### "Night"
 
-![night](/assets/i/night.jpg)
+![night](/assets/news/night.jpg)
 
 Yes, we got it, some people are just not a big fan of texts all around their desktop background, so a "plain" variant with **absolutely** no text on them:
 
 ### "Day", with no text
 
-![day-plain](/assets/i/day-plain.jpg)
+![day-plain](/assets/news/day-plain.jpg)
 
 ### "Night", with no text
 
-![night-plain](/assets/i/night-plain.jpg)
+![night-plain](/assets/news/night-plain.jpg)
 
 Dynamic wallpaper
 -----------------

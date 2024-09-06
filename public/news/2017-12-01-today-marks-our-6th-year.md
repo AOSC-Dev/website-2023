@@ -7,7 +7,7 @@ title: Today... Marks Our 6th Year!
 ---
 
 
-![banner](/assets/i/news/6th-banner.png)
+![banner](/assets/news/news/6th-banner.png)
 
 Once again it is December 1st, 6 years since the night when an idea sparked between two of my friends and I in a middle school dormitory - to make something of our own, something we could be proud of. It started as a "designed in China, and for China" Linux distribution project based on openSUSE: AnthonOS（安同 OS）. Six years since that night our project still stands, bearing the name of AOSC OS - a Linux distribution which targets general usage (your desktop, server, laptop, tablets, etc.), and a strong emphasis on multilingual support and community interaction.
 

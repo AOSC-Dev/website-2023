@@ -30,7 +30,7 @@ For each of their respective releases. There are much more to the new system rel
 
 Take this example of our MATE release, as you can see:
 
-![mate-desktop-1](/assets/i/de-preview/mate/thumbs/1.png.jpg)
+![mate-desktop-1](/assets/news/de-preview/mate/thumbs/1.png.jpg)
 
 It now comes with all the appearance customization mentioned above, in addition to bluetooth connectivity support - powered by Blueberry from the [Linux Mint Project](https://github.com/linuxmint/blueberry) - everything should function out of the box, so you can jump right into work and entertainment.
 
