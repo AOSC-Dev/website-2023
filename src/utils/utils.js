@@ -36,11 +36,12 @@ export const requestGetJson = (() => {
       promise[key] = axios({
         url,
         method: 'get',
-        params
+        params,
+        timeout: 10000,
       }).then(resolve => {
         return [resolve, null];
       }).catch(error => {
-        [null, error];
+        return [null, error];
       }).finally(() => {
         keys[key] = false;
       })
@@ -64,11 +65,13 @@ export const requestPostJson = (() => {
         url,
         method: 'post',
         data,
-        params
+        params,
+        timeout: 5000,
       }).then(resolve => {
-        return [resolve.data, null];
+        return [resolve, null];
       }).catch(error => {
-        [null, error];
+
+        return [null, error];
       }).finally(() => {
         keys[key] = false;
       })
