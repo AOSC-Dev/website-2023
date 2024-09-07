@@ -37,7 +37,7 @@ func main() {
 	// 需要读取的语言，暂时只读中文的
 	languageSet.Add("zh-cn")
 
-	var homeNews []NewsItem
+	// var homeNews []NewsItem
 
 	newsDir := "./news"
 	newsList, err := os.ReadDir(newsDir)
@@ -63,6 +63,11 @@ func main() {
 			languageNewsMap[language] = make(map[string][]NewsItem, 0)
 		}
 		newsMap := languageNewsMap[language]
+		// home类型是单独创建的
+		if newsMap["home"] == nil {
+			newsMap["home"] = []NewsItem{}
+		}
+
 		// 读取文件头信息
 		newsContent := gfile.GetContents(newsDir + "/" + newsFile)
 		categoryContent := newsContent[4:]
@@ -98,7 +103,8 @@ func main() {
 
 			newsMap[categoryStr] = append(newsMap[categoryStr], NewsItem{Title: categoryYaml["title"].(string), Path: newsFile, Important: categoryYaml["important"].(bool), Date: dateStr})
 			if v, _ := categoryYaml["home"]; v == true {
-				homeNews = append(homeNews, NewsItem{Title: categoryYaml["title"].(string), Path: newsFile, Important: categoryYaml["important"].(bool), Date: dateStr})
+				fmt.Println("添加到首页: " + newsFile)
+				newsMap["home"] = append(newsMap["home"], NewsItem{Title: categoryYaml["title"].(string), Path: newsFile, Important: categoryYaml["important"].(bool), Date: dateStr})
 			}
 		}
 	}
@@ -127,8 +133,8 @@ func main() {
 		}
 
 		// 写入在首页显示的
-		jsonByteArr, _ := json.Marshal(homeNews)
-		gfile.PutContents(categoriesPath+"home."+language+".json", string(jsonByteArr))
+		// jsonByteArr, _ := json.Marshal(homeNews)
+		// gfile.PutContents(categoriesPath+"home."+language+".json", string(jsonByteArr))
 	}
 
 }
