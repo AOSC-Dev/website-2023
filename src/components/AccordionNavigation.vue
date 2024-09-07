@@ -1,6 +1,5 @@
 <script setup>
 import AppLink from './AppLink.vue';
-import { defineProps } from 'vue';
 
 const props = defineProps({
     navigationList: {
