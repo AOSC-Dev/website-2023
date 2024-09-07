@@ -2,7 +2,7 @@
 import AppLink from './AppLink.vue';
 import CategorySecond from '../components/CategorySecond.vue'
 import highlightElement from '../utils/animation';
-import { ref, watch, defineProps } from 'vue';
+import { ref, watch } from 'vue';
 import { useHighBrightnessControllerStore } from '../stores/miscellaneous';
 import { useRoute } from 'vue-router';
 
