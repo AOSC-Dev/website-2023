@@ -95,6 +95,8 @@ func main() {
 		case string:
 			dateStr = dateInterface.(string)
 		}
+
+		// 将新闻放到对应分类中
 		for _, category := range categories {
 			categoryStr := category.(string)
 			if newsMap[categoryStr] == nil {
@@ -105,6 +107,7 @@ func main() {
 
 		}
 
+		// 如果是首页,放到首页的分类中
 		if v, _ := categoryYaml["home"]; v == true {
 			fmt.Println("添加到首页: " + newsFile)
 			newsMap["home"] = append(newsMap["home"], NewsItem{Title: categoryYaml["title"].(string), Path: newsFile, Important: categoryYaml["important"].(bool), Date: dateStr})
