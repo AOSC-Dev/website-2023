@@ -31,8 +31,6 @@ important: false
 [zhaxia]: https://www.mihuashi.com/profiles/571437
 [zstd]: https://github.com/facebook/zstd
 
-安记冰室・七月下
-===============
 
 <!-- 拿着糯米鸡的 -->
 
