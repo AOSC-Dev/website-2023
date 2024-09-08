@@ -85,27 +85,29 @@ func main() {
 
 		categories := categoryYaml["categories"].([]interface{})
 		// fmt.Println("新闻标题: " + categoryYaml["title"].(string))
+
+		dateInterface := categoryYaml["date"]
+		dateStr := ""
+		switch dateInterface.(type) {
+		case time.Time:
+			dateTime := dateInterface.(time.Time)
+			dateStr = dateTime.Format("2006-01-02")
+		case string:
+			dateStr = dateInterface.(string)
+		}
 		for _, category := range categories {
 			categoryStr := category.(string)
 			if newsMap[categoryStr] == nil {
 				newsMap[categoryStr] = []NewsItem{}
 			}
 
-			dateInterface := categoryYaml["date"]
-			dateStr := ""
-			switch dateInterface.(type) {
-			case time.Time:
-				dateTime := dateInterface.(time.Time)
-				dateStr = dateTime.Format("2006-01-02")
-			case string:
-				dateStr = dateInterface.(string)
-			}
-
 			newsMap[categoryStr] = append(newsMap[categoryStr], NewsItem{Title: categoryYaml["title"].(string), Path: newsFile, Important: categoryYaml["important"].(bool), Date: dateStr})
-			if v, _ := categoryYaml["home"]; v == true {
-				fmt.Println("添加到首页: " + newsFile)
-				newsMap["home"] = append(newsMap["home"], NewsItem{Title: categoryYaml["title"].(string), Path: newsFile, Important: categoryYaml["important"].(bool), Date: dateStr})
-			}
+
+		}
+
+		if v, _ := categoryYaml["home"]; v == true {
+			fmt.Println("添加到首页: " + newsFile)
+			newsMap["home"] = append(newsMap["home"], NewsItem{Title: categoryYaml["title"].(string), Path: newsFile, Important: categoryYaml["important"].(bool), Date: dateStr})
 		}
 	}
 
