@@ -82,7 +82,7 @@ onUnmounted(() => {
 
 <template>
   <div class="w-[62.5%] bg-content-main-bg p-0">
-    <a :style="{ '--homepage-img-height1': imgHeight }" ref="bgImg" href="/aoscos" class="bg-img-height1 w-full flex">
+    <a :style="{ '--homepage-img-height1': imgHeight }" ref="bgImg" href="/aosc-os" class="bg-img-height1 w-full flex">
       <!-- <div class="flex w-full" :class="'h-[' + imgHeight + 'px]'"></div> -->
       <el-image @load="onImgLoad()" class="w-full" src="/assets/banners/banner_main1.svg">
         <template #error>
