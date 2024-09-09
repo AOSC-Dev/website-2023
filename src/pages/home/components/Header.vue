@@ -23,7 +23,6 @@ const languageList = reactive([
           <a href="https://bbs.aosc.io/" target="_blank">社区论坛 </a>
           <span>|</span>
           <router-link to="/about">关于社区</router-link>
-          <button @click="themeStore.set('spring', 'night')">aa</button>
           <!-- 尚未实现 -->
           <!-- <span>|</span>
           <section class="flex flex-col">
