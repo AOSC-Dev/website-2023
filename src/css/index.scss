@@ -18,8 +18,12 @@ $bg-secondary: #3f6075;
   }
 }
 
-.theme-bg-color-trends {
+.theme-bg-color-secondary-static {
   background-color: var(--secondary)
+}
+
+.theme-bg-color-primary-static {
+  background-color: var(--primary)
 }
 
 .theme-bg-color {
@@ -29,6 +33,8 @@ $bg-secondary: #3f6075;
 .theme-bg-color:hover {
   background-color: var(--primary);
 }
+
+
 
 
 .vuepress-markdown-body {
