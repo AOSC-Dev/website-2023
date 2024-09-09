@@ -26,11 +26,19 @@ $bg-secondary: #3f6075;
   background-color: var(--primary)
 }
 
-.theme-bg-color {
+.theme-bg-color-primary-secondary {
+  background-color: var(--primary);
+}
+
+.theme-bg-color-primary-secondary:hover {
+  background-color: var(--secondary);
+}
+
+.theme-bg-color-secondary-primary{
   background-color: var(--secondary)
 }
 
-.theme-bg-color:hover {
+.theme-bg-color-secondary-primary:hover {
   background-color: var(--primary);
 }
 
