@@ -24,8 +24,8 @@ const route = useRoute();
 
 <template>
   <div class="pl-[1px]">
-    <category-second :title="categoryTitle" class="border-r-[1px] border-r-solid border-r-white" />
-    <news-category-list :newsList="categories || []" class="py-6 pr-10" />
+    <category-second :title="categoryTitle" class="border-r-solid border-r-white" />
+    <news-category-list :newsList="categories || []" />
   </div>
 </template>
 
