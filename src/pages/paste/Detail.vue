@@ -4,7 +4,7 @@ import { useRoute } from "vue-router";
 import useClipboard from "vue-clipboard3";
 import Highlight from "../../components/Highlight.vue";
 import { useThemeStore } from "../../stores/miscellaneous";
-import { requestGetJson } from "../../utils/utils";
+import axios from "axios";
 
 const themeStore = useThemeStore()
 
@@ -31,24 +31,29 @@ onMounted(() => {
 });
 
 const failReason = ref("");
-const getPaste = async () => {
+function getPaste() {
   const data = {
     id: id.value,
   };
   loading.value = true;
-  let [res, err] = await requestGetJson('/pasteApi/paste', data);
-  if (res) {
-    console.log(res)
-    if (res.code != 0) {
-      failReason.value = res.message;
-    } else {
-      details.value = res.data;
-    }
-  } else if (err) {
-    console.log("获取异常", err);
-    failReason.value = "获取粘贴板异常";
-  }
-  loading.value = false;
+  axios
+    .get("/pasteApi/paste", { params: data })
+    .then((res) => {
+      const results = res.data;
+      console.log(results);
+      if (results.code != 0) {
+        failReason.value = results.message;
+      } else {
+        details.value = results.data;
+      }
+    })
+    .catch((err) => {
+      console.log("获取异常", err);
+      failReason.value = "获取粘贴板异常";
+    })
+    .finally(() => {
+      loading.value = false;
+    });
 }
 
 function back() {
