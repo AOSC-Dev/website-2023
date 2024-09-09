@@ -42,7 +42,7 @@ const navigationList = [{
         <div class="p-[2em]  justify-between h-[calc(100%-2em)] flex">
           <div class="my-auto">
             <p class="text-[0.8em] xl:text-[1.07em] 2xl:text-[1.2em]">
-              本设定稿由钛山设计，使用 CC-BY-SA 4.0International
+              本设定稿由钛山设计，使用 CC-BY-SA 4.0 International
               许可证进行授权。钛山为自由及开源软件项目提供免费且许可开放的吉祥物设计服务。有意者敬请联系：
             </p>
             <div class="flex flex-row">
