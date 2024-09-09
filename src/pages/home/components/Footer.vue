@@ -20,7 +20,7 @@ const navigationList = [{
 
 <template>
   <div
-    class="theme-bg-color-trends text-white py-[2px] flex justify-center w-[100vw] footerbar">
+    class="theme-bg-color-primary-static text-white py-[2px] flex justify-center w-[100vw] footerbar">
     <div class="mx-auto">
       <span class="pl-[0.5rem]">&copy; 安同开源社区&nbsp;&nbsp;&nbsp;&nbsp;2011 - {{ nowYear }}</span>
       <span class="mx-[20px]">|</span>

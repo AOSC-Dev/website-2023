@@ -17,7 +17,7 @@ const languageList = reactive([
       <div class="grow"></div>
       <div class="content-container flex justify-end">
         <div
-          class="theme-bg-color-trends text-white flex justify-end py-[5px] whitespace-nowrap text-clip *:ml-[12px] *:no-underline pl-[50px] pr-[0.5rem]">
+          class="theme-bg-color-primary-static text-white flex justify-end py-[5px] whitespace-nowrap text-clip *:ml-[12px] *:no-underline pl-[50px] pr-[0.5rem]">
           <router-link to="/download">下载中心</router-link>
           <span>|</span>
           <a href="https://bbs.aosc.io/" target="_blank">社区论坛 </a>
@@ -43,7 +43,7 @@ const languageList = reactive([
           </section> -->
         </div>
       </div>
-      <div class="grow theme-bg-color-trends"></div>
+      <div class="grow theme-bg-color-primary-static"></div>
     </div>
     <div class="flex justify-center">
       <div class="content-container">
