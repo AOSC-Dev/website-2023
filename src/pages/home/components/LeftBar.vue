@@ -196,7 +196,7 @@ onMounted(() => {
   <div id="sticky-nav" ref="stickyNav">
     <Transition name="anim-button">
       <div id="sticky-top-button" ref="stickyTopButton"
-        class="theme-bg-color text-white h-[2rem] px-[10px] m-0 select-none flex justify-between items-center cursor-pointer border-b border-b-white"
+        class="theme-bg-color-primary-secondary text-white h-[2rem] px-[10px] m-0 select-none flex justify-between items-center cursor-pointer border-b border-b-white"
         onclick="window.scrollTo(0,0, 'smooth')" v-show="backToTopBtnShow">
         <v-icon name="bi-chevron-bar-up" />
         <span>返回页首</span>
@@ -204,7 +204,7 @@ onMounted(() => {
     </Transition>
     <div v-for="item1 in linkArr" :key="item1.title">
       <div
-        class="theme-bg-color text-white h-[2rem] px-[10px] py-[5px] m-0 select-none flex justify-between items-center cursor-pointer"
+        class="theme-bg-color-primary-secondary text-white h-[2rem] px-[10px] py-[5px] m-0 select-none flex justify-between items-center cursor-pointer"
         @click="toggle(item1)">
         <span>
           {{ item1.title }}
