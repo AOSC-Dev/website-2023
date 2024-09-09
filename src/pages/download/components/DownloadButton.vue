@@ -38,7 +38,7 @@ const byteToGb = (bytes) => {
     <el-popover :placement="popoverData.placement" :hide-after="0" trigger="hover" :content="popoverData.conten">
       <template #reference>
         <AppLink :to="url" :style="{ backgroundColor: buttonColor, width: $props.width + 'px' }"
-          class="theme-bg-color flex h-full flex-col hover:no-underline cursor-pointer mx-1 py-1">
+          class="theme-bg-color-secondary-primary flex h-full flex-col hover:no-underline cursor-pointer mx-1 py-1">
           <slot></slot>
           <p v-if="archName" class="first-line-p">{{
             archName }}</p>
