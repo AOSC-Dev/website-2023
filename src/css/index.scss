@@ -34,12 +34,20 @@ $bg-secondary: #3f6075;
   background-color: var(--secondary);
 }
 
-.theme-bg-color-secondary-primary{
+.theme-bg-color-secondary-primary {
   background-color: var(--secondary)
 }
 
 .theme-bg-color-secondary-primary:hover {
   background-color: var(--primary);
+}
+
+.theme-border-primary {
+  border-color: var(--primary);
+}
+
+.theme-text-primary {
+  color: var(--primary);
 }
 
 
