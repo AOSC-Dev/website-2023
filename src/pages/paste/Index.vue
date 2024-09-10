@@ -51,7 +51,7 @@ const submit = async () => {
   }
 
   const isSuccess = ref(true);
-  let [res, err] = await requestPostJson("/pasteApi/paste", formdhata)
+  let [res, err] = await requestPostJson("/pasteApi/paste", formdata)
   if (res) {
     const results = res.data;
     console.log("服务器结果: ", results);
