@@ -57,8 +57,9 @@ function closeBigImg() {
         </el-carousel-item>
       </el-carousel>
       <!-- 关闭按钮 -->
-      <div class="fixed top-[20px] right-[20px] p-[2px] rounded-full cursor-pointer z-[999]"
-        :style="{ backgroundColor: themeStore.primary }" @click="closeBigImg">
+      <div
+        class="fixed top-[20px] right-[20px] p-[2px] rounded-full cursor-pointer z-[999] theme-bg-color-primary-static"
+        @click="closeBigImg">
         <v-icon scale="1.5" fill="#fff" name="io-close-circle-outline" />
       </div>
     </div>
