@@ -97,24 +97,25 @@ function deleteFile(index) {
     <div class="py-[30px] px-[100px]">
       <div class="flex justify-between mb-[10px]">
         <div class="flex">
-          <select v-model="pasteFormData.language" filterable class="border-2 border-primary rounded-none mr-[20px]">
+          <select v-model="pasteFormData.language" filterable
+            class="border-2 theme-border-primary rounded-none mr-[20px]">
             <option v-for="item in languageList" :key="item" :value="item">
               {{ item }}
             </option>
           </select>
 
-          <input required type="date" class="border-2 border-primary rounded-none" v-model="selectDateTime"
+          <input required type="date" class="border-2 theme-border-primary rounded-none" v-model="selectDateTime"
             :min="minExpDate" />
         </div>
-        <button class="theme-bg-color-secondary-primary rounded-none px-[50px] py-[10px] text-white"
-          @click="submit">
+        <button class="theme-bg-color-secondary-primary rounded-none px-[50px] py-[10px] text-white" @click="submit">
           提交
         </button>
       </div>
-      <input type="text" class="border-2 border-primary rounded-none w-full mb-[10px] py-[10px]" placeholder="标题"
+
+      <input type="text" class="border-2 theme-border-primary rounded-none w-full mb-[10px] py-[10px]" placeholder="标题"
         v-model="pasteFormData.title" />
       <!-- 内容编辑器 -->
-      <vue-monaco-editor class="border-2 border-primary rounded-none" :language="pasteFormData.language"
+      <vue-monaco-editor class="border-2 theme-border-primary rounded-none" :language="pasteFormData.language"
         v-model:value="pasteFormData.content" :options="editorOptions" height="50vh" />
 
       <!-- 选择文件 -->
@@ -123,11 +124,12 @@ function deleteFile(index) {
       <input id="selectFile" type="file" class="hidden" multiple @change="fileChange" />
 
       <!-- 已选择的文件列表 -->
+
       <div v-for="(file, index) in selectedFileList" :key="file.name">
-        <span class="text-primary">
+        <span>
           {{ file.name }}
         </span>
-        <v-icon name="md-deleteforever-outlined" class="text-primary cursor-pointer" @click="deleteFile(index)" />
+        <v-icon name="md-deleteforever-outlined" class="cursor-pointer" @click="deleteFile(index)" />
       </div>
     </div>
   </div>

@@ -17,8 +17,7 @@ const themeStore = useThemeStore()
 
 <template>
   <a target="_blank" :href="link"
-    class="flex justify-center items-center text-white block hover:no-underline hover:opacity-85"
-    :style="{ backgroundColor: themeStore.primary }">{{ text
+    class="flex justify-center items-center text-white block hover:no-underline hover:opacity-85 theme-bg-color-primary-static">{{ text
     }}</a>
 </template>
 
