@@ -51,7 +51,7 @@ const submit = async () => {
   }
 
   const isSuccess = ref(true);
-  let [res, err] = await requestPostJson("/pasteApi/paste", formdata)
+  let [res, err] = await requestPostJson("/pasteApi/paste", formdhata)
   if (res) {
     const results = res.data;
     console.log("服务器结果: ", results);
@@ -106,7 +106,7 @@ function deleteFile(index) {
           <input required type="date" class="border-2 border-primary rounded-none" v-model="selectDateTime"
             :min="minExpDate" />
         </div>
-        <button :style="{ backgroundColor: themeStore.primary }" class="rounded-none px-[50px] py-[10px]text-white"
+        <button class="theme-bg-color-secondary-primary rounded-none px-[50px] py-[10px] text-white"
           @click="submit">
           提交
         </button>
@@ -118,8 +118,8 @@ function deleteFile(index) {
         v-model:value="pasteFormData.content" :options="editorOptions" height="50vh" />
 
       <!-- 选择文件 -->
-      <label for="selectFile" :style="{ backgroundColor: themeStore.primary }"
-        class="rounded-none w-full block text-center cursor-pointer py-[10px] mt-[10px]text-white">选择附件</label>
+      <label for="selectFile"
+        class="theme-bg-color-secondary-primary rounded-none w-full block text-center cursor-pointer py-[10px] mt-[10px] text-white">选择附件</label>
       <input id="selectFile" type="file" class="hidden" multiple @change="fileChange" />
 
       <!-- 已选择的文件列表 -->
