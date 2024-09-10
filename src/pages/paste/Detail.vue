@@ -70,21 +70,20 @@ function copyLink() {
     <div v-if="details != null">
       <category-second title="公共粘贴板" />
       <div class="p-[2em]">
+        <div v-for="item in details.fileList">
+          <img :src="getAttachUrl(item)" class="w-full" v-if="isImg(item)" />
+          <a v-else class="text-link" :href="getAttachUrl(item)" target="_blank">{{ item }}</a>
+        </div>
         <div class="flex justify-between">
           <div>
             <div>标题: {{ details.title }}</div>
             <div>过期时间: {{ details.expDate }}</div>
           </div>
-          <button :style="{ backgroundColor: themeStore.primary }" class="text-white px-[3em] py-[1em]"
-            @click="copyLink">
+          <button class="text-white px-[3em] theme-bg-color-primary-static py-[1em]" @click="copyLink">
             复制共享链接
           </button>
         </div>
         <highlight class="w-full my-[20px]" :code="details.content" :lang="details.language" />
-        <div v-for="item in details.fileList">
-          <img :src="getAttachUrl(item)" class="w-full" v-if="isImg(item)" />
-          <a v-else class="text-link" :href="getAttachUrl(item)" target="_blank">{{ item }}</a>
-        </div>
       </div>
     </div>
     <el-result v-if="failReason != ''" icon="warning" :title="failReason">
