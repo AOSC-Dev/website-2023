@@ -36,12 +36,9 @@ const submit = async () => {
   formdata.append("title", pasteFormData.value.title);
   formdata.append("content", pasteFormData.value.content);
   formdata.append("language", pasteFormData.value.language);
-  if (selectedFileList.value.length > 0) {
-    selectedFileList.value.forEach((v) => {
-      console.log(toRaw(v));
-      formdata.append("fileList", v);
-    });
-  }
+  selectedFileList.value.forEach((file) => {
+    formdata.append("fileList", toRaw(file.raw), file.name);
+  });
   if (pasteFormData.value.expDate != null) {
     formdata.append("expDate", pasteFormData.value.expDate);
   } else {
@@ -54,7 +51,6 @@ const submit = async () => {
   let [res, err] = await requestPostJson("/pasteApi/paste", formdata)
   if (res) {
     const results = res.data;
-    console.log("服务器结果: ", results);
     if (results.code == 0) {
       isSuccess.value = true;
       pasteRes.value = results.data.id;
@@ -80,15 +76,6 @@ const editorOptions = ref({
     enabled: false,
   },
 });
-
-function fileChange(event) {
-  for (let i = 0; i < event.target.files.length; i++) {
-    selectedFileList.value.push(event.target.files[i])
-  }
-}
-function deleteFile(index) {
-  selectedFileList.value.splice(index, 1)
-}
 </script>
 
 <template>
@@ -117,20 +104,15 @@ function deleteFile(index) {
       <!-- 内容编辑器 -->
       <vue-monaco-editor class="border-2 theme-border-primary rounded-none" :language="pasteFormData.language"
         v-model:value="pasteFormData.content" :options="editorOptions" height="50vh" />
-
-      <!-- 选择文件 -->
-      <label for="selectFile"
-        class="theme-bg-color-secondary-primary rounded-none w-full block text-center cursor-pointer py-[10px] mt-[10px] text-white">选择附件</label>
-      <input id="selectFile" type="file" class="hidden" multiple @change="fileChange" />
-
-      <!-- 已选择的文件列表 -->
-
-      <div v-for="(file, index) in selectedFileList" :key="file.name">
-        <span>
-          {{ file.name }}
-        </span>
-        <v-icon name="md-deleteforever-outlined" class="cursor-pointer" @click="deleteFile(index)" />
-      </div>
+      <!-- 文件选择器 -->
+      <el-upload class="upload-demo my-[10px]" :auto-upload="false" v-model:file-list="selectedFileList" drag multiple>
+        <div class="h-[26px] my-[-26px]">
+          <el-icon size="24"><upload-filled /></el-icon>
+          <div class="el-upload__text">
+            将文件拖拽到此处 <em>或点击上传</em>
+          </div>
+        </div>
+      </el-upload>
     </div>
   </div>
 </template>
