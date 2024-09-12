@@ -81,7 +81,7 @@ onUnmounted(() => {
     </a>
     <div class="flex flex-col flex-grow">
       <category-second title="系统方案" class="border-l border-solid border-content-main-bg" />
-      <article class="pt-[1em] pb-[0.5em] pl-[1em] border-l border-secondary">
+      <article class="pt-[1em] pb-[0.5em] pl-[1em] border-l theme-border-secondary">
         <div class="flex items-center pb-[15px]" v-for="item in distroList" :key="item.title">
           <div class="basis-[50px] mr-[20px] ml-[0.5em]">
             <img :src="item.img" alt="" class="w-full" />
@@ -101,7 +101,7 @@ onUnmounted(() => {
         </div>
       </article>
       <category-second title="常用链接" />
-      <div class="border-l border-secondary flex flex-col flex-grow">
+      <div class="border-l theme-border-secondary flex flex-col flex-grow">
         <a v-for="item in commonLinkList" :key="item.title" :href="item.url"
           class="hover:bg-leftbar-bg cursor-pointer flex flex-row justify-between items-center px-[1rem] h-[2rem] odd:bg-[#fefaf6] bg-white">
           <span>{{ item.title }}</span>

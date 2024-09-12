@@ -23,7 +23,7 @@ const navigationList = [{
     <div class="flex flex-wrap *:w-1/2">
       <div>
         <category-second title="贴图包" class="border-r border-r-white" />
-        <div class="p-[2rem] flex justify-between border-r-[1px] border-r-solid border-r-secondary">
+        <div class="p-[2rem] flex justify-between border-r-[1px] theme-border-secondary ">
           <div class="basis-1/2 mr-[1em]">
             <img src="/assets/mascot/qr.png" alt="二维码" />
 
