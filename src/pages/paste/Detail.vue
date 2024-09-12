@@ -1,19 +1,19 @@
 <script setup>
-import { onMounted, ref } from "vue";
+import { onBeforeMount, ref } from "vue";
 import { useRoute } from "vue-router";
 import useClipboard from "vue-clipboard3";
 import Highlight from "../../components/Highlight.vue";
 import { useThemeStore } from "../../stores/miscellaneous";
-import axios from "axios";
+import { requestGetJson } from "../../utils/utils";
 
 const themeStore = useThemeStore()
 
 const { toClipboard } = useClipboard();
-const id = ref("");
-const loading = ref(false);
+const loading = ref(true);
 const route = useRoute();
 const details = ref(null);
 const imgSuffixList = ["jpg", "jpeg", "png", "gif"];
+const failReason = ref("");
 
 function isImg(name) {
   const suffixIndex = name.lastIndexOf(".");
@@ -25,35 +25,24 @@ function getAttachUrl(name) {
   return `/pasteContent/${id.value}/files/${name}`;
 }
 
-onMounted(() => {
-  id.value = route.query.id;
-  getPaste(route.query.id);
-});
+onBeforeMount(() => {
+  getPaste()
+})
 
-const failReason = ref("");
-function getPaste() {
-  const data = {
-    id: id.value,
-  };
-  loading.value = true;
-  axios
-    .get("/pasteApi/paste", { params: data })
-    .then((res) => {
-      const results = res.data;
-      console.log(results);
-      if (results.code != 0) {
-        failReason.value = results.message;
-      } else {
-        details.value = results.data;
-      }
-    })
-    .catch((err) => {
-      console.log("获取异常", err);
-      failReason.value = "获取粘贴板异常";
-    })
-    .finally(() => {
-      loading.value = false;
-    });
+const getPaste = async () => {
+  let [res, err] = await requestGetJson('/pasteApi/paste', { id: route.query.id })
+  if (res) {
+    const results = res.data;
+    if (results.code != 0) {
+      failReason.value = results.message;
+    } else {
+      details.value = results.data;
+    }
+  } else {
+    console.log("获取异常", err);
+    failReason.value = "获取粘贴板异常（服务器内部错误）";
+  }
+  loading.value = false;
 }
 
 function back() {
