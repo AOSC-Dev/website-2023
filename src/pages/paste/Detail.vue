@@ -25,10 +25,6 @@ function getAttachUrl(name) {
   return `/pasteContent/${id.value}/files/${name}`;
 }
 
-onBeforeMount(() => {
-  getPaste()
-})
-
 const getPaste = async () => {
   let [res, err] = await requestGetJson('/pasteApi/paste', { id: route.query.id })
   if (res) {
@@ -44,6 +40,8 @@ const getPaste = async () => {
   }
   loading.value = false;
 }
+
+getPaste()
 
 function back() {
   failReason.value = "";
