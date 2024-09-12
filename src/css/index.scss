@@ -46,6 +46,10 @@ $bg-secondary: #3f6075;
   border-color: var(--primary);
 }
 
+.theme-border-secondary {
+  border-color: var(--secondary);
+}
+
 .theme-text-primary {
   color: var(--primary);
 }
