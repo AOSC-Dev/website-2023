@@ -52,7 +52,7 @@ const omaNavigationList = [{
   // }
 ]
 
-const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sh'
+const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh'
 
 const { toClipboard } = useClipboard();
 
@@ -425,7 +425,7 @@ const getNewVersioArch = (arch, type) => {
     <category-second class="highlight" title="实用工具" />
     <div id="oma-download" ref="omaDownload" class="oma-container w-[100%] flex flex-row py-[1rem]">
       <div class="pl-[2rem]">
-        <p class="text-[24pt] ">小熊猫 (oma)</p>
+        <p class="text-[24pt] ">小熊猫包管理 (oma)</p>
         <p class="text-[14pt] ">简明好用的 APT 软件包管理界面</p>
         <p class="mt-2">
           <AccordionNavigation :navigationList="omaNavigationList" linkClass="">·</AccordionNavigation>
