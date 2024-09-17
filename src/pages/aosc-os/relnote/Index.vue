@@ -68,7 +68,7 @@ import H2 from "/src/components/H2.vue";
         <ul class="list-disc">
           <li>修复彩色 emoji 字形无法正确显示的问题</li>
           <li>修复了 Bilibili 未正确识别 AV1 元数据，导致无法正确启用硬件解码的问题，可提高部分平台的观看体验</li>
-          <li>默认 Bash 配置中可执行文件搜索路径（`$PATH` 变量）在非登录会话中被错误覆盖的问题</li>
+          <li>默认 Bash 配置中可执行文件搜索路径（<code>$PATH</code> 变量）在非登录会话中被错误覆盖的问题</li>
         </ul>
       </div>
     </div>
