@@ -32,7 +32,7 @@ const navigationList = [{
   title: '系统特性',
   hash: '#features'
 }, {
-  title: '发行说明',
+  title: '发行注记',
   path: '/aosc-os/relnote'
 }, {
   title: '系统配置需求',

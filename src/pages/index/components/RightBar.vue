@@ -95,7 +95,7 @@ onUnmounted(() => {
             </div>
             <div class="text-[12pt]">
               <AppLink :to="{ path: item.downloadPath, hash: item.downloadHash }" class="text-link  mr-2">系统下载</AppLink>
-              <AppLink :to="{ path: item.relnotePath, hash: item.relnoteHash }">发行说明</AppLink>
+              <AppLink :to="{ path: item.relnotePath, hash: item.relnoteHash }">发行注记</AppLink>
             </div>
           </div>
         </div>

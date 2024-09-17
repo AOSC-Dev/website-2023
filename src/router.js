@@ -105,21 +105,21 @@ const router = createRouter({
       name: 'aoscosrelnote',
       component: AoscOsRelNote,
       meta: {
-        title: '发行说明（安同 OS）'
+        title: '发行注记（安同 OS）'
       }
     }, {
       path: '/aosc-os/livekit/relnote',
       name: 'livekitrelnote',
       component: LiveKitRelNote,
       meta: {
-        title: '发行说明 (LiveKit)'
+        title: '发行注记 (LiveKit)'
       }
     }, {
       path: '/aosc-os/wsl/relnote',
       name: 'WSLrelnote',
       component: WSLRelNote,
       meta: {
-        title: '发行说明 (AOSC OS on WSL)'
+        title: '发行注记 (AOSC OS on WSL)'
       }
     }, {
       path: '/afterglow',
@@ -147,7 +147,7 @@ const router = createRouter({
       name: 'afterglowrelnote',
       component: AfterglowRelNote,
       meta: {
-        title: '发行说明（星霞 OS）'
+        title: '发行注记（星霞 OS）'
       }
     }, {
       path: '/liblol',
