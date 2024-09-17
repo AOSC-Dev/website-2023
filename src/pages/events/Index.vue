@@ -5,7 +5,7 @@ import CategorySecond from "/src/components/CategorySecond.vue";
 const navigationList = [
   {
     title: 'AOSCC：社区年度聚会',
-    hash: '#support'
+    hash: '#aoscc'
   }, {
     title: '安同校园行',
     hash: '#campus'
