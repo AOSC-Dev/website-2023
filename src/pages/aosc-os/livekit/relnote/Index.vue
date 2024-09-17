@@ -6,7 +6,7 @@ import H2 from "/src/components/H2.vue";
 
 <template>
   <div class="pl-[1px]">
-    <category-second title="发行说明：2024 年 9 月" />
+    <category-second title="发行注记：2024 年 9 月" />
     <div class="p-6">
       <p>
         LiveKit 是用于维护安同 OS 和进行故障修复的可移动环境，本次发行包含的新特性与更改如下。

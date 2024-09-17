@@ -6,7 +6,7 @@ import H2 from "/src/components/H2.vue";
 
 <template>
   <div class="pl-[1px]">
-    <category-second title="发行说明：2024 年 9 月" />
+    <category-second title="发行注记：2024 年 9 月" />
     <div class="p-6">
       <p>
         AOSC OS on WSL 是用于 Windows Subsystem for Linux 环境的安同 OS 版本，本次更新包含如下更改。

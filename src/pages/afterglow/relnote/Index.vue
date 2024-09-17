@@ -6,7 +6,7 @@ import H2 from "/src/components/H2.vue";
 
 <template>
   <div class="pl-[1px]">
-    <category-second title="发行说明" />
+    <category-second title="发行注记" />
     <div class="p-6">
       <p>
         （敬请期待）

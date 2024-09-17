@@ -62,7 +62,7 @@ const copy = () => {
 }
 
 const aoscOsNavigationList = [{
-  title: '发行说明',
+  title: '发行注记',
   path: '/aosc-os/relnote'
 }, {
   title: '配置需求',
@@ -70,7 +70,7 @@ const aoscOsNavigationList = [{
 }]
 
 const liveKitNavigationList = [{
-  title: '发行说明',
+  title: '发行注记',
   path: '/aosc-os/livekit/relnote'
 }, {
   title: '配置需求',
@@ -78,7 +78,7 @@ const liveKitNavigationList = [{
 }]
 
 const wslNavigationList = [{
-  title: '发行说明',
+  title: '发行注记',
   path: '/aosc-os/wsl/relnote'
 }, {
   title: '配置需求',
