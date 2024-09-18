@@ -1,6 +1,6 @@
 <script setup>
 import CategorySecond from "/src/components/CategorySecond.vue";
-import H2 from "/src/components/H2.vue";
+import AppH2 from "/src/components/AppH2.vue";
 </script>
 
 <template>
@@ -31,18 +31,18 @@ import H2 from "/src/components/H2.vue";
     <category-second title="主要项目" />
     <div class="p-6">
       <p>我社主要项目围绕 AOSC OS 和 Afterglow 两大系统项目设计开发，亦有维护一系列周边应用和实用工具，以及各类开发维护用工具。</p><br />
-      <H2>安同 OS</H2>
+      <app-h2>安同 OS</app-h2>
       <p>安同 OS（英译：AOSC OS）是一款以“简明可靠”为设计及维护目标的 Linux 发行版。本系统主要面向有一定 Linux 使用经验的用户，针对个人桌面设备优化体验，致力于为用户提供开箱即用和简便可靠的工作环境。</p><br />
       <p>AOSC OS 支持众多处理器架构，包括 x86_64、AArch64、基于 MIPS 的龙芯 3 和龙架构（LoongArch 新世界），以及如 RISC-V 等新兴架构；在提供架构支持的同时，我们也有针对不同设备类型进行体验测试和调优，致力于在各种不同架构和类型的设备上实现开箱即用的体验。</p>
-      <H2>星霞 OS</H2>
+      <app-h2>星霞 OS</app-h2>
       <p>星霞 OS（英译：Afterglow）基于安同 OS 开发，通过精简特性、配置调优和软件精选等手段，致力于为各类老旧设备提供持续软件和技术更新，通过持续维护良好体验和性能让老旧设备焕发新生、让用户们“重拾旧爱”。</p>
-      <H2>小熊猫包管理</H2>
+      <app-h2>小熊猫包管理</app-h2>
       <p>小熊猫包管理 (oma，全称 oh-my-ailurus) 是一款注重操作简化、可靠性和使用效率的软件包管理前端。该包管理前端在操作和功能上兼容 APT，并基于这一基础引入历史查阅、操作撤销、文件检索等功能。</p>
-      <H2>libLoL</H2>
+      <app-h2>libLoL</app-h2>
       <p>libLoL (LoongArch on LoongArch) 旧世界 ABI 常用于为龙芯官方的 Loongnix 参考发行和统信 UOS 设计的商业软件，如腾讯 QQ、金山 WPS for Linux 和龙芯浏览器等。由于这些应用程序尚未移植到新世界 ABI 上，本运行时旨在为新世界发行版用户提供运行上述应用程序的便利。</p>
-      <H2>Ciel</H2>
+      <app-h2>Ciel</app-h2>
       <p>Ciel 是一款容器化软件包构建环境管理工具，用于标准化软件包构建环境，以保障特性均等和内容可靠。</p>
-      <H2>Autobuild4</H2>
+      <app-h2>Autobuild4</app-h2>
       <p>Autobuild4 是一款半自动软件包构建工具，可根据定义文件和脚本等自动下载、构建和生成软件包，亦支持利用构建和命令模板简化构建脚本编写流程。</p><br />
     </div>
 

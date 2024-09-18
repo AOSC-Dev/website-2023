@@ -1,7 +1,6 @@
 <script setup>
 import { reactive } from "vue";
 import CategorySecond from "/src/components/CategorySecond.vue";
-import H2 from "/src/components/H2.vue";
 </script>
 
 <template>
