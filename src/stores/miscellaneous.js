@@ -1,69 +1,74 @@
-import { defineStore } from "pinia";
+import { defineStore } from 'pinia';
 
-export const useHighBrightnessControllerStore = defineStore(
-  "highBrightnessController",
-  {
-    state: () => ({ obj: {} }),
-  }
-);
+export const useHighBrightnessControllerStore =
+  defineStore('highBrightnessController', {
+    state: () => ({ obj: {} })
+  });
 
 const themeList = {
   springDrak: {
-    primary: "#517a47",
-    secondary: "#779f68",
+    primary: '#517a47',
+    secondary: '#779f68'
   },
   springNight: {
-    primary: "#718c71",
-    secondary: "#7f9e7f",
+    primary: '#718c71',
+    secondary: '#7f9e7f'
   },
   summerDrak: {
-    primary: "#346c75",
-    secondary: "#6699a1",
+    primary: '#346c75',
+    secondary: '#6699a1'
   },
   summerNight: {
-    primary: "#577c8a",
-    secondary: "#6a8a96",
+    primary: '#577c8a',
+    secondary: '#6a8a96'
   },
   autumnDrak: {
-    primary: "#422c24",
-    secondary: "#5c4b41",
+    primary: '#422c24',
+    secondary: '#5c4b41'
   },
   autumnNight: {
-    primary: "#a59571",
-    secondary: "#b4a582",
+    primary: '#a59571',
+    secondary: '#b4a582'
   },
   winterDrak: {
-    primary: "#003049",
-    secondary: "#5c4b41",
+    primary: '#003049',
+    secondary: '#5c4b41'
   },
   winterNight: {
-    primary: "#757791",
-    secondary: "#80829b",
-  },
+    primary: '#757791',
+    secondary: '#80829b'
+  }
 };
 
-export const useThemeStore = defineStore("themeStore", {
-  state: () => {
-    const now = new Date();
-    const month = now.getMonth() + 1;
-    if (month >= 1 && month <= 3) {
-      return themeList["springNight"];
-    } else if (month >= 4 && month <= 6) {
-      return themeList["summerNight"];
-    } else if (month >= 7 && month <= 9) {
-      return themeList["autumnNight"];
-    } else if (month >= 10 && month <= 12) {
-      return themeList["winterNight"];
-    }
-  },
-  actions: {
-    set(solarTerms, time) {
-      const newColor =
-        themeList[solarTerms + time.charAt(0).toUpperCase() + time.slice(1)];
-      console.log(newColor);
-      this.primary = newColor.primary;
-      this.secondary = newColor.secondary;
+export const useThemeStore = defineStore(
+  'themeStore',
+  {
+    state: () => {
+      const now = new Date();
+      const month = now.getMonth() + 1;
+      if (month >= 1 && month <= 3) {
+        return themeList['springNight'];
+      } else if (month >= 4 && month <= 6) {
+        return themeList['summerNight'];
+      } else if (month >= 7 && month <= 9) {
+        return themeList['autumnNight'];
+      } else if (month >= 10 && month <= 12) {
+        return themeList['winterNight'];
+      }
     },
-  },
-  persist: true,
-});
+    actions: {
+      set(solarTerms, time) {
+        const newColor =
+          themeList[
+            solarTerms +
+              time.charAt(0).toUpperCase() +
+              time.slice(1)
+          ];
+        console.log(newColor);
+        this.primary = newColor.primary;
+        this.secondary = newColor.secondary;
+      }
+    },
+    persist: true
+  }
+);

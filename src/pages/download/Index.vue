@@ -14,7 +14,7 @@ import DownloadButton from "./components/DownloadButton.vue";
 import { onMounted, ref, watch, nextTick, onUnmounted, reactive, useTemplateRef } from "vue";
 import { ElMessage } from "element-plus";
 import { highlightElement } from "../../utils/animation.ts"
-import Highlight from "../../components/Highlight.vue";
+import AppHighlight from "../../components/AppHighlight.vue";
 import { useRouter, useRoute } from 'vue-router'
 import { requestGetJson } from "../../utils/utils.js"
 import { useHighBrightnessControllerStore } from "../../stores/miscellaneous"
@@ -462,7 +462,7 @@ const getNewVersioArch = (arch, type) => {
         <div class="text-[14pt]">
           我们为Docker用户提供了容器镜像，您可以通过如下命令抓取安同OS容器
         </div>
-        <highlight lang="bash" code="docker pull aosc/aosc-os" />
+        <app-highlight lang="bash" code="docker pull aosc/aosc-os" />
       </div>
     </div>
   </div>
