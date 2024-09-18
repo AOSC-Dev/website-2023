@@ -120,7 +120,7 @@ onUnmounted(() => {
       <category-second title="资讯要点" />
       <article v-if="isLoad">
         <news-category-list
-          :newsList="newsList" />
+          :news-list="newsList" />
         <div
           class="text-right px-[15px] py-[10px] font-[12pt] leading-6 text-link">
           <router-link to="/news">

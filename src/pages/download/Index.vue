@@ -13,16 +13,16 @@ import CategorySecond from "../../../src/components/CategorySecond.vue";
 import DownloadButton from "./components/DownloadButton.vue";
 import { onMounted, ref, watch, nextTick, onUnmounted, reactive, useTemplateRef } from "vue";
 import { ElMessage } from "element-plus";
-import { highlightElement } from "../../utils/animation.ts"
+import { highlightElement } from "../../utils/animation.ts";
 import AppHighlight from "../../components/AppHighlight.vue";
-import { useRouter, useRoute } from 'vue-router'
-import { requestGetJson } from "../../utils/utils.js"
-import { useHighBrightnessControllerStore } from "../../stores/miscellaneous"
+import { useRouter, useRoute } from 'vue-router';
+import { requestGetJson } from "../../utils/utils.js";
+import { useHighBrightnessControllerStore } from "../../stores/miscellaneous";
 import AccordionNavigation from "../../components/AccordionNavigation.vue";
 import useClipboard from "vue-clipboard3";
 
-const router = useRouter()
-const route = useRoute()
+const router = useRouter();
+const route = useRoute();
 
 let msStoreScript = document.createElement("script");
 msStoreScript.setAttribute(
@@ -33,11 +33,11 @@ document.head.appendChild(msStoreScript);
 
 const loading = ref(true);
 const versionArch = ref([]);
-const aoscOsRef = useTemplateRef('aoscOsDownload')
-const afterglowRef = useTemplateRef('afterglowDownload')
+const aoscOsRef = useTemplateRef('aoscOsDownload');
+const afterglowRef = useTemplateRef('afterglowDownload');
 const omaRef = useTemplateRef('omaDownload');
-const tier2Ref = useTemplateRef('tier2Downloads')
-const dockerRef = useTemplateRef('downloadDocker')
+const tier2Ref = useTemplateRef('tier2Downloads');
+const dockerRef = useTemplateRef('downloadDocker');
 
 const omaNavigationList = [{
   title: '详细介绍',
@@ -50,16 +50,16 @@ const omaNavigationList = [{
   //   title: '下载 Debian/Ubuntu 安装包',
   //   url: 'https://github.com/AOSC-Dev/oma/releases/tag/v1.8.2'
   // }
-]
+];
 
-const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh'
+const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
 
 const { toClipboard } = useClipboard();
 
 const copy = () => {
-  toClipboard(omaInstallScript)
-  ElMessage.success("复制成功")
-}
+  toClipboard(omaInstallScript);
+  ElMessage.success("复制成功");
+};
 
 const aoscOsNavigationList = [{
   title: '发行注记',
@@ -67,7 +67,7 @@ const aoscOsNavigationList = [{
 }, {
   title: '配置需求',
   path: '/aosc-os/requirements'
-}]
+}];
 
 const liveKitNavigationList = [{
   title: '发行注记',
@@ -75,7 +75,7 @@ const liveKitNavigationList = [{
 }, {
   title: '配置需求',
   path: '/aosc-os/livekit/requirements'
-}]
+}];
 
 const wslNavigationList = [{
   title: '发行注记',
@@ -83,51 +83,51 @@ const wslNavigationList = [{
 }, {
   title: '配置需求',
   path: '/aosc-os/wsl/requirements'
-}]
+}];
 
-const highBrightnessControllerStore = useHighBrightnessControllerStore()
+const highBrightnessControllerStore = useHighBrightnessControllerStore();
 
 const switchHash = () => {
   switch (route.hash) {
-    case "#oma-download": highlightElement(omaRef); break
-    case "#aosc-os-download": highlightElement(aoscOsRef); break
-    case "#afterglow-download": highlightElement(afterglowRef); break
-    case "#tier-2-downloads": highlightElement(tier2Ref); break
+    case "#oma-download": highlightElement(omaRef); break;
+    case "#aosc-os-download": highlightElement(aoscOsRef); break;
+    case "#afterglow-download": highlightElement(afterglowRef); break;
+    case "#tier-2-downloads": highlightElement(tier2Ref); break;
     case "#otherDownload": {
       highlightElement(dockerRef);
       highlightElement(tier2Ref);
       break;
     }
   }
-}
+};
 
 watch(() => highBrightnessControllerStore.obj[route.path], () => {
-  switchHash()
+  switchHash();
 }, {
   flush: 'post'
-})
+});
 
 const aoscOsButtonStyle = reactive({
   width: 224
-})
+});
 
 const downloadButtonLength = (() => {
-  let lessThen = true
+  let lessThen = true;
   return () => {
     if (lessThen) {
-      lessThen = false
+      lessThen = false;
       if (aoscOsRef.value.clientWidth <= 498) {
         if (aoscOsRef.value.clientWidth > 384) {
-          aoscOsButtonStyle.width = (224 - 0.55 * (498 - aoscOsRef.value.clientWidth)).toFixed(2)
+          aoscOsButtonStyle.width = (224 - 0.55 * (498 - aoscOsRef.value.clientWidth)).toFixed(2);
         }
         else
-          aoscOsButtonStyle.width = 157
+          aoscOsButtonStyle.width = 157;
       } else {
-        aoscOsButtonStyle.width = 224
+        aoscOsButtonStyle.width = 224;
       }
-      lessThen = true
+      lessThen = true;
     }
-  }
+  };
 })();
 
 (async () => {
@@ -152,25 +152,25 @@ const downloadButtonLength = (() => {
     ElMessage.warning("版本信息获取失败");
     console.log("获取异常: ", err);
   }
-  console.log(antong1List, antong2List)
+  console.log(antong1List, antong2List);
   loading.value = false;
-})()
+})();
 
 onMounted(async () => {
   nextTick(() => {
     window.addEventListener('resize', downloadButtonLength);
-    downloadButtonLength()
-  })
-  switchHash()
+    downloadButtonLength();
+  });
+  switchHash();
 });
 
 onUnmounted(() => {
   window.removeEventListener('resize', downloadButtonLength);
-})
+});
 
 const livekitPPlacement = [
   'top', 'left', 'bottom'
-]
+];
 
 const antong1List = ref([
   {
@@ -290,7 +290,7 @@ const xingxia2List = ref([
 ]);
 
 function getAntongDate() {
-  if (versionArch.value.length == 0) return '...'
+  if (versionArch.value.length == 0) return '...';
   let dateStr = getNewVersioArch("amd64", "installer").date;
   return `${dateStr.substring(0, 4)}/${dateStr.substring(
     4,
@@ -305,7 +305,7 @@ function isoVersionCmp(v1, v2) {
   let d1 = v1.date;
   let d2 = v2.date;
   let c;
-  let l = d1.length > d2.length ? d2.length : d1.length
+  let l = d1.length > d2.length ? d2.length : d1.length;
   for (c = 0; c < l; c++) {
     if (d1[c] > d2[c]) {
       return -1;
@@ -330,9 +330,9 @@ function isoVersionCmp(v1, v2) {
 const getNewVersioArch = (arch, type) => {
   let list = versionArch.value.filter((v) => v.arch == arch);
   list = list.filter((v) => v.path.includes(type));
-  list = list.sort(isoVersionCmp)
+  list = list.sort(isoVersionCmp);
   return list[0];
-}
+};
 
 </script>
 
@@ -340,7 +340,8 @@ const getNewVersioArch = (arch, type) => {
   <div class="pl-[1px] flex flex-col min-w-[1148px] ss">
     <category-second id="aosc-os-download" title="操作系统" />
     <div class="flex flex-row flex-1">
-      <div ref="aoscOsDownload"
+      <div
+ref="aoscOsDownload"
         class="aosc-os-container justify-between flex flex-row w-[50%] justify-around bg-white px-[1rem] flex-wrap">
         <div class="mt-[1.5rem] min-w-[96px] w-[30%] flex">
           <img src="/assets/download/aosc-os-web.svg" />
@@ -350,26 +351,29 @@ const getNewVersioArch = (arch, type) => {
           <p class="text-[14pt]">称心得意的桌面操作系统</p>
           <p class="width-[220px] text-[10pt]">
             {{ getAntongDate() }}·
-            <AccordionNavigation :navigationList="aoscOsNavigationList" linkClass="">·</AccordionNavigation>
+            <AccordionNavigation :navigation-list="aoscOsNavigationList" link-class="">·</AccordionNavigation>
           </p>
         </div>
         <div class="download-container mt-0 min-h-[129.97px] min-w-[150px]">
 
           <div v-loading="loading">
 
-            <div class="button-container-aoscos-multicolumn buttons-col mb-3 mt-1 flex justify-center"
+            <div
+class="button-container-aoscos-multicolumn buttons-col mb-3 mt-1 flex justify-center"
               v-if="versionArch.length > 0">
-              <DownloadButton v-for="item in antong1List" :popoverData="item.popoverData" :width=aoscOsButtonStyle.width
-                :key="item.title" :url="`https://releases.aosc.io/${item.installer.path}`" :archName="item.zhLabel"
-                :isaInfo="item.installer" />
+              <DownloadButton
+v-for="item in antong1List" :popover-data="item.popoverData" :width=aoscOsButtonStyle.width
+                :key="item.title" :url="`https://releases.aosc.io/${item.installer.path}`" :arch-name="item.zhLabel"
+                :isa-info="item.installer" />
               <!-- <button class="text-white hover:opacity-85 cursor-pointer mx-1 text-[10pt] text-center bg-[#549c97]"
                 :style="{ width: aoscOsButtonStyle.width + 'px' }" onclick="location.href='#otherDownload'">
                 <p>其他下载</p>
               </button> -->
-              <DownloadButton buttonColor="#549c97" :width=aoscOsButtonStyle.width :popoverData="{
+              <DownloadButton
+button-color="#549c97" :width=aoscOsButtonStyle.width :popover-data="{
                 conten: '二级架构、Docker,及虚拟机镜像等其他下载',
                 placement: 'bottom'
-              }" url="#otherDownload" archName="其他下载" />
+              }" url="#otherDownload" arch-name="其他下载" />
             </div>
           </div>
         </div>
@@ -393,7 +397,7 @@ const getNewVersioArch = (arch, type) => {
           <p id="livekit" class="text-[24pt]">LiveKit</p>
           <p id="livekit-alt" class="text-[14pt]">功能完备的安同 OS 救援环境</p>
           <p class="mt-8">
-            <AccordionNavigation :navigationList="liveKitNavigationList" linkClass="">·</AccordionNavigation>
+            <AccordionNavigation :navigation-list="liveKitNavigationList" link-class="">·</AccordionNavigation>
           </p>
         </div>
       </div>
@@ -401,9 +405,10 @@ const getNewVersioArch = (arch, type) => {
         <div v-loading="loading" class="my-auto">
           <div class="button-container-aoscos buttons-col" v-if="versionArch.length > 0">
             <span v-for="(item, index) in antong1List" :key="item.title">
-              <DownloadButton :popoverData="{ ...item.popoverData, placement: livekitPPlacement[index] }"
-                :secondLineFontSize=8 :width=200 :firstLineFontSize="10" :archName="item.zhLabel"
-                :url="`https://releases.aosc.io/${item.livekit.path}`" :isaInfo="item.livekit" />
+              <DownloadButton
+:popover-data="{ ...item.popoverData, placement: livekitPPlacement[index] }"
+                :second-line-font-size=8 :width=200 :first-line-font-size="10" :arch-name="item.zhLabel"
+                :url="`https://releases.aosc.io/${item.livekit.path}`" :isa-info="item.livekit" />
             </span>
           </div>
         </div>
@@ -414,7 +419,7 @@ const getNewVersioArch = (arch, type) => {
         <p id="wsl" class="text-[24pt]">WSL 环境</p>
         <p id="wsl-alt" class="text-[14pt]">适用于 WSL 的安同 OS</p>
         <p class="mt-8">
-          <AccordionNavigation :navigationList="wslNavigationList" linkClass="">·</AccordionNavigation>
+          <AccordionNavigation :navigation-list="wslNavigationList" link-class="">·</AccordionNavigation>
         </p>
       </div>
       <div id="wsl-buttons" class="flex mt-auto mr-9 ml-auto">
@@ -428,7 +433,7 @@ const getNewVersioArch = (arch, type) => {
         <p class="text-[24pt] ">小熊猫包管理 (oma)</p>
         <p class="text-[14pt] ">简明好用的 APT 软件包管理界面</p>
         <p class="mt-2">
-          <AccordionNavigation :navigationList="omaNavigationList" linkClass="">·</AccordionNavigation>
+          <AccordionNavigation :navigation-list="omaNavigationList" link-class="">·</AccordionNavigation>
         </p>
         <p class="mt-6">
         <div class="bg-black/60 py-2 pr-14">
@@ -449,11 +454,13 @@ const getNewVersioArch = (arch, type) => {
           <p class="text-[14pt]">我们还支持一众存量较少或软件支持尚未完善的架构</p>
           <p class="text-[14pt]">供各位玩家试用和评估</p>
         </div>
-        <div class=" flex flex-col pr-[2rem] gap-y-[0.5rem] ml-auto my-2" v-loading="loading"
+        <div
+class=" flex flex-col pr-[2rem] gap-y-[0.5rem] ml-auto my-2" v-loading="loading"
           v-if="versionArch.length > 0">
           <span v-for="item in antong2List" :key="item.title">
-            <DownloadButton :popoverData="item.popoverData" :secondLineFontSize=8 :width=200 :firstLineFontSize="10"
-              class="py-[0.25rem]" v-if="item.livekit !== undefined" :archName="item.zhLabel" :isaInfo="item.livekit" />
+            <DownloadButton
+:popover-data="item.popoverData" :second-line-font-size=8 :width=200 :first-line-font-size="10"
+              class="py-[0.25rem]" v-if="item.livekit !== undefined" :arch-name="item.zhLabel" :isa-info="item.livekit" />
           </span>
         </div>
       </div>

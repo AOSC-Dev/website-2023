@@ -92,7 +92,7 @@ const docList = reactive([
       ><br />
       <div>
         <AccordionNavigation
-          :navigationList="navigationList" />
+          :navigation-list="navigationList" />
       </div>
       <img
         src="/assets/liblol/liblol.svg"
@@ -100,7 +100,7 @@ const docList = reactive([
         alt="" />
     </div>
 
-    <Support :navigationList="docList" />
+    <Support :navigation-list="docList" />
   </div>
 </template>
 

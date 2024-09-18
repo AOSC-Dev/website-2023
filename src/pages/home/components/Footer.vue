@@ -33,9 +33,9 @@ const navigationList = [
       >
       <span class="mx-[20px]">|</span>
       <AccordionNavigation
-        :navigationList="navigationList"
-        spanClass="mx-[20px]"
-        linkClass="cursor-pointer" />
+        :navigation-list="navigationList"
+        span-class="mx-[20px]"
+        link-class="cursor-pointer" />
     </div>
   </div>
 </template>

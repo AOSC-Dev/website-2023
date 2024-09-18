@@ -40,11 +40,11 @@ const docList = reactive([
       ><br />
       <div>
         <AccordionNavigation
-          :navigationList="navigationList" />
+          :navigation-list="navigationList" />
       </div>
     </div>
 
-    <Support :navigationList="docList" />
+    <Support :navigation-list="docList" />
   </div>
 </template>
 

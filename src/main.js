@@ -66,7 +66,7 @@ app.use(VueMonacoEditorPlugin, {
     vs: 'https://cdn.jsdelivr.net/npm/monaco-editor@0.50.0/min/vs'
   }
 });
-app.component('v-icon', OhVueIcon);
+app.component('VIcon', OhVueIcon);
 app.component('AppLink', AppLink);
 app.use(router);
 app.use(pinia);

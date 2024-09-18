@@ -166,7 +166,7 @@ const aoscOsIsaList2 = ref();
         (LoongArch) 的处理器
       </p>
     </div>
-    <Support :navigationList="docList" />
+    <Support :navigation-list="docList" />
     <!-- <category-second title="实验性架构" id="tier3" />
     <div class="p-6">
       <p>

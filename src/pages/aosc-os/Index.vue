@@ -89,7 +89,7 @@ const docList = reactive([
       <br />
       <div>
         <AccordionNavigation
-          :navigationList="navigationList" />
+          :navigation-list="navigationList" />
       </div>
       <img
         src="/assets/aosc-os/aosc-os.zh-cn.jpg"
@@ -139,7 +139,7 @@ const docList = reactive([
         >我社一向以友好负责的支持工作著称。尊重用户的时间与精力是我们的工作准则，社区也是信息共享的强大后盾——在各社区聊天群组，我们时刻准备着为您排忧解难。</p
       >
     </div>
-    <Support :navigationList="docList" />
+    <Support :navigation-list="docList" />
   </div>
 </template>
 
