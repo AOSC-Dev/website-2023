@@ -105,7 +105,7 @@ const docList = reactive([
       </div>
       <div>
         <AccordionNavigation
-          :navigationList="navigationList" />
+          :navigation-list="navigationList" />
       </div>
       <img
         src="/assets/oma/oma.png"

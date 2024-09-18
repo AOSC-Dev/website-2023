@@ -24,44 +24,44 @@ const categories = ref({});
       <div>
         <category-second
           title="用户公告"
-          rightText="查看全部"
-          rightUrl="/news/list/advisories/用户公告"
-          :showRightChevron="true" />
+          right-text="查看全部"
+          right-url="/news/list/advisories/用户公告"
+          :show-right-chevron="true" />
         <news-category-list
-          :newsList="categories.advisories || []"
+          :news-list="categories.advisories || []"
           class="overflow-y-auto" />
       </div>
       <div class="">
         <category-second
           title="新闻资讯"
-          rightText="查看全部"
-          rightUrl="/news/list/news/新闻资讯"
+          right-text="查看全部"
+          right-url="/news/list/news/新闻资讯"
           class="border-l border-l-white"
-          :showRightChevron="true" />
+          :show-right-chevron="true" />
         <news-category-list
-          :newsList="categories.news || []"
+          :news-list="categories.news || []"
           class="overflow-y-auto border-l-[1px] theme-border-secondary" />
       </div>
       <div>
         <category-second
           title="社区期刊"
-          rightText="查看全部"
-          rightUrl="/news/list/journals/社区期刊"
-          :showRightChevron="true" />
+          right-text="查看全部"
+          right-url="/news/list/journals/社区期刊"
+          :show-right-chevron="true" />
         <news-category-list
-          :newsList="categories.journals || []"
+          :news-list="categories.journals || []"
           class="overflow-y-auto" />
       </div>
 
       <div class="">
         <category-second
           title="会议纪要"
-          rightText="查看全部"
-          rightUrl="/news/list/minutes/会议纪要"
-          :showRightChevron="true"
+          right-text="查看全部"
+          right-url="/news/list/minutes/会议纪要"
+          :show-right-chevron="true"
           class="border-l border-l-white" />
         <news-category-list
-          :newsList="categories.minutes || []"
+          :news-list="categories.minutes || []"
           class="overflow-y-auto border-l-[1px] theme-border-secondary" />
       </div>
       <!--  暂不实现 -->
