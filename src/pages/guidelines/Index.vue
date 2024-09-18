@@ -1,7 +1,6 @@
 <script setup>
 import CategorySecond from "/src/components/CategorySecond.vue";
-import H2 from "/src/components/H2.vue";
-
+import AppH2 from "../../components/AppH2.vue";
 </script>
 
 <template>
@@ -62,7 +61,7 @@ import H2 from "/src/components/H2.vue";
         <li>下述各条例最终解释权归社区群组管理员所有。</li>
       </ul>
       
-      <H2>适用于全社区</H2>
+      <app-h2>适用于全社区</app-h2>
       <p>
         下面的规定适用于所有安同开源社区 Telegram 频道/群组（及相应的 Discord 及 IRC 频道/群组）、
         <a href="/" class="text-link">AOSC 维基</a>、
@@ -72,7 +71,7 @@ import H2 from "/src/components/H2.vue";
       </p>
       <br />
 
-      <H2>硬性规定</H2>
+      <app-h2>硬性规定</app-h2>
       <ul class="list-decimal pl-10 pb-8">
         <li>禁止在
           <a href="https://t.me/joinchat/BMnG9zvfjCgZUTIAoycKkg" class="text-link">
@@ -107,7 +106,7 @@ import H2 from "/src/components/H2.vue";
         </ul>
       </ul>
 
-      <H2>软性规定</H2>
+      <app-h2>软性规定</app-h2>
       <ul class="list-decimal pl-10 pb-8">
         <li>尊重他人的言论自由。 </li>
         <ul class="list-disc pl-10">
@@ -138,7 +137,7 @@ import H2 from "/src/components/H2.vue";
         </ul>
       </ul>
 
-      <H2>主群组和工作群组</H2>
+      <app-h2>主群组和工作群组</app-h2>
       <p>主群组和工作群组</p>
       <ul class="list-decimal pl-10 pb-8">
         <li>AOSC バカ（AOSC OS 开发及打包工作组）</li>
@@ -146,7 +145,7 @@ import H2 from "/src/components/H2.vue";
       </ul>
       <p class="pb-2">在这些场合，在遵守上面提到的所有社区规则同时，还请留意以下几条附加规则：</p>
 
-      <H2>硬性规定</H2>
+      <app-h2>硬性规定</app-h2>
       <ul class="list-decimal pl-10 pb-8">
         <li>禁止使用 Telegram 贴纸或是 GIF 动图。 </li>
         <ul class="list-disc pl-10">
@@ -156,15 +155,15 @@ import H2 from "/src/components/H2.vue";
         </ul>
       </ul>
 
-      <H2>软性规定</H2>
+      <app-h2>软性规定</app-h2>
       <ul class="list-decimal pl-10 pb-8">
         <li>少灌水 —— 学会张弛有度，不要给点雨水就泛滥。 </li>
       </ul>
 
-      <H2>托腮群</H2>
+      <app-h2>托腮群</app-h2>
       <p>即“安同开源社区托腮群及招待点”。在该频道请注意遵守上面提到的所有社区规则及针对该群的特许话题。</p><br />
 
-      <H2>兴趣小组</H2>
+      <app-h2>兴趣小组</app-h2>
       <p>安同开源社区的兴趣小组包括：</p>
       <ul class="list-disc pl-10 pb-8">
         <li>AOSC Memes (AOSC 梗)</li>
