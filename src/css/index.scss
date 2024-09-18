@@ -9,7 +9,9 @@ $green: #a7ecad;
 $bg-secondary: #3f6075;
 
 :root {
-  --font-family-monospace: "Source Code Pro", "Menlo", "Consolas", "DejaVu Sans Mono", -apple-system, monospace;
+  --font-family-monospace: 'Source Code Pro',
+    'Menlo', 'Consolas', 'DejaVu Sans Mono',
+    -apple-system, monospace;
 }
 
 @media (min-width: 1280px) {
@@ -19,11 +21,11 @@ $bg-secondary: #3f6075;
 }
 
 .theme-bg-color-secondary-static {
-  background-color: var(--secondary)
+  background-color: var(--secondary);
 }
 
 .theme-bg-color-primary-static {
-  background-color: var(--primary)
+  background-color: var(--primary);
 }
 
 .theme-bg-color-primary-secondary {
@@ -35,7 +37,7 @@ $bg-secondary: #3f6075;
 }
 
 .theme-bg-color-secondary-primary {
-  background-color: var(--secondary)
+  background-color: var(--secondary);
 }
 
 .theme-bg-color-secondary-primary:hover {
@@ -53,9 +55,6 @@ $bg-secondary: #3f6075;
 .theme-text-primary {
   color: var(--primary);
 }
-
-
-
 
 .vuepress-markdown-body {
   background: none;
@@ -97,7 +96,12 @@ $bg-secondary: #3f6075;
     margin-top: 32px;
     margin-bottom: 32px;
     background-size: 4px 1px;
-    background-image: linear-gradient(to left, $blue 0%, $blue 25%, transparent 50%);
+    background-image: linear-gradient(
+      to left,
+      $blue 0%,
+      $blue 25%,
+      transparent 50%
+    );
   }
 
   code {
@@ -117,7 +121,7 @@ $bg-secondary: #3f6075;
     font-family: var(--font-family-monospace);
     line-height: 1.75;
 
-    >code {
+    > code {
       font-size: 12px;
       padding: 15px 12px;
       overflow-x: auto;
@@ -172,7 +176,8 @@ $bg-secondary: #3f6075;
     }
   }
 
-  blockquote {}
+  blockquote {
+  }
 
   ol,
   ul {
@@ -228,12 +233,10 @@ $bg-secondary: #3f6075;
         opacity: 0.3;
       }
 
-
       100% {
         opacity: 1;
       }
     }
-
 
     .router-highlight-animation {
       animation: router-highlight 3s;
@@ -294,7 +297,6 @@ table {
   border-collapse: collapse;
 
   tr {
-
     th,
     td {
       border: 1px solid $bg-secondary;
@@ -312,7 +314,7 @@ th {
   border-bottom: 1px dashed #eee;
 }
 
-tr:nth-child(2n+1) {
+tr:nth-child(2n + 1) {
   background-color: $bg-color;
   border-bottom: 1px solid #fff;
 }
@@ -328,11 +330,16 @@ td {
   border: 1px dashed #fff;
 }
 
-.vuepress-markdown-body div[class*="v-md-pre-wrapper-"] pre,
-.vuepress-markdown-body div[class*="v-md-pre-wrapper-"] pre[class*="v-md-prism-"] {
+.vuepress-markdown-body
+  div[class*='v-md-pre-wrapper-']
+  pre,
+.vuepress-markdown-body
+  div[class*='v-md-pre-wrapper-']
+  pre[class*='v-md-prism-'] {
   z-index: 0;
 }
 
-.vuepress-markdown-body div[class*="v-md-pre-wrapper-"]::before {
+.vuepress-markdown-body
+  div[class*='v-md-pre-wrapper-']::before {
   z-index: 0;
 }

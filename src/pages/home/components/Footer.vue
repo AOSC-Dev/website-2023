@@ -2,29 +2,40 @@
 import { useThemeStore } from '../../../stores/miscellaneous';
 import AccordionNavigation from '../../../components/AccordionNavigation.vue';
 
-const themeStore = useThemeStore()
+const themeStore = useThemeStore();
 
 const nowYear = new Date().getFullYear();
 
-const navigationList = [{
-  title: '网页源码',
-  url: 'https://github.com/AOSC-Dev/website-2023'
-}, {
-  title: '报告内容问题',
-  url: 'https://github.com/AOSC-Dev/website-2023/issues'
-}, {
-  title: '返回主页',
-  path: '/'
-}]
+const navigationList = [
+  {
+    title: '网页源码',
+    url: 'https://github.com/AOSC-Dev/website-2023'
+  },
+  {
+    title: '报告内容问题',
+    url: 'https://github.com/AOSC-Dev/website-2023/issues'
+  },
+  {
+    title: '返回主页',
+    path: '/'
+  }
+];
 </script>
 
 <template>
   <div
     class="theme-bg-color-secondary-static text-white py-[2px] flex justify-center w-[100vw] footerbar">
     <div class="mx-auto">
-      <span class="pl-[0.5rem]">&copy; 安同开源社区&nbsp;&nbsp;&nbsp;&nbsp;2011 - {{ nowYear }}</span>
+      <span class="pl-[0.5rem]"
+        >&copy;
+        安同开源社区&nbsp;&nbsp;&nbsp;&nbsp;2011 -
+        {{ nowYear }}</span
+      >
       <span class="mx-[20px]">|</span>
-      <AccordionNavigation :navigationList="navigationList" spanClass="mx-[20px]" linkClass="cursor-pointer" />
+      <AccordionNavigation
+        :navigationList="navigationList"
+        spanClass="mx-[20px]"
+        linkClass="cursor-pointer" />
     </div>
   </div>
 </template>

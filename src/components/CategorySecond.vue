@@ -1,9 +1,14 @@
 <script setup name="Header">
 import { useThemeStore } from '../stores/miscellaneous';
 
-const themeStore = useThemeStore()
+const themeStore = useThemeStore();
 
-const props = defineProps(["title", "rightText", "rightUrl", 'showRightChevron']);
+const props = defineProps([
+  'title',
+  'rightText',
+  'rightUrl',
+  'showRightChevron'
+]);
 </script>
 <template>
   <div
@@ -20,7 +25,9 @@ const props = defineProps(["title", "rightText", "rightUrl", 'showRightChevron']
         {{ props.rightText }}
       </router-link>
       <!-- 右箭头 -->
-      <v-icon v-if="showRightChevron" name="bi-chevron-double-right" />
+      <v-icon
+        v-if="showRightChevron"
+        name="bi-chevron-double-right" />
     </span>
   </div>
 </template>
