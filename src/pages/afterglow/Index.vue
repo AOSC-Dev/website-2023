@@ -82,7 +82,7 @@ const docList = reactive([
       <br />
       <div>
         <AccordionNavigation
-          :navigationList="navigationList" />
+          :navigation-list="navigationList" />
       </div>
       <img
         src="/assets/afterglow/afterglow.zh-cn.jpg"
@@ -117,7 +117,7 @@ const docList = reactive([
       >
     </div>
 
-    <Support :navigationList="docList" />
+    <Support :navigation-list="docList" />
   </div>
 </template>
 

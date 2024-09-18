@@ -162,7 +162,7 @@ const afterLowIsaList = ref();
         的处理器型号 </p
       ><br />
     </div>
-    <Support :navigationList="docList" />
+    <Support :navigation-list="docList" />
   </div>
 </template>
 

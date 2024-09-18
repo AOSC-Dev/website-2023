@@ -117,7 +117,7 @@ const aoscOsRequirementsList = ref();
     </div>
     <br />
 
-    <Support :navigationList="docList" />
+    <Support :navigation-list="docList" />
   </div>
 </template>
 

@@ -38,7 +38,7 @@ const navigationList = [
       ><br />
       <div>
         <AccordionNavigation
-          :navigationList="navigationList" />
+          :navigation-list="navigationList" />
       </div>
     </div>
 
