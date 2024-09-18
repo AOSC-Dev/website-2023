@@ -10,7 +10,7 @@ import {
 import highlightElement from '../../utils/animation';
 import AppLink from '../../components/AppLink.vue';
 import { useHighBrightnessControllerStore } from '../../stores/miscellaneous';
-import Support from '../../components/Support.vue';
+import AppSupport from '../../components/AppSupport.vue';
 import AccordionNavigation from '../../components/AccordionNavigation.vue';
 
 const route = useRoute();
@@ -139,7 +139,7 @@ const docList = reactive([
         >我社一向以友好负责的支持工作著称。尊重用户的时间与精力是我们的工作准则，社区也是信息共享的强大后盾——在各社区聊天群组，我们时刻准备着为您排忧解难。</p
       >
     </div>
-    <Support :navigation-list="docList" />
+    <AppSupport :navigation-list="docList" />
   </div>
 </template>
 

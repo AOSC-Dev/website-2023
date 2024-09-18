@@ -4,7 +4,7 @@ import CategorySecond from '/src/components/CategorySecond.vue';
 import AppLink from '../../../../components/AppLink.vue';
 import { useRoute } from 'vue-router';
 import highlightElement from '../../../../utils/animation';
-import Support from '../../../../components/Support.vue';
+import AppSupport from '../../../../components/AppSupport.vue';
 
 const docList = reactive([
   {
@@ -118,7 +118,7 @@ const aoscOsRequirementsList = ref();
     </div>
     <br />
 
-    <Support :navigation-list="docList" />
+    <AppSupport :navigation-list="docList" />
   </div>
 </template>
 
