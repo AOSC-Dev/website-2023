@@ -1,10 +1,10 @@
 <script setup>
 import { reactive, ref, onMounted } from 'vue';
 import CategorySecond from '/src/components/CategorySecond.vue';
-import AppLink from '../../../../components/AppLink.vue';
+import AppLink from '../../../components/AppLink.vue';
 import { useRoute } from 'vue-router';
-import highlightElement from '../../../../utils/animation';
-import Support from '../../../../components/Support.vue';
+import highlightElement from '../../../utils/animation';
+import AppSupport from '../../../components/AppSupport.vue';
 
 const docList = reactive([
   {
@@ -34,14 +34,12 @@ const aoscOsRequirementsList = ref();
 <template>
   <div class="pl-[1px]">
     <category-second
-      title="AOSC OS on WSL 系统配置需求表"
+      title="安同 OS 系统配置需求表"
       id="aoscOsRequirementsTitle" />
     <div class="p-6">
       <p>
-        LiveKit 是用于维护安同 OS
-        和进行故障修复的可移动环境。其系统需求与安同
-        OS
-        类似，但由于该环境包含系统维护和安装等功能，且带有图形界面，因此对设备处理器、显卡、存储和互联网连接等均有一定的需求。根据我们的测试，我们总结出了如下以使用体验良好为基本基准的系统配置需求表。
+        安同 OS
+        是一款面向桌面的、功能较为完整的操作系统，预装软件和基础管理特性等对设备处理器、显卡、存储和互联网连接等均有一定的需求。根据我们的测试，我们总结出了如下以使用体验良好为基本基准的系统配置需求表。
       </p>
       <table
         class="mt-6"
@@ -63,15 +61,15 @@ const aoscOsRequirementsList = ref();
           <td>至少 2GiB</td>
         </tr>
         <tr>
-          <td>显示</td>
+          <td>显卡</td>
           <td
-            >支持输出 1024x768
-            分辨率（图形模式），或基础帧缓冲支持（命令行模式）</td
+            >支持 OpenGL 2.1 / OpenGL ES 3.1
+            或以上版本的显卡</td
           >
         </tr>
         <tr>
           <td>存储</td>
-          <td>至少 4GiB 的可移动介质</td>
+          <td>至少 64GiB</td>
         </tr>
         <tr>
           <td>网络连接</td>
@@ -97,28 +95,29 @@ const aoscOsRequirementsList = ref();
         </li>
         <li
           >浏览网页时，系统内存和处理器占用将显著提升：如需大量浏览网页和观看高清流媒体内容，推荐在搭配至少
-          4 个处理器核心及 4GiB 内存的设备上使用
-          LiveKit</li
+          4 个处理器核心及 4GiB
+          内存的设备上使用安同 OS</li
         >
         <li
-          >如显示器分辨率低于
-          1024x768，将无法正常使用 LiveKit
-          的图形模式</li
+          >一般来说，4K 分辨率的屏幕需要 2GiB
+          显存的显卡才能流畅使用安同 OS
+          桌面界面</li
         >
         <li
-          >如设备不支持帧缓冲（一般通过 EFI 和
-          VESA VBIOS
-          等形式提供），则命令行模式无法使用非拉丁语言</li
+          >关于存储需求的建议是基于系统安装后还有足够空间进行日常工作和系统更新设定的；如果您的设备内存较大，安装程序创建的默认交换空间（虚拟内存文件）尺寸也会随之变大，因此您在分区时也要进行相关的考虑</li
         >
         <li
-          >LiveKit 可通过互联网安装安同
-          OS，如有此需要，请确保互联网连接畅通</li
+          >如有可能，建议使用固态硬盘作为系统主存储：固态硬盘在随机读写性能上的优势将显著提升系统响应、软件安装和多任务场景下的使用体验</li
+        >
+        <li
+          >安同 OS
+          通过互联网获取更新，请确保互联网连接畅通以便及时获得系统更新</li
         >
       </ul>
     </div>
     <br />
 
-    <Support :navigation-list="docList" />
+    <AppSupport :navigation-list="docList" />
   </div>
 </template>
 
