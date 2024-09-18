@@ -3,40 +3,40 @@ import {
   createWebHistory
 } from 'vue-router';
 import { setTitle } from './utils/utils.js';
-import Index from './pages/index/Index.vue';
-import About from './pages/about/Index.vue';
-import Download from './pages/download/Index.vue';
-import AoscOs from './pages/aosc-os/Index.vue';
-import AoscOsSysReq from './pages/aosc-os/requirements/Index.vue';
-import AoscOsIsaMatrix from './pages/aosc-os/isa/Index.vue';
-import AoscOsRelNote from './pages/aosc-os/relnote/Index.vue';
-import Afterglow from './pages/afterglow/Index.vue';
-import AfterglowSysReq from './pages/afterglow/requirements/Index.vue';
-import AfterglowIsaMatrix from './pages/afterglow/isa/Index.vue';
-import AfterglowRelNote from './pages/afterglow/relnote/Index.vue';
-import libLoL from './pages/liblol/Index.vue';
-import Oma from './pages/oma/Index.vue';
-import L10n from './pages/l10n/Index.vue';
-import Contact from './pages/contact/Index.vue';
-import Gallery from './pages/gallery/Index.vue';
-import Guidelines from './pages/guidelines/Index.vue';
-import Mascot from './pages/mascot/Index.vue';
-import Sponsors from './pages/sponsors/Index.vue';
-import Crowdsourcing from './pages/crowdsourcing/Index.vue';
-import News from './pages/news/Index.vue';
-import NewsList from './pages/news/List.vue';
-import NewsDetail from './pages/news/Detail.vue';
-import Paste from './pages/paste/Index.vue';
-import PasteDetail from './pages/paste/Detail.vue';
-import MdView from './pages/mdView/Index.vue';
+import AppIndex from './pages/index/AppIndex.vue';
+import AboutIndex from './pages/about/AboutIndex.vue';
+import DownloadIndex from './pages/download/DownloadIndex.vue';
+import AoscIndex from './pages/aosc-os/AoscIndex.vue';
+import AoscRequirements from './pages/aosc-os/requirements/AoscRequirements.vue';
+import AoscIsa from './pages/aosc-os/isa/AoscIsa.vue';
+import AoscRelnote from './pages/aosc-os/relnote/AoscRelnote.vue';
+import AftergLowIndex from './pages/afterglow/AftergLowIndex.vue';
+import AftergLowRequirements from './pages/afterglow/requirements/AftergLowRequirements.vue';
+import AftergLowIsa from './pages/afterglow/isa/AftergLowIsa.vue';
+import AfterglowRelnote from './pages/afterglow/relnote/AfterglowRelnote.vue';
+import LiblolIndex from './pages/liblol/LiblolIndex.vue';
+import OmaIndex from './pages/oma/OmaIndex.vue';
+import I10nIndex from './pages/l10n/I10nIndex.vue';
+import ContactIndex from './pages/contact/ContactIndex.vue';
+import GalleryIndex from './pages/gallery/GalleryIndex.vue';
+import GuidelinesIndex from './pages/guidelines/GuidelinesIndex.vue';
+import MascotIndex from './pages/mascot/MascotIndex.vue';
+import SponsorsIndex from './pages/sponsors/SponsorsIndex.vue';
+import CrowdsourcingIndex from './pages/crowdsourcing/CrowdsourcingIndex.vue';
+import NewsIndex from './pages/news/NewsIndex.vue';
+import NewsList from './pages/news/NewsList.vue';
+import NewsDetail from './pages/news/NewsDetail.vue';
+import PasteIndex from './pages/paste/PasteIndex.vue';
+import PasteDetail from './pages/paste/PasteDetail.vue';
+import MdView from './pages/mdView/MdView.vue';
 import PageNotFound from './components/PageNotFound.vue';
-import Support from './components/Support.vue';
-import Internship from './pages/internship/Index.vue';
-import Events from './pages/events/Index.vue';
-import LiveKitRelNote from './pages/aosc-os/livekit/relnote/Index.vue';
-import WSLRelNote from './pages/aosc-os/wsl/relnote/Index.vue';
-import LiveKitSysReq from './pages/aosc-os/livekit/requirements/Index.vue';
-import WSLSysReq from './pages/aosc-os/wsl/requirements/Index.vue';
+import AppSupport from './components/AppSupport.vue';
+import InternshipIndex from './pages/internship/InternshipIndex.vue';
+import EventsIndex from './pages/events/EventsIndex.vue';
+import AoscLivekitRelnote from './pages/aosc-os/livekit/relnote/AoscLivekitRelnote.vue';
+import AoscWslRelnote from './pages/aosc-os/wsl/relnote/AoscWslRelnote.vue';
+import AoscLivekitRequirements from './pages/aosc-os/livekit/requirements/AoscLivekitRequirements.vue';
+import AoscWslRequirements from './pages/aosc-os/wsl/requirements/AoscWslRequirements.vue';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -44,7 +44,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'index',
-      component: Index,
+      component: AppIndex,
       meta: {
         title: '社区门户'
       }
@@ -52,7 +52,7 @@ const router = createRouter({
     {
       path: '/about',
       name: 'about',
-      component: About,
+      component: AboutIndex,
       meta: {
         title: '关于社区'
       }
@@ -60,7 +60,7 @@ const router = createRouter({
     {
       path: '/download',
       name: 'download',
-      component: Download,
+      component: DownloadIndex,
       meta: {
         title: '下载中心'
       }
@@ -68,7 +68,7 @@ const router = createRouter({
     {
       path: '/aosc-os',
       name: 'aoscos',
-      component: AoscOs,
+      component: AoscIndex,
       meta: {
         title: '安同 OS'
       },
@@ -76,7 +76,7 @@ const router = createRouter({
         {
           path: '',
           name: 'aosc-os-support',
-          components: { support: Support },
+          components: { support: AppSupport },
           props: true
         }
       ]
@@ -84,7 +84,7 @@ const router = createRouter({
     {
       path: '/aosc-os/requirements',
       name: 'aoscossysreq',
-      component: AoscOsSysReq,
+      component: AoscRequirements,
       meta: {
         title: '系统配置需求表（安同 OS）'
       }
@@ -92,7 +92,7 @@ const router = createRouter({
     {
       path: '/aosc-os/livekit/requirements',
       name: 'livekitsysreq',
-      component: LiveKitSysReq,
+      component: AoscLivekitRequirements,
       meta: {
         title: '系统配置需求表 (LiveKit)'
       }
@@ -100,7 +100,7 @@ const router = createRouter({
     {
       path: '/aosc-os/wsl/requirements',
       name: 'wslsysreq',
-      component: WSLSysReq,
+      component: AoscWslRequirements,
       meta: {
         title: '系统配置需求表 (AOSC OS on WSL)'
       }
@@ -108,7 +108,7 @@ const router = createRouter({
     {
       path: '/aosc-os/isa',
       name: 'aoscosisamatrix',
-      component: AoscOsIsaMatrix,
+      component: AoscIsa,
       meta: {
         title: '架构支持规格表（安同 OS）'
       }
@@ -116,7 +116,7 @@ const router = createRouter({
     {
       path: '/aosc-os/relnote',
       name: 'aoscosrelnote',
-      component: AoscOsRelNote,
+      component: AoscRelnote,
       meta: {
         title: '发行注记（安同 OS）'
       }
@@ -124,7 +124,7 @@ const router = createRouter({
     {
       path: '/aosc-os/livekit/relnote',
       name: 'livekitrelnote',
-      component: LiveKitRelNote,
+      component: AoscLivekitRelnote,
       meta: {
         title: '发行注记 (LiveKit)'
       }
@@ -132,7 +132,7 @@ const router = createRouter({
     {
       path: '/aosc-os/wsl/relnote',
       name: 'WSLrelnote',
-      component: WSLRelNote,
+      component: AoscWslRelnote,
       meta: {
         title: '发行注记 (AOSC OS on WSL)'
       }
@@ -140,7 +140,7 @@ const router = createRouter({
     {
       path: '/afterglow',
       name: 'afterglow',
-      component: Afterglow,
+      component: AftergLowIndex,
       meta: {
         title: '星霞 OS'
       }
@@ -148,7 +148,7 @@ const router = createRouter({
     {
       path: '/afterglow/requirements',
       name: 'afterglowsysreq',
-      component: AfterglowSysReq,
+      component: AftergLowRequirements,
       meta: {
         title: '系统配置需求表（星霞 OS）'
       }
@@ -156,7 +156,7 @@ const router = createRouter({
     {
       path: '/afterglow/isa',
       name: 'afterglowisamatrix',
-      component: AfterglowIsaMatrix,
+      component: AftergLowIsa,
       meta: {
         title: '架构支持规格表（星霞 OS）'
       }
@@ -164,7 +164,7 @@ const router = createRouter({
     {
       path: '/afterglow/relnote',
       name: 'afterglowrelnote',
-      component: AfterglowRelNote,
+      component: AfterglowRelnote,
       meta: {
         title: '发行注记（星霞 OS）'
       }
@@ -172,7 +172,7 @@ const router = createRouter({
     {
       path: '/liblol',
       name: 'liblol',
-      component: libLoL,
+      component: LiblolIndex,
       meta: {
         title: 'libLoL 兼容层'
       }
@@ -180,7 +180,7 @@ const router = createRouter({
     {
       path: '/oma',
       name: 'oma',
-      component: Oma,
+      component: OmaIndex,
       meta: {
         title: '小熊猫包管理'
       }
@@ -188,7 +188,7 @@ const router = createRouter({
     {
       path: '/l10n',
       name: 'l10n',
-      component: L10n,
+      component: I10nIndex,
       meta: {
         title: '软件本地化'
       }
@@ -196,7 +196,7 @@ const router = createRouter({
     {
       path: '/contact',
       name: 'contact',
-      component: Contact,
+      component: ContactIndex,
       meta: {
         title: '联系方式'
       }
@@ -204,7 +204,7 @@ const router = createRouter({
     {
       path: '/gallery',
       name: 'gallery',
-      component: Gallery,
+      component: GalleryIndex,
       meta: {
         title: '活动相册'
       }
@@ -212,7 +212,7 @@ const router = createRouter({
     {
       path: '/guidelines',
       name: 'guidelines',
-      component: Guidelines,
+      component: GuidelinesIndex,
       meta: {
         title: '人际关系准则'
       }
@@ -220,7 +220,7 @@ const router = createRouter({
     {
       path: '/mascot',
       name: 'mascot',
-      component: Mascot,
+      component: MascotIndex,
       meta: {
         title: '社区吉祥物'
       }
@@ -228,7 +228,7 @@ const router = createRouter({
     {
       path: '/sponsors',
       name: 'sponsors',
-      component: Sponsors,
+      component: SponsorsIndex,
       meta: {
         title: '赞助方一览'
       }
@@ -236,7 +236,7 @@ const router = createRouter({
     {
       path: '/crowdsourcing',
       name: 'crowdsourcing',
-      component: Crowdsourcing,
+      component: CrowdsourcingIndex,
       meta: {
         title: '社区众筹'
       }
@@ -244,17 +244,9 @@ const router = createRouter({
     {
       path: '/news',
       name: 'news',
-      component: News,
+      component: NewsIndex,
       meta: {
         title: '新闻资讯'
-      }
-    },
-    {
-      path: '/oma',
-      name: 'oma',
-      component: Oma,
-      meta: {
-        title: '小熊猫包管理器'
       }
     },
     {
@@ -275,7 +267,7 @@ const router = createRouter({
     {
       path: '/paste',
       name: 'paste',
-      component: Paste,
+      component: PasteIndex,
       meta: {
         title: '粘贴板'
       }
@@ -291,7 +283,7 @@ const router = createRouter({
     {
       path: '/internship',
       name: 'Internship',
-      component: Internship,
+      component: InternshipIndex,
       meta: {
         title: '实习资源'
       }
@@ -299,7 +291,7 @@ const router = createRouter({
     {
       path: '/events',
       name: 'Events',
-      component: Events,
+      component: EventsIndex,
       meta: {
         title: '社区活动'
       }

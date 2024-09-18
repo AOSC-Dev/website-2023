@@ -1,7 +1,7 @@
 <script setup>
-import Header from './components/Header.vue';
+import HeaderBar from './components/HeaderBar.vue';
 import LeftBar from './components/LeftBar.vue';
-import Footer from './components/Footer.vue';
+import FooterBar from './components/FooterBar.vue';
 import { RouterView } from 'vue-router';
 </script>
 
@@ -9,7 +9,7 @@ import { RouterView } from 'vue-router';
   <div class="min-w-[960px] min-h-[100vh]">
     <div
       class="bg-floral p-0 my-0 min-h-[100vh] flex flex-col">
-      <Header />
+      <HeaderBar />
       <div
         class="main-content flex pb-[2.5rem] flex-1 justify-center">
         <div
@@ -29,7 +29,7 @@ import { RouterView } from 'vue-router';
         </div>
       </div>
     </div>
-    <Footer class="fixed bottom-0 h-[2rem]" />
+    <FooterBar class="fixed bottom-0 h-[2rem]" />
   </div>
 </template>
 

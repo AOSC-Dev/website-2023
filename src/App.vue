@@ -1,5 +1,5 @@
 <script setup>
-import Home from './pages/home/Home.vue';
+import HomeIndex from './pages/home/HomeIndex.vue';
 import { useRouter } from 'vue-router';
 import {
   useHighBrightnessControllerStore,
@@ -19,7 +19,7 @@ const themeStore = useThemeStore();
 </script>
 
 <template>
-  <Home
+  <HomeIndex
     :style="{
       '--primary': themeStore.primary,
       '--secondary': themeStore.secondary

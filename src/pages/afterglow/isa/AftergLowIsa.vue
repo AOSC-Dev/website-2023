@@ -8,7 +8,7 @@ import {
 import CategorySecond from '/src/components/CategorySecond.vue';
 import { useRoute } from 'vue-router';
 import highlightElement from '../../../utils/animation';
-import Support from '../../../components/Support.vue';
+import AppSupport from '../../../components/AppSupport.vue';
 
 const docList = reactive([
   {
@@ -162,7 +162,7 @@ const afterLowIsaList = ref();
         的处理器型号 </p
       ><br />
     </div>
-    <Support :navigation-list="docList" />
+    <AppSupport :navigation-list="docList" />
   </div>
 </template>
 
