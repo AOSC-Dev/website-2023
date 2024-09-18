@@ -2,49 +2,73 @@
 import AppLink from '../../../components/AppLink.vue';
 import { useThemeStore } from '../../../stores/miscellaneous';
 
-const themeStore = useThemeStore()
+const themeStore = useThemeStore();
 const props = defineProps({
   archName: {
     type: String
-  }, isaInfo: {
+  },
+  isaInfo: {
     type: Object
-  }, secondLineFontSize: {
+  },
+  secondLineFontSize: {
     type: Number,
     default: 10
-  }, firstLineFontSize: {
+  },
+  firstLineFontSize: {
     type: Number,
     default: 12
-  }, width: {
+  },
+  width: {
     type: Number,
     default: 224
-  }, popoverData: {
+  },
+  popoverData: {
     type: Object
-  }, buttonColor: {
+  },
+  buttonColor: {
     type: String
-  }, url: {
+  },
+  url: {
     type: String
   }
-})
+});
 
 const byteToGb = (bytes) => {
   return (bytes / 1024 / 1024 / 1024).toFixed(2);
-}
+};
 </script>
 <template>
-  <div :style="{
-    '--download-button-p-fount-size1': $props.firstLineFontSize + 'pt',
-    '--download-button-p-fount-size2': $props.secondLineFontSize + 'pt'
-  }">
-    <el-popover :placement="popoverData.placement" :hide-after="0" trigger="hover" :content="popoverData.conten">
+  <div
+    :style="{
+      '--download-button-p-fount-size1':
+        $props.firstLineFontSize + 'pt',
+      '--download-button-p-fount-size2':
+        $props.secondLineFontSize + 'pt'
+    }">
+    <el-popover
+      :placement="popoverData.placement"
+      :hide-after="0"
+      trigger="hover"
+      :content="popoverData.conten">
       <template #reference>
-        <AppLink :to="url" :style="{ backgroundColor: buttonColor, width: $props.width + 'px' }"
+        <AppLink
+          :to="url"
+          :style="{
+            backgroundColor: buttonColor,
+            width: $props.width + 'px'
+          }"
           class="theme-bg-color-secondary-primary flex h-full flex-col hover:no-underline cursor-pointer mx-1 py-1">
           <slot></slot>
-          <p v-if="archName" class="first-line-p">{{
-            archName }}</p>
-          <p v-if="isaInfo" class="second-line-p">{{
-            byteToGb(isaInfo.downloadSize) }}GB
-            ISO</p>
+          <p
+            v-if="archName"
+            class="first-line-p"
+            >{{ archName }}</p
+          >
+          <p v-if="isaInfo" class="second-line-p"
+            >{{
+              byteToGb(isaInfo.downloadSize)
+            }}GB ISO</p
+          >
         </AppLink>
       </template>
     </el-popover>

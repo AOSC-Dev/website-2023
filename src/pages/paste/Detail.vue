@@ -1,24 +1,32 @@
 <script setup>
-import { onBeforeMount, ref } from "vue";
-import { useRoute } from "vue-router";
-import useClipboard from "vue-clipboard3";
-import Highlight from "../../components/Highlight.vue";
-import { useThemeStore } from "../../stores/miscellaneous";
-import { requestGetJson } from "../../utils/utils";
+import { onBeforeMount, ref } from 'vue';
+import { useRoute } from 'vue-router';
+import useClipboard from 'vue-clipboard3';
+import AppHighlight from '../../components/AppHighlight.vue';
+import { useThemeStore } from '../../stores/miscellaneous';
+import { requestGetJson } from '../../utils/utils';
 
-const themeStore = useThemeStore()
+const themeStore = useThemeStore();
 
 const { toClipboard } = useClipboard();
 const loading = ref(true);
 const route = useRoute();
 const details = ref(null);
-const imgSuffixList = ["jpg", "jpeg", "png", "gif"];
-const failReason = ref("");
+const imgSuffixList = [
+  'jpg',
+  'jpeg',
+  'png',
+  'gif'
+];
+const failReason = ref('');
 
 function isImg(name) {
-  const suffixIndex = name.lastIndexOf(".");
+  const suffixIndex = name.lastIndexOf('.');
   const suffix = name.substring(suffixIndex + 1);
-  return imgSuffixList.find((v) => v == suffix) !== undefined;
+  return (
+    imgSuffixList.find((v) => v == suffix) !==
+    undefined
+  );
 }
 
 function getAttachUrl(name) {
@@ -26,7 +34,10 @@ function getAttachUrl(name) {
 }
 
 const getPaste = async () => {
-  let [res, err] = await requestGetJson('/pasteApi/paste', { id: route.query.id })
+  let [res, err] = await requestGetJson(
+    '/pasteApi/paste',
+    { id: route.query.id }
+  );
   if (res) {
     const results = res.data;
     if (results.code != 0) {
@@ -35,16 +46,17 @@ const getPaste = async () => {
       details.value = results.data;
     }
   } else {
-    console.log("获取异常", err);
-    failReason.value = "获取粘贴板异常（服务器内部错误）";
+    console.log('获取异常', err);
+    failReason.value =
+      '获取粘贴板异常（服务器内部错误）';
   }
   loading.value = false;
-}
+};
 
-getPaste()
+getPaste();
 
 function back() {
-  failReason.value = "";
+  failReason.value = '';
 }
 
 function copyLink() {
@@ -58,24 +70,52 @@ function copyLink() {
       <category-second title="公共粘贴板" />
       <div class="p-[2em]">
         <div v-for="item in details.fileList">
-          <img :src="getAttachUrl(item)" class="w-full" v-if="isImg(item)" />
-          <a v-else class="text-link" :href="getAttachUrl(item)" target="_blank">{{ item }}</a>
+          <img
+            :src="getAttachUrl(item)"
+            class="w-full"
+            v-if="isImg(item)" />
+          <a
+            v-else
+            class="text-link"
+            :href="getAttachUrl(item)"
+            target="_blank"
+            >{{ item }}</a
+          >
         </div>
         <div class="flex justify-between">
           <div>
             <div>标题: {{ details.title }}</div>
-            <div>过期时间: {{ details.expDate }}</div>
+            <div
+              >过期时间:
+              {{ details.expDate }}</div
+            >
           </div>
-          <button class="text-white px-[3em] theme-bg-color-primary-static py-[1em]" @click="copyLink">
+          <button
+            class="text-white px-[3em] theme-bg-color-primary-static py-[1em]"
+            @click="copyLink">
             复制共享链接
           </button>
         </div>
-        <highlight class="w-full my-[20px]" :code="details.content" :lang="details.language" />
+        <app-highlight
+          class="w-full my-[20px]"
+          :code="details.content"
+          :lang="details.language" />
       </div>
     </div>
-    <el-result v-if="failReason != ''" icon="warning" :title="failReason">
+    <el-result
+      v-if="failReason != ''"
+      icon="warning"
+      :title="failReason">
       <template #extra>
-        <el-button v-if="failReason == '密码错误' || failReason == '需要密码'" type="primary" @click="back">返回</el-button>
+        <el-button
+          v-if="
+            failReason == '密码错误' ||
+            failReason == '需要密码'
+          "
+          type="primary"
+          @click="back"
+          >返回</el-button
+        >
       </template>
     </el-result>
   </div>

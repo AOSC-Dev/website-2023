@@ -4,21 +4,24 @@ import { useThemeStore } from '../stores/miscellaneous';
 const props = defineProps({
   link: {
     type: String,
-    default: "#",
+    default: '#'
   },
   text: {
     type: String,
-    default: "",
-  },
+    default: ''
+  }
 });
 
-const themeStore = useThemeStore()
+const themeStore = useThemeStore();
 </script>
 
 <template>
-  <a target="_blank" :href="link"
-    class="flex justify-center items-center text-white block hover:no-underline hover:opacity-85 theme-bg-color-primary-static">{{ text
-    }}</a>
+  <a
+    target="_blank"
+    :href="link"
+    class="flex justify-center items-center text-white block hover:no-underline hover:opacity-85 theme-bg-color-primary-static"
+    >{{ text }}</a
+  >
 </template>
 
 <style scoped></style>

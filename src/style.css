@@ -8,17 +8,17 @@ body {
   font-size: 12pt;
   background-color: white;
   font-family: 'Noto Sans CJK SC', sans-serif;
-	font-size: 12pt;
-	min-width: 800px;
+  font-size: 12pt;
+  min-width: 800px;
 }
 a:hover {
   text-decoration: underline;
 }
 
 @media (min-width: 960px) {
-	.content-container {
-		width: 90vw !important;
-	}
+  .content-container {
+    width: 90vw !important;
+  }
 }
 
 .content-container {

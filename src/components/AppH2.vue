@@ -1,13 +1,13 @@
-<script setup>
-</script>
+<script setup></script>
 <template>
-  <h2 class="font-semibold text-[1.2em] mb-2 features">
+  <h2
+    class="font-semibold text-[1.2em] mb-2 features">
     <slot></slot>
   </h2>
 </template>
 
 <style scoped>
-[class*="features"]:not(:first-of-type) {
+[class*='features']:not(:first-of-type) {
   margin-top: 20px;
 }
 </style>

@@ -1,10 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 
 export default {
-
   content: [
-    "./index.html",
-    "./src/**/*.{vue,js,ts,jsx,tsx}",
+    './index.html',
+    './src/**/*.{vue,js,ts,jsx,tsx}'
   ],
   theme: {
     extend: {},
@@ -18,13 +17,12 @@ export default {
       black: '#000'
     },
     fontSize: {
-      'xl': '1.5rem',
+      xl: '1.5rem',
       '2xl': '1.8rem',
       '3xl': '2rem',
       '4xl': '2.5rem',
       '5xl': '3rem'
     }
   },
-  plugins: [],
-}
-
+  plugins: []
+};

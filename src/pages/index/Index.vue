@@ -1,6 +1,6 @@
 <script setup>
-import ContentMain from './components/ContentMain.vue'
-import RightBar from './components/RightBar.vue'
+import ContentMain from './components/ContentMain.vue';
+import RightBar from './components/RightBar.vue';
 </script>
 
 <template>
