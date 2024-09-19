@@ -18,7 +18,7 @@ const newsDate = ref('');
 
 (async () => {
   let [res, err] = await requestGetJson(
-    `/news/${newsPath}`
+    `/news/${route.params.newsPath}`
   );
   if (res) {
     // 将头信息和内容分开，头信息为yml格式
