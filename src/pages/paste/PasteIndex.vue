@@ -4,10 +4,8 @@ import dayjs from 'dayjs';
 import { ElMessage } from 'element-plus';
 import { useRouter } from 'vue-router';
 import hljs from 'highlight.js/lib/core';
-import { useThemeStore } from '../../stores/miscellaneous';
 import { requestPostJson } from '../../utils/utils';
 
-const themeStore = useThemeStore();
 
 const languageList = ref(hljs.listLanguages());
 
@@ -25,9 +23,6 @@ const pasteFormData = ref({
   expDate: null
 });
 const pasteRes = ref(null);
-
-const linkPre = `${window.location.protocol}//${window.location.host}`;
-
 const submiting = ref(false);
 const submit = async () => {
   if (pasteFormData.value.content == '') {

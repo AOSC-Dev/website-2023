@@ -1,27 +1,7 @@
 <script setup>
-import { reactive, watch } from 'vue';
+import { reactive } from 'vue';
 import CategorySecond from '/src/components/CategorySecond.vue';
-import { useRouter, useRoute } from 'vue-router';
-import { useHighBrightnessControllerStore } from '../../stores/miscellaneous';
 import AccordionNavigation from '../../components/AccordionNavigation.vue';
-
-const router = useRouter();
-const route = useRoute();
-
-const highBrightnessControllerStore =
-  useHighBrightnessControllerStore();
-
-watch(
-  () =>
-    highBrightnessControllerStore.obj[route.path],
-  () => {
-    switch (route.hash) {
-    }
-  },
-  {
-    flush: 'post'
-  }
-);
 
 const navigationList = [
   {

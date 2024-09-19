@@ -1,9 +1,8 @@
 <script setup>
-import { reactive } from 'vue';
 import CategorySecond from '/src/components/CategorySecond.vue';
 import AppLink from '../../components/AppLink.vue';
 
-const mainGroup = reactive([
+const mainGroup = [
   {
     liText: 'QQ — 群号 875059676'
   },
@@ -30,9 +29,9 @@ const mainGroup = reactive([
     url: 'https://matrix.to/#/%23aosc:matrix.aosc.io',
     aText: '加入聊天室'
   }
-]);
+];
 
-const antiqueComputer = reactive([
+const antiqueComputer = [
   {
     spanText: 'Telegram — ',
     url: 'https://t.me/aosc_retro',
@@ -53,9 +52,9 @@ const antiqueComputer = reactive([
     url: 'https://matrix.to/#/%23retro:matrix.aosc.io',
     aText: '加入聊天室'
   }
-]);
+];
 
-const waterGroup = reactive([
+const waterGroup = [
   {
     spanText: 'Telegram — ',
     url: 'https://t.me/aosc_tuosai',
@@ -76,7 +75,7 @@ const waterGroup = reactive([
     url: 'https://matrix.to/#/%23offtopic:matrix.aosc.io',
     aText: '加入聊天室'
   }
-]);
+];
 </script>
 
 <template>
@@ -104,7 +103,7 @@ const waterGroup = reactive([
         >社区主群组用于开发交流、技术支持及相关技术话题讨论：</p
       >
       <ul class="list-disc pl-10 mt-2">
-        <li v-for="item in mainGroup">
+        <li v-for="(item,index) in mainGroup" :key="index">
           <span v-if="item.spanText">{{
             item.spanText
           }}</span>
@@ -127,7 +126,7 @@ const waterGroup = reactive([
         Afterglow（星霞 OS）开发。</p
       >
       <ul class="list-disc pl-10 mt-2">
-        <li v-for="item in antiqueComputer">
+        <li v-for="(item,index) in antiqueComputer" :key="index">
           <span v-if="item.spanText">{{
             item.spanText
           }}</span>
@@ -152,7 +151,7 @@ const waterGroup = reactive([
         >
       </p>
       <ul class="list-disc pl-10 mt-2">
-        <li v-for="item in waterGroup">
+        <li v-for="(item,index) in waterGroup" :key="index">
           <span v-if="item.spanText">{{
             item.spanText
           }}</span>

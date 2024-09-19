@@ -1,17 +1,8 @@
 <script setup>
-import { reactive, ref, watch } from 'vue';
+import { reactive } from 'vue';
 import CategorySecond from '/src/components/CategorySecond.vue';
-import { useRoute, useRouter } from 'vue-router';
 import AppLink from '../../components/AppLink.vue';
-import { useHighBrightnessControllerStore } from '../../stores/miscellaneous';
 import AccordionNavigation from '../../components/AccordionNavigation.vue';
-
-const router = useRouter();
-const route = useRoute();
-
-const highBrightnessControllerStore =
-  useHighBrightnessControllerStore();
-
 const navigationList = [
   {
     title: '代码仓库',
@@ -28,19 +19,8 @@ const navigationList = [
   }
 ];
 
-watch(
-  () =>
-    highBrightnessControllerStore.obj[route.path],
-  () => {
-    switch (route.hash) {
-    }
-  },
-  {
-    flush: 'post'
-  }
-);
 
-const docList = reactive([
+const _docList = reactive([
   {
     title: '如何管理安同 OS 系统测试源',
     url: '#'

@@ -1,19 +1,15 @@
 <script setup name="LeftBar">
 import { reactive, ref, onMounted } from 'vue';
 import {
-  useRouter,
   RouterLink
 } from 'vue-router';
-import { useThemeStore } from '../../../stores/miscellaneous';
 import '../../../css/index.scss';
 
-const themeStore = useThemeStore();
 
 // 该变量将在左侧边栏组件加载时设定
 // 记录有多少个分类可以被展开，由视图 (Viewport) 垂直高度决定
 let allowedCategories = 0;
 let currentShowing;
-const router = useRouter();
 const linkArr = reactive([
   {
     title: '社区项目',
@@ -133,7 +129,6 @@ function updateAllowedCategories() {
   ) {
     // 可视区域高度不够的情况下，始终展开 “社区项目” 分类，及当前页面所属的分类
     // 记录是否有分类被展开
-    let menuExpanded = false;
     let menuToExpand;
     // 决定需要展开哪一个
     linkArr.forEach(function (value) {
@@ -178,7 +173,6 @@ window.onresize = updateAllowedCategories;
 updateAllowedCategories();
 
 function toggle(item) {
-  let lastShow = item.show;
   if (allowedCategories < 0) {
     setTimeout(() => {
       item.show = !item.show;
@@ -272,7 +266,7 @@ onMounted(() => {
           class="py-[3px] flex nav-container"
           v-show="item1.show">
           <template
-            v-for="item2 in item1.children">
+            v-for="item2 in item1.children" :key="item2.title">
             <router-link
               v-if="
                 !item2.link.startsWith('http')

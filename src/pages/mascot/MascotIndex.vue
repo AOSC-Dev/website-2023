@@ -1,5 +1,4 @@
 <script setup>
-import { ref } from 'vue';
 import LinkButton from '../../components/LinkButton.vue';
 
 const navigationList = [
@@ -44,9 +43,12 @@ const navigationList = [
             class="basis-1/2 ml-[1em] flex flex-col justify-between">
             <LinkButton
               class="basis-1/4"
-              v-for="item in navigationList"
+              v-for="(
+                item, index
+              ) in navigationList"
               :link="item.path"
-              :text="item.text" />
+              :text="item.text"
+              :key="index" />
           </div>
         </div>
       </div>
