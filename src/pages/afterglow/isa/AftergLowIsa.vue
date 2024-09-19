@@ -1,9 +1,5 @@
 <script setup>
-import {
-  onMounted,
-  reactive,
-  ref
-} from 'vue';
+import { onMounted, reactive, ref } from 'vue';
 import CategorySecond from '/src/components/CategorySecond.vue';
 import { useRoute } from 'vue-router';
 import highlightElement from '../../../utils/animation';

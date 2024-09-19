@@ -103,7 +103,9 @@ const waterGroup = [
         >社区主群组用于开发交流、技术支持及相关技术话题讨论：</p
       >
       <ul class="list-disc pl-10 mt-2">
-        <li v-for="(item,index) in mainGroup" :key="index">
+        <li
+          v-for="(item, index) in mainGroup"
+          :key="index">
           <span v-if="item.spanText">{{
             item.spanText
           }}</span>
@@ -126,7 +128,9 @@ const waterGroup = [
         Afterglow（星霞 OS）开发。</p
       >
       <ul class="list-disc pl-10 mt-2">
-        <li v-for="(item,index) in antiqueComputer" :key="index">
+        <li
+          v-for="(item, index) in antiqueComputer"
+          :key="index">
           <span v-if="item.spanText">{{
             item.spanText
           }}</span>
@@ -151,7 +155,9 @@ const waterGroup = [
         >
       </p>
       <ul class="list-disc pl-10 mt-2">
-        <li v-for="(item,index) in waterGroup" :key="index">
+        <li
+          v-for="(item, index) in waterGroup"
+          :key="index">
           <span v-if="item.spanText">{{
             item.spanText
           }}</span>

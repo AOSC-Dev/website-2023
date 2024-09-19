@@ -11,7 +11,6 @@ import NewsCategoryList from '/src/pages/news/components/NewsCategoryList.vue';
 import { requestGetJson } from '../../../utils/utils';
 import { ElIcon } from 'element-plus';
 
-
 /**
  * 新闻资讯列表
  */
