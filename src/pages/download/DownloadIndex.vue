@@ -178,6 +178,7 @@ const downloadButtonLength = (() => {
   );
   if (res) {
     versionArch.value = res.data;
+    console.log(res.data);
     antong1List.value.forEach((v) => {
       v.installer = getNewVersioArch(
         v.title,
@@ -198,6 +199,7 @@ const downloadButtonLength = (() => {
         'livekit'
       );
     });
+    console.log(antong2List.value);
     xingxia1List.value.forEach((v) => {
       v.livekit = getNewVersioArch(
         v.title,
@@ -214,7 +216,6 @@ const downloadButtonLength = (() => {
     ElMessage.warning('版本信息获取失败');
     console.log('获取异常: ', err);
   }
-  console.log(antong1List, antong2List);
   loading.value = false;
 })();
 
@@ -663,22 +664,22 @@ const getNewVersioArch = (arch, type) => {
           >
         </div>
         <div
-          class="flex flex-col pr-[2rem] gap-y-[0.5rem] ml-auto my-2"
+          class="flex flex-col pr-[2rem] gap-y-[0.5rem] ml-auto"
           v-loading="loading"
           v-if="versionArch.length > 0">
-          <span
+          <div
             v-for="item in antong2List"
             :key="item.title">
             <DownloadButton
               :popover-data="item.popoverData"
               :second-line-font-size="8"
               :width="200"
+              v-if="item.installer !== undefined"
               :first-line-font-size="10"
-              class="py-[0.25rem]"
-              v-if="item.livekit !== undefined"
               :arch-name="item.zhLabel"
-              :isa-info="item.livekit" />
-          </span>
+              :url="`https://releases.aosc.io/${item.installer.path}`"
+              :isa-info="item.installer" />
+          </div>
         </div>
       </div>
       <category-second
@@ -780,9 +781,6 @@ p {
     ),
     url(/assets/backgrounds/aosc-os.webp);
   background-size: auto 185%;
-}
-
-.afterglow-container {
 }
 
 .livekit-container {
