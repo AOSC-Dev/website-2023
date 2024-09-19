@@ -1,8 +1,6 @@
 <script setup>
 import AppLink from '../../../components/AppLink.vue';
-import { useThemeStore } from '../../../stores/miscellaneous';
 
-const themeStore = useThemeStore();
 const props = defineProps({
   archName: {
     type: String

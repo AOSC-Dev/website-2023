@@ -2,19 +2,13 @@
 import { reactive, ref, watch } from 'vue';
 import CategorySecond from '../../components/CategorySecond.vue';
 import AppH2 from '../../components/AppH2.vue';
-import {
-  RouterView,
-  useRoute,
-  useRouter
-} from 'vue-router';
+import { useRoute } from 'vue-router';
 import highlightElement from '../../utils/animation';
-import AppLink from '../../components/AppLink.vue';
 import { useHighBrightnessControllerStore } from '../../stores/miscellaneous';
 import AppSupport from '../../components/AppSupport.vue';
 import AccordionNavigation from '../../components/AccordionNavigation.vue';
 
 const route = useRoute();
-const router = useRouter();
 
 const features = ref();
 

@@ -1,5 +1,5 @@
 <script setup>
-import { reactive, ref } from 'vue';
+import {  ref } from 'vue';
 import CategorySecond from '/src/components/CategorySecond.vue';
 import NewsCategoryList from './components/NewsCategoryList.vue';
 import { requestGetJson } from '../../utils/utils';

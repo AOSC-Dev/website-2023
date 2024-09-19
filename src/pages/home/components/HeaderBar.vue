@@ -1,13 +1,4 @@
 <script setup name="Header">
-import { reactive, ref } from 'vue';
-import { useThemeStore } from '../../../stores/miscellaneous';
-
-const themeStore = useThemeStore();
-
-const languageList = reactive([
-  { name: 'English', value: 'en' },
-  { name: '简体中文', value: 'cn' }
-]);
 </script>
 
 <template>
