@@ -4,7 +4,6 @@ categories:
 title: "【已解决】PostgreSQL 推送事故说明"
 date: 2024-07-29T12:00:00+08:00
 important: true
-home: true
 ---
 
 由于维护者疏忽，在约两周前（7 月 17 日）手动合并 ICU 74.2 更新相关软件包时，我们误将 x86-64 (amd64) 及 AArch64 (arm64) 两个架构中本已于开发分支撤回的 postgresql 版本 16.3 的软件包推送至了稳定源。
