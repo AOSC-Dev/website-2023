@@ -19,7 +19,6 @@ const navigationList = [
   }
 ];
 
-
 const _docList = reactive([
   {
     title: '如何管理安同 OS 系统测试源',

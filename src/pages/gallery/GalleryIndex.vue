@@ -4,7 +4,6 @@ import yaml from 'js-yaml';
 import CategorySecond from '/src/components/CategorySecond.vue';
 import { requestGetJson } from '../../utils/utils';
 
-
 const galleryList = ref([]);
 
 (async () => {

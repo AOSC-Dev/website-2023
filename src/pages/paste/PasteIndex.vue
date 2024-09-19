@@ -6,7 +6,6 @@ import { useRouter } from 'vue-router';
 import hljs from 'highlight.js/lib/core';
 import { requestPostJson } from '../../utils/utils';
 
-
 const languageList = ref(hljs.listLanguages());
 
 const router = useRouter();
