@@ -1,10 +1,7 @@
 <script setup name="LeftBar">
 import { reactive, ref, onMounted } from 'vue';
-import {
-  RouterLink
-} from 'vue-router';
+import { RouterLink } from 'vue-router';
 import '../../../css/index.scss';
-
 
 // 该变量将在左侧边栏组件加载时设定
 // 记录有多少个分类可以被展开，由视图 (Viewport) 垂直高度决定
@@ -266,7 +263,8 @@ onMounted(() => {
           class="py-[3px] flex nav-container"
           v-show="item1.show">
           <template
-            v-for="item2 in item1.children" :key="item2.title">
+            v-for="item2 in item1.children"
+            :key="item2.title">
             <router-link
               v-if="
                 !item2.link.startsWith('http')

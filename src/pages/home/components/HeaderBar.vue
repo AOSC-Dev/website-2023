@@ -1,5 +1,4 @@
-<script setup name="Header">
-</script>
+<script setup name="Header"></script>
 
 <template>
   <div class="bg-cover">

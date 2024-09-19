@@ -1,7 +1,6 @@
 <script setup name="Footer">
 import AccordionNavigation from '../../../components/AccordionNavigation.vue';
 
-
 const nowYear = new Date().getFullYear();
 
 const navigationList = [
