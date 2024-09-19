@@ -1,8 +1,6 @@
 <script setup name="Footer">
-import { useThemeStore } from '../../../stores/miscellaneous';
 import AccordionNavigation from '../../../components/AccordionNavigation.vue';
 
-const themeStore = useThemeStore();
 
 const nowYear = new Date().getFullYear();
 

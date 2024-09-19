@@ -2,8 +2,7 @@
 import {
   onMounted,
   reactive,
-  ref,
-  watch
+  ref
 } from 'vue';
 import CategorySecond from '/src/components/CategorySecond.vue';
 import { useRoute } from 'vue-router';

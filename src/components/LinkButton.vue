@@ -1,6 +1,4 @@
 <script setup>
-import { useThemeStore } from '../stores/miscellaneous';
-
 const props = defineProps({
   link: {
     type: String,
@@ -12,7 +10,6 @@ const props = defineProps({
   }
 });
 
-const themeStore = useThemeStore();
 </script>
 
 <template>

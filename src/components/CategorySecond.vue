@@ -1,14 +1,10 @@
 <script setup name="Header">
-import { useThemeStore } from '../stores/miscellaneous';
-
-const themeStore = useThemeStore();
-
-const props = defineProps([
-  'title',
-  'rightText',
-  'rightUrl',
-  'showRightChevron'
-]);
+const props = defineProps({
+  title: { type: String },
+  rightText: { type: String },
+  rightUrl: { type: String },
+  showRightChevron: { type: Boolean }
+});
 </script>
 <template>
   <div

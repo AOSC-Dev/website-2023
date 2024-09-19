@@ -1,5 +1,9 @@
 <script setup>
-const props = defineProps(['newsList']);
+const props = defineProps({
+  newsList: {
+    type: Array
+  }
+});
 </script>
 
 <template>

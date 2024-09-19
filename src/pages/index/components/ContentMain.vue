@@ -8,11 +8,9 @@ import {
 } from 'vue';
 import CategorySecond from '/src/components/CategorySecond.vue';
 import NewsCategoryList from '/src/pages/news/components/NewsCategoryList.vue';
-import { useRouter } from 'vue-router';
 import { requestGetJson } from '../../../utils/utils';
 import { ElIcon } from 'element-plus';
 
-const router = useRouter();
 
 /**
  * 新闻资讯列表

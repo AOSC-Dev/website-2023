@@ -2,10 +2,8 @@
 import { ref } from 'vue';
 import yaml from 'js-yaml';
 import CategorySecond from '/src/components/CategorySecond.vue';
-import { useThemeStore } from '../../stores/miscellaneous';
 import { requestGetJson } from '../../utils/utils';
 
-const themeStore = useThemeStore();
 
 const galleryList = ref([]);
 
