@@ -4,3 +4,4 @@ pasteServer/*
 makeCategory/*
 deploy/*
 website/*
+auto-imports.d.ts
