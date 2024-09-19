@@ -1,12 +1,9 @@
 <script setup>
-import { onBeforeMount, ref } from 'vue';
+import { ref } from 'vue';
 import { useRoute } from 'vue-router';
 import useClipboard from 'vue-clipboard3';
 import AppHighlight from '../../components/AppHighlight.vue';
-import { useThemeStore } from '../../stores/miscellaneous';
 import { requestGetJson } from '../../utils/utils';
-
-const themeStore = useThemeStore();
 
 const { toClipboard } = useClipboard();
 const loading = ref(true);
@@ -30,7 +27,7 @@ function isImg(name) {
 }
 
 function getAttachUrl(name) {
-  return `/pasteContent/${id.value}/files/${name}`;
+  return `/pasteContent/${route.query.id}/files/${name}`;
 }
 
 const getPaste = async () => {
@@ -69,17 +66,19 @@ function copyLink() {
     <div v-if="details != null">
       <category-second title="公共粘贴板" />
       <div class="p-[2em]">
-        <div v-for="item in details.fileList">
+        <div
+          v-for="filename in details.fileList"
+          :key="filename">
           <img
-            :src="getAttachUrl(item)"
+            :src="getAttachUrl(filename)"
             class="w-full"
-            v-if="isImg(item)" />
+            v-if="isImg(filename)" />
           <a
             v-else
             class="text-link"
-            :href="getAttachUrl(item)"
+            :href="getAttachUrl(filename)"
             target="_blank"
-            >{{ item }}</a
+            >{{ filename }}</a
           >
         </div>
         <div class="flex justify-between">
