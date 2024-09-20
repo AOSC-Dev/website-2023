@@ -1,11 +1,13 @@
 <script setup>
 import { reactive, ref, watch } from 'vue';
-import CategorySecond from '/src/components/CategorySecond.vue';
-import AppH2 from '/src/components/AppH2.vue';
+import CategorySecond from '../../components/CategorySecond.vue';
+import AppH2 from '../../components/AppH2.vue';
 import { useRoute } from 'vue-router';
-import { highlightElement } from '../../utils/animation';
+import highlightElement from '../../utils/animation';
 import { useHighBrightnessControllerStore } from '../../stores/miscellaneous';
+import AppSupport from '../../components/AppSupport.vue';
 import AccordionNavigation from '../../components/AccordionNavigation.vue';
+
 const route = useRoute();
 
 const features = ref();
@@ -55,17 +57,11 @@ const navigationList = [
 const docList = reactive([
   {
     title: '系统配置需求表',
-    path: '/afterglow/requirements',
-    hash: '#afterLowRequirementsTitle'
+    path: '/afterglow/requirements'
   },
   {
     title: '架构支持规格表',
-    path: '/afterglow/isa',
-    hash: '#afterLowIsaTitle'
-  },
-  {
-    title: '其他支持文档',
-    url: '#'
+    path: '/afterglow/isa'
   }
 ]);
 </script>
@@ -116,7 +112,7 @@ const docList = reactive([
       >
     </div>
 
-    <Support :navigation-list="docList" />
+    <AppSupport :navigation-list="docList" />
   </div>
 </template>
 
