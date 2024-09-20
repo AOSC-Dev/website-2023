@@ -10,9 +10,9 @@ import AoscIndex from './pages/aosc-os/AoscIndex.vue';
 import AoscRequirements from './pages/aosc-os/requirements/AoscRequirements.vue';
 import AoscIsa from './pages/aosc-os/isa/AoscIsa.vue';
 import AoscRelnote from './pages/aosc-os/relnote/AoscRelnote.vue';
-import AftergLowIndex from './pages/afterglow/AftergLowIndex.vue';
-import AftergLowRequirements from './pages/afterglow/requirements/AftergLowRequirements.vue';
-import AftergLowIsa from './pages/afterglow/isa/AftergLowIsa.vue';
+import AfterglowIndex from './pages/afterglow/AfterglowIndex.vue';
+import AfterglowRequirements from './pages/afterglow/requirements/AfterglowRequirements.vue';
+import AfterglowIsa from './pages/afterglow/isa/AfterglowIsa.vue';
 import AfterglowRelnote from './pages/afterglow/relnote/AfterglowRelnote.vue';
 import LiblolIndex from './pages/liblol/LiblolIndex.vue';
 import OmaIndex from './pages/oma/OmaIndex.vue';
@@ -140,7 +140,7 @@ const router = createRouter({
     {
       path: '/afterglow',
       name: 'afterglow',
-      component: AftergLowIndex,
+      component: AfterglowIndex,
       meta: {
         title: '星霞 OS'
       }
@@ -148,7 +148,7 @@ const router = createRouter({
     {
       path: '/afterglow/requirements',
       name: 'afterglowsysreq',
-      component: AftergLowRequirements,
+      component: AfterglowRequirements,
       meta: {
         title: '系统配置需求表（星霞 OS）'
       }
@@ -156,7 +156,7 @@ const router = createRouter({
     {
       path: '/afterglow/isa',
       name: 'afterglowisamatrix',
-      component: AftergLowIsa,
+      component: AfterglowIsa,
       meta: {
         title: '架构支持规格表（星霞 OS）'
       }
