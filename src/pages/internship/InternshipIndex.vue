@@ -62,8 +62,8 @@ const navigationList = [
             >实现“支持中心”栏目（框架搭建、内容编写及索引功能等）</li
           >
           <li
-            ><b>社区外宣：</b>Bilibili 及 YouTube
-            平台指南与用户支持视频</li
+            ><b>社区外宣：</b>为 Bilibili 及 YouTube
+            平台制作指南与用户支持视频</li
           >
         </ul>
       </div>
