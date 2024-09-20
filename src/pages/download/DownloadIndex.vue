@@ -459,7 +459,7 @@ const getNewVersioArch = (arch, type) => {
           <p class="text-[14pt]"
             >称心得意的桌面操作系统</p
           >
-          <p class="width-[220px] text-[10pt]">
+          <p class="width-[220px] text-[10pt] mt-1">
             {{ getAntongDate() }}·
             <AccordionNavigation
               :navigation-list="
@@ -506,14 +506,14 @@ const getNewVersioArch = (arch, type) => {
         class="afterglow px-[1rem]"
         ref="afterglowDownload">
         <div
-          class="download-container my-[2rem] text-afterglow">
+          class="my-[2rem] text-afterglow">
           <p class="text-white text-[32pt]"
             >星霞 OS</p
           >
           <p class="text-white text-[14pt]"
             >老设备也能发光发热</p
           >
-          <p class="text-white text-[10pt]"
+          <p class="text-white text-[10pt] mt-1"
             >敬请期待...</p
           >
         </div>
@@ -650,17 +650,17 @@ const getNewVersioArch = (arch, type) => {
         ref="tier2Downloads"
         class="w-[100%] flex-row py-[1rem] flex">
         <div class="pl-[2rem] my-auto">
-          <p class="text-[14pt]"
-            >安同 OS 支持支持众多处理器微架构</p
+          <p class="text-[13pt]"
+            >安同 OS 支持支持众多处理器微架构。</p
           >
-          <p class="text-[14pt]"
-            >除 x86-64、AArch64 及 LoongArch 外</p
+          <p class="text-[13pt] mt-1"
+            >除 x86-64、AArch64 及 LoongArch 外，</p
           >
-          <p class="text-[14pt]"
-            >我们还支持一众存量较少或软件支持尚未完善的架构</p
+          <p class="text-[13pt] mt-1"
+            >我们还支持一众存量较少或软件支持尚未完善的架构，</p
           >
-          <p class="text-[14pt]"
-            >供各位玩家试用和评估</p
+          <p class="text-[13pt] mt-1"
+            >并发布镜像供各位玩家试用和评估。</p
           >
         </div>
         <div
@@ -689,7 +689,7 @@ const getNewVersioArch = (arch, type) => {
         ref="downloadDocker"
         class="pt-[20px] pb-[30px] px-[30px]">
         <div class="text-[14pt]">
-          我们为Docker用户提供了容器镜像，您可以通过如下命令抓取安同OS容器
+          我们为 Docker 用户提供了容器镜像，您可以通过如下命令获取安同 OS 容器。
         </div>
         <app-highlight
           lang="bash"
@@ -787,7 +787,7 @@ p {
   background: linear-gradient(
       90deg,
       #f6d5ac,
-      75%,
+      50%,
       transparent
     ),
     url('/assets/backgrounds/livekit.jpg');
@@ -816,7 +816,7 @@ p {
   background: linear-gradient(
       90deg,
       #b7e4fc,
-      75%,
+      50%,
       transparent
     ),
     url('/assets/backgrounds/aosc-os-wsl.webp');

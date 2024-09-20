@@ -65,7 +65,7 @@ const byteToGb = (bytes) => {
           <p v-if="isaInfo" class="second-line-p"
             >{{
               byteToGb(isaInfo.downloadSize)
-            }}GB ISO</p
+            }}GiB ISO</p
           >
         </AppLink>
       </template>
