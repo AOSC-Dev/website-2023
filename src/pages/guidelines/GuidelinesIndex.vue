@@ -40,7 +40,7 @@ import AppH2 from '../../components/AppH2.vue';
     </div>
 
     <category-second
-      title="我们为什么需要社区准则" />
+      title="我们为什么需要社区准则" id="rationale" />
     <div class="p-6">
       <p
         >没有多年的交流与碰撞，是不会有安同开源社区的
@@ -52,7 +52,7 @@ import AppH2 from '../../components/AppH2.vue';
       ><br />
     </div>
 
-    <category-second title="基本原则" />
+    <category-second title="基本原则" id="principles" />
     <div class="p-6">
       <p
         >本章节列出的是在我们社区中<b>不容置疑</b>的几项基本原则：</p
@@ -72,7 +72,7 @@ import AppH2 from '../../components/AppH2.vue';
       </ul>
     </div>
 
-    <category-second title="准则条例" />
+    <category-second title="准则条例" id="overview" />
     <div class="p-6">
       <p>
         鉴于我们社区大部分的活动和交流在 Telegram
@@ -117,7 +117,7 @@ import AppH2 from '../../components/AppH2.vue';
       </ul>
     </div>
 
-    <category-second title="条例细则" />
+    <category-second title="条例细则" id="codes" />
     <div class="p-6">
       <app-h2>适用于全社区</app-h2>
       <p class="pb-2">
@@ -319,7 +319,7 @@ import AppH2 from '../../components/AppH2.vue';
     </div>
 
     <category-second
-      title="为何不引入《贡献者公约》？" />
+      title="为何不引入《贡献者公约》？" id="against-coc" />
     <div class="p-6">
       <p>
         我们的社区是在我们独有的社群意识基础之上建立的，通过成员对计算机技术的兴趣得以成形，并根据成员的意愿进行维护和管理。尽管
