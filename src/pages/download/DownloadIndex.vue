@@ -450,11 +450,11 @@ const getNewVersioArch = (arch, type) => {
         ref="aoscOsDownload"
         class="aosc-os-container justify-between flex flex-row w-[50%] justify-around bg-white px-[1rem] flex-wrap">
         <div
-          class="mt-[1.5rem] min-w-[96px] w-[30%] flex">
+          class="mt-[0.5rem] min-w-[96px] w-[24%] flex">
           <img
             src="/assets/download/aosc-os-web.svg" />
         </div>
-        <div class="text-aosc-os my-[2rem]">
+        <div class="text-aosc-os my-[1.5rem]">
           <p class="text-[32pt]">安同 OS</p>
           <p class="text-[14pt]"
             >称心得意的桌面操作系统</p
@@ -471,7 +471,7 @@ const getNewVersioArch = (arch, type) => {
           </p>
         </div>
         <div
-          class="download-container mt-0 min-h-[129.97px] min-w-[150px]">
+          class="download-container mt-0 mb-4 min-h-[129.97px] min-w-[150px]">
           <div v-loading="loading">
             <div
               class="button-container-aoscos-multicolumn buttons-col mb-3 mt-1 flex justify-center"
@@ -518,7 +518,7 @@ const getNewVersioArch = (arch, type) => {
           >
         </div>
         <div
-          class="mt-[2rem] min-w-[96px] w-[30%]">
+          class="mt-[2rem] min-w-[64px] w-[24%]">
           <img
             src="/assets/download/afterglow-web.svg" />
         </div>
@@ -780,7 +780,7 @@ p {
       transparent
     ),
     url(/assets/backgrounds/aosc-os.webp);
-  background-size: auto 302%;
+  background-size: auto 300%;
 }
 
 .livekit-container {
