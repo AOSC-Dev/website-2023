@@ -648,7 +648,7 @@ const getNewVersioArch = (arch, type) => {
         title="安同 OS（二级架构）" />
       <div
         ref="tier2Downloads"
-        class="w-[100%] flex-row py-[1rem] flex">
+        class="w-[100%] flex-row py-[1rem] flex mb-8">
         <div class="pl-[2rem] my-auto">
           <p class="text-[13pt]"
             >安同 OS 支持支持众多处理器微架构。</p
@@ -682,6 +682,7 @@ const getNewVersioArch = (arch, type) => {
           </div>
         </div>
       </div>
+      <!-- 暂时不提供，需要确定架构支持等信息
       <category-second
         id="downloadDocker"
         title="容器镜像" />
@@ -695,6 +696,7 @@ const getNewVersioArch = (arch, type) => {
           lang="bash"
           code="docker pull aosc/aosc-os" />
       </div>
+      -->
     </div>
   </div>
 </template>
