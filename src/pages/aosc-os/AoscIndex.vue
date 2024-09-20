@@ -122,7 +122,7 @@ const docList = reactive([
       <app-h2>高兼容性</app-h2>
       <p
         >我们相信，操作系统是应用程序和生产力的舞台。除软件源中提供的经官方验证的软件外，安同
-        OS 还支持 Flatpak、Snap 和 AppImage
+        OS 还支持如意玲珑、Flatpak、Snap 和 AppImage
         等跨发行版生态，扩充软件支持的范畴；此外，Spiral
         兼容性标记可提供 Debian 及 Ubuntu
         软件包兼容性。</p

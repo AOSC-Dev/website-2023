@@ -43,7 +43,7 @@ const zhuanlanList = reactive([
     img: '/assets/icons/document-properties.min.svg',
     title: '高兼容性',
     description:
-      '我们相信，操作系统是应用程序和生产力的舞台。除软件源中提供的经官方验证的软件外，安同 OS 还支持玲珑、Flatpak、Snap 和 AppImage 等跨发行版生态，扩充软件支持的范畴。此外，Spiral 项目可改善 Debian 及 Ubuntu 软件包的兼容性。'
+      '我们相信，操作系统是应用程序和生产力的舞台。除软件源中提供的经官方验证的软件外，安同 OS 还支持如意玲珑、Flatpak、Snap 和 AppImage 等跨发行版生态，扩充软件支持的范畴。此外，Spiral 项目可改善 Debian 及 Ubuntu 软件包的兼容性。'
   },
   {
     img: '/assets/icons/tools-wizard.min.svg',
