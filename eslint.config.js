@@ -34,7 +34,10 @@ export default [
         }
       ]
     },
-    ignores: ['auto-imports.d.ts']
+    ignores: [
+      'auto-imports.d.ts',
+      'components.d.ts'
+    ]
   },
   // 这个配置会关闭eslint与prettier冲突的配置，防止出现prettier格式完eslint爆红
   eslintConfigPrettier
