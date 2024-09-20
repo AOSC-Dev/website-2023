@@ -92,7 +92,7 @@ import AppH2 from '/src/components/AppH2.vue';
       <p
         >Autobuild4
         是一款半自动软件包构建工具，可根据定义文件和脚本等自动下载、构建和生成软件包，亦支持利用构建和命令模板简化构建脚本编写流程。</p
-      ><br />
+      >
     </div>
 
     <category-second title="历史沿革" />
