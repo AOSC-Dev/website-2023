@@ -85,7 +85,7 @@ onUnmounted(() => {
   <div
     class="bg-right-bar-bg w-[37.5%] flex flex-col">
     <a
-      href="https://wiki.aosc.io/zh/aosc-os/is-aosc-os-right-for-me">
+      href="/aosc-os/right-for-me">
       <img
         @load="onImgLoad"
         ref="bgImg"

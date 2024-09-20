@@ -9,6 +9,7 @@ import DownloadIndex from './pages/download/DownloadIndex.vue';
 import AoscIndex from './pages/aosc-os/AoscIndex.vue';
 import AoscRequirements from './pages/aosc-os/requirements/AoscRequirements.vue';
 import AoscIsa from './pages/aosc-os/isa/AoscIsa.vue';
+import AoscRightForMe from './pages/aosc-os/right-for-me/AoscRightForMe.vue';
 import AoscRelnote from './pages/aosc-os/relnote/AoscRelnote.vue';
 import AfterglowIndex from './pages/afterglow/AfterglowIndex.vue';
 import AfterglowRequirements from './pages/afterglow/requirements/AfterglowRequirements.vue';
@@ -87,6 +88,14 @@ const router = createRouter({
       component: AoscRequirements,
       meta: {
         title: '系统配置需求表（安同 OS）'
+      }
+    },
+    {
+      path: '/aosc-os/right-for-me',
+      name: 'aoscosrightforme',
+      component: AoscRightForMe,
+      meta: {
+        title: '安同 OS 适合我吗？'
       }
     },
     {

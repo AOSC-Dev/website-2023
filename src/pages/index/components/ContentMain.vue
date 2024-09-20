@@ -153,10 +153,10 @@ onUnmounted(() => {
         </div>
         <div
           class="text-right px-[15px] text-[12pt] leading-6">
-          <a
+          <router-link
             class="text-[#0056cc] no-underline"
-            href="https://wiki.aosc.io/zh/aosc-os/is-aosc-os-right-for-me/">
-            详情请见：安同 OS 适合我吗？</a
+            to="/aosc-os/right-for-me">
+            详情请见：安同 OS 适合我吗？</router-link
           >
         </div>
       </article>
