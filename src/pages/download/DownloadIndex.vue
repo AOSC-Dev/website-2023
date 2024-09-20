@@ -780,7 +780,7 @@ p {
       transparent
     ),
     url(/assets/backgrounds/aosc-os.webp);
-  background-size: auto 185%;
+  background-size: auto 302%;
 }
 
 .livekit-container {
