@@ -9,8 +9,7 @@ import AppSupport from '../../../components/AppSupport.vue';
 const docList = reactive([
   {
     title: '安同 OS 架构支持规格表',
-    path: '/aosc-os/isa',
-    hash: '#aoscOsIsaTableTitle'
+    path: '/aosc-os/isa'
   }
   /* TODO
   {
@@ -39,7 +38,7 @@ const aoscOsRequirementsList = ref();
     <div class="p-6">
       <p>
         安同 OS
-        是一款面向桌面的、功能较为完整的操作系统，预装软件和基础管理特性等对设备处理器、显卡、存储和互联网连接等均有一定的需求。根据我们的测试，我们总结出了如下以使用体验良好为基本基准的系统配置需求表。
+        是一款主要面向桌面的、功能较为完整的操作系统，预装软件和基础管理特性等对设备处理器、显卡、存储和互联网连接等均有一定的需求。根据我们的测试，我们总结出了如下以使用体验良好为基本基准的系统配置需求表。
       </p>
       <table
         class="mt-6"
@@ -87,8 +86,7 @@ const aoscOsRequirementsList = ref();
           >关于安同 OS
           兼容的处理器，详请见<AppLink
             :to="{
-              path: '/aosc-os/isa',
-              hash: '#aoscOsIsaTableTitle'
+              path: '/aosc-os/isa'
             }"
             >安同 OS 架构支持规格表</AppLink
           >
