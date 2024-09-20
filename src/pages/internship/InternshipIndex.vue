@@ -37,10 +37,10 @@ const navigationList = [
       id="todo" />
     <div class="p-6">
       <p>
-        我社项目繁多但人员稀少，天马行空的大坑也好，细处着手的小事也罢，常常因为人力问题难以得到实施。如下是眼下有待完成的项目，欢迎您通过<a
+        我社项目繁多但人员稀少，天马行空的大坑也好，细处着手的小事也罢，常常因为人力问题难以得到实施。如下是眼下有待完成的项目，欢迎您通过<router-link
           class="text-[#0056cc] no-underline"
-          href="/contact"
-          >各聊天群组</a
+          to="/contact"
+          >各聊天群组</router-link
         >与我们联系，从英雄帖拿下属于您的立功机会：
       </p>
       <div class="pt-4 pb-4 px-16">
