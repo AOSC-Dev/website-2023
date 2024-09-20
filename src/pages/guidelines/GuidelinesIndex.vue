@@ -7,18 +7,17 @@ import AppH2 from '../../components/AppH2.vue';
   <div class="pl-[1px]">
     <category-second title="人际关系准则" />
     <div class="p-6">
-      <p>
+      <p class="pb-8">
         欢迎来到创立于 2011 年的安同开源社区
         (AOSC) ！
       </p>
-      <br />
       <i
         >&nbsp;&nbsp;“All the people who live in a
         particular area, or a group of people who
         are considered as a unit because of their
         shared interests or background.”</i
       >
-      <p class="py-2">
+      <p class="py-2 pb-8">
         — Community (n.), definition from the
         <a
           href="https://dictionary.cambridge.org/dictionary/english/community"
