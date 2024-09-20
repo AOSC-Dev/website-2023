@@ -1,6 +1,7 @@
 <script setup>
 import { reactive } from 'vue';
 import CategorySecond from '/src/components/CategorySecond.vue';
+import AppSupport from '../../components/AppSupport.vue';
 
 const navigationList = [
   {
@@ -44,7 +45,7 @@ const docList = reactive([
       </div>
     </div>
 
-    <Support :navigation-list="docList" />
+    <AppSupport :navigation-list="docList" />
   </div>
 </template>
 
