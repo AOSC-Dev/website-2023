@@ -12,7 +12,7 @@ import CategorySecond from '/src/components/CategorySecond.vue';
         安同 OS 是一款使用 dpkg 包管理、基于 Linux 内核和各类组件独立构建和维护的操作系统。安同 OS 主要面向有一定 Linux 使用经验的用户，针对个人设备优化体验。此外，安同 OS 致力于开箱即用、简化系统管理和提供可靠的工作环境。
       </p><br />
       <p>
-        安同 OS 是众多 Linux 发行版中的一员。因此，在选择 Linux 发行版时，您也许苦于“选择困难症”。此文旨在从多方面介绍 安同 OS，以助您作出选择。
+        安同 OS 是众多 Linux 发行版中的一员。因此，在选择 Linux 发行版时，您也许苦于“选择困难症”。此文旨在从多方面介绍安同 OS，以助您作出选择。
       </p>
     </div>
     <category-second
@@ -78,7 +78,7 @@ import CategorySecond from '/src/components/CategorySecond.vue';
           <li>对部署简易性有追求且偏好开箱即用的系统。</li>
           <li>对软件更新速度要求较低。</li>
           <li>笔记本电脑等能耗和散热性能敏感的设备。</li>
-          <li>您希望参与 安同 OS 开发。</li>
+          <li>您希望参与安同 OS 开发。</li>
         </ul>
       </div>
     </div>
