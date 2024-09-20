@@ -66,34 +66,47 @@ function copyLink() {
     <div v-if="details != null">
       <category-second title="公共粘贴板" />
       <div class="p-[2em]">
-        <div
-          v-for="filename in details.fileList"
-          :key="filename">
-          <img
-            :src="getAttachUrl(filename)"
-            class="w-full"
-            v-if="isImg(filename)" />
-          <a
-            v-else
-            class="text-link"
-            :href="getAttachUrl(filename)"
-            target="_blank"
-            >{{ filename }}</a
-          >
-        </div>
-        <div class="flex justify-between">
-          <div>
-            <div>标题: {{ details.title }}</div>
-            <div
-              >过期时间:
-              {{ details.expDate }}</div
-            >
+        <div class="flex flex-col">
+          <div class="flex justify-between">
+            <div>
+              <div>标题: {{ details.title }}</div>
+              <div
+                >过期时间:
+                {{ details.expDate }}</div
+              >
+            </div>
+            <button
+              class="text-white px-[3em] theme-bg-color-primary-static py-[1em]"
+              @click="copyLink">
+              复制共享链接
+            </button>
           </div>
-          <button
-            class="text-white px-[3em] theme-bg-color-primary-static py-[1em]"
-            @click="copyLink">
-            复制共享链接
-          </button>
+          <ul
+            class="el-upload-list el-upload-list--text">
+            <li
+              class="el-upload-list__item is-ready"
+              v-for="filename in details.fileList"
+              :key="filename">
+              <div class="items-center flex">
+                <el-icon class="mr-2"
+                  ><Document
+                /></el-icon>
+                <span
+                  ><img
+                    :src="getAttachUrl(filename)"
+                    class="w-full"
+                    v-if="isImg(filename)" />
+                  <a
+                    v-else
+                    class="text-link"
+                    :href="getAttachUrl(filename)"
+                    target="_blank"
+                    >{{ filename }}</a
+                  ></span
+                ></div
+              ></li
+            >
+          </ul>
         </div>
         <app-highlight
           class="w-full my-[20px]"
