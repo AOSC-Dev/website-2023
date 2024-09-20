@@ -1,6 +1,7 @@
 <script setup>
 import { reactive } from 'vue';
-import CategorySecond from '/src/components/CategorySecond.vue';
+import CategorySecond from '../../components/CategorySecond.vue';
+import AppSupport from '../../components/AppSupport.vue';
 import AccordionNavigation from '../../components/AccordionNavigation.vue';
 
 const navigationList = [
@@ -80,7 +81,7 @@ const docList = reactive([
         alt="" />
     </div>
 
-    <Support :navigation-list="docList" />
+    <AppSupport :navigation-list="docList" />
   </div>
 </template>
 
