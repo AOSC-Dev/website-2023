@@ -56,6 +56,10 @@ const navigationList = [
 
 const docList = reactive([
   {
+    title: '安同 OS 适合我吗？',
+    url: '/aosc-os/right-for-me'
+  },
+  {
     title: '系统配置需求表',
     url: '/aosc-os/requirements'
   },
