@@ -269,7 +269,7 @@ const router = createRouter({
       name: 'paste',
       component: PasteIndex,
       meta: {
-        title: '粘贴板'
+        title: '公共粘贴板'
       }
     },
     {
@@ -277,7 +277,7 @@ const router = createRouter({
       name: 'pasteDetail',
       component: PasteDetail,
       meta: {
-        title: '粘贴板'
+        title: '公共粘贴板'
       }
     },
     {

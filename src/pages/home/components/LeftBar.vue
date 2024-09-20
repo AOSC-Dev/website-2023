@@ -54,19 +54,23 @@ const linkArr = reactive([
     title: '服务设施',
     children: [
       {
-        title: '论坛',
+        title: '公共粘贴板',
+        link: '/paste'
+      },
+      {
+        title: '社区论坛',
         link: 'https://bbs.aosc.io/'
       },
       {
-        title: '文档',
+        title: '参考文档',
         link: 'https://wiki.aosc.io/'
       },
       {
-        title: '代码',
+        title: '代码仓库',
         link: 'https://github.com/AOSC-Dev'
       },
       {
-        title: '邮箱',
+        title: '贡献者邮箱',
         link: 'https://mail20.mymailcheap.com/'
       },
       {
@@ -76,8 +80,7 @@ const linkArr = reactive([
       {
         title: '自动化设施',
         link: 'https://buildit.aosc.io/'
-      },
-      { title: '粘贴板', link: '/paste' }
+      }
     ],
     show: true
   }
