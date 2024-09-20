@@ -159,10 +159,7 @@ const navigationList = [
         <ul class="list-disc">
           <li
             ><b>2024 年 10 月：</b
-            >宁夏理工学院</li
-          >
-          <li
-            ><b>2024 年 9 月：</b>南阳理工学院</li
+            >兰州大学、宁夏理工学院</li
           >
         </ul>
       </div>
