@@ -92,6 +92,11 @@ const sponsorList = ref([
         img: 'qvq'
       },
       {
+        name: '山东大学（青岛）网管会镜像站学生运营团队',
+        web: 'https://mirrors.sdu.edu.cn/',
+        img: 'sdu'
+      },
+      {
         name: '上海交通大学 Linux 用户组',
         web: 'https://mirror.sjtu.edu.cn/',
         img: 'sjtug'
