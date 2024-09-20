@@ -799,10 +799,10 @@ p {
   background-image: url(../../../public/assets/download/oma-mascot.svg),
     url(/public/assets/download/oma.svg);
   background-size:
-    112px auto,
+    144px auto,
     100% auto;
   background-position:
-    right 64px bottom -4px,
+    right 38px bottom -4px,
     center;
   background-repeat: no-repeat, no-repeat;
 }
