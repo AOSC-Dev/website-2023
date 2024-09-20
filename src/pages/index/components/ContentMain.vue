@@ -96,7 +96,7 @@ onUnmounted(() => {
         '--homepage-img-height1': imgHeight
       }"
       ref="bgImg"
-      href="/aosc-os"
+      href="/download#aosc-os-download"
       class="bg-img-height1 w-full flex">
       <!-- <div class="flex w-full" :class="'h-[' + imgHeight + 'px]'"></div> -->
       <el-image
