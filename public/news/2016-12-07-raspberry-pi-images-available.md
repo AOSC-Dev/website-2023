@@ -19,4 +19,4 @@ Before then, do a fast SD card burn/dd...
 
 And enjoy AOSC OS on your Pi!
 
-![pi-aosc](/assets/news/news/rpi-img.jpg)
+![pi-aosc](/assets/news/rpi-img.jpg)

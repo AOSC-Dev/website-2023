@@ -7,7 +7,7 @@ title: Happy Birthday, AOSC (for the fifth time)!
 ---
 
 
-![5th-banner](/assets/news/news/5th-anniversary-banner.jpg)
+![5th-banner](/assets/news/5th-anniversary-banner.jpg)
 
 Can't believe it's already been half a decade (and I have grown so old from who I was when AOSC has just got started in 2011). But nevertheless, happy birthday, AOSC! And I am so proud of you - not for you being the biggest or the best community, but the most honest and progressive of all communities!
 
@@ -29,6 +29,6 @@ My dear friends and collegues, as the founder of this community, please accept m
 
 A big thank you to Tianhao (James) Chai for creating the banner for our 5th anniversary in Minecraft (and on AOSC OS too)!
 
-![5th-selfie](/assets/news/news/5th-anniversary-selfie.jpg)
+![5th-selfie](/assets/news/5th-anniversary-selfie.jpg)
 
 And [here](https://cth451.tk/map/#scene_world_day/0/10/269/-358/64) is a map for this "monument".

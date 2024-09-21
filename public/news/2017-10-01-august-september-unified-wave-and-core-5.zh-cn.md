@@ -7,7 +7,7 @@ title: August-September Unified Wave and Core 5!
 ---
 
 
-![core5-banner](/assets/news/news/core5-banner.jpg)
+![core5-banner](/assets/news/core5-banner.jpg)
 
 We are happy to report that the August-September Wave of updates are now made available for AMD64 users of AOSC OS - along with AOSC OS Core 5 component updates, eMMC is here!
 
