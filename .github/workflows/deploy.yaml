@@ -25,11 +25,8 @@ jobs:
             ${{ runner.OS }}-npm-cache
       - name: MakeCategory
         run: |
-          pushd ./makeCategory
-          ./build.sh
-          popd
           pushd ./public
-          ./makeCategory
+          aosc-portal-make-news-index
           popd
       - name: Setup SSH Private Key
         env:
