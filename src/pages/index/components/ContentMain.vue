@@ -112,7 +112,7 @@ onUnmounted(() => {
         </template>
       </el-image>
     </a>
-    <!-- 咨讯要点 -->
+    <!-- 资讯要点 -->
     <div>
       <category-second title="资讯要点" />
       <article v-if="isLoad">
