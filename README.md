@@ -1,20 +1,87 @@
-# AOSC Web Site
-> Vue3 + Vite
+AOSC Portal
+===
 
-## 新闻类说明
+[简体中文自述文件 >>](/README.zh-cn.md)
 
-1. 新闻内容使用 `markdown` 编写
-2. 新闻的md文件路径为 `public/news/`
-3. 静态文件路径为 `assets/`，引用方式为 `/assets/...`
-5. 新闻md文件需要头信息，跟之前的格式一致，头信息里category字段对应关系如下:
-    1. news: 用户公告
-    2. warning: 安全公告
-    3. community: 社区新闻
-    4. book: 社区期刊
-6. 新闻的md文件名里如需体现语言，如zh-cn,则文件名后缀的前面必须是.zh-cn.md，也就是遵循现有语言的规则，如果忽略语言，则默认为en(英文)，详情可查看[生成新闻目录的代码](makeCategory/main.go)
+The Portal website for AOSC since 2024 (designed in 2023, hence the name),
+built using Vue.js.
 
-# todolist
-功能实现
-    2. 下载页面数据
-    3. 粘贴版
-    4. 镜像源
+At a glance
+---
+
+The main design goal for this new website is to maximise information density
+on a single screen space, utilising both multi-column and conventional
+navigation systems. It also seeks to depart from a conventional "FOSS
+community" aesthetic by emphasizing vivid and product-oriented presentation
+for prospective and current users.
+
+In terms of visual styling, this website intentionally seeks to re-create a
+2000s Web 1.0 aesthetic (whilst adopting modern technological frameworks and
+layout optimisations). Inspiration for the site layout comes from Microsoft's
+Windows home page from 2001 - 2004:
+
+- [Reference 1, Windows XP home from late 2001](https://web.archive.org/web/20011211230629/http://microsoft.com/windowsxp/default.asp)
+- [Reference 2, Windows XP mid-cycle home from 2004](https://web.archive.org/web/20040204080626/http://www.microsoft.com/china/windows/default.mspx)
+
+Technically speaking, this website is built as a client-side rendered Web
+application. This may change in the future.
+
+Deployment and testing
+---
+
+This website is deployed to our Web server using a GitHub workflow. It should
+also be deployed in conjunction with [website-2023-utils](https://github.com/AOSC-Dev/website-2023-utils).
+Please follow also the instructions there.
+
+To test the website locally, you would need a Node.js + NPM toolchain and a
+deployment of the aforementioned [website-2023-utils](https://github.com/AOSC-Dev/website-2023-utils).
+To install Node.js + NPM on AOSC OS:
+
+```
+oma install nodejs
+```
+
+Then, build and serve the website locally:
+
+```
+npm i
+npm run dev
+```
+
+Submitting news
+---
+
+All news articles are written in Markdown and stored in `/public/news`, with
+extra assets (images, etc.) stored in `/assets/...`. All assets should be
+referenced from the site (`/assets/...`, not `https://...`).
+
+News articles should contain a header:
+
+```
+---
+categories:
+  - journals
+title: "安记冰室・九月上"
+date: 2024-09-19T23:00:00+08:00
+important: false
+home: true
+---
+```
+
+- `categories` (enum):
+    - `advisories`: User advisories (usually AOSC OS-related).
+    - `news`: Community news about events, sponsorships, etc.
+    - `journals`: Community journals (entitled *Coffee Break*).
+    - `minutes`: Contributor meeting records.
+- `title` (string): News title.
+- `date` (string): Publication date to be presented as-is.
+- `important` (boolean): Highlight as important.
+- `home` (boolean): Whether to list in the news highlight section at the Portal home.
+
+### Localising news articles
+
+To localise a news article, use a language code suffix such as `.zh-cn`, i.e.:
+
+```
+2024-09-18-aosc-os-relnote.zh-cn.md
+```
