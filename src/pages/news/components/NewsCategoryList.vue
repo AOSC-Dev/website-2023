@@ -20,8 +20,8 @@ const props = defineProps({
         v-for="item in newsList"
         :key="item.title"
         class="newslist-item">
-        <a
-          :href="'/news/detail/' + item.Path"
+        <router-link
+          :to="'/news/detail/' + item.Path"
           class="hover:bg-leftbar-bg flex cursor-pointer pl-6 h-[2rem] leading-8">
           <span class="truncate flex-1">
             {{ item.Title }}
@@ -29,7 +29,7 @@ const props = defineProps({
           <span class="flex-0 pr-6"
             >[{{ item.Date }}]</span
           >
-        </a>
+        </router-link>
       </div>
     </div>
   </div>
