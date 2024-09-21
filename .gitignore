@@ -1,3 +1,8 @@
+# Binary assets
+public/assets/gallery/
+public/assets/news/
+public/assets/coffee-break/
+
 # Runtime files
 auto-imports.d.ts
 components.d.ts
@@ -31,4 +36,3 @@ public/newsCategories
 *.sln
 *.sw?
 pasteServer/paste/*
-
