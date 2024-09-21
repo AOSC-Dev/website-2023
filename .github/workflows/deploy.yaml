@@ -23,11 +23,6 @@ jobs:
           key: ${{ runner.OS }}-npm-cache
           restore-keys: |
             ${{ runner.OS }}-npm-cache
-      - name: MakeCategory
-        run: |
-          pushd ./public
-          aosc-portal-make-news-index
-          popd
       - name: Setup SSH Private Key
         env:
           KEY: ${{ secrets.KEY }}
@@ -49,6 +44,18 @@ jobs:
           # Build website
           npm i
           npm run build
+
+          # Build utilities
+          git submodule update --init
+          pushd utils/make-news-index
+          go build -o make-news-index
+          popd
+
+          # Build news index
+          pushd public
+          ../utils/make-news-index/make-news-index
+          popd
+
           zip -r website.zip website/
           scp website.zip aosc@$IP:/home/aosc/web/
       - name: Unzip website
