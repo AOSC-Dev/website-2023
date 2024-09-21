@@ -24,7 +24,7 @@ And indeed... We are able to push through with the two objectives:
 
 --------
 
-![aosc-os-deepin-201801](/assets/news/news/aosc-os-deepin-201801.jpg)
+![aosc-os-deepin-201801](/assets/news/aosc-os-deepin-201801.jpg)
 
 AOSC OS running the Deepin Desktop Environment!
 

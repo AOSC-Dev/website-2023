@@ -11,7 +11,7 @@ We are happy to announce that our October Wave of updates is now ready for AMD64
 
 Anyways, let's kick this announcement off with a new wallpaper made available to all AOSC OS users, as part of the default collection of wallpapers.
 
-[![core5-blender](/assets/news/news/core5-rendered.jpg)](https://github.com/AOSC-Dev/aosc-os-artworks/raw/master/11/core5-rendered.jpg)
+[![core5-blender](/assets/news/core5-rendered.jpg)](https://github.com/AOSC-Dev/aosc-os-artworks/raw/master/11/core5-rendered.jpg)
 
 This wallpaper is made by [Tianhao Chai](https://aosc.io/people/~cthbleachbit/) - our resident Wine, NVIDIA, Linux Kernel package maintainer, and Blender enthusiast. This wallpaper is rendered with no other software than Blender, took almost two days to render on his own desktop computer (LOL). Blender project file for this wallpaper is available [here](https://github.com/AOSC-Dev/aosc-os-artworks/raw/master/11/core5.blend), if you would like to make any changes/improvements to this wallpaper, or simply to warm up your room in the coming winter!
 
@@ -27,7 +27,7 @@ GNOME 3.26 contains a large amount of changes made to further polish user experi
 
 HiDPI support also sees great improvement, the feature to set DPI scaling on a "fraction scale", instead of jumping from 1x to 2x, etc. This should offer better flexibility for 2K/3K/4K/... owners.
 
-![gnome-3.26](/assets/news/news/gnome-3.26.jpg)
+![gnome-3.26](/assets/news/gnome-3.26.jpg)
 
 ## KDE/Plasma Updates
 

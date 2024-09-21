@@ -24,7 +24,7 @@ You may be pleasantly surprised on how fast your 486DX4, Pentium, and Pentium II
 
 If we take a look at this screenshot of AOSC OS running on a Pentium 4 laptop (and of course, AOSC OS is blazing fast on it)...
 
-![pentium4-aosc-os](/assets/news/news/april-fools-2017.png)
+![pentium4-aosc-os](/assets/news/april-fools-2017.png)
 
 You may have noticed a website running with no window decoration or any form of toolbars, and a system property window from Windows Me (?!). Well, as most of our developers have experienced Microsoft Windows 98, a great operating system (albeit not free and open source, nor did it Respect Our Freedom™), we admired the idea of having a web page displayed right at the desktop so you could get to know the newest information online without relying on the complicated Conky...
 
