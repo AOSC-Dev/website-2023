@@ -20,16 +20,16 @@ Along the way (since 2010), support for "modern" system features like PulseAudio
 Here below are some screenshots taken from my PowerMac G5 (PowerPC64) running TDE - which I happen to use everyday now, since the last weekend.
 
 -----------------
-
-![trinity-0](/assets/news/trinity-14.0.4-0.jpg)
+<!-- 
+![trinity-0](/assets/news/trinity-14.0.4-0.jpg) -->
 
 First greetings from Trinity.
 
-![trinity-1](/assets/news/trinity-14.0.4-1.jpg)
+<!-- ![trinity-1](/assets/news/trinity-14.0.4-1.jpg) -->
 
 A different flavoured panel with Kickoff launcher - more famous on KDE Plasma 4 desktop.
 
-![trinity-2](/assets/news/trinity-14.0.4-2.jpg)
+<!-- ![trinity-2](/assets/news/trinity-14.0.4-2.jpg) -->
 
 Get the productivity going!
 

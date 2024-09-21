@@ -13,7 +13,7 @@ MATE Desktop 1.16 is now available in the community repository for AOSC OS.
 
 — MATE Desktop 1.16 Announcement
 
-![mate-1.16](/assets/news/mate-1.16.jpg)
+<!-- ![mate-1.16](/assets/news/mate-1.16.jpg) -->
 
 MATE Desktop 1.16 is a major update over version 1.14 released six months ago:
 

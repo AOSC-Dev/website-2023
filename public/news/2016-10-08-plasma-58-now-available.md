@@ -16,15 +16,15 @@ Plasma 5.8 comes with a large collection of changes and improvement over Plasma 
 - Enhanced functionality for Task Manager applet on Plasma Panels, more control to you.
 - Dynamic wallpapers for the desktop and the lock screen.
 
-![plasma-5.8-1](/assets/news/plasma-5.8-1.png)
+<!-- ![plasma-5.8-1](/assets/news/plasma-5.8-1.png) -->
 
 With this update, AOSC OS specific brandings are now included by default, bringing a more specialized look for AOSC OS with KDE Plasma Desktop.
 
-![plasma-5.8-2](/assets/news/plasma-5.8-2.png)
+<!-- ![plasma-5.8-2](/assets/news/plasma-5.8-2.png) -->
 
 Plasma lock screen.
 
-![plasma-5.8-3](/assets/news/plasma-5.8-3.png)
+<!-- ![plasma-5.8-3](/assets/news/plasma-5.8-3.png) -->
 
 KSPlash on Plasma startup.
 

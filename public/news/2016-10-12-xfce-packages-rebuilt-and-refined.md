@@ -11,11 +11,11 @@ Xfce, as an agile and lightweight desktop environment favoured by many, did not 
 
 Not much have changed on the appearance side except for the default wallpaper is now set to be one of AOSC OS's wallpaper, as shown below:
 
-![xfce-rebuilt-1](/assets/news/xfce-rebuilt-1.jpg)
+<!-- ![xfce-rebuilt-1](/assets/news/xfce-rebuilt-1.jpg)
 (Xfce desktop and desktop context menu)
 
 ![xfce-rebuilt-2](/assets/news/xfce-rebuilt-2.jpg)
-(Xfce desktop showing off some windows)
+(Xfce desktop showing off some windows) -->
 
 However, under the hood, Xfce is now built with newly defined compiler and linker flags so that:
 

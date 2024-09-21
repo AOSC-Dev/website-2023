@@ -59,7 +59,7 @@ porting AOSC OS with his purchase of a Loongson 3A R2 (3A2000C) desktop of
 MIPS64el (MIPS 64-bit, little-endian) architecture, and it's truly an
 interesting (and perhaps unfortunately, quirky) machine.
 
-![loongson-desktop](/assets/news/mips64-buildbot.jpg)
+<!-- ![loongson-desktop](/assets/news/mips64-buildbot.jpg) -->
 
 The porting starts without actually doing the build, but with making "specs" for
 the particular port. As AOSC OS, there isn't much room for varied system
@@ -71,7 +71,7 @@ are just... too much. At the end of the reading, a series of optimization
 parameters, or flags are collected and put in as a part of some Autobuild3
 [updates](https://github.com/AOSC-Dev/autobuild3/compare/7271c3c26d9e3aca26454e1608d7acb2059be360...fbc87e53a1131e1e187b0716d54b79fe45c01de6).
 
-![yhi-mips64-notes](/assets/news/mips64-yhi-notes.jpg)
+<!-- ![yhi-mips64-notes](/assets/news/mips64-yhi-notes.jpg) -->
 
 The next step would be to start reading and build along with the guides at
 [Linux From Scratch](http://www.linuxformscratch.org/). The only difference we
@@ -91,7 +91,7 @@ are the PowerPC 32/64-bit ports, thanks to a powerful PowerMac G5 Quad, taking
 only 5 weeks to have the Base, MATE, and XFCE variants available), depending on
 the difficulty and fluidity of the porters.
 
-![mips64-workspace](/assets/news/mips64-workspace.jpg)
+<!-- ![mips64-workspace](/assets/news/mips64-workspace.jpg) -->
 
 What's next then? Generally, maintaining and hoping for more. Maintaining ports
 is a long enduring and often times tedious task. Given that our main port is
@@ -111,7 +111,7 @@ great cure to the Wisconsin winter, and a great tool for my roommate Tianhao Cha
 to heat his milk and such (package building for the ports generally happens in
 the weekends, a "good" period of time in a week by our definition).
 
-![chadbourne-residential-computing-center](/assets/news/ports-build-farm.jpg)
+<!-- ![chadbourne-residential-computing-center](/assets/news/ports-build-farm.jpg) -->
 
 On the "hoping for more" part, we do accept device donations, and we (generally)
 make guarantees on porting AOSC OS onto them. Icenowy Zheng, our ARM maintainer,
@@ -123,7 +123,7 @@ good friend of mine - knowing its potential and well maintainership by the
 mainline kernel, I should be able to get AOSC OS running - and of course,
 releasing images for it in a timely manner.
 
-![nokia-n900](/assets/news/nokia-n900.jpg)
+<!-- ![nokia-n900](/assets/news/nokia-n900.jpg) -->
 
 And that sums up how the ports happens, and happens to be in the context of
 AOSC OS development. If you are interested in donating devices or maintaining
