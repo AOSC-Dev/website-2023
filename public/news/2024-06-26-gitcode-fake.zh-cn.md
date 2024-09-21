@@ -40,7 +40,7 @@ CSDN 及 GitCode 运维负责人、同事们：
 
 ——————
 
-![]((/assets/news/gitcode-fake-email.jpg)
+![](/assets/news/gitcode-fake-email.jpg)
 
 我们已收到来自 GitCode 客服的回邮，相关组织及仓库页面已无法访问，亦无法使用 Git 克隆相关内容：
 
