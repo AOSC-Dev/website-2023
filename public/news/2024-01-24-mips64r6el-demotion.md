@@ -14,6 +14,6 @@ for primary and secondary architectures.
 
 Following the demotion, we will continue maintaining this port, but with no
 guarantees on timely updates. Should you run into issues while using this port,
-please [contact us](https://aosc.io/contact) for assistance.
+please [contact us](https:/contact) for assistance.
 
 — Mingcong Bai

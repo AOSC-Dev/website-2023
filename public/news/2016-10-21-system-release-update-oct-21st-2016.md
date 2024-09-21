@@ -18,7 +18,7 @@ For each of their respective releases. There are much more to the new system rel
 
 - From this release, all system releases are built from the "Base" variant, instead of rolling updates on top of old releases - hopefully providing a cleaner and properly minimalized dependency tree.
 - All system releases with desktop envrionments' apperances have been slightly customized:
-    - All releases now uses the new AOSC OS default wallpaper, showcased [here](https://aosc.io/news/aosc-oss-default-wallpapers).
+    - All releases now uses the new AOSC OS default wallpaper, showcased [here](https:/news/aosc-oss-default-wallpapers).
     - All GTK+ based desktop envrionments now use the Arc Darker GTK+ theme by default.
     - MATE and Xfce releases now use Numix icons by default, replacing the old Vertex icons.
 - All system releases should have higher usability out of the box:

@@ -18,7 +18,7 @@ home: true
 
 ### 速更新！安同 OS 离线安装盘意外安装预制 SSH 主机密钥
 
-![OpenSSH 组件更新时的安全警告示意图](/assets//coffee-break/20240918/imgs/openssh-advisory.png)
+![OpenSSH 组件更新时的安全警告示意图](/assets/news/coffee-break/20240918/imgs/openssh-advisory.png)
 
 由于离线安装盘生成工具中的清理流程设计疏忽，自六月底开始发行的安同 OS 离线安装盘（即文件名由 `aosc-os_installer` 开头的 ISO 镜像）所包含的系统镜像均未正确清理 SSH 主机密钥，致使安装后的系统中亦使用了该主机密钥。
 
@@ -35,7 +35,7 @@ home: true
 
 ### 携手社团：秋季安同 “校园行” 活动前瞻
 
-![三月，曲阜师范大学计算机爱好者协会的徐尔芃同学为“校园行”活动开幕](/assets//coffee-break/20240918/imgs/qfnu-ace.jpg)
+![三月，曲阜师范大学计算机爱好者协会的徐尔芃同学为“校园行”活动开幕](/assets/news/coffee-break/20240918/imgs/qfnu-ace.jpg)
 
 在今年开春的甲辰烙饼会上，社区提出了安同 “校园行” 活动的设想：深入大学校园，通过学生社团为大学学生和行业上的一线开发者、社区贡献者之间建立沟通的桥梁，埋下参与社区与开源软件贡献的种子。今年三月，社区成功在曲阜师范大学举办了[第一次安同 “校园行”](https://website-2023.aosc.io/news/detail/2024-03-20-qfnu-computing-evolved.zh-cn.md "第一次安同 “校园行”")活动。
 
@@ -50,7 +50,7 @@ home: true
 
 ### 集社区之精华：安同 OS 发布九月发行更新
 
-![庆中秋，安同 OS 发布九月发行更新](/assets//coffee-break/20240918/imgs/mid-autumn-aosc-os-slim.png)
+![庆中秋，安同 OS 发布九月发行更新](/assets/news/coffee-break/20240918/imgs/mid-autumn-aosc-os-slim.png)
 
 新一批安同 OS 系统发行更新来啦！
 
@@ -65,7 +65,7 @@ home: true
 
 ### 界面再升级：小熊猫包管理 oma 发布 1.10 
 
-![轻松管，轻松用：oma 助您便捷完成系统组件管理](/assets//coffee-break/20240918/imgs/oma-comic-slim.png)
+![轻松管，轻松用：oma 助您便捷完成系统组件管理](/assets/news/coffee-break/20240918/imgs/oma-comic-slim.png)
 
 日前，[傅孝元](https://github.com/eatradish "傅孝元")发布了小熊猫包管理 (oma) 的 1.10 版。
 
@@ -95,7 +95,7 @@ oma 目前支持的 Debian 及 Ubuntu 版本如下：
 
 ### 新增 glibc 2.40 及 Linux 6.11 支持：libLoL 0.1.6 发布
 
-![libLoL 持续助力龙架构新世界生态迁移！](/assets//coffee-break/20240918/imgs/liblol.png)
+![libLoL 持续助力龙架构新世界生态迁移！](/assets/news/coffee-break/20240918/imgs/liblol.png)
 
 近日，[王邈](https://github.com/shankerwangmiao "王邈")发布了安同 OS 龙架构新旧世界兼容框架 libLoL 的 0.1.6 版本。该版本更新顺应了 Debian 的 Glibc 更新和新的内核版本。本次更新主要包含如下内容：
 

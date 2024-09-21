@@ -26,6 +26,6 @@ important: false
 - [AArch64](https://releases.aosc.io/os-arm64/installer/preview/aosc-os_installer_20240627_arm64.iso)
 - [龙架构(LoongArch)](https://releases.aosc.io/os-loongarch64/installer/preview/aosc-os_installer_20240627_loongarch64.iso)
 
-如果您在测试时遇到问题或困难，请通过社区[各聊天群组](https://aosc.io/zh-cn/contact)或[社区论坛](https://bbs.aosc.io/)与我们联系
+如果您在测试时遇到问题或困难，请通过社区[各聊天群组](https:/zh-cn/contact)或[社区论坛](https://bbs.aosc.io/)与我们联系
 
 感谢您的测试！

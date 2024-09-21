@@ -7,7 +7,7 @@ title: Coming Up in August...
 ---
 
 
-With a somewhat successful completion of the monthly update cycle in the [July Wave](https://aosc.io/news/4882-july-wave-is-here), we have just finished discussion on goals/objectives in the August Wave of updates. The focus or the theme, if you like, of this month will be refinement and clean up.
+With a somewhat successful completion of the monthly update cycle in the [July Wave](https:/news/4882-july-wave-is-here), we have just finished discussion on goals/objectives in the August Wave of updates. The focus or the theme, if you like, of this month will be refinement and clean up.
 
 First of all, a majority of work to be done this week will be dictacted by ACID - a CI-like mechanism which builds every single packages on offer in the [ABBS Tree](https://github.com/AOSC-Dev/aosc-os-abbs/). Packages to be fixed are mounting up to couple hundreds at present, and that will be what we are doing this month - fix them while the number climbs even higher. In addition to that, new commits introduced to our [Autobuild3](https://github.com/AOSC-Dev/autobuild3/) toolkit - if you haven't heard of it yet, it's our only official packaging tool for AOSC OS - increased the level of strictness while running build scripts, loads of old scripts should end up failing. It's better to rebuild these old and low-quality packages preemptively than ending up as bugs discovered by users, and this is exactly why we are doing this in August.
 

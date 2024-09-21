@@ -7,7 +7,7 @@ title: Repository De-Dup Complete
 ---
 
 
-As mentioned in the [announcement](https://aosc.io/news/6347-repository-de-dup-to-take-place-next-week) last week, a repository de-duplication (removing old version s of all packages in the repository) is planned for this weekend - and now, the process is complete.
+As mentioned in the [announcement](https:/news/6347-repository-de-dup-to-take-place-next-week) last week, a repository de-duplication (removing old version s of all packages in the repository) is planned for this weekend - and now, the process is complete.
 
 Ideally, as an user who regularly updates their copy of AOSC OS, they would/should not notice the changes taken place this weekend. But we do anticipate removals of some packages may lead to dependency issues, and that our bulk removal of files on the repository server may cause error on our mirror partners (due to `rsync`'s delete threshold, or `--max-delete` settings). 
 

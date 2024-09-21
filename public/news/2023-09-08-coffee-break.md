@@ -14,7 +14,7 @@ Thank you for reading "Coffee Break," AOSC's semi-monthly newsletter! Here, you 
 AOSC OS Updates
 ---------------
 
-In the past two months, besides routine maintenance on [AOSC OS](https://aosc.io/downloads), community developers also introduced many updates and fixes, as well as the accompanying applications and components. We hope that these updates will bring you enjoyment and productivity.
+In the past two months, besides routine maintenance on [AOSC OS](https:/downloads), community developers also introduced many updates and fixes, as well as the accompanying applications and components. We hope that these updates will bring you enjoyment and productivity.
 
 ### Core 11 Released (Nya~)
 

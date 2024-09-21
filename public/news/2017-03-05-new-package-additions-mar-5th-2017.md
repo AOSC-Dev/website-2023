@@ -7,7 +7,7 @@ title: 'New package additions: Mar 5th, 2017'
 ---
 
 
-Per users' requests, we have added a total of **169** packages to our [community repository](https://repo.aosc.io/) between today and our last new packages report ([Feb. 6th, 2017](https://aosc.io/news/new-package-additions-feb.-6-2017)). 
+Per users' requests, we have added a total of **169** packages to our [community repository](https://repo.aosc.io/) between today and our last new packages report ([Feb. 6th, 2017](https:/news/new-package-additions-feb.-6-2017)). 
 
 Some highlights include:
 

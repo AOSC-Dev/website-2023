@@ -27,7 +27,7 @@ The first part could be seen with updates made to our two ARM ports, which inclu
 --------
 
 ![krita-orange-pi](/assets/news/2017-july-calligra.jpg)
-Krita running on an AArch64-capable board, Orange Pi PRIME - AOSC OS image is available in the [download page](https://aosc.io/os-download).
+Krita running on an AArch64-capable board, Orange Pi PRIME - AOSC OS image is available in the [download page](https:/os-download).
 
 --------
 

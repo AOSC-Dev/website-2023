@@ -33,7 +33,7 @@ important: false
 AOSC OS 快讯
 ------------
 
-在过去几周中，社区开发者们除继续对 [AOSC OS](https://aosc.io/zh-cn/downloads/) 进行日常维护外，还为系统引入了许多更新、修复，推进了系统周边组件的开发，希望这些工作能为您的工作与娱乐生活带来便利。
+在过去几周中，社区开发者们除继续对 [AOSC OS](https:/zh-cn/downloads/) 进行日常维护外，还为系统引入了许多更新、修复，推进了系统周边组件的开发，希望这些工作能为您的工作与娱乐生活带来便利。
 
 ### Apple Silicon 版 AOSC OS 系统发布
 
@@ -101,7 +101,7 @@ BurnKit 的开发工作仍处于初步设计阶段，我们计划在 BurnKit 中
 
 先前，我们启动了“合龙”工作——将目前位于前沿分支 (`frontier`) 中的移植工作合并到稳定分支 (`stable`) 中。在未来数个月中，我们将就两个分支中的源码及配置差异进行[审阅、测试及合并工作](https://github.com/AOSC-Dev/aosc-os-abbs/pull/4701)，直到 LoongArch 架构构建配置等成为稳定系统的一部分。
 
-目前，用于 LoongArch 的实验性系统发行已经可以从[社区主页下载](https://aosc.io/zh-cn/downloads)，欢迎试用并提供反馈，亦欢迎有志之士加入“合龙”工作！
+目前，用于 LoongArch 的实验性系统发行已经可以从[社区主页下载](https:/zh-cn/downloads)，欢迎试用并提供反馈，亦欢迎有志之士加入“合龙”工作！
 
 ### 更新速览
 

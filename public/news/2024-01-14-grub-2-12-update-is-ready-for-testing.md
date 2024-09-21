@@ -19,7 +19,7 @@ oma topics
 
 Toggle the testing repository for `grub-2.12`, save your changes and exit.
 
-Please note that, shold and error occur during installation, please report the error output right away and note any particularities in your setups that may have caused the issue (such as LVM/LUKS usage and EFI system partition, etc.). If you run into boot failure, please download [LiveKit](https://aosc.io/downloads) to rescue.
+Please note that, shold and error occur during installation, please report the error output right away and note any particularities in your setups that may have caused the issue (such as LVM/LUKS usage and EFI system partition, etc.). If you run into boot failure, please download [LiveKit](https:/downloads) to rescue.
 
 Thank you in advance for your attention.
 

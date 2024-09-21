@@ -15,7 +15,7 @@ After some four months drowning in updates and rebuilds, the current cycle is no
 Core 6
 ------
 
-After nearly a year in delay, [Core 6](https://aosc.io/news#888-re-cap-aoscc-2018) "Fsck" will ship as a part of this coming cycle update. Coming in this major Core update...
+After nearly a year in delay, [Core 6](https:/news#888-re-cap-aoscc-2018) "Fsck" will ship as a part of this coming cycle update. Coming in this major Core update...
 
 - GCC 8.3.1, with many performance and new features from the upstream.
 - GNU C Library 2.29, and many other component updates.

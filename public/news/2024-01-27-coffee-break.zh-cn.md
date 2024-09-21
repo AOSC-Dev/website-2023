@@ -25,7 +25,7 @@ important: false
 
 ### 安同“春晚”：首届年度“烙饼会”将于 2 月 15 日开幕
 
-![安同开源社区祝您新春快乐，龙年大吉！](/assets/coffee-break/20240127/imgs/aosc-new-year.png)
+![安同开源社区祝您新春快乐，龙年大吉！](/assets/news/coffee-break/20240127/imgs/aosc-new-year.png)
 
 农历新年在即，是时候筹划新一年的坑和白日梦了。我们计划在 2 月 15 日（农历初六）下午至傍晚以视频会议的形式举办我社首届“烙饼会”，邀请社区各项目的主要贡献者介绍工作情况和未来一年的工作计划展望。届时，各讲者将以“闪电秀”的形式，用 10 - 20 分钟的时间介绍各自参与的项目，并在介绍完毕后接受来自社区的提问。“烙饼会”也将于 Bilibili 等视频平台全程推流直播。
 
@@ -55,7 +55,7 @@ important: false
 
 ### AOSC 社区论坛 (AOSC BBS) 上线
 
-![社区论坛板块展示](/assets/coffee-break/20240127/imgs/bbs.png)
+![社区论坛板块展示](/assets/news/coffee-break/20240127/imgs/bbs.png)
 
 年末，我们上线了社区论坛 (AOSC BBS) ，旨在为社区成员提供进行技术讨论和寻求技术支持的场合。本论坛亦用于发布社区新闻、活动公告和系统支持信息等。
 
@@ -81,7 +81,7 @@ important: false
 
 ### AOSC OS on Windows 11.1.0 发布
 
-![AOSC OS on WSL 示意图](/assets/coffee-break/20240127/imgs/aosc-os-on-wsl.png)
+![AOSC OS on WSL 示意图](/assets/news/coffee-break/20240127/imgs/aosc-os-on-wsl.png)
 
 月初，[Kexy Biscuit](https://github.com/KexyBiscuit) 发布了 AOSC OS on Windows 11.1.0，现可于微软商店获取。该项目基于微软的 [Windows Subsystem for Linux](https://learn.microsoft.com/zh-cn/windows/wsl/about) 技术构建，旨在方便用户在 Windows 上部署 AOSC OS 系统环境及各应用。
 
@@ -113,7 +113,7 @@ important: false
 
 ### LiveKit 安装与维护环境新版展望
 
-![AOSC OS 图形化安装程序](/assets/coffee-break/20240127/imgs/deploykit-gui.png)
+![AOSC OS 图形化安装程序](/assets/news/coffee-break/20240127/imgs/deploykit-gui.png)
 
 近期，在[傅孝元](https://github.com/eatradish)、[杨欣辉](https://github.com/Cyanoxygen)和[白铭骢](https://github.com/MingcongBai)等人的努力下，我们将在近期发布的 LiveKit 安装与维护环境中引入如下新特性：
 
@@ -124,7 +124,7 @@ important: false
 
 ### 上半年新壁纸默认壁纸出炉
 
-![廿三年上半年默认壁纸图赏](/assets/coffee-break/20240127/imgs/2024h1-wallpapers.jpg)
+![廿三年上半年默认壁纸图赏](/assets/news/coffee-break/20240127/imgs/2024h1-wallpapers.jpg)
 
 通过社区投票，我们选出了如下两张默认壁纸：
 
@@ -135,7 +135,7 @@ important: false
 
 ### AOSC OS 将获芯动“风华”显卡官方支持
 
-![“风华二号”显卡样张（图转 PCBeta）](/assets/coffee-break/20240127/imgs/fenghua-2.jpg)
+![“风华二号”显卡样张（图转 PCBeta）](/assets/news/coffee-break/20240127/imgs/fenghua-2.jpg)
 
 作为最早发布且功能相对完整的龙架构 (LoongArch)“新世界”发行版之一，AOSC OS 广受龙芯爱好者社区关注和喜爱。近日，我们的发行版也引起了国产显卡厂商芯动科技 (INNOSILICON) 的注意。上周，芯动的生态工程师与我社维护者[白铭骢](https://github.com/MingcongBai)和 Arch Linux、Debian 和 Gentoo 发行版龙架构版本的维护者接触，了解了适配上的各注意事项和预期。我社维护者也将参与该公司“风华”系列显卡的驱动测试、评估和反馈工作。
 
@@ -145,7 +145,7 @@ important: false
 
 先前，我们启动了“合龙”工作——将目前位于前沿分支 (`frontier`) 中的移植工作合并到稳定分支 (`stable`) 中。经过过去近半年的努力，我们已基本将前沿分支上的龙架构适配和更新内容全部合并至系统稳定分支。我们相信“合龙”工作将在未来两周内完成，龙架构（LoongArch，系统架构名 `loongarch64`）将成为 AOSC OS 的正式支持的架构之一。考虑到该版系统用户众多且软件支持也已相对完整，我们计划将龙架构列作 AOSC OS 的第三个一级架构 (Primary Architecture)，与 x86-64 (`amd64`) 和 AArch64 (`arm64`) 移植同级，享受最及时的软件更新。
 
-目前，用于 LoongArch 的实验性系统发行已经可以从[社区主页下载](https://aosc.io/zh-cn/downloads)，欢迎试用并提供反馈。待正式版发布，我们将另行报道。
+目前，用于 LoongArch 的实验性系统发行已经可以从[社区主页下载](https:/zh-cn/downloads)，欢迎试用并提供反馈。待正式版发布，我们将另行报道。
 
 ### 用户公告
 
@@ -165,7 +165,7 @@ Mesa 24 的稳定版本预计将于二月发布，在此之前请保持该测试
 
 **字体更新后系统界面可能出现显示问题**
 
-![界面显示问题示意图](/assets/coffee-break/20240127/imgs/font-issue.jpg)
+![界面显示问题示意图](/assets/news/coffee-break/20240127/imgs/font-issue.jpg)
 
 安装近期推送的字体更新，您可能会发现系统中某些程序界面上的字体渲染会出现问题（如图例）；该问题很可能是字体中数据结构发生变化导致的。
 

@@ -8,7 +8,7 @@ important: false
 
 We are happy to report that the Winter 2020 development cycle is now complete and updates have been made available for AMD64 and AArch64! This cycle brought thousands of features updates, as well as stability and reliability improvements.
 
-Updates for ARMv7 and big-endian PowerPC ports will be delayed until June, as developments on these ports are currently suspended. For more information about this situation, please refer to our [recent post](https://aosc.io/news/posts/2020-05-03-suspending-stale-aosc-os-ports-and-initiating-retro/).
+Updates for ARMv7 and big-endian PowerPC ports will be delayed until June, as developments on these ports are currently suspended. For more information about this situation, please refer to our [recent post](https:/news/posts/2020-05-03-suspending-stale-aosc-os-ports-and-initiating-retro/).
 
 Here's a quick tour of the updates now available from the [community repository](https://repo.aosc.io/).
 

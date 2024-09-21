@@ -14,14 +14,14 @@ Thank you for reading "Coffee Break," AOSC's semi-monthly newsletter! Here, you 
 AOSC OS: Featured Items
 -----------------------
 
-In the past two months, besides routine maintenance on [AOSC OS](https://aosc.io/downloads), community developers also introduced many updates and fixes, as well as the accompanying applications and components. We hope that these updates will bring you enjoyment and productivity.
+In the past two months, besides routine maintenance on [AOSC OS](https:/downloads), community developers also introduced many updates and fixes, as well as the accompanying applications and components. We hope that these updates will bring you enjoyment and productivity.
 
 Now Available: New Wave of AOSC OS System Releases
 ====
 
 Recently, we released a new wave of AOSC OS system releases. This wave contains a year's worth of component updates, incorporating routine updates, bugfixes, and enhanced hardware support.
 
-You may obtain AOSC OS from our downloads page: [https://aosc.io/downloads](https://aosc.io/downloads)
+You may obtain AOSC OS from our downloads page: [https:/downloads](https:/downloads)
 
 ![AOSC OS Desktop.](https://raw.githubusercontent.com/AOSC-Dev/newsroom/master/coffee-break/20231028/imgs/desktop.en.png)
 
@@ -73,7 +73,7 @@ In late August, we introduced [new visual IDs for our system distributions](http
 
 Earlier, we have initiated the effort to merge the LoongArch port AOSC OS from the `frontier` branch to our `stable` branch. In the next few months, we will continue to [review, test, and merge]https://github.com/AOSC-Dev/aosc-os-abbs/pull/4701) the changes between the two branches. The completion of this task marks the LoongArch port as stable.
 
-You may download the experimental LoongArch system release from the [community portal](https://aosc.io/zh-cn/downloads). We look forward to hearing your feedback and welcome your contribution to making our LoongArch port better!
+You may download the experimental LoongArch system release from the [community portal](https:/zh-cn/downloads). We look forward to hearing your feedback and welcome your contribution to making our LoongArch port better!
 
 ### At a Glance: AOSC OS Updates
 

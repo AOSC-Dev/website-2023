@@ -6,7 +6,7 @@ date: '2020-09-30'
 important: false
 ---
 
-*With [over 20 attendees on Discord](https://aosc.io/news/gallery/), live
+*With [over 20 attendees on Discord](https:/news/gallery/), live
 streaming on Bilibili, talks, and workshops, it was a fun and fruitful AOSCC
 2020 indeed.*
 
@@ -36,7 +36,7 @@ coming to our next AOSCC (if an offline one could happen)!
 
 On the hardware front, 2019 saw a surge in new [BuildBots](https://wiki.aosc.io/developer/infrastructure/buildbots/),
 increasing our compiling capacity exponentially. Most notably, the
-[generous donation](https://aosc.io/news/posts/2020-05-03-new-aarch64-build-server/)
+[generous donation](https:/news/posts/2020-05-03-new-aarch64-build-server/)
 of a Huawei Kunpeng 920-based server from a Chinese university helped us
 reaching feature parity between our AArch64 (`arm64`) and AMD64 (`amd64`)
 ports. The introduction of multiple Loongson 3 machines, along with a
@@ -138,7 +138,7 @@ don't hesitate to reach out to us on IRC (Freenode #aosc),
 Discord). We will try our best to help.
 
 Pictures from of our shelter-in-place AOSCC 2020 "venue" could be found in our
-[Photo Albums](https://aosc.io/news/gallery/).
+[Photo Albums](https:/news/gallery/).
 
 AOSCC 2021?
 -----------

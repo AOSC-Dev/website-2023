@@ -6,7 +6,7 @@ date: 2024-07-11T23:00:00+08:00
 important: false
 
 ---
-![](/assets/coffee-break/20240623/imgs/aoscc-2024-jlu.png)
+![](/assets/news/coffee-break/20240623/imgs/aoscc-2024-jlu.png)
 
 由于校方临时通知 7 月 14 日下午 13:30 - 15:30 计划电力检修，预计会场届时停电；我们正积极与校方协商避免影响，但考虑到会期临近，我们决定先行对议程进行调整；如有后续通知，我们会进一步通告。
 

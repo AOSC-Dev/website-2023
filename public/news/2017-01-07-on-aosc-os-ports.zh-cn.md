@@ -85,7 +85,7 @@ into the next release. Then it just flows down the stream to our main
 "stage-two-ing" (stripping out features for bootstrapping, and re-incorporating
 new features when dependencies are available) and you guess it, more bugs, will
 be found. But with enough packages available and tested, a new port of AOSC OS
-will be available from the [downloads](https://aosc.io/os-download/) page. This
+will be available from the [downloads](https:/os-download/) page. This
 process can take anywhere from weeks to months (our fastest growing ports yet
 are the PowerPC 32/64-bit ports, thanks to a powerful PowerMac G5 Quad, taking
 only 5 weeks to have the Base, MATE, and XFCE variants available), depending on

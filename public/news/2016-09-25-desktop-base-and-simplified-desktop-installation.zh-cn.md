@@ -15,7 +15,7 @@ The package `desktop-base` is a "bridge" package that forms a common basis for a
 
 - Depending on all necessary Xorg/Wayland runtime;
 - Depending on a default system font, in our case, `noto-fonts`;
-- Containing our default wallpapers, earlier shown [here](https://aosc.io/news/aosc-oss-default-wallpapers);
+- Containing our default wallpapers, earlier shown [here](https:/news/aosc-oss-default-wallpapers);
 
 Forming such basis may (to some extent) avoid confusion when users try and install a desktop environment - from the "base" variant, or from another desktop environment. Common problems that users may run into when trying to install a desktop environment may include that:
 

@@ -10,7 +10,7 @@ IRC channels under the AOSC project namespace (#aosc and #aosc-offtopic) are now
 
 Going forward, we will begin taking requests for [IRC cloaks](https://en.wikipedia.org/wiki/Internet_Relay_Chat#Hostmasks) on Libera and requests for freenode cloaks will no longer be processed. Depending your affiliation with the community, these cloak formats will be available:
 
-- `aosc/dev/<username>` - for [contributors](https://aosc.io/people/) to AOSC that have an @aosc.io account.
+- `aosc/dev/<username>` - for [contributors](https:/people/) to AOSC that have an @aosc.io account.
 - `aosc/user/<username>` - for all other community members.
 - `aosc/bot/<username>` - for message bridging bots and other bots in service of our IRC channels.
 

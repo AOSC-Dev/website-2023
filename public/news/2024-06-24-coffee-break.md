@@ -18,7 +18,7 @@ important: false
 
 ### 盛夏将至：AOSCC 2024 开放报名！
 
-![AOSCC 2024，咱上吉林大学去！](/assets/coffee-break/20240623/imgs/aoscc-2024-jlu.png)
+![AOSCC 2024，咱上吉林大学去！](/assets/news/coffee-break/20240623/imgs/aoscc-2024-jlu.png)
 
 经过近一个月紧张的联络与组织工作，AOSCC 2024 工作组终于成功与吉林大学校方各部门达成协议——今年度的社区线下活动已得到校方正式批准！前序手续一切就绪，AOSCC 2024 报名也便正式开放了。
 
@@ -26,7 +26,7 @@ important: false
 
 [点此报名 >>](https://www.wjx.top/vm/hwRCH7e.aspx)
 
-<!-- 微信公众号请使用 /assets/coffee-break/20240623/imgs/aoscc-2024-registration-qrcode.jpg；文案“请扫描下方二维码填写问卷” -->
+<!-- 微信公众号请使用 /assets/news/coffee-break/20240623/imgs/aoscc-2024-registration-qrcode.jpg；文案“请扫描下方二维码填写问卷” -->
 
 在未来数周中，我们将随着组织工作的进展持续发布讲者、日程和到场福利等信息，敬请关注我社各资讯渠道和 [AOSCC 2024 信息页](https://wiki.aosc.io/zh/community/aoscc/2024)。
 
@@ -76,13 +76,13 @@ important: false
 
 **讲者招募！**
 
-如果您或认识的朋友有兴趣来 AOSCC 分享工作经验与技能，欢迎您通过社区[各聊天群组](https://aosc.io/zh-cn/contact/)或[社区论坛](https://bbs.aosc.io/)与我们联系。
+如果您或认识的朋友有兴趣来 AOSCC 分享工作经验与技能，欢迎您通过社区[各聊天群组](https:/zh-cn/contact/)或[社区论坛](https://bbs.aosc.io/)与我们联系。
 
 让我们一起携手，让 AOSCC 变得更加丰富精彩吧！
 
 ### 农企舰队：四台 x86-64 构建服务器即将上线
 
-![农企舰队向您致意！](/assets/coffee-break/20240623/imgs/amd-armada.jpg)
+![农企舰队向您致意！](/assets/news/coffee-break/20240623/imgs/amd-armada.jpg)
 
 得力于社区各位好友的[慷慨解囊](https://wiki.aosc.io/zh/community/crowdsourcing/new-amd64-servers/)，我们购置并上线了 4 台基于 AMD Ryzen 7 5700X 的 x86-64 构建服务器。每台服务器均搭载 64GiB 内存及 800GB 的 Intel 750 固态硬盘，可显著改善我社安同 OS x86-64 移植的维护体验。
 
@@ -97,7 +97,7 @@ important: false
 
 ### 精确度升级：Debian/Ubuntu 依赖兼容框架 Spiral 发布 v2 版
 
-![本安同 OS 具有超级精确旋风牛力！](/assets/coffee-break/20240623/imgs/spiral-cow-power.png)
+![本安同 OS 具有超级精确旋风牛力！](/assets/news/coffee-break/20240623/imgs/spiral-cow-power.png)
 
 三月底，我们正式推送了安同 OS 的 Debian/Ubuntu 兼容性更新，通过在软件包构建时自动标记与 Debian/Ubuntu 兼容的软件包名以实现对各类商业软件的兼容性。
 
@@ -105,7 +105,7 @@ important: false
 
 ### 将塞爆进行到底：安同 OS 离线安装镜像展望
 
-![安同 OS 离线镜像使用 OverlayFS 实现了组件去重和多系统版本集成](/assets/coffee-break/20240623/imgs/overlay-livekit.png)
+![安同 OS 离线镜像使用 OverlayFS 实现了组件去重和多系统版本集成](/assets/news/coffee-break/20240623/imgs/overlay-livekit.png)
 
 一直以来，由于安同 OS 依赖树齐全及功能全开的设计导向，系统大小与其他操作系统相比明显偏大。这一特征加之以安装盘需要从互联网拖取（大小相当可观的）系统包的设计广受用户诟病——一个超过 3GiB 大小的安装盘，居然还需要下载系统数据！
 
@@ -120,7 +120,7 @@ important: false
 
 ### 病根初现：龙架构 AMD 显卡稳定性问题调查实录
 
-![令不少龙架构移植维护者闻风丧胆的 glmark2 buffer 测试](/assets/coffee-break/20240623/imgs/glmark2-buffer.jpg)
+![令不少龙架构移植维护者闻风丧胆的 glmark2 buffer 测试](/assets/news/coffee-break/20240623/imgs/glmark2-buffer.jpg)
 
 安同 OS 的龙架构移植已有接近一年的维护历史，其中有一个如鬼魂一般的 Bug 一直缠绕着各位龙架构设备用户：AMD 显卡驱动在高图形负载下会崩溃复位。在用户视角上看，就是桌面会突然黑屏，所有桌面会话注销，所有未保存工作随之灰飞烟灭。这一问题为各位日用龙架构设备的维护者和用户们都带来了极大的困扰，对使用龙架构设备工作的信心造成了非常大的打击。
 
@@ -137,7 +137,7 @@ important: false
 
 ### 监工之乐：BuildIt! 推出实时监控功能
 
-![无聊了来刷刷日志玩吧！](/assets/coffee-break/20240623/imgs/buildit-monitor.png)
+![无聊了来刷刷日志玩吧！](/assets/news/coffee-break/20240623/imgs/buildit-monitor.png)
 
 上周，[陈嘉杰 (jiegec)](https://github.com/jiegec) 和[傅孝元](https://github.com/eatradish)为 [BuildIt!](https://github.com/AOSC-Dev/buildit) 自动化设施实现了实时监控功能，方便安同 OS 维护者查阅各构建服务器当前构建任务的状态及确定各机器的性能、稳定性状态等。
 

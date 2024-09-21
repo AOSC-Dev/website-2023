@@ -13,7 +13,7 @@ Anyways, let's kick this announcement off with a new wallpaper made available to
 
 [![core5-blender](/assets/news/core5-rendered.jpg)](https://github.com/AOSC-Dev/aosc-os-artworks/raw/master/11/core5-rendered.jpg)
 
-This wallpaper is made by [Tianhao Chai](https://aosc.io/people/~cthbleachbit/) - our resident Wine, NVIDIA, Linux Kernel package maintainer, and Blender enthusiast. This wallpaper is rendered with no other software than Blender, took almost two days to render on his own desktop computer (LOL). Blender project file for this wallpaper is available [here](https://github.com/AOSC-Dev/aosc-os-artworks/raw/master/11/core5.blend), if you would like to make any changes/improvements to this wallpaper, or simply to warm up your room in the coming winter!
+This wallpaper is made by [Tianhao Chai](https:/people/~cthbleachbit/) - our resident Wine, NVIDIA, Linux Kernel package maintainer, and Blender enthusiast. This wallpaper is rendered with no other software than Blender, took almost two days to render on his own desktop computer (LOL). Blender project file for this wallpaper is available [here](https://github.com/AOSC-Dev/aosc-os-artworks/raw/master/11/core5.blend), if you would like to make any changes/improvements to this wallpaper, or simply to warm up your room in the coming winter!
 
 --------
 
@@ -57,7 +57,7 @@ However, some updates are delayed due to the lack of time with our developers wh
 
 ## MIPS Under Review
 
-Due to the lack of man power and device resources, in combination with the problematic implementation of MIPS ISA found in Loongson/Godson processors - our main maintainer of MIPS 32/64-bit ports, [Junde Yhi](https://aosc.io/people/~lmy441900) finds it increasingly difficult to maintain these ports, letting alone keeping up with the large amount of updates.
+Due to the lack of man power and device resources, in combination with the problematic implementation of MIPS ISA found in Loongson/Godson processors - our main maintainer of MIPS 32/64-bit ports, [Junde Yhi](https:/people/~lmy441900) finds it increasingly difficult to maintain these ports, letting alone keeping up with the large amount of updates.
 
 Therefore, he has proposed to reboot the MIPS 64-bit port with better adaptation to Loongson/Godson platforms - which realistically, are the only personally purchasable devices by our community members and developers. In addition, the MIPS-II port, targetting legacy MIPS 32-bit devices like the YeeLoong 8089D, is also under consideration to be dropped.
 

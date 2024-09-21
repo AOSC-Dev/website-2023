@@ -7,7 +7,7 @@ title: 'Daily Progress Report: AOSC OS, "Meltdown" and "Spectre"'
 ---
 
 
-Here's a follow up to yesterday's [Progress Report](https://aosc.io/news/2326-progress-report-aosc-os-meltdown-and-spectre) on the fixing of "Meltdown" and "Spectre" for AOSC OS. Several events have taken place in the past 24 hours:
+Here's a follow up to yesterday's [Progress Report](https:/news/2326-progress-report-aosc-os-meltdown-and-spectre) on the fixing of "Meltdown" and "Spectre" for AOSC OS. Several events have taken place in the past 24 hours:
 
 - Kernels. We have been able to produce and test both "LTS" and "Main" Kernels to address these security concerns. Please update to 4.9.75 (for "LTS") and 4.14.12 (for "Main") as soon as possible.
 - Browsers. A statement from our resident vulnerability tracker Zero King cited a link from Google Support:

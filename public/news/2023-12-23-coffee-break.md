@@ -27,7 +27,7 @@ On behalf of AOSC, I would like to extend my gratitude for the hardwork our cont
 AOSC OS: Featured Items
 -----------------------
 
-In the past two weeks, besides routine maintenance on [AOSC OS](https://aosc.io/downloads), community developers also introduced many updates and fixes, as well as the accompanying applications and components. We hope that these updates will bring you enjoyment and productivity.
+In the past two weeks, besides routine maintenance on [AOSC OS](https:/downloads), community developers also introduced many updates and fixes, as well as the accompanying applications and components. We hope that these updates will bring you enjoyment and productivity.
 
 ### Revolutionising Productivity: AOSC OS Maintenance Automation is Now Live!
 
@@ -107,7 +107,7 @@ We would like to extend our utmost gratitude for our friends at QVQNetwork. Than
 
 Earlier, we have initiated the effort to merge the LoongArch port AOSC OS from the `frontier` branch to our `stable` branch. In the next few months, we will continue to [review, test, and merge]https://github.com/AOSC-Dev/aosc-os-abbs/pull/4701) the changes between the two branches. The completion of this task marks the LoongArch port as stable.
 
-You may download the experimental LoongArch system release from the [community portal](https://aosc.io/zh-cn/downloads). We look forward to hearing your feedback and welcome your contribution to making our LoongArch port better!
+You may download the experimental LoongArch system release from the [community portal](https:/zh-cn/downloads). We look forward to hearing your feedback and welcome your contribution to making our LoongArch port better!
 
 ### At a Glance: AOSC OS Updates
 

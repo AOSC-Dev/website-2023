@@ -14,7 +14,7 @@ Thank you for reading "Coffee Break," AOSC's semi-monthly newsletter! Here, you 
 AOSC OS: Featured Items
 -----------------------
 
-In the past two months, besides routine maintenance on [AOSC OS](https://aosc.io/downloads), community developers also introduced many updates and fixes, as well as the accompanying applications and components. We hope that these updates will bring you enjoyment and productivity.
+In the past two months, besides routine maintenance on [AOSC OS](https:/downloads), community developers also introduced many updates and fixes, as well as the accompanying applications and components. We hope that these updates will bring you enjoyment and productivity.
 
 ### Road to LoongArch Port: Together We Advance!
 
@@ -45,13 +45,13 @@ The products of above tasks will be made available on ["Are We Loong Yet?"](http
 
 Earlier, we have also initiated the effort to merge the LoongArch port AOSC OS from the `frontier` branch to our `stable` branch. In the next few months, we will continue to [review, test, and merge]https://github.com/AOSC-Dev/aosc-os-abbs/pull/4701) the changes between the two branches. The completion of this task marks the LoongArch port as stable.
 
-You may download the experimental LoongArch system release from the [community portal](https://aosc.io/zh-cn/downloads). We look forward to hearing your feedback and welcome your contribution to making our LoongArch port better!
+You may download the experimental LoongArch system release from the [community portal](https:/zh-cn/downloads). We look forward to hearing your feedback and welcome your contribution to making our LoongArch port better!
 
 ### OpenSSL 3 Update Now Available 
 
 After almost two months of rebuilding, tweaking, and updating, the OpenSSL 3 runtime update is now available in the stable repository. This update replaces the OpenSSL 1.1 runtime, which had [lost upstream support](https://www.openssl.org/blog/blog/2023/09/11/eol-111/).
 
-Should you run into problems during the update, please [file an issue](https://github.com/AOSC-Dev/aosc-os-abbs/issues/new?assignees=&labels=&projects=&template=bug-report.yml) or get in touch via our [community chat groups](https://aosc.io/contact/). To ensure compatibility with some older software packages, we will continue to ship an OpenSSL 1.1 compatibility runtime package (`openssl-1.1`). However, considering the potential security risks, we recommend that you update such software packages or get in touch with the distributors regarding OpenSSL 3 compatibility.
+Should you run into problems during the update, please [file an issue](https://github.com/AOSC-Dev/aosc-os-abbs/issues/new?assignees=&labels=&projects=&template=bug-report.yml) or get in touch via our [community chat groups](https:/contact/). To ensure compatibility with some older software packages, we will continue to ship an OpenSSL 1.1 compatibility runtime package (`openssl-1.1`). However, considering the potential security risks, we recommend that you update such software packages or get in touch with the distributors regarding OpenSSL 3 compatibility.
 
 **Note: This wave of update is fairly large in volume, the system update may take a bit longer than usual. Moreover, considering that OpenSSL is a basic system runtime, should an accident occur during the update, it may render your system unusable. We therefore recommend that you plug in your laptops or other battery-powered devices to an AC power source and ensure steady power supply to avoid accidents.**
 

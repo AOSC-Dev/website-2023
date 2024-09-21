@@ -7,7 +7,7 @@ title: 'Progress Report: AOSC OS, "Meltdown" and "Spectre"'
 ---
 
 
-Since our last [progress report](https://aosc.io/news/6972-progress-report-aosc-os-meltdown-and-spectre), the following progress has been accomplished in our effort to mitigate the “Meltdown” and “Spectre” vulnerabilities for our users:
+Since our last [progress report](https:/news/6972-progress-report-aosc-os-meltdown-and-spectre), the following progress has been accomplished in our effort to mitigate the “Meltdown” and “Spectre” vulnerabilities for our users:
 
 - Browsers. Chromium and Google Chrome 64 (64.0.3282.119), containing fixes for Spectre vulnerabilities, has been made available as a security update.
 - Virtualisation. VirtualBox 5.2.6, containing a fix for CVE-2017-5715, a variant of the Spectre vulnerabilities, has been made available as a security update.

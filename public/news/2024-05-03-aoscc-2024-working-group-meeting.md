@@ -6,7 +6,7 @@ date: 2024-05-03T22:19:13-08:00
 important: false
 
 ---
-![AOSCC 2024 倒计时正式开始！](/assets/coffee-break/20240427/imgs/aoscc-2024.png)
+![AOSCC 2024 倒计时正式开始！](/assets/news/coffee-break/20240427/imgs/aoscc-2024.png)
 随着 AOSCC 2024 场地确认，社区线下聚会筹备工作就此展开。
 
 我们计划在 UTC+8 时间周六晚七时（5 月 4 日）于腾讯会议组织例会，与来自吉林大学 Linux 用户组和社区志愿者商讨工作计划和分配。

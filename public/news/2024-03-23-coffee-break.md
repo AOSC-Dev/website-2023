@@ -17,7 +17,7 @@ important: false
 
 ### libLoL 0.1.5 开放测试
 
-![libLoL 伴您畅游新世界](/assets/coffee-break/20240323/imgs/liblol.png)
+![libLoL 伴您畅游新世界](/assets/news/coffee-break/20240323/imgs/liblol.png)
 
 近日，社区开发者[王邈](https://github.com/shankerwangmiao)发布了龙架构旧世界 ABI 兼容运行时 libLoL 的 0.1.5~pre6 版：Glibc 版本更新至 2.39，编译时新增 ABI 及符号完整性检查，并将 `libcrypt` 库实现更改为 `libxcrypt`。这些更改的主要目的是避免潜在的兼容性问题。
 
@@ -27,11 +27,11 @@ AOSC OS 用户可通过如下命令打开 `liblol-0.1.5` 测试源进行测试�
 oma topics --opt-in liblol-0.1.5
 ```
 
-如果您在测试 libLoL 0.1.5 的过程中发现问题或遇到困难，请通过社区[各聊天群组](https://aosc.io/zh-cn/contact/)或[社区论坛](https://bbs.aosc.io/)与联系我们。
+如果您在测试 libLoL 0.1.5 的过程中发现问题或遇到困难，请通过社区[各聊天群组](https:/zh-cn/contact/)或[社区论坛](https://bbs.aosc.io/)与联系我们。
 
 ### 廿四年“流浪相机”活动周一启航
 
-![流浪相机——到远方去！](/assets/coffee-break/20240323/imgs/roaming-camera.png)
+![流浪相机——到远方去！](/assets/news/coffee-break/20240323/imgs/roaming-camera.png)
 
 经过近期筹备，“流浪相机”活动将于下周一（3 月 25 日）正式启动，期间将在 10 名参与者间传递，范围囊括中国多个省市与香港特别行政区。此外，根据参与者的意见，我们还准备了一本参与者留言簿，并将于活动结束后整理和发布相册供社区好友订购。
 
@@ -39,7 +39,7 @@ oma topics --opt-in liblol-0.1.5
 
 ### 社区参加两场外联活动
 
-![白铭骢介绍社区历史](/assets/coffee-break/20240323/imgs/lcpu-mingcongbai.jpg)
+![白铭骢介绍社区历史](/assets/news/coffee-break/20240323/imgs/lcpu-mingcongbai.jpg)
 
 三月中，[白铭骢](https://github.com/MingcongBai)代表社区参加了两场外联活动，它们分别是由北大 Linux 俱乐部 (LCPU) 联合清华大学 TUNA 协会举办的“走向现代发行版 (Towards Modern Distro)”和曲阜师范大学计算机协会 (QFNU-ACE) 举办的“计算进化：安同曲阜师大行”。
 
@@ -52,7 +52,7 @@ oma topics --opt-in liblol-0.1.5
 
 ### AOSC OS 即将推送 Debian/Ubuntu 兼容性更新
 
-![Spiral 超级牛力！](/assets/coffee-break/20240323/imgs/spiral-cow-power.png)
+![Spiral 超级牛力！](/assets/news/coffee-break/20240323/imgs/spiral-cow-power.png)
 
 经过近两个月的公开测试，Spiral 兼容性框架在用户间的反响良好，测试中亦发现可以正常安装运行诸如金山 WPS for Linux、腾讯 QQ、微信、Google Chrome、Microsoft Edge 和 Spotify 等常用软件。据此，我们计划在未来数日内向稳定源推送 Debian/Ubuntu 兼容性更新。安装更新后，您将可以直接安装诸如上述软件的官方 .deb 软件包。
 
@@ -60,7 +60,7 @@ oma topics --opt-in liblol-0.1.5
 
 ### KDE 5 三月更新开放公测
 
-![KDE 5 系统属性](/assets/coffee-break/20240323/imgs/aosc-os-kinfocenter-202403.png)
+![KDE 5 系统属性](/assets/news/coffee-break/20240323/imgs/aosc-os-kinfocenter-202403.png)
 
 二月底 KDE Plasma 6 桌面环境发布后，KDE 5 的官方维护也临近尾声。考虑到 KDE Plasma 6 体验目前尚未成熟，我们对 KDE 5 桌面组件进行了最后一次更新检查，以期纳入各类特性和修复。目前我们已为一级架构推送了相关测试更新，请通过如下命令打开 KDE 5 三月更新(`kde-survey-20240304`) 测试源：
 
@@ -68,7 +68,7 @@ oma topics --opt-in liblol-0.1.5
 oma topics --opt-in kde-survey-20240304
 ```
 
-如果您在测试 KDE 5 三月更新的过程中发现问题或遇到困难，请通过社区[各聊天群组](https://aosc.io/zh-cn/contact/)或[社区论坛](https://bbs.aosc.io/)与联系我们。
+如果您在测试 KDE 5 三月更新的过程中发现问题或遇到困难，请通过社区[各聊天群组](https:/zh-cn/contact/)或[社区论坛](https://bbs.aosc.io/)与联系我们。
 
 开发者角
 --------
@@ -77,7 +77,7 @@ oma topics --opt-in kde-survey-20240304
 
 近日，社区开发者[陈嘉杰](https://github.com/jiegec)完成了 v2 的初步开发工作，引入了诸如任务跟踪和管理功能、网页管理功能和构建机配置要求等功能，目前已在生产测试中。
 
-先前，陈嘉杰发布了 BuildIt v2 的[设计文档](https://github.com/AOSC-Dev/buildit/blob/v2/DESIGN.md)和[愿景帖](https://github.com/AOSC-Dev/buildit/issues/8)，目前仍有不少特性有待实现。如果您有意愿协助开发工作，请通过我社[各聊天群组](https://aosc.io/zh-cn/contact)与陈嘉杰联系。
+先前，陈嘉杰发布了 BuildIt v2 的[设计文档](https://github.com/AOSC-Dev/buildit/blob/v2/DESIGN.md)和[愿景帖](https://github.com/AOSC-Dev/buildit/issues/8)，目前仍有不少特性有待实现。如果您有意愿协助开发工作，请通过我社[各聊天群组](https:/zh-cn/contact)与陈嘉杰联系。
 
 ### Autobuild 4.1 分支发布
 

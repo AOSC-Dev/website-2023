@@ -23,7 +23,7 @@ As a result, hundreds of packages - old and new - were marked as broken. ~99% of
 
 ## Delayed Updates for Ports
 
-As noted from Mingcong Bai's last [update](https://aosc.io/news/2839-goings-on-a-quick-mid-september-update), we have failed to sync up package updates for our non-AMD64 AOSC OS ports: PowerPC 32/64-bit Big Endian, ARMv7, AArch64, and MIPS 32/64-bit. However...
+As noted from Mingcong Bai's last [update](https:/news/2839-goings-on-a-quick-mid-september-update), we have failed to sync up package updates for our non-AMD64 AOSC OS ports: PowerPC 32/64-bit Big Endian, ARMv7, AArch64, and MIPS 32/64-bit. However...
 
 - Core 5 is now available in their `testing` repositories (except MIPS 32/64-bit)
 - All `bugfix` updates are made available (thus no security concerns as of yet).

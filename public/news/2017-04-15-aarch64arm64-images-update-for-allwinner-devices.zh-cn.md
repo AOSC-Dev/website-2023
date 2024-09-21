@@ -12,4 +12,4 @@ Icenowy Zheng has recently uploaded a new batch of AArch64/ARM64 SD card images 
 - Xunlong Orange Pi Prime
 - FriendlyARM Nano Pi NEO2
 
-Please head over to the [download](https://aosc.io/os-download/) page for more downloads and more information.
+Please head over to the [download](https:/os-download/) page for more downloads and more information.

@@ -14,7 +14,7 @@ Thank you for reading "Coffee Break," AOSC's semi-monthly newsletter! Here, you 
 AOSC OS Updates
 ---------------
 
-In the past two months, besides routine maintenance on [AOSC OS](https://aosc.io/downloads), community developers also introduced many updates and fixes, as well as the accompanying applications and components. We hope that these updates will bring you enjoyment and productivity.
+In the past two months, besides routine maintenance on [AOSC OS](https:/downloads), community developers also introduced many updates and fixes, as well as the accompanying applications and components. We hope that these updates will bring you enjoyment and productivity.
 
 ### Road to LoongArch Port
 
@@ -47,7 +47,7 @@ We plan to work on the following in the near future:
 - Enable LSX instruction set optimisation in GCC and other toolchains, rebuilding the system distribution.
 - ...
 
-You may download the experimental LoongArch system release from the [community portal](https://aosc.io/zh-cn/downloads). We look forward to hearing your feedback and welcome your contribution to making our LoongArch port better!
+You may download the experimental LoongArch system release from the [community portal](https:/zh-cn/downloads). We look forward to hearing your feedback and welcome your contribution to making our LoongArch port better!
 
 ### Core 11.0.1
 

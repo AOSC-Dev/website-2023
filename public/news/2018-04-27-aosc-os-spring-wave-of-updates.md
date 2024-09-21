@@ -57,7 +57,7 @@ We have also [removed an old patch](https://github.com/AOSC-Dev/aosc-os-abbs/com
 Architectural Ports
 ----------------------
 
-As mentioned in our last Wave's [announcement](https://aosc.io/news/AOSC-OS-End-of-2017-Wave-of-Updates) in January, we were working on re-synchronising package updates between our various architectural ports. We are happy to report that this wave of updates are now available for all of our currently active ports:
+As mentioned in our last Wave's [announcement](https:/news/AOSC-OS-End-of-2017-Wave-of-Updates) in January, we were working on re-synchronising package updates between our various architectural ports. We are happy to report that this wave of updates are now available for all of our currently active ports:
 
 - AMD64, or x86_64 (`amd64`).
 - ARMv7 (`armel`) and AArch64 (`arm64`).
