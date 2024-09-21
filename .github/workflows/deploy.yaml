@@ -37,7 +37,7 @@ jobs:
           IP: ${{ secrets.IP }}
         run: |
           mkdir -p ~/.ssh/
-          echo "$KEY" > ~/.ssh/id_rsa 
+          echo "$KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan $IP >> ~/.ssh/known_hosts
       - name: Install deps
