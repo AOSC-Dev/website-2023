@@ -44,35 +44,34 @@ const afterLowRequirementsList = ref();
           class="text-[12pt] font-semibold">
           星霞 OS 系统配置需求表
         </caption>
-        <tr>
-          <th>硬件组件</th>
-          <th>配置需求</th>
-        </tr>
-        <tr>
-          <td>处理器</td>
-          <td>任意与星霞 OS 兼容的处理器</td>
-        </tr>
-        <tr>
-          <td>内存</td>
-          <td>至少 64MiB</td>
-        </tr>
-        <tr>
-          <td>显卡</td>
-          <td
-            >任意支持显示信号输出的显卡或帧缓冲卡、抑或串口终端</td
-          >
-        </tr>
-        <tr>
-          <td>存储</td>
-          <td
-            >至少 1GiB（基本版）或
-            3GiB（桌面版）</td
-          >
-        </tr>
-        <tr>
-          <td>网络连接</td>
-          <td>国际互联网连接</td>
-        </tr>
+        <thead>
+          <tr>
+            <th>硬件组件</th>
+            <th>配置需求</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>处理器</td>
+            <td>任意与星霞 OS 兼容的处理器</td>
+          </tr>
+          <tr>
+            <td>内存</td>
+            <td>至少 64MiB</td>
+          </tr>
+          <tr>
+            <td>显卡</td>
+            <td>任意支持显示信号输出的显卡或帧缓冲卡、抑或串口终端</td>
+          </tr>
+          <tr>
+            <td>存储</td>
+            <td>至少 1GiB（基本版）或 3GiB（桌面版）</td>
+          </tr>
+          <tr>
+            <td>网络连接</td>
+            <td>国际互联网连接</td>
+          </tr>
+        </tbody>
       </table>
     </div>
 

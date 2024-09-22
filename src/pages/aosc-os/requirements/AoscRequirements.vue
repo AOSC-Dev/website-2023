@@ -47,33 +47,37 @@ const aoscOsRequirementsList = ref();
           class="text-[12pt] font-semibold">
           安同 OS 系统配置需求表
         </caption>
-        <tr>
-          <th>硬件组件</th>
-          <th>配置需求</th>
-        </tr>
-        <tr>
-          <td>处理器</td>
-          <td>任意与安同 OS 兼容的处理器</td>
-        </tr>
-        <tr>
-          <td>内存</td>
-          <td>至少 2GiB</td>
-        </tr>
-        <tr>
-          <td>显卡</td>
-          <td
-            >支持 OpenGL 2.1 / OpenGL ES 3.1
-            或以上版本的显卡</td
-          >
-        </tr>
-        <tr>
-          <td>存储</td>
-          <td>至少 64GiB</td>
-        </tr>
-        <tr>
-          <td>网络连接</td>
-          <td>国际互联网连接</td>
-        </tr>
+        <thead>
+          <tr>
+            <th>硬件组件</th>
+            <th>配置需求</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>处理器</td>
+            <td>任意与安同 OS 兼容的处理器</td>
+          </tr>
+          <tr>
+            <td>内存</td>
+            <td>至少 2GiB</td>
+          </tr>
+          <tr>
+            <td>显卡</td>
+            <td
+              >支持 OpenGL 2.1 / OpenGL ES 3.1
+              或以上版本的显卡</td
+            >
+          </tr>
+          <tr>
+            <td>存储</td>
+            <td>至少 64GiB</td>
+          </tr>
+          <tr>
+            <td>网络连接</td>
+            <td>国际互联网连接</td>
+          </tr>
+        </tbody>
       </table>
     </div>
 

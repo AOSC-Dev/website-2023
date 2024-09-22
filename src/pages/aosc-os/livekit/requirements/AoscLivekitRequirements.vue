@@ -50,33 +50,37 @@ const aoscOsRequirementsList = ref();
           class="text-[12pt] font-semibold">
           安同 OS 系统配置需求表
         </caption>
-        <tr>
-          <th>硬件组件</th>
-          <th>配置需求</th>
-        </tr>
-        <tr>
-          <td>处理器</td>
-          <td>任意与安同 OS 兼容的处理器</td>
-        </tr>
-        <tr>
-          <td>内存</td>
-          <td>至少 2GiB</td>
-        </tr>
-        <tr>
-          <td>显示</td>
-          <td
-            >支持输出 1024x768
-            分辨率（图形模式），或基础帧缓冲支持（命令行模式）</td
-          >
-        </tr>
-        <tr>
-          <td>存储</td>
-          <td>至少 4GiB 的可移动介质</td>
-        </tr>
-        <tr>
-          <td>网络连接</td>
-          <td>国际互联网连接</td>
-        </tr>
+        <thead>
+          <tr>
+            <th>硬件组件</th>
+            <th>配置需求</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>处理器</td>
+            <td>任意与安同 OS 兼容的处理器</td>
+          </tr>
+          <tr>
+            <td>内存</td>
+            <td>至少 2GiB</td>
+          </tr>
+          <tr>
+            <td>显示</td>
+            <td
+              >支持输出 1024x768
+              分辨率（图形模式），或基础帧缓冲支持（命令行模式）</td
+            >
+          </tr>
+          <tr>
+            <td>存储</td>
+            <td>至少 4GiB 的可移动介质</td>
+          </tr>
+          <tr>
+            <td>网络连接</td>
+            <td>国际互联网连接</td>
+          </tr>
+        </tbody>
       </table>
     </div>
 

@@ -64,43 +64,35 @@ const aoscOsIsaList2 = ref();
           class="text-[12pt] font-semibold">
           安同 OS 支持处理器架构（一级架构）表
         </caption>
-        <tr>
-          <th>处理器架构名</th>
-          <th>微架构指令集扩展支持要求</th>
-          <th>软件包架构名</th>
-          <th>编译器目标名</th>
-        </tr>
-        <tr>
-          <td>x86-64</td>
-          <td>SSE2*</td>
-          <td><code>amd64</code></td>
-          <td
-            ><code
-              >x86_64-aosc-linux-gnu</code
-            ></td
-          >
-        </tr>
-        <tr>
-          <td>AArch64</td>
-          <td>ARMv8.0, NEON</td>
-          <td><code>arm64</code></td>
-          <td
-            ><code
-              >aarch64-aosc-linux-gnu</code
-            ></td
-          >
-        </tr>
-        <tr>
-          <td>龙架构 (LoongArch)</td>
-          <td>LSX</td>
-          <td><code>loongarch64</code></td>
-          <td
-            ><code
-              >loongarch64-aosc-linux-gnu</code
-            ></td
-          >
-        </tr> </table
-      ><br />
+        <thead>
+          <tr>
+            <th>处理器架构名</th>
+            <th>微架构指令集扩展支持要求</th>
+            <th>软件包架构名</th>
+            <th>编译器目标名</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>x86-64</td>
+            <td>SSE2*</td>
+            <td><code>amd64</code></td>
+            <td><code>x86_64-aosc-linux-gnu</code></td>
+          </tr>
+          <tr>
+            <td>AArch64</td>
+            <td>ARMv8.0, NEON</td>
+            <td><code>arm64</code></td>
+            <td><code>aarch64-aosc-linux-gnu</code></td>
+          </tr>
+          <tr>
+            <td>龙架构 (LoongArch)</td>
+            <td>LSX</td>
+            <td><code>loongarch64</code></td>
+            <td><code>loongarch64-aosc-linux-gnu</code></td>
+          </tr>
+          </tbody>
+      </table><br />
       <p>
         *: 一部分软件（如
         Blender）可能需要更高级的微架构指令集支持，如
@@ -121,43 +113,35 @@ const aoscOsIsaList2 = ref();
           class="text-[12pt] font-semibold">
           安同 OS 支持处理器架构（二级架构）表
         </caption>
-        <tr>
-          <th>处理器架构名</th>
-          <th>微架构指令集扩展支持要求</th>
-          <th>软件包架构名</th>
-          <th>编译器目标名</th>
-        </tr>
+        <thead>
+          <tr>
+            <th>处理器架构名</th>
+            <th>微架构指令集扩展支持要求</th>
+            <th>软件包架构名</th>
+            <th>编译器目标名</th>
+          </tr>
+        </thead>
+        <tbody>
         <tr>
           <td>基于 MIPS 的龙芯三号*</td>
           <td>无</td>
           <td><code>loongson3</code></td>
-          <td
-            ><code
-              >mips64el-aosc-linux-gnuabi64</code
-            ></td
-          >
+          <td><code>mips64el-aosc-linux-gnuabi64</code></td>
         </tr>
         <tr>
           <td>IBM POWER（小端序）</td>
           <td>AltiVec, VMW, VSX</td>
           <td><code>ppc64el</code></td>
-          <td
-            ><code
-              >powerpc64le-aosc-linux-gnu</code
-            ></td
-          >
+          <td><code>powerpc64le-aosc-linux-gnu</code></td>
         </tr>
         <tr>
           <td>RISC-V（64 位）</td>
           <td>G, C</td>
           <td><code>riscv64</code></td>
-          <td
-            ><code
-              >riscv64-aosc-linux-gnu</code
-            ></td
-          >
-        </tr> </table
-      ><br />
+          <td><code>riscv64-aosc-linux-gnu</code></td>
+        </tr>
+        </tbody>
+      </table><br />
       <p>
         *: 这一系列处理器包括龙芯 3A1000,
         3A1500-I, 3A2000(C), 3A3000, 3A4000,
