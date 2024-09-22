@@ -7,7 +7,7 @@ date: 2024-02-15T22:19:13-08:00
 important: false
 
 ---
-![AOSC OS 龙架构版发布！](/assets/coffee-break/20240226/imgs/aosc-os-loongarch64.png)
+![AOSC OS 龙架构版发布！](/assets/news/coffee-break/20240226/imgs/aosc-os-loongarch64.png)
 
 今天，我们在龙芯开源社区论坛发布了 AOSC OS 的第一批龙架构稳定版系统，现可供下载，欢迎试用
 

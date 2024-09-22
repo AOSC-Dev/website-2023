@@ -32,11 +32,11 @@ important: false
 
 报名链接：https://f.wps.cn/g/fHeWYf29/
 
-![亦可扫此二维码报名](/assets/coffee-break/20240309/imgs/roaming-camera-signup.png)
+![亦可扫此二维码报名](/assets/news/coffee-break/20240309/imgs/roaming-camera-signup.png)
 
 ### 三台新构建服务器上线
 
-![社区新服务器](/assets/coffee-break/20240309/imgs/new-servers.jpg)
+![社区新服务器](/assets/news/coffee-break/20240309/imgs/new-servers.jpg)
 
 过去两周，承蒙多位社区好友和组织的慷慨贡献，我社上线三台构建服务器，包括两台龙架构服务器和一台 x86 服务器。其中，由[北京大学学生 Linux 俱乐部 (LCPU)](https://lcpu.club/) 捐赠的 x86 服务器是目前我社相对性能最高的服务器。
 
@@ -61,7 +61,7 @@ important: false
 
 ### AOSC OS 发布三月龙架构版本系统发行更新
 
-![AOSC OS 龙架构版](/assets/coffee-break/20240309/imgs/aosc-os-loongarch64.png)
+![AOSC OS 龙架构版](/assets/news/coffee-break/20240309/imgs/aosc-os-loongarch64.png)
 
 龙架构版本发布系统发行更新：安装盘版本为 20240303，系统包版本为 20240304。
 
@@ -77,7 +77,7 @@ important: false
 
 ### KDE Plasma 6 发布：AOSC OS 的 KDE 桌面环境更新与维护计划
 
-![KDE Plasma 6 桌面截图](/assets/coffee-break/20240309/imgs/plasma-6.png)
+![KDE Plasma 6 桌面截图](/assets/news/coffee-break/20240309/imgs/plasma-6.png)
 
 二月底，KDE 社区[发布了](https://kde.org/announcements/megarelease/6/) KDE Plasma 桌面环境的第六个大版本及配套应用程序和运行时库。该版本引入许多新特性、修复和设计更动，相信对社区许多关注桌面环境体验的朋友都有一定吸引力。考虑到许多社区用户询问了 AOSC OS 引入 KDE Plasma 6 桌面的计划，我们在这里简要介绍下引入和维护计划。
 
@@ -93,7 +93,7 @@ important: false
 
 ### LiveKit 加入安全启动 (Secure Boot) 支持提示
 
-![LiveKit 启动时的安全启动提示](/assets/coffee-break/20240309/imgs/livekit-secure-boot-notice.png)
+![LiveKit 启动时的安全启动提示](/assets/news/coffee-break/20240309/imgs/livekit-secure-boot-notice.png)
 
 社区开发者[王邈](https://github.com/shankerwangmiao)为 LiveKit 安装盘生成工具新增了安全启动 (Secure Boot) 支持提示，通过载入来自 Debian 的、经签名的 GRUB 引导器二进制，在开启安全启动功能的 x86 和 AArch64 设备上显示 AOSC OS 不支持安全启动的提示，并给出选项让用户返回 UEFI 设置界面修改相关选项。这一更改将有助于用户了解安全启动导致 AOSC OS 无法启动的原因和潜在解决方式（先前，由于这一部分组件的缺失，用户在开启安全启动的情况下，AOSC OS 无法报告这一问题；在用户视角，这一情况就像是 AOSC OS 由于引导数据损坏而启动失败了一样）。
 
@@ -111,7 +111,7 @@ important: false
 
 ### Debian/Ubuntu 软件兼容框架 Spiral 开放测试
 
-![本 AOSC OS 具有超级牛力](/assets/coffee-break/20240309/imgs/spiral-cow-power.png)
+![本 AOSC OS 具有超级牛力](/assets/news/coffee-break/20240309/imgs/spiral-cow-power.png)
 
 社区开发者[王江津](https://github.com/RedL0tus)近日完成了 Spiral 软件兼容框架的初步开发，可为 AOSC OS 提供为 Debian、Ubuntu 及各类衍生发行版（如 Loongnix 和统信 UOS）开发的商用软件的兼容性。
 

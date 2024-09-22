@@ -16,7 +16,7 @@ important: false
 《安记冰室》开业一周年！
 --------
 
-![《安记冰室》是我社的主要外宣工程之一](/assets/coffee-break/20240818/imgs/biweeklys-slim.png)
+![《安记冰室》是我社的主要外宣工程之一](/assets/news/coffee-break/20240818/imgs/biweeklys-slim.png)
 
 一年前，社区恢复外宣的主要工程之一《安记冰室》发布了创刊号。此后，《冰室》以半月刊的形式，对社区工作、活动及项目进展等进行概括性的报道，以多栏目板块的形式帮助用户索引其所关注的内容。年初改版时，又特别引入了“开发者角”栏目，面向开发者，尤其是社区贡献者群体提供信息参考，以便新老人员尽快了解工作流及工具链方面的变化。从信息呈现策略上说，《冰室》着重于在介绍“发生了什么”之余，向读者介绍和解释其与每条新闻和各工具使用、活动参与等方面的具体联系。
 
@@ -33,7 +33,7 @@ important: false
 
 ### AOSCC 2024 会务满意度调查
 
-![AOSCC 2024 的顺利举办离不开各位讲者、志愿者和与会者的配合协作](/assets/coffee-break/20240818/imgs/aoscc-2024.jpg)
+![AOSCC 2024 的顺利举办离不开各位讲者、志愿者和与会者的配合协作](/assets/news/coffee-break/20240818/imgs/aoscc-2024.jpg)
 
 本届 AOSCC 是安同开源社区自创办以来参与人数最多、讲者最多、主题最丰富的一届。本届 AOSCC 得以顺利举办离不开大家的努力配合，感谢各位！
 
@@ -43,7 +43,7 @@ important: false
 
 ### 安同 OS 软件包树 (aosc-os-abbs) 喜迎第十万个提交！
 
-![十万个提交，十万步脚印](/assets/coffee-break/20240818/imgs/hundred-thousandth-slim.png)
+![十万个提交，十万步脚印](/assets/news/coffee-break/20240818/imgs/hundred-thousandth-slim.png)
 
 安同 OS 使用 Git 管理软件包源码配置已有近十年历史。今天，随着 Visual Studio Code 1.92.1 的合入，软件包树 [aosc-os-abbs](https://github.com/AOSC-Dev/aosc-os-abbs) 迎来了[第十万个提交](https://github.com/AOSC-Dev/aosc-os-abbs/commit/d56c6d0636193b2f48ba9f573393c0467c58806c)。
 
@@ -54,7 +54,7 @@ important: false
 
 ### oma 1.6 发布：发布 Debian/Ubuntu 安装包，界面、兼容性双升级
 
-![oma 1.6 特性更新发布：界面、兼容性双升级](/assets/coffee-break/20240818/imgs/oma-slim.png)
+![oma 1.6 特性更新发布：界面、兼容性双升级](/assets/news/coffee-break/20240818/imgs/oma-slim.png)
 
 近日，[傅孝元](https://github.com/eatradish)发布了小熊猫包管理 (oma) 的 1.6 版，在修复数个兼容性问题的同时，对一部分界面进行了调优，也改善了诸如 Windows Terminal 及 TTY 等环境下的使用体验。此外，oma 1.6 还发行了针对 Debian 及 Ubuntu 的 .deb 安装包，方便用户安装使用；具体来说，oma 支持如下版本的 Debian 和 Ubuntu：
 
@@ -79,7 +79,7 @@ important: false
 
 ### 安同 OS 重返系统软件包版本监测网站 Repology
 
-![Repology 上的安同 OS 主页](/assets/coffee-break/20240818/imgs/repology-aosc.png)
+![Repology 上的安同 OS 主页](/assets/news/coffee-break/20240818/imgs/repology-aosc.png)
 
 相信关注 Linux 发行版与软件包更新的朋友们对 [Repology](https://repology.org/) 大概不会陌生，但也许您也发现了安同 OS 一直缺席这一网站的监测仓库列表；实际上，安同 OS 曾经在 Repology 的监测列表上，但由于系统软件包信息站年久失修，Repology 决定暂停监测安同 OS 的仓库
 
@@ -91,7 +91,7 @@ important: false
 
 ### 依赖调优、加强保险：安同 OS 系统套件与关键组件更新发布
 
-![系统套件与关键组件更新可大幅度提高安同 OS 的可定制性和可靠性](/assets/coffee-break/20240818/imgs/oma-confirm.png)
+![系统套件与关键组件更新可大幅度提高安同 OS 的可定制性和可靠性](/assets/news/coffee-break/20240818/imgs/oma-confirm.png)
 
 作为一个量大料足的“塞爆”发行版，安同 OS 虽然通过充分标记依赖简化了软件包和环境的部署流程，但长久以来在依赖标记上的矫枉过正和僵化也广受用户诟病——用户往往会遇到卸载系统预装软件时连带卸载桌面环境乃至系统组件的问题，造成了较大困扰。
 
@@ -107,7 +107,7 @@ ERROR 软件包 networkmanager 是不允许删除的关键组件。
 
 ### 打破隔阂：安同 OS 正式推出“旧世界”固件兼容性更新
 
-![联想开天 M540z（最早的龙芯 3A5000 整机之一）运行安同 OS](/assets/coffee-break/20240818/imgs/breaking-the-world-boundary.jpg)
+![联想开天 M540z（最早的龙芯 3A5000 整机之一）运行安同 OS](/assets/news/coffee-break/20240818/imgs/breaking-the-world-boundary.jpg)
 
 安同 OS 龙架构 (LoongArch) 版本的一大工作重点便是解决架构专属生态历史性的隔阂：“新世界”和“旧世界”。
 
@@ -127,7 +127,7 @@ ERROR 软件包 networkmanager 是不允许删除的关键组件。
 
 考虑到这一方案可大大降低用户支持成本，并方便用户更自由地选用适合自己经济与性能需要的龙架构设备，我们欢迎且强烈推荐各龙架构“新世界”系统维护者及开发商集成这一兼容方案。为此，[白铭骢](https://github.com/MingcongBai)编写了“旧世界”设备兼容方案的发行注记，欢迎查阅参考。
 
-[“旧世界”设备兼容方案发行注记 >>](/assets/coffee-break/20240818/loongarch64-ow-support.md)
+[“旧世界”设备兼容方案发行注记 >>](/assets/news/coffee-break/20240818/loongarch64-ow-support.md)
 
 开发者角
 --------

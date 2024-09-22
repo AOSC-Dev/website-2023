@@ -6,7 +6,7 @@ date: 2024-07-12T23:00:00+08:00
 important: false
 
 ---
-![](/assets/coffee-break/20240623/imgs/aoscc-2024-jlu.png)
+![](/assets/news/coffee-break/20240623/imgs/aoscc-2024-jlu.png)
 
 请各位与会者适时查阅[参会实用信息](https://wiki.aosc.io/zh/community/aoscc/2024-guide/)，以获取交通、住宿、餐饮、文旅指南。
 

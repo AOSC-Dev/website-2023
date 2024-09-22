@@ -6,7 +6,7 @@ date: 2024-05-01T22:19:13-08:00
 important: false
 
 ---
-![AOSCC 2024 倒计时正式开始！](/assets/coffee-break/20240427/imgs/aoscc-2024.png)
+![AOSCC 2024 倒计时正式开始！](/assets/news/coffee-break/20240427/imgs/aoscc-2024.png)
 
 去年的 AOSCC 是我们有史以来规模最大的线下聚会——超过 110 人到会参与活动；在欣喜之余，我们也认识到在许多会务筹备和运营工作上的不足，其中最突出的一点便是筹备期间人力紧张。
 

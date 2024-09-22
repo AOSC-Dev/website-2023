@@ -17,7 +17,7 @@ important: false
 
 ### 倒计时开始：AOSCC 2024 场地投票
 
-![AOSCC 2024 倒计时正式开始！](/assets/coffee-break/20240427/imgs/aoscc-2024.png)
+![AOSCC 2024 倒计时正式开始！](/assets/news/coffee-break/20240427/imgs/aoscc-2024.png)
 
 今年，我们非常惊喜地看到多所院校积极争取承办 AOSCC 线下活动。通过各社团和院校的努力，我们最终锁定吉林大学和南阳理工学院为候选承办方：现组织社区投票征集意向，我们将选定得票数最多的学校为本年度 AOSCC 的举办地点。投票时请注意如下事项：
 
@@ -31,7 +31,7 @@ important: false
 
 ### 吉林大学联络人寄语
 
-![吉林大学 Linux 用户组近日举办的 Linux 安装派对活动现场](/assets/coffee-break/20240427/imgs/jlu-lug.jpg)
+![吉林大学 Linux 用户组近日举办的 Linux 安装派对活动现场](/assets/news/coffee-break/20240427/imgs/jlu-lug.jpg)
 
 大家好，我是吉林大学 Linux 用户组联络人 @TechCiel，可能还有朋友记得我们在 AOSCC 2024 发的贴纸。
 
@@ -74,7 +74,7 @@ important: false
 
 ### 南阳理工学院联络人寄语
 
-![南阳理工大学齐贤园](/assets/coffee-break/20240427/imgs/nyist.jpg)
+![南阳理工大学齐贤园](/assets/news/coffee-break/20240427/imgs/nyist.jpg)
 
 南阳理工学院计算机与信息化处理协会 ([NYIST-CIPS](https://cips.nyist.edu.cn/)) 是由南阳理工学院在校的 GNU/Linux 爱好者发起并组成的团体。
 
@@ -110,7 +110,7 @@ important: false
 
 ### 界面升级：oma 1.3 发布
 
-![oma 1.3 的 TUI 界面预览](/assets/coffee-break/20240413/imgs/oma-1.3.png)
+![oma 1.3 的 TUI 界面预览](/assets/news/coffee-break/20240413/imgs/oma-1.3.png)
 
 今日，社区开发者[傅孝元](https://github.com/eatradish)发布了小熊猫包管理 oma 的 1.3 版本，包含许多特性和改进：
 

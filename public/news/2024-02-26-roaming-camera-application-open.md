@@ -6,7 +6,7 @@ date: 2024-02-26T22:19:13-08:00
 important: false
 
 ---
-![流浪相机——到远方去！](/assets/coffee-break/20240323/imgs/roaming-camera.png)
+![流浪相机——到远方去！](/assets/news/coffee-break/20240323/imgs/roaming-camera.png)
 
 三月中旬，我们计划参考 B 站 Up 主 [-LKs- ](https://space.bilibili.com/125526/) 的“漂流相机”启动廿四年度“流浪相机”计划
 

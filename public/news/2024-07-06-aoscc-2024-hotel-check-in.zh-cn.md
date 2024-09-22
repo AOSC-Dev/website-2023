@@ -8,7 +8,7 @@ important: false
 ---
 >此项工作已完成
 
-![](/assets/coffee-break/20240623/imgs/aoscc-2024-jlu.png)
+![](/assets/news/coffee-break/20240623/imgs/aoscc-2024-jlu.png)
 
 我们已为计划入住协议酒店的与会者预订了房间，目前协议酒店已订满，新增预订将进入候补列表。
 
