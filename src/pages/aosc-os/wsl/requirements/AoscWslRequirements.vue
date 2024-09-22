@@ -48,29 +48,30 @@ const aoscOsRequirementsList = ref();
         ref="aoscOsRequirementsList">
         <caption
           class="text-[12pt] font-semibold">
-          安同 OS 系统配置需求表
+          WSL 版安同 OS (AOSC OS on WSL) 系统配置需求表 (x64)
         </caption>
         <thead>
           <tr>
-            <th>硬件组件</th>
+            <th>软/硬件组件</th>
             <th>配置需求</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>处理器</td>
-            <td>任意与安同 OS 兼容的处理器</td>
+            <td>处理器需支持 x86-64（如 Intel 64 及 AMD64）指令集，Intel VT 或 AMD-V 等 VMM 特性、XD 位或 NX 位及 SLAT</td>
           </tr>
           <tr>
-            <td>内存</td>
-            <td>至少 2GiB</td>
+            <td>系统组件</td>
+            <td>Windows 10, Version 1607 及以上（如需使用 WSLg 运行图形化应用程序，则需要 Windows 10, Version 2004 及以上或 Windows 11）</td>
           </tr>
           <tr>
             <td>显示</td>
-            <td
-              >支持输出 1024x768
-              分辨率（图形模式），或基础帧缓冲支持（命令行模式）</td
-            >
+            <td>Windows 兼容的 GPU 驱动程序（使用 WSLg 运行图形化、OpenGL 加速的应用程序时）</td>
+          </tr>
+          <tr>
+            <td>内存</td>
+            <td>至少 4GiB</td>
           </tr>
           <tr>
             <td>存储</td>
@@ -81,7 +82,45 @@ const aoscOsRequirementsList = ref();
             <td>国际互联网连接</td>
           </tr>
         </tbody>
-      </table>
+      </table><br />
+      <table>
+        <caption
+          class="text-[12pt] font-semibold">
+          WSL 版安同 OS (AOSC OS on WSL) 系统配置需求表 (ARM64)
+        </caption>
+        <thead>
+          <tr>
+            <th>软/硬件组件</th>
+            <th>配置需求</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>处理器</td>
+            <td>兼容 Windows on ARM 的 64 位 ARM 处理器</td>
+          </tr>
+          <tr>
+            <td>系统组件</td>
+            <td>Windows 10, Version 1709 及以上（如需使用 WSLg 运行图形化应用程序，则需要 Windows 10, Version 2004 及以上或 Windows 11）</td>
+          </tr>
+          <tr>
+            <td>显示</td>
+            <td>Windows 兼容的 GPU 驱动程序（使用 WSLg 运行图形化、OpenGL 加速的应用程序时）</td>
+          </tr>
+          <tr>
+            <td>内存</td>
+            <td>至少 4GiB</td>
+          </tr>
+          <tr>
+            <td>存储</td>
+            <td>至少 4GiB 的可移动介质</td>
+          </tr>
+          <tr>
+            <td>网络连接</td>
+            <td>国际互联网连接</td>
+          </tr>
+        </tbody>
+      </table><br />
     </div>
 
     <category-second
@@ -89,35 +128,13 @@ const aoscOsRequirementsList = ref();
       id="support" />
     <div class="pt-4 pb-4 px-16">
       <ul class="list-disc">
-        <li
-          >关于安同 OS
-          兼容的处理器，详请见<AppLink
-            :to="{
-              path: '/aosc-os/isa',
-              hash: '#aoscOsIsaTableTitle'
-            }"
-            >安同 OS 架构支持规格表</AppLink
-          >
-        </li>
-        <li
-          >浏览网页时，系统内存和处理器占用将显著提升：如需大量浏览网页和观看高清流媒体内容，推荐在搭配至少
-          4 个处理器核心及 4GiB 内存的设备上使用
-          LiveKit</li
-        >
-        <li
-          >如显示器分辨率低于
-          1024x768，将无法正常使用 LiveKit
-          的图形模式</li
-        >
-        <li
-          >如设备不支持帧缓冲（一般通过 EFI 和
-          VESA VBIOS
-          等形式提供），则命令行模式无法使用非拉丁语言</li
-        >
-        <li
-          >LiveKit 可通过互联网安装安同
-          OS，如有此需要，请确保互联网连接畅通</li
-        >
+        <li>WSL 版安同 OS (AOSC OS on WSL) 不支持 32 位 x86 (Windows x86) 及 ARM (Windows ARM32) 架构</li>
+        <li>在虚拟机中运行 WSL 版安同 OS (AOSC OS on WSL) 时需开启嵌套虚拟化支持</li>
+        <li>AOSC OS 绝大部分应用程序假设良好的 VT 支持，推荐使用最新版 Windows Terminal 而非 Windows Console（前者需要 Windows 10, Version 2004 及以上）</li>
+        <li>WSL 2 中的 systemd 支持需要 0.67.6 或更新版本的 WSL 组件</li>
+        <li>推荐使用最新的操作系统、WSL 及 Windows Terminal 版本，开发人员可能无法对不受微软支持版本软件中存在的兼容性问题提供协助</li>
+        <li>如有可能，建议使用固态硬盘作为系统主存储：固态硬盘在随机读写性能上的优势将显著提升系统响应、软件安装和多任务场景下的使用体验</li>
+        <li>安同 OS通过互联网获取更新，请确保互联网连接畅通以便及时获得系统更新</li>
       </ul>
     </div>
     <br />
