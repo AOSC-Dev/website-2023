@@ -20,7 +20,7 @@ import CategorySecond from '/src/components/CategorySecond.vue';
     <div class="p-6">
       <p>
         本次发行属常规更新，包含截至 2024 年 9 月
-        5 日的所有系统更新。 </p
+        16 日的所有系统更新。 </p
       ><br />
     </div>
   </div>
