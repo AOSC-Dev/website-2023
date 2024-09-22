@@ -38,10 +38,7 @@ const aoscOsRequirementsList = ref();
       id="aoscOsRequirementsTitle" />
     <div class="p-6">
       <p>
-        LiveKit 是用于维护安同 OS
-        和进行故障修复的可移动环境。其系统需求与安同
-        OS
-        类似，但由于该环境包含系统维护和安装等功能，且带有图形界面，因此对设备处理器、显卡、存储和互联网连接等均有一定的需求。根据我们的测试，我们总结出了如下以使用体验良好为基本基准的系统配置需求表。
+        WSL 版安同 OS (AOSC OS on WSL) 可用于运行 Windows 的设备，其基本系统需求与安同 OS 类似，但由于其依赖 WSL 及 WSLg 等技术架构运行，因此除对设备处理器、显卡、存储和互联网连接外，对 Windows 系统组件版本等均有一定的需求。根据我们的测试，我们总结出了如下以使用体验良好为基本基准的系统配置需求表。
       </p>
       <table
         class="mt-6"
@@ -59,7 +56,7 @@ const aoscOsRequirementsList = ref();
         <tbody>
           <tr>
             <td>处理器</td>
-            <td>处理器需支持 x86-64（如 Intel 64 及 AMD64）指令集，Intel VT 或 AMD-V 等 VMM 特性、XD 位或 NX 位及 SLAT</td>
+            <td>处理器需支持 x86-64（如 Intel 64 或 AMD64）指令集、Intel VT 或 AMD-V 等 VMM 特性、XD 位或 NX 位、以及 SLAT</td>
           </tr>
           <tr>
             <td>系统组件</td>
@@ -67,7 +64,7 @@ const aoscOsRequirementsList = ref();
           </tr>
           <tr>
             <td>显示</td>
-            <td>Windows 兼容的 GPU 驱动程序（使用 WSLg 运行图形化、OpenGL 加速的应用程序时）</td>
+            <td>WSLg 兼容的 GPU 驱动程序（使用 WSLg 运行图形化、OpenGL 加速的应用程序时）</td>
           </tr>
           <tr>
             <td>内存</td>
@@ -75,7 +72,7 @@ const aoscOsRequirementsList = ref();
           </tr>
           <tr>
             <td>存储</td>
-            <td>至少 4GiB 的可移动介质</td>
+            <td>至少 4GiB</td>
           </tr>
           <tr>
             <td>网络连接</td>
