@@ -47,7 +47,7 @@ function closeBigImg() {
           :key="photo.file">
           <img
             loading="lazy"
-            :src="`/gallery/thumbs/${photo.file}.jpg`"
+            :src="`/galleryFile/thumbs/${photo.file}.jpg`"
             :alt="photo.desc"
             class="cursor-pointer w-[100%] max-w-[100%] object-cover aspect-video"
             @click="clickImg(gallery, index)" />
@@ -73,7 +73,7 @@ function closeBigImg() {
             class="flex justify-center w-[100%] h-[100%]">
             <img
               class="w-[100%] h-[auto] object-contain"
-              :src="`/gallery/${photo.file}`"
+              :src="`/galleryFile/${photo.file}`"
               :alt="photo.desc" />
           </div>
         </el-carousel-item>
