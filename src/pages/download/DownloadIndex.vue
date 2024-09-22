@@ -798,8 +798,8 @@ p {
 
 .oma-container {
   background-color: rgb(218 206 187 / 100%);
-  background-image: url(../../../public/assets/download/oma-mascot.svg),
-    url(/public/assets/download/oma.svg);
+  background-image: url(/assets/download/oma-mascot.svg),
+    url(/assets/download/oma.svg);
   background-size:
     144px auto,
     100% auto;
@@ -810,7 +810,7 @@ p {
 }
 
 .oma-mascot {
-  background: url(../../../public/assets/download/oma_item-1.svg);
+  background: url(/assets/download/oma_item-1.svg);
   align-self: flex-end;
 }
 

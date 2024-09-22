@@ -36,7 +36,7 @@ import { RouterView } from 'vue-router';
 <style scoped>
 .bg-floral {
   background-color: #fffbf5;
-  background-image: url(../../../public/assets/backgrounds/floral.svg);
+  background-image: url(/assets/backgrounds/floral.svg);
   background-position: center;
   background-attachment: fixed;
 }
