@@ -17,13 +17,10 @@ const yamlDoc = ref({});
 const newsDate = ref('');
 
 (async () => {
-  let [res, err] = await requestGetJson(
-    `/news/${route.params.newsPath}`
-  );
+  let [res, err] = await requestGetJson(`/news/${route.params.newsPath}`);
   if (res) {
     // 将头信息和内容分开，头信息为yml格式
-    [mdRes.value, yamlDoc.value] =
-      requestToYaml(res);
+    [mdRes.value, yamlDoc.value] = requestToYaml(res);
     setTitle(yamlDoc.value['title']);
   }
 })();
@@ -35,9 +32,7 @@ const newsDate = ref('');
       :title="yamlDoc['title']"
       :right-text="newsDate"
       class="absolute w-[calc(59.5vw-1px)]" />
-    <v-md-preview
-      :text="mdRes"
-      class="pt-[50px]"></v-md-preview>
+    <v-md-preview :text="mdRes" class="pt-[50px]"></v-md-preview>
   </div>
 </template>
 

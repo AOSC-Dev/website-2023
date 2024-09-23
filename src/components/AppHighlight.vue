@@ -22,12 +22,9 @@ const props = defineProps({
 const codeRef = ref(null);
 
 onMounted(() => {
-  codeRef.value.innerHTML = hljs.highlight(
-    props.code,
-    {
-      language: props.lang
-    }
-  ).value;
+  codeRef.value.innerHTML = hljs.highlight(props.code, {
+    language: props.lang
+  }).value;
 });
 
 function copy() {

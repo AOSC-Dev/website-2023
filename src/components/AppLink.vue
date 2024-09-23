@@ -11,18 +11,12 @@ const props = defineProps({
 });
 
 const isExternalLink = computed(() => {
-  return (
-    typeof props.to === 'string' &&
-    props.to.startsWith('http')
-  );
+  return typeof props.to === 'string' && props.to.startsWith('http');
 });
 </script>
 
 <template>
-  <a
-    v-if="isExternalLink"
-    :href="to"
-    :class="props.class">
+  <a v-if="isExternalLink" :href="to" :class="props.class">
     <slot></slot>
   </a>
   <router-link v-else v-bind="$props">

@@ -27,14 +27,11 @@ const navigationList = [
         本页面介绍社区历史上参与的实习项目，并对当前人力紧迫和待办的项目进行简要介绍，供各位社区好友参考。 </p
       ><br />
       <div>
-        <AccordionNavigation
-          :navigation-list="navigationList" />
+        <AccordionNavigation :navigation-list="navigationList" />
       </div>
     </div>
 
-    <category-second
-      title="英雄帖：待办项目"
-      id="todo" />
+    <category-second title="英雄帖：待办项目" id="todo" />
     <div class="p-6">
       <p>
         我社项目繁多但人员稀少，天马行空的大坑也好，细处着手的小事也罢，常常因为人力问题难以得到实施。如下是眼下有待完成的项目，欢迎您通过<router-link
@@ -45,18 +42,9 @@ const navigationList = [
       </p>
       <div class="pt-4 pb-4 px-16">
         <ul class="list-disc">
-          <li
-            ><b>安同 OS：</b>改善 RISC-V
-            架构支持情况并制作安装介质</li
-          >
-          <li
-            ><b>安同 OS：</b
-            >制作并发布虚拟机（及云服务）镜像</li
-          >
-          <li
-            ><b>星霞 OS：</b
-            >编写维护指南并进行特性规划</li
-          >
+          <li><b>安同 OS：</b>改善 RISC-V 架构支持情况并制作安装介质</li>
+          <li><b>安同 OS：</b>制作并发布虚拟机（及云服务）镜像</li>
+          <li><b>星霞 OS：</b>编写维护指南并进行特性规划</li>
           <li
             ><b>社区门户：</b
             >实现“支持中心”栏目（框架搭建、内容编写及索引功能等）</li
@@ -69,9 +57,7 @@ const navigationList = [
       </div>
     </div>
 
-    <category-second
-      title="实习项目：开源之夏"
-      id="ospp" />
+    <category-second title="实习项目：开源之夏" id="ospp" />
     <div class="p-6">
       <p>
         自 2020
@@ -92,8 +78,7 @@ const navigationList = [
             ><a
               class="text-[#0056cc] no-underline"
               href="https://summer-ospp.ac.cn/org/prodetail/24f3e0161"
-              >设计编写安同 OS
-              用户手册及编写规范（导师：温柔）</a
+              >设计编写安同 OS 用户手册及编写规范（导师：温柔）</a
             ></li
           >
           <li
@@ -101,8 +86,7 @@ const navigationList = [
             ><a
               class="text-[#0056cc] no-underline"
               href="https://summer-ospp.ac.cn/org/prodetail/24f3e0162"
-              >为 RISC-V 开发板提供安同 OS
-              系统镜像（导师：Icenowy Zheng）</a
+              >为 RISC-V 开发板提供安同 OS 系统镜像（导师：Icenowy Zheng）</a
             ></li
           >
           <li
@@ -110,8 +94,7 @@ const navigationList = [
             ><a
               class="text-[#0056cc] no-underline"
               href="https://summer-ospp.ac.cn/2023/org/prodetail/23f3e0031"
-              >为 实现 DeployKit
-              图形界面（导师：刘子兴）</a
+              >为 实现 DeployKit 图形界面（导师：刘子兴）</a
             ></li
           >
           <li
@@ -127,8 +110,7 @@ const navigationList = [
             ><a
               class="text-[#0056cc] no-underline"
               href="https://summer-ospp.ac.cn/2023/org/prodetail/23f3e0033"
-              >Autobuild 3
-              自动化打包测试框架（导师：黄烜宁，学生：李泽睿）</a
+              >Autobuild 3 自动化打包测试框架（导师：黄烜宁，学生：李泽睿）</a
             ></li
           >
           <li
@@ -136,9 +118,8 @@ const navigationList = [
             ><a
               class="text-[#0056cc] no-underline"
               href="https://summer-ospp.ac.cn/2022/#/org/prodetail/22f3e0079"
-              >全志 RISC-V
-              芯片主线化开发工作（导师：Icenowy
-              Zheng，学生：Moteen Shah）</a
+              >全志 RISC-V 芯片主线化开发工作（导师：Icenowy Zheng，学生：Moteen
+              Shah）</a
             ></li
           >
           <li
@@ -146,8 +127,7 @@ const navigationList = [
             ><a
               class="text-[#0056cc] no-underline"
               href="https://summer-ospp.ac.cn/2022/#/org/prodetail/22f3e0080"
-              >AOSC
-              的软件包信息站重实现（导师：刘子兴，学生：桂民强）</a
+              >AOSC 的软件包信息站重实现（导师：刘子兴，学生：桂民强）</a
             ></li
           >
           <li
@@ -155,9 +135,7 @@ const navigationList = [
             ><a
               class="text-[#0056cc] no-underline"
               href="https://summer-ospp.ac.cn/2021/#/org/prodetail/210080041"
-              >全志 RISC-V
-              芯片主线化开发工作（导师：Icenowy
-              Zheng）</a
+              >全志 RISC-V 芯片主线化开发工作（导师：Icenowy Zheng）</a
             ></li
           >
           <li
@@ -181,8 +159,7 @@ const navigationList = [
             ><a
               class="text-[#0056cc] no-underline"
               href="https://summer-ospp.ac.cn/2021/#/org/prodetail/210080100"
-              >安装程序 DeployKit
-              的实现（导师：刘子兴）</a
+              >安装程序 DeployKit 的实现（导师：刘子兴）</a
             ></li
           >
           <li
@@ -190,8 +167,7 @@ const navigationList = [
             ><a
               class="text-[#0056cc] no-underline"
               href="https://summer-ospp.ac.cn/2021/#/org/prodetail/210080299"
-              >AOSC OS 的 LoongArch
-              移植（导师：白铭骢，学生：许彦骐）</a
+              >AOSC OS 的 LoongArch 移植（导师：白铭骢，学生：许彦骐）</a
             ></li
           >
           <li
@@ -215,8 +191,7 @@ const navigationList = [
             ><a
               class="text-[#0056cc] no-underline"
               href="https://summer-ospp.ac.cn/2020/#/organisations/aosc"
-              >发行版构建自动化：打包调度器（导师：Dingyuan
-              Wang）</a
+              >发行版构建自动化：打包调度器（导师：Dingyuan Wang）</a
             ></li
           >
           <li
@@ -224,8 +199,7 @@ const navigationList = [
             ><a
               class="text-[#0056cc] no-underline"
               href="https://summer-ospp.ac.cn/2020/#/organisations/aosc"
-              >发行版构建自动化：自动化测试框架（导师：Dingyuan
-              Wang）</a
+              >发行版构建自动化：自动化测试框架（导师：Dingyuan Wang）</a
             ></li
           >
           <li
@@ -233,8 +207,7 @@ const navigationList = [
             ><a
               class="text-[#0056cc] no-underline"
               href="https://summer-ospp.ac.cn/2020/#/organisations/aosc"
-              >安装程序 DeployKit
-              的实现（导师：黎民雍）</a
+              >安装程序 DeployKit 的实现（导师：黎民雍）</a
             ></li
           >
           <li
@@ -242,8 +215,7 @@ const navigationList = [
             ><a
               class="text-[#0056cc] no-underline"
               href="https://summer-ospp.ac.cn/2020/#/organisations/aosc"
-              >为 libinput 框架实现“划圈滚动
-              (Circular
+              >为 libinput 框架实现“划圈滚动 (Circular
               Srolling)”（导师：白铭骢）</a
             ></li
           >

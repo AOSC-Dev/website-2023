@@ -1,9 +1,11 @@
 import { defineStore } from 'pinia';
 
-export const useHighBrightnessControllerStore =
-  defineStore('highBrightnessController', {
+export const useHighBrightnessControllerStore = defineStore(
+  'highBrightnessController',
+  {
     state: () => ({ obj: {} })
-  });
+  }
+);
 
 const themeList = {
   springDrak: {
@@ -40,35 +42,28 @@ const themeList = {
   }
 };
 
-export const useThemeStore = defineStore(
-  'themeStore',
-  {
-    state: () => {
-      const now = new Date();
-      const month = now.getMonth() + 1;
-      if (month >= 1 && month <= 3) {
-        return themeList['springNight'];
-      } else if (month >= 4 && month <= 6) {
-        return themeList['summerNight'];
-      } else if (month >= 7 && month <= 9) {
-        return themeList['autumnNight'];
-      } else if (month >= 10 && month <= 12) {
-        return themeList['winterNight'];
-      }
-    },
-    actions: {
-      set(solarTerms, time) {
-        const newColor =
-          themeList[
-            solarTerms +
-              time.charAt(0).toUpperCase() +
-              time.slice(1)
-          ];
-        console.log(newColor);
-        this.primary = newColor.primary;
-        this.secondary = newColor.secondary;
-      }
-    },
-    persist: true
-  }
-);
+export const useThemeStore = defineStore('themeStore', {
+  state: () => {
+    const now = new Date();
+    const month = now.getMonth() + 1;
+    if (month >= 1 && month <= 3) {
+      return themeList['springNight'];
+    } else if (month >= 4 && month <= 6) {
+      return themeList['summerNight'];
+    } else if (month >= 7 && month <= 9) {
+      return themeList['autumnNight'];
+    } else if (month >= 10 && month <= 12) {
+      return themeList['winterNight'];
+    }
+  },
+  actions: {
+    set(solarTerms, time) {
+      const newColor =
+        themeList[solarTerms + time.charAt(0).toUpperCase() + time.slice(1)];
+      console.log(newColor);
+      this.primary = newColor.primary;
+      this.secondary = newColor.secondary;
+    }
+  },
+  persist: true
+});

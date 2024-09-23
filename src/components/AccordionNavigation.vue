@@ -17,18 +17,12 @@ const props = defineProps({
 });
 </script>
 <template>
-  <span
-    v-for="(item, index) in navigationList"
-    :key="item.title">
+  <span v-for="(item, index) in navigationList" :key="item.title">
     <span :class="spanClass" v-if="index !== 0">
       <slot>|</slot>
     </span>
     <AppLink
-      :to="
-        item.url
-          ? item.url
-          : { path: item.path, hash: item.hash }
-      "
+      :to="item.url ? item.url : { path: item.path, hash: item.hash }"
       :class="linkClass">
       {{ item.title }}</AppLink
     >

@@ -21,9 +21,7 @@ const props = defineProps({
         {{ props.rightText }}
       </router-link>
       <!-- 右箭头 -->
-      <v-icon
-        v-if="showRightChevron"
-        name="bi-chevron-double-right" />
+      <v-icon v-if="showRightChevron" name="bi-chevron-double-right" />
     </span>
   </div>
 </template>

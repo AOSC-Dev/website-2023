@@ -9,21 +9,13 @@ const { toClipboard } = useClipboard();
 const loading = ref(true);
 const route = useRoute();
 const details = ref(null);
-const imgSuffixList = [
-  'jpg',
-  'jpeg',
-  'png',
-  'gif'
-];
+const imgSuffixList = ['jpg', 'jpeg', 'png', 'gif'];
 const failReason = ref('');
 
 function isImg(name) {
   const suffixIndex = name.lastIndexOf('.');
   const suffix = name.substring(suffixIndex + 1);
-  return (
-    imgSuffixList.find((v) => v == suffix) !==
-    undefined
-  );
+  return imgSuffixList.find((v) => v == suffix) !== undefined;
 }
 
 function getAttachUrl(name) {
@@ -31,10 +23,9 @@ function getAttachUrl(name) {
 }
 
 const getPaste = async () => {
-  let [res, err] = await requestGetJson(
-    '/pasteApi/paste',
-    { id: route.query.id }
-  );
+  let [res, err] = await requestGetJson('/pasteApi/paste', {
+    id: route.query.id
+  });
   if (res) {
     const results = res.data;
     if (results.code != 0) {
@@ -44,8 +35,7 @@ const getPaste = async () => {
     }
   } else {
     console.log('获取异常', err);
-    failReason.value =
-      '获取粘贴板异常（服务器内部错误）';
+    failReason.value = '获取粘贴板异常（服务器内部错误）';
   }
   loading.value = false;
 };
@@ -70,10 +60,7 @@ function copyLink() {
           <div class="flex justify-between">
             <div>
               <div>标题: {{ details.title }}</div>
-              <div
-                >过期时间:
-                {{ details.expDate }}</div
-              >
+              <div>过期时间: {{ details.expDate }}</div>
             </div>
             <button
               class="text-white px-[3em] theme-bg-color-primary-static py-[1em]"
@@ -81,16 +68,13 @@ function copyLink() {
               复制共享链接
             </button>
           </div>
-          <ul
-            class="el-upload-list el-upload-list--text">
+          <ul class="el-upload-list el-upload-list--text">
             <li
               class="el-upload-list__item is-ready"
               v-for="filename in details.fileList"
               :key="filename">
               <div class="items-center flex">
-                <el-icon class="mr-2"
-                  ><Document
-                /></el-icon>
+                <el-icon class="mr-2"><Document /></el-icon>
                 <span
                   ><img
                     :src="getAttachUrl(filename)"
@@ -114,16 +98,10 @@ function copyLink() {
           :lang="details.language" />
       </div>
     </div>
-    <el-result
-      v-if="failReason != ''"
-      icon="warning"
-      :title="failReason">
+    <el-result v-if="failReason != ''" icon="warning" :title="failReason">
       <template #extra>
         <el-button
-          v-if="
-            failReason == '密码错误' ||
-            failReason == '需要密码'
-          "
+          v-if="failReason == '密码错误' || failReason == '需要密码'"
           type="primary"
           @click="back"
           >返回</el-button

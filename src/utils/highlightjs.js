@@ -194,10 +194,7 @@ import xquery from 'highlight.js/lib/languages/xquery';
 import zephir from 'highlight.js/lib/languages/zephir';
 hljs.registerLanguage('abnf', abnf);
 hljs.registerLanguage('accesslog', accesslog);
-hljs.registerLanguage(
-  'actionscript',
-  actionscript
-);
+hljs.registerLanguage('actionscript', actionscript);
 hljs.registerLanguage('ada', ada);
 hljs.registerLanguage('angelscript', angelscript);
 hljs.registerLanguage('apache', apache);
@@ -223,15 +220,9 @@ hljs.registerLanguage('capnproto', capnproto);
 hljs.registerLanguage('ceylon', ceylon);
 hljs.registerLanguage('clean', clean);
 hljs.registerLanguage('clojure', clojure);
-hljs.registerLanguage(
-  'clojure_repl',
-  clojure_repl
-);
+hljs.registerLanguage('clojure_repl', clojure_repl);
 hljs.registerLanguage('cmake', cmake);
-hljs.registerLanguage(
-  'coffeescript',
-  coffeescript
-);
+hljs.registerLanguage('coffeescript', coffeescript);
 hljs.registerLanguage('coq', coq);
 hljs.registerLanguage('cos', cos);
 hljs.registerLanguage('cpp', cpp);
@@ -299,10 +290,7 @@ hljs.registerLanguage('ldif', ldif);
 hljs.registerLanguage('leaf', leaf);
 hljs.registerLanguage('less', less);
 hljs.registerLanguage('lisp', lisp);
-hljs.registerLanguage(
-  'livecodeserver',
-  livecodeserver
-);
+hljs.registerLanguage('livecodeserver', livecodeserver);
 hljs.registerLanguage('livescript', livescript);
 hljs.registerLanguage('llvm', llvm);
 hljs.registerLanguage('lsl', lsl);
@@ -334,10 +322,7 @@ hljs.registerLanguage('parser3', parser3);
 hljs.registerLanguage('pf', pf);
 hljs.registerLanguage('pgsql', pgsql);
 hljs.registerLanguage('php', php);
-hljs.registerLanguage(
-  'php_template',
-  php_template
-);
+hljs.registerLanguage('php_template', php_template);
 hljs.registerLanguage('plaintext', plaintext);
 hljs.registerLanguage('pony', pony);
 hljs.registerLanguage('powershell', powershell);
@@ -358,10 +343,7 @@ hljs.registerLanguage('rib', rib);
 hljs.registerLanguage('roboconf', roboconf);
 hljs.registerLanguage('routeros', routeros);
 hljs.registerLanguage('rsl', rsl);
-hljs.registerLanguage(
-  'ruleslanguage',
-  ruleslanguage
-);
+hljs.registerLanguage('ruleslanguage', ruleslanguage);
 hljs.registerLanguage('rust', rust);
 hljs.registerLanguage('sas', sas);
 hljs.registerLanguage('scala', scala);
@@ -380,10 +362,7 @@ hljs.registerLanguage('step21', step21);
 hljs.registerLanguage('stylus', stylus);
 hljs.registerLanguage('subunit', subunit);
 hljs.registerLanguage('swift', swift);
-hljs.registerLanguage(
-  'taggerscript',
-  taggerscript
-);
+hljs.registerLanguage('taggerscript', taggerscript);
 hljs.registerLanguage('yaml', yaml);
 hljs.registerLanguage('tap', tap);
 hljs.registerLanguage('tcl', tcl);
@@ -394,10 +373,7 @@ hljs.registerLanguage('typescript', typescript);
 hljs.registerLanguage('vala', vala);
 hljs.registerLanguage('vbnet', vbnet);
 hljs.registerLanguage('vbscript', vbscript);
-hljs.registerLanguage(
-  'vbscript_html',
-  vbscript_html
-);
+hljs.registerLanguage('vbscript_html', vbscript_html);
 hljs.registerLanguage('verilog', verilog);
 hljs.registerLanguage('vhdl', vhdl);
 hljs.registerLanguage('vim', vim);

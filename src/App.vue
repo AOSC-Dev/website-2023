@@ -6,8 +6,7 @@ import {
   useThemeStore
 } from './stores/miscellaneous.js';
 
-const highBrightnessControllerStore =
-  useHighBrightnessControllerStore();
+const highBrightnessControllerStore = useHighBrightnessControllerStore();
 const router = useRouter();
 
 router.afterEach((to, from) => {

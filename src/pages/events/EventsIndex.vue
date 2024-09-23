@@ -32,25 +32,20 @@ const navigationList = [
         2024
         年起，我们还组织了春节“烙饼会”，与社区好友们共享节日气氛，谋划来年的工作目标。 </p
       ><br />
-      <p>
-        此外，社区还积极组织与高校社团协办“安同校园行”活动，并参与许多由 </p
+      <p> 此外，社区还积极组织与高校社团协办“安同校园行”活动，并参与许多由 </p
       ><br />
       <div>
-        <AccordionNavigation
-          :navigation-list="navigationList" />
+        <AccordionNavigation :navigation-list="navigationList" />
       </div>
     </div>
 
-    <category-second
-      title="AOSCC：社区年度聚会"
-      id="aoscc" />
+    <category-second title="AOSCC：社区年度聚会" id="aoscc" />
     <div class="p-6">
       <p>
         AOSCC
         是我社每年一度的线下聚会，公开邀请社区好友参与。活动期间，社区邀请社区贡献者、高校社团成员和行业代表等分享、交流工作，并组织抽奖、代号投票等趣味活动。近年来，AOSCC
-        均由中国高校社团协办，每年吸引超过 100
-        来自与会者参与。以下是自 2015 年的 AOSCC
-        活动地点、日期和会议信息记录：
+        均由中国高校社团协办，每年吸引超过 100 来自与会者参与。以下是自 2015
+        年的 AOSCC 活动地点、日期和会议信息记录：
       </p>
       <div class="pt-4 pb-4 px-16">
         <ul class="list-disc">
@@ -59,8 +54,7 @@ const navigationList = [
             ><a
               class="text-[#0056cc] no-underline"
               href="https://wiki.aosc.io/zh/community/aoscc/2024/"
-              >吉林大学（2024 年 7 月 13 - 14
-              日）</a
+              >吉林大学（2024 年 7 月 13 - 14 日）</a
             ></li
           >
           <li
@@ -68,8 +62,7 @@ const navigationList = [
             ><a
               class="text-[#0056cc] no-underline"
               href="https://wiki.aosc.io/zh/community/aoscc/2023/"
-              >上海科技大学（2023 年 7 月 15 - 16
-              日）</a
+              >上海科技大学（2023 年 7 月 15 - 16 日）</a
             ></li
           >
           <li
@@ -77,8 +70,7 @@ const navigationList = [
             ><a
               class="text-[#0056cc] no-underline"
               href="https://wiki.aosc.io/zh/community/aoscc/2022/"
-              >由于新冠肺炎疫情，于线上举办（2022
-              年 9 月 17 日）</a
+              >由于新冠肺炎疫情，于线上举办（2022 年 9 月 17 日）</a
             ></li
           >
           <li
@@ -86,8 +78,7 @@ const navigationList = [
             ><a
               class="text-[#0056cc] no-underline"
               href="https://wiki.aosc.io/zh/community/aoscc/2021/"
-              >由于新冠肺炎疫情，于线上举办（2021
-              年 9 月 19 - 20 日）</a
+              >由于新冠肺炎疫情，于线上举办（2021 年 9 月 19 - 20 日）</a
             ></li
           >
           <li
@@ -95,8 +86,7 @@ const navigationList = [
             ><a
               class="text-[#0056cc] no-underline"
               href="https://wiki.aosc.io/zh/community/aoscc/2020/"
-              >由于新冠肺炎疫情，于线上举办（2020
-              年 9 月 25 - 26 日）</a
+              >由于新冠肺炎疫情，于线上举办（2020 年 9 月 25 - 26 日）</a
             ></li
           >
           <li
@@ -104,8 +94,7 @@ const navigationList = [
             ><a
               class="text-[#0056cc] no-underline"
               href="https://wiki.aosc.io/zh/community/aoscc/2019/"
-              >中国科学技术大学（2019 年 7 月 12 -
-              14 日）</a
+              >中国科学技术大学（2019 年 7 月 12 - 14 日）</a
             ></li
           >
           <li><b>2018 年：</b>聚会取消</li>
@@ -114,25 +103,16 @@ const navigationList = [
             ><a
               class="text-[#0056cc] no-underline"
               href="https://wiki.aosc.io/zh/community/aoscc/2017/"
-              >广东工业大学（2019 年 7 月 14 - 16
-              日）</a
+              >广东工业大学（2019 年 7 月 14 - 16 日）</a
             ></li
           >
-          <li
-            ><b>2016 年：</b>上海科技大学（2016 年
-            7 月）</li
-          >
-          <li
-            ><b>2015 年：</b
-            >深圳长虹科技大厦（2015 年 7 月）</li
-          >
+          <li><b>2016 年：</b>上海科技大学（2016 年 7 月）</li>
+          <li><b>2015 年：</b>深圳长虹科技大厦（2015 年 7 月）</li>
         </ul>
       </div>
     </div>
 
-    <category-second
-      title="安同校园行"
-      id="campus" />
+    <category-second title="安同校园行" id="campus" />
     <div class="p-6">
       <p>
         安同开源社区从校园诞生，校园及草根开源社区和组织的发展也是社区建立时的初心之一。如今，高校社团亦是我社关注和扶持的对象。自
@@ -152,22 +132,15 @@ const navigationList = [
           >
         </ul>
       </div>
-      <p>
-        如下是近期规划内的“安同校园行”目的地：
-      </p>
+      <p> 如下是近期规划内的“安同校园行”目的地： </p>
       <div class="pt-4 pb-4 px-16">
         <ul class="list-disc">
-          <li
-            ><b>2024 年 10 月：</b
-            >兰州大学、宁夏理工学院</li
-          >
+          <li><b>2024 年 10 月：</b>兰州大学、宁夏理工学院</li>
         </ul>
       </div>
     </div>
 
-    <category-second
-      title="春节烙饼会"
-      id="springcon" />
+    <category-second title="春节烙饼会" id="springcon" />
     <div class="p-6">
       <p>
         自 2023
@@ -187,9 +160,7 @@ const navigationList = [
       </div>
     </div>
 
-    <category-second
-      title="其他活动"
-      id="others" />
+    <category-second title="其他活动" id="others" />
     <div class="p-6">
       <p>
         作为社区、校园乃至企业交流的一环，社区贡献者积极参与各公开会议、聚会活动。如下是我们的参与记录及录像：
@@ -210,10 +181,8 @@ const navigationList = [
             ><a
               class="text-[#0056cc] no-underline"
               href="https://www.bilibili.com/video/BV1K142127oB"
-              >北京大学 Linux 俱乐部与清华大学
-              TUNA 协会协办：Towards Modern
-              Distro（白铭骢：从 AOSC OS
-              浅谈发行版社区的日常、雄心和无奈）</a
+              >北京大学 Linux 俱乐部与清华大学 TUNA 协会协办：Towards Modern
+              Distro（白铭骢：从 AOSC OS 浅谈发行版社区的日常、雄心和无奈）</a
             ></li
           >
           <li
@@ -221,10 +190,8 @@ const navigationList = [
             ><a
               class="text-[#0056cc] no-underline"
               href="https://repo.aosc.io/aosc-documentation/fosdem-2022/20210113-slides.odp"
-              >FOSDEM 2022（白铭骢：AOSC OS/Retro
-              - Our Ongoing Quest for the
-              Possibility of Modern Linux on
-              Vintage Hardware）</a
+              >FOSDEM 2022（白铭骢：AOSC OS/Retro - Our Ongoing Quest for the
+              Possibility of Modern Linux on Vintage Hardware）</a
             ></li
           >
           <li

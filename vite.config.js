@@ -54,8 +54,7 @@ export default defineConfig({
       '/pasteApi': {
         target: 'http://localhost:8000',
         changeOrigin: true,
-        rewrite: (path) =>
-          path.replace(/^\/pasteApi/, '')
+        rewrite: (path) => path.replace(/^\/pasteApi/, '')
       }
     }
   }

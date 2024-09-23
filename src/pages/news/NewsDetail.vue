@@ -3,10 +3,7 @@ import { ref } from 'vue';
 import CategorySecond from '../../components/CategorySecond.vue';
 import { useRoute } from 'vue-router';
 import { setTitle } from '../../utils/utils.js';
-import {
-  requestGetJson,
-  requestToYaml
-} from '../../utils/utils.js';
+import { requestGetJson, requestToYaml } from '../../utils/utils.js';
 
 const mdRes = ref();
 const route = useRoute();
@@ -16,12 +13,9 @@ const newsDate = ref('');
 (async () => {
   const newsPath = route.params.newsPath;
   newsDate.value = newsPath.substring(0, 10);
-  let [res, err] = await requestGetJson(
-    `/news/${newsPath}`
-  );
+  let [res, err] = await requestGetJson(`/news/${newsPath}`);
   if (res) {
-    [mdRes.value, yamlDoc.value] =
-      requestToYaml(res);
+    [mdRes.value, yamlDoc.value] = requestToYaml(res);
     setTitle(yamlDoc.value['title']);
   } else if (err) {
     console.log(err);

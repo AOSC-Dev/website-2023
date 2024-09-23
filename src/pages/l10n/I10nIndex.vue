@@ -16,8 +16,7 @@ const navigationList = [
 
 const docList = reactive([
   {
-    title:
-      '《大陆简中自由软件本地化工作指南》1.5.4 版',
+    title: '《大陆简中自由软件本地化工作指南》1.5.4 版',
     url: 'https://repo.aosc.io/aosc-l10n/zh_CN_l10n_1.5.4.pdf'
   }
 ]);
@@ -40,8 +39,7 @@ const docList = reactive([
         年开始，我们还通过中科院软件所“开源之夏”发布本地化工作的实习项目，吸引各路新人参与到我社的本地化工作中。 </p
       ><br />
       <div>
-        <AccordionNavigation
-          :navigation-list="navigationList" />
+        <AccordionNavigation :navigation-list="navigationList" />
       </div>
     </div>
 

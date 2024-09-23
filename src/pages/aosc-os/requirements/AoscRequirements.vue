@@ -40,11 +40,8 @@ const aoscOsRequirementsList = ref();
         安同 OS
         是一款主要面向桌面的、功能较为完整的操作系统，预装软件和基础管理特性等对设备处理器、显卡、存储和互联网连接等均有一定的需求。根据我们的测试，我们总结出了如下以使用体验良好为基本基准的系统配置需求表。
       </p>
-      <table
-        class="mt-6"
-        ref="aoscOsRequirementsList">
-        <caption
-          class="text-[12pt] font-semibold">
+      <table class="mt-6" ref="aoscOsRequirementsList">
+        <caption class="text-[12pt] font-semibold">
           安同 OS 系统配置需求表
         </caption>
         <thead>
@@ -64,10 +61,7 @@ const aoscOsRequirementsList = ref();
           </tr>
           <tr>
             <td>显卡</td>
-            <td
-              >支持 OpenGL 2.1 / OpenGL ES 3.1
-              或以上版本的显卡</td
-            >
+            <td>支持 OpenGL 2.1 / OpenGL ES 3.1 或以上版本的显卡</td>
           </tr>
           <tr>
             <td>存储</td>
@@ -81,14 +75,11 @@ const aoscOsRequirementsList = ref();
       </table>
     </div>
 
-    <category-second
-      title="补充说明"
-      id="support" />
+    <category-second title="补充说明" id="support" />
     <div class="pt-4 pb-4 px-16">
       <ul class="list-disc">
         <li
-          >关于安同 OS
-          兼容的处理器，详请见<AppLink
+          >关于安同 OS 兼容的处理器，详请见<AppLink
             :to="{
               path: '/aosc-os/isa'
             }"
@@ -97,12 +88,10 @@ const aoscOsRequirementsList = ref();
         </li>
         <li
           >浏览网页时，系统内存和处理器占用将显著提升：如需大量浏览网页和观看高清流媒体内容，推荐在搭配至少
-          4 个处理器核心及 4GiB
-          内存的设备上使用安同 OS</li
+          4 个处理器核心及 4GiB 内存的设备上使用安同 OS</li
         >
         <li
-          >一般来说，4K 分辨率的屏幕需要 2GiB
-          显存的显卡才能流畅使用安同 OS
+          >一般来说，4K 分辨率的屏幕需要 2GiB 显存的显卡才能流畅使用安同 OS
           桌面界面</li
         >
         <li

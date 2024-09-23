@@ -14,12 +14,10 @@ const props = defineProps({
     required: true
   }
 });
-const highBrightnessControllerStore =
-  useHighBrightnessControllerStore();
+const highBrightnessControllerStore = useHighBrightnessControllerStore();
 
 watch(
-  () =>
-    highBrightnessControllerStore.obj[route.path],
+  () => highBrightnessControllerStore.obj[route.path],
   () => {
     switch (route.hash) {
       case '#support':
@@ -38,9 +36,7 @@ const support = ref();
   <CategorySecond title="支持文档" id="support" />
   <div ref="support" class="pt-4 pb-[60px] px-16">
     <ul class="list-disc">
-      <li
-        v-for="item in navigationList"
-        :key="item.title">
+      <li v-for="item in navigationList" :key="item.title">
         <AppLink
           :to="
             item.url

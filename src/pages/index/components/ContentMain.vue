@@ -1,11 +1,5 @@
 <script setup name="ContentMain">
-import {
-  onMounted,
-  reactive,
-  ref,
-  useTemplateRef,
-  onUnmounted
-} from 'vue';
+import { onMounted, reactive, ref, useTemplateRef, onUnmounted } from 'vue';
 import CategorySecond from '/src/components/CategorySecond.vue';
 import NewsCategoryList from '/src/pages/news/components/NewsCategoryList.vue';
 import { requestGetJson } from '../../../utils/utils';
@@ -19,9 +13,7 @@ const newsList = ref([]);
 const isLoad = ref(false);
 
 (async () => {
-  let [res, err] = await requestGetJson(
-    `/newsCategories/home.zh-cn.json`
-  );
+  let [res, err] = await requestGetJson(`/newsCategories/home.zh-cn.json`);
   if (res) {
     newsList.value = res.data;
     newsListLoading.value = false;
@@ -66,10 +58,7 @@ const img = useTemplateRef('bgImg');
 let observer = null;
 onMounted(() => {
   observer = new ResizeObserver(() => {
-    imgHeight.value =
-      (img.value.clientWidth / 1.4545).toFixed(
-        2
-      ) + 'px';
+    imgHeight.value = (img.value.clientWidth / 1.4545).toFixed(2) + 'px';
   });
   observer.observe(img.value);
 });
@@ -116,34 +105,29 @@ onUnmounted(() => {
     <div>
       <category-second title="资讯要点" />
       <article v-if="isLoad">
-        <news-category-list
-          :news-list="newsList" />
+        <news-category-list :news-list="newsList" />
         <div
           class="text-right px-[15px] py-[10px] font-[12pt] leading-6 text-link">
           <router-link to="/news">
             <span>查阅最新社区资讯</span>
-            <v-icon
-              name="bi-chevron-double-right" />
+            <v-icon name="bi-chevron-double-right" />
           </router-link>
         </div>
       </article>
     </div>
     <!-- 专栏 -->
     <div v-if="isLoad" id="topic">
-      <category-second
-        title="专栏：初识安同 OS" />
+      <category-second title="专栏：初识安同 OS" />
       <article class="p-[1em] leading-6">
         <div
           class="flex items-center pb-[15px]"
           v-for="item in zhuanlanList"
           :key="item.title">
-          <div
-            class="basis-[50px] mr-[20px] ml-[0.5em]">
+          <div class="basis-[50px] mr-[20px] ml-[0.5em]">
             <img :src="item.img" />
           </div>
           <div class="flex-1 p-0">
-            <div
-              class="text-[14pt] font-semibold">
+            <div class="text-[14pt] font-semibold">
               {{ item.title }}
             </div>
             <div class="text-[12pt]">
@@ -151,8 +135,7 @@ onUnmounted(() => {
             </div>
           </div>
         </div>
-        <div
-          class="text-right px-[15px] text-[12pt] leading-6">
+        <div class="text-right px-[15px] text-[12pt] leading-6">
           <router-link
             class="text-[#0056cc] no-underline"
             to="/aosc-os/right-for-me">

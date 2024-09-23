@@ -228,9 +228,7 @@ const sponsorList = ref([
       多年来，社区内外诸多好友慷慨解囊，提供诸如服务器托管、测试设备和镜像源等形式的持续支持。在降低项目开发维护成本和提高工作体验的同时，也让社区各项目的用户们享受到了尽可能好的服务质量。赞助方们的大力支持让安同开源社区在保持独立运作、志愿驱动的基本原则的同时得以存活和发展，我们在此展示社区当今及历史上的各赞助单位与个人，谨以此表达我们由衷的感激。
     </div>
 
-    <div
-      v-for="item in sponsorList"
-      :key="item.title">
+    <div v-for="item in sponsorList" :key="item.title">
       <category-second :title="item.title" />
       <div class="p-6">
         <div class="grid grid-cols-4 gap-6 p-2">
@@ -245,20 +243,11 @@ const sponsorList = ref([
               :src="`/assets/sponsors/${sponsor.img}.svg`"
               :alt="sponsor.name"
               class="w-[100%] max-w-[100%]" />
-            <div class="text-link">{{
-              sponsor.name
-            }}</div>
-            <div
-              v-if="sponsor.name == 'JetBrains'">
-              <span
-                style="
-                  font-size: 0.7rem;
-                  color: #666;
-                ">
-                Copyright © 2000-2024 JetBrains
-                s.r.o. JetBrains and the JetBrains
-                logo are registered trademarks of
-                JetBrains s.r.o.
+            <div class="text-link">{{ sponsor.name }}</div>
+            <div v-if="sponsor.name == 'JetBrains'">
+              <span style="font-size: 0.7rem; color: #666">
+                Copyright © 2000-2024 JetBrains s.r.o. JetBrains and the
+                JetBrains logo are registered trademarks of JetBrains s.r.o.
               </span>
             </div>
           </a>

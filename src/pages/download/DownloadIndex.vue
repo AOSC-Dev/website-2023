@@ -31,8 +31,7 @@ import useClipboard from 'vue-clipboard3';
 
 const route = useRoute();
 
-let msStoreScript =
-  document.createElement('script');
+let msStoreScript = document.createElement('script');
 msStoreScript.setAttribute(
   'src',
   'https://get.microsoft.com/badge/ms-store-badge.bundled.js'
@@ -41,17 +40,11 @@ document.head.appendChild(msStoreScript);
 
 const loading = ref(true);
 const versionArch = ref([]);
-const aoscOsRef = useTemplateRef(
-  'aoscOsDownload'
-);
-const afterglowRef = useTemplateRef(
-  'afterglowDownload'
-);
+const aoscOsRef = useTemplateRef('aoscOsDownload');
+const afterglowRef = useTemplateRef('afterglowDownload');
 const omaRef = useTemplateRef('omaDownload');
 const tier2Ref = useTemplateRef('tier2Downloads');
-const dockerRef = useTemplateRef(
-  'downloadDocker'
-);
+const dockerRef = useTemplateRef('downloadDocker');
 
 const omaNavigationList = [
   {
@@ -68,8 +61,7 @@ const omaNavigationList = [
   // }
 ];
 
-const omaInstallScript =
-  'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
+const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
 
 const { toClipboard } = useClipboard();
 
@@ -111,8 +103,7 @@ const wslNavigationList = [
   }
 ];
 
-const highBrightnessControllerStore =
-  useHighBrightnessControllerStore();
+const highBrightnessControllerStore = useHighBrightnessControllerStore();
 
 const switchHash = () => {
   switch (route.hash) {
@@ -137,8 +128,7 @@ const switchHash = () => {
 };
 
 watch(
-  () =>
-    highBrightnessControllerStore.obj[route.path],
+  () => highBrightnessControllerStore.obj[route.path],
   () => {
     switchHash();
   },
@@ -160,8 +150,7 @@ const downloadButtonLength = (() => {
         if (aoscOsRef.value.clientWidth > 384) {
           aoscOsButtonStyle.width = (
             224 -
-            0.55 *
-              (498 - aoscOsRef.value.clientWidth)
+            0.55 * (498 - aoscOsRef.value.clientWidth)
           ).toFixed(2);
         } else aoscOsButtonStyle.width = 157;
       } else {
@@ -180,37 +169,19 @@ const downloadButtonLength = (() => {
     versionArch.value = res.data;
     console.log(res.data);
     antong1List.value.forEach((v) => {
-      v.installer = getNewVersioArch(
-        v.title,
-        'installer'
-      );
-      v.livekit = getNewVersioArch(
-        v.title,
-        'livekit'
-      );
+      v.installer = getNewVersioArch(v.title, 'installer');
+      v.livekit = getNewVersioArch(v.title, 'livekit');
     });
     antong2List.value.forEach((v) => {
-      v.installer = getNewVersioArch(
-        v.title,
-        'installer'
-      );
-      v.livekit = getNewVersioArch(
-        v.title,
-        'livekit'
-      );
+      v.installer = getNewVersioArch(v.title, 'installer');
+      v.livekit = getNewVersioArch(v.title, 'livekit');
     });
     console.log(antong2List.value);
     xingxia1List.value.forEach((v) => {
-      v.livekit = getNewVersioArch(
-        v.title,
-        'livekit'
-      );
+      v.livekit = getNewVersioArch(v.title, 'livekit');
     });
     xingxia2List.value.forEach((v) => {
-      v.livekit = getNewVersioArch(
-        v.title,
-        'livekit'
-      );
+      v.livekit = getNewVersioArch(v.title, 'livekit');
     });
   } else if (err) {
     ElMessage.warning('版本信息获取失败');
@@ -221,27 +192,17 @@ const downloadButtonLength = (() => {
 
 onMounted(async () => {
   nextTick(() => {
-    window.addEventListener(
-      'resize',
-      downloadButtonLength
-    );
+    window.addEventListener('resize', downloadButtonLength);
     downloadButtonLength();
   });
   switchHash();
 });
 
 onUnmounted(() => {
-  window.removeEventListener(
-    'resize',
-    downloadButtonLength
-  );
+  window.removeEventListener('resize', downloadButtonLength);
 });
 
-const livekitPPlacement = [
-  'top',
-  'left',
-  'bottom'
-];
+const livekitPPlacement = ['top', 'left', 'bottom'];
 
 const antong1List = ref([
   {
@@ -249,8 +210,7 @@ const antong1List = ref([
     zhLabel: 'x86-64',
     enLabel: 'x86-64',
     popoverData: {
-      conten:
-        '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备',
+      conten: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备',
       placement: 'top'
     }
   },
@@ -259,8 +219,7 @@ const antong1List = ref([
     zhLabel: 'AArch64',
     enLabel: 'AArch64',
     popoverData: {
-      conten:
-        '适用于兼容 Armv8-A 及以上版本的 64 位 Arm 设备',
+      conten: '适用于兼容 Armv8-A 及以上版本的 64 位 Arm 设备',
       placement: 'top'
     }
   },
@@ -281,8 +240,7 @@ const antong2List = ref([
     zhLabel: 'IBM POWER（64 位，小端序）',
     enLabel: 'IBM POWER (64-bit, little endian)',
     popoverData: {
-      conten:
-        '适用于兼容 Power ISA v2.07 及以上版本的 64 位、小端序模式设备',
+      conten: '适用于兼容 Power ISA v2.07 及以上版本的 64 位、小端序模式设备',
       placement: 'top'
     }
   },
@@ -291,8 +249,7 @@ const antong2List = ref([
     zhLabel: 'RISC-V（64 位）',
     enLabel: 'RISC-V (64-bit)',
     popoverData: {
-      conten:
-        '适用于兼容 RVA20 Architecture Profile 的 64 位 RISC-V 设备',
+      conten: '适用于兼容 RVA20 Architecture Profile 的 64 位 RISC-V 设备',
       placement: 'left'
     }
   },
@@ -312,8 +269,7 @@ const xingxia1List = ref([
     zhLabel: 'Intel 80486 或更新',
     enLabel: 'Intel 80486 or newer',
     popoverData: {
-      conten:
-        '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
+      conten: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
     }
   },
   {
@@ -321,8 +277,7 @@ const xingxia1List = ref([
     zhLabel: '龙芯 2F',
     enLabel: 'Loongson 2F',
     popoverData: {
-      conten:
-        '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
+      conten: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
     }
   },
   {
@@ -330,8 +285,7 @@ const xingxia1List = ref([
     zhLabel: 'PowerPC（32 位，大端序）',
     enLabel: 'PowerPC (32-bit, big endian)',
     popoverData: {
-      conten:
-        '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
+      conten: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
     }
   },
   {
@@ -339,8 +293,7 @@ const xingxia1List = ref([
     zhLabel: 'PowerPC（64 位，大端序）',
     enLabel: 'PowerPC (64-bit, big endian)',
     popoverData: {
-      conten:
-        '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
+      conten: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
     }
   }
 ]);
@@ -350,8 +303,7 @@ const xingxia2List = ref([
     zhLabel: 'Motorola 68000 系列处理器**',
     enLabel: 'Motorola 68000',
     popoverData: {
-      conten:
-        '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
+      conten: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
     }
   },
   {
@@ -359,8 +311,7 @@ const xingxia2List = ref([
     zhLabel: 'ARMv4',
     enLabel: 'ARMv4',
     popoverData: {
-      conten:
-        '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
+      conten: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
     }
   },
   {
@@ -368,29 +319,22 @@ const xingxia2List = ref([
     zhLabel: 'ARMv6（硬浮点）',
     enLabel: 'ARMv6 (hard-float)',
     popoverData: {
-      conten:
-        '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
+      conten: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
     }
   },
   {
     title: 'armv7hf',
-    zhLabel:
-      'ARMv7（硬浮点，带有 NEON 指令集支持）',
-    enLabel:
-      'ARMv7 (hard-float, with NEON support)',
+    zhLabel: 'ARMv7（硬浮点，带有 NEON 指令集支持）',
+    enLabel: 'ARMv7 (hard-float, with NEON support)',
     popoverData: {
-      conten:
-        '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
+      conten: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
     }
   }
 ]);
 
 function getAntongDate() {
   if (versionArch.value.length == 0) return '...';
-  let dateStr = getNewVersioArch(
-    'amd64',
-    'installer'
-  ).date;
+  let dateStr = getNewVersioArch('amd64', 'installer').date;
   return `${dateStr.substring(0, 4)}/${dateStr.substring(
     4,
     6
@@ -404,8 +348,7 @@ function isoVersionCmp(v1, v2) {
   let d1 = v1.date;
   let d2 = v2.date;
   let c;
-  let l =
-    d1.length > d2.length ? d2.length : d1.length;
+  let l = d1.length > d2.length ? d2.length : d1.length;
   for (c = 0; c < l; c++) {
     if (d1[c] > d2[c]) {
       return -1;
@@ -428,43 +371,30 @@ function isoVersionCmp(v1, v2) {
  * 根据架构找出最新的下载信息
  */
 const getNewVersioArch = (arch, type) => {
-  let list = versionArch.value.filter(
-    (v) => v.arch == arch
-  );
-  list = list.filter((v) =>
-    v.path.includes(type)
-  );
+  let list = versionArch.value.filter((v) => v.arch == arch);
+  list = list.filter((v) => v.path.includes(type));
   list = list.sort(isoVersionCmp);
   return list[0];
 };
 </script>
 
 <template>
-  <div
-    class="pl-[1px] flex flex-col min-w-[1148px] ss">
-    <category-second
-      id="aosc-os-download"
-      title="操作系统" />
+  <div class="pl-[1px] flex flex-col min-w-[1148px] ss">
+    <category-second id="aosc-os-download" title="操作系统" />
     <div class="flex flex-row flex-1">
       <div
         ref="aoscOsDownload"
         class="aosc-os-container justify-between flex flex-row w-[50%] justify-around bg-white px-[1rem] flex-wrap">
-        <div
-          class="mt-[0.5rem] min-w-[96px] w-[24%] flex">
-          <img
-            src="/assets/download/aosc-os-web.svg" />
+        <div class="mt-[0.5rem] min-w-[96px] w-[24%] flex">
+          <img src="/assets/download/aosc-os-web.svg" />
         </div>
         <div class="text-aosc-os my-[1.5rem]">
           <p class="text-[32pt]">安同 OS</p>
-          <p class="text-[14pt]"
-            >称心得意的桌面操作系统</p
-          >
+          <p class="text-[14pt]">称心得意的桌面操作系统</p>
           <p class="width-[220px] text-[10pt] mt-1">
             {{ getAntongDate() }}·
             <AccordionNavigation
-              :navigation-list="
-                aoscOsNavigationList
-              "
+              :navigation-list="aoscOsNavigationList"
               link-class=""
               >·</AccordionNavigation
             >
@@ -492,8 +422,7 @@ const getNewVersioArch = (arch, type) => {
                 button-color="#549c97"
                 :width="aoscOsButtonStyle.width"
                 :popover-data="{
-                  conten:
-                    '二级架构、Docker,及虚拟机镜像等其他下载',
+                  conten: '二级架构、Docker,及虚拟机镜像等其他下载',
                   placement: 'bottom'
                 }"
                 url="#otherDownload"
@@ -502,46 +431,26 @@ const getNewVersioArch = (arch, type) => {
           </div>
         </div>
       </div>
-      <div
-        class="afterglow px-[1rem]"
-        ref="afterglowDownload">
-        <div
-          class="my-[2rem] text-afterglow">
-          <p class="text-white text-[32pt]"
-            >星霞 OS</p
-          >
-          <p class="text-white text-[14pt]"
-            >老设备也能发光发热</p
-          >
-          <p class="text-white text-[10pt] mt-1"
-            >敬请期待...</p
-          >
+      <div class="afterglow px-[1rem]" ref="afterglowDownload">
+        <div class="my-[2rem] text-afterglow">
+          <p class="text-white text-[32pt]">星霞 OS</p>
+          <p class="text-white text-[14pt]">老设备也能发光发热</p>
+          <p class="text-white text-[10pt] mt-1">敬请期待...</p>
         </div>
-        <div
-          class="mt-[2rem] min-w-[64px] w-[24%]">
-          <img
-            src="/assets/download/afterglow-web.svg" />
+        <div class="mt-[2rem] min-w-[64px] w-[24%]">
+          <img src="/assets/download/afterglow-web.svg" />
         </div>
       </div>
     </div>
 
-    <div
-      class="livekit-container w-[100%] flex flex-row">
+    <div class="livekit-container w-[100%] flex flex-row">
       <div class="flex flex-col">
-        <div
-          id="livekit-title"
-          class="flex-col my-auto pl-[2rem] flex">
-          <p id="livekit" class="text-[24pt]"
-            >LiveKit</p
-          >
-          <p id="livekit-alt" class="text-[14pt]"
-            >功能完备的安同 OS 救援环境</p
-          >
+        <div id="livekit-title" class="flex-col my-auto pl-[2rem] flex">
+          <p id="livekit" class="text-[24pt]">LiveKit</p>
+          <p id="livekit-alt" class="text-[14pt]">功能完备的安同 OS 救援环境</p>
           <p class="mt-8">
             <AccordionNavigation
-              :navigation-list="
-                liveKitNavigationList
-              "
+              :navigation-list="liveKitNavigationList"
               link-class=""
               >·</AccordionNavigation
             >
@@ -555,14 +464,11 @@ const getNewVersioArch = (arch, type) => {
           <div
             class="button-container-aoscos buttons-col"
             v-if="versionArch.length > 0">
-            <span
-              v-for="(item, index) in antong1List"
-              :key="item.title">
+            <span v-for="(item, index) in antong1List" :key="item.title">
               <DownloadButton
                 :popover-data="{
                   ...item.popoverData,
-                  placement:
-                    livekitPPlacement[index]
+                  placement: livekitPPlacement[index]
                 }"
                 :second-line-font-size="8"
                 :width="200"
@@ -575,16 +481,10 @@ const getNewVersioArch = (arch, type) => {
         </div>
       </div>
     </div>
-    <div
-      class="wsl-container w-[100%] flex flex-row">
-      <div
-        class="flex flex-col pl-[2rem] py-[1rem]">
-        <p id="wsl" class="text-[24pt]"
-          >WSL 环境</p
-        >
-        <p id="wsl-alt" class="text-[14pt]"
-          >适用于 WSL 的安同 OS</p
-        >
+    <div class="wsl-container w-[100%] flex flex-row">
+      <div class="flex flex-col pl-[2rem] py-[1rem]">
+        <p id="wsl" class="text-[24pt]">WSL 环境</p>
+        <p id="wsl-alt" class="text-[14pt]">适用于 WSL 的安同 OS</p>
         <p class="mt-8">
           <AccordionNavigation
             :navigation-list="wslNavigationList"
@@ -593,9 +493,7 @@ const getNewVersioArch = (arch, type) => {
           >
         </p>
       </div>
-      <div
-        id="wsl-buttons"
-        class="flex mt-auto mr-9 ml-auto">
+      <div id="wsl-buttons" class="flex mt-auto mr-9 ml-auto">
         <ms-store-badge
           productid="9NMDF21NV65Z"
           window-mode="popup"
@@ -604,20 +502,14 @@ const getNewVersioArch = (arch, type) => {
         </ms-store-badge>
       </div>
     </div>
-    <category-second
-      class="highlight"
-      title="实用工具" />
+    <category-second class="highlight" title="实用工具" />
     <div
       id="oma-download"
       ref="omaDownload"
       class="oma-container w-[100%] flex flex-row py-[1rem]">
       <div class="pl-[2rem]">
-        <p class="text-[24pt]"
-          >小熊猫包管理 (oma)</p
-        >
-        <p class="text-[14pt]"
-          >简明好用的 APT 软件包管理界面</p
-        >
+        <p class="text-[24pt]">小熊猫包管理 (oma)</p>
+        <p class="text-[14pt]">简明好用的 APT 软件包管理界面</p>
         <p class="mt-2">
           <AccordionNavigation
             :navigation-list="omaNavigationList"
@@ -636,40 +528,27 @@ const getNewVersioArch = (arch, type) => {
             </code>
           </div>
           <p class="mt-[6px]"
-            >使用终端运行该命令可在 Debian、Ubuntu
-            及衍生版安装 oma</p
+            >使用终端运行该命令可在 Debian、Ubuntu 及衍生版安装 oma</p
           >
         </div>
       </div>
     </div>
     <div id="otherDownload">
-      <category-second
-        id="tier-2-downloads"
-        title="安同 OS（二级架构）" />
-      <div
-        ref="tier2Downloads"
-        class="w-[100%] flex-row py-[1rem] flex mb-8">
+      <category-second id="tier-2-downloads" title="安同 OS（二级架构）" />
+      <div ref="tier2Downloads" class="w-[100%] flex-row py-[1rem] flex mb-8">
         <div class="pl-[2rem] my-auto">
-          <p class="text-[13pt]"
-            >安同 OS 支持支持众多处理器微架构。</p
-          >
-          <p class="text-[13pt] mt-1"
-            >除 x86-64、AArch64 及 LoongArch 外，</p
-          >
+          <p class="text-[13pt]">安同 OS 支持支持众多处理器微架构。</p>
+          <p class="text-[13pt] mt-1">除 x86-64、AArch64 及 LoongArch 外，</p>
           <p class="text-[13pt] mt-1"
             >我们还支持一众存量较少或软件支持尚未完善的架构，</p
           >
-          <p class="text-[13pt] mt-1"
-            >并发布镜像供各位玩家试用和评估。</p
-          >
+          <p class="text-[13pt] mt-1">并发布镜像供各位玩家试用和评估。</p>
         </div>
         <div
           class="flex flex-col pr-[2rem] gap-y-[0.5rem] ml-auto"
           v-loading="loading"
           v-if="versionArch.length > 0">
-          <div
-            v-for="item in antong2List"
-            :key="item.title">
+          <div v-for="item in antong2List" :key="item.title">
             <DownloadButton
               :popover-data="item.popoverData"
               :second-line-font-size="8"
@@ -724,12 +603,7 @@ p {
 }
 
 .afterglow {
-  background: linear-gradient(
-      90deg,
-      rgb(0 0 0 / 65%),
-      100%,
-      transparent
-    ),
+  background: linear-gradient(90deg, rgb(0 0 0 / 65%), 100%, transparent),
     url(/assets/backgrounds/afterglow.webp);
   background-size: auto 150%;
   background-color: black;
@@ -775,23 +649,13 @@ p {
 }
 
 .aosc-os-container {
-  background: linear-gradient(
-      90deg,
-      rgb(255 255 255 / 0%),
-      100%,
-      transparent
-    ),
+  background: linear-gradient(90deg, rgb(255 255 255 / 0%), 100%, transparent),
     url(/assets/backgrounds/aosc-os.webp);
   background-size: auto 300%;
 }
 
 .livekit-container {
-  background: linear-gradient(
-      90deg,
-      #f6d5ac,
-      50%,
-      transparent
-    ),
+  background: linear-gradient(90deg, #f6d5ac, 50%, transparent),
     url('/assets/backgrounds/livekit.jpg');
   background-position-x: 0%, 100%;
 }
@@ -815,12 +679,7 @@ p {
 }
 
 .wsl-container {
-  background: linear-gradient(
-      90deg,
-      #b7e4fc,
-      50%,
-      transparent
-    ),
+  background: linear-gradient(90deg, #b7e4fc, 50%, transparent),
     url('/assets/backgrounds/aosc-os-wsl.webp');
   background-color: #000;
   background-position-x: 0%, 30rem;

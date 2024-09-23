@@ -7,9 +7,7 @@ import js from '@eslint/js';
 export default [
   // vue插件的推荐配置
   ...pluginVue.configs[
-    ('flat/base',
-    'flat/essential',
-    'flat/strongly-recommended')
+    ('flat/base', 'flat/essential', 'flat/strongly-recommended')
   ],
   // eslint推荐的js监控
   js.configs.recommended,
@@ -34,10 +32,7 @@ export default [
         }
       ]
     },
-    ignores: [
-      'auto-imports.d.ts',
-      'components.d.ts'
-    ]
+    ignores: ['auto-imports.d.ts', 'components.d.ts']
   },
   // 这个配置会关闭eslint与prettier冲突的配置，防止出现prettier格式完eslint爆红
   eslintConfigPrettier

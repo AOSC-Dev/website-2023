@@ -1,11 +1,5 @@
 <script setup name="RightBar">
-import {
-  reactive,
-  ref,
-  useTemplateRef,
-  onMounted,
-  onUnmounted
-} from 'vue';
+import { reactive, ref, useTemplateRef, onMounted, onUnmounted } from 'vue';
 import CategorySecond from '/src/components/CategorySecond.vue';
 import AppLink from '../../../components/AppLink.vue';
 
@@ -55,10 +49,7 @@ const img = useTemplateRef('bgImg');
 let observer = null;
 onMounted(() => {
   observer = new ResizeObserver(() => {
-    imgHeight.value =
-      (img.value.clientWidth / 1.7455).toFixed(
-        2
-      ) + 'px';
+    imgHeight.value = (img.value.clientWidth / 1.7455).toFixed(2) + 'px';
   });
   observer.observe(img.value);
 });
@@ -82,10 +73,8 @@ onUnmounted(() => {
   :style="{
     '--homepage-img-height2': imgHeight
   }">
-  <div
-    class="bg-right-bar-bg w-[37.5%] flex flex-col">
-    <a
-      href="/aosc-os/right-for-me">
+  <div class="bg-right-bar-bg w-[37.5%] flex flex-col">
+    <a href="/aosc-os/right-for-me">
       <img
         @load="onImgLoad"
         ref="bgImg"
@@ -108,16 +97,11 @@ onUnmounted(() => {
           class="flex items-center pb-[15px]"
           v-for="item in distroList"
           :key="item.title">
-          <div
-            class="basis-[50px] mr-[20px] ml-[0.5em]">
-            <img
-              :src="item.img"
-              alt=""
-              class="w-full" />
+          <div class="basis-[50px] mr-[20px] ml-[0.5em]">
+            <img :src="item.img" alt="" class="w-full" />
           </div>
           <div class="flex-1 p-0">
-            <div
-              class="text-[14pt] font-semibold">
+            <div class="text-[14pt] font-semibold">
               {{ item.title }}
             </div>
             <div class="text-[12pt]">
@@ -144,8 +128,7 @@ onUnmounted(() => {
         </div>
       </article>
       <category-second title="常用链接" />
-      <div
-        class="border-l theme-border-secondary flex flex-col flex-grow">
+      <div class="border-l theme-border-secondary flex flex-col flex-grow">
         <a
           v-for="item in commonLinkList"
           :key="item.title"

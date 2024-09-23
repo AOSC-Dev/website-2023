@@ -90,82 +90,46 @@ const waterGroup = [
     <category-second title="聊天群组" />
     <div class="p-6">
       <p
-        >如下列出的各组 Telegram 群组、Discord
-        聊天室、Matrix 房间及 IRC
-        频道均由转发机器人联通，请选择最适合自己的方式加入群聊。亦有
-        QQ 群和微信群可供使用（无转发）。</p
+        >如下列出的各组 Telegram 群组、Discord 聊天室、Matrix 房间及 IRC
+        频道均由转发机器人联通，请选择最适合自己的方式加入群聊。亦有 QQ
+        群和微信群可供使用（无转发）。</p
       >
     </div>
 
     <category-second title="主群组" id="main" />
     <div class="p-6">
-      <p
-        >社区主群组用于开发交流、技术支持及相关技术话题讨论：</p
-      >
+      <p>社区主群组用于开发交流、技术支持及相关技术话题讨论：</p>
       <ul class="list-disc pl-10 mt-2">
-        <li
-          v-for="(item, index) in mainGroup"
-          :key="index">
-          <span v-if="item.spanText">{{
-            item.spanText
-          }}</span>
-          <AppLink
-            v-if="item.url"
-            :to="item.url"
-            >{{ item.aText }}</AppLink
-          >
+        <li v-for="(item, index) in mainGroup" :key="index">
+          <span v-if="item.spanText">{{ item.spanText }}</span>
+          <AppLink v-if="item.url" :to="item.url">{{ item.aText }}</AppLink>
           {{ item.liText }}
         </li>
       </ul>
     </div>
 
-    <category-second
-      title="古董计算机兴趣小组"
-      id="retro" />
+    <category-second title="古董计算机兴趣小组" id="retro" />
     <div class="p-6">
-      <p
-        >该小组用于讨论各类古董软硬件及
-        Afterglow（星霞 OS）开发。</p
-      >
+      <p>该小组用于讨论各类古董软硬件及 Afterglow（星霞 OS）开发。</p>
       <ul class="list-disc pl-10 mt-2">
-        <li
-          v-for="(item, index) in antiqueComputer"
-          :key="index">
-          <span v-if="item.spanText">{{
-            item.spanText
-          }}</span>
-          <AppLink
-            v-if="item.url"
-            :to="item.url"
-            >{{ item.aText }}</AppLink
-          >
+        <li v-for="(item, index) in antiqueComputer" :key="index">
+          <span v-if="item.spanText">{{ item.spanText }}</span>
+          <AppLink v-if="item.url" :to="item.url">{{ item.aText }}</AppLink>
           {{ item.liText }}
         </li>
       </ul>
     </div>
 
-    <category-second
-      title="水群（又称：托腮群）"
-      id="offtopic" />
+    <category-second title="水群（又称：托腮群）" id="offtopic" />
     <div class="p-6">
       <p>
         水群用于讨论各式话题，但需注意遵守我社
-        <AppLink to="/guidelines"
-          >人际关系准则</AppLink
-        >
+        <AppLink to="/guidelines">人际关系准则</AppLink>
       </p>
       <ul class="list-disc pl-10 mt-2">
-        <li
-          v-for="(item, index) in waterGroup"
-          :key="index">
-          <span v-if="item.spanText">{{
-            item.spanText
-          }}</span>
-          <AppLink
-            v-if="item.url"
-            :to="item.url"
-            >{{ item.aText }}</AppLink
-          >
+        <li v-for="(item, index) in waterGroup" :key="index">
+          <span v-if="item.spanText">{{ item.spanText }}</span>
+          <AppLink v-if="item.url" :to="item.url">{{ item.aText }}</AppLink>
           {{ item.liText }}
         </li>
       </ul>

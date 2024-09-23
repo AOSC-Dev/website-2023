@@ -89,15 +89,12 @@ const linkArr = reactive([
 const constExpandedMenu = linkArr.at(0);
 
 function isCurrentPage(str) {
-  return window.location.pathname
-    .trim()
-    .startsWith(str.trim());
+  return window.location.pathname.trim().startsWith(str.trim());
 }
 
 function updateAllowedCategories() {
   // 这里的值需要一直更新！
-  let docHeight =
-    document.documentElement.clientHeight;
+  let docHeight = document.documentElement.clientHeight;
   switch (true) {
     // 所有分类都展开的最小高度
     case docHeight >= 980: {
@@ -124,9 +121,7 @@ function updateAllowedCategories() {
       break;
     }
   }
-  if (
-    document.documentElement.clientHeight < 980
-  ) {
+  if (document.documentElement.clientHeight < 980) {
     // 可视区域高度不够的情况下，始终展开 “社区项目” 分类，及当前页面所属的分类
     // 记录是否有分类被展开
     let menuToExpand;
@@ -179,10 +174,7 @@ function toggle(item) {
     }, 50);
     return;
   }
-  if (
-    allowedCategories == 2 &&
-    item == linkArr.at(0)
-  ) {
+  if (allowedCategories == 2 && item == linkArr.at(0)) {
     setTimeout(() => {
       item.show = !item.show;
     }, 50);
@@ -190,10 +182,7 @@ function toggle(item) {
     return;
   }
   if (allowedCategories <= 2) {
-    if (
-      currentShowing != null &&
-      currentShowing != item
-    ) {
+    if (currentShowing != null && currentShowing != item) {
       // Collapse the expanded one firstbg-secondary
       currentShowing.show = false;
       currentShowing = item;
@@ -215,8 +204,7 @@ onMounted(() => {
   function handleBackToTopButton() {
     // 检测 sticky-nav 是否被钉住
     // 被钉住了，显示 “返回页首” 按钮
-    let top =
-      stickyNav.value.getBoundingClientRect().top;
+    let top = stickyNav.value.getBoundingClientRect().top;
     if (lastStickyNavTop != top) {
       backToTopBtnShow.value = top == 0;
       lastStickyNavTop = top;
@@ -224,10 +212,7 @@ onMounted(() => {
   }
   // 执行一次，避免刷新时看不见
   handleBackToTopButton();
-  window.addEventListener(
-    'scroll',
-    handleBackToTopButton
-  );
+  window.addEventListener('scroll', handleBackToTopButton);
 });
 </script>
 
@@ -244,9 +229,7 @@ onMounted(() => {
         <span>返回页首</span>
       </div>
     </Transition>
-    <div
-      v-for="item1 in linkArr"
-      :key="item1.title">
+    <div v-for="item1 in linkArr" :key="item1.title">
       <div
         class="theme-bg-color-primary-secondary text-white h-[2rem] px-[10px] py-[5px] m-0 select-none flex justify-between items-center cursor-pointer"
         @click="toggle(item1)">
@@ -254,30 +237,18 @@ onMounted(() => {
           {{ item1.title }}
         </span>
         <v-icon
-          :name="
-            item1.show
-              ? 'bi-chevron-double-up'
-              : 'bi-chevron-double-down'
-          "
+          :name="item1.show ? 'bi-chevron-double-up' : 'bi-chevron-double-down'"
           inverse />
       </div>
       <Transition name="menu">
-        <ul
-          class="py-[3px] flex nav-container"
-          v-show="item1.show">
-          <template
-            v-for="item2 in item1.children"
-            :key="item2.title">
+        <ul class="py-[3px] flex nav-container" v-show="item1.show">
+          <template v-for="item2 in item1.children" :key="item2.title">
             <router-link
-              v-if="
-                !item2.link.startsWith('http')
-              "
+              v-if="!item2.link.startsWith('http')"
               :to="item2.link"
               :href="item2.link"
               :class="{
-                'bg-[#dcdcdc]': $route.path
-                  .trim()
-                  .startsWith(item2.link.trim())
+                'bg-[#dcdcdc]': $route.path.trim().startsWith(item2.link.trim())
               }"
               class="leading-4 navitem-flex hover:bg-[#dcdcdc] cursor-pointer pr-[10px] pl-[16px] block text-wrap select-none href-noline"
               >{{ item2.title }}</router-link
@@ -287,9 +258,7 @@ onMounted(() => {
               :href="item2.link"
               target="_blank"
               :class="{
-                'bg-[#dcdcdc]': $route.path
-                  .trim()
-                  .startsWith(item2.link.trim())
+                'bg-[#dcdcdc]': $route.path.trim().startsWith(item2.link.trim())
               }"
               class="leading-4 navitem-flex hover:bg-[#dcdcdc] cursor-pointer pr-[10px] pl-[16px] block text-wrap select-none href-noline"
               >{{ item2.title }}</a
@@ -323,8 +292,7 @@ onMounted(() => {
 
 .anim-button-leave-active {
   overflow-y: hidden;
-  animation: backtotop-slidein 0.15s linear
-    reverse;
+  animation: backtotop-slidein 0.15s linear reverse;
 }
 
 @keyframes backtotop-slidein {

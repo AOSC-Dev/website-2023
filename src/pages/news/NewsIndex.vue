@@ -6,9 +6,7 @@ import { requestGetJson } from '../../utils/utils';
 
 const categories = ref({});
 (async () => {
-  let [res, err] = await requestGetJson(
-    '/newsCategories/zh-cn.json'
-  );
+  let [res, err] = await requestGetJson('/newsCategories/zh-cn.json');
   if (res) {
     categories.value = res.data;
     console.log('新闻目录:', res.data);

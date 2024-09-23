@@ -7,9 +7,7 @@ import { requestGetJson } from '../../utils/utils';
 const galleryList = ref([]);
 
 (async () => {
-  let [res, err] = await requestGetJson(
-    '/gallery.yml'
-  );
+  let [res, err] = await requestGetJson('/gallery.yml');
   if (res) {
     galleryList.value = yaml.load(res.data);
   } else if (err) {
@@ -38,13 +36,9 @@ function closeBigImg() {
       v-for="gallery in galleryList.gallery"
       :key="gallery.title"
       class="pl-[1px]">
-      <category-second
-        :title="gallery.title"
-        class="sticky top-0" />
+      <category-second :title="gallery.title" class="sticky top-0" />
       <div class="grid grid-cols-4 gap-2 p-2">
-        <div
-          v-for="(photo, index) in gallery.album"
-          :key="photo.file">
+        <div v-for="(photo, index) in gallery.album" :key="photo.file">
           <img
             loading="lazy"
             :src="`/galleryFile/thumbs/${photo.file}.jpg`"
@@ -69,8 +63,7 @@ function closeBigImg() {
           v-for="photo in curGallery.album"
           :key="photo.file"
           :label="photo.desc">
-          <div
-            class="flex justify-center w-[100%] h-[100%]">
+          <div class="flex justify-center w-[100%] h-[100%]">
             <img
               class="w-[100%] h-[auto] object-contain"
               :src="`/galleryFile/${photo.file}`"
@@ -82,20 +75,14 @@ function closeBigImg() {
       <div
         class="fixed top-[20px] right-[20px] p-[2px] rounded-full cursor-pointer z-[999] theme-bg-color-primary-static"
         @click="closeBigImg">
-        <v-icon
-          scale="1.5"
-          fill="#fff"
-          name="io-close-circle-outline" />
+        <v-icon scale="1.5" fill="#fff" name="io-close-circle-outline" />
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-.el-carousel
-  ::v-deep(
-    .el-carousel__indicators--outside li button
-  ) {
+.el-carousel ::v-deep(.el-carousel__indicators--outside li button) {
   display: none;
 }
 

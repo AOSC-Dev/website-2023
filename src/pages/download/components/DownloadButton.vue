@@ -38,10 +38,8 @@ const byteToGb = (bytes) => {
 <template>
   <div
     :style="{
-      '--download-button-p-fount-size1':
-        $props.firstLineFontSize + 'pt',
-      '--download-button-p-fount-size2':
-        $props.secondLineFontSize + 'pt'
+      '--download-button-p-fount-size1': $props.firstLineFontSize + 'pt',
+      '--download-button-p-fount-size2': $props.secondLineFontSize + 'pt'
     }">
     <el-popover
       :placement="popoverData.placement"
@@ -57,15 +55,9 @@ const byteToGb = (bytes) => {
           }"
           class="theme-bg-color-secondary-primary flex h-full flex-col hover:no-underline cursor-pointer mx-1 py-1">
           <slot></slot>
-          <p
-            v-if="archName"
-            class="first-line-p"
-            >{{ archName }}</p
-          >
+          <p v-if="archName" class="first-line-p">{{ archName }}</p>
           <p v-if="isaInfo" class="second-line-p"
-            >{{
-              byteToGb(isaInfo.downloadSize)
-            }}GiB ISO</p
+            >{{ byteToGb(isaInfo.downloadSize) }}GiB ISO</p
           >
         </AppLink>
       </template>

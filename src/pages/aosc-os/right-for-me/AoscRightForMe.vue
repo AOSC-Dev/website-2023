@@ -4,20 +4,21 @@ import CategorySecond from '/src/components/CategorySecond.vue';
 
 <template>
   <div class="pl-[1px]">
-    <category-second
-      title="安同 OS 适合我吗？"
-      id="aoscOsRequirementsTitle" />
+    <category-second title="安同 OS 适合我吗？" id="aoscOsRequirementsTitle" />
     <div class="p-6">
       <p>
-        安同 OS 是一款使用 dpkg 包管理、基于 Linux 内核和各类组件独立构建和维护的操作系统。安同 OS 主要面向有一定 Linux 使用经验的用户，针对个人设备优化体验。此外，安同 OS 致力于开箱即用、简化系统管理和提供可靠的工作环境。
-      </p><br />
+        安同 OS 是一款使用 dpkg 包管理、基于 Linux
+        内核和各类组件独立构建和维护的操作系统。安同 OS 主要面向有一定 Linux
+        使用经验的用户，针对个人设备优化体验。此外，安同 OS
+        致力于开箱即用、简化系统管理和提供可靠的工作环境。 </p
+      ><br />
       <p>
-        安同 OS 是众多 Linux 发行版中的一员。因此，在选择 Linux 发行版时，您也许苦于“选择困难症”。此文旨在从多方面介绍安同 OS，以助您作出选择。
+        安同 OS 是众多 Linux 发行版中的一员。因此，在选择 Linux
+        发行版时，您也许苦于“选择困难症”。此文旨在从多方面介绍安同
+        OS，以助您作出选择。
       </p>
     </div>
-    <category-second
-    title="设计理念"
-    id="design" />
+    <category-second title="设计理念" id="design" />
     <div class="p-6">
       <p>安同 OS 的设计基于如下目标和理念：</p>
       <div class="pt-4 pb-2 px-16">
@@ -30,9 +31,7 @@ import CategorySecond from '/src/components/CategorySecond.vue';
         </ul>
       </div>
     </div>
-    <category-second
-    title="安同 OS 的主要优点"
-    id="pros" />
+    <category-second title="安同 OS 的主要优点" id="pros" />
     <div class="p-6">
       <p>安同 OS 主要优点如下：</p>
       <div class="pt-4 pb-2 px-16">
@@ -50,9 +49,7 @@ import CategorySecond from '/src/components/CategorySecond.vue';
         </ul>
       </div>
     </div>
-    <category-second
-    title="安同 OS 的主要缺点"
-    id="cons" />
+    <category-second title="安同 OS 的主要缺点" id="cons" />
     <div class="p-6">
       <p>与此同时，安同 OS 有如下几个主要缺点，供您参考：</p>
       <div class="pt-4 pb-2 px-16">
@@ -66,9 +63,7 @@ import CategorySecond from '/src/components/CategorySecond.vue';
         </ul>
       </div>
     </div>
-    <category-second
-    title="适用场景"
-    id="recommended-usage" />
+    <category-second title="适用场景" id="recommended-usage" />
     <div class="p-6">
       <p>适用本系统的场景如下：</p>
       <div class="pt-4 pb-2 px-16">
@@ -82,11 +77,9 @@ import CategorySecond from '/src/components/CategorySecond.vue';
         </ul>
       </div>
     </div>
-    <category-second
-    title="不适用场景"
-    id="discouraged-usage" />
+    <category-second title="不适用场景" id="discouraged-usage" />
     <div class="p-6">
-    <p>我们不推荐在如下场景部署和使用安同 OS：</p>
+      <p>我们不推荐在如下场景部署和使用安同 OS：</p>
       <div class="pt-4 pb-2 px-16">
         <ul class="list-disc">
           <li>无 Linux 使用和管理经验。</li>

@@ -28,20 +28,14 @@ const afterLowIsaList = ref();
 
 <template>
   <div class="pl-[1px]">
-    <category-second
-      title="星霞 OS 架构支持规格表"
-      id="afterLowIsaTitle" />
+    <category-second title="星霞 OS 架构支持规格表" id="afterLowIsaTitle" />
     <div class="p-6">
       <p>
         星霞 OS
         支持多种处理器架构，本表介绍支持的各类处理器架构及相应的微架构指令集扩展支持、软件包架构名及编译器目标名等信息。
       </p>
-      <table
-        class="mt-6"
-        ref="afterLowIsaList"
-        id="afterLowIsaList">
-        <caption
-          class="text-[12pt] font-semibold">
+      <table class="mt-6" ref="afterLowIsaList" id="afterLowIsaList">
+        <caption class="text-[12pt] font-semibold">
           星霞 OS 支持处理器架构一览表
         </caption>
         <thead>
@@ -117,14 +111,9 @@ const afterLowIsaList = ref();
       </table>
     </div>
     <div class="p-6">
+      <p> *: 该架构移植仅支持龙芯 2F 处理器，不支持 2E 及之前的处理器型号 </p>
       <p>
-        *: 该架构移植仅支持龙芯 2F 处理器，不支持
-        2E 及之前的处理器型号
-      </p>
-      <p>
-        **: 该架构移植仅支持 68020
-        及更新的，带有内存管理单元 (MMU)
-        的处理器型号 </p
+        **: 该架构移植仅支持 68020 及更新的，带有内存管理单元 (MMU) 的处理器型号 </p
       ><br />
     </div>
     <AppSupport :navigation-list="docList" />

@@ -9,9 +9,8 @@ $green: #a7ecad;
 $bg-secondary: #3f6075;
 
 :root {
-  --font-family-monospace: 'Source Code Pro',
-    'Menlo', 'Consolas', 'DejaVu Sans Mono',
-    -apple-system, monospace;
+  --font-family-monospace: 'Source Code Pro', 'Menlo', 'Consolas',
+    'DejaVu Sans Mono', -apple-system, monospace;
 }
 
 @media (min-width: 1280px) {
@@ -330,16 +329,13 @@ td {
   border: 1px dashed #fff;
 }
 
-.vuepress-markdown-body
-  div[class*='v-md-pre-wrapper-']
-  pre,
+.vuepress-markdown-body div[class*='v-md-pre-wrapper-'] pre,
 .vuepress-markdown-body
   div[class*='v-md-pre-wrapper-']
   pre[class*='v-md-prism-'] {
   z-index: 0;
 }
 
-.vuepress-markdown-body
-  div[class*='v-md-pre-wrapper-']::before {
+.vuepress-markdown-body div[class*='v-md-pre-wrapper-']::before {
   z-index: 0;
 }

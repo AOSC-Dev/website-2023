@@ -1,7 +1,4 @@
-import {
-  createRouter,
-  createWebHistory
-} from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
 import { setTitle } from './utils/utils.js';
 import AppIndex from './pages/index/AppIndex.vue';
 import AboutIndex from './pages/about/AboutIndex.vue';
