@@ -6,17 +6,8 @@ import CategorySecond from '/src/components/CategorySecond.vue';
   <div class="pl-[1px]">
     <category-second title="众筹" />
     <div class="p-6">
-      根据社区
-      <router-link
-        to="/guidelines"
-        class="text-link"
-        >《人际关系准则》</router-link
-      >
-      的要求，AOSC
-      不接受作为社区及项目运转资金之用的捐款。但由于我社作为无运作资本的志愿者社区，在社区日常运营及为具体项目购置大宗物件（如构建用服务器和
-      AOSCC
-      年度聚会等场合）时经常需要资金及物质支持。因此，我们接受针对特定项目及购买计划的金钱、物品（如电脑机箱、电源及硬盘等）及服务（如网站服务器资源等）捐赠。<br>
-      众筹历史您可在<a href="https://wiki.aosc.io/community/crowdsourcing/"> AOSC Wiki </a>查看。
+      <p>根据社区<router-link to="/guidelines" class="text-link">《人际关系准则》</router-link>的要求，社区不接受作为社区及项目运转资金之用的捐款。但由于我社作为无运作资本的志愿者社区，在社区日常运营及为具体项目购置大宗物件（如构建用服务器和 AOSCC 年度聚会等场合）时经常需要资金及物质支持。因此，我们接受针对特定项目及购买计划的金钱、物品（如电脑机箱、电源及硬盘等）及服务（如网站服务器资源等）捐赠。</p><br />
+      <p>您可以前往 Wiki 站点查阅<a class="text-link" href="https://wiki.aosc.io/community/crowdsourcing/">众筹项目记录</a>。</p>
     </div>
 
     <category-second title="补充条例" />
