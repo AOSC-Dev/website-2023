@@ -1,8 +1,9 @@
-README.md
+README*.md
 public/*
 pasteServer/*
 makeCategory/*
 deploy/*
 website/*
+utils/*
 auto-imports.d.ts
 components.d.ts
