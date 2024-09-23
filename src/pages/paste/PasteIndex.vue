@@ -39,7 +39,7 @@ const submit = async () => {
     ElMessage.error({
       showClose: true,
       duration: 10000,
-      message: `提交内容超出了服务器10MB限制。文本占用了${formdataSize}B (${BToMB(formdataSize)}MB) 、文件占用了${toailFileSize}B (${BToMB(toailFileSize)}MB)`
+      message: `剪贴板大小超出了 10MiB 限制：文本占用了 ${formdataSize}B (${BToMB(formdataSize)}MiB)、附件占用了 ${toailFileSize}B (${BToMB(toailFileSize)}MiB)`
     });
   }
   submiting.value = true;
@@ -111,7 +111,7 @@ const handleChange = (uploadFile, uploadFiles) => {
     ElMessage.error({
       showClose: true,
       duration: 10000,
-      message: `添加 '${uploadFile.name}' 后会超出10MB请求体大小限制!`
+      message: `每个剪贴板大小不得超过 10MiB，上传 '${uploadFile.name}' 后会超出该限制！``
     });
     selectedFileList.value.pop();
     // showSize();
