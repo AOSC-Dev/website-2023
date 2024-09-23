@@ -4,23 +4,28 @@ import dayjs from 'dayjs';
 import { ElMessage } from 'element-plus';
 import { useRouter } from 'vue-router';
 import hljs from 'highlight.js/lib/core';
-import { requestPostJson } from '../../utils/utils';
+import { requestPostJson, BToMB } from '../../utils/utils';
 
 const languageList = ref(hljs.listLanguages());
 
 const router = useRouter();
-const selectDateTime = ref(
-  dayjs().add(7, 'day').format('YYYY-MM-DD')
-);
-const minExpDate = ref(
-  dayjs().add(1, 'day').format('YYYY-MM-DD')
-);
 const pasteFormData = ref({
   title: '',
   content: '',
   language: 'plaintext',
-  expDate: null
+  // 如果不选择日期，默认保留一周
+  expDate: dayjs().add(7, 'day').format('YYYY-MM-DD')
 });
+const getFormDataSize = () =>
+  Object.values(pasteFormData.value).reduce(
+    (size, value) =>
+      size + (typeof value === 'string' ? value.length : value.size),
+    0
+  );
+
+const getToailFileSize = () =>
+  selectedFileList.value.reduce((size, value) => size + value.size, 0);
+
 const pasteRes = ref(null);
 const submiting = ref(false);
 const submit = async () => {
@@ -28,50 +33,29 @@ const submit = async () => {
     ElMessage.error('内容不能为空');
     return;
   }
+  const formdataSize = getFormDataSize();
+  const toailFileSize = getToailFileSize();
+  if (getFormDataSize() + getToailFileSize() > 10485760) {
+    ElMessage.error({
+      showClose: true,
+      duration: 10000,
+      message: `提交内容超出了服务器10MB限制。文本占用了${formdataSize}B (${BToMB(formdataSize)}MB) 、文件占用了${toailFileSize}B (${BToMB(toailFileSize)}MB)`
+    });
+  }
   submiting.value = true;
   const formdata = new FormData();
 
-  formdata.append(
-    'title',
-    pasteFormData.value.title
-  );
-  formdata.append(
-    'content',
-    pasteFormData.value.content
-  );
-  formdata.append(
-    'language',
-    pasteFormData.value.language
-  );
+  formdata.append('title', pasteFormData.value.title);
+  formdata.append('content', pasteFormData.value.content);
+  formdata.append('language', pasteFormData.value.language);
   selectedFileList.value.forEach((file) => {
-    formdata.append(
-      'fileList',
-      toRaw(file.raw),
-      file.name
-    );
+    formdata.append('fileList', toRaw(file.raw), file.name);
   });
-  if (pasteFormData.value.expDate != null) {
-    formdata.append(
-      'expDate',
-      pasteFormData.value.expDate
-    );
-  } else {
-    // 如果不选择日期，默认保留一周
-    const nextYear = dayjs()
-      .add(7, 'day')
-      .format('YYYY-MM-DD');
-    formdata.append('expDate', nextYear);
-  }
-
-  const isSuccess = ref(true);
-  let [res, err] = await requestPostJson(
-    '/pasteApi/paste',
-    formdata
-  );
+  formdata.append('expDate', pasteFormData.value.expDate);
+  let [res, err] = await requestPostJson('/pasteApi/paste', formdata);
   if (res) {
     const results = res.data;
     if (results.code == 0) {
-      isSuccess.value = true;
       pasteRes.value = results.data.id;
       router.push({
         path: '/paste/detail',
@@ -82,14 +66,19 @@ const submit = async () => {
     } else {
       alert(results.message);
     }
-  } else if (err) {
-    isSuccess.value = false;
-    alert('网络异常');
+  } else {
+    if (err.status === 413) {
+      ElMessage.error({
+        showClose: true,
+        duration: 10000,
+        message: `提交内容大小超出了服务器限制，这可能是一个错误，请报告！`
+      });
+    }
   }
   submiting.value = false;
 };
 
-let selectedFileList = ref([]);
+const selectedFileList = ref([]);
 
 const editorOptions = ref({
   minimap: {
@@ -97,17 +86,36 @@ const editorOptions = ref({
   }
 });
 
-const handleChange = (
-  uploadFile,
-  uploadFiles
-) => {
-  if (uploadFile.size / 1024 / 1024 > 10) {
-    ElMessage.error(`${uploadFile.name} 超出10MB的文件最大限制!`);
+// const showSize = (() => {
+//   let isShow = true;
+//   return () => {
+//     if (isShow) {
+//       isShow = false;
+//       const formdataSize = getFormDataSize();
+//       ElMessage.error({
+//         showClose: true,
+//         duration: 0,
+//         message: `当前文本占用了${formdataSize}B (${BToMB(formdataSize)}MB)`,
+//         onClose: () => {
+//           isShow = true;
+//         }
+//       });
+//     }
+//   };
+// })();
+
+const handleChange = (uploadFile, uploadFiles) => {
+  const formdataSize = getFormDataSize();
+  const toailSize = uploadFiles.reduce((size, file) => size + file.size, 0);
+  if (formdataSize + toailSize > 10485760) {
+    ElMessage.error({
+      showClose: true,
+      duration: 10000,
+      message: `添加 '${uploadFile.name}' 后会超出10MB请求体大小限制!`
+    });
     selectedFileList.value.pop();
-  } else
-    ElMessage.success(
-      `成功添加文件: ${uploadFile.name}`
-    );
+    // showSize();
+  } else ElMessage.success(`成功添加文件: '${uploadFile.name}'`);
 };
 </script>
 
@@ -121,10 +129,7 @@ const handleChange = (
             v-model="pasteFormData.language"
             filterable
             class="border-2 theme-border-primary rounded-none mr-[20px]">
-            <option
-              v-for="item in languageList"
-              :key="item"
-              :value="item">
+            <option v-for="item in languageList" :key="item" :value="item">
               {{ item }}
             </option>
           </select>
@@ -133,8 +138,8 @@ const handleChange = (
             required
             type="date"
             class="border-2 theme-border-primary rounded-none"
-            v-model="selectDateTime"
-            :min="minExpDate" />
+            v-model="pasteFormData.expDate"
+            :min="dayjs().add(1, 'day').format('YYYY-MM-DD')" />
         </div>
         <button
           class="theme-bg-color-secondary-primary rounded-none px-[50px] py-[10px] text-white"
@@ -164,9 +169,7 @@ const handleChange = (
         drag
         multiple>
         <div class="h-[26px] my-[-26px]">
-          <el-icon size="24"
-            ><upload-filled
-          /></el-icon>
+          <el-icon size="24"><upload-filled /></el-icon>
           <div class="el-upload__text">
             将文件拖拽到此处 <em>或点击上传</em>
           </div>
