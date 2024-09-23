@@ -111,7 +111,7 @@ const handleChange = (uploadFile, uploadFiles) => {
     ElMessage.error({
       showClose: true,
       duration: 10000,
-      message: `每个剪贴板大小不得超过 10MiB，上传 '${uploadFile.name}' 后会超出该限制！``
+      message: `每个剪贴板大小不得超过 10MiB，上传 '${uploadFile.name}' 后会超出该限制！`
     });
     selectedFileList.value.pop();
     // showSize();
