@@ -24,7 +24,13 @@ Windows home page from 2001 - 2004:
 - [Reference 2, Windows XP mid-cycle home from 2004](https://web.archive.org/web/20040204080626/http://www.microsoft.com/china/windows/default.mspx)
 
 Technically speaking, this website is built as a client-side rendered Web
-application. This may change in the future.
+application. In the near future, we plan to refactor this website into one
+that is powered by server-side rendering or static site generator to help
+with performance and indexability.
+
+This website is not yet optimised for mobile, legacy (Afterglow-targeted),
+and functionally-limited browsers. We are currently evaluating plans to
+implement a purpose-specific site to help with these scenarios.
 
 Deployment and testing
 ---
