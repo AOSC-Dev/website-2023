@@ -96,6 +96,19 @@ const editorOptions = ref({
     enabled: false
   }
 });
+
+const handleChange = (
+  uploadFile,
+  uploadFiles
+) => {
+  if (uploadFile.size / 1024 / 1024 > 10) {
+    ElMessage.error(`${uploadFile.name} 超出10MB的文件最大限制!`);
+    selectedFileList.value.pop();
+  } else
+    ElMessage.success(
+      `成功添加文件: ${uploadFile.name}`
+    );
+};
 </script>
 
 <template>
@@ -147,6 +160,7 @@ const editorOptions = ref({
         class="upload-demo my-[10px]"
         :auto-upload="false"
         v-model:file-list="selectedFileList"
+        :on-change="handleChange"
         drag
         multiple>
         <div class="h-[26px] my-[-26px]">
