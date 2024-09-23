@@ -36,3 +36,10 @@ a:hover {
 .v-code-block--code {
   z-index: 0 !important;
 }
+
+body.bg-floral {
+  background-color: #fffbf5;
+  background-image: url(/assets/backgrounds/floral.svg);
+  background-position: center;
+  background-attachment: fixed;
+}

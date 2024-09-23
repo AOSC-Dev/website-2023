@@ -8,7 +8,7 @@ import { RouterView } from 'vue-router';
 <template>
   <div class="min-w-[960px] min-h-[100vh]">
     <div
-      class="bg-floral p-0 my-0 min-h-[100vh] flex flex-col">
+      class="p-0 my-0 min-h-[100vh] flex flex-col">
       <HeaderBar />
       <div
         class="main-content flex pb-[2.5rem] flex-1 justify-center">
@@ -32,12 +32,3 @@ import { RouterView } from 'vue-router';
     <FooterBar class="fixed bottom-0 h-[2rem]" />
   </div>
 </template>
-
-<style scoped>
-.bg-floral {
-  background-color: #fffbf5;
-  background-image: url(/assets/backgrounds/floral.svg);
-  background-position: center;
-  background-attachment: fixed;
-}
-</style>
