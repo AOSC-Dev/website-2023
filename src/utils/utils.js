@@ -1,5 +1,6 @@
 import router from '../router.js';
 import axios from 'axios';
+import { ElMessage } from 'element-plus';
 import yaml from 'js-yaml';
 
 export function getImgUrl(url) {
@@ -43,6 +44,11 @@ export const requestGetJson = (() => {
           return [resolve, null];
         })
         .catch((error) => {
+          switch (error.status) {
+            case 500:
+              ElMessage.error('服务器内部错误');
+              break;
+          }
           return [null, error];
         })
         .finally(() => {
@@ -75,6 +81,10 @@ export const requestPostJson = (() => {
           return [resolve, null];
         })
         .catch((error) => {
+          switch (error.status) {
+            case 500:
+              ElMessage.error('服务器内部错误');
+          }
           return [null, error];
         })
         .finally(() => {
@@ -92,12 +102,13 @@ export const requestToYaml = (res) => {
   let mdContent = res.data.substring(4);
   let i = mdContent.indexOf('---');
   let ymlContent = mdContent.substring(0, i);
-  return [
-    mdContent.substring(i),
-    yaml.load(ymlContent)
-  ];
+  return [mdContent.substring(i), yaml.load(ymlContent)];
 };
 
 export const setBackgroundColor = (color) => {
   return 'bg-[' + color + ']';
+};
+
+export const BToMB = (byteSize, fixed = 3) => {
+  return (byteSize / 1024 / 1024).toFixed(fixed);
 };
