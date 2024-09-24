@@ -35,7 +35,7 @@
       <div class="grow theme-bg-color-primary-static"></div>
     </div>
     <div class="flex justify-center">
-      <div class="content-container">
+      <div class="content-container h-[69.2px]">
         <router-link to="/">
           <img
             src="/assets/heading/portal-logo.zh-cn.svg"

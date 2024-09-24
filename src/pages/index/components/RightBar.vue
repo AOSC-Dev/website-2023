@@ -1,7 +1,19 @@
 <script setup name="RightBar">
-import { reactive, ref, useTemplateRef, onMounted, onUnmounted } from 'vue';
+import {
+  reactive,
+  ref,
+  useTemplateRef,
+  onMounted,
+  onUnmounted,
+  shallowRef
+} from 'vue';
 import CategorySecond from '/src/components/CategorySecond.vue';
 import AppLink from '../../../components/AppLink.vue';
+import {
+  deObserver,
+  imgPreOccupiedSpace,
+  onImgLoad
+} from '../../../utils/utils';
 
 const distroList = reactive([
   {
@@ -42,49 +54,49 @@ const commonLinkList = reactive([
   }
 ]);
 
-const imgHeight = ref();
+const imgHeights = shallowRef([]);
+imgHeights.value.push(ref());
+imgHeights.value.push(ref());
 
-const img = useTemplateRef('bgImg');
+const img1 = useTemplateRef('bgImg1');
+const img2 = useTemplateRef('bgImg2');
 
-let observer = null;
+let observers = [];
 onMounted(() => {
-  observer = new ResizeObserver(() => {
-    imgHeight.value = (img.value.clientWidth / 1.7455).toFixed(2) + 'px';
-  });
-  observer.observe(img.value);
+  observers.push(imgPreOccupiedSpace(img1, imgHeights.value[0], 1.7455));
+  observers.push(imgPreOccupiedSpace(img2, imgHeights.value[1], 1.7455));
 });
-
-const onImgLoad = () => {
-  if (observer) {
-    observer.disconnect();
-  }
-  imgHeight.value = 'auto';
-};
 
 onUnmounted(() => {
   // 在组件销毁前取消观察
-  if (observer) {
-    observer.disconnect();
-  }
+  deObserver(observers);
 });
 </script>
 
-<template
-  :style="{
-    '--homepage-img-height2': imgHeight
-  }">
+<template>
   <div class="bg-right-bar-bg w-[37.5%] flex flex-col">
-    <a href="/aosc-os/right-for-me">
+    <a
+      href="/aosc-os/right-for-me"
+      ref="bgImg1"
+      :style="{
+        '--homepage-img-height1': imgHeights[0].value
+      }">
       <img
-        @load="onImgLoad"
+        @load="onImgLoad(observers[0], imgHeights[0])"
         ref="bgImg"
         src="/assets/jumbotron/minor1.svg"
-        class="bg-img-height w-full cursor-pointer" />
+        class="bg-img-height1 w-full cursor-pointer" />
     </a>
-    <a href="https://bbs.aosc.io/">
+    <a
+      href="https://bbs.aosc.io/"
+      ref="bgImg2"
+      :style="{
+        '--homepage-img-height2': imgHeights[1].value
+      }">
       <img
+        @load="onImgLoad(observers[1], imgHeights[1])"
         src="/assets/jumbotron/minor2.svg"
-        class="bg-img-height w-full cursor-pointer"
+        class="bg-img-height2 w-full cursor-pointer"
         href="https://bbs.aosc.io/" />
     </a>
     <div class="flex flex-col flex-grow">
@@ -143,7 +155,10 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
-.bg-img-height {
+.bg-img-height1 {
+  height: var(--homepage-img-height1);
+}
+.bg-img-height2 {
   height: var(--homepage-img-height2);
 }
 </style>

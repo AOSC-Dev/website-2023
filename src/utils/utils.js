@@ -112,3 +112,27 @@ export const setBackgroundColor = (color) => {
 export const BToMB = (byteSize, fixed = 3) => {
   return (byteSize / 1024 / 1024).toFixed(fixed);
 };
+
+export const deObserver = (observers) => {
+  if (Array.isArray(observers)) {
+    observers.forEach((observer) => {
+      observer.disconnect();
+    });
+  } else if (observers) {
+    observers.disconnect();
+  }
+};
+
+export const imgPreOccupiedSpace = (anchorImg, imgHeight, proportion) => {
+  const observer = new ResizeObserver(() => {
+    imgHeight.value =
+      (anchorImg.value.clientWidth / proportion).toFixed(2) + 'px';
+  });
+  observer.observe(anchorImg.value);
+  return observer;
+};
+
+export const onImgLoad = (observers, imgHeight) => {
+  deObserver(observers);
+  imgHeight.value = 'auto';
+};
