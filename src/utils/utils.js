@@ -1,4 +1,4 @@
-import router from '../router.js';
+import { ssgRouter as router }  from '../main.js';
 import axios from 'axios';
 import { ElMessage } from 'element-plus';
 import yaml from 'js-yaml';

@@ -57,5 +57,8 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/pasteApi/, '')
       }
     }
+  },
+  ssr: {
+    noExternal: true
   }
 });

@@ -36,3 +36,4 @@ public/newsCategories
 *.sln
 *.sw?
 pasteServer/paste/*
+.vite-ssg-temp
