@@ -78,12 +78,12 @@ onUnmounted(() => {
       <img
         @load="onImgLoad"
         ref="bgImg"
-        src="/assets/banners/banner_minor1.svg"
+        src="/assets/jumbotron/minor1.svg"
         class="bg-img-height w-full cursor-pointer" />
     </a>
     <a href="https://bbs.aosc.io/">
       <img
-        src="/assets/banners/banner_minor2.svg"
+        src="/assets/jumbotron/minor2.svg"
         class="bg-img-height w-full cursor-pointer"
         href="https://bbs.aosc.io/" />
     </a>

@@ -91,7 +91,7 @@ onUnmounted(() => {
       <el-image
         @load="onImgLoad()"
         class="w-full"
-        src="/assets/banners/banner_main1.svg">
+        src="/assets/jumbotron/main1.svg">
         <template #error>
           <div class="image-slot cursor-pointer">
             <el-icon>
