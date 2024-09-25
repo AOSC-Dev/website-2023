@@ -1,8 +1,8 @@
 <script setup name="ContentMain">
-import { onMounted, reactive, ref, useTemplateRef, onUnmounted } from 'vue';
+import { reactive, ref } from 'vue';
 import CategorySecond from '/src/components/CategorySecond.vue';
 import NewsCategoryList from '/src/pages/news/components/NewsCategoryList.vue';
-import { requestGetJson } from '../../../utils/utils';
+import { onImgLoad, requestGetJson, useSeizeSeat } from '../../../utils/utils';
 import { ElIcon } from 'element-plus';
 
 /**
@@ -51,45 +51,17 @@ const zhuanlanList = reactive([
   }
 ]);
 
-const imgHeight = ref();
-
-const img = useTemplateRef('bgImg');
-
-let observer = null;
-onMounted(() => {
-  observer = new ResizeObserver(() => {
-    imgHeight.value = (img.value.clientWidth / 1.4545).toFixed(2) + 'px';
-  });
-  observer.observe(img.value);
-});
-
-const onImgLoad = () => {
-  if (observer) {
-    observer.disconnect();
-  }
-  imgHeight.value = 'auto';
-};
-
-onUnmounted(() => {
-  // 在组件销毁前取消观察
-  if (observer) {
-    observer.disconnect();
-  }
-});
+const [ observer, imgHeights ] = useSeizeSeat('bgImg', 1.4545);
 </script>
 
 <template>
   <div class="w-[62.5%] bg-content-main-bg p-0">
     <a
-      :style="{
-        '--homepage-img-height1': imgHeight
-      }"
       ref="bgImg"
       href="/download#aosc-os-download"
-      class="bg-img-height1 w-full flex">
-      <!-- <div class="flex w-full" :class="'h-[' + imgHeight + 'px]'"></div> -->
+      class="bg-img-height w-full flex">
       <el-image
-        @load="onImgLoad()"
+        @load="onImgLoad(observer, imgHeights[0])"
         class="w-full"
         src="/assets/jumbotron/main1.svg">
         <template #error>
@@ -148,8 +120,8 @@ onUnmounted(() => {
 </template>
 
 <style scoped>
-.bg-img-height1 {
-  height: var(--homepage-img-height1);
+.bg-img-height {
+  height: v-bind('imgHeights[0].value');
 }
 </style>
 ../../../components/CategorySecond.vue
