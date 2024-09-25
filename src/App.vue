@@ -21,8 +21,9 @@ const themeStore = useThemeStore();
   <HomeIndex
     :style="{
       '--primary': themeStore.primary,
-      '--secondary': themeStore.secondary
-    }" />
+      '--secondary': themeStore.secondary,
+      'backgroundImage':`url(/public/assets/backgrounds/${themeStore.backageImg})`
+    }"/>
 </template>
 
 <style scoped>
