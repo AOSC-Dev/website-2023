@@ -431,12 +431,12 @@ const liveKitDivHeight = (
         </div>
       </div>
       <div class="afterglow px-[1rem]" ref="afterglowDownload">
-        <div class="my-[2rem] text-afterglow">
+        <div class="my-[1.5rem] text-afterglow">
           <p class="text-white text-[32pt]">星霞 OS</p>
           <p class="text-white text-[14pt]">老设备也能发光发热</p>
           <p class="text-white text-[10pt] mt-1">敬请期待...</p>
         </div>
-        <div class="mt-[2rem] min-w-[64px] w-[24%]">
+        <div class="mt-[1.5rem] min-w-[64px] w-[26%]">
           <img src="/assets/download/afterglow-web.svg" />
         </div>
       </div>
