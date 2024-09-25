@@ -7,6 +7,7 @@ import highlightElement from '../../utils/animation';
 import { useHighBrightnessControllerStore } from '../../stores/miscellaneous';
 import AppSupport from '../../components/AppSupport.vue';
 import AccordionNavigation from '../../components/AccordionNavigation.vue';
+import { onImgLoad, useSeizeSeat } from '../../utils/utils';
 
 const route = useRoute();
 
@@ -70,6 +71,8 @@ const docList = reactive([
     url: '/'
   } */
 ]);
+
+const [observer, imgHeights] = useSeizeSeat('bgImg', 1.6006);
 </script>
 
 <template>
@@ -85,10 +88,13 @@ const docList = reactive([
       <div>
         <AccordionNavigation :navigation-list="navigationList" />
       </div>
-      <img
-        src="/assets/aosc-os/aosc-os.zh-cn.jpg"
-        class="w-full h-auto mt-2"
-        alt="" />
+      <div ref="bgImg" class="bg-img-height">
+        <img
+          @load="onImgLoad(observer, imgHeights[0])"
+          src="/assets/aosc-os/aosc-os.zh-cn.jpg"
+          class="w-full h-auto mt-2"
+          alt="" />
+      </div>
     </div>
 
     <category-second title="系统特性" id="features" />
@@ -132,5 +138,9 @@ const docList = reactive([
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.bg-img-height {
+  height: v-bind('imgHeights[0].value');
+}
+</style>
 ./components/Header.vue
