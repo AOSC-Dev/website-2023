@@ -1,5 +1,6 @@
 <script setup>
 import LinkButton from '../../components/LinkButton.vue';
+import { onImgLoad, useSeizeSeat } from '../../utils/utils';
 
 const navigationList = [
   {
@@ -15,12 +16,18 @@ const navigationList = [
     path: 'https://repo.aosc.io/mascots/zhaxia-stickers-v1.zip'
   }
 ];
+const [observer1, buffer] = useSeizeSeat('bgImg1', 2.3333);
+const [observer2, imgHeights] = useSeizeSeat('bgImg2', 1, buffer);
 </script>
 
 <template>
   <div class="pl-[1px]">
     <category-second title="社区吉祥物" />
-    <img src="/assets/mascot/anan.png" />
+    <div ref="bgImg1" class="bg-img-height1">
+      <img
+        @load="onImgLoad(observer1, imgHeights[0])"
+        src="/assets/mascot/anan.png"
+    /></div>
 
     <div class="flex flex-wrap *:w-1/2">
       <div>
@@ -28,7 +35,12 @@ const navigationList = [
         <div
           class="p-[2rem] flex justify-between border-r-[1px] theme-border-secondary">
           <div class="basis-1/2 mr-[1em]">
-            <img src="/assets/mascot/qr.png" alt="二维码" />
+            <div ref="bgImg2" class="bg-img-height2">
+              <img
+                @load="onImgLoad(observer2, imgHeights[1])"
+                src="/assets/mascot/qr.png"
+                alt="二维码" />
+            </div>
 
             <p
               class="text-[0.95em] xl:text-[1.3em] 2xl:text-[1.5em] text-center">
@@ -149,5 +161,12 @@ li {
 
 .a-li {
   margin: 12px 0;
+}
+
+.bg-img-height1 {
+  height: v-bind('imgHeights[0].value');
+}
+.bg-img-height2 {
+  height: v-bind('imgHeights[1].value');
 }
 </style>
