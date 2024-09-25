@@ -238,11 +238,13 @@ const sponsorList = ref([
             class="cursor-pointer text-center"
             :href="sponsor.web"
             target="_blank">
-            <img
-              loading="lazy"
-              :src="`/assets/sponsors/${sponsor.img}.svg`"
-              :alt="sponsor.name"
-              class="w-[100%] max-w-[100%]" />
+            <div class="min-h-[91.74px]">
+              <img
+                loading="lazy"
+                :src="`/assets/sponsors/${sponsor.img}.svg`"
+                :alt="sponsor.name"
+                class="w-[100%] max-w-[100%]" />
+            </div>
             <div class="text-link">{{ sponsor.name }}</div>
             <div v-if="sponsor.name == 'JetBrains'">
               <span style="font-size: 0.7rem; color: #666">
