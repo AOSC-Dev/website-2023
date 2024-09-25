@@ -22,7 +22,7 @@ const themeStore = useThemeStore();
     :style="{
       '--primary': themeStore.primary,
       '--secondary': themeStore.secondary,
-      'backgroundImage':`url(/public/assets/backgrounds/${themeStore.backageImg})`
+      'backgroundImage':`url(/assets/backgrounds/${themeStore.backageImg})`
     }"/>
 </template>
 
