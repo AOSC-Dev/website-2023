@@ -2,6 +2,14 @@ import router from '../router.js';
 import axios from 'axios';
 import { ElMessage } from 'element-plus';
 import yaml from 'js-yaml';
+import {
+  onMounted,
+  onUnmounted,
+  ref,
+  shallowRef,
+  toValue,
+  useTemplateRef
+} from 'vue';
 
 export function getImgUrl(url) {
   return new URL(`${url}`, import.meta.url).href;
@@ -123,16 +131,50 @@ export const deObserver = (observers) => {
   }
 };
 
-export const imgPreOccupiedSpace = (anchorImg, imgHeight, proportion) => {
+export const imgPreOccupiedSpace = (
+  anchorImg,
+  imgHeight,
+  proportion,
+  fixedHeight
+) => {
   const observer = new ResizeObserver(() => {
-    imgHeight.value =
-      (anchorImg.value.clientWidth / proportion).toFixed(2) + 'px';
+    imgHeight.value = fixedHeight
+      ? fixedHeight
+      : (anchorImg.value.clientWidth / proportion).toFixed(2) + 'px';
   });
   observer.observe(anchorImg.value);
   return observer;
 };
 
 export const onImgLoad = (observers, imgHeight) => {
-  deObserver(observers);
+  deObserver(toValue(observers));
   imgHeight.value = 'auto';
+};
+
+export const useSeizeSeat = (refName, proportion, imgHeights, fixedHeight) => {
+  const newHeights = ref(0);
+  if (imgHeights !== undefined) {
+    imgHeights.value.push(newHeights);
+  } else {
+    imgHeights = shallowRef([newHeights]);
+  }
+  const img = useTemplateRef(refName);
+
+  // 此处异步执行，如果不使用ref包裹返回的observer为null
+  let observer = ref();
+
+  onMounted(() => {
+    observer.value = imgPreOccupiedSpace(
+      img,
+      newHeights,
+      proportion,
+      fixedHeight
+    );
+  });
+
+  onUnmounted(() => {
+    // 在组件销毁前取消观察
+    deObserver(observer.value);
+  });
+  return [observer, imgHeights];
 };
