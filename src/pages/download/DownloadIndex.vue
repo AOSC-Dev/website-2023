@@ -22,7 +22,6 @@ import {
 } from 'vue';
 import { ElMessage } from 'element-plus';
 import { highlightElement } from '../../utils/animation.ts';
-import AppHighlight from '../../components/AppHighlight.vue';
 import { useRoute } from 'vue-router';
 import { requestGetJson } from '../../utils/utils.js';
 import { useHighBrightnessControllerStore } from '../../stores/miscellaneous';
@@ -38,7 +37,6 @@ msStoreScript.setAttribute(
 );
 document.head.appendChild(msStoreScript);
 
-const loading = ref(true);
 const versionArch = ref([]);
 const aoscOsRef = useTemplateRef('aoscOsDownload');
 const afterglowRef = useTemplateRef('afterglowDownload');
@@ -185,9 +183,7 @@ const downloadButtonLength = (() => {
     });
   } else if (err) {
     ElMessage.warning('版本信息获取失败');
-    console.log('获取异常: ', err);
   }
-  loading.value = false;
 })();
 
 onMounted(async () => {
@@ -376,6 +372,11 @@ const getNewVersioArch = (arch, type) => {
   list = list.sort(isoVersionCmp);
   return list[0];
 };
+
+const liveKitDivHeight = (
+  antong1List.value.length * 43.99 +
+  (antong1List.value.length - 1) * 8
+).toFixed(2);
 </script>
 
 <template>
@@ -402,32 +403,30 @@ const getNewVersioArch = (arch, type) => {
         </div>
         <div
           class="download-container mt-0 mb-4 min-h-[129.97px] min-w-[150px]">
-          <div v-loading="loading">
-            <div
-              class="button-container-aoscos-multicolumn buttons-col mb-3 mt-1 flex justify-center"
-              v-if="versionArch.length > 0">
-              <DownloadButton
-                v-for="item in antong1List"
-                :popover-data="item.popoverData"
-                :width="aoscOsButtonStyle.width"
-                :key="item.title"
-                :url="`https://releases.aosc.io/${item.installer.path}`"
-                :arch-name="item.zhLabel"
-                :isa-info="item.installer" />
-              <!-- <button class="text-white hover:opacity-85 cursor-pointer mx-1 text-[10pt] text-center bg-[#549c97]"
+          <div
+            class="button-container-aoscos-multicolumn buttons-col mb-3 mt-1 flex justify-center"
+            v-if="versionArch.length > 0">
+            <DownloadButton
+              v-for="item in antong1List"
+              :popover-data="item.popoverData"
+              :width="aoscOsButtonStyle.width"
+              :key="item.title"
+              :url="`https://releases.aosc.io/${item.installer.path}`"
+              :arch-name="item.zhLabel"
+              :isa-info="item.installer" />
+            <!-- <button class="text-white hover:opacity-85 cursor-pointer mx-1 text-[10pt] text-center bg-[#549c97]"
                 :style="{ width: aoscOsButtonStyle.width + 'px' }" onclick="location.href='#otherDownload'">
                 <p>其他下载</p>
               </button> -->
-              <DownloadButton
-                button-color="#549c97"
-                :width="aoscOsButtonStyle.width"
-                :popover-data="{
-                  conten: '二级架构、Docker,及虚拟机镜像等其他下载',
-                  placement: 'bottom'
-                }"
-                url="#otherDownload"
-                arch-name="其他下载" />
-            </div>
+            <DownloadButton
+              button-color="#549c97"
+              :width="aoscOsButtonStyle.width"
+              :popover-data="{
+                conten: '二级架构、Docker,及虚拟机镜像等其他下载',
+                placement: 'bottom'
+              }"
+              url="#otherDownload"
+              arch-name="其他下载" />
           </div>
         </div>
       </div>
@@ -445,7 +444,9 @@ const getNewVersioArch = (arch, type) => {
 
     <div class="livekit-container w-[100%] flex flex-row">
       <div class="flex flex-col">
-        <div id="livekit-title" class="flex-col my-auto pl-[2rem] flex">
+        <div
+          id="livekit-title"
+          class="flex-col my-auto pl-[2rem] flex py-[1rem]">
           <p id="livekit" class="text-[24pt]">LiveKit</p>
           <p id="livekit-alt" class="text-[14pt]">功能完备的安同 OS 救援环境</p>
           <p class="mt-8">
@@ -460,9 +461,10 @@ const getNewVersioArch = (arch, type) => {
       <div
         id="livekit-buttons"
         class="flex flex-col flex pr-[2rem] ml-auto my-2">
-        <div v-loading="loading" class="my-auto">
+        <div class="my-auto" :style="{ minHeight: liveKitDivHeight + 'px' }">
           <div
             class="button-container-aoscos buttons-col"
+
             v-if="versionArch.length > 0">
             <span v-for="(item, index) in antong1List" :key="item.title">
               <DownloadButton
@@ -546,7 +548,6 @@ const getNewVersioArch = (arch, type) => {
         </div>
         <div
           class="flex flex-col pr-[2rem] gap-y-[0.5rem] ml-auto"
-          v-loading="loading"
           v-if="versionArch.length > 0">
           <div v-for="item in antong2List" :key="item.title">
             <DownloadButton
