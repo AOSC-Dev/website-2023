@@ -90,7 +90,7 @@ export const requestPostJson = (() => {
       promise[key] = axios({
         url,
         method: 'post',
-        formdata,
+        data: formdata,
         params,
         // 1MB等6秒 单位ms
         timeout: Math.ceil(calculateFormDataSize(formdata)) * 6000
