@@ -75,7 +75,7 @@ const calculateFormDataSize = (formData) => {
     // 你可以根据需要处理其他类型
   }
 
-  return Number((totalSize / 1024 / 1024).toFixed(2));
+  return totalSize / 1024 / 1024;
 };
 
 export const requestPostJson = (() => {
