@@ -75,7 +75,7 @@ const calculateFormDataSize = (formData) => {
     // 你可以根据需要处理其他类型
   }
 
-  return totalSize / 1024 / 1024;
+  return BToMB(totalSize);
 };
 
 export const requestPostJson = (() => {
@@ -127,8 +127,10 @@ export const setBackgroundColor = (color) => {
   return 'bg-[' + color + ']';
 };
 
-export const BToMB = (byteSize, fixed = 3) => {
-  return (byteSize / 1024 / 1024).toFixed(fixed);
+export const BToMB = (byteSize, fixed) => {
+  const Bsize = byteSize / 1024 / 1024;
+
+  return fixed ? Bsize.toFixed(fixed) : Bsize;
 };
 
 export const deObserver = (observers) => {
