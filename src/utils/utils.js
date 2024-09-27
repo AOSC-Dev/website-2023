@@ -69,10 +69,27 @@ export const requestGetJson = (() => {
   };
 })();
 
+const calculateFormDataSize = (formData) => {
+  let totalSize = 0;
+
+  for (const [_key, value] of formData.entries()) {
+    if (typeof value === 'string') {
+      // 计算字符串的字节大小
+      totalSize += new TextEncoder().encode(value).length;
+    } else if (value instanceof File) {
+      // 对于文件，直接使用其 size 属性
+      totalSize += value.size;
+    }
+    // 你可以根据需要处理其他类型
+  }
+
+  return totalSize / 1024 / 1024;
+};
+
 export const requestPostJson = (() => {
   let keys = {};
   let promise = {};
-  return (url, data, params, key) => {
+  return (url, formdata, params, key) => {
     if (!key) {
       key = url;
     }
@@ -81,9 +98,10 @@ export const requestPostJson = (() => {
       promise[key] = axios({
         url,
         method: 'post',
-        data,
+        data: formdata,
         params,
-        timeout: 5000
+        // 1MB等6秒 单位ms
+        timeout: Math.ceil(calculateFormDataSize(formdata)) * 6000
       })
         .then((resolve) => {
           return [resolve, null];
