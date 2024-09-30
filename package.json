@@ -1,0 +1,43 @@
+{
+  "name": "website-nuxt",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@element-plus/nuxt": "^1.0.10",
+    "@mdi/font": "^7.4.47",
+    "@nuxt/content": "^2.13.2",
+    "@nuxt/eslint": "^0.5.7",
+    "@pinia/nuxt": "^0.5.4",
+    "axios": "^1.7.7",
+    "element-plus": "^2.8.4",
+    "eslint": "^9.12.0",
+    "eslit": "^6.0.0",
+    "highlightjs": "^9.16.2",
+    "nuxt": "^3.13.0",
+    "pinia": "^2.2.2",
+    "prettier": "^3.3.3",
+    "sass-embedded": "^1.79.4",
+    "tm-themes": "^1.8.7",
+    "vue": "^3.5.1",
+    "vue-router": "4"
+  },
+  "devDependencies": {
+    "@element-plus/icons-svg": "^2.3.1",
+    "@element-plus/icons-vue": "^2.3.1",
+    "@guolao/vue-monaco-editor": "^1.5.4",
+    "@highlightjs/vue-plugin": "^2.1.0",
+    "@nuxt-themes/docus": "^1.15.0",
+    "@stylistic/eslint-plugin-js": "^2.9.0",
+    "autoprefixer": "^10.4.20",
+    "eslint-config-prettier": "^9.1.0",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13"
+  }
+}
