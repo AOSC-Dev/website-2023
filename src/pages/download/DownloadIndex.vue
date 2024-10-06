@@ -529,9 +529,7 @@ const liveKitDivHeight = (
                 @click="copy()"></v-icon>
             </code>
           </div>
-          <p class="mt-[6px]"
-            >使用终端运行该命令可在 Debian、Ubuntu 及衍生版安装 oma</p
-          >
+          <p class="mt-[6px] text-[10pt]">使用终端运行该命令可在 Debian、Ubuntu 及衍生版，以及 deepin、开放麒麟 (openKylin) 等<br />发行版安装小熊猫包管理</p>
         </div>
       </div>
     </div>
