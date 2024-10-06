@@ -30,6 +30,18 @@ const commonLinkList = reactive([
     title: '报告系统使用问题'
   },
   {
+    url: '/paste',
+    title: '使用公共剪贴板'
+  },
+  {
+    url: '/events',
+    title: '查阅近期活动信息'
+  },
+  {
+    url: '/internship',
+    title: '查阅近期实习机会及待办项目'
+  },
+  {
     url: 'https://github.com/AOSC-Dev/aosc-os-abbs/issues/new?assignees=&labels=security&projects=&template=security-vulnerabilities-report.yml',
     title: '报告安全漏洞'
   },
