@@ -76,12 +76,6 @@ const submit = async () => {
 
 const selectedFileList = ref([]);
 
-const editorOptions = ref({
-  minimap: {
-    enabled: false
-  }
-});
-
 const handleChange = (uploadFile, uploadFiles) => {
   const formdataSize = getFormDataSize();
   const toailSize = uploadFiles.reduce((size, file) => size + file.size, 0);
@@ -131,12 +125,11 @@ const handleChange = (uploadFile, uploadFiles) => {
         class="border-2 theme-border-primary rounded-none w-full mb-[10px] py-[10px]"
         placeholder="标题" />
       <!-- 内容编辑器 -->
-      <vue-monaco-editor
-        v-model:value="pasteFormData.content"
-        class="border-2 theme-border-primary rounded-none"
-        :language="pasteFormData.language"
-        :options="editorOptions"
-        height="50vh" />
+      <MonacoEditor
+        v-model="pasteFormData.content"
+        class="border-2 theme-border-primary h-[50vh] rounded-none"
+        :lang="pasteFormData.language"
+         />
       <!-- 文件选择器 -->
       <el-upload
         v-model:file-list="selectedFileList"

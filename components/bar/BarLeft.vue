@@ -86,7 +86,7 @@ const cilckMenu = (str) => {
   <div id="sticky-nav" ref="stickyNav">
     <el-backtop visibility-height="103" style="all: initial"
       ><div
-        class="flex justify-between text-[#ffffff] leading-10 mb-[1px] to-top-color mr-[1px]"
+        class="flex justify-between text-[#ffffff] leading-10 mb-[1px] to-top-color"
         ><el-icon class="my-auto ml-2" size="20"
           ><el-icon-top></el-icon-top
         ></el-icon>
@@ -130,6 +130,7 @@ const cilckMenu = (str) => {
   --el-menu-text-color: #ffffff;
   --el-menu-active-color: #ffffff;
   --el-menu-hover-bg-color: var(--secondary);
+  border-right: 0;
 }
 .el-menu-item-bg-color {
   background-color: #ececec;

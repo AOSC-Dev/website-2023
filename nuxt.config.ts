@@ -9,7 +9,8 @@ export default defineNuxtConfig({
     '@element-plus/nuxt',
     '@pinia/nuxt',
     '@nuxt/content',
-    '@nuxt/eslint'
+    '@nuxt/eslint',
+    'nuxt-monaco-editor'
   ],
   css: ['~/assets/css/main.css'],
   postcss: {
@@ -29,16 +30,16 @@ export default defineNuxtConfig({
       }
     }
   },
-  extends: '@nuxt-themes/docus'
-  // vite: {
-  //   server: {
-  //     proxy: {
-  //       '/pasteApi': {
-  //         target: 'http://localhost:41409',
-  //         changeOrigin: true,
-  //         rewrite: (path) => path.replace(/^\/pasteApi/, '')
-  //       }
-  //     }
-  //   }
-  // }
+  extends: '@nuxt-themes/docus',
+  vite: {
+    server: {
+      proxy: {
+        '/pasteApi': {
+          target: 'http://localhost:38629',
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/pasteApi/, '')
+        }
+      }
+    }
+  }
 });

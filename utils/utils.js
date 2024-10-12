@@ -134,6 +134,17 @@ export const onImgLoad = (observers, imgHeight) => {
   imgHeight.value = 'auto';
 };
 
+export const copyToClipboard=(text)=>{
+  navigator.clipboard
+  .writeText(text)
+  .then(() => {
+    ElMessage.success('复制成功');
+  })
+  .catch((err) => {
+    ElMessage.success(`复制失败:${err}`);
+  });
+}
+
 export const useSeizeSeat = (refName, proportion, imgHeights, fixedHeight) => {
   const newHeights = ref(0);
   if (imgHeights !== undefined) {

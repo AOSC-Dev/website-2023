@@ -5,6 +5,8 @@ const details = ref(null);
 const imgSuffixList = ['jpg', 'jpeg', 'png', 'gif'];
 const failReason = ref('');
 
+const themeStore = useThemeStore();
+
 function isImg(name) {
   const suffixIndex = name.lastIndexOf('.');
   const suffix = name.substring(suffixIndex + 1);
@@ -30,21 +32,20 @@ const getPaste = async () => {
     console.log('获取异常', err);
     failReason.value = '获取粘贴板异常（服务器内部错误）';
   }
+  console.log(res);
   loading.value = false;
 };
 
 getPaste();
 
-function back() {
+const back = () => {
   failReason.value = '';
-}
-
-function copyLink() {
-}
+};
+const returnHref = () => window.location.href;
 </script>
 
 <template>
-  <div class="pl-[1px]" v-loading="loading">
+  <div class="pl-[1px] w-[100%]" v-loading="loading">
     <div v-if="details != null">
       <category-second title="公共粘贴板" />
       <div class="p-[2em]">
@@ -56,7 +57,7 @@ function copyLink() {
             </div>
             <button
               class="text-white px-[3em] theme-bg-color-primary-static py-[1em]"
-              @click="copyLink">
+              @click="copyToClipboard(returnHref())">
               复制共享链接
             </button>
           </div>
@@ -84,10 +85,12 @@ function copyLink() {
             >
           </ul>
         </div>
-        <app-highlight
-          class="w-full my-[20px]"
-          :code="details.content"
-          :lang="details.language" />
+        <CodeHighlight
+          class="bg-[#ccccccc3]/15 mt-4 justify-between"
+          button-class="mr-8"
+          :button-color="themeStore.primary"
+          :code-text="details.content"
+          :language="details.language" />
       </div>
     </div>
     <el-result v-if="failReason != ''" icon="warning" :title="failReason">

@@ -21,6 +21,7 @@
     "eslit": "^6.0.0",
     "highlightjs": "^9.16.2",
     "nuxt": "^3.13.0",
+    "nuxt-monaco-editor": "^1.2.9",
     "pinia": "^2.2.2",
     "prettier": "^3.3.3",
     "sass-embedded": "^1.79.4",
@@ -31,7 +32,6 @@
   "devDependencies": {
     "@element-plus/icons-svg": "^2.3.1",
     "@element-plus/icons-vue": "^2.3.1",
-    "@guolao/vue-monaco-editor": "^1.5.4",
     "@highlightjs/vue-plugin": "^2.1.0",
     "@nuxt-themes/docus": "^1.15.0",
     "@stylistic/eslint-plugin-js": "^2.9.0",

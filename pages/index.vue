@@ -55,7 +55,7 @@ const zhuanlanList = [
           <template #error>
             <div class="image-slot cursor-pointer">
               <el-icon>
-                <Picture />
+                <el-icon-picture />
               </el-icon>
             </div>
           </template>
@@ -69,7 +69,6 @@ const zhuanlanList = [
           <div
             class="text-right px-[15px] py-[10px] font-[12pt] leading-6 text-link">
             <NuxtLink to="/news">
-              <a class="text-link">123</a>
               <span>查阅最新社区资讯</span>
               <v-icon name="bi-chevron-double-right" />
             </NuxtLink>

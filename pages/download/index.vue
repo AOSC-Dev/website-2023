@@ -10,13 +10,14 @@
  * 由于两个子发行版各自支持不同的架构，所以可以通过架构名判断是安同 OS 还是星霞 OS，一二级架构同理
  */
 const route = useRoute();
-
-const msStoreScript = document.createElement('script');
-msStoreScript.setAttribute(
-  'src',
-  'https://get.microsoft.com/badge/ms-store-badge.bundled.js'
-);
-document.head.appendChild(msStoreScript);
+onMounted(() => {
+  const msStoreScript = document.createElement('script');
+  msStoreScript.setAttribute(
+    'src',
+    'https://get.microsoft.com/badge/ms-store-badge.bundled.js'
+  );
+  document.head.appendChild(msStoreScript);
+});
 
 const versionArch = ref([]);
 const aoscOsRef = useTemplateRef('aoscOsDownload');
@@ -354,7 +355,7 @@ const liveKitDivHeight = (
 </script>
 
 <template>
-  <div class="pl-[1px] flex flex-col min-w-[1148px] ss">
+  <div class="pl-[1px] flex flex-col">
     <category-second id="aosc-os-download" title="操作系统" />
     <div class="flex flex-row flex-1">
       <div
@@ -493,16 +494,17 @@ const liveKitDivHeight = (
             >·</AccordionNavigation
           >
         </p>
-        <div class="mt-6">
-          <div class="bg-black/60 py-2 flex">
-            <code class="text-white pl-[1em]">{{ omaInstallScript }} </code>
-            <CopyButton :content-target="omaInstallScript" />
-          </div>
-          <p class="mt-[6px] text-[10pt]"
-            >使用终端运行该命令可在 Debian、Ubuntu 及衍生版，以及
-            deepin、开放麒麟 (openKylin) 等<br />发行版安装小熊猫包管理</p
-          >
-        </div>
+        <CodeHighlight
+          class="bg-black/60 mt-6"
+          language="bash"
+          :use-hljs="false"
+          code-class="text-white"
+          button-class="ml-6"
+          :code-text="omaInstallScript" />
+        <p class="mt-[6px] text-[10pt]"
+          >使用终端运行该命令可在 Debian、Ubuntu 及衍生版，以及 deepin、开放麒麟
+          (openKylin) 等<br />发行版安装小熊猫包管理</p
+        >
       </div>
     </div>
     <div id="otherDownload">
