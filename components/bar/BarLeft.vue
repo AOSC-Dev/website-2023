@@ -77,14 +77,72 @@ const linkArr = [
     show: true
   }
 ];
-const cilckMenu = (str) => {
-  console.log(str);
+
+const openMenuList = new Set();
+
+const menuDivRef = useTemplateRef('menuDiv');
+const menuRef = useTemplateRef('menu');
+
+const openMenu = (MenuOpenEvent) => {
+  const result = linkArr.find((item) => item.title === MenuOpenEvent);
+  let height = result.children.length * 40 + 73 + menuDivRef.value.clientHeight;
+  for (const item of openMenuList) {
+    if (
+      height < window.innerHeight &&
+      height <
+        menuDivRef.value.parentNode.parentNode.nextElementSibling.clientHeight
+    ) {
+      break;
+    } else {
+      height =
+        height -
+        linkArr.find((item1) => item1.title === item).children.length * 40;
+      openMenuList.delete(item);
+      menuRef.value.close(item);
+    }
+  }
+  openMenuList.add(MenuOpenEvent);
 };
+const closeMenu = (MenuOpenEvent) => {
+  openMenuList.delete(MenuOpenEvent);
+};
+
+onMounted(() => {
+  window.onresize = (() => {
+    let timeoutID = undefined;
+    return () => {
+      if (timeoutID !== undefined) clearTimeout(timeoutID);
+      timeoutID = setTimeout(() => {
+        console.log(123);
+        let height = menuDivRef.value.clientHeight + 73;
+        for (const item of openMenuList) {
+          if (
+            height < window.innerHeight &&
+            height <
+              menuDivRef.value.parentNode.parentNode.nextElementSibling
+                .clientHeight
+          ) {
+            break;
+          } else {
+            if (openMenuList.size === 1) break;
+            height =
+              height -
+              linkArr.find((item1) => item1.title === item).children.length *
+                40;
+            openMenuList.delete(item);
+            menuRef.value.close(item);
+          }
+        }
+        timeoutID = undefined;
+      }, 60);
+    };
+  })();
+});
 </script>
 
 <template>
   <div id="sticky-nav" ref="stickyNav">
-    <el-backtop visibility-height="103" style="all: initial"
+    <el-backtop :visibility-height="103" style="all: initial"
       ><div
         class="flex justify-between text-[#ffffff] leading-10 mb-[1px] to-top-color"
         ><el-icon class="my-auto ml-2" size="20"
@@ -93,34 +151,39 @@ const cilckMenu = (str) => {
         <span class="mr-2">回到首页</span></div
       ></el-backtop
     >
-    <el-menu class="el-menu-color">
-      <el-sub-menu
-        v-for="item in linkArr"
-        :key="item.title"
-        :index="item.title">
-        <template #title>
-          <span>{{ item.title }}</span>
-        </template>
-        <AppLink
-          v-for="item2 in item.children"
-          :key="item2.title"
-          :to="item2.link"
-          class="hover:no-underline"
-          ><el-menu-item
-            :index="item2.title"
-            class="el-menu-item-bg-color"
-            :class="{
-              'el-menu-item-bg-color-hover': $route.path
-                .trim()
-                .startsWith(item2.link.trim())
-            }"
-            style="height: 40px; color: black"
-            @click="cilckMenu"
-            >{{ item2.title }}</el-menu-item
-          ></AppLink
-        >
-      </el-sub-menu>
-    </el-menu>
+    <div ref="menuDiv">
+      <el-menu
+        ref="menu"
+        class="el-menu-color"
+        @close="closeMenu"
+        @open="openMenu">
+        <el-sub-menu
+          v-for="item in linkArr"
+          :key="item.title"
+          :index="item.title">
+          <template #title>
+            <span>{{ item.title }}</span>
+          </template>
+          <AppLink
+            v-for="item2 in item.children"
+            :key="item2.title"
+            :to="item2.link"
+            class="hover:no-underline"
+            ><el-menu-item
+              :index="item2.title"
+              class="el-menu-item-bg-color"
+              :class="{
+                'el-menu-item-bg-color-hover': $route.path
+                  .trim()
+                  .startsWith(item2.link.trim())
+              }"
+              style="height: 40px; color: black"
+              >{{ item2.title }}</el-menu-item
+            ></AppLink
+          >
+        </el-sub-menu>
+      </el-menu>
+    </div>
   </div>
 </template>
 
@@ -130,7 +193,8 @@ const cilckMenu = (str) => {
   --el-menu-text-color: #ffffff;
   --el-menu-active-color: #ffffff;
   --el-menu-hover-bg-color: var(--secondary);
-  border-right: 0;
+  --el-menu-item-height: 56px;
+  border: 0;
 }
 .el-menu-item-bg-color {
   background-color: #ececec;
