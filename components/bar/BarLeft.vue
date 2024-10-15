@@ -169,7 +169,7 @@ onMounted(() => {
       break;
     }
   }
-  // returnFromTop();
+  returnFromTop();
   window.addEventListener('scroll', returnFromTop);
 });
 
