@@ -136,7 +136,7 @@ onMounted(() => {
             break;
           } else {
             if (openMenuList.size === 1) break;
-              height =
+            height =
               height -
               linkArr.find((item1) => item1.title === item).children.length *
                 rowHeight;
@@ -145,7 +145,7 @@ onMounted(() => {
           }
         }
         timeoutID = undefined;
-      }, 60);
+      }, 40);
     };
   })();
   // linkArr.find((item1) => item1.title === item)
@@ -169,24 +169,50 @@ onMounted(() => {
       break;
     }
   }
+  // returnFromTop();
+  window.addEventListener('scroll', returnFromTop);
 });
+
+const returnFromTop = (() => {
+  let timeoutID = undefined;
+  return () => {
+    if (timeoutID !== undefined) clearTimeout(timeoutID);
+    timeoutID = setTimeout(() => {
+      console.log(123);
+      if (window.scrollY || document.documentElement.scrollTop > 103) {
+        backToTopBtnShow.value = true;
+      } else {
+        backToTopBtnShow.value = false;
+      }
+      timeoutID = undefined;
+    }, 20);
+  };
+})();
+
+const backToTopBtnShow = ref(false);
 </script>
 
 <template>
   <div id="sticky-nav" ref="stickyNav">
-    <el-backtop :visibility-height="103" style="all: initial"
-      ><div
-        class="flex justify-between text-[#ffffff] leading-10 mb-[1px] to-top-color"
-        ><el-icon class="my-auto ml-2" size="20"
+    <Transition name="anim-button">
+      <div
+        v-show="backToTopBtnShow"
+        class="flex justify-between text-white leading-8 mb-[1px] to-top-color"
+        onclick="window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth' 
+        })">
+        <el-icon class="my-auto ml-4" size="20"
           ><el-icon-top></el-icon-top
         ></el-icon>
-        <span class="mr-2">回到首页</span></div
-      ></el-backtop
-    >
+        <span class="mr-4">返回页首</span>
+      </div>
+    </Transition>
     <div ref="menuDiv">
       <el-menu
         ref="menu"
-        class="el-menu-color"
+        class="my-el-menu"
         @close="closeMenu"
         @open="openMenu">
         <el-sub-menu
@@ -203,9 +229,9 @@ onMounted(() => {
             class="hover:no-underline"
             ><el-menu-item
               :index="item2.title"
-              class="el-menu-item-bg-color"
+              class="my-el-menu-item"
               :class="{
-                'el-menu-item-bg-color-hover': $route.path
+                'my-el-menu-item-hover': route.path
                   .trim()
                   .startsWith(item2.link.trim())
               }"
@@ -219,7 +245,7 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.el-menu-color {
+.my-el-menu {
   --el-menu-item-font-size: 12pt;
   --el-menu-bg-color: var(--primary);
   --el-menu-text-color: #ffffff;
@@ -228,15 +254,15 @@ onMounted(() => {
   --el-menu-item-height: 32px;
   border: 0;
 }
-.el-menu-item-bg-color {
+.my-el-menu-item {
   height: 32px;
   color: black;
   background-color: #ececec;
 }
-.el-menu-item-bg-color-hover {
+.my-el-menu-item-hover {
   background-color: #dcdcdc;
 }
-.el-menu-item-bg-color:hover {
+.my-el-menu-item:hover {
   background-color: #dcdcdc;
 }
 .to-top-color {
@@ -245,5 +271,24 @@ onMounted(() => {
 }
 .to-top-color:hover {
   background-color: var(--secondary);
+}
+.anim-button-enter-active {
+  overflow-y: hidden;
+  animation: backtotop-slidein 0.15s linear;
+}
+
+.anim-button-leave-active {
+  overflow-y: hidden;
+  animation: backtotop-slidein 0.15s linear reverse;
+}
+
+@keyframes backtotop-slidein {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: 2rem;
+  }
 }
 </style>
