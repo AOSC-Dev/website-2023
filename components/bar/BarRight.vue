@@ -37,26 +37,17 @@ const commonLinkList = reactive([
     title: '赞助硬件或服务'
   }
 ]);
-
-const [observer1, buffer] = useSeizeSeat('bgImg1', 1.7455);
-const [observer2, imgHeights] = useSeizeSeat('bgImg2', 1.7455, buffer);
 </script>
 
 <template>
   <div class="bg-right-bar-bg w-[37.5%] flex flex-col">
-    <a href="/aosc-os/right-for-me" ref="bgImg1" class="bg-img-height1">
-      <img
-        @load="onImgLoad(observer1, imgHeights[0])"
-        ref="bgImg"
-        src="/jumbotron/minor1.svg"
-        class="w-full cursor-pointer" />
+    <a href="/aosc-os/right-for-me">
+      <img src="/jumbotron/minor1.svg" class="w-full imgScale1 cursor-pointer" />
     </a>
-    <a href="https://bbs.aosc.io/" ref="bgImg2" class="bg-img-height2">
+    <a href="https://bbs.aosc.io/">
       <img
-        @load="onImgLoad(observer2, imgHeights[1])"
         src="/jumbotron/minor2.svg"
-        class="w-full cursor-pointer"
-        href="https://bbs.aosc.io/" />
+        class="w-full imgScale1 cursor-pointer" />
     </a>
     <div class="flex flex-col flex-grow">
       <CategorySecond
@@ -114,10 +105,7 @@ const [observer2, imgHeights] = useSeizeSeat('bgImg2', 1.7455, buffer);
 </template>
 
 <style scoped>
-.bg-img-height1 {
-  height: v-bind('imgHeights[0].value');
-}
-.bg-img-height2 {
-  height: v-bind('imgHeights[1].value');
+.imgScale1 {
+  aspect-ratio: 96/55;
 }
 </style>

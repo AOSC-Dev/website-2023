@@ -82,10 +82,16 @@ const openMenuList = new Set();
 
 const menuDivRef = useTemplateRef('menuDiv');
 const menuRef = useTemplateRef('menu');
+const rowHeight = 32;
+
+const route = useRoute();
 
 const openMenu = (MenuOpenEvent) => {
   const result = linkArr.find((item) => item.title === MenuOpenEvent);
-  let height = result.children.length * 40 + 73 + menuDivRef.value.clientHeight;
+  let height =
+    result.children.length * rowHeight +
+    rowHeight * 2 +
+    menuDivRef.value.clientHeight;
   for (const item of openMenuList) {
     if (
       height < window.innerHeight &&
@@ -96,7 +102,8 @@ const openMenu = (MenuOpenEvent) => {
     } else {
       height =
         height -
-        linkArr.find((item1) => item1.title === item).children.length * 40;
+        linkArr.find((item1) => item1.title === item).children.length *
+          rowHeight;
       openMenuList.delete(item);
       menuRef.value.close(item);
     }
@@ -107,28 +114,32 @@ const closeMenu = (MenuOpenEvent) => {
   openMenuList.delete(MenuOpenEvent);
 };
 
+const highlyIsQualified = (height) => {
+  if (
+    height < window.innerHeight &&
+    height <
+      menuDivRef.value.parentNode.parentNode.nextElementSibling.clientHeight
+  )
+    return true;
+  else return false;
+};
+
 onMounted(() => {
   window.onresize = (() => {
     let timeoutID = undefined;
     return () => {
       if (timeoutID !== undefined) clearTimeout(timeoutID);
       timeoutID = setTimeout(() => {
-        console.log(123);
-        let height = menuDivRef.value.clientHeight + 73;
+        let height = menuDivRef.value.clientHeight + rowHeight * 2 + 1;
         for (const item of openMenuList) {
-          if (
-            height < window.innerHeight &&
-            height <
-              menuDivRef.value.parentNode.parentNode.nextElementSibling
-                .clientHeight
-          ) {
+          if (highlyIsQualified(height)) {
             break;
           } else {
             if (openMenuList.size === 1) break;
-            height =
+              height =
               height -
               linkArr.find((item1) => item1.title === item).children.length *
-                40;
+                rowHeight;
             openMenuList.delete(item);
             menuRef.value.close(item);
           }
@@ -137,6 +148,27 @@ onMounted(() => {
       }, 60);
     };
   })();
+  // linkArr.find((item1) => item1.title === item)
+  let height = menuDivRef.value.clientHeight + rowHeight * 2 + 1;
+  for (const item of linkArr) {
+    const resule = item.children.find((item1) => item1.link === route.path);
+    if (resule) {
+      height = height + item.children.length * rowHeight;
+      if (highlyIsQualified(height)) {
+        openMenuList.add(item.title);
+        menuRef.value.open(item.title);
+      }
+    }
+  }
+  for (const item of linkArr) {
+    height = height + item.children.length * rowHeight;
+    if (highlyIsQualified(height)) {
+      openMenuList.add(item.title);
+      menuRef.value.open(item.title);
+    } else {
+      break;
+    }
+  }
 });
 </script>
 
@@ -177,7 +209,6 @@ onMounted(() => {
                   .trim()
                   .startsWith(item2.link.trim())
               }"
-              style="height: 40px; color: black"
               >{{ item2.title }}</el-menu-item
             ></AppLink
           >
@@ -189,14 +220,17 @@ onMounted(() => {
 
 <style scoped>
 .el-menu-color {
+  --el-menu-item-font-size: 12pt;
   --el-menu-bg-color: var(--primary);
   --el-menu-text-color: #ffffff;
   --el-menu-active-color: #ffffff;
   --el-menu-hover-bg-color: var(--secondary);
-  --el-menu-item-height: 56px;
+  --el-menu-item-height: 32px;
   border: 0;
 }
 .el-menu-item-bg-color {
+  height: 32px;
+  color: black;
   background-color: #ececec;
 }
 .el-menu-item-bg-color-hover {

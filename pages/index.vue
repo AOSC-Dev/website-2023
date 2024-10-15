@@ -40,25 +40,13 @@ const zhuanlanList = [
       '我社一向以友好负责的支持工作著称，尊重用户的时间与精力是我们的工作准则。社区也是信息共享的强大后盾——在各社区聊天群组，我们时刻准备着为您排忧解难。'
   }
 ];
-
 </script>
 
 <template>
   <div class="flex">
     <div class="w-[62.5%] bg-content-main-bg p-0">
-      <a
-        href="/download#aosc-os-download"
-        class="w-full flex">
-        <el-image
-          class="w-full"
-          src="/jumbotron/main1.svg">
-          <template #error>
-            <div class="image-slot cursor-pointer">
-              <el-icon>
-                <el-icon-picture />
-              </el-icon>
-            </div>
-          </template>
+      <a href="/download#aosc-os-download" class="w-full flex">
+        <el-image class="w-full imgScale1" src="/jumbotron/main1.svg">
         </el-image>
       </a>
       <!-- 资讯要点 -->
@@ -110,4 +98,7 @@ const zhuanlanList = [
 </template>
 
 <style scoped>
+.imgScale1 {
+  aspect-ratio: 16/11;
+}
 </style>
