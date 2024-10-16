@@ -23,10 +23,7 @@ Windows home page from 2001 - 2004:
 - [Reference 1, Windows XP home from late 2001](https://web.archive.org/web/20011211230629/http://microsoft.com/windowsxp/default.asp)
 - [Reference 2, Windows XP mid-cycle home from 2004](https://web.archive.org/web/20040204080626/http://www.microsoft.com/china/windows/default.mspx)
 
-Technically speaking, this website is built as a client-side rendered Web
-application. In the near future, we plan to refactor this website into one
-that is powered by server-side rendering or static site generator to help
-with performance and indexability.
+Technically speaking, this a server-side rendered site built with Nuxt.
 
 This website is not yet optimised for mobile, legacy (Afterglow-targeted),
 and functionally-limited browsers. We are currently evaluating plans to
@@ -50,14 +47,14 @@ oma install nodejs
 Then, build and serve the website locally:
 
 ```
-npm i
-npm run dev
+npm run build
+node .output/server/index.mjs
 ```
 
 Submitting news
 ---
 
-All news articles are written in Markdown and stored in `/public/news`, with
+All news articles are written in Markdown and stored in `/content/news`, with
 extra assets (images, etc.) stored in `/assets/...`. All assets should be
 referenced from the site (`/assets/...`, not `https://...`).
 
