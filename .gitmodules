@@ -1,3 +1,3 @@
-[submodule "utils"]
-	path = utils
+[submodule "website-2023-utils"]
+	path = website-2023-utils
 	url = https://github.com/AOSC-Dev/website-2023-utils
