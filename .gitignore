@@ -36,3 +36,7 @@ public/newsCategories
 *.sln
 *.sw?
 pasteServer/paste/*
+
+# Nuxt
+.output
+.nuxt

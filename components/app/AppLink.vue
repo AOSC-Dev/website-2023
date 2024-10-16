@@ -1,0 +1,23 @@
+<script setup>
+import { RouterLink } from 'vue-router';
+const props = defineProps({
+  ...RouterLink.props,
+  class: {
+    type: String,
+    default: "text-link",
+  },
+});
+
+const isExternalLink = computed(() => {
+  return typeof props.to === "string" && props.to.startsWith("http");
+});
+</script>
+
+<template>
+  <a v-if="isExternalLink" :href="to" :class="props.class">
+    <slot></slot>
+  </a>
+  <NuxtLink v-else v-bind="props">
+    <slot></slot>
+  </NuxtLink>
+</template>
