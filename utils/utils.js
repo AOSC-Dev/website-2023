@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { ElMessage } from 'element-plus';
 import yaml from 'js-yaml';
 
 export function getImgUrl(url) {
