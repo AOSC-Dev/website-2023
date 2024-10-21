@@ -10,10 +10,7 @@ const route = useRoute();
     `/newsCategories/${category}.zh-cn.json`
   );
   if (res) {
-    console.log('新闻目录', res.data);
     categories.value = res.data;
-  } else if (err) {
-    console.log(err);
   }
 })();
 </script>

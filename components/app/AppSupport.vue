@@ -12,7 +12,6 @@ const highBrightnessControllerStore = useHighBrightnessControllerStore();
 watch(
   () => highBrightnessControllerStore.obj[route.path],
   () => {
-    console.log(1);
     switch (route.hash) {
       case '#support':
         highlightElement(support);

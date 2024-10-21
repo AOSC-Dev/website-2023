@@ -62,7 +62,6 @@ export const useThemeStore = defineStore('themeStore', {
     set(solarTerms, time) {
       const newColor =
         themeList[solarTerms + time.charAt(0).toUpperCase() + time.slice(1)];
-      console.log(newColor);
       this.primary = newColor.primary;
       this.secondary = newColor.secondary;
     }

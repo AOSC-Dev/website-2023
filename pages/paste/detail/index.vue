@@ -29,10 +29,8 @@ const getPaste = async () => {
       details.value = results.data;
     }
   } else {
-    console.log('获取异常', err);
     failReason.value = '获取粘贴板异常（服务器内部错误）';
   }
-  console.log(res);
   loading.value = false;
 };
 
