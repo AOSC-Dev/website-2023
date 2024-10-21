@@ -1,14 +1,8 @@
 <script setup>
 const categories = ref({});
-(async () => {
-  let [res, err] = await requestGetJson('/newsCategories/zh-cn.json');
-  if (res) {
-    categories.value = res.data;
-    console.log('新闻目录:', res.data);
-  } else if (err) {
-    console.log(err);
-  }
-})();
+const { data } = await useFetch('/newsCategories/zh-cn.json');
+
+categories.value = data.value;
 </script>
 
 <template>

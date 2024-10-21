@@ -3,14 +3,9 @@ import yaml from 'js-yaml';
 
 const galleryList = ref([]);
 
-(async () => {
-  let [res, err] = await requestGetJson('/gallery.yml');
-  if (res) {
-    galleryList.value = yaml.load(res.data);
-  } else if (err) {
-    console.log(err);
-  }
-})();
+const { data } = await useFetch('/gallery.yml');
+  galleryList.value = yaml.load(data.value);
+
 
 const curGallery = ref({});
 const curIndex = ref(0);
@@ -22,7 +17,6 @@ function clickImg(gallery, index) {
 }
 
 function closeBigImg() {
-  console.log('关闭图片预览');
   showBig.value = false;
 }
 </script>

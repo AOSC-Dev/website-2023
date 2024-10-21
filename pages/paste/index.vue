@@ -128,8 +128,7 @@ const handleChange = (uploadFile, uploadFiles) => {
       <MonacoEditor
         v-model="pasteFormData.content"
         class="border-2 theme-border-primary h-[50vh] rounded-none"
-        :lang="pasteFormData.language"
-         />
+        :lang="pasteFormData.language" />
       <!-- 文件选择器 -->
       <el-upload
         v-model:file-list="selectedFileList"

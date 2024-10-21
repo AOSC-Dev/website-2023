@@ -19,7 +19,6 @@ onMounted(() => {
   document.head.appendChild(msStoreScript);
 });
 
-const versionArch = ref([]);
 const aoscOsRef = useTemplateRef('aoscOsDownload');
 const afterglowRef = useTemplateRef('afterglowDownload');
 const omaRef = useTemplateRef('omaDownload');
@@ -132,33 +131,6 @@ const downloadButtonLength = (() => {
       lessThen = true;
     }
   };
-})();
-
-(async () => {
-  let [res, err] = await requestGetJson(
-    'https://releases.aosc.io/manifest/livekit.json'
-  );
-  if (res) {
-    versionArch.value = res.data;
-    console.log(res.data);
-    antong1List.value.forEach((v) => {
-      v.installer = getNewVersioArch(v.title, 'installer');
-      v.livekit = getNewVersioArch(v.title, 'livekit');
-    });
-    antong2List.value.forEach((v) => {
-      v.installer = getNewVersioArch(v.title, 'installer');
-      v.livekit = getNewVersioArch(v.title, 'livekit');
-    });
-    console.log(antong2List.value);
-    xingxia1List.value.forEach((v) => {
-      v.livekit = getNewVersioArch(v.title, 'livekit');
-    });
-    xingxia2List.value.forEach((v) => {
-      v.livekit = getNewVersioArch(v.title, 'livekit');
-    });
-  } else if (err) {
-    ElMessage.warning('版本信息获取失败');
-  }
 })();
 
 onMounted(async () => {
@@ -352,6 +324,24 @@ const liveKitDivHeight = (
   antong1List.value.length * 43.99 +
   (antong1List.value.length - 1) * 8
 ).toFixed(2);
+
+const { data: versionArch } = await useFetch(
+  'https://releases.aosc.io/manifest/livekit.json'
+);
+antong1List.value.forEach((v) => {
+  v.installer = getNewVersioArch(v.title, 'installer');
+  v.livekit = getNewVersioArch(v.title, 'livekit');
+});
+antong2List.value.forEach((v) => {
+  v.installer = getNewVersioArch(v.title, 'installer');
+  v.livekit = getNewVersioArch(v.title, 'livekit');
+});
+xingxia1List.value.forEach((v) => {
+  v.livekit = getNewVersioArch(v.title, 'livekit');
+});
+xingxia2List.value.forEach((v) => {
+  v.livekit = getNewVersioArch(v.title, 'livekit');
+});
 </script>
 
 <template>
