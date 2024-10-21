@@ -1,5 +1,5 @@
 <script setup name="BarRight">
-const distroList = reactive([
+const distroList = [
   {
     img: '/distros/aosc-os.svg',
     title: '安同 OS',
@@ -18,8 +18,8 @@ const distroList = reactive([
     relnotePath: '/afterglow/relnote',
     relnoteHash: ''
   }
-]);
-const commonLinkList = reactive([
+];
+const commonLinkList = [
   {
     url: '/contact#main',
     title: '报告系统使用问题'
@@ -36,7 +36,7 @@ const commonLinkList = reactive([
     url: '/crowdsourcing',
     title: '赞助硬件或服务'
   }
-]);
+];
 </script>
 
 <template>
