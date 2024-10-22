@@ -58,7 +58,7 @@ const zhuanlanList = [
             class="text-right px-[15px] py-[10px] font-[12pt] leading-6 text-link">
             <NuxtLink to="/news">
               <span>查阅最新社区资讯</span>
-              <v-icon name="bi-chevron-double-right" />
+              <!-- <v-icon name="bi-chevron-double-right" /> -->
             </NuxtLink>
           </div>
         </article>

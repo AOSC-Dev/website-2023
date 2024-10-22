@@ -29,7 +29,7 @@ const props = defineProps({
         {{ props.rightText }}
       </NuxtLink>
       <!-- 右箭头 -->
-      <v-icon v-if="showRightChevron" name="bi-chevron-double-right" />
+      <!-- <v-icon v-if="showRightChevron" name="bi-chevron-double-right" /> -->
     </span>
   </div>
 </template>

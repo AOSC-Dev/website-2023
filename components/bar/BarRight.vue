@@ -97,7 +97,7 @@ const commonLinkList = [
           :href="item.url"
           class="hover:bg-leftbar-bg cursor-pointer flex flex-row justify-between items-center px-[1rem] h-[2rem] odd:bg-[#fefaf6] bg-white">
           <span>{{ item.title }}</span>
-          <v-icon name="hi-solid-external-link" />
+          <!-- <v-icon name="hi-solid-external-link" /> -->
         </a>
       </div>
     </div>
