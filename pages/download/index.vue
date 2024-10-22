@@ -277,7 +277,7 @@ const xingxia2List = ref([
 
 function getAntongDate() {
   if (versionArch.value.length == 0) return '...';
-  let dateStr = getNewVersioArch('amd64', 'installer').date;
+  const dateStr = getNewVersioArch('amd64', 'installer').date;
   return `${dateStr.substring(0, 4)}/${dateStr.substring(
     4,
     6
@@ -325,22 +325,28 @@ const liveKitDivHeight = (
   (antong1List.value.length - 1) * 8
 ).toFixed(2);
 
-const { data: versionArch } = await useFetch(
-  'https://releases.aosc.io/manifest/livekit.json'
+const { data: versionArch, status } =  useLazyFetch(
+  'https://releases.aosc.io/manifest/livekit.json',
+  {
+    server: false
+  }
 );
-antong1List.value.forEach((v) => {
-  v.installer = getNewVersioArch(v.title, 'installer');
-  v.livekit = getNewVersioArch(v.title, 'livekit');
-});
-antong2List.value.forEach((v) => {
-  v.installer = getNewVersioArch(v.title, 'installer');
-  v.livekit = getNewVersioArch(v.title, 'livekit');
-});
-xingxia1List.value.forEach((v) => {
-  v.livekit = getNewVersioArch(v.title, 'livekit');
-});
-xingxia2List.value.forEach((v) => {
-  v.livekit = getNewVersioArch(v.title, 'livekit');
+
+watch(versionArch, () => {
+  antong1List.value.forEach((v) => {
+    v.installer = getNewVersioArch(v.title, 'installer');
+    v.livekit = getNewVersioArch(v.title, 'livekit');
+  });
+  antong2List.value.forEach((v) => {
+    v.installer = getNewVersioArch(v.title, 'installer');
+    v.livekit = getNewVersioArch(v.title, 'livekit');
+  });
+  xingxia1List.value.forEach((v) => {
+    v.livekit = getNewVersioArch(v.title, 'livekit');
+  });
+  xingxia2List.value.forEach((v) => {
+    v.livekit = getNewVersioArch(v.title, 'livekit');
+  });
 });
 </script>
 
@@ -358,7 +364,9 @@ xingxia2List.value.forEach((v) => {
           <div class="text-aosc-os my-[1.5rem]">
             <p class="text-[32pt]">安同 OS</p>
             <p class="text-[14pt]">称心得意的桌面操作系统</p>
-            <p class="width-[220px] text-[10pt] mt-1">
+            <p
+              v-if="status === 'success'"
+              class="width-[220px] text-[10pt] mt-1">
               {{ getAntongDate() }}·
               <AccordionNavigation
                 :navigation-list="aoscOsNavigationList"
@@ -370,8 +378,8 @@ xingxia2List.value.forEach((v) => {
         </div>
         <div class="download-container mt-0 mb-4 min-h-[129.97px]">
           <div
-            class="button-container-aoscos-multicolumn buttons-col mb-3 mt-1 flex justify-center"
-            v-if="versionArch.length > 0">
+            v-if="status === 'success'"
+            class="button-container-aoscos-multicolumn buttons-col mb-3 mt-1 flex justify-center">
             <DownloadButton
               v-for="item in antong1List"
               :popover-data="item.popoverData"
@@ -429,8 +437,8 @@ xingxia2List.value.forEach((v) => {
         class="flex flex-col flex pr-[2rem] ml-auto my-2">
         <div class="my-auto" :style="{ minHeight: liveKitDivHeight + 'px' }">
           <div
-            class="button-container-aoscos buttons-col"
-            v-if="versionArch.length > 0">
+            v-if="status === 'success'"
+            class="button-container-aoscos buttons-col">
             <span v-for="(item, index) in antong1List" :key="item.title">
               <DownloadButton
                 :popover-data="{
@@ -509,8 +517,8 @@ xingxia2List.value.forEach((v) => {
           <p class="text-[13pt] mt-1">并发布镜像供各位玩家试用和评估。</p>
         </div>
         <div
-          class="flex flex-col pr-[2rem] gap-y-[0.5rem] ml-auto"
-          v-if="versionArch.length > 0">
+          v-if="status === 'success'"
+          class="flex flex-col pr-[2rem] gap-y-[0.5rem] ml-auto">
           <div v-for="item in antong2List" :key="item.title">
             <DownloadButton
               :popover-data="item.popoverData"
