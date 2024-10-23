@@ -1,26 +1,19 @@
 <script setup>
-const categories = ref({});
-const categoryTitle = ref('');
 const route = useRoute();
 
-(async () => {
-  const category = route.params.category;
-  categoryTitle.value = route.params.categoryTitle;
-  let [res, err] = await requestGetJson(
-    `/newsCategories/${category}.zh-cn.json`
-  );
-  if (res) {
-    categories.value = res.data;
-  }
-})();
+const { data: categories, status } = useFetch(
+  `/newsCategories/${route.params.category}.zh-cn.json`
+);
 </script>
 
 <template>
   <div class="pl-[1px]">
     <category-second
-      :title="categoryTitle"
+      :title="route.params.categoryTitle"
       class="border-r-solid border-r-white" />
-    <news-category-list :news-list="categories || []" />
+    <news-category-list
+      v-if="status === 'success'"
+      :news-list="categories || []" />
   </div>
 </template>
 

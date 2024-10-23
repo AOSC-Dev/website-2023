@@ -1,5 +1,4 @@
 <script setup>
-const loading = ref(true);
 const route = useRoute();
 const details = ref(null);
 const imgSuffixList = ['jpg', 'jpeg', 'png', 'gif'];
@@ -17,24 +16,23 @@ function getAttachUrl(name) {
   return `/pasteContent/${route.query.id}/files/${name}`;
 }
 
-const getPaste = async () => {
-  let [res, err] = await requestGetJson('/pasteApi/paste', {
-    id: route.query.id
-  });
-  if (res) {
-    const results = res.data;
-    if (results.code != 0) {
-      failReason.value = results.message;
+const { data: results, status } = await useFetch('/pasteApi/paste', {
+  query: { id: route.query.id }
+});
+switch (status.value) {
+  case 'success':
+    if (results.value.code != 0) {
+      failReason.value = results.value.message;
     } else {
-      details.value = results.data;
+      details.value = results.value.data;
     }
-  } else {
+    break;
+  case 'error':
     failReason.value = '获取粘贴板异常（服务器内部错误）';
-  }
-  loading.value = false;
-};
-
-getPaste();
+    break;
+  default:
+    break;
+}
 
 const back = () => {
   failReason.value = '';
@@ -43,7 +41,7 @@ const returnHref = () => window.location.href;
 </script>
 
 <template>
-  <div class="pl-[1px] w-[100%]" v-loading="loading">
+  <div v-loading="!status==='success'" class="pl-[1px] w-[100%]" >
     <div v-if="details != null">
       <category-second title="公共粘贴板" />
       <div class="p-[2em]">

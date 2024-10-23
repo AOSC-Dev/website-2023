@@ -1,19 +1,5 @@
 <script setup>
-const newsListLoading = ref(true);
-const newsList = ref([]);
-const isLoad = ref(false);
-
-(async () => {
-  let [res, err] = await requestGetJson(`/newsCategories/home.zh-cn.json`);
-  if (res) {
-    newsList.value = res.data;
-    newsListLoading.value = false;
-  } else if (err) {
-    newsListLoading.value = false;
-  }
-  isLoad.value = true;
-})();
-
+const { data: newsList } = await useFetch(`/newsCategories/home.zh-cn.json`);
 const zhuanlanList = [
   {
     img: '/icons/key-enter.min.svg',
@@ -52,7 +38,7 @@ const zhuanlanList = [
       <!-- 资讯要点 -->
       <div>
         <CategorySecond title="资讯要点" />
-        <article v-if="isLoad">
+        <article>
           <NewsCategoryList :news-list="newsList" />
           <div
             class="text-right px-[15px] py-[10px] font-[12pt] leading-6 text-link">
@@ -64,7 +50,7 @@ const zhuanlanList = [
         </article>
       </div>
       <!-- 专栏 -->
-      <div v-if="isLoad" id="topic">
+      <div id="topic">
         <CategorySecond title="专栏：初识安同 OS" />
         <article class="p-[1em] leading-6">
           <div

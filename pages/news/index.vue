@@ -1,8 +1,6 @@
 <script setup>
-const categories = ref({});
-const { data } = await useFetch('/newsCategories/zh-cn.json');
+const { data:categories } = await useFetch('/newsCategories/zh-cn.json');
 
-categories.value = data.value;
 </script>
 
 <template>
