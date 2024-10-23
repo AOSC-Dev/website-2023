@@ -1,10 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  routeRules: {
+    '/': { swr: true },
+    '/**': { swr: true },
+    '/news/detail/**': { prerender: true }
+  },
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  // routeRules: {
-  //   '/': { ssr: false }
-  // },
   modules: [
     '@element-plus/nuxt',
     '@pinia/nuxt',
@@ -20,6 +22,7 @@ export default defineNuxtConfig({
     }
   },
   content: {
+    documentDriven: false,
     highlight: {
       // Theme used in all color schemes.
       theme: {
@@ -35,7 +38,7 @@ export default defineNuxtConfig({
     server: {
       proxy: {
         '/pasteApi': {
-          target: 'http://localhost:38629',
+          target: 'http://localhost:46203',
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/pasteApi/, '')
         }
