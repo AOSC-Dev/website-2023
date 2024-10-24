@@ -51,9 +51,9 @@ Linus Torvalds 还提到，“无辜的路人们”应当理解 Greg Kroah-Hartm
 
 ---
 
-1. https://lore.kernel.org/all/2024101835-tiptop-blip-09ed@gregkh/
-2. https://lore.kernel.org/all/a08dc31ab773604d8f206ba005dc4c7a@aosc.io/
-3. https://lore.kernel.org/all/20241023080935.2945-2-kexybiscuit@aosc.io/
-4. https://lore.kernel.org/all/20241023080935.2945-2-kexybiscuit@aosc.io/
-5. 我社贡献者白铭骢在认定 Greg Kroah-Hartman 的私下沟通全无诚意且具有侮辱性后选择公开邮件对话全文 https://lore.kernel.org/all/444fa53bdfdee75522a1af41655a99b0@aosc.io/
-6. https://lore.kernel.org/all/CAHk-=whNGNVnYHHSXUAsWds_MoZ-iEgRMQMxZZ0z-jY4uHT+Gg@mail.gmail.com/
+1. [https://lore.kernel.org/all/2024101835-tiptop-blip-09ed@gregkh/](https://lore.kernel.org/all/2024101835-tiptop-blip-09ed@gregkh/)
+2. [https://lore.kernel.org/all/a08dc31ab773604d8f206ba005dc4c7a@aosc.io/](https://lore.kernel.org/all/a08dc31ab773604d8f206ba005dc4c7a@aosc.io/)
+3. [https://lore.kernel.org/all/20241023080935.2945-2-kexybiscuit@aosc.io/](https://lore.kernel.org/all/20241023080935.2945-2-kexybiscuit@aosc.io/)
+4. [https://lore.kernel.org/all/20241023080935.2945-2-kexybiscuit@aosc.io/](https://lore.kernel.org/all/20241023080935.2945-2-kexybiscuit@aosc.io/)
+5. 我社贡献者白铭骢在认定 Greg Kroah-Hartman 的私下沟通全无诚意且具有侮辱性后选择公开邮件对话全文，[https://lore.kernel.org/all/444fa53bdfdee75522a1af41655a99b0@aosc.io/](https://lore.kernel.org/all/444fa53bdfdee75522a1af41655a99b0@aosc.io/)
+6. [https://lore.kernel.org/all/CAHk-=whNGNVnYHHSXUAsWds_MoZ-iEgRMQMxZZ0z-jY4uHT+Gg@mail.gmail.com/](https://lore.kernel.org/all/CAHk-=whNGNVnYHHSXUAsWds_MoZ-iEgRMQMxZZ0z-jY4uHT+Gg@mail.gmail.com/)
