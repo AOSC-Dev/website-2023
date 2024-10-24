@@ -11,7 +11,7 @@ home: true
 
 过去一天无疑是耻辱和令人绝望的。我们目睹了 Linus Torvalds 对我社贡献者乃至工作的攻击、侮辱和诋毁。
 
-上周日，一条践踏社区信任的、可耻的提交被无声合并。数十名俄罗斯藉 Linux 内核贡献者、子系统维护者在未被告知的情况下被革除维护者身份。[¹](https://lore.kernel.org/all/2024101835-tiptop-blip-09ed@gregkh/)在诸多提出质疑的内核贡献者与关注者中，我社人员也提出了自己的质疑和严厉批评。[²](https://lore.kernel.org/all/a08dc31ab773604d8f206ba005dc4c7a@aosc.io/)[³](https://lore.kernel.org/all/20241023080935.2945-2-kexybiscuit@aosc.io/)而 Linux 基金会在此事中不仅没有发布任何公告解释行为，Linux 内核项目创始人和核心维护人员 Linus Torvalds 与 [linux-stable](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git) 分支维护者 Greg Kroah-Hartman 两位技术人员更是伙同 Linux 基金会一道，开始了极具歧视性的“猎巫行动”。
+上周日，一条践踏社区信任的、可耻的提交被无声合并。数十名俄罗斯籍 Linux 内核贡献者、子系统维护者在未被告知的情况下被革除维护者身份。[¹](https://lore.kernel.org/all/2024101835-tiptop-blip-09ed@gregkh/)在诸多提出质疑的内核贡献者与关注者中，我社人员也提出了自己的质疑和严厉批评。[²](https://lore.kernel.org/all/a08dc31ab773604d8f206ba005dc4c7a@aosc.io/)[³](https://lore.kernel.org/all/20241023080935.2945-2-kexybiscuit@aosc.io/)而 Linux 基金会在此事中不仅没有发布任何公告解释行为，Linux 内核项目创始人和核心维护人员 Linus Torvalds 与 [linux-stable](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git) 分支维护者 Greg Kroah-Hartman 两位技术人员更是伙同 Linux 基金会一道，开始了极具歧视性的“猎巫行动”。
 
 在此次新一轮回应之前，昨日我社人员编撰的新闻稿中已有详细的背景介绍，此处全文贴出：
 
