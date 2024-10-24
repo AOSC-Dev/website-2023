@@ -4,7 +4,6 @@ categories:
 title: "定档 10 月 20 日：社区“校园行”宁夏理工学院站诚招讲者！"
 date: 2024-10-09T18:30:00+08:00
 important: true
-home: true
 ---
 
 ![](/assets/news/aosc-nit-lug-event.png)
