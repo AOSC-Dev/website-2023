@@ -94,7 +94,7 @@ const handleChange = (uploadFile, uploadFiles) => {
 <template>
   <div class="pl-[1px]" v-loading="submiting">
     <category-second title="公共粘贴板" />
-    <div class="py-[30px] px-[100px]">
+    <div class="py-[30px] px-[10%]">
       <div class="flex justify-between mb-[10px]">
         <div class="flex">
           <select
