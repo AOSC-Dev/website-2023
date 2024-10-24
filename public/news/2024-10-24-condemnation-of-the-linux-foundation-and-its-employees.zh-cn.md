@@ -1,8 +1,8 @@
 ---
 categories:
-  - advisories
+  - news
 title: "安同开源社区有关 Linux 基金会及其职员不当行为的谴责"
-date: 2024-10-06T18:30:00+08:00
+date: 2024-10-24T18:30:00+08:00
 important: true
 home: true
 ---
