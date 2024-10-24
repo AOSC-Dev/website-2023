@@ -11,7 +11,7 @@ home: true
 
 过去一天无疑是耻辱和令人绝望的。我们目睹了 Linus Torvalds 对我社贡献者乃至工作的攻击、侮辱和诋毁。
 
-上周日，一条践踏社区信任的、可耻的提交被无声合并。数十名俄罗斯藉 Linux 内核贡献者、子系统维护者在未被告知的情况下被革除维护者身份。¹ 在诸多提出质疑的内核贡献者与关注者中，我社人员也提出了自己的质疑和严厉批评。² ³ 而 Linux 基金会在此事中不仅没有发布任何公告解释行为，Linux 内核项目创始人和核心维护人员 Linus Torvalds 与 [linux-stable](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git) 分支维护者 Greg Kroah-Hartman 两位技术人员更是伙同 Linux 基金会一道，开始了极具歧视性的“猎巫行动”。
+上周日，一条践踏社区信任的、可耻的提交被无声合并。数十名俄罗斯藉 Linux 内核贡献者、子系统维护者在未被告知的情况下被革除维护者身份。[¹](https://lore.kernel.org/all/2024101835-tiptop-blip-09ed@gregkh/)在诸多提出质疑的内核贡献者与关注者中，我社人员也提出了自己的质疑和严厉批评。[²](https://lore.kernel.org/all/a08dc31ab773604d8f206ba005dc4c7a@aosc.io/)[³](https://lore.kernel.org/all/20241023080935.2945-2-kexybiscuit@aosc.io/)而 Linux 基金会在此事中不仅没有发布任何公告解释行为，Linux 内核项目创始人和核心维护人员 Linus Torvalds 与 [linux-stable](https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git) 分支维护者 Greg Kroah-Hartman 两位技术人员更是伙同 Linux 基金会一道，开始了极具歧视性的“猎巫行动”。
 
 在此次新一轮回应之前，昨日我社人员编撰的新闻稿中已有详细的背景介绍，此处全文贴出：
 
@@ -29,9 +29,9 @@ home: true
 
 > 截至发稿时，Greg K-H 尚未回应邮件列表上的相关质询。无论结果为何，这都将是 Linux 内核社区历史上最为耻辱的提交之一。
 
-在这一风波伊始，我社贡献者柯晓宇采取了非常勇敢的行动，在提出撤回补丁 (Revert) 的同时，据理力争表达了自己的不满与质疑。⁴ 与此同时，我们的贡献者密切地关注着这个话题，我们都抱有一丝似有似无的希望：“Greg Kroah-Hartman 和 Linus Torvalds 是否正迫于难以言状的政治压力才做出如此令人意外的事情？”
+在这一风波伊始，我社贡献者柯晓宇采取了非常勇敢的行动，在提出撤回补丁 (Revert) 的同时，据理力争表达了自己的不满与质疑。[⁴](https://lore.kernel.org/all/20241023080935.2945-2-kexybiscuit@aosc.io/)与此同时，我们的贡献者密切地关注着这个话题，我们都抱有一丝似有似无的希望：“Greg Kroah-Hartman 和 Linus Torvalds 是否正迫于难以言状的政治压力才做出如此令人意外的事情？”
 
-很不幸的是，在 Greg Kroah-Hartman 选择违反 [Linux 邮件列表网络礼仪](https://people.kernel.org/tglx/notes-about-netiquette-qw89)与列表中的多人私下交涉后 ⁵ ，Linus Torvalds 直接选择了最令人不齿的方式回应质疑——攻击、侮辱和诋毁我社贡献者 ⁶ ：
+很不幸的是，在 Greg Kroah-Hartman 选择违反 [Linux 邮件列表网络礼仪](https://people.kernel.org/tglx/notes-about-netiquette-qw89)与列表中的多人私下交涉后（我社贡献者白铭骢在认定 Greg Kroah-Hartman 的私下沟通全无诚意且具有侮辱性后选择公开邮件对话全文[⁵](https://lore.kernel.org/all/444fa53bdfdee75522a1af41655a99b0@aosc.io/)，Linus Torvalds 直接选择了最令人不齿的方式回应质疑——攻击、侮辱和诋毁我社贡献者[⁶](https://lore.kernel.org/all/CAHk-=whNGNVnYHHSXUAsWds_MoZ-iEgRMQMxZZ0z-jY4uHT+Gg@mail.gmail.com/)：
 
 > It's entirely clear why the change was done, it's not getting reverted, and using multiple random anonymous accounts to try to "grass root" it by Russian troll factories isn't going to change anything.
 
@@ -48,12 +48,3 @@ Linus Torvalds 还提到，“无辜的路人们”应当理解 Greg Kroah-Hartm
 在如今地缘政治极端紧张的今天，Linus Torvalds 选择使用国籍囊括政治观点的行为极端不负责任。更不用说将社区的一切反对意见都归结为“俄罗斯巨魔”和吸取“俄罗斯国家赞助的垃圾信息”的后果。Linus Torvalds 的发言无疑将为 Linux 内核及国际开源社区的协作互信，乃至全人类自由与开源软件运动带来难以弥补的损害。
 
 因上述事由，我们对 Linux 基金会职员、乃至该组织的不当行为表示强烈抗议和谴责。我们要求 Linux 基金会就 Linus Torvalds 及 Greg Kroah-Hartman 的行为作出解释并对所有相关人员致歉并恢复名誉。
-
----
-
-1. [https://lore.kernel.org/all/2024101835-tiptop-blip-09ed@gregkh/](https://lore.kernel.org/all/2024101835-tiptop-blip-09ed@gregkh/)
-2. [https://lore.kernel.org/all/a08dc31ab773604d8f206ba005dc4c7a@aosc.io/](https://lore.kernel.org/all/a08dc31ab773604d8f206ba005dc4c7a@aosc.io/)
-3. [https://lore.kernel.org/all/20241023080935.2945-2-kexybiscuit@aosc.io/](https://lore.kernel.org/all/20241023080935.2945-2-kexybiscuit@aosc.io/)
-4. [https://lore.kernel.org/all/20241023080935.2945-2-kexybiscuit@aosc.io/](https://lore.kernel.org/all/20241023080935.2945-2-kexybiscuit@aosc.io/)
-5. 我社贡献者白铭骢在认定 Greg Kroah-Hartman 的私下沟通全无诚意且具有侮辱性后选择公开邮件对话全文，[https://lore.kernel.org/all/444fa53bdfdee75522a1af41655a99b0@aosc.io/](https://lore.kernel.org/all/444fa53bdfdee75522a1af41655a99b0@aosc.io/)
-6. [https://lore.kernel.org/all/CAHk-=whNGNVnYHHSXUAsWds_MoZ-iEgRMQMxZZ0z-jY4uHT+Gg@mail.gmail.com/](https://lore.kernel.org/all/CAHk-=whNGNVnYHHSXUAsWds_MoZ-iEgRMQMxZZ0z-jY4uHT+Gg@mail.gmail.com/)
