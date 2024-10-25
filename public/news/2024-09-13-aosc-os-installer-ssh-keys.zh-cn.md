@@ -4,7 +4,6 @@ categories:
 title: "安同 OS 离线安装盘意外安装预制 SSH 主机密钥"
 date: 2024-09-13T12:00:00+08:00
 important: true
-home: true
 ---
 ![](/assets/news/2024-09-13-aoscos-installer-ssh-keys.png)
 
