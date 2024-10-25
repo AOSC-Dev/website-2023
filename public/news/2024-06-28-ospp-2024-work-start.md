@@ -4,7 +4,6 @@ categories:
 title: "社区“开源之夏”项目正式启航"
 date: 2024-06-28T23:00:00+08:00
 important: true
-home: true
 ---
 ![](/assets/news/2024-06-28-ospp-work-start.png)
 
