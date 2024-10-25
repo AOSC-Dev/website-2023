@@ -178,7 +178,7 @@ const returnFromTop = (() => {
   return () => {
     if (timeoutID !== undefined) clearTimeout(timeoutID);
     timeoutID = setTimeout(() => {
-      if (window.scrollY || document.documentElement.scrollTop > 103) {
+      if ((window.scrollY || document.documentElement.scrollTop) > 103) {
         backToTopBtnShow.value = true;
       } else {
         backToTopBtnShow.value = false;
