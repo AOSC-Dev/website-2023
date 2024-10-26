@@ -27,7 +27,7 @@ Recently, [Omakase](https://github.com/AOSC-Dev/oma), the package manager we've 
 
 ![oma-screenshot](https://raw.githubusercontent.com/AOSC-Dev/newsroom/master/coffee-break/20230811/imgs/omakase.png)
 
-Update your system today to test out `oma`, our brand-new package manager! As Omakase's is still very much a young project, there are many [new features and designs](https://repo.aosc.io/aosc-documentation/aoscc-2023/magmell/omakase.pdf) that are yet to be implemented. If you have any questions and suggestions, or have run into problems, please do [file an issue](https://github.com/AOSC-Dev/oma/issues/new)！
+Update your system today to test out `oma`, our brand-new package manager! As Omakase's is still very much a young project, there are many [new features and designs](https://repo.aosc.io/aosc-documentation/aoscc/2023/magmell/omakase.pdf) that are yet to be implemented. If you have any questions and suggestions, or have run into problems, please do [file an issue](https://github.com/AOSC-Dev/oma/issues/new)！
 
 Omakase is built upon Debian's [APT](https://wiki.debian.org/Apt) and remains functionally compatible with it. To help ease the transition, we will continue to pre-install APT along side Omakase with AOSC OS.
 

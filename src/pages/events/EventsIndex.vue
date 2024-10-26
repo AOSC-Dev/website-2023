@@ -187,7 +187,7 @@ const navigationList = [
             ><b>2022 年：</b
             ><a
               class="text-[#0056cc] no-underline"
-              href="https://repo.aosc.io/aosc-documentation/fosdem-2022/20210113-slides.odp"
+              href="https://repo.aosc.io/aosc-documentation/fosdem/2022/20210113-slides.odp"
               >FOSDEM 2022（白铭骢：AOSC OS/Retro - Our Ongoing Quest for the
               Possibility of Modern Linux on Vintage Hardware）</a
             ></li
@@ -196,7 +196,7 @@ const navigationList = [
             ><b>2018 年：</b
             ><a
               class="text-[#0056cc] no-underline"
-              href="https://repo.aosc.io/aosc-documentation/soscon-2018/slide.pdf"
+              href="https://repo.aosc.io/aosc-documentation/campus/2018/soscon/slide.pdf"
               >学生开源年会
               (SOSCON18)（白铭骢、黎民雍：从宣传队到大社团——安同开源社区的历史、项目和文化综述）</a
             ></li
@@ -205,7 +205,7 @@ const navigationList = [
             ><b>2014 年：</b
             ><a
               class="text-[#0056cc] no-underline"
-              href="https://repo.aosc.io/aosc-documentation/hkosc-2014/HK_Presentation.pdf"
+              href="https://repo.aosc.io/aosc-documentation/others/hkosc-2014/HK_Presentation.pdf"
               >香港开源人年会 (HKOSC
               2014)（叶晓星：安同開源社區——開源青春，開源中國）</a
             ></li
