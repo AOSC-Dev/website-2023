@@ -10,4 +10,4 @@ important: false
 
 请报名了该项目的学生于 UTC+8 时间 6 月 20 日 16:59 前完成作答并按照考核文档中的指引提交答卷。
 
-[点此下载 >>](https://repo.aosc.io/aosc-documentation/ospp-2024/users-guide/20240530-ospp-users-guide-exam.md)
+[点此下载 >>](https://repo.aosc.io/aosc-documentation/ospp/2024/users-guide/20240530-ospp-users-guide-exam.md)

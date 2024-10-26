@@ -63,7 +63,7 @@ experimental attention (e.g., the Loongon 3 and POWER9 ports).
 
 Many other reviews on our infrastructures and development projects were also
 discussed, more details could be found on my
-[slides (in Simplified Chinese)](https://repo.aosc.io/aosc-documentation/aoscc-2020/mingcong-bai/AOSCC%202020%20-%20Year%20in%20Review.pdf),
+[slides (in Simplified Chinese)](https://repo.aosc.io/aosc-documentation/aoscc/2020/mingcong-bai/AOSCC%202020%20-%20Year%20in%20Review.pdf),
 and also a [recording (in Mandarin Chinese)](https://www.youtube.com/watch?v=eXPzOF2hX3s)
 for my presentation.
 
@@ -82,7 +82,7 @@ using the [Tinc VPN](https://www.tinc-vpn.org/). By doing so, Staph expects
 reliability (and probably performance) improvements when accessing community
 resources such as BuildBots and other assets.
 
-More details could be found in Staph's [AOSCNet slides](https://repo.aosc.io/aosc-documentation/aoscc-2020/staph-zhang/AOSCC2020AOSCNet.pdf)
+More details could be found in Staph's [AOSCNet slides](https://repo.aosc.io/aosc-documentation/aoscc/2020/staph-zhang/AOSCC2020AOSCNet.pdf)
 and [recording of his talk (in Mandarin Chinese)](https://www.youtube.com/watch?v=gRPewpLvOEo).
 
 ACBS, Autobuild3, DeployKit, and Ciel-rs
@@ -104,7 +104,7 @@ implementation of DeployKit, albeit for now, only in the form of a Terminal
 UI based on a Rust curses library. That now ends AOSC OS's history without a
 functioning installer. To complement DeployKit, a Live image is coming soon.
 
-Check out Liu's [slides (in Simplified Chinese)](https://repo.aosc.io/aosc-documentation/aoscc-2020/zixing-liu/20200923-liushuyu.pdf)
+Check out Liu's [slides (in Simplified Chinese)](https://repo.aosc.io/aosc-documentation/aoscc/2020/zixing-liu/20200923-liushuyu.pdf)
 and [talk (in Mandarin Chinese)](https://www.youtube.com/watch?v=MXeXdMD3qpQ)
 for a list of his contributions.
 

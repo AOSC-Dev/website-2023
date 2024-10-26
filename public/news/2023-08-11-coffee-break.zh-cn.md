@@ -27,7 +27,7 @@ AOSC OS 快讯
 
 ![oma-screenshot](https://raw.githubusercontent.com/AOSC-Dev/newsroom/master/coffee-break/20230811/imgs/omakase.png)
 
-快更新系统，输入 `oma` 命令体验 AOSC OS 的全新包管理吧！Omakase 目前处在 1.0 的初期开发阶段，有许多[新特性与设计](https://repo.aosc.io/aosc-documentation/aoscc-2023/magmell/omakase.pdf)仍在规划当中，欢迎您就使用体验或问题，向我们提出批评建议或[提交问题报告](https://github.com/AOSC-Dev/oma/issues/new)！
+快更新系统，输入 `oma` 命令体验 AOSC OS 的全新包管理吧！Omakase 目前处在 1.0 的初期开发阶段，有许多[新特性与设计](https://repo.aosc.io/aosc-documentation/aoscc/2023/magmell/omakase.pdf)仍在规划当中，欢迎您就使用体验或问题，向我们提出批评建议或[提交问题报告](https://github.com/AOSC-Dev/oma/issues/new)！
 
 Omakase 基于来自 Debian 的 [APT](https://wiki.debian.org/zh_CN/Apt) 开发，并保持与 AOSC OS 先前使用的 APT 功能与行为兼容。为照顾 AOSC OS 老用户的使用习惯，我们将继续在系统中预装 APT，与 Omakase 共存。
 
