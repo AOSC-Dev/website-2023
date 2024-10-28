@@ -325,29 +325,25 @@ const liveKitDivHeight = (
   (antong1List.value.length - 1) * 8
 ).toFixed(2);
 
-const { data: versionArch, status } =  useLazyFetch(
-  'https://releases.aosc.io/manifest/livekit.json',
-  {
-    server: false
-  }
+const { data: versionArch, status } = await useFetch(
+  'https://releases.aosc.io/manifest/livekit.json'
 );
 
-watch(versionArch, () => {
-  antong1List.value.forEach((v) => {
-    v.installer = getNewVersioArch(v.title, 'installer');
-    v.livekit = getNewVersioArch(v.title, 'livekit');
-  });
-  antong2List.value.forEach((v) => {
-    v.installer = getNewVersioArch(v.title, 'installer');
-    v.livekit = getNewVersioArch(v.title, 'livekit');
-  });
-  xingxia1List.value.forEach((v) => {
-    v.livekit = getNewVersioArch(v.title, 'livekit');
-  });
-  xingxia2List.value.forEach((v) => {
-    v.livekit = getNewVersioArch(v.title, 'livekit');
-  });
+antong1List.value.forEach((v) => {
+  v.installer = getNewVersioArch(v.title, 'installer');
+  v.livekit = getNewVersioArch(v.title, 'livekit');
 });
+antong2List.value.forEach((v) => {
+  v.installer = getNewVersioArch(v.title, 'installer');
+  v.livekit = getNewVersioArch(v.title, 'livekit');
+});
+xingxia1List.value.forEach((v) => {
+  v.livekit = getNewVersioArch(v.title, 'livekit');
+});
+xingxia2List.value.forEach((v) => {
+  v.livekit = getNewVersioArch(v.title, 'livekit');
+});
+
 </script>
 
 <template>
