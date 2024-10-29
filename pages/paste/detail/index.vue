@@ -41,7 +41,7 @@ const returnHref = () => window.location.href;
 </script>
 
 <template>
-  <div v-loading="!status==='success'" class="pl-[1px] w-[100%]" >
+  <div v-loading="!status==='success'" class="w-[100%]" >
     <div v-if="details != null">
       <category-second title="公共粘贴板" />
       <div class="p-[2em]">

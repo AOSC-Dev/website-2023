@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div class="pl-[1px]">
+  <div>
     <category-second title="发行注记：2024 年 9 月" />
     <div class="p-6">
       <p>

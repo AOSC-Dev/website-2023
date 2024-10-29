@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div class="pl-[1px]">
+  <div>
     <category-second title="人际关系准则" />
     <div class="p-6">
       <p class="pb-8"> 欢迎来到创立于 2011 年的安同开源社区 (AOSC) ！ </p>

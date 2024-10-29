@@ -21,7 +21,7 @@ const afterLowIsaList = ref();
 </script>
 
 <template>
-  <div class="pl-[1px]">
+  <div>
     <category-second title="星霞 OS 架构支持规格表" id="afterLowIsaTitle" />
     <div class="p-6">
       <p>

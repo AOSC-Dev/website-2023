@@ -25,7 +25,7 @@ const aoscOsRequirementsList = ref();
 </script>
 
 <template>
-  <div class="pl-[1px]">
+  <div>
     <category-second
       title="AOSC OS on WSL 系统配置需求表"
       id="aoscOsRequirementsTitle" />

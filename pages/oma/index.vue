@@ -32,7 +32,7 @@ const _docList = [
 </script>
 
 <template>
-  <div class="pl-[1px]">
+  <div>
     <category-second title="小熊猫包管理 (oma)" />
     <div class="p-6">
       <p>

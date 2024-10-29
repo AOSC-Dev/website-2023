@@ -21,7 +21,7 @@ const afterLowRequirementsList = ref();
 </script>
 
 <template>
-  <div class="pl-[1px]">
+  <div>
     <category-second
       title="星霞 OS 系统配置需求表"
       id="afterLowRequirementsTitle" />

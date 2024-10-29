@@ -1,7 +1,7 @@
 <script setup></script>
 const s=1
 <template>
-  <div class="pl-[1px]">
+  <div>
     <category-second title="社区众筹" />
     <div class="p-6">
       <p

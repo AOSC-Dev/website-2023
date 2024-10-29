@@ -28,7 +28,7 @@ const themeStore = useThemeStore();
             <BarLeft class="min-w-[100%] *:text-nowrap sticky top-0" />
           </div>
 
-          <NuxtPage class="flex-1"/>
+          <NuxtPage class="flex-1 pl-[1px]"/>
         </div>
       </div>
     </div>

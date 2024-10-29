@@ -311,7 +311,7 @@ xingxia2List.value.forEach((v) => {
 </script>
 
 <template>
-  <div class="pl-[1px] flex flex-col">
+  <div class="flex flex-col">
     <category-second id="aosc-os-download" title="操作系统" />
     <div class="flex flex-row flex-1">
       <div

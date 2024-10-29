@@ -16,7 +16,7 @@ const navigationList = [
 </script>
 
 <template>
-  <div class="pl-[1px]">
+  <div>
     <category-second title="社区吉祥物" />
     <div> <img src="/mascot/anan.png" /></div>
 

@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div class="pl-[1px]">
+  <div>
     <category-second title="安同 OS 适合我吗？" id="aoscOsRequirementsTitle" />
     <div class="p-6">
       <p>

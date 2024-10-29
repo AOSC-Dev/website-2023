@@ -6,7 +6,7 @@ const route = useRoute();
   <ContentDoc
     :path="'news/' + route.params.newsPath.replace(/.md$/, '')"
     v-slot="{ doc }">
-    <article class="pl-[1px]">
+    <article>
       <category-second
         :title="doc.title"
         :right-text="doc.date.substring(0, 10)"

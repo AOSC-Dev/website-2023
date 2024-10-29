@@ -57,7 +57,7 @@ const docList = [
 </script>
 
 <template>
-  <div class="pl-[1px]">
+  <div>
     <CategorySecond title="星霞 OS" />
     <div class="p-6">
       <p>

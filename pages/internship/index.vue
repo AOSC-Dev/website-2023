@@ -12,7 +12,7 @@ const navigationList = [
 </script>
 
 <template>
-  <div class="pl-[1px]">
+  <div>
     <category-second title="实习资源" />
     <div class="p-6">
       <p>

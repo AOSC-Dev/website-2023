@@ -4,7 +4,7 @@ const { data:categories } = await useFetch('/newsCategories/zh-cn.json');
 </script>
 
 <template>
-  <div class="pl-[1px]">
+  <div>
     <div class="flex flex-wrap *:w-1/2">
       <div>
         <category-second

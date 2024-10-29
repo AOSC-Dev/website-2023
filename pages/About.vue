@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="pl-[1px]">
+  <div>
     <CategorySecond title="关于社区" />
     <div class="p-6">
       <p>

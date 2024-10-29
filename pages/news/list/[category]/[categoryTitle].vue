@@ -7,7 +7,7 @@ const { data: categories, status } = useFetch(
 </script>
 
 <template>
-  <div class="pl-[1px]">
+  <div>
     <category-second
       :title="route.params.categoryTitle"
       class="border-r-solid border-r-white" />

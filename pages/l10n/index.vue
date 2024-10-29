@@ -19,7 +19,7 @@ const docList = [
 </script>
 
 <template>
-  <div class="pl-[1px]">
+  <div>
     <category-second title="软件本地化" />
     <div class="p-6">
       <p>
