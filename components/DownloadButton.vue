@@ -14,10 +14,6 @@ const props = defineProps({
     type: Number,
     default: 12
   },
-  width: {
-    type: Number,
-    default: 224
-  },
   popoverData: {
     type: Object
   },
@@ -38,7 +34,7 @@ const byteToGb = (bytes) => {
     :style="{
       '--download-button-p-fount-size1': $props.firstLineFontSize + 'pt',
       '--download-button-p-fount-size2': $props.secondLineFontSize + 'pt'
-    }">
+    }" class="h-[52px]">
     <el-popover
       :placement="popoverData.placement"
       :hide-after="0"
@@ -48,10 +44,9 @@ const byteToGb = (bytes) => {
         <AppLink
           :to="url"
           :style="{
-            backgroundColor: buttonColor,
-            width: $props.width + 'px'
+            backgroundColor: buttonColor
           }"
-          class="theme-bg-color-secondary-primary flex h-full flex-col hover:no-underline cursor-pointer mx-1 py-1">
+          class="theme-bg-color-secondary-primary flex h-full flex-col hover:no-underline cursor-pointer py-1">
           <slot></slot>
           <p v-if="archName" class="first-line-p">{{ archName }}</p>
           <p v-if="isaInfo" class="second-line-p"

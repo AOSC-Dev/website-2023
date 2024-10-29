@@ -17,6 +17,7 @@ onMounted(() => {
     'https://get.microsoft.com/badge/ms-store-badge.bundled.js'
   );
   document.head.appendChild(msStoreScript);
+  switchHash();
 });
 
 const aoscOsRef = useTemplateRef('aoscOsDownload');
@@ -108,42 +109,6 @@ watch(
     flush: 'post'
   }
 );
-
-const aoscOsButtonStyle = reactive({
-  width: 224
-});
-
-const downloadButtonLength = (() => {
-  let lessThen = true;
-  return () => {
-    if (lessThen) {
-      lessThen = false;
-      if (aoscOsRef.value.clientWidth <= 498) {
-        if (aoscOsRef.value.clientWidth > 384) {
-          aoscOsButtonStyle.width = (
-            224 -
-            0.55 * (498 - aoscOsRef.value.clientWidth)
-          ).toFixed(2);
-        } else aoscOsButtonStyle.width = 157;
-      } else {
-        aoscOsButtonStyle.width = 224;
-      }
-      lessThen = true;
-    }
-  };
-})();
-
-onMounted(async () => {
-  nextTick(() => {
-    window.addEventListener('resize', downloadButtonLength);
-    downloadButtonLength();
-  });
-  switchHash();
-});
-
-onUnmounted(() => {
-  window.removeEventListener('resize', downloadButtonLength);
-});
 
 const livekitPPlacement = ['top', 'left', 'bottom'];
 
@@ -343,7 +308,6 @@ xingxia1List.value.forEach((v) => {
 xingxia2List.value.forEach((v) => {
   v.livekit = getNewVersioArch(v.title, 'livekit');
 });
-
 </script>
 
 <template>
@@ -372,32 +336,27 @@ xingxia2List.value.forEach((v) => {
             </p>
           </div>
         </div>
-        <div class="download-container mt-0 mb-4 min-h-[129.97px]">
-          <div
-            v-if="status === 'success'"
-            class="button-container-aoscos-multicolumn buttons-col mb-3 mt-1 flex justify-center">
-            <DownloadButton
-              v-for="item in antong1List"
-              :popover-data="item.popoverData"
-              :width="aoscOsButtonStyle.width"
-              :key="item.title"
-              :url="`https://releases.aosc.io/${item.installer.path}`"
-              :arch-name="item.zhLabel"
-              :isa-info="item.installer" />
-            <!-- <button class="text-white hover:opacity-85 cursor-pointer mx-1 text-[10pt] text-center bg-[#549c97]"
-                :style="{ width: aoscOsButtonStyle.width + 'px' }" onclick="location.href='#otherDownload'">
-                <p>其他下载</p>
-              </button> -->
-            <DownloadButton
-              button-color="#549c97"
-              :width="aoscOsButtonStyle.width"
-              :popover-data="{
-                conten: '二级架构、Docker,及虚拟机镜像等其他下载',
-                placement: 'bottom'
-              }"
-              url="#otherDownload"
-              arch-name="其他下载" />
-          </div>
+        <div
+          v-if="status === 'success'"
+          class="mb-4 mx-4 grid grid-cols-2 gap-2 justify-center">
+          <DownloadButton
+            v-for="item in antong1List"
+            :key="item.title"
+            class="grow"
+            :isa-info="item.installer"
+            :arch-name="item.zhLabel"
+            :popover-data="item.popoverData"
+            :url="`https://releases.aosc.io/${item.installer.path}`" />
+          <DownloadButton
+            :class="antong1List.length % 2 === 0 ? 'col-span-2' : ''"
+            button-color="#549c97"
+            class="grow"
+            :popover-data="{
+              conten: '二级架构、Docker,及虚拟机镜像等其他下载',
+              placement: 'bottom'
+            }"
+            :url="{ path: '/download', hash: '#otherDownload' }"
+            arch-name="其他下载" />
         </div>
       </div>
       <div class="afterglow px-[1rem]" ref="afterglowDownload">
@@ -419,7 +378,7 @@ xingxia2List.value.forEach((v) => {
           class="flex-col my-auto pl-[2rem] flex py-[1rem]">
           <p id="livekit" class="text-[24pt]">LiveKit</p>
           <p id="livekit-alt" class="text-[14pt]">功能完备的安同 OS 救援环境</p>
-          <p class="mt-8">
+          <p class="mt-[2rem]">
             <AccordionNavigation
               :navigation-list="liveKitNavigationList"
               link-class=""
@@ -431,24 +390,21 @@ xingxia2List.value.forEach((v) => {
       <div
         id="livekit-buttons"
         class="flex flex-col flex pr-[2rem] ml-auto my-2">
-        <div class="my-auto" :style="{ minHeight: liveKitDivHeight + 'px' }">
-          <div
-            v-if="status === 'success'"
-            class="button-container-aoscos buttons-col">
-            <span v-for="(item, index) in antong1List" :key="item.title">
-              <DownloadButton
-                :popover-data="{
-                  ...item.popoverData,
-                  placement: livekitPPlacement[index]
-                }"
-                :second-line-font-size="8"
-                :width="200"
-                :first-line-font-size="10"
-                :arch-name="item.zhLabel"
-                :url="`https://releases.aosc.io/${item.livekit.path}`"
-                :isa-info="item.livekit" />
-            </span>
-          </div>
+        <div
+          v-if="status === 'success'"
+          class="w-[200px] grid grid-cols-1 gap-2">
+          <span v-for="(item, index) in antong1List" :key="item.title">
+            <DownloadButton
+              :popover-data="{
+                ...item.popoverData,
+                placement: livekitPPlacement[index]
+              }"
+              :second-line-font-size="8"
+              :first-line-font-size="10"
+              :arch-name="item.zhLabel"
+              :url="`https://releases.aosc.io/${item.livekit.path}`"
+              :isa-info="item.livekit" />
+          </span>
         </div>
       </div>
     </div>
@@ -456,7 +412,7 @@ xingxia2List.value.forEach((v) => {
       <div class="flex flex-col pl-[2rem] py-[1rem]">
         <p id="wsl" class="text-[24pt]">WSL 环境</p>
         <p id="wsl-alt" class="text-[14pt]">适用于 WSL 的安同 OS</p>
-        <p class="mt-8">
+        <p class="mt-[2rem]">
           <AccordionNavigation
             :navigation-list="wslNavigationList"
             link-class=""
@@ -503,7 +459,7 @@ xingxia2List.value.forEach((v) => {
     </div>
     <div id="otherDownload">
       <category-second id="tier-2-downloads" title="安同 OS（二级架构）" />
-      <div ref="tier2Downloads" class="w-[100%] flex-row py-[1rem] flex mb-8">
+      <div ref="tier2Downloads" class="w-[100%] flex-row py-[1rem] flex mb-[2rem]">
         <div class="pl-[2rem] my-auto">
           <p class="text-[13pt]">安同 OS 支持支持众多处理器微架构。</p>
           <p class="text-[13pt] mt-1">除 x86-64、AArch64 及 LoongArch 外，</p>
@@ -514,13 +470,12 @@ xingxia2List.value.forEach((v) => {
         </div>
         <div
           v-if="status === 'success'"
-          class="flex flex-col pr-[2rem] gap-y-[0.5rem] ml-auto">
+          class="ml-auto mr-[2rem] w-[200px] grid grid-cols-1 gap-2">
           <div v-for="item in antong2List" :key="item.title">
             <DownloadButton
+            v-if="item.installer !== undefined"
               :popover-data="item.popoverData"
               :second-line-font-size="8"
-              :width="200"
-              v-if="item.installer !== undefined"
               :first-line-font-size="10"
               :arch-name="item.zhLabel"
               :url="`https://releases.aosc.io/${item.installer.path}`"
@@ -548,11 +503,6 @@ xingxia2List.value.forEach((v) => {
 </template>
 
 <style scoped>
-.download-container {
-  display: flex;
-  flex-flow: column;
-}
-
 p {
   line-height: 1.2;
 }
@@ -589,22 +539,6 @@ p {
 
 .button-p {
   font-size: 10pt;
-}
-
-.button-container-aoscos {
-  display: flex;
-  justify-content: right;
-  flex-flow: column;
-  row-gap: 0.5em;
-  align-self: flex-end;
-  margin: 0 auto;
-}
-
-.button-container-aoscos-multicolumn {
-  display: flex;
-  row-gap: 0.5em;
-  flex-wrap: wrap;
-  align-self: flex-end;
 }
 
 .button-container-afterglow {
@@ -651,10 +585,6 @@ p {
   background-position-x: 0%, 30rem;
   background-size: 100%, 50rem;
   background-repeat: no-repeat;
-}
-
-.buttons-col button {
-  padding: 0.25rem 0;
 }
 
 ms-store-badge::part(img) {
