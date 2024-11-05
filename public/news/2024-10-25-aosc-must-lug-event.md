@@ -4,7 +4,6 @@ categories:
 title: "《安同校园行》澳门科技大学站日程预告"
 date: 2024-10-25T18:30:00+08:00
 important: true
-home: true
 ---
 ![](/assets/news/aosc-must-lug-poster.png)
 
