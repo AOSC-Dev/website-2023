@@ -1,5 +1,9 @@
 <script setup>
-const { data: newsList } = await useFetch(`/newsCategories/home.zh-cn.json`);
+console.log(2);
+const { data: newsList } = await useFetch(
+  `http://localhost:3001/newsCategories/home.zh-cn.json`
+);
+console.log(1);
 const zhuanlanList = [
   {
     img: '/icons/key-enter.min.svg',

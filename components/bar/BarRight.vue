@@ -49,7 +49,7 @@ const commonLinkList = [
         src="/jumbotron/minor2.svg"
         class="w-full imgScale1 cursor-pointer" />
     </a>
-    <div class="flex flex-col flex-grow">
+    <div class="flex flex-col grow">
       <CategorySecond
         title="系统方案"
         class="border-l border-solid border-content-main-bg" />

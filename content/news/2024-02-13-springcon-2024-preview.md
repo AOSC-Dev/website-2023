@@ -26,7 +26,7 @@ important: false
 
 - 王江津：Spiral 泛 Debian 兼容性框架及系统更新摘要规范
 
-参会前，请参阅 [AOSC 廿四年度烙饼会的参会信息、日程指南与注意事项 ](https://wiki.aosc.io/zh/community/springcon/2024/)，帮助我们将第一届“烙饼会”办好，感谢！
+参会前，请参阅 [AOSC 廿四年度烙饼会的参会信息、日程指南与注意事项 ](https://wiki.aosc.io/zh//springcon/2024/)，帮助我们将第一届“烙饼会”办好，感谢！
 
 [腾讯会议参会链接 >> ](https://meeting.tencent.com/dm/z4b5FnLlBX63)
 

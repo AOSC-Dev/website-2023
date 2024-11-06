@@ -1,6 +1,4 @@
 <script setup lang="js">
-import '~/assets/css/main.css';
-import '~/assets/index.scss';
 const highBrightnessControllerStore = useHighBrightnessControllerStore();
 const router = useRouter();
 
@@ -8,6 +6,7 @@ router.afterEach((to, from) => {
   highBrightnessControllerStore.obj[to.path] =
     !highBrightnessControllerStore.obj[to.path];
 });
+
 
 const themeStore = useThemeStore();
 </script>

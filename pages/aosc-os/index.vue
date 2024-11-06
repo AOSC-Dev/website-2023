@@ -3,6 +3,7 @@ const route = useRoute();
 
 const features = ref();
 
+
 const highBrightnessControllerStore = useHighBrightnessControllerStore();
 
 watch(
@@ -61,7 +62,6 @@ const docList = reactive([
     url: '/'
   } */
 ]);
-
 </script>
 
 <template>

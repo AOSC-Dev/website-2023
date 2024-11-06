@@ -7,7 +7,7 @@ title: AOSC OS Base and BuildKit Tarball Updates
 ---
 
 
-Tarballs for AOSC OS Base (bare-metal variant) and BuildKit (packaging/development variant) are updated yesterday for all supported architectures - you may now obtain them via the ["GET AOSC OS"](/os-download) link above.
+Tarballs for AOSC OS Base (bare-metal variant) and BuildKit (packaging/development variant) are updated yesterday for all supported architectures - you may now obtain them via the ["GET AOSC OS"](/download#aosc-os-download) link above.
 
 Significant changes to the tarballs include:
 

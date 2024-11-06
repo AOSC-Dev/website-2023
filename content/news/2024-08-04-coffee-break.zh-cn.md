@@ -1,10 +1,9 @@
 ---
 categories:
   - journals
-title: "安记冰室・七月下"
+title: '安记冰室・七月下'
 date: 2024-08-04T23:00:00+08:00
 important: false
-
 ---
 
 [afterglow]: https://website-2023.aosc.io/afterglow
@@ -31,15 +30,13 @@ important: false
 [zhaxia]: https://www.mihuashi.com/profiles/571437
 [zstd]: https://github.com/facebook/zstd
 
-
 <!-- 拿着糯米鸡的 -->
 
 > “食个糯米鸡咯！”
 
 欢迎阅读安同开源社区 (AOSC) 期刊《安记冰室》！本栏目旨在以轻松可及的方式，以图文形式介绍过去两周的开发进展、社区事务与近期社区内外活动资讯。此外，本栏目还用于发布与社团及行业人士及代表的访谈录，以特辑形式发布。本栏目不发表评论性内容。
 
-用户公告
---------
+## 用户公告
 
 近期，由于我们的疏忽，推送了两轮存在问题的更新。至发稿时所有问题更新均已得到修复，下面转发两则公告供各位用户朋友参考。
 
@@ -84,9 +81,7 @@ sudo oma topics --opt-in chromium-127.0.6533.72 && sudo oma install chromium
 
 如果您在使用 Chromium 127.0.6533.88 测试版的过程中遇到问题或有疑问及反馈，请通过安同社区各聊天群组或社区论坛以联系我们，或直接前往[拉取请求](https://github.com/AOSC-Dev/aosc-os-abbs/pull/7270)下方留言。感谢各位参与！
 
-
-社区脉动
---------
+## 社区脉动
 
 ### 不虚此行：AOSCC 2024 后记
 
@@ -124,8 +119,7 @@ AOSCC 是由安同开源社区诸多社区好友、赞助方的慷慨解囊，�
 
 衷心感谢各位慷慨捐赠和大力支持！
 
-系统快讯
---------
+## 系统快讯
 
 ### localhost：安同 OS 核心包第 12 版代号出炉
 
@@ -150,7 +144,7 @@ AOSCC 是由安同开源社区诸多社区好友、赞助方的慷慨解囊，�
 
 #### 发行说明
 
-安装盘维护者[杨欣辉][cyanoxygen]为该安装盘的功能细节和使用流程编写了一份详尽的[发行说明](offline-installer-release-notes.md)，欢迎查阅。
+安装盘维护者[杨欣辉][cyanoxygen]为该安装盘的功能细节和使用流程编写了一份详尽的[发行说明](/news/2024-08-04-offline-installer-release-notes)，欢迎查阅。
 
 #### 下载安装盘
 
@@ -198,13 +192,13 @@ AOSCC 是由安同开源社区诸多社区好友、赞助方的慷慨解囊，�
 
 随着安同 OS 用户群体日益壮大，作为一线系统管理项目的小熊猫包管理 (oma) 也收到了越来越多的用户反馈。在过去一个月中，oma 发布了多个 1.3 修复版本，在修缮使用问题的至于，大幅度改善了 Debian/Ubuntu 兼容性，还优化了诸如测试源 (topic) 设置界面的清晰度。如下是 oma 近期发布版本的更改日志，欲知 oma 近期的开发进展，请参阅下列发布公告：
 
-- [v1.3.36 更新日志](oma-1.3.36-release-notes.md)
-- [v1.3.34 更新日志](oma-1.3.34-release-notes.md)
-- [v1.3.33 更新日志](oma-1.3.33-release-notes.md)
-- [v1.3.32 更新日志](oma-1.3.32-release-notes.md)
-- [v1.3.31 更新日志](oma-1.3.31-release-notes.md)
-- [v1.3.30 更新日志](oma-1.3.30-release-notes.md)
-- [v1.3.29 更新日志](oma-1.3.29-release-notes.md)
+- [v1.3.36 更新日志](/)
+- [v1.3.34 更新日志](/)
+- [v1.3.33 更新日志](/)
+- [v1.3.32 更新日志](/)
+- [v1.3.31 更新日志](/)
+- [v1.3.30 更新日志](/)
+- [v1.3.29 更新日志](/)
 
 您对小熊猫包管理的使用体验满意吗？欢迎来我社群组和论坛分享您的体会！
 
@@ -252,8 +246,7 @@ AOSCC 是由安同开源社区诸多社区好友、赞助方的慷慨解囊，�
 
 此外，由我社贡献者 [Icenowy Zheng](https://github.com/Icenowy) 实现的[龙架构 llvmpipe OrcJIT 适配](https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/30197)及[盘上着色器缓存支持](https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/30036)也已合并上游，预计将随 Mesa 24.3 一同发布（安同 OS 的 Mesa 组件已在过去一段时间对这部分功能进行测试了测试验证）。
 
-开发者角
---------
+## 开发者角
 
 ### abbs-update-checksum 工具发布：便捷刷新软件包校验和信息
 
@@ -275,7 +268,7 @@ AOSCC 是由安同开源社区诸多社区好友、赞助方的慷慨解囊，�
 
 [Kaboom](https://github.com/AOSC-Dev/kaboom)（安同 OS 系统移植自举工具）能够从头构建出带有包管理器及 Autobuild 基础设施的安同 OS 基础开发环境，因此常用于引入安同 OS 的新移植及重启现有移植。
 
-日前，[白铭骢](mingcongbai)对 Kaboom 进行了翻修：
+日前，[白铭骢](/)对 Kaboom 进行了翻修：
 
 - 适配了安同 OS 核心包第 11 版 (Core 11)
 - 修复了自举期间的构建错误
@@ -334,8 +327,7 @@ AOSCC 是由安同开源社区诸多社区好友、赞助方的慷慨解囊，�
 - [TechCiel](https://github.com/TechCiel)
 - [xtex](https://github.com/xtexChooser)
 
-一起吹水
---------
+## 一起吹水
 
 <details>
     <summary>点此查看进群说明，一起吹水玩耍吧~</summary>
@@ -359,10 +351,10 @@ AOSCC 是由安同开源社区诸多社区好友、赞助方的慷慨解囊，�
 ### Discord 语音频道
 
 ![discord](/assets/discord.png)
+
 </details>
 
-栏目介绍
---------
+## 栏目介绍
 
 考虑到社区项目和文化等日趋成熟，我们决定重启外联和宣传工作，在更广阔的天地寻找志同道合的朋友。
 

@@ -8,7 +8,7 @@ important: false
 ---
 ![](/assets/news/coffee-break/20240623/imgs/aoscc-2024-jlu.png)
 
-请各位与会者适时查阅[参会实用信息](https://wiki.aosc.io/zh/community/aoscc/2024-guide/)，以获取交通、住宿、餐饮、文旅指南。
+请各位与会者适时查阅[参会实用信息](https://wiki.aosc.io/zh//aoscc/2024-guide/)，以获取交通、住宿、餐饮、文旅指南。
 
 我们已在协议酒店「如家酒店 (长春高新吉林大学店)」大堂设置了签到处，今日协议酒店的与会者可先行签到并领取材料。
 

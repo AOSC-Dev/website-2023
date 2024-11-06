@@ -105,7 +105,6 @@ const handleChange = (uploadFile, uploadFiles) => {
               {{ item }}
             </option>
           </select>
-
           <input
             v-model="pasteFormData.expDate"
             required

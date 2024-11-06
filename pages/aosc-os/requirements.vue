@@ -1,5 +1,4 @@
 <script setup>
-
 const docList = reactive([
   {
     title: '安同 OS 架构支持规格表',
@@ -21,11 +20,14 @@ onMounted(() => {
       break;
   }
 });
+const nuxtApp = useNuxtApp();
+const { data: time } = await useLazyFetch('http://localhost:3002/return1');
 const aoscOsRequirementsList = ref();
 </script>
 
 <template>
   <div>
+    <div>{{ time }}</div>
     <category-second
       title="安同 OS 系统配置需求表"
       id="aoscOsRequirementsTitle" />

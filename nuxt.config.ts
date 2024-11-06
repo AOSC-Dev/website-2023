@@ -1,19 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  routeRules: {
-    '/': {
-      swr: true
-    },
-    '/**': {
-      swr: true
-    },
-    '/download': {
-      swr: 300
-    },
-    '/news/detail/**': {
-      prerender: true
-    }
-  },
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
   modules: [
@@ -23,7 +9,7 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     'nuxt-monaco-editor'
   ],
-  css: ['~/assets/css/main.css'],
+  css: ['~/assets/css/main.css', '~/assets/index.scss'],
   postcss: {
     plugins: {
       tailwindcss: {},

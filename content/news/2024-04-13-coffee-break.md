@@ -69,7 +69,7 @@ oma install aosc-media-writer
 
 当然，能玩的原生游戏还是越多越好啦，这部分尚需努力。那么，近期龙架构版还有啥玩头呢？
 
-请允许我们推荐测试 Linux 内核 6.9 版（`linux-kernel-6.9`）：新增来自[自发对称破缺](https//github.com/Fanfansfan)修改的 Intel xe 驱动，支持在龙架构上使用 Intel DG1 和 DG2 系列显卡；配合近期推送的 Mesa 图形库和多媒体驱动更新，还可以完美硬解视频。
+请允许我们推荐测试 Linux 内核 6.9 版（`linux-kernel-6.9`）：新增来自[自发对称破缺](https://github.com/Fanfansfan)修改的 Intel xe 驱动，支持在龙架构上使用 Intel DG1 和 DG2 系列显卡；配合近期推送的 Mesa 图形库和多媒体驱动更新，还可以完美硬解视频。
 
 此外小声说下：该版内核还支持搭载新世界固件的 2K2000 开发板，有拿到新世界固件的幸运儿可以装上试试看啦！
 

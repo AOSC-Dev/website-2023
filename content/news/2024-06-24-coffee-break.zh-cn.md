@@ -28,7 +28,7 @@ important: false
 
 <!-- 微信公众号请使用 /assets/news/coffee-break/20240623/imgs/aoscc-2024-registration-qrcode.jpg；文案“请扫描下方二维码填写问卷” -->
 
-在未来数周中，我们将随着组织工作的进展持续发布讲者、日程和到场福利等信息，敬请关注我社各资讯渠道和 [AOSCC 2024 信息页](https://wiki.aosc.io/zh/community/aoscc/2024)。
+在未来数周中，我们将随着组织工作的进展持续发布讲者、日程和到场福利等信息，敬请关注我社各资讯渠道和 [AOSCC 2024 信息页](https://wiki.aosc.io/zh//aoscc/2024)。
 
 ### 高手如云：AOSCC 2024 讲者与课题一瞥
 
@@ -84,7 +84,7 @@ important: false
 
 ![农企舰队向您致意！](/assets/news/coffee-break/20240623/imgs/amd-armada.jpg)
 
-得力于社区各位好友的[慷慨解囊](https://wiki.aosc.io/zh/community/crowdsourcing/new-amd64-servers/)，我们购置并上线了 4 台基于 AMD Ryzen 7 5700X 的 x86-64 构建服务器。每台服务器均搭载 64GiB 内存及 800GB 的 Intel 750 固态硬盘，可显著改善我社安同 OS x86-64 移植的维护体验。
+得力于社区各位好友的[慷慨解囊](https://wiki.aosc.io/zh//crowdsourcing/new-amd64-servers/)，我们购置并上线了 4 台基于 AMD Ryzen 7 5700X 的 x86-64 构建服务器。每台服务器均搭载 64GiB 内存及 800GB 的 Intel 750 固态硬盘，可显著改善我社安同 OS x86-64 移植的维护体验。
 
 ### 应用上新：libLoL 应用兼容性数据库发布更新
 

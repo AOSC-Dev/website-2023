@@ -174,7 +174,7 @@ sudo oma topics
 
 ### 社区友人捐赠的两台新 AArch64 构建服务器投入使用
 
-年初[升级 AMD64 构建服务器](https://wiki.aosc.io/zh/community/crowdsourcing/epyc-22333-upgrade-2023/)后，同属 AOSC OS 一级架构的 AArch64 (`arm64`) 维护算力已大幅度落后于 AMD64 (`amd64`) 。加之网络及存储 I/O 性能方面的局限，现有 AArch64 构建服务器拖慢了一级架构编译、打包和测试的效率。六月，社区友人捐赠了两台高性能 AArch64 服务器：一台搭载 64 核飞腾 FT2000/64 处理器，另一台搭载 64 核华为鲲鹏 920。而后，社区朋友慷慨解囊，[成功众筹了一些必要部件](https://wiki.aosc.io/zh/community/crowdsourcing/new-aarch64-server-parts/)并提供托管服务。
+年初[升级 AMD64 构建服务器](https://wiki.aosc.io/zh//crowdsourcing/epyc-22333-upgrade-2023/)后，同属 AOSC OS 一级架构的 AArch64 (`arm64`) 维护算力已大幅度落后于 AMD64 (`amd64`) 。加之网络及存储 I/O 性能方面的局限，现有 AArch64 构建服务器拖慢了一级架构编译、打包和测试的效率。六月，社区友人捐赠了两台高性能 AArch64 服务器：一台搭载 64 核飞腾 FT2000/64 处理器，另一台搭载 64 核华为鲲鹏 920。而后，社区朋友慷慨解囊，[成功众筹了一些必要部件](https://wiki.aosc.io/zh//crowdsourcing/new-aarch64-server-parts/)并提供托管服务。
 
 ![两台全新 AArch64 构建服务器](https://raw.githubusercontent.com/AOSC-Dev/newsroom/master/coffee-break/20231014/imgs/new-aarch64-servers.jpg)
 

@@ -14,7 +14,7 @@ const props = defineProps({
     <div v-else class="flex flex-col">
       <div v-for="item in newsList" :key="item.title" class="newslist-item">
         <NuxtLink
-          :to="'/news/detail/' + item.Path"
+          :to="'/news/' + item.Path.replace(/.md$/, '')"
           class="hover:bg-leftbar-bg flex cursor-pointer pl-6 h-[2rem] leading-8">
           <span class="truncate flex-1">
             {{ item.Title }}

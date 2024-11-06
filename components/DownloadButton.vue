@@ -7,12 +7,12 @@ const props = defineProps({
     type: Object
   },
   secondLineFontSize: {
-    type: Number,
-    default: 10
+    type: String,
+    default: '10pt'
   },
   firstLineFontSize: {
-    type: Number,
-    default: 12
+    type: String,
+    default: '12pt'
   },
   popoverData: {
     type: Object
@@ -30,11 +30,7 @@ const byteToGb = (bytes) => {
 };
 </script>
 <template>
-  <div
-    :style="{
-      '--download-button-p-fount-size1': $props.firstLineFontSize + 'pt',
-      '--download-button-p-fount-size2': $props.secondLineFontSize + 'pt'
-    }" class="h-[52px]">
+  <div class="h-[52px]">
     <el-popover
       :placement="popoverData.placement"
       :hide-after="0"
@@ -60,11 +56,11 @@ const byteToGb = (bytes) => {
 
 <style scoped>
 .first-line-p {
-  font-size: var(--download-button-p-fount-size1);
+  font-size: v-bind(firstLineFontSize);
 }
 
 .second-line-p {
-  font-size: var(--download-button-p-fount-size2);
+  font-size: v-bind(secondLineFontSize);
 }
 
 p {

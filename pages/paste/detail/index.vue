@@ -16,7 +16,7 @@ function getAttachUrl(name) {
   return `/pasteContent/${route.query.id}/files/${name}`;
 }
 
-const { data: results, status } = await useFetch('/pasteApi/paste', {
+const { data: results, status } = await useFetch('http://localhost:3001/pasteApi/paste', {
   query: { id: route.query.id }
 });
 switch (status.value) {

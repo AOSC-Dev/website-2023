@@ -1,5 +1,5 @@
 <script setup>
-const { data:categories } = await useFetch('/newsCategories/zh-cn.json');
+const { data:categories } = await useFetch('http://localhost:3001/newsCategories/zh-cn.json');
 
 </script>
 

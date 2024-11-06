@@ -10,15 +10,15 @@
  * 由于两个子发行版各自支持不同的架构，所以可以通过架构名判断是安同 OS 还是星霞 OS，一二级架构同理
  */
 const route = useRoute();
-onMounted(() => {
-  const msStoreScript = document.createElement('script');
-  msStoreScript.setAttribute(
-    'src',
-    'https://get.microsoft.com/badge/ms-store-badge.bundled.js'
-  );
-  document.head.appendChild(msStoreScript);
-  switchHash();
-});
+// onMounted(() => {
+//   const msStoreScript = document.createElement('script');
+//   msStoreScript.setAttribute(
+//     'src',
+//     'https://get.microsoft.com/badge/ms-store-badge.bundled.js'
+//   );
+//   document.head.appendChild(msStoreScript);
+//   switchHash();
+// });
 
 const aoscOsRef = useTemplateRef('aoscOsDownload');
 const afterglowRef = useTemplateRef('afterglowDownload');
@@ -284,30 +284,73 @@ const getNewVersioArch = (arch, type) => {
   list = list.sort(isoVersionCmp);
   return list[0];
 };
+const isReady = ref(false);
+const versionArch = ref();
+if (import.meta.client) {
+  const [res, err] = await requestGetJson(
+    'https://releases.aosc.io/manifest/livekit.json'
+  );
+  if (res) {
+    versionArch.value = res.data;
+    antong1List.value.forEach((v) => {
+      v.installer = getNewVersioArch(v.title, 'installer');
+      v.livekit = getNewVersioArch(v.title, 'livekit');
+    });
+    antong2List.value.forEach((v) => {
+      v.installer = getNewVersioArch(v.title, 'installer');
+      v.livekit = getNewVersioArch(v.title, 'livekit');
+    });
+    xingxia1List.value.forEach((v) => {
+      v.livekit = getNewVersioArch(v.title, 'livekit');
+    });
+    xingxia2List.value.forEach((v) => {
+      v.livekit = getNewVersioArch(v.title, 'livekit');
+    });
+    isReady.value = true;
+  }
+}
+// const { data: versionArch, status } = await useLazyFetch(
+//   'https://releases.aosc.io/manifest/livekit.json',
+//   {
+//     getCachedData(key) {
+//       console.log(1, nuxtApp.payload.data[key] || nuxtApp.static.data[key]);
+//       return nuxtApp.payload.data[key] || nuxtApp.static.data[key];
+//     }
+//   }
+// );
+// watch(
+//   versionArch,
+//   () => {
+//     if (status.value === 'success') {
+//       antong1List.value.forEach((v) => {
+//         v.installer = getNewVersioArch(v.title, 'installer');
+//         v.livekit = getNewVersioArch(v.title, 'livekit');
+//       });
+//       antong2List.value.forEach((v) => {
+//         v.installer = getNewVersioArch(v.title, 'installer');
+//         v.livekit = getNewVersioArch(v.title, 'livekit');
+//       });
+//       xingxia1List.value.forEach((v) => {
+//         v.livekit = getNewVersioArch(v.title, 'livekit');
+//       });
+//       xingxia2List.value.forEach((v) => {
+//         v.livekit = getNewVersioArch(v.title, 'livekit');
+//       });
+//     }
+//   },
+//   { immediate: true }
+// );
 
-const liveKitDivHeight = (
-  antong1List.value.length * 43.99 +
-  (antong1List.value.length - 1) * 8
-).toFixed(2);
+const antong1RowNumber = Math.ceil(antong1List.value.length / 2);
+const antong1Height = antong1RowNumber * 52 + (antong1RowNumber - 1) * 8 + 'px';
 
-const { data: versionArch, status } = await useFetch(
-  'https://releases.aosc.io/manifest/livekit.json'
-);
+const liveKitHeight =
+  antong1List.value.length * 52 + (antong1List.value.length - 1) * 8 + 'px';
 
-antong1List.value.forEach((v) => {
-  v.installer = getNewVersioArch(v.title, 'installer');
-  v.livekit = getNewVersioArch(v.title, 'livekit');
-});
-antong2List.value.forEach((v) => {
-  v.installer = getNewVersioArch(v.title, 'installer');
-  v.livekit = getNewVersioArch(v.title, 'livekit');
-});
-xingxia1List.value.forEach((v) => {
-  v.livekit = getNewVersioArch(v.title, 'livekit');
-});
-xingxia2List.value.forEach((v) => {
-  v.livekit = getNewVersioArch(v.title, 'livekit');
-});
+const antong2Height =
+  (antong1List.value.length - 1) * 52 +
+  (antong1List.value.length - 2) * 8 +
+  'px';
 </script>
 
 <template>
@@ -321,12 +364,10 @@ xingxia2List.value.forEach((v) => {
           <div class="mt-[0.5rem] min-w-[96px] w-[24%] flex">
             <img src="/download/aosc-os-web.svg" />
           </div>
-          <div class="text-aosc-os my-[1.5rem]">
+          <div class="text-aosc-os min-h-[94px] my-[1.5rem]">
             <p class="text-[32pt]">安同 OS</p>
             <p class="text-[14pt]">称心得意的桌面操作系统</p>
-            <p
-              v-if="status === 'success'"
-              class="width-[220px] text-[10pt] mt-1">
+            <p v-if="isReady" class="width-[220px] text-[10pt] mt-1">
               {{ getAntongDate() }}·
               <AccordionNavigation
                 :navigation-list="aoscOsNavigationList"
@@ -337,26 +378,34 @@ xingxia2List.value.forEach((v) => {
           </div>
         </div>
         <div
-          v-if="status === 'success'"
-          class="mb-4 mx-4 grid grid-cols-2 gap-2 justify-center">
-          <DownloadButton
-            v-for="item in antong1List"
-            :key="item.title"
-            class="grow"
-            :isa-info="item.installer"
-            :arch-name="item.zhLabel"
-            :popover-data="item.popoverData"
-            :url="`https://releases.aosc.io/${item.installer.path}`" />
-          <DownloadButton
-            :class="antong1List.length % 2 === 0 ? 'col-span-2' : ''"
-            button-color="#549c97"
-            class="grow"
-            :popover-data="{
-              conten: '二级架构、Docker,及虚拟机镜像等其他下载',
-              placement: 'bottom'
-            }"
-            :url="{ path: '/download', hash: '#otherDownload' }"
-            arch-name="其他下载" />
+          id="antong1-buttons"
+          v-loading="!isReady"
+          element-loading-text="Loading..."
+          element-loading-background="rgba(122, 122, 122, 0)"
+          class="mb-[1rem]">
+          <div v-if="!isReady" class="loader m-auto"></div>
+          <div
+            v-if="isReady"
+            class="mx-4 grid grid-cols-2 gap-2 justify-center">
+            <DownloadButton
+              v-for="item in antong1List"
+              :key="item.title"
+              class="grow"
+              :isa-info="item.installer"
+              :arch-name="item.zhLabel"
+              :popover-data="item.popoverData"
+              :url="`https://releases.aosc.io/${item.installer.path}`" />
+            <DownloadButton
+              :class="antong1List.length % 2 === 0 ? 'col-span-2' : ''"
+              button-color="#549c97"
+              class="grow"
+              :popover-data="{
+                conten: '二级架构、Docker,及虚拟机镜像等其他下载',
+                placement: 'bottom'
+              }"
+              :url="{ path: '/download', hash: '#otherDownload' }"
+              arch-name="其他下载" />
+          </div>
         </div>
       </div>
       <div class="afterglow px-[1rem]" ref="afterglowDownload">
@@ -373,11 +422,9 @@ xingxia2List.value.forEach((v) => {
 
     <div class="livekit-container w-[100%] flex flex-row">
       <div class="flex flex-col">
-        <div
-          id="livekit-title"
-          class="flex-col my-auto pl-[2rem] flex py-[1rem]">
-          <p id="livekit" class="text-[24pt]">LiveKit</p>
-          <p id="livekit-alt" class="text-[14pt]">功能完备的安同 OS 救援环境</p>
+        <div class="flex-col my-auto pl-[2rem] flex py-[1rem]">
+          <p class="text-[24pt]">LiveKit</p>
+          <p class="text-[14pt]">功能完备的安同 OS 救援环境</p>
           <p class="mt-[2rem]">
             <AccordionNavigation
               :navigation-list="liveKitNavigationList"
@@ -389,18 +436,16 @@ xingxia2List.value.forEach((v) => {
       </div>
       <div
         id="livekit-buttons"
-        class="flex flex-col flex pr-[2rem] ml-auto my-2">
-        <div
-          v-if="status === 'success'"
-          class="w-[200px] grid grid-cols-1 gap-2">
+        class="flex flex-col flex ml-auto mr-[2rem] my-[0.5rem]">
+        <div v-if="isReady" class="w-[200px] grid grid-cols-1 gap-2">
           <span v-for="(item, index) in antong1List" :key="item.title">
             <DownloadButton
               :popover-data="{
                 ...item.popoverData,
                 placement: livekitPPlacement[index]
               }"
-              :second-line-font-size="8"
-              :first-line-font-size="10"
+              second-line-font-size="8pt"
+              first-line-font-size="10pt"
               :arch-name="item.zhLabel"
               :url="`https://releases.aosc.io/${item.livekit.path}`"
               :isa-info="item.livekit" />
@@ -410,8 +455,8 @@ xingxia2List.value.forEach((v) => {
     </div>
     <div class="wsl-container w-[100%] flex flex-row">
       <div class="flex flex-col pl-[2rem] py-[1rem]">
-        <p id="wsl" class="text-[24pt]">WSL 环境</p>
-        <p id="wsl-alt" class="text-[14pt]">适用于 WSL 的安同 OS</p>
+        <p class="text-[24pt]">WSL 环境</p>
+        <p class="text-[14pt]">适用于 WSL 的安同 OS</p>
         <p class="mt-[2rem]">
           <AccordionNavigation
             :navigation-list="wslNavigationList"
@@ -429,9 +474,8 @@ xingxia2List.value.forEach((v) => {
         </ms-store-badge>
       </div>
     </div>
-    <category-second class="highlight" title="实用工具" />
+    <category-second id="oma-download" class="highlight" title="实用工具" />
     <div
-      id="oma-download"
       ref="omaDownload"
       class="oma-container w-[100%] flex flex-row py-[1rem]">
       <div class="pl-[2rem]">
@@ -459,7 +503,7 @@ xingxia2List.value.forEach((v) => {
     </div>
     <div id="otherDownload">
       <category-second id="tier-2-downloads" title="安同 OS（二级架构）" />
-      <div ref="tier2Downloads" class="w-[100%] flex-row py-[1rem] flex mb-[2rem]">
+      <div ref="tier2Downloads" class="w-[100%] flex-row py-[1rem] flex">
         <div class="pl-[2rem] my-auto">
           <p class="text-[13pt]">安同 OS 支持支持众多处理器微架构。</p>
           <p class="text-[13pt] mt-1">除 x86-64、AArch64 及 LoongArch 外，</p>
@@ -468,15 +512,14 @@ xingxia2List.value.forEach((v) => {
           >
           <p class="text-[13pt] mt-1">并发布镜像供各位玩家试用和评估。</p>
         </div>
-        <div
-          v-if="status === 'success'"
-          class="ml-auto mr-[2rem] w-[200px] grid grid-cols-1 gap-2">
-          <div v-for="item in antong2List" :key="item.title">
+        <div id="antong2-buttons" class="ml-auto mr-[2rem] my-[0.5rem]">
+          <div v-if="isReady" class="grid grid-cols-1 gap-2">
             <DownloadButton
-            v-if="item.installer !== undefined"
+              v-for="item in antong2List.filter((obj) => obj.installer)"
+              :key="item.title"
               :popover-data="item.popoverData"
-              :second-line-font-size="8"
-              :first-line-font-size="10"
+              second-line-font-size="8pt"
+              first-line-font-size="10pt"
               :arch-name="item.zhLabel"
               :url="`https://releases.aosc.io/${item.installer.path}`"
               :isa-info="item.installer" />
@@ -496,8 +539,7 @@ xingxia2List.value.forEach((v) => {
         <app-highlight
           lang="bash"
           code="docker pull aosc/aosc-os" />
-      </div>
-      -->
+      </div> -->
     </div>
   </div>
 </template>
@@ -590,5 +632,15 @@ p {
 ms-store-badge::part(img) {
   width: 200px;
   display: block;
+}
+
+#antong1-buttons {
+  min-height: v-bind(antong1Height);
+}
+#livekit-buttons {
+  min-height: v-bind(liveKitHeight);
+}
+#antong2-buttons {
+  min-height: v-bind(antong2Height);
 }
 </style>

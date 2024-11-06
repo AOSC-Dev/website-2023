@@ -3,7 +3,7 @@ import yaml from 'js-yaml';
 
 const galleryList = ref([]);
 
-const { data } = await useFetch('/gallery.yml');
+const { data } = await useFetch('http://localhost:3001/gallery.yml');
   galleryList.value = yaml.load(data.value);
 
 

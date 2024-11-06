@@ -39,7 +39,7 @@ important: false
 - [杨欣辉](https://github.com/Cyanoxygen)：Devena 设备支持框架及 AOSC OS 初次启动向导
 - [王江津](https://github.com/RedL0tus)：Spiral 泛 Debian 兼容性框架及系统更新摘要规范
 
-参会前，请参阅 AOSC 廿四年度烙饼会的[参会信息、日程指南与注意事项](https://wiki.aosc.io/zh/community/springcon/2024/)，帮助我们将第一届“烙饼会”办好，下周见！
+参会前，请参阅 AOSC 廿四年度烙饼会的[参会信息、日程指南与注意事项](https://wiki.aosc.io/zh//springcon/2024/)，帮助我们将第一届“烙饼会”办好，下周见！
 
 腾讯会议链接：https://meeting.tencent.com/dm/z4b5FnLlBX63
 

@@ -2,7 +2,7 @@
 const route = useRoute();
 
 const { data: categories, status } = useFetch(
-  `/newsCategories/${route.params.category}.zh-cn.json`
+  `http://localhost:3001/newsCategories/${route.params.category}.zh-cn.json`
 );
 </script>
 

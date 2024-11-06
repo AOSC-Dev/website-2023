@@ -38,7 +38,7 @@ important: false
 
 <!-- 微信公众号请使用 /assets/news/coffee-break/20240609/imgs/aoscc-2024-registration-qrcode.jpg；文案“请扫描下方二维码填写问卷” -->
 
-在未来数周中，我们将随着组织工作的进展持续发布讲者、日程和到场福利等信息，敬请关注我社各资讯渠道和 [AOSCC 2024 信息页](https://wiki.aosc.io/zh/community/aoscc/2024)。
+在未来数周中，我们将随着组织工作的进展持续发布讲者、日程和到场福利等信息，敬请关注我社各资讯渠道和 [AOSCC 2024 信息页](https://wiki.aosc.io/zh//aoscc/2024)。
 
 ### 好耶！安安同同贴图包来啦
 
