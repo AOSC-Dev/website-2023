@@ -4,7 +4,6 @@ categories:
 title: "2024 年社区纪念衫（冬装）设计与订购预告"
 date: 2024-10-30T23:00:00+08:00
 important: false
-home: true
 ---
 ![最新最热安同爆款冬装！](/assets/news/merch-poster-coffee-break.jpg)
 
