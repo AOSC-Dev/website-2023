@@ -1,7 +1,7 @@
 <script setup>
 const route = useRoute();
 
-const { data: categories, status } = useFetch(
+const { data: categories } = useFetch(
   `http://localhost:3001/newsCategories/${route.params.category}.zh-cn.json`
 );
 </script>
@@ -11,9 +11,7 @@ const { data: categories, status } = useFetch(
     <category-second
       :title="route.params.categoryTitle"
       class="border-r-solid border-r-white" />
-    <news-category-list
-      v-if="status === 'success'"
-      :news-list="categories || []" />
+    <news-category-list :news-list="categories || []" />
   </div>
 </template>
 
