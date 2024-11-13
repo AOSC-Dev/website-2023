@@ -1,4 +1,6 @@
 <script setup>
+import ShowLoading from '~/components/ShowLoading.vue';
+
 /**
  * 版本及架构说明
  * 有两个子发行版，安同 OS 和星霞 OS
@@ -286,60 +288,31 @@ const getNewVersioArch = (arch, type) => {
 };
 const isReady = ref(false);
 const versionArch = ref();
-if (import.meta.client) {
-  const [res, err] = await requestGetJson(
-    'https://releases.aosc.io/manifest/livekit.json'
-  );
-  if (res) {
-    versionArch.value = res.data;
-    antong1List.value.forEach((v) => {
-      v.installer = getNewVersioArch(v.title, 'installer');
-      v.livekit = getNewVersioArch(v.title, 'livekit');
-    });
-    antong2List.value.forEach((v) => {
-      v.installer = getNewVersioArch(v.title, 'installer');
-      v.livekit = getNewVersioArch(v.title, 'livekit');
-    });
-    xingxia1List.value.forEach((v) => {
-      v.livekit = getNewVersioArch(v.title, 'livekit');
-    });
-    xingxia2List.value.forEach((v) => {
-      v.livekit = getNewVersioArch(v.title, 'livekit');
-    });
-    isReady.value = true;
+(async () => {
+  if (import.meta.client) {
+    const [res, err] = await requestGetJson(
+      'https://releases.aosc.io/manifest/livekit.json'
+    );
+    if (res) {
+      versionArch.value = res.data;
+      antong1List.value.forEach((v) => {
+        v.installer = getNewVersioArch(v.title, 'installer');
+        v.livekit = getNewVersioArch(v.title, 'livekit');
+      });
+      antong2List.value.forEach((v) => {
+        v.installer = getNewVersioArch(v.title, 'installer');
+        v.livekit = getNewVersioArch(v.title, 'livekit');
+      });
+      xingxia1List.value.forEach((v) => {
+        v.livekit = getNewVersioArch(v.title, 'livekit');
+      });
+      xingxia2List.value.forEach((v) => {
+        v.livekit = getNewVersioArch(v.title, 'livekit');
+      });
+      isReady.value = true;
+    }
   }
-}
-// const { data: versionArch, status } = await useLazyFetch(
-//   'https://releases.aosc.io/manifest/livekit.json',
-//   {
-//     getCachedData(key) {
-//       console.log(1, nuxtApp.payload.data[key] || nuxtApp.static.data[key]);
-//       return nuxtApp.payload.data[key] || nuxtApp.static.data[key];
-//     }
-//   }
-// );
-// watch(
-//   versionArch,
-//   () => {
-//     if (status.value === 'success') {
-//       antong1List.value.forEach((v) => {
-//         v.installer = getNewVersioArch(v.title, 'installer');
-//         v.livekit = getNewVersioArch(v.title, 'livekit');
-//       });
-//       antong2List.value.forEach((v) => {
-//         v.installer = getNewVersioArch(v.title, 'installer');
-//         v.livekit = getNewVersioArch(v.title, 'livekit');
-//       });
-//       xingxia1List.value.forEach((v) => {
-//         v.livekit = getNewVersioArch(v.title, 'livekit');
-//       });
-//       xingxia2List.value.forEach((v) => {
-//         v.livekit = getNewVersioArch(v.title, 'livekit');
-//       });
-//     }
-//   },
-//   { immediate: true }
-// );
+})();
 
 const antong1RowNumber = Math.ceil(antong1List.value.length / 2);
 const antong1Height = antong1RowNumber * 52 + (antong1RowNumber - 1) * 8 + 'px';
@@ -377,15 +350,9 @@ const antong2Height =
             </p>
           </div>
         </div>
-        <div
-          id="antong1-buttons"
-          v-loading="!isReady"
-          element-loading-text="Loading..."
-          element-loading-background="rgba(122, 122, 122, 0)"
-          class="mb-[1rem]">
-          <div v-if="!isReady" class="loader m-auto"></div>
-          <div
-            v-if="isReady"
+        <div id="antong1-buttons" class="mb-[1rem]">
+          <ShowLoading
+            :is-ready="isReady"
             class="mx-4 grid grid-cols-2 gap-2 justify-center">
             <DownloadButton
               v-for="item in antong1List"
@@ -405,7 +372,7 @@ const antong2Height =
               }"
               :url="{ path: '/download', hash: '#otherDownload' }"
               arch-name="其他下载" />
-          </div>
+          </ShowLoading>
         </div>
       </div>
       <div class="afterglow px-[1rem]" ref="afterglowDownload">
@@ -437,20 +404,22 @@ const antong2Height =
       <div
         id="livekit-buttons"
         class="flex flex-col flex ml-auto mr-[2rem] my-[0.5rem]">
-        <div v-if="isReady" class="w-[200px] grid grid-cols-1 gap-2">
-          <span v-for="(item, index) in antong1List" :key="item.title">
-            <DownloadButton
-              :popover-data="{
-                ...item.popoverData,
-                placement: livekitPPlacement[index]
-              }"
-              second-line-font-size="8pt"
-              first-line-font-size="10pt"
-              :arch-name="item.zhLabel"
-              :url="`https://releases.aosc.io/${item.livekit.path}`"
-              :isa-info="item.livekit" />
-          </span>
-        </div>
+        <ShowLoading
+          :is-ready="isReady"
+          class="w-[200px] grid grid-cols-1 gap-2">
+          <DownloadButton
+            v-for="(item, index) in antong1List"
+            :key="item.title"
+            :popover-data="{
+              ...item.popoverData,
+              placement: livekitPPlacement[index]
+            }"
+            second-line-font-size="8pt"
+            first-line-font-size="10pt"
+            :arch-name="item.zhLabel"
+            :url="`https://releases.aosc.io/${item.livekit.path}`"
+            :isa-info="item.livekit" />
+        </ShowLoading>
       </div>
     </div>
     <div class="wsl-container w-[100%] flex flex-row">
@@ -513,7 +482,7 @@ const antong2Height =
           <p class="text-[13pt] mt-1">并发布镜像供各位玩家试用和评估。</p>
         </div>
         <div id="antong2-buttons" class="ml-auto mr-[2rem] my-[0.5rem]">
-          <div v-if="isReady" class="grid grid-cols-1 gap-2">
+          <ShowLoading :is-ready="isReady" class="grid grid-cols-1 gap-2">
             <DownloadButton
               v-for="item in antong2List.filter((obj) => obj.installer)"
               :key="item.title"
@@ -523,7 +492,7 @@ const antong2Height =
               :arch-name="item.zhLabel"
               :url="`https://releases.aosc.io/${item.installer.path}`"
               :isa-info="item.installer" />
-          </div>
+          </ShowLoading>
         </div>
       </div>
       <!-- 暂时不提供，需要确定架构支持等信息
