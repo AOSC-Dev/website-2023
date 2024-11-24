@@ -4,7 +4,6 @@ categories:
 title: "前方注意！CUPS 及相关软件包推送高危漏洞修复"
 date: 2024-09-27T10:00:00+08:00
 important: true
-home: true
 ---
 
 北京时间今日凌晨，安全研究员 [evilsocket](https://www.evilsocket.net/2024/09/26/Attacking-UNIX-systems-via-CUPS-Part-I/) 披露了与 CUPS 等软件包相关的四个安全漏洞，CVSS 3.1 评分最高达到 [9.1](https://www.cve.org/CVERecord?id=CVE-2024-47177)。

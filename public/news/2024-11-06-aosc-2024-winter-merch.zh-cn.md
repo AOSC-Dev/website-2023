@@ -4,7 +4,6 @@ categories:
 title: "2024 年度社区文化衫（冬装）开启订购！"
 date: 2024-11-07T23:00:00+08:00
 important: false
-home: true
 ---
 
 ![最新最热安同爆款冬装！](/assets/news/merch-poster.png)

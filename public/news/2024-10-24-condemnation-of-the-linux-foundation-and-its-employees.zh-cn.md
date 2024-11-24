@@ -4,7 +4,6 @@ categories:
 title: "安同开源社区有关 Linux 基金会及其职员不当行为的谴责"
 date: 2024-10-24T18:30:00+08:00
 important: true
-home: true
 ---
 
 ![Linus Torvalds 关于革除数名俄罗斯籍内核贡献者、子系统维护者的公开声明](/assets/news/linus-torvalds-letter.png)
