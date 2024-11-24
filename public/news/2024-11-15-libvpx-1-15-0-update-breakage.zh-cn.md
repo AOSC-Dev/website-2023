@@ -4,6 +4,7 @@ categories:
 title: "[已修复]近期系统更新后，部分应用程序可能无法正常启动"
 date: 2024-11-15T22:00:00+08:00
 important: false
+home: true
 ---
 > 此问题已修复，更新系统即可
 
