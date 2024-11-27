@@ -133,16 +133,16 @@ export const onImgLoad = (observers, imgHeight) => {
   imgHeight.value = 'auto';
 };
 
-export const copyToClipboard=(text)=>{
+export const copyToClipboard = (text) => {
   navigator.clipboard
-  .writeText(text)
-  .then(() => {
-    ElMessage.success('复制成功');
-  })
-  .catch((err) => {
-    ElMessage.success(`复制失败:${err}`);
-  });
-}
+    .writeText(text)
+    .then(() => {
+      ElMessage.success('复制成功');
+    })
+    .catch((err) => {
+      ElMessage.success(`复制失败:${err}`);
+    });
+};
 
 export const useSeizeSeat = (refName, proportion, imgHeights, fixedHeight) => {
   const newHeights = ref(0);
@@ -170,4 +170,39 @@ export const useSeizeSeat = (refName, proportion, imgHeights, fixedHeight) => {
     deObserver(observer.value);
   });
   return [observer, imgHeights];
+};
+
+export const mergedObjectArrays = (array1, array2) => {
+  return array1.map((item, index) => {
+    return { ...item, ...array2[index] };
+  });
+};
+
+export const expandObjectArray = (arrObjects, arrValues, key) => {
+  // 确保两个数组的长度相同
+  if (arrObjects.length !== arrValues.length) {
+    throw new Error('数组长度不匹配');
+  }
+  // 遍历对象数组和普通数组，合并指定的 key
+  return arrObjects.map((obj, index) => {
+    // 使用指定的 key 为每个对象添加值
+    obj[key] = arrValues[index];
+    return obj;
+  });
+};
+
+export const getSpecifiedTitle = (linkItem) => {
+  if (Array.isArray(linkItem.title))
+    return linkItem.title[linkItem.tIndex ? linkItem.tIndex : 0];
+  else return linkItem.title;
+};
+
+// title index
+export const useTIndex = (linkItem, tIndex) => {
+  return { ...linkItem, tIndex };
+};
+
+// hash index
+export const useHIndex = (linkItem, hIndex) => {
+  return { ...linkItem, hIndex };
 };

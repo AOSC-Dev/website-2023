@@ -13,14 +13,14 @@ const props = defineProps({
     </div>
     <div v-else class="flex flex-col">
       <div v-for="item in newsList" :key="item.title" class="newslist-item">
-        <NuxtLink
+        <NuxtLinkLocale
           :to="'/news/' + item.Path.replace(/.md$/, '')"
           class="hover:bg-leftbar-bg flex cursor-pointer pl-6 h-[2rem] leading-8">
           <span class="truncate flex-1">
             {{ item.Title }}
           </span>
           <span class="flex-0 pr-6">[{{ item.Date }}]</span>
-        </NuxtLink>
+        </NuxtLinkLocale>
       </div>
     </div>
   </div>

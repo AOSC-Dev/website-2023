@@ -76,7 +76,7 @@ important: false
 
 **讲者招募！**
 
-如果您或认识的朋友有兴趣来 AOSCC 分享工作经验与技能，欢迎您通过社区[各聊天群组](https://aosc.io/zh-cn/contact/)或[社区论坛](https://bbs.aosc.io/)与我们联系。
+如果您或认识的朋友有兴趣来 AOSCC 分享工作经验与技能，欢迎您通过社区[各聊天群组](https://aosc.io/contact/)或[社区论坛](https://bbs.aosc.io/)与我们联系。
 
 让我们一起携手，让 AOSCC 变得更加丰富精彩吧！
 
@@ -130,7 +130,7 @@ important: false
 
 <!-- 公众号等平台请注意内联 -->
 
-有关该问题的详细调查报告，详请见[《请您测试：龙架构 AMD 显卡稳定性修复》](./2024-06-17-fix-amd-gpu-reset-pre.zh-cn.md)一文。
+有关该问题的详细调查报告，详请见[《请您测试：龙架构 AMD 显卡稳定性修复》](./2024-06-17-fix-amd-gpu-reset-pre.md)一文。
 
 开发者角
 --------

@@ -97,7 +97,7 @@ important: false
 
 社区开发者[王邈](https://github.com/shankerwangmiao)为 LiveKit 安装盘生成工具新增了安全启动 (Secure Boot) 支持提示，通过载入来自 Debian 的、经签名的 GRUB 引导器二进制，在开启安全启动功能的 x86 和 AArch64 设备上显示 AOSC OS 不支持安全启动的提示，并给出选项让用户返回 UEFI 设置界面修改相关选项。这一更改将有助于用户了解安全启动导致 AOSC OS 无法启动的原因和潜在解决方式（先前，由于这一部分组件的缺失，用户在开启安全启动的情况下，AOSC OS 无法报告这一问题；在用户视角，这一情况就像是 AOSC OS 由于引导数据损坏而启动失败了一样）。
 
-根据微软知识库 Microsoft Learn 的[专题介绍](https://learn.microsoft.com/zh-cn/windows-hardware/design/device-experiences/oem-secure-boot)，安全启动是：
+根据微软知识库 Microsoft Learn 的[专题介绍](https://learn.microsoft.com/windows-hardware/design/device-experiences/oem-secure-boot)，安全启动是：
 
 > 安全启动是电脑行业成员开发的一种安全标准，用于帮助确保设备仅使用受原始设备制造商 (OEM) 信任的软件进行启动。 当电脑启动时，固件会检查每个启动软件片段的签名，包括 UEFI 固件驱动程序（也称为 Option ROM¹）、EFI 应用程序和操作系统。 如果签名有效，则电脑将会启动，而固件会将控制权转递给操作系统。
 
@@ -154,7 +154,7 @@ oma topics
 
 [BuildIt!](https://github.com/AOSC-Dev/buildit) 打包自动化设施已投产数月，期间大幅度提高了 AOSC OS 维护效率和贡献者积极性。与此同时，该框架需求不断膨胀，复杂度日渐提高。“屎山”未起，社区开发者[陈嘉杰](https://github.com/jiegec)便计划开启 v2 版本开发工作，简化认证流程、增强任务跟踪和管理功能并通过引入用户角色和权限管理允许外部贡献者使用该设施。
 
-日前，陈嘉杰发布了 BuildIt v2 的[设计文档](https://github.com/AOSC-Dev/buildit/blob/v2/DESIGN.md)和[愿景帖](https://github.com/AOSC-Dev/buildit/issues/8)。如果您有点子或意愿协助开发工作，请通过我社[各聊天群组](https://aosc.io/zh-cn/contact)与陈嘉杰联系。
+日前，陈嘉杰发布了 BuildIt v2 的[设计文档](https://github.com/AOSC-Dev/buildit/blob/v2/DESIGN.md)和[愿景帖](https://github.com/AOSC-Dev/buildit/issues/8)。如果您有点子或意愿协助开发工作，请通过我社[各聊天群组](https://aosc.io/contact)与陈嘉杰联系。
 
 ### Dickens 软件包质量检查与报告工具投产
 

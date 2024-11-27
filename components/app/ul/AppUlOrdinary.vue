@@ -1,0 +1,36 @@
+<script setup lang="js">
+const props = defineProps({
+  lis: {
+    type: Array,
+    required: true
+  },
+  class: {
+    type: String,
+    default: 'list-disc'
+  },
+  myKey: {
+    type: String,
+    required: true
+  },
+  liClass: {
+    type: String,
+    default: 'list-disc'
+  }
+});
+</script>
+<template>
+  <ul :class="props.class">
+    <li
+      v-for="(item, index) in lis"
+      :key="`${myKey}-li-${index}`"
+      :class="liClass"
+      ><template v-if="typeof item === 'string'">{{ item }}</template
+      ><template v-else-if="Array.isArray(item)"
+        ><app-ul-ordinary
+          :lis="item"
+          :li-class="liClass"
+          :my-key="`${myKey}-${index}`"
+          class="pl-[2.5rem] py-[0.5rem]" /></template
+    ></li>
+  </ul>
+</template>

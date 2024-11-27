@@ -18,6 +18,6 @@ important: false
 - [AArch64](https://releases.aosc.io/os-arm64/livekit/preview/aosc-os_livekit_20240603.2_arm64.iso)
 - [龙架构(LoongArch)](https://releases.aosc.io/os-loongarch64/livekit/preview/aosc-os_livekit_20240603.2_loongarch64.iso) 
 
-如果您在测试时遇到问题或困难，请通过社区[各聊天群组](https://aosc.io/zh-cn/contact/)或社区[论坛](https://bbs.aosc.io/)与我们联系。
+如果您在测试时遇到问题或困难，请通过社区[各聊天群组](https://aosc.io/contact/)或社区[论坛](https://bbs.aosc.io/)与我们联系。
 
 感谢您的测试！

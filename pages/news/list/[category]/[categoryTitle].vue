@@ -1,8 +1,9 @@
 <script setup>
 const route = useRoute();
+const { locale } = useI18n();
 
 const { data: categories } = useFetch(
-  `http://localhost:3001/newsCategories/${route.params.category}.zh-cn.json`
+  `http://localhost:3001/newsCategories/${route.params.category}.${locale.value}.json`
 );
 </script>
 

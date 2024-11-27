@@ -1,4 +1,4 @@
-<script setup name="Header">
+<script setup>
 const props = defineProps({
   title: { type: String },
   rightText: { type: String },
@@ -16,18 +16,18 @@ const props = defineProps({
     </span>
 
     <span v-if="props.rightText">
-      <span v-if="props.rightUrl == undefined">
+      <span v-if="props.rightUrl === undefined">
         {{ props.rightText }}
       </span>
-      <NuxtLink
+      <NuxtLinkLocale
         v-else
         :to="
           props.params
             ? { name: props.rightUrl, params: props.params }
-            : props.rightUrl
+            : props.rightUrl + '/' + title
         ">
         {{ props.rightText }}
-      </NuxtLink>
+      </NuxtLinkLocale>
       <!-- 右箭头 -->
       <!-- <v-icon v-if="showRightChevron" name="bi-chevron-double-right" /> -->
     </span>

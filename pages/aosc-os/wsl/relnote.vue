@@ -1,23 +1,22 @@
 <script setup>
+const { tm,locale } = useI18n();
+const textValue = tm('aosc-os.wsl.relnote');
 </script>
 
 <template>
   <div>
-    <category-second title="发行注记：2024 年 9 月" />
+    <category-second :title="textValue.title1" />
     <div class="p-6">
-      <p>
-        AOSC OS on WSL 是用于 Windows Subsystem for Linux 环境的安同 OS
-        版本，本次更新包含如下更改。 </p
-      ><br />
+      <p> {{ textValue.p1 }} </p>
     </div>
 
-    <category-second title="新特性与更改" id="features" />
+    <category-second id="features" :title="textValue.title2" />
     <div class="p-6">
-      <p> 本次发行属常规更新，包含截至 2024 年 9 月 16 日的所有系统更新。 </p
-      ><br />
+      <p> {{ textValue.p2 }} </p>
     </div>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+</style>
 ./components/Header.vue

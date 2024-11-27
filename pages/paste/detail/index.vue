@@ -6,32 +6,37 @@ const failReason = ref('');
 
 const themeStore = useThemeStore();
 
-function isImg(name) {
+const { tm, locale } = useI18n();
+const textValue = tm('paste.detail');
+const linkValue = tm('allUniversalLink');
+
+const isImg = (name) => {
   const suffixIndex = name.lastIndexOf('.');
   const suffix = name.substring(suffixIndex + 1);
-  return imgSuffixList.find((v) => v == suffix) !== undefined;
-}
+  return imgSuffixList.find((v) => v === suffix) !== undefined;
+};
 
-function getAttachUrl(name) {
+const getAttachUrl = (name) => {
   return `/pasteContent/${route.query.id}/files/${name}`;
-}
+};
 
-const { data: results, status } = await useFetch('http://localhost:3001/pasteApi/paste', {
-  query: { id: route.query.id }
-});
-switch (status.value) {
-  case 'success':
+const isReady = ref(false);
+if (import.meta.client) {
+  const [res, err] = await requestGetJson('/pasteApi/paste', {
+    id: route.query.id
+  });
+
+  if (res) {
     if (results.value.code != 0) {
       failReason.value = results.value.message;
     } else {
+      //此处是正常返回值
       details.value = results.value.data;
     }
-    break;
-  case 'error':
-    failReason.value = '获取粘贴板异常（服务器内部错误）';
-    break;
-  default:
-    break;
+  } else {
+    failReason.value = `${textValue.message1}`;
+  }
+  isReady.value = true;
 }
 
 const back = () => {
@@ -41,20 +46,20 @@ const returnHref = () => window.location.href;
 </script>
 
 <template>
-  <div v-loading="!status==='success'" class="w-[100%]" >
+  <ShowLoading :is-ready="isReady" class="w-[100%]">
     <div v-if="details != null">
-      <category-second title="公共粘贴板" />
+      <category-second :title="textValue.title1" />
       <div class="p-[2em]">
         <div class="flex flex-col">
           <div class="flex justify-between">
             <div>
-              <div>标题: {{ details.title }}</div>
-              <div>过期时间: {{ details.expDate }}</div>
+              <div ref="div1"> {{ textValue.div1 + details.title }}</div>
+              <div ref="div2">{{ textValue.div2 + details.expDate }}</div>
             </div>
             <button
               class="text-white px-[3em] theme-bg-color-primary-static py-[1em]"
               @click="copyToClipboard(returnHref())">
-              复制共享链接
+              {{ textValue.button1 }}
             </button>
           </div>
           <ul class="el-upload-list el-upload-list--text">
@@ -92,14 +97,15 @@ const returnHref = () => window.location.href;
     <el-result v-if="failReason != ''" icon="warning" :title="failReason">
       <template #extra>
         <el-button
-          v-if="failReason == '密码错误' || failReason == '需要密码'"
+          v-if="failReason === '密码错误' || failReason === '需要密码'"
+          ref="button2"
           type="primary"
           @click="back"
-          >返回</el-button
+          >{{ textValue.button2 }}</el-button
         >
       </template>
     </el-result>
-  </div>
+  </ShowLoading>
 </template>
 
 <style scoped></style>

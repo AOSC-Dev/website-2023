@@ -7,7 +7,8 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxt/content',
     '@nuxt/eslint',
-    'nuxt-monaco-editor'
+    'nuxt-monaco-editor',
+    '@nuxtjs/i18n'
   ],
   css: ['~/assets/css/main.css', '~/assets/index.scss'],
   postcss: {
@@ -26,6 +27,26 @@ export default defineNuxtConfig({
         // Theme used if `html.dark`
         sepia: 'monokai'
       }
+    }
+  },
+  i18n: {
+    vueI18n: '~/plugins/i18n.config.ts',
+    strategy: 'prefix_and_default',
+    defaultLocale: 'zh-cn',
+    locales: [
+      {
+        code: 'en-us',
+        language: 'en-US'
+      },
+      {
+        code: 'zh-cn',
+        language: 'zh-CN'
+      }
+    ],
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root'
     }
   },
   extends: '@nuxt-themes/docus',

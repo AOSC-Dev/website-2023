@@ -1,5 +1,6 @@
 <script setup>
-const route = useRoute();
+const { tm, locale } = useI18n();
+const textValue = tm('AppSupport');
 
 const props = defineProps({
   navigationList: {
@@ -7,39 +8,48 @@ const props = defineProps({
     required: true
   }
 });
-const highBrightnessControllerStore = useHighBrightnessControllerStore();
 
+const route = useRoute();
+const switchHash = () => {
+  switch (route.hash) {
+    case '#support':
+      highlightElement(supportRef);
+      break;
+  }
+};
+const highBrightnessControllerStore = useHighBrightnessControllerStore();
 watch(
-  () => highBrightnessControllerStore.obj[route.path],
+  () => highBrightnessControllerStore.obj[route.path.replace(/\/+$/, '')],
   () => {
-    switch (route.hash) {
-      case '#support':
-        highlightElement(support);
-        break;
-    }
+    switchHash();
   },
   {
     flush: 'post'
   }
 );
 
-const support = ref();
+onMounted(() => {
+  switchHash();
+});
+
+const supportRef = useTemplateRef('support');
 </script>
 <template>
-  <CategorySecond id="support" title="支持文档" />
+  <CategorySecond id="support" :title="textValue.title1" />
   <div ref="support" class="pt-4 pb-[60px] px-16">
     <ul class="list-disc">
-      <li v-for="item in navigationList" :key="item.title">
+      <li
+        v-for="(item, index) in navigationList"
+        :key="`${route.path}-${getSpecifiedTitle(item)}-${index}`">
         <AppLink
           :to="
             item.url
-              ? item.url
-              : {
-                  path: item.path,
-                  hash: item.hash
-                }
+              ? Number.isFinite(item.hIndex)
+                ? `${item.url}${item.hash[item.hIndex]}`
+                : item.url
+              : `${route.path.replace(/\/+$/, '')}${item.hash}`
           "
-          >{{ item.title }}</AppLink
+          >{{ getSpecifiedTitle(item) }}</AppLink
         >
       </li>
     </ul>

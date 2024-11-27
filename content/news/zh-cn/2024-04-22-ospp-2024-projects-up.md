@@ -16,4 +16,4 @@ important: false
 
 - 温柔 (@xunpod) ：[设计编写安同 OS 用户手册及编写规范](https://summer-ospp.ac.cn/org/prodetail/24f3e0161)
 
-学生报名将于 4 月 30 日开放，欢迎各位与上述导师直接联系或加入[社区各主群组](https://aosc.io/zh-cn/contact/)与社区好友沟通意向。
+学生报名将于 4 月 30 日开放，欢迎各位与上述导师直接联系或加入[社区各主群组](https://aosc.io/contact/)与社区好友沟通意向。

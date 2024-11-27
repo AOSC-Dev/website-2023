@@ -149,7 +149,7 @@ important: false
 - NVIDIA GeForce GTX 950，960, 970, 980, 980 Ti
 - NVIDIA GeForce GTX 800M, 900M 系列
 
-自 Maxwell 架构的显卡均受现版本 NVIDIA 驱动程序支持。如果您不确定您的显卡能否被当前版本所驱动，可以前往 [NVIDIA 发布的过旧显卡及驱动程序支持列表](https://www.nvidia.com/en-us/drivers/unix/legacy-gpu/)查询。在这则列表中的显卡均不受当前版本的 NVIDIA 驱动支持。
+自 Maxwell 架构的显卡均受现版本 NVIDIA 驱动程序支持。如果您不确定您的显卡能否被当前版本所驱动，可以前往 [NVIDIA 发布的过旧显卡及驱动程序支持列表](https://www.nvidia.com/drivers/unix/legacy-gpu/)查询。在这则列表中的显卡均不受当前版本的 NVIDIA 驱动支持。
 
 ### 有些笔记本或电脑会在启动时掉盘，导致无法进入系统
 

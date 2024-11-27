@@ -1,0 +1,179 @@
+{
+  "index": {
+    "title1": "Xingxia OS",
+    "title2": "System characteristics",
+    "subheading1": "Adapt measures to local conditions",
+    "subheading2": "Ongoing maintenance",
+    "subheading3": "Future-oriented",
+    "p1": "Xingxia OS (English translation: Afterglow) is developed based on Andong OS. Through streamlining features, configuration tuning, and software selection, it is committed to providing continuous software and technology updates for all types of old equipment, and through continuous maintenance of good experience and The performance brings new life to old equipment and allows users to \"rediscover their old love\".",
+    "p2": "Xingxia OS supports devices that are nearly thirty years old, such as PCs with 486 processors and Macintosh computers with m68k processors, as well as newer devices, such as Intel Atom (from around 2010). Atom) netbook or PowerPC processor Mac. Through configuration tuning and feature grading, Xingxia OS can ensure a good user experience on all types of old devices.",
+    "p3": "The basic prerequisite for letting old equipment continue to shine is continuous and complete software support. Xingxia OS provides continuous feature updates and security vulnerability fixes, allowing you to continue to use old equipment in various scenarios with confidence.",
+    "p4": "We plan to continue to maintain Xingxia OS and periodically release update packages in the next few years, so that you can continue to enjoy and play with peace of mind the computer that once brought you happiness and carried your early memories.",
+    "p": ""
+  },
+  "isa": {
+    "title1": "Xingxia OS architecture support specification table",
+    "p1": "Xingxia OS supports multiple processor architectures. This table introduces the supported various processor architectures and the corresponding microarchitecture instruction set extension support, software package architecture name, compiler target name and other information.",
+    "p2": "*: This architecture migration only supports Loongson 2F processors and does not support 2E and previous processor models.",
+    "p3": "**: This architecture port only supports 68020 and newer processor models with a Memory Management Unit (MMU)",
+    "table1": {
+      "caption": "List of processor architectures supported by Xingxia OS",
+      "th": [
+        "Processor architecture name",
+        "Microarchitectural instruction set extension support requirements",
+        "Package schema name",
+        "Compiler target name"
+      ],
+      "tr": [
+        [
+          [
+            "Alpha",
+            "none"
+          ],
+          [
+            "alpha",
+            "alpha-aosc-linux-gnu"
+          ]
+        ],
+        [
+          [
+            "ARMv4",
+            "none"
+          ],
+          [
+            "armv4",
+            "arm-aosc-linux-gnueabi"
+          ]
+        ],
+        [
+          [
+            "ARMv6 (hard floating point)",
+            "Thumb-2, NEON"
+          ],
+          [
+            "armv6hf",
+            "arm-aosc-linux-gnueabihf"
+          ]
+        ],
+        [
+          [
+            "ARMv7 (hard floating point)",
+            "Thumb-2, NEON"
+          ],
+          [
+            "armv7hf",
+            "arm-aosc-linux-gnueabihf"
+          ]
+        ],
+        [
+          [
+            "MIPS-based Loongson 2 processor*",
+            "LoongMMI"
+          ],
+          [
+            "loongson2f",
+            "mips64el-aosc-linux-gnuabi64"
+          ]
+        ],
+        [
+          [
+            "Intel 80486 or newer",
+            "none"
+          ],
+          [
+            "i486",
+            "i486-aosc-linux-gnu"
+          ]
+        ],
+        [
+          [
+            "Motorola 68000 Series Processors**",
+            "none"
+          ],
+          [
+            "m68k",
+            "m68k-aosc-linux-gnu"
+          ]
+        ],
+        [
+          [
+            "PowerPC (32-bit, big-endian)",
+            "none"
+          ],
+          [
+            "powerpc",
+            "powerpc-aosc-linux-gnu"
+          ]
+        ],
+        [
+          [
+            "PowerPC (64-bit, big-endian)",
+            "AltiVec"
+          ],
+          [
+            "ppc64",
+            "powerpc64-aosc-linux-gnu"
+          ]
+        ],
+        [
+          [
+            "SPARC (64-bit)",
+            "SPARC V9,VIS 1.0"
+          ],
+          [
+            "sparc64",
+            "sparc64-aosc-linux-gnu"
+          ]
+        ]
+      ]
+    }
+  },
+  "relnote": {
+    "title1": "Release Notes",
+    "p1": "(Stay tuned)"
+  },
+  "requirements": {
+    "title1": "Xingxia OS system configuration requirements table",
+    "title2": "Additional information",
+    "p1": "Xingxia OS is an operating system with limited functions for older devices. Pre-installed software and basic management features have certain requirements for device processors, graphics cards, storage and Internet connections. Based on our tests, we have summarized the following system configuration requirements table based on a good user experience.",
+    "table1": {
+      "caption": "Xingxia OS system configuration requirements table",
+      "th": [
+        "Hardware components",
+        "Configuration requirements"
+      ],
+      "tr": [
+        [
+          "processor",
+          "Any processor compatible with Xingxia OS"
+        ],
+        [
+          "Memory",
+          "At least 64MiB"
+        ],
+        [
+          "graphics card",
+          "Any graphics card or frame buffer card or serial terminal that supports display signal output"
+        ],
+        [
+          "storage",
+          "At least 1GiB (Basic) or 3GiB (Desktop)"
+        ],
+        [
+          "network connection",
+          "international internet connection"
+        ]
+      ]
+    },
+    "ul1": {
+      "li": [
+        [
+          "For Xingxia OS compatible processors, please see",
+          "Xingxia OS architecture support specification table"
+        ],
+        "For the desktop version with a graphical interface, it needs to support at least SVGA resolution and color depth (800×600 resolution, 16-bit color depth/65535 colors)",
+        "The recommendations on storage requirements are based on the fact that there is enough space for daily work and system updates after the system is installed; if your device has larger memory, the size of the default swap space (virtual memory file) created by the installer will also change accordingly. large, so you should also make relevant considerations when partitioning"
+      ]
+    }
+  }
+}

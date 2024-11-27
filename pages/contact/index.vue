@@ -1,134 +1,105 @@
 <script setup>
+const { tm, locale } = useI18n();
+const textValue = tm('contact.index');
+const linkValue = tm('allUniversalLink');
+const localLink = linkValue.local;
 
-const mainGroup = [
-  {
-    liText: 'QQ — 群号 875059676'
-  },
-  {
-    liText: '微信 — 请联系公众号“安同开源”'
-  },
-  {
-    spanText: 'Telegram — ',
-    url: 'https://t.me/aosc_main',
-    aText: '加入群组'
-  },
-  {
-    spanText: 'Discord — ',
-    url: 'https://discord.gg/VYPHgt9',
-    aText: '加入聊天室'
-  },
-  {
-    spanText: 'IRC: #aosc @ Libera Chat — ',
-    url: 'irc://irc.libera.chat:6697/aosc',
-    aText: '加入频道'
-  },
-  {
-    spanText: 'Matrix: #aosc:matrix.aosc.io — ',
-    url: 'https://matrix.to/#/%23aosc:matrix.aosc.io',
-    aText: '加入聊天室'
+const mainRef = useTemplateRef('main');
+const switchHash = () => {
+  switch (route.hash) {
+    case '#main':
+      highlightElement(mainRef);
+      break;
   }
+};
+const route = useRoute();
+const highBrightnessControllerStore = useHighBrightnessControllerStore();
+watch(
+  () => highBrightnessControllerStore.obj[route.path.replace(/\/+$/, '')],
+  () => {
+    switchHash();
+  },
+  {
+    flush: 'post'
+  }
+);
+
+onMounted(() => {
+  switchHash();
+});
+
+const mainGroup = textValue.mainGroup;
+const mainGroupLinks = [
+  linkValue.telegramMain,
+  linkValue.discord,
+  linkValue.ircMain,
+  linkValue.MatrixMain
+];
+const antiqueComputer = mainGroup.slice(2);
+
+const antiqueComputerLinks = [
+  linkValue.telegramRetro,
+  linkValue.discord,
+  linkValue.ircRetro,
+  linkValue.MatrixRetro
 ];
 
-const antiqueComputer = [
-  {
-    spanText: 'Telegram — ',
-    url: 'https://t.me/aosc_retro',
-    aText: '加入群组'
-  },
-  {
-    spanText: 'Discord — ',
-    url: 'https://discord.gg/VYPHgt9',
-    aText: '加入聊天室'
-  },
-  {
-    spanText: 'IRC: #aosc @ Libera Chat — ',
-    url: 'irc://irc.libera.chat:6697/aosc-retro',
-    aText: '加入频道'
-  },
-  {
-    spanText: 'Matrix: #aosc:matrix.aosc.io — ',
-    url: 'https://matrix.to/#/%23retro:matrix.aosc.io',
-    aText: '加入聊天室'
-  }
-];
+const waterGroup = antiqueComputer;
 
-const waterGroup = [
-  {
-    spanText: 'Telegram — ',
-    url: 'https://t.me/aosc_tuosai',
-    aText: '加入群组'
-  },
-  {
-    spanText: 'Discord — ',
-    url: 'https://discord.gg/VYPHgt9',
-    aText: '加入聊天室'
-  },
-  {
-    spanText: 'IRC: #aosc @ Libera Chat — ',
-    url: 'irc://irc.libera.chat:6697/aosc-offtopic',
-    aText: '加入频道'
-  },
-  {
-    spanText: 'Matrix: #aosc:matrix.aosc.io — ',
-    url: 'https://matrix.to/#/%23offtopic:matrix.aosc.io',
-    aText: '加入聊天室'
-  }
+const waterGroupLinks = [
+  linkValue.telegramTuosai,
+  linkValue.discord,
+  linkValue.ircTuosai,
+  linkValue.MatrixTuosai
 ];
 </script>
 
 <template>
   <div>
-    <category-second title="联系方式" />
+    <category-second :title="textValue.title1" />
     <div class="p-6">
       <p>
-        我社成员遍布世界各地，正因这一特质，我们的日常工作和交流基本都通过互联网进行。每天，社员们在我们的众多聊天群组中工作、交流和娱乐。
+        {{ textValue.p1 }}
       </p>
     </div>
 
-    <category-second title="聊天群组" />
+    <category-second :title="textValue.title2" />
     <div class="p-6">
-      <p
-        >如下列出的各组 Telegram 群组、Discord 聊天室、Matrix 房间及 IRC
-        频道均由转发机器人联通，请选择最适合自己的方式加入群聊。亦有 QQ
-        群和微信群可供使用（无转发）。</p
-      >
+      <p>{{ textValue.p2 }}</p>
     </div>
 
-    <category-second title="主群组" id="main" />
-    <div class="p-6">
-      <p>社区主群组用于开发交流、技术支持及相关技术话题讨论：</p>
+    <category-second id="main" :title="textValue.title3" />
+    <div ref="main" class="p-6">
+      <p>{{ textValue.p3 }}</p>
       <ul class="list-disc pl-10 mt-2">
         <li v-for="(item, index) in mainGroup" :key="index">
-          <span v-if="item.spanText">{{ item.spanText }}</span>
-          <AppLink v-if="item.url" :to="item.url">{{ item.aText }}</AppLink>
-          {{ item.liText }}
+          {{ item }}
+          <link-standard v-if="index > 1" :link="mainGroupLinks[index - 2]" />
         </li>
       </ul>
     </div>
 
-    <category-second title="古董计算机兴趣小组" id="retro" />
+    <category-second id="retro" :title="textValue.title4" />
     <div class="p-6">
-      <p>该小组用于讨论各类古董软硬件及 Afterglow（星霞 OS）开发。</p>
+      <p>{{ textValue.p4 }}</p>
       <ul class="list-disc pl-10 mt-2">
         <li v-for="(item, index) in antiqueComputer" :key="index">
-          <span v-if="item.spanText">{{ item.spanText }}</span>
-          <AppLink v-if="item.url" :to="item.url">{{ item.aText }}</AppLink>
-          {{ item.liText }}
+          {{ item }}
+          <link-standard :link="antiqueComputerLinks[index]" />
         </li>
       </ul>
     </div>
 
-    <category-second title="水群（又称：托腮群）" id="offtopic" />
+    <category-second id="offtopic" :title="textValue.title5" />
     <div class="p-6">
       <p>
-        水群用于讨论各式话题，但需注意遵守我社
-        <AppLink to="/guidelines">人际关系准则</AppLink>
+        {{ textValue.p5 }}
+        <link-standard :link="localLink.guidelines" />
       </p>
       <ul class="list-disc pl-10 mt-2">
         <li v-for="(item, index) in waterGroup" :key="index">
-          <span v-if="item.spanText">{{ item.spanText }}</span>
-          <AppLink v-if="item.url" :to="item.url">{{ item.aText }}</AppLink>
-          {{ item.liText }}
+          {{ item }}
+          <link-standard :link="waterGroupLinks[index]" />
         </li>
       </ul>
     </div>

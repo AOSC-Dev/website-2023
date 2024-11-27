@@ -1,6 +1,4 @@
 <script setup>
-import ShowLoading from '~/components/ShowLoading.vue';
-
 /**
  * 版本及架构说明
  * 有两个子发行版，安同 OS 和星霞 OS
@@ -12,15 +10,6 @@ import ShowLoading from '~/components/ShowLoading.vue';
  * 由于两个子发行版各自支持不同的架构，所以可以通过架构名判断是安同 OS 还是星霞 OS，一二级架构同理
  */
 const route = useRoute();
-// onMounted(() => {
-//   const msStoreScript = document.createElement('script');
-//   msStoreScript.setAttribute(
-//     'src',
-//     'https://get.microsoft.com/badge/ms-store-badge.bundled.js'
-//   );
-//   document.head.appendChild(msStoreScript);
-//   switchHash();
-// });
 
 const aoscOsRef = useTemplateRef('aoscOsDownload');
 const afterglowRef = useTemplateRef('afterglowDownload');
@@ -28,58 +17,31 @@ const omaRef = useTemplateRef('omaDownload');
 const tier2Ref = useTemplateRef('tier2Downloads');
 const dockerRef = useTemplateRef('downloadDocker');
 
-const omaNavigationList = [
-  {
-    title: '详细介绍',
-    path: '/oma'
-  },
-  {
-    title: '源代码',
-    url: 'https://github.com/AOSC-Dev/oma'
-  }
-  // , {
-  //   title: '下载 Debian/Ubuntu 安装包',
-  //   url: 'https://github.com/AOSC-Dev/oma/releases/tag/v1.8.2'
-  // }
-];
+const { tm, locale } = useI18n();
+const textValue = tm('download.index');
+const linkValue = tm('allUniversalLink');
+const localLink = linkValue.local;
 
+const omaNavigationList = [
+  useTIndex(localLink.oma, 1),
+  useTIndex(linkValue.omaSourceGithub, 2)
+];
 const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
 
 const aoscOsNavigationList = [
-  {
-    title: '发行注记',
-    path: '/aosc-os/relnote'
-  },
-  {
-    title: '配置需求',
-    path: '/aosc-os/requirements'
-  }
+  localLink.aoscRelnote,
+  useTIndex(localLink.aoscRequirements, 2)
 ];
 
 const liveKitNavigationList = [
-  {
-    title: '发行注记',
-    path: '/aosc-os/livekit/relnote'
-  },
-  {
-    title: '配置需求',
-    path: '/aosc-os/livekit/requirements'
-  }
+  localLink.aoscLivekitRelnote,
+  localLink.aoscLivekitRequirements
 ];
 
 const wslNavigationList = [
-  {
-    title: '发行注记',
-    path: '/aosc-os/wsl/relnote'
-  },
-  {
-    title: '配置需求',
-    path: '/aosc-os/wsl/requirements'
-  }
+  localLink.aoscWslRelnote,
+  localLink.aoscWslRequirements
 ];
-
-const highBrightnessControllerStore = useHighBrightnessControllerStore();
-
 const switchHash = () => {
   switch (route.hash) {
     case '#oma-download':
@@ -102,8 +64,9 @@ const switchHash = () => {
   }
 };
 
+const highBrightnessControllerStore = useHighBrightnessControllerStore();
 watch(
-  () => highBrightnessControllerStore.obj[route.path],
+  () => highBrightnessControllerStore.obj[route.path.replace(/\/+$/, '')],
   () => {
     switchHash();
   },
@@ -111,136 +74,119 @@ watch(
     flush: 'post'
   }
 );
+onMounted(() => {
+  switchHash();
+});
 
-const livekitPPlacement = ['top', 'left', 'bottom'];
+const initSinglePopoverData = (contenlist, index) => {
+  let placement = 'left';
+  if (index === 0) {
+    placement = 'top';
+  } else if (index === contenlist.length - 1) {
+    placement = 'bottom';
+  }
+  return { conten: contenlist[index], placement };
+};
 
-const antong1List = ref([
-  {
-    title: 'amd64',
-    zhLabel: 'x86-64',
-    enLabel: 'x86-64',
-    popoverData: {
-      conten: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备',
-      placement: 'top'
-    }
-  },
-  {
-    title: 'arm64',
-    zhLabel: 'AArch64',
-    enLabel: 'AArch64',
-    popoverData: {
-      conten: '适用于兼容 Armv8-A 及以上版本的 64 位 Arm 设备',
-      placement: 'top'
-    }
-  },
-  {
-    title: 'loongarch64',
-    zhLabel: 'LoongArch',
-    enLabel: 'LoongArch',
-    popoverData: {
-      conten:
-        '适用于兼容龙架构 (LoongArch) 指令集及 128 位向量扩展 (LSX) 的 64 位设备',
-      placement: 'bottom'
+const initBiserialPopoverData = (contenlist, index) => {
+  let placement = undefined;
+  //前两个肯定top
+  if (index <= 1) {
+    placement = 'top';
+  } else if (index % 2 === 0) {
+    placement = 'left';
+  } else {
+    // 如果是总数是单数，最后一个bottom
+    if (index === contenlist.length - 1) {
+      placement = 'bottom';
+    } else {
+      placement = 'right';
     }
   }
-]);
-const antong2List = ref([
+  return { conten: contenlist[index], placement };
+};
+
+const antong1BorderlessList = [
   {
-    title: 'ppc64el',
-    zhLabel: 'IBM POWER（64 位，小端序）',
-    enLabel: 'IBM POWER (64-bit, little endian)',
-    popoverData: {
-      conten: '适用于兼容 Power ISA v2.07 及以上版本的 64 位、小端序模式设备',
-      placement: 'top'
-    }
+    title: 'amd64'
   },
   {
-    title: 'riscv64',
-    zhLabel: 'RISC-V（64 位）',
-    enLabel: 'RISC-V (64-bit)',
-    popoverData: {
-      conten: '适用于兼容 RVA20 Architecture Profile 的 64 位 RISC-V 设备',
-      placement: 'left'
-    }
+    title: 'arm64'
   },
   {
-    title: 'loongson3',
-    zhLabel: '基于 MIPS 的龙芯三号',
-    enLabel: 'MIPS-based Loongson 3',
-    popoverData: {
-      conten: '适用于基于 MIPS 的龙芯三号设备',
-      placement: 'bottom'
-    }
+    title: 'loongarch64'
   }
-]);
-const xingxia1List = ref([
+];
+
+const antong1List = ref(
+  expandObjectArray(
+    antong1BorderlessList,
+    textValue.antong1TextList.lable,
+    'lable'
+  )
+);
+const antong2BorderlessList = [
   {
-    title: 'i486',
-    zhLabel: 'Intel 80486 或更新',
-    enLabel: 'Intel 80486 or newer',
-    popoverData: {
-      conten: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
-    }
+    title: 'ppc64el'
   },
   {
-    title: 'loongson2f',
-    zhLabel: '龙芯 2F',
-    enLabel: 'Loongson 2F',
-    popoverData: {
-      conten: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
-    }
+    title: 'riscv64'
   },
   {
-    title: 'powerpc',
-    zhLabel: 'PowerPC（32 位，大端序）',
-    enLabel: 'PowerPC (32-bit, big endian)',
-    popoverData: {
-      conten: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
-    }
-  },
-  {
-    title: 'ppc64',
-    zhLabel: 'PowerPC（64 位，大端序）',
-    enLabel: 'PowerPC (64-bit, big endian)',
-    popoverData: {
-      conten: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
-    }
+    title: 'loongson3'
   }
-]);
-const xingxia2List = ref([
+];
+const antong2List = ref(
+  expandObjectArray(
+    antong2BorderlessList,
+    textValue.antong2TextList.lable,
+    'lable'
+  )
+);
+
+const xingxia1BorderlessList = [
   {
-    title: 'm68k',
-    zhLabel: 'Motorola 68000 系列处理器**',
-    enLabel: 'Motorola 68000',
-    popoverData: {
-      conten: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
-    }
+    title: 'i486'
   },
   {
-    title: 'armv4',
-    zhLabel: 'ARMv4',
-    enLabel: 'ARMv4',
-    popoverData: {
-      conten: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
-    }
+    title: 'loongson2f'
   },
   {
-    title: 'armv6hf',
-    zhLabel: 'ARMv6（硬浮点）',
-    enLabel: 'ARMv6 (hard-float)',
-    popoverData: {
-      conten: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
-    }
+    title: 'powerpc'
   },
   {
-    title: 'armv7hf',
-    zhLabel: 'ARMv7（硬浮点，带有 NEON 指令集支持）',
-    enLabel: 'ARMv7 (hard-float, with NEON support)',
-    popoverData: {
-      conten: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
-    }
+    title: 'ppc64'
   }
-]);
+];
+const xingxia1List = ref(
+  expandObjectArray(
+    xingxia1BorderlessList,
+    textValue.xingxia1TextList.lable,
+    'lable'
+  )
+);
+
+const xingxia2BorderlessList = [
+  {
+    title: 'm68k'
+  },
+  {
+    title: 'armv4'
+  },
+  {
+    title: 'armv6hf'
+  },
+  {
+    title: 'armv7hf'
+  }
+];
+const xingxia2List = ref(
+  expandObjectArray(
+    xingxia2BorderlessList,
+    textValue.xingxia2TextList.lable,
+    'lable'
+  )
+);
 
 function getAntongDate() {
   if (versionArch.value.length == 0) return '...';
@@ -328,7 +274,7 @@ const antong2Height =
 
 <template>
   <div class="flex flex-col">
-    <category-second id="aosc-os-download" title="操作系统" />
+    <category-second id="aosc-os-download" :title="textValue.title1" />
     <div class="flex flex-row flex-1">
       <div
         ref="aoscOsDownload"
@@ -338,8 +284,8 @@ const antong2Height =
             <img src="/download/aosc-os-web.svg" />
           </div>
           <div class="text-aosc-os min-h-[94px] my-[1.5rem]">
-            <p class="text-[32pt]">安同 OS</p>
-            <p class="text-[14pt]">称心得意的桌面操作系统</p>
+            <p class="text-[32pt]">{{ textValue.p1 }}</p>
+            <p class="text-[14pt]">{{ textValue.p2 }}</p>
             <p v-if="isReady" class="width-[220px] text-[10pt] mt-1">
               {{ getAntongDate() }}·
               <AccordionNavigation
@@ -355,31 +301,33 @@ const antong2Height =
             :is-ready="isReady"
             class="mx-4 grid grid-cols-2 gap-2 justify-center">
             <DownloadButton
-              v-for="item in antong1List"
+              v-for="(item, index) in antong1List"
               :key="item.title"
               class="grow"
               :isa-info="item.installer"
-              :arch-name="item.zhLabel"
-              :popover-data="item.popoverData"
+              :arch-name="item.lable"
+              :popover-data="
+                initBiserialPopoverData(textValue.antong1TextList.conten, index)
+              "
               :url="`https://releases.aosc.io/${item.installer.path}`" />
             <DownloadButton
               :class="antong1List.length % 2 === 0 ? 'col-span-2' : ''"
               button-color="#549c97"
               class="grow"
               :popover-data="{
-                conten: '二级架构、Docker,及虚拟机镜像等其他下载',
+                ...textValue.otherDownloadButtons.popoverData,
                 placement: 'bottom'
               }"
-              :url="{ path: '/download', hash: '#otherDownload' }"
-              arch-name="其他下载" />
+              url="/download#otherDownload"
+              :arch-name="textValue.otherDownloadButtons.archName" />
           </ShowLoading>
         </div>
       </div>
       <div class="afterglow px-[1rem]" ref="afterglowDownload">
         <div class="my-[1.5rem] text-afterglow">
-          <p class="text-white text-[32pt]">星霞 OS</p>
-          <p class="text-white text-[14pt]">老设备也能发光发热</p>
-          <p class="text-white text-[10pt] mt-1">敬请期待...</p>
+          <p class="text-white text-[32pt]">{{ textValue.p3 }}</p>
+          <p class="text-white text-[14pt]">{{ textValue.p4 }}</p>
+          <p class="text-white text-[10pt] mt-1">{{ textValue.p5 }}</p>
         </div>
         <div class="mt-[1.5rem] min-w-[64px] w-[26%]">
           <img src="/download/afterglow-web.svg" />
@@ -391,7 +339,7 @@ const antong2Height =
       <div class="flex flex-col">
         <div class="flex-col my-auto pl-[2rem] flex py-[1rem]">
           <p class="text-[24pt]">LiveKit</p>
-          <p class="text-[14pt]">功能完备的安同 OS 救援环境</p>
+          <p class="text-[14pt]">{{ textValue.p6 }}</p>
           <p class="mt-[2rem]">
             <AccordionNavigation
               :navigation-list="liveKitNavigationList"
@@ -410,13 +358,12 @@ const antong2Height =
           <DownloadButton
             v-for="(item, index) in antong1List"
             :key="item.title"
-            :popover-data="{
-              ...item.popoverData,
-              placement: livekitPPlacement[index]
-            }"
+            :popover-data="
+              initSinglePopoverData(textValue.antong1TextList.conten, index)
+            "
             second-line-font-size="8pt"
             first-line-font-size="10pt"
-            :arch-name="item.zhLabel"
+            :arch-name="item.lable"
             :url="`https://releases.aosc.io/${item.livekit.path}`"
             :isa-info="item.livekit" />
         </ShowLoading>
@@ -424,8 +371,8 @@ const antong2Height =
     </div>
     <div class="wsl-container w-[100%] flex flex-row">
       <div class="flex flex-col pl-[2rem] py-[1rem]">
-        <p class="text-[24pt]">WSL 环境</p>
-        <p class="text-[14pt]">适用于 WSL 的安同 OS</p>
+        <p class="text-[24pt]">{{ textValue.p7 }}</p>
+        <p class="text-[14pt]">{{ textValue.p8 }}</p>
         <p class="mt-[2rem]">
           <AccordionNavigation
             :navigation-list="wslNavigationList"
@@ -443,13 +390,16 @@ const antong2Height =
         </ms-store-badge>
       </div>
     </div>
-    <category-second id="oma-download" class="highlight" title="实用工具" />
+    <category-second
+      id="oma-download"
+      class="highlight"
+      :title="textValue.title2" />
     <div
       ref="omaDownload"
       class="oma-container w-[100%] flex flex-row py-[1rem]">
       <div class="pl-[2rem]">
-        <p class="text-[24pt]">小熊猫包管理 (oma)</p>
-        <p class="text-[14pt]">简明好用的 APT 软件包管理界面</p>
+        <p class="text-[24pt]">{{ textValue.p9 }}</p>
+        <p class="text-[14pt]">{{ textValue.p10 }}</p>
         <p class="mt-2">
           <AccordionNavigation
             :navigation-list="omaNavigationList"
@@ -465,31 +415,32 @@ const antong2Height =
           button-class="ml-6"
           :code-text="omaInstallScript" />
         <p class="mt-[6px] text-[10pt]"
-          >使用终端运行该命令可在 Debian、Ubuntu 及衍生版，以及 deepin、开放麒麟
-          (openKylin) 等<br />发行版安装小熊猫包管理</p
-        >
+          >{{ textValue.p11[0] }}<br />{{ textValue.p11[1] }}
+        </p>
       </div>
     </div>
     <div id="otherDownload">
-      <category-second id="tier-2-downloads" title="安同 OS（二级架构）" />
+      <category-second id="tier-2-downloads" :title="textValue.title3" />
       <div ref="tier2Downloads" class="w-[100%] flex-row py-[1rem] flex">
         <div class="pl-[2rem] my-auto">
-          <p class="text-[13pt]">安同 OS 支持支持众多处理器微架构。</p>
-          <p class="text-[13pt] mt-1">除 x86-64、AArch64 及 LoongArch 外，</p>
-          <p class="text-[13pt] mt-1"
-            >我们还支持一众存量较少或软件支持尚未完善的架构，</p
-          >
-          <p class="text-[13pt] mt-1">并发布镜像供各位玩家试用和评估。</p>
+          <p class="text-[13pt]">{{ textValue.p12 }}</p>
+          <p class="text-[13pt] mt-1">{{ textValue.p13 }}</p>
+          <p class="text-[13pt] mt-1">{{ textValue.p14 }}</p>
+          <p class="text-[13pt] mt-1">{{ textValue.p15 }}</p>
         </div>
         <div id="antong2-buttons" class="ml-auto mr-[2rem] my-[0.5rem]">
           <ShowLoading :is-ready="isReady" class="grid grid-cols-1 gap-2">
             <DownloadButton
-              v-for="item in antong2List.filter((obj) => obj.installer)"
+              v-for="(item, index) in antong2List.filter(
+                (obj) => obj.installer
+              )"
               :key="item.title"
-              :popover-data="item.popoverData"
+              :popover-data="
+                initSinglePopoverData(textValue.antong2TextList.conten, index)
+              "
               second-line-font-size="8pt"
               first-line-font-size="10pt"
-              :arch-name="item.zhLabel"
+              :arch-name="item.lable"
               :url="`https://releases.aosc.io/${item.installer.path}`"
               :isa-info="item.installer" />
           </ShowLoading>
@@ -611,5 +562,8 @@ ms-store-badge::part(img) {
 }
 #antong2-buttons {
   min-height: v-bind(antong2Height);
+}
+p {
+  margin-bottom: auto;
 }
 </style>

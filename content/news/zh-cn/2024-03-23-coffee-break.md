@@ -27,7 +27,7 @@ AOSC OS 用户可通过如下命令打开 `liblol-0.1.5` 测试源进行测试�
 oma topics --opt-in liblol-0.1.5
 ```
 
-如果您在测试 libLoL 0.1.5 的过程中发现问题或遇到困难，请通过社区[各聊天群组](https://aosc.io/zh-cn/contact/)或[社区论坛](https://bbs.aosc.io/)与联系我们。
+如果您在测试 libLoL 0.1.5 的过程中发现问题或遇到困难，请通过社区[各聊天群组](https://aosc.io/contact/)或[社区论坛](https://bbs.aosc.io/)与联系我们。
 
 ### 廿四年“流浪相机”活动周一启航
 
@@ -68,7 +68,7 @@ oma topics --opt-in liblol-0.1.5
 oma topics --opt-in kde-survey-20240304
 ```
 
-如果您在测试 KDE 5 三月更新的过程中发现问题或遇到困难，请通过社区[各聊天群组](https://aosc.io/zh-cn/contact/)或[社区论坛](https://bbs.aosc.io/)与联系我们。
+如果您在测试 KDE 5 三月更新的过程中发现问题或遇到困难，请通过社区[各聊天群组](https://aosc.io/contact/)或[社区论坛](https://bbs.aosc.io/)与联系我们。
 
 开发者角
 --------
@@ -77,7 +77,7 @@ oma topics --opt-in kde-survey-20240304
 
 近日，社区开发者[陈嘉杰](https://github.com/jiegec)完成了 v2 的初步开发工作，引入了诸如任务跟踪和管理功能、网页管理功能和构建机配置要求等功能，目前已在生产测试中。
 
-先前，陈嘉杰发布了 BuildIt v2 的[设计文档](https://github.com/AOSC-Dev/buildit/blob/v2/DESIGN.md)和[愿景帖](https://github.com/AOSC-Dev/buildit/issues/8)，目前仍有不少特性有待实现。如果您有意愿协助开发工作，请通过我社[各聊天群组](https://aosc.io/zh-cn/contact)与陈嘉杰联系。
+先前，陈嘉杰发布了 BuildIt v2 的[设计文档](https://github.com/AOSC-Dev/buildit/blob/v2/DESIGN.md)和[愿景帖](https://github.com/AOSC-Dev/buildit/issues/8)，目前仍有不少特性有待实现。如果您有意愿协助开发工作，请通过我社[各聊天群组](https://aosc.io/contact)与陈嘉杰联系。
 
 ### Autobuild 4.1 分支发布
 

@@ -83,7 +83,7 @@ important: false
 
 ![AOSC OS on WSL 示意图](/assets/news/coffee-break/20240127/imgs/aosc-os-on-wsl.png)
 
-月初，[Kexy Biscuit](https://github.com/KexyBiscuit) 发布了 AOSC OS on Windows 11.1.0，现可于微软商店获取。该项目基于微软的 [Windows Subsystem for Linux](https://learn.microsoft.com/zh-cn/windows/wsl/about) 技术构建，旨在方便用户在 Windows 上部署 AOSC OS 系统环境及各应用。
+月初，[Kexy Biscuit](https://github.com/KexyBiscuit) 发布了 AOSC OS on Windows 11.1.0，现可于微软商店获取。该项目基于微软的 [Windows Subsystem for Linux](https://learn.microsoft.com/windows/wsl/about) 技术构建，旨在方便用户在 Windows 上部署 AOSC OS 系统环境及各应用。
 
 本次更新包含如下特性：
 
@@ -145,7 +145,7 @@ important: false
 
 先前，我们启动了“合龙”工作——将目前位于前沿分支 (`frontier`) 中的移植工作合并到稳定分支 (`stable`) 中。经过过去近半年的努力，我们已基本将前沿分支上的龙架构适配和更新内容全部合并至系统稳定分支。我们相信“合龙”工作将在未来两周内完成，龙架构（LoongArch，系统架构名 `loongarch64`）将成为 AOSC OS 的正式支持的架构之一。考虑到该版系统用户众多且软件支持也已相对完整，我们计划将龙架构列作 AOSC OS 的第三个一级架构 (Primary Architecture)，与 x86-64 (`amd64`) 和 AArch64 (`arm64`) 移植同级，享受最及时的软件更新。
 
-目前，用于 LoongArch 的实验性系统发行已经可以从[社区主页下载](https://aosc.io/zh-cn/downloads)，欢迎试用并提供反馈。待正式版发布，我们将另行报道。
+目前，用于 LoongArch 的实验性系统发行已经可以从[社区主页下载](https://aosc.io/downloads)，欢迎试用并提供反馈。待正式版发布，我们将另行报道。
 
 ### 用户公告
 

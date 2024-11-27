@@ -1,0 +1,60 @@
+{
+  "index": {
+    "title1": "community mascot",
+    "title2": "sticker pack",
+    "title3": "Setting draft",
+    "title4": "An An's story",
+    "p1": "Scan the QR code to get the WeChat sticker package",
+    "p2": "This design was designed by Titanium Mountain and is licensed under a CC-BY-SA 4.0 International license. Titanium Mountain provides free and open-licensed mascot design services for free and open source software projects. Interested parties please contact:",
+    "ps1": [
+      "\u00a0\u00a0\u00a0\u00a0\"Lobster lobster lobster! \"",
+      "An An was originally a rabbit, but one morning he woke up and found that he had become a human with rabbit ears and a rabbit tail...",
+      "... She seemed unable to remember anything else."
+    ],
+    "ul1": {
+      "li": [
+        "Birthday: December 1",
+        "age:???",
+        "Hair color: black",
+        "Eye color: black",
+        "Favorite color: red, yellow, blue, white and black",
+        "Favorite food: Salted fish claypot rice, jelly, ice cream...",
+        "Pets: Tongtong, lobster"
+      ]
+    },
+    "ps2": [
+      "An An is introverted, but he shows a completely different personality among his companions: warm-hearted, patient, and a troublemaker."
+    ],
+    "ul2": {
+      "li": [
+        "An An was very stubborn when she was a child, and a few years ago she caused a scene in the Linux enthusiast community, which she regretted greatly. Then, she decided to concentrate on learning open source related skills, but still maintained some of her persistence.",
+        "Although social interaction has been very limited for several years, An An has made many friends in the community.",
+        "She doesn't like to interfere with other people's choices and always tells her friends that \"whatever suits you is the best.\""
+      ]
+    },
+    "ul3": {
+      "li": [
+        "She believes that the meaning of the community lies in sharing fun and skills, and she is constantly working hard to make Linux more practical.",
+        "Instead of writing a diary, An An prefers to organize her memories by collecting various memes in the community.",
+        "An An is a hopeless workaholic and must listen to music while working. She is extremely serious when working and has very strict requirements on herself, but she never negates the work results of others."
+      ]
+    },
+    "ps3": [
+      "She is multilingual and a localization and typography enthusiast."
+    ],
+    "ul4": {
+      "li": [
+        "An An likes to collect beautiful fonts and believes that elegant text should be backed by good fonts.",
+        "She also likes to think about language and has very strict requirements on the faithfulness and elegance of translations."
+      ]
+    },
+    "ps4": ["Her hobby is tinkering with various antique computers."],
+    "ul5": {
+      "li": [
+        "An An's cabinets are filled with all kinds of antique computers and weird equipment, and she has given each one a variety of nonsensical names.",
+        "Because there are always more than ten devices running at home, the indoor temperature is always higher than the outdoor temperature.",
+        "An An has a pet server named \"Lobster\" at home."
+      ]
+    }
+  }
+}

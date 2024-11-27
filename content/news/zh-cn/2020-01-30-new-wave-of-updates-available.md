@@ -62,7 +62,7 @@ notable updates out of the hundreds made available for AOSC OS users like you:
 - .NET Core 3.1 is now available, and all .NET packages are now maintained
   on a per-branch basis, in compliance with Microsoft's specifications,
   discussed in their
-  [.NET Core distribution packaging](https://docs.microsoft.com/zh-cn/dotnet/core/distribution-packaging)
+  [.NET Core distribution packaging](https://docs.microsoft.com/dotnet/core/distribution-packaging)
   page.
 - ...
 

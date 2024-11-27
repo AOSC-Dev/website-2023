@@ -51,6 +51,10 @@ $bg-secondary: #3f6075;
   border-color: var(--secondary);
 }
 
+p:not(:last-of-type) {
+  margin-bottom: 1rem;
+}
+
 .theme-text-primary {
   color: var(--primary);
 }

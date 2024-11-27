@@ -1,4 +1,5 @@
 <script setup>
+const route = useRoute();
 const props = defineProps({
   navigationList: {
     type: Array,
@@ -15,14 +16,24 @@ const props = defineProps({
 });
 </script>
 <template>
-  <span v-for="(item, index) in navigationList" :key="item.title">
-    <span :class="spanClass" v-if="index !== 0">
+  <span
+    v-for="(item, index) in navigationList"
+    :key="`${route.path}-${getSpecifiedTitle(item)}-${index}`">
+    <span v-if="index !== 0" :class="spanClass">
       <slot>|</slot>
     </span>
+    <!-- 如果没有 url 则一定是 thisPageXXX 此时引用 route.path 和 item.hash 即可 
+     如果有 url 但没有 hIndex 直接引用 item.url ; 如果还有 hIndex 则 添加 hash 进去。-->
     <AppLink
-      :to="item.url ? item.url : { path: item.path, hash: item.hash }"
+      :to="
+        item.url
+          ? Number.isFinite(item.hIndex)
+            ? `${item.url}${item.hash[item.hIndex]}`
+            : item.url
+          : `${route.path.replace(/\/+$/, '')}${item.hash}`
+      "
       :class="linkClass">
-      {{ item.title }}</AppLink
+      {{ getSpecifiedTitle(item) }}</AppLink
     >
   </span>
 </template>

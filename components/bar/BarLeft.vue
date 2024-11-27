@@ -1,108 +1,78 @@
-<script setup name="LeftBar">
-const linkArr = [
+<script setup>
+const { tm, locale } = useI18n();
+const textValue = tm('BarLeft');
+const linkValue = tm('allUniversalLink');
+const localLink = linkValue.local;
+const navigationList = [
   {
-    title: '社区项目',
+    title: textValue.title1,
     children: [
-      { title: '安同 OS', link: '/aosc-os' },
-      { title: '星霞 OS', link: '/afterglow' },
-      { title: 'libLoL 兼容层', link: '/liblol' },
-      {
-        title: '小熊猫包管理 (oma)',
-        link: '/oma'
-      },
-      { title: '软件本地化', link: '/l10n' }
+      localLink.aoscOs,
+      localLink.afterglow,
+      localLink.liblol,
+      localLink.oma,
+      localLink.l10n
     ],
     show: true
   },
   {
-    title: '资讯与支持',
+    title: textValue.title2,
     children: [
-      { title: '新闻资讯', link: '/news' },
-      { title: '活动相册', link: '/gallery' },
-      { title: '联系方式', link: '/contact' }
+      localLink.news,
+      localLink.gallery,
+      useTIndex(localLink.contact, 1)
     ],
     show: true
   },
   {
-    title: '事务与文化',
+    title: textValue.title3,
     children: [
-      { title: '关于社区', link: '/about' },
-      { title: '社区活动', link: '/events' },
-      { title: '实习资源', link: '/internship' },
-      { title: '赞助方一览', link: '/sponsors' },
-      {
-        title: '社区众筹',
-        link: '/crowdsourcing'
-      },
-      {
-        title: '人际关系准则',
-        link: '/guidelines'
-      },
-      { title: '社区吉祥物', link: '/mascot' }
+      localLink.about,
+      localLink.events,
+      localLink.internship,
+      localLink.sponsors,
+      localLink.crowdsourcing,
+      localLink.guidelines,
+      localLink.mascot
     ],
     show: true
   },
   {
-    title: '服务设施',
+    title: textValue.title4,
     children: [
-      {
-        title: '公共粘贴板',
-        link: '/paste'
-      },
-      {
-        title: '社区论坛',
-        link: 'https://bbs.aosc.io/'
-      },
-      {
-        title: '参考文档',
-        link: 'https://wiki.aosc.io/'
-      },
-      {
-        title: '代码仓库',
-        link: 'https://github.com/AOSC-Dev'
-      },
-      {
-        title: '贡献者邮箱',
-        link: 'https://mail20.mymailcheap.com/'
-      },
-      {
-        title: '构建服务器',
-        link: 'https://wiki.aosc.io/developer/infrastructure/buildbots/'
-      },
-      {
-        title: '自动化设施',
-        link: 'https://buildit.aosc.io/'
-      }
+      localLink.paste,
+      linkValue.forum,
+      useTIndex(linkValue.AOSCWiki, 1),
+      useTIndex(linkValue.GitHub, 1),
+      linkValue.mail20,
+      linkValue.buildbots,
+      linkValue.buildit
     ],
     show: true
   }
 ];
-
 const openMenuList = new Set();
 
 const menuDivRef = useTemplateRef('menuDiv');
 const menuRef = useTemplateRef('menu');
 const rowHeight = 32;
+const rowHeightpx = `${rowHeight}px`;
 
 const route = useRoute();
 
 const openMenu = (MenuOpenEvent) => {
-  const result = linkArr.find((item) => item.title === MenuOpenEvent);
+  const result = navigationList.find((item) => item.title === MenuOpenEvent);
   let height =
     result.children.length * rowHeight +
     rowHeight * 2 +
     menuDivRef.value.clientHeight;
   for (const item of openMenuList) {
-    if (
-      height < window.innerHeight &&
-      height <
-        menuDivRef.value.parentNode.parentNode.nextElementSibling.clientHeight
-    ) {
+    if (highlyIsQualified(height)) {
       break;
     } else {
       height =
         height -
-        linkArr.find((item1) => item1.title === item).children.length *
+        navigationList.find((item1) => item1.title === item).children.length *
           rowHeight;
       openMenuList.delete(item);
       menuRef.value.close(item);
@@ -118,58 +88,84 @@ const highlyIsQualified = (height) => {
   if (
     height < window.innerHeight &&
     height <
-      menuDivRef.value.parentNode.parentNode.nextElementSibling.clientHeight
+      menuDivRef.value.parentNode.parentNode.nextElementSibling
+        .firstElementChild.clientHeight
   )
     return true;
-  else return false;
+  return false;
 };
 
+const { $mitt } = useNuxtApp();
 onMounted(() => {
+  $mitt.on('routeSwitching', () => {
+    retractMenuBar();
+  });
+});
+onBeforeUnmount(() => {
+  $mitt.off('routeSwitching');
+});
+
+const retractMenuBar = () => {
+  let height = menuDivRef.value.clientHeight + rowHeight * 2 + 1;
+  for (const item of openMenuList) {
+    if (highlyIsQualified(height)) {
+      break;
+    } else {
+      if (openMenuList.size === 1) break;
+      height =
+        height -
+        navigationList.find((item1) => item1.title === item).children.length *
+          rowHeight;
+      openMenuList.delete(item);
+      menuRef.value.close(item);
+    }
+  }
+};
+onMounted(() => {
+  // 每次缩放改变的时候，判断有没有栏目需要缩回去，先展开的，优先缩进
   window.onresize = (() => {
     let timeoutID = undefined;
     return () => {
       if (timeoutID !== undefined) clearTimeout(timeoutID);
       timeoutID = setTimeout(() => {
-        let height = menuDivRef.value.clientHeight + rowHeight * 2 + 1;
-        for (const item of openMenuList) {
-          if (highlyIsQualified(height)) {
-            break;
-          } else {
-            if (openMenuList.size === 1) break;
-            height =
-              height -
-              linkArr.find((item1) => item1.title === item).children.length *
-                rowHeight;
-            openMenuList.delete(item);
-            menuRef.value.close(item);
-          }
-        }
+        retractMenuBar();
         timeoutID = undefined;
       }, 40);
     };
   })();
-  // linkArr.find((item1) => item1.title === item)
   let height = menuDivRef.value.clientHeight + rowHeight * 2 + 1;
-  for (const item of linkArr) {
-    const resule = item.children.find((item1) => item1.link === route.path);
+  // 初次加载的时候尝试打开当前栏目分类
+  // 记一下目前所在分类的title
+  let thisTitle = null;
+  for (const item of navigationList.values()) {
+    const resule = item.children.find(
+      (item1) => item1.url === route.path.replace(/\/+$/, '')
+    );
     if (resule) {
       height = height + item.children.length * rowHeight;
       if (highlyIsQualified(height)) {
         openMenuList.add(item.title);
         menuRef.value.open(item.title);
       }
-    }
-  }
-  for (const item of linkArr) {
-    height = height + item.children.length * rowHeight;
-    if (highlyIsQualified(height)) {
-      openMenuList.add(item.title);
-      menuRef.value.open(item.title);
-    } else {
+      thisTitle = item.title;
       break;
     }
   }
+  // 然后在剩余空间里按顺序遍历栏目，能展开尽量展开
+  for (const item of navigationList) {
+    if (thisTitle !== item.title) {
+      height = height + item.children.length * rowHeight;
+      if (highlyIsQualified(height)) {
+        openMenuList.add(item.title);
+        menuRef.value.open(item.title);
+      } else {
+        break;
+      }
+    }
+  }
+  // 判断当前所在位置是否需要回到顶部按钮
   returnFromTop();
+  // 挂载上面监听器
   window.addEventListener('scroll', returnFromTop);
 });
 
@@ -215,26 +211,26 @@ const backToTopBtnShow = ref(false);
         @close="closeMenu"
         @open="openMenu">
         <el-sub-menu
-          v-for="item in linkArr"
-          :key="item.title"
+          v-for="(item, index) in navigationList"
+          :key="`barleft-1-link-${index}`"
           :index="item.title">
           <template #title>
             <span>{{ item.title }}</span>
           </template>
           <AppLink
-            v-for="item2 in item.children"
-            :key="item2.title"
-            :to="item2.link"
+            v-for="(item2, index2) in item.children"
+            :key="`barleft-2-link-${index2}`"
+            :to="item2.url"
             class="hover:no-underline"
             ><el-menu-item
-              :index="item2.title"
+              :index="getSpecifiedTitle(item2)"
               class="my-el-menu-item"
               :class="{
-                'my-el-menu-item-hover': route.path
+                'my-el-menu-item-hover': route.path.replace(/\/+$/, '')
                   .trim()
-                  .startsWith(item2.link.trim())
+                  .startsWith(item2.url.trim())
               }"
-              >{{ item2.title }}</el-menu-item
+              >{{ getSpecifiedTitle(item2) }}</el-menu-item
             ></AppLink
           >
         </el-sub-menu>
@@ -247,14 +243,14 @@ const backToTopBtnShow = ref(false);
 .my-el-menu {
   --el-menu-item-font-size: 12pt;
   --el-menu-bg-color: var(--primary);
-  --el-menu-text-color: #ffffff;
-  --el-menu-active-color: #ffffff;
+  --el-menu-text-color: white;
+  --el-menu-active-color: black;
   --el-menu-hover-bg-color: var(--secondary);
-  --el-menu-item-height: 32px;
+  --el-menu-item-height: v-bind(rowHeightpx);
+  --el-menu-sub-item-height: v-bind(rowHeightpx);
   border: 0;
 }
 .my-el-menu-item {
-  height: 32px;
   color: black;
   background-color: #ececec;
 }

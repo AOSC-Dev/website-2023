@@ -7,6 +7,6 @@
 
 <style scoped>
 [class*='features']:not(:first-of-type) {
-  margin-top: 20px;
+  margin-top: 1.5rem;
 }
 </style>

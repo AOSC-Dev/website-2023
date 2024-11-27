@@ -1,0 +1,69 @@
+{
+  "index": {
+    "antong1TextList": {
+      "lable": ["x86-64", "AArch64", "LoongArch"],
+      "conten": [
+        "For x86 devices compatible with AMD64 or Intel 64 instruction set extensions",
+        "For 64-bit Arm devices compatible with Armv8-A and above",
+        "For 64-bit devices compatible with the LoongArch instruction set and 128-bit vector extensions (LSX)"
+      ]
+    },
+    "antong2TextList": {
+      "lable": [
+        "IBM POWER (64-bit, little endian)",
+        "RISC-V (64-bit)",
+        "MIPS-based Loongson-3"
+      ],
+      "conten": [
+        "Applies to 64-bit, little-endian mode devices compatible with Power ISA v2.07 and above",
+        "For 64-bit RISC-V devices compliant with RVA20 Architecture Profile",
+        "Suitable for MIPS-based Loongson-3 devices"
+      ]
+    },
+    "xingxia1TextList": {
+      "lable": [
+        "Intel 80486 or newer",
+        "Godson 2F",
+        "PowerPC (32-bit, big-endian)",
+        "PowerPC (64-bit, big-endian)"
+      ],
+      "conten": ["", "", "", ""]
+    },
+    "xingxia2TextList": {
+      "lable": [
+        "Motorola 68000 Series Processors**",
+        "ARMv4",
+        "ARMv6 (hard floating point)",
+        "ARMv7 (hard floating point with NEON instruction set support)"
+      ],
+      "conten": ["", "", "", ""]
+    },
+    "title1": "operating system",
+    "title2": "Utility tools",
+    "title3": "Antong OS (secondary architecture)",
+    "p1": "Antong OS",
+    "p2": "A Desktop Operating System You'll Desir to",
+    "p3": "Xingxia OS",
+    "p4": "Old equipment can also shine and generate heat",
+    "p5": "Stay tuned...",
+    "p6": "Full-featured Antong OS rescue environment",
+    "p7": "WSL environment",
+    "p8": "AntOS for WSL",
+    "p9": "Red Panda Package Management (oma)",
+    "p10": "Simple and easy-to-use APT software package management interface",
+    "p11": [
+      "Use the terminal to run this command on Debian, Ubuntu and derivatives, as well as deepin, openKylin, etc.",
+      "Distro installation Red Panda package management"
+    ],
+    "p12": "Antong OS supports many processor microarchitectures.",
+    "p13": "Except x86-64, AArch64 and LoongArch,",
+    "p14": "We also support a number of architectures with less stock or incomplete software support.",
+    "p15": "And releases images for players to try and evaluate.",
+    "otherDownloadButtons": {
+      "popoverData": {
+        "conten": "Secondary architecture, Docker, and virtual machine images and other downloads"
+      },
+      "archName": "Other downloads"
+    }
+  }
+}

@@ -1,10 +1,14 @@
 <script setup>
+const { tm,locale } = useI18n();
+const textValue = tm('afterglow.relnote');
 </script>
 
 <template>
   <div>
-    <CategorySecond title="发行注记" />
-    <div class="p-6"> <p> （敬请期待） </p><br /> </div>
+    <CategorySecond :title="textValue.title1" />
+    <div class="p-6">
+      <p class="mb-[1.5rem]"> {{ textValue.p1 }} </p>
+    </div>
   </div>
 </template>
 

@@ -42,7 +42,7 @@ const byteToGb = (bytes) => {
           :style="{
             backgroundColor: buttonColor
           }"
-          class="theme-bg-color-secondary-primary flex h-full flex-col hover:no-underline cursor-pointer py-1">
+          class="px-[0.4rem] theme-bg-color-secondary-primary flex h-full flex-col hover:no-underline cursor-pointer py-1">
           <slot></slot>
           <p v-if="archName" class="first-line-p">{{ archName }}</p>
           <p v-if="isaInfo" class="second-line-p"
