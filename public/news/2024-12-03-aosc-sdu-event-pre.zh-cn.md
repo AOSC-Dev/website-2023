@@ -4,7 +4,6 @@ categories:
 title: "预告：安同校园行山东大学（青岛）站"
 date: 2024-12-03T18:30:00+08:00
 important: true
-home: true
 ---
 ![](/assets/news/aosc-sdu.png)
 
