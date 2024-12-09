@@ -1,10 +1,9 @@
 ---
 categories:
   - advisories
-title: "部分 Linux 内核版本可能导致 Tailscale 部分功能不可用"
+title: "【已解决】部分 Linux 内核版本可能导致 Tailscale 部分功能不可用"
 date: 2024-11-21T22:00:00+08:00
 important: false
-home: true
 ---
 根据[上游用户报告](https://github.com/tailscale/tailscale/issues/13863)，Linux 内核版本：
 
