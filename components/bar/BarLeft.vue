@@ -63,9 +63,7 @@ const route = useRoute();
 const openMenu = (MenuOpenEvent) => {
   const result = navigationList.find((item) => item.title === MenuOpenEvent);
   let height =
-    result.children.length * rowHeight +
-    rowHeight * 2 +
-    menuDivRef.value.clientHeight;
+    result.children.length * rowHeight + menuDivRef.value.clientHeight;
   for (const item of openMenuList) {
     if (highlyIsQualified(height)) {
       break;
@@ -85,11 +83,13 @@ const closeMenu = (MenuOpenEvent) => {
 };
 
 const highlyIsQualified = (height) => {
+  // 在中心内容长度小于window.innerHeight时，回到首页弹窗不可能出来
+  // 此时高度比较参照中心内容长度即可，不需要算上弹窗和底栏
+  // 中心内容长度大于window.innerHeight时，总长度要加上底栏和弹窗和1px的弹窗下边距与window.innerHeight对比
   if (
-    height < window.innerHeight &&
+    height + rowHeight * 2 + 1 < window.innerHeight &&
     height <
-      menuDivRef.value.parentNode.parentNode.nextElementSibling
-        .firstElementChild.clientHeight
+      menuDivRef.value.parentNode.parentNode.nextElementSibling.clientHeight
   )
     return true;
   return false;
@@ -106,7 +106,7 @@ onBeforeUnmount(() => {
 });
 
 const retractMenuBar = () => {
-  let height = menuDivRef.value.clientHeight + rowHeight * 2 + 1;
+  let height = menuDivRef.value.clientHeight;
   for (const item of openMenuList) {
     if (highlyIsQualified(height)) {
       break;
@@ -133,10 +133,11 @@ onMounted(() => {
       }, 40);
     };
   })();
-  let height = menuDivRef.value.clientHeight + rowHeight * 2 + 1;
+  let height = menuDivRef.value.clientHeight;
   // 初次加载的时候尝试打开当前栏目分类
   // 记一下目前所在分类的title
   let thisTitle = null;
+  let thisColumnIsShow = false;
   for (const item of navigationList.values()) {
     const resule = item.children.find(
       (item1) => item1.url === route.path.replace(/\/+$/, '')
@@ -144,8 +145,8 @@ onMounted(() => {
     if (resule) {
       height = height + item.children.length * rowHeight;
       if (highlyIsQualified(height)) {
-        openMenuList.add(item.title);
-        menuRef.value.open(item.title);
+        //记下可以展开，但先不展开，因为要给这个放到队列尾
+        thisColumnIsShow = true;
       }
       thisTitle = item.title;
       break;
@@ -163,6 +164,12 @@ onMounted(() => {
       }
     }
   }
+  //剩余栏目展开完毕，展开当前所在栏目，此时屏幕缩小优先关闭其他栏目
+  if (thisColumnIsShow) {
+    openMenuList.add(thisTitle);
+    menuRef.value.open(thisTitle);
+  }
+
   // 判断当前所在位置是否需要回到顶部按钮
   returnFromTop();
   // 挂载上面监听器
@@ -201,7 +208,7 @@ const backToTopBtnShow = ref(false);
         <el-icon class="my-auto ml-4" size="20"
           ><el-icon-top></el-icon-top
         ></el-icon>
-        <span class="mr-4">返回页首</span>
+        <span class="mr-4">{{ textValue.span1 }}</span>
       </div>
     </Transition>
     <div ref="menuDiv">
@@ -226,7 +233,8 @@ const backToTopBtnShow = ref(false);
               :index="getSpecifiedTitle(item2)"
               class="my-el-menu-item"
               :class="{
-                'my-el-menu-item-hover': route.path.replace(/\/+$/, '')
+                'my-el-menu-item-hover': route.path
+                  .replace(/\/+$/, '')
                   .trim()
                   .startsWith(item2.url.trim())
               }"
