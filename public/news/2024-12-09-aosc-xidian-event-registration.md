@@ -4,7 +4,6 @@ categories:
 title: "《安同校园行》西电站：校外人员入校信息预收集"
 date: 2024-12-09T18:30:00+08:00
 important: true
-home: true
 ---
 ![](/assets/news/安同开源社区校园行西电站_校外人员入校信息预收集二维码.png)
 
