@@ -3,7 +3,6 @@ categories:
   - news
 title: "直播回放：《安同校园行》山东大学（青岛）站"
 date: 2024-12-08T18:30:00+08:00
-home: true
 important: true
 ---
 ![](/assets/news/aosc-sdu-poster.png)
