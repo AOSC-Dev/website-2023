@@ -30,7 +30,7 @@ const linkArr = reactive([
       { title: '联系方式', link: '/contact' },
       {
         title: '参考文档 (Wiki)',
-        link: 'https://wiki.aosc.io/'
+        link: 'https://wiki.aosc.io/zh/'
       },
     ],
     show: true
