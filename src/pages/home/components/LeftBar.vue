@@ -27,7 +27,11 @@ const linkArr = reactive([
     children: [
       { title: '新闻资讯', link: '/news' },
       { title: '活动相册', link: '/gallery' },
-      { title: '联系方式', link: '/contact' }
+      { title: '联系方式', link: '/contact' },
+      {
+        title: '参考文档 (Wiki)',
+        link: 'https://wiki.aosc.io/'
+      },
     ],
     show: true
   },
@@ -60,10 +64,6 @@ const linkArr = reactive([
       {
         title: '社区论坛',
         link: 'https://bbs.aosc.io/'
-      },
-      {
-        title: '参考文档',
-        link: 'https://wiki.aosc.io/'
       },
       {
         title: '代码仓库',
