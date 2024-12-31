@@ -1,7 +1,7 @@
 ---
 categories:
   - journals
-title: "安记冰室・十一月号 | 庆祝社区十三周年"
+title: "安记冰室・十一月号｜庆祝社区十三周年"
 date: 2024-12-06T12:00:00+08:00
 important: false
 home: true

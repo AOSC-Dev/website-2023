@@ -15,4 +15,4 @@ important: false
 ```bash
 oma install aosc-media-writer
 ```
-点此下载：[Windows (x86-64) ](https://releases.aosc.io/writer/AOSCMediaWriter-win64-0.3.3.exe) | [macOS (AArch64)  ](https://releases.aosc.io/writer/AOSCMediaWriter-osx-arm64-0.3.3.dmg)| [macOS (x86-64) ](https://releases.aosc.io/writer/AOSCMediaWriter-osx-0.3.3.dmg)
+点此下载：[Windows (x86-64) ](https://releases.aosc.io/writer/AOSCMediaWriter-win64-0.3.3.exe)｜[macOS (AArch64)  ](https://releases.aosc.io/writer/AOSCMediaWriter-osx-arm64-0.3.3.dmg)| [macOS (x86-64) ](https://releases.aosc.io/writer/AOSCMediaWriter-osx-0.3.3.dmg)
