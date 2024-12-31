@@ -33,11 +33,14 @@ const navigationList = [
   useHIndex(localLink.download, 1),
   linkValue.thisPageFeatures,
   localLink.afterglowRelnote,
-  localLink.afterglowRequirements,
+  useHIndex(localLink.afterglowRequirements, 0),
   linkValue.thisPageSupport
 ];
 
-const docList = [localLink.afterglowRequirements, localLink.afterglowIsa];
+const docList = [
+  useHIndex(useTIndex(localLink.afterglowRequirements, 1), 0),
+  localLink.afterglowIsa
+];
 </script>
 
 <template>

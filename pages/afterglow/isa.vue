@@ -5,16 +5,15 @@ const linkValue = tm('allUniversalLink');
 const localLink = linkValue.local;
 
 const docList = [
-  localLink.afterglowRequirements,
-  localLink.afterLowRequirementsTitle
+  localLink.afterlowRequirementsTitle
 ];
 
 const route = useRoute();
 
 const switchHash = () => {
   switch (route.hash) {
-    case '#afterLowIsaTitle':
-      highlightElement(afterLowIsaList);
+    case '#afterlowIsaTitle':
+      highlightElement(afterlowIsaListRef);
       break;
   }
 };
@@ -33,20 +32,19 @@ onMounted(() => {
   switchHash();
 });
 
-const afterLowIsaList = ref();
+const afterlowIsaListRef = useTemplateRef('afterlowIsaList');
 </script>
 
 <template>
   <div>
-    <category-second id="afterLowIsaTitle" :title="textValue.title1" />
+    <category-second id="afterlowIsaTitle" :title="textValue.title1" />
     <div class="p-6">
       <p>
         {{ textValue.p1 }}
       </p>
-      <app-table-isa
-        ref="afterLowIsaList"
-        my-key="afterlow-isa-1"
-        :table-value="textValue.table1" />
+      <div ref="afterlowIsaList">
+        <app-table-isa my-key="afterlow-isa-1" :table-value="textValue.table1"
+      /></div>
     </div>
     <div class="p-6 mb-[1rem]">
       <p> {{ textValue.p2 }} </p>

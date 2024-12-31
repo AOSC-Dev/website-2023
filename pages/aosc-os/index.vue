@@ -12,7 +12,7 @@ const navigationList = [
   useHIndex(localLink.download, 0),
   linkValue.thisPageFeatures,
   useHIndex(localLink.aoscRelnote, 0),
-  localLink.aoscRequirements,
+  useHIndex(localLink.aoscRequirements, 0),
   linkValue.thisPageSupport
 ];
 
@@ -40,8 +40,8 @@ onMounted(() => {
 
 const docList = [
   localLink.aoscRightForMe,
-  localLink.aoscRequirements,
-  useHIndex(localLink.aoscIsaTableTitle,0)
+  useHIndex(useTIndex(localLink.aoscRequirements, 3), 0),
+  useHIndex(useTIndex(localLink.aoscIsaTableTitle, 1), 0)
 ];
 </script>
 
@@ -52,7 +52,7 @@ const docList = [
       <p>
         {{ textValue.p1 }}
       </p>
-      <div>
+      <div class="mt-[1.5rem]">
         <AccordionNavigation :navigation-list="navigationList" />
       </div>
       <div ref="bgImg" class="h-649.12">

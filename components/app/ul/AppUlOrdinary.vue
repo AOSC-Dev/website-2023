@@ -23,7 +23,7 @@ const props = defineProps({
     <li
       v-for="(item, index) in lis"
       :key="`${myKey}-li-${index}`"
-      :class="liClass"
+      :class="Array.isArray(item) ? 'list-none' : liClass"
       ><template v-if="typeof item === 'string'">{{ item }}</template
       ><template v-else-if="Array.isArray(item)"
         ><app-ul-ordinary

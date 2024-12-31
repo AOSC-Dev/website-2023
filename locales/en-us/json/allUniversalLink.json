@@ -74,7 +74,10 @@
       "hash": ["#aosc-os-download", "#afterglow-download", "#oma-download"]
     },
     "aoscIsaTableTitle": {
-      "title": ["Antong OS Architecture Support Specification"],
+      "title": [
+        "Antong OS Architecture Support Specification",
+        "Architecture Support Specification"
+      ],
       "url": "/aosc-os/isa",
       "hash": ["#aoscOsIsaTableTitle"]
     },
@@ -103,7 +106,8 @@
       "title": [
         "System Configuration Requirements",
         "Antong OS System Requirements Specification",
-        "Configuration Requirements"
+        "Configuration Requirements",
+        "System Configuration Requirements Table"
       ],
       "url": "/aosc-os/requirements",
       "hash": ["#aoscOsRequirementsTitle"]
@@ -122,19 +126,21 @@
     },
     "afterglowRequirements": {
       "title": ["System Configuration Requirements"],
-      "url": "/afterglow/requirements"
+      "url": "/afterglow/requirements",
+      "hash": ["#afterlowRequirementsTitle"]
     },
     "afterglowIsa": {
       "title": ["Architecture Support Specification"],
       "url": "/afterglow/isa"
     },
-    "afterLowRequirementsTitle": {
+    "afterlowRequirementsTitle": {
       "title": ["Xingxia OS System Requirements Specification"],
-      "url": "/afterglow/requirements#afterLowRequirementsTitle"
+      "url": "/afterglow/requirements#afterlowRequirementsTitle"
     },
-    "afterLowIsaTitle": {
+    "afterlowIsaTitle": {
       "title": ["Xingxia OS Architecture Support Specification"],
-      "url": "/afterglow/isa#afterLowIsaTitle"
+      "url": "/afterglow/isa",
+      "hash": ["#afterlowIsaTitle"]
     },
     "about": {
       "title": ["About the Community"],
@@ -508,7 +514,7 @@
     "url": "https://dictionary.cambridge.org/dictionary/english/community"
   },
   "AOSCWiki": {
-    "title": ["AOSC Wiki", "Reference Documents"],
+    "title": ["AOSC Wiki", "Reference document (Wiki)"],
     "url": "https://wiki.aosc.io/"
   },
   "GitHub": {

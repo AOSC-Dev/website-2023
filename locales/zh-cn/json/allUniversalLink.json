@@ -74,7 +74,7 @@
       "hash": ["#aosc-os-download", "#afterglow-download", "#oma-download"]
     },
     "aoscIsaTableTitle": {
-      "title": ["安同 OS 架构支持规格表"],
+      "title": ["安同 OS 架构支持规格表", "架构支持规格表"],
       "url": "/aosc-os/isa",
       "hash": ["#aoscOsIsaTableTitle"]
     },
@@ -100,7 +100,12 @@
       "url": "/aosc-os/wsl/requirements"
     },
     "aoscRequirements": {
-      "title": ["系统配置需求", "安同 OS 系统需求配置表", "配置需求"],
+      "title": [
+        "系统配置需求",
+        "安同 OS 系统需求配置表",
+        "配置需求",
+        "系统配置需求表"
+      ],
       "url": "/aosc-os/requirements",
       "hash": ["#aoscOsRequirementsTitle"]
     },
@@ -114,20 +119,22 @@
       "hash": ["#issuance-note"]
     },
     "afterglowRequirements": {
-      "title": ["系统配置需求"],
-      "url": "/afterglow/requirements"
+      "title": ["系统配置需求", "系统配置需求表"],
+      "url": "/afterglow/requirements",
+      "hash": ["#afterlowRequirementsTitle"]
     },
     "afterglowIsa": {
       "title": ["架构支持规格表"],
       "url": "/afterglow/isa"
     },
-    "afterLowRequirementsTitle": {
+    "afterlowRequirementsTitle": {
       "title": ["星霞 OS 系统需求配置表"],
-      "url": "/afterglow/requirements#afterLowRequirementsTitle"
+      "url": "/afterglow/requirements#afterlowRequirementsTitle"
     },
-    "afterLowIsaTitle": {
+    "afterlowIsaTitle": {
       "title": ["星霞 OS 架构支持规格表"],
-      "url": "/afterglow/isa#afterLowIsaTitle"
+      "url": "/afterglow/isa",
+      "hash": ["#afterlowIsaTitle"]
     },
     "about": { "title": ["关于社区"], "url": "/about" },
     "contact": {
@@ -470,8 +477,8 @@
     "url": "https://dictionary.cambridge.org/dictionary/english/community"
   },
   "AOSCWiki": {
-    "title": ["AOSC 维基", "参考文档"],
-    "url": "https://wiki.aosc.io/"
+    "title": ["AOSC 维基", "参考文档 (Wiki)"],
+    "url": "https://wiki.aosc.io/zh"
   },
   "GitHub": {
     "title": ["GitHub 组织", "代码仓库"],

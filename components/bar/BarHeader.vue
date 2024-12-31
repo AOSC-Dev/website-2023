@@ -8,15 +8,16 @@ const navigationList = [
   linkValue.local.about
 ];
 
-const switchLanguage = (to) => {
+const switchLanguage = async (to) => {
   switch (to) {
-    case 'zh-cn':
-      setLocale('zh-cn');
-      break;
     case 'en-us':
-      setLocale('en-us');
+      await setLocale('en-us');
+      break;
+    case 'zh-cn':
+      await setLocale('zh-cn');
       break;
   }
+  location.reload();
 };
 </script>
 

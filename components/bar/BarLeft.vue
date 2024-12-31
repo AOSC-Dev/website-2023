@@ -20,7 +20,8 @@ const navigationList = [
     children: [
       localLink.news,
       localLink.gallery,
-      useTIndex(localLink.contact, 1)
+      useTIndex(localLink.contact, 1),
+      useTIndex(linkValue.AOSCWiki, 1)
     ],
     show: true
   },
@@ -42,7 +43,6 @@ const navigationList = [
     children: [
       localLink.paste,
       linkValue.forum,
-      useTIndex(linkValue.AOSCWiki, 1),
       useTIndex(linkValue.GitHub, 1),
       linkValue.mail20,
       linkValue.buildbots,

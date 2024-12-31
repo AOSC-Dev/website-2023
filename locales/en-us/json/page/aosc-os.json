@@ -357,7 +357,6 @@
       "caption": "Antong OS system configuration requirements table",
       "th": ["Hardware components", "Configuration requirements"],
       "tr": [
-        ["Hardware components", "Configuration requirements"],
         ["processor", "Any processor compatible with Android OS"],
         ["Memory", "At least 2GiB"],
         [
@@ -370,10 +369,7 @@
     },
     "ul1": {
       "li": [
-        [
-          "For more information about Anton OS compatible processors, please see",
-          "Antong OS architecture support specification sheet"
-        ],
+        "For more information about Anton OS compatible processors, please see",
         "When browsing the web, system memory and processor usage will increase significantly: If you need to browse a lot of web pages and watch high-definition streaming content, it is recommended to use Antong OS on a device with at least 4 processor cores and 4GiB of memory.",
         "Generally speaking, a 4K resolution screen requires a graphics card with 2GiB of video memory to use the Antong OS desktop interface smoothly.",
         "The recommendations on storage requirements are based on the fact that there is enough space for daily work and system updates after the system is installed; if your device has larger memory, the size of the default swap space (virtual memory file) created by the installer will also change accordingly. large, so you should also make relevant considerations when partitioning",

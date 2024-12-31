@@ -51,9 +51,9 @@ const summerOfOpenSource = textValue.summerOfOpenSource.map((obj) => {
         :key="`internship-index-1-ps-${index}`"
         >{{ item }}</p
       >
-      <div>
+      <p>
         <AccordionNavigation :navigation-list="navigationList" />
-      </div>
+      </p>
     </div>
 
     <category-second id="todo" :title="localLink.internship.title[2]" />

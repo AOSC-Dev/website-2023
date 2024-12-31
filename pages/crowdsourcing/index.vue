@@ -25,9 +25,7 @@ const localLink = linkValue.local;
 
     <category-second :title="textValue.title2" />
     <div class="p-6 py-6 pl-16">
-      <ul class="list-disc">
-        <app-ul-ordinary :lis="textValue.ul1.li" my-key="crowdsourcing-1" />
-      </ul>
+      <app-ul-ordinary :lis="textValue.ul1.li" my-key="crowdsourcing-1" />
     </div>
   </div>
 </template>

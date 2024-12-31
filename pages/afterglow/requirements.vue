@@ -4,14 +4,14 @@ const textValue = tm('afterglow.requirements');
 const linkValue = tm('allUniversalLink');
 const localLink = linkValue.local;
 
-const docList = [localLink.afterLowIsaTitle];
+const docList = [useHIndex(localLink.afterlowIsaTitle, 0)];
 
 const route = useRoute();
 
 const switchHash = () => {
   switch (route.hash) {
-    case '#afterLowRequirementsTitle':
-      highlightElement(afterLowRequirementsList);
+    case '#afterlowRequirementsTitle':
+      highlightElement(afterlowRequirementsList);
       break;
   }
 };
@@ -30,17 +30,17 @@ onMounted(() => {
   switchHash();
 });
 
-const afterLowRequirementsList = ref();
+const afterlowRequirementsList = ref();
 </script>
 
 <template>
   <div>
-    <category-second id="afterLowRequirementsTitle" :title="textValue.title1" />
+    <category-second id="afterlowRequirementsTitle" :title="textValue.title1" />
     <div class="p-6">
       <p>
         {{ textValue.p1 }}
       </p>
-      <table ref="afterLowRequirementsList" class="mt-6">
+      <table ref="afterlowRequirementsList" class="mt-6">
         <caption class="text-[12pt] font-semibold">
           {{ textValue.table1.caption }}
         </caption>
@@ -74,7 +74,9 @@ const afterLowRequirementsList = ref();
           v-for="(item, index) in textValue.ul1.li"
           :key="`afterlow-requirements-1-li-${index}`"
           ><div v-if="index === 0"
-            >{{ item[0] }}<AppLink to="/afterglow/isa">{{ item[1] }}</AppLink>
+            >{{ item
+            }}<link-standard
+              :link="useHIndex(localLink.afterlowIsaTitle, 0)" />
           </div>
           <div v-else>{{ item }}</div></li
         >

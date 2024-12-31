@@ -4,17 +4,17 @@ const props = defineProps({
   ...RouterLink.props,
   class: {
     type: String,
-    default: "text-link",
-  },
+    default: 'text-link'
+  }
 });
 
 const isExternalLink = computed(() => {
-  return typeof props.to === "string" && props.to.startsWith("http");
+  return typeof props.to === 'string' && props.to.startsWith('http');
 });
 </script>
 
 <template>
-  <a v-if="isExternalLink" :href="to" :class="props.class">
+  <a v-if="isExternalLink" :href="to" target="_blank" :class="props.class">
     <slot></slot>
   </a>
   <NuxtLinkLocale v-else v-bind="props">

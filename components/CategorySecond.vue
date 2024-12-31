@@ -24,7 +24,7 @@ const props = defineProps({
         :to="
           props.params
             ? { name: props.rightUrl, params: props.params }
-            : props.rightUrl + '/' + title
+            : props.rightUrl
         ">
         {{ props.rightText }}
       </NuxtLinkLocale>

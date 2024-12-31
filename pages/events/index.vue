@@ -73,9 +73,9 @@ const lis5 = textValue.ul5.li.map((obj, index) => {
     <div class="p-6">
       <p>{{ textValue.p1 }} </p>
       <p> {{ textValue.p2 }} </p>
-      <div>
+      <p>
         <AccordionNavigation :navigation-list="navigationList" />
-      </div>
+      </p>
     </div>
 
     <category-second id="aoscc" :title="textValue.title2" />
@@ -108,11 +108,11 @@ const lis5 = textValue.ul5.li.map((obj, index) => {
     <div ref="campus" class="p-6">
       <p> {{ textValue.p4 }} </p>
       <p> {{ textValue.p5 }} </p>
-      <div class="pt-[1rem] pb-[1rem] px-16">
+      <div class="pl-[4rem]">
         <app-ul-b-and-link :lis="lis2" my-key="events-index-2-li" />
       </div>
-      <p> {{ textValue.p6 }} </p>
-      <div class="pt-4 pb-4 px-16">
+      <p class="pt-[1rem]"> {{ textValue.p6 }} </p>
+      <div  class="pl-[3rem] pt-[1rem]">
         <li
           v-for="(item, index) in textValue.ul3.li"
           :key="`events-index-3-li-${index}`"
@@ -144,8 +144,4 @@ const lis5 = textValue.ul5.li.map((obj, index) => {
   </div>
 </template>
 
-<style scoped>
-p {
-  margin: auto;
-}
-</style>
+<style scoped></style>

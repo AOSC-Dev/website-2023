@@ -31,8 +31,9 @@ export default defineNuxtConfig({
   },
   i18n: {
     vueI18n: '~/plugins/i18n.config.ts',
-    strategy: 'prefix_and_default',
+    strategy: 'prefix_except_default',
     defaultLocale: 'zh-cn',
+    skipSettingLocaleOnNavigate: true,
     locales: [
       {
         code: 'en-us',
