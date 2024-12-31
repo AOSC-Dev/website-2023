@@ -51,6 +51,9 @@ const chineseToEnglish = (jsonObj, englishList) => {
   return jsonObj;
 };
 
+// main1 用来提取 json 中文件包含中文的根节点，修改输入源请更改顶层 import
+// 用法：先用 main1 读取你要替换的 json 文件，拿到一个中文 string 数组，丢
+// 给翻译，然后去 main2 替换原来的文件并输出新文件，完成一个多语言翻译
 const main1 = () => {
   // 调用递归函数，提取中文根节点
   extractChineseNodes(jsonData);
@@ -183,6 +186,9 @@ const sss = [
   'Implementation Principles'
 ];
 
+
+// mian2 用来替换一个json 文件中每一个包含中文的根节点，其输入 sss 
+// 应该为 main1 的输出，输入jsonData应该是你要替换的json文件。
 const main2 = () => {
   chineseToEnglish(jsonData, sss);
   fs.writeFileSync(
