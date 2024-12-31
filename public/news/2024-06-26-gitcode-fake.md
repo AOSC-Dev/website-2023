@@ -17,8 +17,8 @@ important: false
 
 为封存冒用证据，我社贡献者已留存相关页面的归档：
 
-- AOSC-Dev 组织：[Wayback Machine](https://web.archive.org/web/20240626042401/https://gitcode.com/AOSC-Dev) | [Archive.is](https://archive.is/su9h5)
-- AOSC-Archive 组织：[Wayback Machine](https://web.archive.org/web/20240626042802/https://gitcode.com/AOSC-Archive) | [Archive.is](https://archive.is/ivJ28)
+- AOSC-Dev 组织：[Wayback Machine](https://web.archive.org/web/20240626042401/https://gitcode.com/AOSC-Dev)｜[Archive.is](https://archive.is/su9h5)
+- AOSC-Archive 组织：[Wayback Machine](https://web.archive.org/web/20240626042802/https://gitcode.com/AOSC-Archive)｜[Archive.is](https://archive.is/ivJ28)
 
 请各位社区贡献者、用户及好友周知，感谢！
 

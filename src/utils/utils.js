@@ -22,7 +22,7 @@ export function toOutUrl(url) {
 export const title = '安同开源社区 (AOSC)';
 
 export function setTitle(titlePre) {
-  document.title = titlePre + ' | ' + title;
+  document.title = titlePre + '｜' + title;
 }
 
 export function toUrl(url) {
