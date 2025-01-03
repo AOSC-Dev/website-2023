@@ -18,7 +18,6 @@
     "@pinia/nuxt": "^0.5.4",
     "axios": "^1.7.7",
     "element-plus": "^2.8.4",
-    "eslint": "^9.12.0",
     "eslit": "^6.0.0",
     "highlightjs": "^9.16.2",
     "mitt": "^3.0.1",
@@ -37,8 +36,10 @@
     "@element-plus/icons-vue": "^2.3.1",
     "@highlightjs/vue-plugin": "^2.1.0",
     "@nuxt-themes/docus": "^1.15.0",
+    "@nuxt/eslint-config": "^0.7.4",
     "@stylistic/eslint-plugin-js": "^2.9.0",
     "autoprefixer": "^10.4.20",
+    "eslint": "^9.17.0",
     "eslint-config-prettier": "^9.1.0",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.13"

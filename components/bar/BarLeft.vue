@@ -224,22 +224,24 @@ const backToTopBtnShow = ref(false);
           <template #title>
             <span>{{ item.title }}</span>
           </template>
-          <AppLink
-            v-for="(item2, index2) in item.children"
-            :key="`barleft-2-link-${index2}`"
-            :to="item2.url"
-            class="hover:no-underline"
-            ><el-menu-item
-              :index="getSpecifiedTitle(item2)"
-              class="my-el-menu-item"
-              :class="{
-                'my-el-menu-item-hover': route.path
-                  .replace(/\/+$/, '')
-                  .trim()
-                  .startsWith(item2.url.trim())
-              }"
-              >{{ getSpecifiedTitle(item2) }}</el-menu-item
-            ></AppLink
+          <div class="my-item-ul"
+            ><AppLink
+              v-for="(item2, index2) in item.children"
+              :key="`barleft-2-link-${index2}`"
+              :to="item2.url"
+              class="hover:no-underline"
+              ><el-menu-item
+                :index="getSpecifiedTitle(item2)"
+                class="my-el-menu-item"
+                :class="{
+                  'my-el-menu-item-hover': route.path
+                    .replace(/\/+$/, '')
+                    .trim()
+                    .startsWith(item2.url.trim())
+                }"
+                >{{ getSpecifiedTitle(item2) }}</el-menu-item
+              ></AppLink
+            ></div
           >
         </el-sub-menu>
       </el-menu>
@@ -256,8 +258,11 @@ const backToTopBtnShow = ref(false);
   --el-menu-hover-bg-color: var(--secondary);
   --el-menu-item-height: v-bind(rowHeightpx);
   --el-menu-sub-item-height: v-bind(rowHeightpx);
+  --el-menu-base-level-padding: 10px;
+  --el-menu-level-padding: 5px;
   border: 0;
 }
+
 .my-el-menu-item {
   color: black;
   background-color: #ececec;
@@ -293,5 +298,11 @@ const backToTopBtnShow = ref(false);
   100% {
     height: 2rem;
   }
+}
+
+.my-item-ul {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  background-color: #ececec;
 }
 </style>

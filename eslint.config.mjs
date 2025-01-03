@@ -1,8 +1,9 @@
 import stylisticJs from '@stylistic/eslint-plugin-js';
-import withNuxt from './.nuxt/eslint.config.mjs';
+import { createConfigForNuxt } from '@nuxt/eslint-config/flat';
+
 import eslintConfigPrettier from 'eslint-config-prettier';
 
-export default withNuxt([
+export default createConfigForNuxt(
   {
     plugins: {
       // eslint将风格(stylistic)类的监控都转移到了另一个插件中
@@ -12,4 +13,4 @@ export default withNuxt([
   },
   // 这个配置会关闭eslint与prettier冲突的配置，防止出现prettier格式完eslint爆红
   eslintConfigPrettier
-]);
+);
