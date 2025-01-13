@@ -1,6 +1,6 @@
 <script setup>
 import LinkButton from '../../components/LinkButton.vue';
-import { onImgLoad, useSeizeSeat } from '../../utils/utils';
+import { onImgLoad } from '../../utils/utils';
 
 const navigationList = [
   {
@@ -16,30 +16,22 @@ const navigationList = [
     path: 'https://repo.aosc.io/mascots/zhaxia-stickers-v1.zip'
   }
 ];
-const [observer1, buffer] = useSeizeSeat('bgImg1', 2.3333);
-const [observer2, imgHeights] = useSeizeSeat('bgImg2', 1, buffer);
 </script>
 
 <template>
-  <div class="pl-[1px]">
+  <div class="grid grid-cols-1">
     <category-second title="社区吉祥物" />
-    <div ref="bgImg1" class="bg-img-height1">
-      <img
-        @load="onImgLoad(observer1, imgHeights[0])"
-        src="/assets/mascot/anan.png"
-    /></div>
-
-    <div class="flex flex-wrap *:w-1/2">
-      <div>
-        <category-second title="贴图包" class="border-r border-r-white" />
-        <div
-          class="p-[2rem] flex justify-between border-r-[1px] theme-border-secondary">
-          <div class="basis-1/2 mr-[1em]">
-            <div ref="bgImg2" class="bg-img-height2">
-              <img
-                @load="onImgLoad(observer2, imgHeights[1])"
-                src="/assets/mascot/qr.png"
-                alt="二维码" />
+    <div> <img class="w-full imgScale1" src="/assets/mascot/anan.png" /></div>
+    <div class="grid grid-cols-2">
+      <category-second title="贴图包" />
+      <category-second
+        title="原始设定稿"
+        class="border-l border-l-white" />
+      <div class="flex flex-col">
+        <div class="my-auto p-[2rem] grid grid-cols-2">
+          <div class="mr-[1em]">
+            <div>
+              <img src="/assets/mascot/qr.png" alt="二维码" />
             </div>
 
             <p
@@ -47,45 +39,85 @@ const [observer2, imgHeights] = useSeizeSeat('bgImg2', 1, buffer);
               扫码获取微信贴图包
             </p>
           </div>
-          <div class="basis-1/2 ml-[1em] flex flex-col justify-between">
-            <LinkButton
-              class="basis-1/4"
+          <div class="flex flex-col justify-between ml-[1em]">
+            <link-button
               v-for="(item, index) in navigationList"
+              :key="`mascot-index-1-link-${index}`"
+              class="basis-1/4"
               :link="item.path"
-              :text="item.text"
-              :key="index" />
+              :text="item.text" />
           </div>
         </div>
       </div>
 
-      <div>
-        <category-second title="设定稿" />
-        <div class="p-[2em] justify-between h-[calc(100%-2em)] flex">
-          <div class="my-auto">
-            <p class="text-[0.8em] xl:text-[1.07em] 2xl:text-[1.2em]">
-              本设定稿由钛山设计，使用 CC-BY-SA 4.0 International
-              许可证进行授权。钛山为自由及开源软件项目提供免费且许可开放的吉祥物设计服务。有意者敬请联系：
-            </p>
-            <div class="flex flex-row">
-              <div class="flex flex-col w-full py-[18px] mr-12">
-                <link-button
-                  class="h-full my-auto"
-                  text="设定稿"
-                  link="https://repo.aosc.io/mascots/mascots.zip" />
-              </div>
-              <ul class="text-[0.8em] xl:text-[1.07em] 2xl:text-[1.2em]">
-                <li
-                  ><a href="https://tysontan.com" class="text-link"
-                    >https://tysontan.com</a
-                  ></li
+      <div class="grid grid-cols-1 border-l theme-border-secondary">
+        <div>
+          <div class="p-[2em] justify-between flex">
+            <div
+              ><p class="text-[0.8em] xl:text-[1.07em] 2xl:text-[1.2em]">
+                社区吉祥物安安和同同的原始设定稿由钛山设计，使用 CC-BY-SA 4.0
+                International
+                许可证进行授权。钛山为自由及开源软件项目提供免费且许可开放的吉祥物设计服务。有意者敬请联系：
+              </p>
+              <div class="mt-[1rem] flex flex-row">
+                <div class="w-[50%] mr-[2rem]">
+                  <link-button
+                    class="h-full my-auto"
+                    text="下载设定稿"
+                    link="https://repo.aosc.io/mascots/mascots.zip" />
+                </div>
+                <div class="grid grid-col-1 gap-y-3 text-[0.8em] xl:text-[1.07em] 2xl:text-[1.2em]"
+                  ><app-link
+                    pp-link
+                    href="https://tysontan.com"
+                    class="text-link"
+                    >https://tysontan.com</app-link
+                  ><app-link
+                    pp-link
+                    href="mailto:tysontan@tysontan.com"
+                    class="text-link"
+                    >tysontan@tysontan.com</app-link
+                  ></div
                 >
-                <li>
-                  <a href="mailto:tysontan@tysontan.com" class="text-link"
-                    >tysontan@tysontan.com</a
+              </div></div
+            >
+          </div>
+        </div>
+        <div
+          ><category-second
+            title="Fumo 设定稿"
+            class="border-l border-l-white" />
+          <div class="p-[2em] justify-between flex">
+            <div
+              ><p class="text-[0.8em] xl:text-[1.07em] 2xl:text-[1.2em]">
+                社区吉祥物安安的 Fumo 布偶设定稿由“番茄炒蛋”社团画师 Yukata
+                受用户委托设计，使用 CC BY-SA 4.0 International 许可证进行授权。
+              </p>
+              <p class="mt-[1rem] text-[0.8em] xl:text-[1.07em] 2xl:text-[1.2em]">
+                “番茄炒蛋”社团提供付费可选商用的二次元形象 Fumo
+                化设计服务，有意请点击以下链接：
+              </p>
+              <div class="mt-[1rem] flex flex-row">
+                <div class="w-[50%] mr-[2rem]">
+                  <link-button
+                    class="h-full my-auto"
+                    text="下载设定稿"
+                    link="https://repo.aosc.io/mascots/fumo.zip" /> </div
+                ><div class="grid grid-col-1 whitespace-pre gap-y-3 text-[0.8em] xl:text-[1.07em] 2xl:text-[1.2em]">
+                  <div
+                    ><app-link
+                      href="https://m.tb.cn/h.TegyiGv?tk=zBfT3w1AVmz"
+                      class="text-link"
+                      >咸鱼</app-link
+                    >（常用联系方式）</div
+                  ><app-link
+                    href="https://huajia.163.com/main/profile/LBpmxjyE"
+                    class="text-link"
+                    >画加</app-link
                   >
-                </li>
-              </ul>
-            </div>
+                </div>
+              </div></div
+            >
           </div>
         </div>
       </div>
@@ -162,11 +194,7 @@ li {
 .a-li {
   margin: 12px 0;
 }
-
-.bg-img-height1 {
-  height: v-bind('imgHeights[0].value');
-}
-.bg-img-height2 {
-  height: v-bind('imgHeights[1].value');
+.imgScale1 {
+  aspect-ratio: 7/3;
 }
 </style>
