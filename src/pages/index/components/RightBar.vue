@@ -34,6 +34,10 @@ const commonLinkList = reactive([
     title: '使用公共剪贴板'
   },
   {
+    url: 'https://packages.aosc.io/',
+    title: '查询软件包信息'
+  },
+  {
     url: '/events',
     title: '查阅近期活动信息'
   },
