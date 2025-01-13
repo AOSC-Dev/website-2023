@@ -80,6 +80,10 @@ const linkArr = reactive([
       {
         title: '自动化设施',
         link: 'https://buildit.aosc.io/'
+      },
+      {
+        title: '软件包查询站',
+        link: 'https://packages.aosc.io/'
       }
     ],
     show: true
