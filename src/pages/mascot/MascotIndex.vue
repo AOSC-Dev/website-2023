@@ -1,6 +1,6 @@
 <script setup>
 import LinkButton from '../../components/LinkButton.vue';
-import { onImgLoad } from '../../utils/utils';
+import AppLink from '../../components/AppLink.vue';
 
 const navigationList = [
   {
@@ -24,9 +24,7 @@ const navigationList = [
     <div> <img class="w-full imgScale1" src="/assets/mascot/anan.png" /></div>
     <div class="grid grid-cols-2">
       <category-second title="贴图包" />
-      <category-second
-        title="原始设定稿"
-        class="border-l border-l-white" />
+      <category-second title="原始设定稿" class="border-l border-l-white" />
       <div class="flex flex-col">
         <div class="my-auto p-[2rem] grid grid-cols-2">
           <div class="mr-[1em]">
@@ -66,16 +64,11 @@ const navigationList = [
                     text="下载设定稿"
                     link="https://repo.aosc.io/mascots/mascots.zip" />
                 </div>
-                <div class="grid grid-col-1 gap-y-3 text-[0.8em] xl:text-[1.07em] 2xl:text-[1.2em]"
-                  ><app-link
-                    pp-link
-                    href="https://tysontan.com"
-                    class="text-link"
+                <div
+                  class="grid grid-col-1 gap-y-3 text-[0.8em] xl:text-[1.07em] 2xl:text-[1.2em]"
+                  ><app-link to="https://tysontan.com" class="text-link"
                     >https://tysontan.com</app-link
-                  ><app-link
-                    pp-link
-                    href="mailto:tysontan@tysontan.com"
-                    class="text-link"
+                  ><app-link to="mailto:tysontan@tysontan.com" class="text-link"
                     >tysontan@tysontan.com</app-link
                   ></div
                 >
@@ -93,7 +86,8 @@ const navigationList = [
                 社区吉祥物安安的 Fumo 布偶设定稿由“番茄炒蛋”社团画师 Yukata
                 受用户委托设计，使用 CC BY-SA 4.0 International 许可证进行授权。
               </p>
-              <p class="mt-[1rem] text-[0.8em] xl:text-[1.07em] 2xl:text-[1.2em]">
+              <p
+                class="mt-[1rem] text-[0.8em] xl:text-[1.07em] 2xl:text-[1.2em]">
                 “番茄炒蛋”社团提供付费可选商用的二次元形象 Fumo
                 化设计服务，有意请点击以下链接：
               </p>
@@ -103,15 +97,16 @@ const navigationList = [
                     class="h-full my-auto"
                     text="下载设定稿"
                     link="https://repo.aosc.io/mascots/fumo.zip" /> </div
-                ><div class="grid grid-col-1 whitespace-pre gap-y-3 text-[0.8em] xl:text-[1.07em] 2xl:text-[1.2em]">
+                ><div
+                  class="grid grid-col-1 whitespace-pre gap-y-3 text-[0.8em] xl:text-[1.07em] 2xl:text-[1.2em]">
                   <div
                     ><app-link
-                      href="https://m.tb.cn/h.TegyiGv?tk=zBfT3w1AVmz"
+                      to="https://m.tb.cn/h.TegyiGv?tk=zBfT3w1AVmz"
                       class="text-link"
                       >咸鱼</app-link
                     >（常用联系方式）</div
                   ><app-link
-                    href="https://huajia.163.com/main/profile/LBpmxjyE"
+                    to="https://huajia.163.com/main/profile/LBpmxjyE"
                     class="text-link"
                     >画加</app-link
                   >
