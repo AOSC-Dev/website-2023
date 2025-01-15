@@ -1,9 +1,10 @@
 ---
 categories:
   - advisories
-title: "rsync 及相关软件包推送安全更新，修复高危漏洞"
+title: "rsync 推送高危安全漏洞修复更新"
 date: 2025-01-15T09:15:00+08:00
-important: false
+important: true
+home: true
 ---
 
 北京时间今日凌晨，rsync 公开了六个安全漏洞，其中最严重的漏洞 CVSS 3.1 评分高达 9.8，可允许匿名且仅有只读权限的客户端在服务端运行任意代码。
