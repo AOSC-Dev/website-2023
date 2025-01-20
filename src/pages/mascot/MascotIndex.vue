@@ -23,11 +23,61 @@ const navigationList = [
     <category-second title="社区吉祥物" />
     <div> <img class="w-full imgScale1" src="/assets/mascot/anan.png" /></div>
     <div class="grid grid-cols-2">
+      <category-second title="安安和同同设定稿" />
+      <category-second
+        title="Minecraft 人物模型 (Figura)"
+        class="border-l border-l-white" />
+      <div class="flex">
+        <div
+          class="p-[1.75rem] text-[0.8rem] xl:text-[1.07rem] 2xl:text-[1.2rem]"
+          ><p>
+            社区吉祥物安安和同同的原始设定稿由钛山设计，使用 CC BY-SA 4.0
+            International
+            许可证进行授权。钛山为自由及开源软件项目提供免费且许可开放的吉祥物设计服务。有意者敬请联系：
+          </p>
+          <div class="mt-[1rem] flex flex-row justify-between">
+            <div class="w-[50%]">
+              <link-button
+                class="h-full"
+                text="下载设定稿"
+                link="https://repo.aosc.io/mascots/mascots.zip" />
+            </div>
+            <div class="grid grid-col-1 gap-y-3"
+              ><app-link to="https://tysontan.com" class="text-link"
+                >https://tysontan.com</app-link
+              ><app-link to="mailto:tysontan@tysontan.com" class="text-link"
+                >tysontan@tysontan.com</app-link
+              ></div
+            >
+          </div>
+        </div>
+      </div>
+      <div class="border-l flex theme-border-secondary">
+        <div
+          class="p-[1.75rem] flex flex-col justify-between text-[0.8rem] xl:text-[1.07rem] 2xl:text-[1.2rem]"
+          ><p>
+            社区吉祥物安安的 Minecraft 人物模型由社区好友 @安慕希 设计，面向
+            <app-link to="https://figuramc.org/">Figura</app-link>
+            模组制作。本人物模型使用 CC BY-SA 4.0 International 许可证进行授权。
+          </p>
+          <div class="mt-[1rem] flex flex-row justify-between">
+            <div class="w-[50%]">
+              <link-button
+                class="h-full"
+                text="下载人物模型"
+                link="https://github.com/OvOla2/AnAn-Figura-avatar" />
+            </div>
+            <div class="grid grid-col-1 gap-y-3">
+              <div class="invisible">占位</div><div class="invisible">占位</div>
+            </div>
+          </div>
+        </div>
+      </div>
       <category-second title="贴图包" />
-      <category-second title="原始设定稿" class="border-l border-l-white" />
-      <div class="flex flex-col">
-        <div class="my-auto p-[2rem] grid grid-cols-2">
-          <div class="mr-[1em]">
+      <category-second title="Fumo 设定稿" class="border-l border-l-white" />
+      <div class="flex">
+        <div class="p-[1.75rem] grid grid-cols-2">
+          <div class="mr-[1.5rem]">
             <div>
               <img src="/assets/mascot/qr.png" alt="二维码" />
             </div>
@@ -37,90 +87,60 @@ const navigationList = [
               扫码获取微信贴图包
             </p>
           </div>
-          <div class="flex flex-col justify-between ml-[1em]">
-            <link-button
+          <div
+            class="flex flex-col justify-between text-[0.8rem] xl:text-[1.07rem] 2xl:text-[1.2rem]">
+            <div
               v-for="(item, index) in navigationList"
               :key="`mascot-index-1-link-${index}`"
-              class="basis-1/4"
-              :link="item.path"
-              :text="item.text" />
+              class="flex flex-row"
+              ><link-button
+                class="w-full"
+                :link="item.path"
+                :text="item.text" />
+              <div class="grid grid-col-1 gap-y-3 w-0 whitespace-pre">
+                <div class="invisible">占位 </div
+                ><div class="invisible">占位</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
-      <div class="grid grid-cols-1 border-l theme-border-secondary">
-        <div>
-          <div class="p-[2em] justify-between flex">
-            <div
-              ><p class="text-[0.8em] xl:text-[1.07em] 2xl:text-[1.2em]">
-                社区吉祥物安安和同同的原始设定稿由钛山设计，使用 CC-BY-SA 4.0
-                International
-                许可证进行授权。钛山为自由及开源软件项目提供免费且许可开放的吉祥物设计服务。有意者敬请联系：
-              </p>
-              <div class="mt-[1rem] flex flex-row">
-                <div class="w-[50%] mr-[2rem]">
-                  <link-button
-                    class="h-full my-auto"
-                    text="下载设定稿"
-                    link="https://repo.aosc.io/mascots/mascots.zip" />
-                </div>
-                <div
-                  class="grid grid-col-1 gap-y-3 text-[0.8em] xl:text-[1.07em] 2xl:text-[1.2em]"
-                  ><app-link to="https://tysontan.com" class="text-link"
-                    >https://tysontan.com</app-link
-                  ><app-link to="mailto:tysontan@tysontan.com" class="text-link"
-                    >tysontan@tysontan.com</app-link
-                  ></div
-                >
-              </div></div
-            >
-          </div>
-        </div>
+      <div class="border-l flex theme-border-secondary">
         <div
-          ><category-second
-            title="Fumo 设定稿"
-            class="border-l border-l-white" />
-          <div class="p-[2em] justify-between flex">
-            <div
-              ><p class="text-[0.8em] xl:text-[1.07em] 2xl:text-[1.2em]">
-                社区吉祥物安安的 Fumo 布偶设定稿由“番茄炒蛋”社团画师 Yukata
-                受用户委托设计，使用 CC BY-SA 4.0 International 许可证进行授权。
-              </p>
-              <p
-                class="mt-[1rem] text-[0.8em] xl:text-[1.07em] 2xl:text-[1.2em]">
-                “番茄炒蛋”社团提供付费可选商用的二次元形象 Fumo
-                化设计服务，有意请点击以下链接：
-              </p>
-              <div class="mt-[1rem] flex flex-row">
-                <div class="w-[50%] mr-[2rem]">
-                  <link-button
-                    class="h-full my-auto"
-                    text="下载设定稿"
-                    link="https://repo.aosc.io/mascots/fumo.zip" /> </div
-                ><div
-                  class="grid grid-col-1 whitespace-pre gap-y-3 text-[0.8em] xl:text-[1.07em] 2xl:text-[1.2em]">
-                  <div
-                    ><app-link
-                      to="https://m.tb.cn/h.TegyiGv?tk=zBfT3w1AVmz"
-                      class="text-link"
-                      >咸鱼</app-link
-                    >（常用联系方式）</div
-                  ><app-link
-                    to="https://huajia.163.com/main/profile/LBpmxjyE"
-                    class="text-link"
-                    >画加</app-link
-                  >
-                </div>
-              </div></div
+          class="p-[1.75rem] justify-between flex flex-col text-[0.8em] xl:text-[1.07em] 2xl:text-[1.2em]"
+          ><p>
+            社区吉祥物安安的 Fumo 布偶设定稿由“番茄炒蛋”社团画师 Yukata
+            受用户委托设计，使用 CC BY-SA 4.0 International 许可证进行授权。
+          </p>
+          <p>
+            “番茄炒蛋”社团提供付费可选商用的二次元形象 Fumo
+            化设计服务，有意请点击<app-link
+              to="https://m.tb.cn/h.TegyiGv?tk=zBfT3w1AVmz"
+              class="text-link"
+              >闲鱼</app-link
+            >（常用联系方式）、<app-link
+              to="https://huajia.163.com/main/profile/LBpmxjyE"
+              class="text-link"
+              >画加</app-link
             >
+          </p>
+          <div class="mt-[1rem] flex flex-row">
+            <div class="w-[50%] mr-[2rem]">
+              <link-button
+                class="h-full my-auto"
+                text="下载设定稿"
+                link="https://repo.aosc.io/mascots/fumo.zip" /> </div
+            ><div class="grid grid-col-1 gap-y-3">
+              <div class="invisible">占位</div><div class="invisible">占位</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <category-second title="安安的故事" />
-    <div class="flex p-[2em]">
+    <div class="flex p-[1.75rem]">
       <!-- 左边 -->
-      <div class="basis-1/2 *:mb-[10px] pr-[2em]">
+      <div class="basis-1/2 *:mb-[10px] pr-[1.75rem]">
         <p>&nbsp;&nbsp;&nbsp;&nbsp;“龙虾龙虾龙虾！”</p>
         <p>
           安安本来是只兔子，但有一天早上醒来发现自己变成了长着兔耳和兔尾巴的人类……
@@ -149,7 +169,7 @@ const navigationList = [
       </div>
 
       <!-- 右边 -->
-      <div class="basis-1/2 *:mb-[10px] pl-[2em]">
+      <div class="basis-1/2 *:mb-[10px] pl-[1.75rem]">
         <ul class="list-disc list-inside">
           <li>
             她认为社区的意义在于分享乐趣和技能，自己也为了让 Linux
