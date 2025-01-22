@@ -8,6 +8,9 @@ home: true
 ---
 ![搭配 LoongGPU 驱动使用安同 OS 桌面](/assets/news/loongapu-driver.png)
 
+> 根据社区好友反馈，文中所指 LG110 显卡“性能接近 AMD Radeon R5 230”的说法有一定误导性：在部分游戏及多媒体应用下，尤其在 OpenGL 支持方面无法与之比较。因此，我们已更正文中相关表述，为用户朋友们提供更准确的表述。
+> 
+> 我们对此信息错误表示歉意，并将尽快更正相关信息并重新推送此公告。
 
 1 月 17 日，龙芯中科公开了其面向 7A2000 平台板载 LG110 显卡的 LoongGPU 显卡驱动，为龙架构小主机 (NUC)、笔记本乃至未安装独立显卡的台式机、一体机和服务器用户们带来体验提升。
 
@@ -19,7 +22,7 @@ home: true
 ```
 oma install loonggpu-driver
 ```
-请注意，根据我们的测试报告，该驱动仍有一定的功能性问题；此外 LoongGPU 的性能有限（性能接近 AMD Radeon R5 230）且 OpenGL 仅有 2.1 版本兼容性，应用可用性及性能可能受到影响。
+请注意，根据我们的测试报告，该驱动仍有一定的功能性问题；此外 LoongGPU 的性能有限（性能劣于常用的亮机卡型号 AMD Radeon R5 230）且 OpenGL 仅有 2.1 版本兼容性，应用可用性及性能可能受到影响。
 
 为保证桌面应用性能，我们亦不推荐 LG110 显卡搭配高于 1080p 分辨率的屏幕使用，并推荐在必要情况下考虑禁用 KDE 桌面特效（使用 Shift-Alt-F12 组合键临时禁用，或进入系统设置禁用“显示特效合成器”的自动启动选项）。
 
@@ -27,4 +30,4 @@ oma install loonggpu-driver
 
 ## 维护与协作
 
-目前，为适应安同 OS 推送 Linux 6.13 内核的需要和解决一部分测试过程中发现的代码质量问题，我们已开始维护 [LoongGPU DKMS 源码的补丁集](https://github.com/AOSC-Tracking/loonggpu-kernel-dkms/tree/aosc/v1.0.1-alpha-lnd25.5)，并积极地与龙芯中科方面相关人员反馈问题、提出参考修复方案，为有需要的用户朋友们带来尽可能好的使用体验。
+目前，为适应安同 OS 推送 Linux 6.13 内核的需要和解决一部分测试过程中发现的代码质量问题，我们已开始维护 LoongGPU DKMS 源码的[补丁集](https://github.com/AOSC-Tracking/loonggpu-kernel-dkms/tree/aosc/v1.0.1-alpha-lnd25.5)，并积极地与龙芯中科方面相关人员反馈问题、提出参考修复方案，为有需要的用户朋友们带来尽可能好的使用体验。
