@@ -23,7 +23,8 @@ import {
   HiSolidExternalLink,
   IoCloseCircleOutline,
   MdDeleteforeverOutlined,
-  FaCopy
+  FaCopy,
+  MdArrowdropdown
 } from 'oh-vue-icons/icons';
 
 addIcons(
@@ -34,7 +35,8 @@ addIcons(
   HiSolidExternalLink,
   IoCloseCircleOutline,
   MdDeleteforeverOutlined,
-  FaCopy
+  FaCopy,
+  MdArrowdropdown
 );
 
 // prismjs
