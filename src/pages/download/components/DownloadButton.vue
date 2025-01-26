@@ -47,7 +47,7 @@ const byteToGb = (bytes) => {
       :placement="popoverData.placement"
       :hide-after="0"
       trigger="hover"
-      :content="popoverData.content">
+      :content="popoverData.conten">
       <template #reference>
         <AppLink
           :to="url"

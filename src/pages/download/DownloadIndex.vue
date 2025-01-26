@@ -167,19 +167,19 @@ const downloadButtonLength = (() => {
     versionArch.value = res.data;
     console.log(res.data);
     antong1List.value.forEach((v) => {
-      v.installer = getNewVersionArch(v.title, 'installer');
-      v.livekit = getNewVersionArch(v.title, 'livekit');
+      v.installer = getNewVersioArch(v.title, 'installer');
+      v.livekit = getNewVersioArch(v.title, 'livekit');
     });
     antong2List.value.forEach((v) => {
-      v.installer = getNewVersionArch(v.title, 'installer');
-      v.livekit = getNewVersionArch(v.title, 'livekit');
+      v.installer = getNewVersioArch(v.title, 'installer');
+      v.livekit = getNewVersioArch(v.title, 'livekit');
     });
     console.log(antong2List.value);
     xingxia1List.value.forEach((v) => {
-      v.livekit = getNewVersionArch(v.title, 'livekit');
+      v.livekit = getNewVersioArch(v.title, 'livekit');
     });
     xingxia2List.value.forEach((v) => {
-      v.livekit = getNewVersionArch(v.title, 'livekit');
+      v.livekit = getNewVersioArch(v.title, 'livekit');
     });
   } else if (err) {
     ElMessage.warning('版本信息获取失败');
@@ -206,7 +206,7 @@ const antong1List = ref([
     zhLabel: 'x86-64',
     enLabel: 'x86-64',
     popoverData: {
-      content: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备',
+      conten: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备',
       placement: 'top'
     }
   },
@@ -215,7 +215,7 @@ const antong1List = ref([
     zhLabel: 'AArch64',
     enLabel: 'AArch64',
     popoverData: {
-      content: '适用于兼容 Armv8-A 及以上版本的 64 位 Arm 设备',
+      conten: '适用于兼容 Armv8-A 及以上版本的 64 位 Arm 设备',
       placement: 'top'
     }
   },
@@ -224,7 +224,7 @@ const antong1List = ref([
     zhLabel: 'LoongArch',
     enLabel: 'LoongArch',
     popoverData: {
-      content:
+      conten:
         '适用于兼容龙架构 (LoongArch) 指令集及 128 位向量扩展 (LSX) 的 64 位设备',
       placement: 'bottom'
     }
@@ -236,7 +236,7 @@ const antong2List = ref([
     zhLabel: 'IBM POWER（64 位，小端序）',
     enLabel: 'IBM POWER (64-bit, little endian)',
     popoverData: {
-      content: '适用于兼容 Power ISA v2.07 及以上版本的 64 位、小端序模式设备',
+      conten: '适用于兼容 Power ISA v2.07 及以上版本的 64 位、小端序模式设备',
       placement: 'top'
     }
   },
@@ -245,7 +245,7 @@ const antong2List = ref([
     zhLabel: 'RISC-V（64 位）',
     enLabel: 'RISC-V (64-bit)',
     popoverData: {
-      content: '适用于兼容 RVA20 Architecture Profile 的 64 位 RISC-V 设备',
+      conten: '适用于兼容 RVA20 Architecture Profile 的 64 位 RISC-V 设备',
       placement: 'left'
     }
   },
@@ -254,7 +254,7 @@ const antong2List = ref([
     zhLabel: '基于 MIPS 的龙芯三号',
     enLabel: 'MIPS-based Loongson 3',
     popoverData: {
-      content: '适用于基于 MIPS 的龙芯三号设备',
+      conten: '适用于基于 MIPS 的龙芯三号设备',
       placement: 'bottom'
     }
   }
@@ -265,7 +265,7 @@ const xingxia1List = ref([
     zhLabel: 'Intel 80486 或更新',
     enLabel: 'Intel 80486 or newer',
     popoverData: {
-      content: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
+      conten: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
     }
   },
   {
@@ -273,7 +273,7 @@ const xingxia1List = ref([
     zhLabel: '龙芯 2F',
     enLabel: 'Loongson 2F',
     popoverData: {
-      content: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
+      conten: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
     }
   },
   {
@@ -281,7 +281,7 @@ const xingxia1List = ref([
     zhLabel: 'PowerPC（32 位，大端序）',
     enLabel: 'PowerPC (32-bit, big endian)',
     popoverData: {
-      content: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
+      conten: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
     }
   },
   {
@@ -289,7 +289,7 @@ const xingxia1List = ref([
     zhLabel: 'PowerPC（64 位，大端序）',
     enLabel: 'PowerPC (64-bit, big endian)',
     popoverData: {
-      content: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
+      conten: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
     }
   }
 ]);
@@ -299,7 +299,7 @@ const xingxia2List = ref([
     zhLabel: 'Motorola 68000 系列处理器**',
     enLabel: 'Motorola 68000',
     popoverData: {
-      content: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
+      conten: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
     }
   },
   {
@@ -307,7 +307,7 @@ const xingxia2List = ref([
     zhLabel: 'ARMv4',
     enLabel: 'ARMv4',
     popoverData: {
-      content: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
+      conten: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
     }
   },
   {
@@ -315,7 +315,7 @@ const xingxia2List = ref([
     zhLabel: 'ARMv6（硬浮点）',
     enLabel: 'ARMv6 (hard-float)',
     popoverData: {
-      content: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
+      conten: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
     }
   },
   {
@@ -323,14 +323,14 @@ const xingxia2List = ref([
     zhLabel: 'ARMv7（硬浮点，带有 NEON 指令集支持）',
     enLabel: 'ARMv7 (hard-float, with NEON support)',
     popoverData: {
-      content: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
+      conten: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
     }
   }
 ]);
 
 function getAntongDate() {
   if (versionArch.value.length == 0) return '...';
-  let dateStr = getNewVersionArch('amd64', 'installer').date;
+  let dateStr = getNewVersioArch('amd64', 'installer').date;
   return `${dateStr.substring(0, 4)}/${dateStr.substring(
     4,
     6
@@ -366,7 +366,7 @@ function isoVersionCmp(v1, v2) {
 /**
  * 根据架构找出最新的下载信息
  */
-const getNewVersionArch = (arch, type) => {
+const getNewVersioArch = (arch, type) => {
   let list = versionArch.value.filter((v) => v.arch == arch);
   list = list.filter((v) => v.path.includes(type));
   list = list.sort(isoVersionCmp);
@@ -428,7 +428,7 @@ const liveKitDivHeight = (
               button-color="#549c97"
               :width="aoscOsButtonStyle.width"
               :popover-data="{
-                content: '二级架构、Docker,及虚拟机镜像等其他下载',
+                conten: '二级架构、Docker,及虚拟机镜像等其他下载',
                 placement: 'bottom'
               }"
               url="#otherDownload"
