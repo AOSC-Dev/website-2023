@@ -37,11 +37,9 @@ const byteToGb = (bytes) => {
 </script>
 <template>
   <div
-    class="flex mx-1"
     :style="{
       '--download-button-p-fount-size1': $props.firstLineFontSize + 'pt',
-      '--download-button-p-fount-size2': $props.secondLineFontSize + 'pt',
-      width: $props.width + 'px'
+      '--download-button-p-fount-size2': $props.secondLineFontSize + 'pt'
     }">
     <el-popover
       :placement="popoverData.placement"
@@ -52,9 +50,10 @@ const byteToGb = (bytes) => {
         <AppLink
           :to="url"
           :style="{
-            backgroundColor: buttonColor
+            backgroundColor: buttonColor,
+            width: $props.width + 'px'
           }"
-          class="theme-bg-color-secondary-primary flex h-full flex-col grow hover:no-underline cursor-pointer py-1">
+          class="theme-bg-color-secondary-primary flex h-full flex-col hover:no-underline cursor-pointer mx-1 py-1">
           <slot></slot>
           <p v-if="archName" class="first-line-p">{{ archName }}</p>
           <p v-if="isaInfo" class="second-line-p"
@@ -63,21 +62,6 @@ const byteToGb = (bytes) => {
         </AppLink>
       </template>
     </el-popover>
-    <el-dropdown trigger="click" v-if="this.$slots['dropdown-items']">
-      <div
-        :style="{
-          borderColor: 'var(--primary)',
-          backgroundColor: buttonColor
-        }"
-        class="theme-bg-color-secondary-primary border-l-2 w-[20px] flex items-center justify-center cursor-pointer">
-        <v-icon name="md-arrowdropdown" color="white" />
-      </div>
-      <template #dropdown>
-        <el-dropdown-menu>
-          <slot name="dropdown-items"></slot>
-        </el-dropdown-menu>
-      </template>
-    </el-dropdown>
   </div>
 </template>
 
