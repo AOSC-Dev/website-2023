@@ -63,6 +63,21 @@ const byteToGb = (bytes) => {
         </AppLink>
       </template>
     </el-popover>
+    <el-dropdown trigger="click" v-if="$slots['dropdown-items']">
+      <div
+        :style="{
+          borderColor: 'var(--primary)',
+          backgroundColor: buttonColor
+        }"
+        class="theme-bg-color-secondary-primary border-l-2 w-[20px] flex items-center justify-center cursor-pointer">
+        <v-icon name="md-arrowdropdown" color="white" />
+      </div>
+      <template #dropdown>
+        <el-dropdown-menu>
+          <slot name="dropdown-items"></slot>
+        </el-dropdown-menu>
+      </template>
+    </el-dropdown>
   </div>
 </template>
 
