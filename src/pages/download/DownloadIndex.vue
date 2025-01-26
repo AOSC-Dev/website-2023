@@ -63,8 +63,8 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
 
 const { toClipboard } = useClipboard();
 
-const copy = () => {
-  toClipboard(omaInstallScript);
+const copy = (content) => {
+  toClipboard(content);
   ElMessage.success('复制成功');
 };
 
@@ -413,7 +413,13 @@ const liveKitDivHeight = (
               :key="item.title"
               :url="`https://releases.aosc.io/${item.installer.path}`"
               :arch-name="item.zhLabel"
-              :isa-info="item.installer" />
+              :isa-info="item.installer">
+              <template #dropdown-items>
+                <el-dropdown-item @click="copy(item.installer.sha256sum)">
+                  复制校验和
+                </el-dropdown-item>
+              </template>
+            </DownloadButton>
             <!-- <button class="text-white hover:opacity-85 cursor-pointer mx-1 text-[10pt] text-center bg-[#549c97]"
                 :style="{ width: aoscOsButtonStyle.width + 'px' }" onclick="location.href='#otherDownload'">
                 <p>其他下载</p>
@@ -464,7 +470,6 @@ const liveKitDivHeight = (
         <div class="my-auto" :style="{ minHeight: liveKitDivHeight + 'px' }">
           <div
             class="button-container-aoscos buttons-col"
-
             v-if="versionArch.length > 0">
             <span v-for="(item, index) in antong1List" :key="item.title">
               <DownloadButton
@@ -477,7 +482,13 @@ const liveKitDivHeight = (
                 :first-line-font-size="10"
                 :arch-name="item.zhLabel"
                 :url="`https://releases.aosc.io/${item.livekit.path}`"
-                :isa-info="item.livekit" />
+                :isa-info="item.livekit">
+                <template #dropdown-items>
+                  <el-dropdown-item @click="copy(item.installer.sha256sum)"
+                    >复制校验和</el-dropdown-item
+                  >
+                </template>
+              </DownloadButton>
             </span>
           </div>
         </div>
@@ -526,10 +537,13 @@ const liveKitDivHeight = (
               <v-icon
                 name="fa-copy"
                 class="ml-6 mt-[2px] absolute cursor-pointer"
-                @click="copy()"></v-icon>
+                @click="copy(omaInstallScript)"></v-icon>
             </code>
           </div>
-          <p class="mt-[6px] text-[10pt]">使用终端运行该命令可在 Debian、Ubuntu 及衍生版，以及 deepin、开放麒麟 (openKylin) 等<br />发行版安装小熊猫包管理</p>
+          <p class="mt-[6px] text-[10pt]"
+            >使用终端运行该命令可在 Debian、Ubuntu 及衍生版，以及
+            deepin、开放麒麟 (openKylin) 等<br />发行版安装小熊猫包管理
+          </p>
         </div>
       </div>
     </div>
@@ -556,7 +570,13 @@ const liveKitDivHeight = (
               :first-line-font-size="10"
               :arch-name="item.zhLabel"
               :url="`https://releases.aosc.io/${item.installer.path}`"
-              :isa-info="item.installer" />
+              :isa-info="item.installer">
+              <template #dropdown-items>
+                <el-dropdown-item @click="copy(item.installer.sha256sum)">
+                  复制校验和
+                </el-dropdown-item>
+              </template>
+            </DownloadButton>
           </div>
         </div>
       </div>
