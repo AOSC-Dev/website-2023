@@ -416,7 +416,7 @@ const liveKitDivHeight = (
               :isa-info="item.installer">
               <template #dropdown-items>
                 <el-dropdown-item @click="copy(item.installer.sha256sum)">
-                  复制校验和
+                  复制 SHA-256 校验和
                 </el-dropdown-item>
               </template>
             </DownloadButton>
