@@ -114,13 +114,13 @@ const aoscOsIsaList2 = ref();
         </thead>
         <tbody>
           <tr>
-            <td>基于 MIPS 的龙芯三号*</td>
+            <td>龙芯三号 (MIPS) *</td>
             <td>无</td>
             <td><code>loongson3</code></td>
             <td><code>mips64el-aosc-linux-gnuabi64</code></td>
           </tr>
           <tr>
-            <td>IBM POWER（小端序）</td>
+            <td>POWER（64 位，小端序）</td>
             <td>AltiVec, VMW, VSX</td>
             <td><code>ppc64el</code></td>
             <td><code>powerpc64le-aosc-linux-gnu</code></td>

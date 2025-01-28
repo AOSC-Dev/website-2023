@@ -233,8 +233,8 @@ const antong1List = ref([
 const antong2List = ref([
   {
     title: 'ppc64el',
-    zhLabel: 'IBM POWER（64 位，小端序）',
-    enLabel: 'IBM POWER (64-bit, little endian)',
+    zhLabel: 'POWER（64 位，小端序）',
+    enLabel: 'POWER (64-bit, little endian)',
     popoverData: {
       content: '适用于兼容 Power ISA v2.07 及以上版本的 64 位、小端序模式设备',
       placement: 'top'
@@ -251,8 +251,8 @@ const antong2List = ref([
   },
   {
     title: 'loongson3',
-    zhLabel: '基于 MIPS 的龙芯三号',
-    enLabel: 'MIPS-based Loongson 3',
+    zhLabel: '龙芯三号 (MIPS)',
+    enLabel: 'Loongson 3 (MIPS)',
     popoverData: {
       content: '适用于基于 MIPS 的龙芯三号设备',
       placement: 'bottom'
