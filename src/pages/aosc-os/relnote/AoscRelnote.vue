@@ -133,7 +133,7 @@ import CategorySecond from '/src/components/CategorySecond.vue';
           <li>新增 deepin/UOS 及开放麒麟使用的 <code>/opt/apps</code> 应用安装路径下的应用快捷方式探测支持</li>
           <li>修复使用 TrackPoint（如 ThinkPad 小红点）时，登录前后光标速度不一致的问题</li>
           <li>修复 Plymouth 启动画面管理器在启动时重复输出内核及 systemd 日志，导致实时调试困难的问题</li>
-          <li>修复使用 SATA 接口 SSD 时未正确设置 I/O 调度器为 `none` 的问题</li>
+          <li>修复使用 SATA 接口 SSD 时未正确设置 I/O 调度器为 <code>none</code> 的问题</li>
           <li>修复 <code>os-prober(1)</code> 工具可能无法正确探测其他系统的问题</li>
         </ul>
       </div>
