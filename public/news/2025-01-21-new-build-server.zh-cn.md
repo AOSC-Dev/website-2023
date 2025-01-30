@@ -4,7 +4,7 @@ categories:
 title: "社区接收两组硬件捐赠"
 date: 2025-01-21T01:30:00+08:00
 important: true
-home: true
+home: false
 ---
 
 日前，社区好友 notRachel 和周荔人向我社捐赠了三台设备。

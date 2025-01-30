@@ -4,7 +4,7 @@ categories:
 title: "社区接收大量 AMD 显卡捐赠"
 date: 2025-01-21T02:30:00+08:00
 important: true
-home: true
+home: false
 ---
 ![](/assets/news/amd-graphics-donation.jpg)
 

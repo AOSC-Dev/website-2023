@@ -4,7 +4,7 @@ categories:
 title: "安安 Minecraft 人物模型"
 date: 2025-01-17T18:30:00+08:00
 important: true
-home: true
+home: false
 ---
 ![](/assets/news/anan-figura-avatar.png)
 
