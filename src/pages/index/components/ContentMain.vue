@@ -58,7 +58,7 @@ const [ observer, imgHeights ] = useSeizeSeat('bgImg', 1.4545);
   <div class="w-[62.5%] bg-content-main-bg p-0">
     <a
       ref="bgImg"
-      href="/news/detail/2025-01-30-springcon-2025.zh-cn.md"
+      href="/download#aosc-os-download"
       class="bg-img-height w-full flex">
       <el-image
         @load="onImgLoad(observer, imgHeights[0])"

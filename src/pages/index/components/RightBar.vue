@@ -72,12 +72,12 @@ const [observer2, imgHeights] = useSeizeSeat('bgImg2', 1.7455, buffer);
         src="/assets/jumbotron/minor1.svg"
         class="w-full cursor-pointer" />
     </a>
-    <a href="/download#aosc-os-download" ref="bgImg2" class="bg-img-height2">
+    <a href="https://bbs.aosc.io/" ref="bgImg2" class="bg-img-height2">
       <img
         @load="onImgLoad(observer2, imgHeights[1])"
         src="/assets/jumbotron/minor2.svg"
         class="w-full cursor-pointer"
-        href="/download#aosc-os-download" />
+        href="https://bbs.aosc.io/" />
     </a>
     <div class="flex flex-col flex-grow">
       <category-second
