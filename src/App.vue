@@ -15,15 +15,17 @@ router.afterEach((to, from) => {
 });
 
 const themeStore = useThemeStore();
+
+// Global style for Element Plus created components (located outside #app)
+document.documentElement.style.setProperty('--primary', themeStore.primary);
+document.documentElement.style.setProperty('--secondary', themeStore.secondary);
 </script>
 
 <template>
   <HomeIndex
     :style="{
-      '--primary': themeStore.primary,
-      '--secondary': themeStore.secondary,
-      'backgroundImage':`url(/assets/backgrounds/${themeStore.backageImg})`
-    }"/>
+      backgroundImage: `url(/assets/backgrounds/${themeStore.backageImg})`
+    }" />
 </template>
 
 <style scoped>
