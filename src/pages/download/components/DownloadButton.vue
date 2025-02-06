@@ -1,5 +1,7 @@
 <script setup>
-import AppLink from '../../../components/AppLink.vue';
+import { ref } from 'vue';
+import DownloadDetails from './DownloadDetails.vue';
+import { useRouter } from 'vue-router';
 
 const props = defineProps({
   archName: {
@@ -28,8 +30,14 @@ const props = defineProps({
   },
   url: {
     type: String
+  },
+  sources: {
+    type: Array
   }
 });
+
+const dialogVisible = ref(false);
+const router = useRouter();
 
 const byteToGb = (bytes) => {
   return (bytes / 1024 / 1024 / 1024).toFixed(2);
@@ -49,35 +57,34 @@ const byteToGb = (bytes) => {
       trigger="hover"
       :content="popoverData.content">
       <template #reference>
-        <AppLink
-          :to="url"
+        <div
           :style="{
+            borderColor: 'var(--primary)',
             backgroundColor: buttonColor
           }"
+          @click="
+            url.startsWith('#') ? router.push(url) : (dialogVisible = true)
+          "
           class="theme-bg-color-secondary-primary flex h-full flex-col grow hover:no-underline cursor-pointer py-1">
           <slot></slot>
           <p v-if="archName" class="first-line-p">{{ archName }}</p>
           <p v-if="isaInfo" class="second-line-p"
             >{{ byteToGb(isaInfo.downloadSize) }}GiB ISO</p
           >
-        </AppLink>
+        </div>
       </template>
     </el-popover>
-    <el-dropdown trigger="click" v-if="$slots['dropdown-items']">
-      <div
-        :style="{
-          borderColor: 'var(--primary)',
-          backgroundColor: buttonColor
-        }"
-        class="theme-bg-color-secondary-primary border-l-2 w-[20px] flex items-center justify-center cursor-pointer">
-        <v-icon name="md-arrowdropdown" color="white" />
-      </div>
-      <template #dropdown>
-        <el-dropdown-menu>
-          <slot name="dropdown-items"></slot>
-        </el-dropdown-menu>
-      </template>
-    </el-dropdown>
+
+    <el-dialog
+      v-model="dialogVisible"
+      title="下载详情"
+      style="--el-border-radius-base: 0">
+      <DownloadDetails
+        :content="popoverData.content"
+        :path="isaInfo.path"
+        :sha256sum="isaInfo.sha256sum"
+        :sources="sources" />
+    </el-dialog>
   </div>
 </template>
 

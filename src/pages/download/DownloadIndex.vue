@@ -159,6 +159,17 @@ const downloadButtonLength = (() => {
   };
 })();
 
+const recipe = ref({});
+const recipeI18n = ref({});
+const sources = ref([
+  {
+    name: 'MirrorZ',
+    loc: '自动',
+    url: 'https://m.mirrorz.org/anthon/aosc-os/'
+  },
+  { name: '官方源', loc: '香港特别行政区', url: 'https://releases.aosc.io/' }
+]);
+
 (async () => {
   let [res, err] = await requestGetJson(
     'https://releases.aosc.io/manifest/livekit.json'
@@ -183,6 +194,27 @@ const downloadButtonLength = (() => {
     });
   } else if (err) {
     ElMessage.warning('版本信息获取失败');
+  }
+
+  const [recipeResponse, recipeError] = await requestGetJson(
+    'https://releases.aosc.io/manifest/recipe.json'
+  );
+  const [recipeI18nResponse, recipeI18nError] = await requestGetJson(
+    'https://releases.aosc.io/manifest/recipe-i18n.json'
+  );
+  if (recipeError || recipeI18nError) {
+    ElMessage.warning('版本信息获取失败');
+    console.log(recipeError, recipeI18nError);
+  } else {
+    recipe.value = recipeResponse.data;
+    recipeI18n.value = recipeI18nResponse.data;
+    sources.value = sources.value.concat(
+      recipe.value.mirrors.map((mirror) => ({
+        name: recipeI18n.value['zh-CN'][mirror['name-tr']],
+        loc: recipeI18n.value['zh-CN'][mirror['loc-tr']],
+        url: mirror.url
+      }))
+    );
   }
 })();
 
@@ -413,13 +445,8 @@ const liveKitDivHeight = (
               :key="item.title"
               :url="`https://releases.aosc.io/${item.installer.path}`"
               :arch-name="item.zhLabel"
-              :isa-info="item.installer">
-              <template #dropdown-items>
-                <el-dropdown-item @click="copy(item.installer.sha256sum)">
-                  复制 SHA-256 校验和
-                </el-dropdown-item>
-              </template>
-            </DownloadButton>
+              :isa-info="item.installer"
+              :sources="sources" />
             <!-- <button class="text-white hover:opacity-85 cursor-pointer mx-1 text-[10pt] text-center bg-[#549c97]"
                 :style="{ width: aoscOsButtonStyle.width + 'px' }" onclick="location.href='#otherDownload'">
                 <p>其他下载</p>
@@ -482,13 +509,8 @@ const liveKitDivHeight = (
                 :first-line-font-size="10"
                 :arch-name="item.zhLabel"
                 :url="`https://releases.aosc.io/${item.livekit.path}`"
-                :isa-info="item.livekit">
-                <template #dropdown-items>
-                  <el-dropdown-item @click="copy(item.livekit.sha256sum)"
-                    >复制校验和</el-dropdown-item
-                  >
-                </template>
-              </DownloadButton>
+                :isa-info="item.livekit"
+                :sources="sources" />
             </span>
           </div>
         </div>
@@ -570,13 +592,8 @@ const liveKitDivHeight = (
               :first-line-font-size="10"
               :arch-name="item.zhLabel"
               :url="`https://releases.aosc.io/${item.installer.path}`"
-              :isa-info="item.installer">
-              <template #dropdown-items>
-                <el-dropdown-item @click="copy(item.installer.sha256sum)">
-                  复制校验和
-                </el-dropdown-item>
-              </template>
-            </DownloadButton>
+              :isa-info="item.installer"
+              :sources="sources" />
           </div>
         </div>
       </div>
