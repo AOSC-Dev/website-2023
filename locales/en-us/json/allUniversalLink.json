@@ -275,17 +275,37 @@
     "title": ["Sticker Pack Materials"],
     "url": "https://repo.aosc.io/mascots/zhaxia-stickers-v1.zip"
   },
-  "mascotsSetDraft": {
-    "title": ["Draft Designs"],
+  "antongMascotsSetDraft": {
+    "title": ["download Set draft"],
     "url": "https://repo.aosc.io/mascots/mascots.zip"
+  },
+  "fumoMascotsSetDraft": {
+    "title": ["download Set draft"],
+    "url": "https://repo.aosc.io/mascots/fumo.zip"
   },
   "tysontan": {
     "title": ["https://tysontan.com"],
     "url": "https://tysontan.com"
   },
+  "figuramc": {
+    "title": ["Figura"],
+    "url": "https://figuramc.org/"
+  },
+  "ananMcFigura": {
+    "title": ["Download Character Model"],
+    "url": "https://github.com/OvOla2/AnAn-Figura-avatar"
+  },
   "mailtoTysontan": {
     "title": ["tysontan@tysontan.com"],
     "url": "mailto:tysontan@tysontan.com"
+  },
+  "tomatoScrambledEggsHuaJia": {
+    "title": ["huajia"],
+    "url": "https://huajia.163.com/main/profile/LBpmxjyE"
+  },
+  "tomatoScrambledEggsGoofish": {
+    "title": ["goofish"],
+    "url": "https://m.tb.cn/h.TegyiGv?tk=zBfT3w1AVmz"
   },
   "omaSourceGithub": {
     "title": [

@@ -96,7 +96,9 @@ const linkValue = tm('allUniversalLink');
           >{{ textValue.p19 }}
         </li>
         <ul class="list-disc pl-10">
-          <li>{{ textValue.clean }}</li>
+          <li>{{ textValue.clean[0] }}<b>{{ textValue.p37 }}</b
+            >{{ textValue.clean[1] }}</li
+          >
         </ul>
         <li
           >{{ textValue.p17 }}<b>{{ textValue.p18 }}</b
@@ -127,7 +129,9 @@ const linkValue = tm('allUniversalLink');
           >{{ textValue.p25 }}
         </li>
         <ul class="list-disc pl-10">
-          <li>{{ textValue.clean }}</li>
+          <li>{{ textValue.clean[0] }}<b>{{ textValue.p37 }}</b
+            >{{ textValue.clean[1] }}</li
+          >
         </ul>
       </ul>
 

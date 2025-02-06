@@ -1,5 +1,5 @@
 <script setup>
-const { tm,locale } = useI18n();
+const { tm, locale } = useI18n();
 const textValue = tm('mascot.index');
 const linkValue = tm('allUniversalLink');
 
@@ -11,18 +11,63 @@ const navigationList = [
 </script>
 
 <template>
-  <div>
+  <div class="grid grid-cols-1">
     <category-second :title="textValue.title1" />
-    <div> <img src="/mascot/anan.png" /></div>
 
-    <div class="flex flex-wrap *:w-1/2">
-      <div>
-        <category-second
-          :title="textValue.title2"
-          class="border-r border-r-white" />
-        <div
-          class="p-[2rem] flex justify-between border-r-[1px] theme-border-secondary">
-          <div class="basis-1/2 mr-[1em]">
+    <div> <img class="w-full imgScale1" src="/mascot/anan.png" /></div>
+
+    <div class="grid grid-cols-2">
+      <category-second :title="textValue.title3" />
+      <category-second
+        :title="textValue.title6"
+        class="border-l border-l-white" />
+
+      <div class="flex"
+        ><div
+          class="p-[1.75rem] text-[0.8rem] xl:text-[1.07rem] 2xl:text-[1.2rem]">
+          <p>
+            {{ textValue.p2 }}
+          </p>
+          <div class="mt-[1rem] flex flex-row justify-between">
+            <div class="w-[50%]">
+              <link-button
+                class="h-full"
+                :link="linkValue.antongMascotsSetDraft" />
+            </div>
+            <div class="grid grid-col-1 gap-y-3"
+              ><link-standard :link="linkValue.tysontan" /><link-standard
+                :link="linkValue.mailtoTysontan"
+            /></div>
+          </div>
+        </div>
+      </div>
+      <div class="border-l flex theme-border-secondary"
+        ><div
+          class="p-[1.75rem] flex flex-col justify-between text-[0.8rem] xl:text-[1.07rem] 2xl:text-[1.2rem]">
+          <p>
+            {{ textValue.p6 }}<link-standard :link="linkValue.figuramc" />{{
+              textValue.p7
+            }}
+          </p>
+
+          <div class="mt-[1rem] flex flex-row justify-between">
+            <link-button
+              class="h-full w-[50%]"
+              :link="linkValue.ananMcFigura" />
+            <div class="grid grid-col-1 gap-y-3">
+              <div class="invisible">占位</div><div class="invisible">占位</div>
+            </div>
+          </div>
+        </div></div
+      >
+
+      <category-second :title="textValue.title2" />
+      <category-second
+        :title="textValue.title5"
+        class="border-l border-l-white" />
+      <div class="flex">
+        <div class="p-[1.75rem] grid grid-cols-2">
+          <div class="mr-[1.5rem]">
             <div>
               <img src="/mascot/qr.png" alt="二维码" />
             </div>
@@ -32,44 +77,55 @@ const navigationList = [
               {{ textValue.p1 }}
             </p>
           </div>
-          <div class="basis-1/2 ml-[1em] flex flex-col justify-between">
-            <link-button
+          <div
+            class="flex flex-col justify-between text-[0.8rem] xl:text-[1.07rem] 2xl:text-[1.2rem]">
+            <div
               v-for="(item, index) in navigationList"
               :key="`mascot-index-1-link-${index}`"
-              class="basis-1/4"
-              :link="item" />
+              class="flex flex-row"
+              ><link-button class="w-full" :link="item" />
+              <div class="grid grid-col-1 gap-y-3 w-0 whitespace-pre">
+                <div class="invisible">占位 </div
+                ><div class="invisible">占位</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
-      <div>
-        <category-second :title="textValue.title3" />
-        <div class="p-[2em] justify-between h-[calc(100%-2em)] flex">
-          <div class="my-auto">
-            <p class="text-[0.8em] xl:text-[1.07em] 2xl:text-[1.2em]">
-              {{ textValue.p2 }}
+      <div class="flex border-l theme-border-secondary"
+        ><div
+          class="p-[1.75rem] flex-col flex justify-between text-[0.8rem] xl:text-[1.07rem] 2xl:text-[1.2rem]">
+          <div
+            ><p>
+              {{ textValue.p3 }}
             </p>
-            <div class="flex flex-row">
-              <div class="flex flex-col w-full py-[18px] mr-12">
-                <link-button
-                  class="h-full my-auto"
-                  :link="linkValue.mascotsSetDraft" />
-              </div>
-              <ul class="text-[0.8em] xl:text-[1.07em] 2xl:text-[1.2em]">
-                <li><link-standard :link="linkValue.tysontan" /></li>
-                <li>
-                  <link-standard :link="linkValue.mailtoTysontan" />
-                </li>
-              </ul>
+            <p>
+              {{ textValue.p4
+              }}<link-standard :link="linkValue.tomatoScrambledEggsGoofish" />{{
+                textValue.p5
+              }}<link-standard :link="linkValue.tomatoScrambledEggsHuaJia" />{{
+                textValue.p8
+              }}
+            </p></div
+          >
+
+          <div class="mt-[1rem] flex flex-row justify-between">
+            <div class="w-[50%]">
+              <link-button
+                class="h-full"
+                :link="linkValue.fumoMascotsSetDraft" />
+            </div>
+            <div class="grid grid-col-1 gap-y-3 w-0 whitespace-pre">
+              <div class="invisible">占位</div><div class="invisible">占位</div>
             </div>
           </div>
         </div>
       </div>
     </div>
     <category-second :title="textValue.title4" />
-    <div class="flex p-[2em]">
+    <div class="flex p-[1.75rem]">
       <!-- 左边 -->
-      <div class="basis-1/2 pr-[2em]">
+      <div class="basis-1/2 pr-[1.75rem]">
         <p
           v-for="(item, index) in textValue.ps1"
           :key="`mascot-index-1-p-${index}`"
@@ -95,7 +151,7 @@ const navigationList = [
       </div>
 
       <!-- 右边 -->
-      <div class="basis-1/2 pl-[2em]">
+      <div class="basis-1/2 pl-[1.75rem]">
         <app-ul-ordinary
           li-class="my-[1rem]"
           :lis="textValue.ul3.li"
@@ -130,5 +186,8 @@ const navigationList = [
 li {
   margin-top: 15px;
   margin-bottom: 15px;
+}
+.imgScale1 {
+  aspect-ratio: 7/3;
 }
 </style>
