@@ -11,6 +11,7 @@ import '@kangc/v-md-editor/lib/style/preview.css';
 import vuepressTheme from '@kangc/v-md-editor/lib/theme/vuepress.js';
 import '@kangc/v-md-editor/lib/theme/style/vuepress.css';
 import './css/index.scss';
+import './css/element-plus.scss';
 import * as ElementPlusIconsVue from '@element-plus/icons-vue';
 import { OhVueIcon, addIcons } from 'oh-vue-icons';
 import AppLink from './components/AppLink.vue';
