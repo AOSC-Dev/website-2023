@@ -1,6 +1,11 @@
 <script setup>
-import { ElSelect, ElOption, ElButton, ElContainer } from 'element-plus';
 import { ref } from 'vue';
+import {
+  ElSelect,
+  ElOption,
+  ElButton,
+  ElContainer
+} from 'element-plus';
 import useClipboard from 'vue-clipboard3';
 import AppLink from '../../../components/AppLink.vue';
 import AppH2 from '../../../components/AppH2.vue';
@@ -17,29 +22,32 @@ const { toClipboard } = useClipboard();
 
 const selected_source_url = ref(props.sources[0].url);
 
-// Assumes that there are only 2 file types
 const fileType = props.path.includes('livekit')
   ? 'LiveKit 救援启动盘'
   : '安装盘';
 
+const mediaWriterVersion = '0.3.3'; // FIXME: Currently unable to get dynamic Media Writer version
 const mediaWritersInfo = [
   {
-    type: 'Windows (x64)',
-    url: 'https://github.com/AOSC-Dev/MediaWriter/releases/download/v0.3.5/AOSCMediaWriter-win64-0.3.5.exe'
+    name: 'Windows (x64)',
+    type: 'win64',
+    extension: "exe"
   },
   {
-    type: 'macOS (Intel)',
-    url: 'https://github.com/AOSC-Dev/MediaWriter/releases/download/0.3.3/AOSCMediaWriter-osx-0.3.3.dmg'
+    name: 'macOS (Intel)',
+    type: 'osx',
+    extension: "dmg"
   },
   {
-    type: 'macOS (Apple Silicon)',
-    url: 'https://github.com/AOSC-Dev/MediaWriter/releases/download/0.3.3/AOSCMediaWriter-osx-arm64-0.3.3.dmg'
+    name: 'macOS (Apple Silicon)',
+    type: 'osx-arm64',
+    extension: "dmg"
   }
 ];
 </script>
 
 <template>
-  <div class="flex flex-col gap-2" style="--el-color-primary: var(--primary)">
+  <div class="flex flex-col gap-2">
     <app-h2>基础信息</app-h2>
     <p> 您正在下载 {{ arch }} 版安同 OS {{ fileType }}，{{ content }}。</p>
     <p>
@@ -52,15 +60,15 @@ const mediaWritersInfo = [
           :key="source.name"
           :label="`${source.name} | ${source.loc}`"
           :value="source.url">
-          <span style="float: left">{{ source.name }}</span>
-          <span style="float: right">{{ source.loc }}</span>
+          <span class="float-left">{{ source.name }}</span>
+          <span class="float-right">{{ source.loc }}</span>
         </el-option>
       </el-select>
       <el-button class="el-button-primary">
         <AppLink
           :to="`${selected_source_url}${path}`"
           target="_blank"
-          class="hover:no-underline">
+          class="hover:no-underline border-0">
           下载
         </AppLink>
       </el-button>
@@ -70,7 +78,7 @@ const mediaWritersInfo = [
     <p>我们推荐您在下载后校验相关文件的 SHA-256 校验和，详情如下：</p>
     <el-container>
       <span
-        class="flex-grow overflow-x-scroll text-nowrap p-[4px_8px] shadow-[inset_0_0_0_1px_var(--el-border-color)]">
+        class="flex-grow overflow-x-auto text-nowrap p-[5px_10px] shadow-[inset_0_0_0_1px_var(--el-border-color)]">
         {{ sha256sum }}
       </span>
       <el-button @click="toClipboard(sha256sum)" plain color="gray">
@@ -82,10 +90,10 @@ const mediaWritersInfo = [
     <el-container class="flex-wrap">
       <el-button v-for="info in mediaWritersInfo" :key="info.type">
         <AppLink
-          :to="info.url"
+          :to="`${selected_source_url}writer/AOSCMediaWriter-${info.type}-${mediaWriterVersion}.${info.extension}`"
           target="_blank"
           class="hover:no-underline">
-          {{ info.type }}
+          {{ info.name }}
         </AppLink>
       </el-button>
     </el-container>
@@ -102,7 +110,10 @@ const mediaWritersInfo = [
     </p>
 
     <app-h2>帮助与支持</app-h2>
-    <p>如果您在安装或使用安同 OS 时遇到问题，请于<AppLink to="contact">社区聊天群组</AppLink>与我们联系。</p>
+    <p>
+      如果您在安装或使用安同 OS 时遇到问题，请于
+      <AppLink to="contact">社区聊天群组</AppLink> 与我们联系。
+    </p>
   </div>
 </template>
 
@@ -112,6 +123,5 @@ const mediaWritersInfo = [
   --el-button-hover-bg-color: var(--primary);
   --el-button-text-color: white;
   --el-button-hover-text-color: white;
-  border: 0;
 }
 </style>

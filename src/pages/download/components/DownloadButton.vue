@@ -80,6 +80,7 @@ const byteToGb = (bytes) => {
       title="下载详情"
       style="--el-border-radius-base: 0">
       <DownloadDetails
+        :arch="archName"
         :content="popoverData.content"
         :path="isaInfo.path"
         :sha256sum="isaInfo.sha256sum"
