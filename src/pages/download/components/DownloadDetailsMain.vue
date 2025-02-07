@@ -1,14 +1,9 @@
 <script setup>
 import { ref } from 'vue';
-import {
-  ElSelect,
-  ElOption,
-  ElButton,
-  ElContainer
-} from 'element-plus';
-import useClipboard from 'vue-clipboard3';
+import { ElButton, ElContainer, ElOption, ElSelect } from 'element-plus';
 import AppLink from '../../../components/AppLink.vue';
 import AppH2 from '../../../components/AppH2.vue';
+import CopyCodeComponent from './CopyCodeComponent.vue';
 
 const props = defineProps({
   arch: { type: String },
@@ -17,8 +12,6 @@ const props = defineProps({
   sha256sum: { type: String },
   sources: { type: [{ name: String, loc: String, url: String }] }
 });
-
-const { toClipboard } = useClipboard();
 
 const selected_source_url = ref(props.sources[0].url);
 
@@ -31,17 +24,17 @@ const mediaWritersInfo = [
   {
     name: 'Windows (x64)',
     type: 'win64',
-    extension: "exe"
+    extension: 'exe'
   },
   {
     name: 'macOS (Intel)',
     type: 'osx',
-    extension: "dmg"
+    extension: 'dmg'
   },
   {
     name: 'macOS (Apple Silicon)',
     type: 'osx-arm64',
-    extension: "dmg"
+    extension: 'dmg'
   }
 ];
 </script>
@@ -76,15 +69,7 @@ const mediaWritersInfo = [
 
     <app-h2>校验和使用</app-h2>
     <p>我们推荐您在下载后校验相关文件的 SHA-256 校验和，详情如下：</p>
-    <el-container>
-      <span
-        class="flex-grow overflow-x-auto text-nowrap p-[5px_10px] shadow-[inset_0_0_0_1px_var(--el-border-color)]">
-        {{ sha256sum }}
-      </span>
-      <el-button @click="toClipboard(sha256sum)" plain color="gray">
-        复制 SHA-256 校验和
-      </el-button>
-    </el-container>
+    <CopyCodeComponent :content="sha256sum" button-text="复制 SHA-256 校验和"/>
 
     <p>要制作{{ fileType }}，我们建议您使用我社开发的启动盘制作向导。</p>
     <el-container class="flex-wrap">
