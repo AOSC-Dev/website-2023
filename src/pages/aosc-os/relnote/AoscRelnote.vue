@@ -43,9 +43,9 @@ import CategorySecond from '/src/components/CategorySecond.vue';
       </p>
       <div class="pt-2 pb-4 px-12">
         <ul class="list-disc">
-          <li>
-            默认关闭 AMD 自适应背光管理 (Adaptive Backlight Management) 功能以避免部分设备亮度不稳定或屏幕闪烁的问题
-          </li>
+          <li><b>（2025 年 1 月修订版）</b>修复兆芯开先 KX-7000 系列平台设备无法启动系统的问题</li>
+          <li><b>（2025 年 1 月修订版）</b>修复联想小新 Pro 13（2019，锐龙版）在睡眠唤醒时短暂花屏的问题</li>
+          <li>默认关闭 AMD 自适应背光管理 (Adaptive Backlight Management) 功能以避免部分设备亮度不稳定或屏幕闪烁的问题</li>
           <li>修复联想 ThinkBook 14+ 2024 AI 元启锐龙版无法使用触摸板的问题</li>
           <li>修复联想 ThinkBook 13X G4 (IMH)、ThinkBook 14 G6 (ABP)、ThinkBook 16p G4 (21J8)、ThinkBook 16p G8 (IRL) 及 ThinkBook 16p G7+ (ASP) 等设备上键盘状态 LED 无法使用的问题</li>
           <li>修复华硕 Vivobook S 2024 OLED 无法使用触摸板及媒体快捷键的问题</li>
@@ -146,6 +146,8 @@ import CategorySecond from '/src/components/CategorySecond.vue';
       </p><br />
       <div class="pt-2 pb-4 px-12">
         <ul class="list-disc">
+          <li><b>（2025 年 1 月修订版）</b>修复龙芯三号 (MIPS) 平台无法使用安装程序“自动分区”功能的问题</li>
+          <li><b>（2025 年 1 月修订版）</b>修复龙架构及龙芯三号 (MIPS) 平台安装程序错误将安装盘列为目标存储设备的问题</li>
           <li>改进下拉菜单操作逻辑，安装可在仅使用键盘的情况下完成</li>
           <li>修复安装时未禁止使用系统预留用户名的问题</li>
           <li>修复系统安装后未正确探测设备上其他操作系统的问题</li>
@@ -157,17 +159,6 @@ import CategorySecond from '/src/components/CategorySecond.vue';
       </div>
     </div>
 
-    <category-second title="已知问题" id="known-issues" />
-    <div class="p-6">
-      <p>
-        当前发行更新包含如下已知问题，我们将尽快修复：
-      </p><br />
-      <div class="pt-2 pb-4 px-12">
-        <ul class="list-disc">
-          <li>在龙芯三号 (MIPS) 平台安装程序的“自动分区”功能不可用，请使用“管理分区”按钮，通过 GParted 进行分区操作</li>
-        </ul>
-      </div>
-    </div>
   </div>
 </template>
 
