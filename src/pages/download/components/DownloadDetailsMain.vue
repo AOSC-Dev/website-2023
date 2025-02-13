@@ -69,7 +69,7 @@ const mediaWritersInfo = [
 
     <app-h2>校验和使用</app-h2>
     <p>我们推荐您在下载后校验相关文件的 SHA-256 校验和，详情如下：</p>
-    <CopyCodeComponent :content="sha256sum" button-text="复制 SHA-256 校验和"/>
+    <CopyCodeComponent :content="sha256sum" button-text="复制 SHA-256 校验和" />
 
     <p>要制作{{ fileType }}，我们建议您使用我社开发的启动盘制作向导。</p>
     <el-container class="flex-wrap">
@@ -96,8 +96,9 @@ const mediaWritersInfo = [
 
     <app-h2>帮助与支持</app-h2>
     <p>
-      如果您在安装或使用安同 OS 时遇到问题，请于
-      <AppLink to="contact">社区聊天群组</AppLink> 与我们联系。
+      如果您在安装或使用安同 OS 时遇到问题，请于<AppLink to="contact"
+        >社区聊天群组</AppLink
+      >与我们联系。
     </p>
   </div>
 </template>
