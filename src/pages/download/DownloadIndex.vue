@@ -1,127 +1,63 @@
 <script setup>
-/**
- * 版本及架构说明
- * 有两个子发行版，安同 OS 和星霞 OS
- * 这两个一同覆盖了这 15 个架构，且不重复
- * 然后两个子发行版支持的架构里分一级和二级架构
- *
- * 其中安同 OS 支持的一级架构包括 amd64, arm64, loongarch64；支持的二级架构有 ppc64el, riscv64 和 loongson3
- * 星霞 OS 暂定一级架构有 i486, loongson2f 和 powerpc；二级架构有 m68k, armv4, armv6hf 和 armv7hf
- * 由于两个子发行版各自支持不同的架构，所以可以通过架构名判断是安同 OS 还是星霞 OS，一二级架构同理
- */
-import CategorySecond from '../../../src/components/CategorySecond.vue';
+import CategorySecond from '../../components/CategorySecond.vue';
+import TitleComponent from './components/TitleComponent.vue';
+import DownloadButtonGroup from './components/DownloadButtonGroup.vue';
+import { ref, useTemplateRef, watch, computed } from 'vue';
 import DownloadButton from './components/DownloadButton.vue';
-import {
-  onMounted,
-  ref,
-  watch,
-  nextTick,
-  onUnmounted,
-  reactive,
-  useTemplateRef
-} from 'vue';
-import { ElMessage } from 'element-plus';
-import { highlightElement } from '../../utils/animation.ts';
 import { useRoute } from 'vue-router';
-import { requestGetJson } from '../../utils/utils.js';
-import { useHighBrightnessControllerStore } from '../../stores/miscellaneous';
-import AccordionNavigation from '../../components/AccordionNavigation.vue';
 import useClipboard from 'vue-clipboard3';
+import { ElMessage, ElInputNumber } from 'element-plus';
+import { useHighBrightnessControllerStore } from '../../stores/miscellaneous.js';
+import { highlightElement } from '../../utils/animation.ts';
+import { requestGetJson } from '../../utils/utils.js';
+
+//#region Common
+const archGroupInfo = {
+  first: {
+    name: '一级架构',
+    description: '这是一级架构'
+  },
+  second: {
+    name: '二级架构',
+    description: '这是二级架构'
+  }
+};
 
 const route = useRoute();
 
-let msStoreScript = document.createElement('script');
-msStoreScript.setAttribute(
-  'src',
-  'https://get.microsoft.com/badge/ms-store-badge.bundled.js'
-);
-document.head.appendChild(msStoreScript);
+const primaryGap = ref(40);
+//#endregion
 
-const versionArch = ref([]);
-const aoscOsRef = useTemplateRef('aoscOsDownload');
-const afterglowRef = useTemplateRef('afterglowDownload');
-const omaRef = useTemplateRef('omaDownload');
-const tier2Ref = useTemplateRef('tier2Downloads');
-const dockerRef = useTemplateRef('downloadDocker');
-
-const omaNavigationList = [
-  {
-    title: '详细介绍',
-    path: '/oma'
-  },
-  {
-    title: '源代码',
-    url: 'https://github.com/AOSC-Dev/oma'
-  }
-  // , {
-  //   title: '下载 Debian/Ubuntu 安装包',
-  //   url: 'https://github.com/AOSC-Dev/oma/releases/tag/v1.8.2'
-  // }
-];
-
-const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
-
+//#region Clipboard
 const { toClipboard } = useClipboard();
-
 const copy = (content) => {
   toClipboard(content);
   ElMessage.success('复制成功');
 };
+//#endregion
 
-const aoscOsNavigationList = [
-  {
-    title: '发行注记',
-    path: '/aosc-os/relnote'
-  },
-  {
-    title: '配置需求',
-    path: '/aosc-os/requirements'
-  }
-];
-
-const liveKitNavigationList = [
-  {
-    title: '发行注记',
-    path: '/aosc-os/livekit/relnote'
-  },
-  {
-    title: '配置需求',
-    path: '/aosc-os/livekit/requirements'
-  }
-];
-
-const wslNavigationList = [
-  {
-    title: '发行注记',
-    path: '/aosc-os/wsl/relnote'
-  },
-  {
-    title: '配置需求',
-    path: '/aosc-os/wsl/requirements'
-  }
-];
+//#region Highlight
+const aoscOsRef = useTemplateRef('aoscOsDownload');
+const otherRef = useTemplateRef('otherDownload');
+const afterglowRef = useTemplateRef('afterglowDownload');
+const omaRef = useTemplateRef('omaDownload');
 
 const highBrightnessControllerStore = useHighBrightnessControllerStore();
 
 const switchHash = () => {
   switch (route.hash) {
-    case '#oma-download':
-      highlightElement(omaRef);
-      break;
     case '#aosc-os-download':
       highlightElement(aoscOsRef);
+      break;
+    case '#otherDownload':
+      highlightElement(otherRef);
       break;
     case '#afterglow-download':
       highlightElement(afterglowRef);
       break;
-    case '#tier-2-downloads':
-      highlightElement(tier2Ref);
+    case '#oma-download':
+      highlightElement(omaRef);
       break;
-    case '#otherDownload': {
-      highlightElement(dockerRef);
-      highlightElement(tier2Ref);
-      break;
-    }
   }
 };
 
@@ -134,31 +70,10 @@ watch(
     flush: 'post'
   }
 );
+//#endregion
 
-const aoscOsButtonStyle = reactive({
-  width: 224
-});
-
-const downloadButtonLength = (() => {
-  let lessThen = true;
-  return () => {
-    if (lessThen) {
-      lessThen = false;
-      if (aoscOsRef.value.clientWidth <= 498) {
-        if (aoscOsRef.value.clientWidth > 384) {
-          aoscOsButtonStyle.width = (
-            224 -
-            0.55 * (498 - aoscOsRef.value.clientWidth)
-          ).toFixed(2);
-        } else aoscOsButtonStyle.width = 157;
-      } else {
-        aoscOsButtonStyle.width = 224;
-      }
-      lessThen = true;
-    }
-  };
-})();
-
+//#region remote
+const versionArch = ref([]);
 const recipe = ref({});
 const recipeI18n = ref({});
 const sources = ref([
@@ -170,204 +85,15 @@ const sources = ref([
   { name: '官方源', loc: '香港特别行政区', url: 'https://releases.aosc.io/' }
 ]);
 
-(async () => {
-  let [res, err] = await requestGetJson(
-    'https://releases.aosc.io/manifest/livekit.json'
-  );
-  if (res) {
-    versionArch.value = res.data;
-    console.log(res.data);
-    antong1List.value.forEach((v) => {
-      v.installer = getNewVersionArch(v.title, 'installer');
-      v.livekit = getNewVersionArch(v.title, 'livekit');
-    });
-    antong2List.value.forEach((v) => {
-      v.installer = getNewVersionArch(v.title, 'installer');
-      v.livekit = getNewVersionArch(v.title, 'livekit');
-    });
-    console.log(antong2List.value);
-    xingxia1List.value.forEach((v) => {
-      v.livekit = getNewVersionArch(v.title, 'livekit');
-    });
-    xingxia2List.value.forEach((v) => {
-      v.livekit = getNewVersionArch(v.title, 'livekit');
-    });
-  } else if (err) {
-    ElMessage.warning('版本信息获取失败');
-  }
-
-  const [recipeResponse, recipeError] = await requestGetJson(
-    'https://releases.aosc.io/manifest/recipe.json'
-  );
-  const [recipeI18nResponse, recipeI18nError] = await requestGetJson(
-    'https://releases.aosc.io/manifest/recipe-i18n.json'
-  );
-  if (recipeError || recipeI18nError) {
-    ElMessage.warning('版本信息获取失败');
-    console.log(recipeError, recipeI18nError);
-  } else {
-    recipe.value = recipeResponse.data;
-    recipeI18n.value = recipeI18nResponse.data;
-    sources.value = sources.value.concat(
-      recipe.value.mirrors.map((mirror) => ({
-        name: recipeI18n.value['zh-CN'][mirror['name-tr']],
-        loc: recipeI18n.value['zh-CN'][mirror['loc-tr']],
-        url: mirror.url
-      }))
-    );
-  }
-})();
-
-onMounted(async () => {
-  nextTick(() => {
-    window.addEventListener('resize', downloadButtonLength);
-    downloadButtonLength();
-  });
-  switchHash();
-});
-
-onUnmounted(() => {
-  window.removeEventListener('resize', downloadButtonLength);
-});
-
-const livekitPPlacement = ['top', 'left', 'bottom'];
-
-const antong1List = ref([
-  {
-    title: 'amd64',
-    zhLabel: 'x86-64',
-    enLabel: 'x86-64',
-    popoverData: {
-      content: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备',
-      placement: 'top'
-    }
-  },
-  {
-    title: 'arm64',
-    zhLabel: 'AArch64',
-    enLabel: 'AArch64',
-    popoverData: {
-      content: '适用于兼容 Armv8-A 及以上版本的 64 位 Arm 设备',
-      placement: 'top'
-    }
-  },
-  {
-    title: 'loongarch64',
-    zhLabel: 'LoongArch',
-    enLabel: 'LoongArch',
-    popoverData: {
-      content:
-        '适用于兼容龙架构 (LoongArch) 指令集及 128 位向量扩展 (LSX) 的 64 位设备',
-      placement: 'bottom'
-    }
-  }
-]);
-const antong2List = ref([
-  {
-    title: 'ppc64el',
-    zhLabel: 'POWER（64 位，小端序）',
-    enLabel: 'POWER (64-bit, little endian)',
-    popoverData: {
-      content: '适用于兼容 Power ISA v2.07 及以上版本的 64 位、小端序模式设备',
-      placement: 'top'
-    }
-  },
-  {
-    title: 'riscv64',
-    zhLabel: 'RISC-V（64 位）',
-    enLabel: 'RISC-V (64-bit)',
-    popoverData: {
-      content: '适用于兼容 RVA20 Architecture Profile 的 64 位 RISC-V 设备',
-      placement: 'left'
-    }
-  },
-  {
-    title: 'loongson3',
-    zhLabel: '龙芯三号 (MIPS)',
-    enLabel: 'Loongson 3 (MIPS)',
-    popoverData: {
-      content: '适用于基于 MIPS 的龙芯三号设备',
-      placement: 'bottom'
-    }
-  }
-]);
-const xingxia1List = ref([
-  {
-    title: 'i486',
-    zhLabel: 'Intel 80486 或更新',
-    enLabel: 'Intel 80486 or newer',
-    popoverData: {
-      content: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
-    }
-  },
-  {
-    title: 'loongson2f',
-    zhLabel: '龙芯 2F',
-    enLabel: 'Loongson 2F',
-    popoverData: {
-      content: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
-    }
-  },
-  {
-    title: 'powerpc',
-    zhLabel: 'PowerPC（32 位，大端序）',
-    enLabel: 'PowerPC (32-bit, big endian)',
-    popoverData: {
-      content: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
-    }
-  },
-  {
-    title: 'ppc64',
-    zhLabel: 'PowerPC（64 位，大端序）',
-    enLabel: 'PowerPC (64-bit, big endian)',
-    popoverData: {
-      content: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
-    }
-  }
-]);
-const xingxia2List = ref([
-  {
-    title: 'm68k',
-    zhLabel: 'Motorola 68000 系列处理器**',
-    enLabel: 'Motorola 68000',
-    popoverData: {
-      content: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
-    }
-  },
-  {
-    title: 'armv4',
-    zhLabel: 'ARMv4',
-    enLabel: 'ARMv4',
-    popoverData: {
-      content: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
-    }
-  },
-  {
-    title: 'armv6hf',
-    zhLabel: 'ARMv6（硬浮点）',
-    enLabel: 'ARMv6 (hard-float)',
-    popoverData: {
-      content: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
-    }
-  },
-  {
-    title: 'armv7hf',
-    zhLabel: 'ARMv7（硬浮点，带有 NEON 指令集支持）',
-    enLabel: 'ARMv7 (hard-float, with NEON support)',
-    popoverData: {
-      content: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备'
-    }
-  }
-]);
-
 function getAntongDate() {
-  if (versionArch.value.length == 0) return '...';
+  if (versionArch.value.length === 0) return '...';
   let dateStr = getNewVersionArch('amd64', 'installer').date;
   return `${dateStr.substring(0, 4)}/${dateStr.substring(
     4,
     6
   )}/${dateStr.substring(6, 8)}`;
 }
+const antongDate = computed(getAntongDate);
 
 /**
  * 比较 ISO 的日期（或版本）
@@ -405,330 +131,440 @@ const getNewVersionArch = (arch, type) => {
   return list[0];
 };
 
-const liveKitDivHeight = (
-  antong1List.value.length * 43.99 +
-  (antong1List.value.length - 1) * 8
-).toFixed(2);
+(async () => {
+  // Installer and LiveKit
+  let [res, err] = await requestGetJson(
+    'https://releases.aosc.io/manifest/livekit.json'
+  );
+  if (res) {
+    versionArch.value = res.data;
+    console.log(res.data);
+    antong1List.value.forEach((v) => {
+      v.installer = getNewVersionArch(v.title, 'installer');
+      v.livekit = getNewVersionArch(v.title, 'livekit');
+    });
+    antong2List.value.forEach((v) => {
+      v.installer = getNewVersionArch(v.title, 'installer');
+      v.livekit = getNewVersionArch(v.title, 'livekit');
+    });
+    console.log(antong2List.value);
+    xingxia1List.value.forEach((v) => {
+      v.livekit = getNewVersionArch(v.title, 'livekit');
+    });
+    xingxia2List.value.forEach((v) => {
+      v.livekit = getNewVersionArch(v.title, 'livekit');
+    });
+  } else if (err) {
+    ElMessage.warning('版本信息获取失败');
+  }
+
+  // Mirrors
+  const [recipeResponse, recipeError] = await requestGetJson(
+    'https://releases.aosc.io/manifest/recipe.json'
+  );
+  const [recipeI18nResponse, recipeI18nError] = await requestGetJson(
+    'https://releases.aosc.io/manifest/recipe-i18n.json'
+  );
+  if (recipeError || recipeI18nError) {
+    ElMessage.warning('版本信息获取失败');
+    console.log(recipeError, recipeI18nError);
+  } else {
+    recipe.value = recipeResponse.data;
+    recipeI18n.value = recipeI18nResponse.data;
+    sources.value = sources.value.concat(
+      recipe.value.mirrors.map((mirror) => ({
+        name: recipeI18n.value['zh-CN'][mirror['name-tr']],
+        loc: recipeI18n.value['zh-CN'][mirror['loc-tr']],
+        url: mirror.url
+      }))
+    );
+  }
+})();
+//#endregion
+
+//#region AOSC OS
+const aoscOsNavigationList = ref([
+  {
+    title: antongDate
+  },
+  {
+    title: '发行注记',
+    path: '/aosc-os/relnote'
+  },
+  {
+    title: '配置需求',
+    path: '/aosc-os/requirements'
+  }
+]);
+const antong1List = ref([
+  {
+    title: 'amd64',
+    zhLabel: 'x86-64',
+    enLabel: 'x86-64',
+    popoverData: {
+      content: '适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备',
+      placement: 'top'
+    }
+  },
+  {
+    title: 'arm64',
+    zhLabel: 'AArch64',
+    enLabel: 'AArch64',
+    popoverData: {
+      content: '适用于兼容 Armv8-A 及以上版本的 64 位 Arm 设备',
+      placement: 'top'
+    }
+  },
+  {
+    title: 'loongarch64',
+    zhLabel: 'LoongArch',
+    enLabel: 'LoongArch',
+    popoverData: {
+      content:
+        '适用于兼容龙架构 (LoongArch) 指令集及 128 位向量扩展 (LSX) 的 64 位设备',
+      placement: 'top'
+    }
+  }
+]);
+const antong2List = ref([
+  {
+    title: 'ppc64el',
+    zhLabel: 'POWER（64 位）',
+    enLabel: 'POWER (64-bit, little endian)',
+    popoverData: {
+      content: '适用于兼容 Power ISA v2.07 及以上版本的 64 位、小端序模式设备',
+      placement: 'bottom'
+    }
+  },
+  {
+    title: 'riscv64',
+    zhLabel: 'RISC-V（64 位）',
+    enLabel: 'RISC-V (64-bit)',
+    popoverData: {
+      content: '适用于兼容 RVA20 Architecture Profile 的 64 位 RISC-V 设备',
+      placement: 'bottom'
+    }
+  },
+  {
+    title: 'loongson3',
+    zhLabel: '龙芯三号 (MIPS)',
+    enLabel: 'Loongson 3 (MIPS)',
+    popoverData: {
+      content: '适用于基于 MIPS 的龙芯三号设备',
+      placement: 'bottom'
+    }
+  }
+]);
+//#endregion
+
+//#region Afterglow OS
+const afterglowOsNavigationList = ref([
+  {
+    title: '1970/1/1'
+  },
+  {
+    title: '发行注记',
+    path: '/afterglow/relnote'
+  },
+  {
+    title: '配置需求',
+    path: '/afterglow/requirements'
+  }
+]);
+const xingxia1List = ref([
+  {
+    title: 'i486',
+    zhLabel: 'x86（32 位）',
+    enLabel: 'x86',
+    popoverData: {
+      content: '适用于兼容 i486 (Intel486) 的 32 位 x86 设备'
+    }
+  },
+  {
+    title: 'loongson2f',
+    zhLabel: '龙芯二号 (MIPS)',
+    enLabel: 'Loongson 2F',
+    popoverData: {
+      content: '适用于基于 MIPS 并支持 LoongMMI 指令集扩展的龙芯二号 (2F) 设备'
+    }
+  },
+  {
+    title: 'powerpc',
+    zhLabel: 'PowerPC（32 位，大端序）',
+    enLabel: 'PowerPC (32-bit, big endian)',
+    popoverData: {
+      content:
+        '适用于兼容 PowerPC 指令集的 32 位大端序设备（IBM CHRP/PReP 或 Apple Macintosh 及兼容平台）'
+    }
+  }
+]);
+const xingxia2List = ref([
+  {
+    title: 'armv4',
+    zhLabel: 'ARMv4',
+    enLabel: 'ARMv4',
+    popoverData: {
+      content: '适用于兼容 ARMv4 指令集的 Arm 设备'
+    }
+  },
+  {
+    title: 'armv6hf',
+    zhLabel: 'ARMv6（硬浮点）',
+    enLabel: 'ARMv6 (hard-float)',
+    popoverData: {
+      content: '适用于兼容 ARMv6 指令集及 Thumb-2、NEON 扩展的 Arm 设备'
+    }
+  },
+  {
+    title: 'armv7hf',
+    zhLabel: 'ARMv7（硬浮点）',
+    enLabel: 'ARMv7 (hard-float)',
+    popoverData: {
+      content: '适用于兼容 ARMv7 指令集及 Thumb-2、NEON 扩展的 Arm 设备'
+    }
+  },
+  {
+    title: 'decAlpha',
+    zhLabel: 'DEC Alpha',
+    enLabel: 'DEC Alpha',
+    popoverData: {
+      content: '适用于基于 DEC Alpha（原称 Alpha AXP）指令集架构的设备'
+    }
+  },
+  {
+    title: 'ia64',
+    zhLabel: 'IA-64',
+    enLabel: 'IA-64',
+    popoverData: {
+      content: '适用于兼容 IA-64 指令集架构的设备（安腾，Itanium）'
+    }
+  },
+  {
+    title: 'm68k',
+    zhLabel: 'Motorola 68000',
+    enLabel: 'Motorola 68000',
+    popoverData: {
+      content: '用于兼容 Motorola 68020 且搭载内存管理单元 (MMU) 的设备'
+    }
+  },
+  {
+    title: 'ppc64',
+    zhLabel: 'PowerPC（64 位，大端序）',
+    enLabel: 'PowerPC (64-bit, big endian)',
+    popoverData: {
+      content:
+        '适用于兼容 PowerPC 指令集的 64 位大端序设备（IBM CHRP/PReP 及 Apple Macintosh 及兼容平台）'
+    }
+  },
+  {
+    title: 'sparc64',
+    zhLabel: 'SPARC（64 位）',
+    enLabel: 'SPARC (64-bit)',
+    popoverData: {
+      content: '适用于兼容 SPARC V9 指令集及 VIS 1.0 扩展的 64 位 SPARC 设备'
+    }
+  }
+]);
+//#endregion
+
+//#region WSL
+// For ms-store-badge. Ref: https://github.com/microsoft/app-store-badge
+let msStoreScript = document.createElement('script');
+msStoreScript.setAttribute(
+  'src',
+  'https://get.microsoft.com/badge/ms-store-badge.bundled.js'
+);
+document.head.appendChild(msStoreScript);
+//#endregion
+
+//#region oma
+const omaNavigationList = [
+  {
+    title: '1.14.514'
+  },
+  {
+    title: '详细介绍',
+    path: '/oma'
+  },
+  {
+    title: '源代码',
+    url: 'https://github.com/AOSC-Dev/oma'
+  }
+  // , {
+  //   title: '下载 Debian/Ubuntu 安装包',
+  //   url: 'https://github.com/AOSC-Dev/oma/releases/tag/v1.8.2'
+  // }
+];
+const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
+//#endregion
 </script>
 
 <template>
-  <div class="pl-[1px] flex flex-col min-w-[1148px] ss">
+  <div>
     <category-second id="aosc-os-download" title="操作系统" />
-    <div class="flex flex-row flex-1">
-      <div
-        ref="aoscOsDownload"
-        class="aosc-os-container justify-between flex flex-row w-[50%] justify-around bg-white px-[1rem] flex-wrap">
-        <div class="mt-[0.5rem] min-w-[96px] w-[24%] flex">
-          <img src="/assets/download/aosc-os-web.svg" />
-        </div>
-        <div class="text-aosc-os my-[1.5rem]">
-          <p class="text-[32pt]">安同 OS</p>
-          <p class="text-[14pt]">称心得意的桌面操作系统</p>
-          <p class="width-[220px] text-[10pt] mt-1">
-            {{ getAntongDate() }}·
-            <AccordionNavigation
-              :navigation-list="aoscOsNavigationList"
-              link-class=""
-              >·</AccordionNavigation
-            >
-          </p>
-        </div>
-        <div
-          class="download-container mt-0 mb-4 min-h-[129.97px] min-w-[150px]">
-          <div
-            class="button-container-aoscos-multicolumn buttons-col mb-3 mt-1 flex justify-center"
-            v-if="versionArch.length > 0">
-            <DownloadButton
-              v-for="item in antong1List"
-              :popover-data="item.popoverData"
-              :width="aoscOsButtonStyle.width"
-              :key="item.title"
-              :url="`https://releases.aosc.io/${item.installer.path}`"
-              :arch-name="item.zhLabel"
-              :isa-info="item.installer"
-              :sources="sources" />
-            <!-- <button class="text-white hover:opacity-85 cursor-pointer mx-1 text-[10pt] text-center bg-[#549c97]"
-                :style="{ width: aoscOsButtonStyle.width + 'px' }" onclick="location.href='#otherDownload'">
-                <p>其他下载</p>
-              </button> -->
-            <DownloadButton
-              button-color="#549c97"
-              :width="aoscOsButtonStyle.width"
-              :popover-data="{
-                content: '二级架构、Docker,及虚拟机镜像等其他下载',
-                placement: 'bottom'
-              }"
-              url="#otherDownload"
-              arch-name="其他下载" />
-          </div>
-        </div>
-      </div>
-      <div class="afterglow px-[1rem]" ref="afterglowDownload">
-        <div class="my-[1.5rem] text-afterglow">
-          <p class="text-white text-[32pt]">星霞 OS</p>
-          <p class="text-white text-[14pt]">老设备也能发光发热</p>
-          <p class="text-white text-[10pt] mt-1">敬请期待...</p>
-        </div>
-        <div class="mt-[1.5rem] min-w-[64px] w-[26%]">
-          <img src="/assets/download/afterglow-web.svg" />
-        </div>
+
+    <!-- AOSC OS -->
+    <div
+      ref="aoscOsDownload"
+      class="aosc-os-container flex flex-warp justify-between p-[30px] gap-6">
+      <TitleComponent
+        title="安同 OS"
+        description="称心得意的桌面操作系统"
+        :navigation-list="aoscOsNavigationList" />
+      <div class="flex flex-col justify-end gap-2">
+        <DownloadButtonGroup
+          :title="archGroupInfo.first.name"
+          :description="archGroupInfo.first.description"
+          :button-props="
+            antong1List.map((item) => ({
+              archName: item.zhLabel,
+              popoverData: item.popoverData,
+              isaInfo: item,
+              sources: sources
+            }))
+          " />
+        <DownloadButtonGroup
+          :title="archGroupInfo.second.name"
+          :description="archGroupInfo.second.description"
+          :button-props="
+            antong2List.map((item) => ({
+              archName: item.zhLabel,
+              popoverData: item.popoverData,
+              isaInfo: item,
+              sources: sources
+            }))
+          " />
       </div>
     </div>
 
-    <div class="livekit-container w-[100%] flex flex-row">
-      <div class="flex flex-col">
-        <div
-          id="livekit-title"
-          class="flex-col my-auto pl-[2rem] flex py-[1rem]">
-          <p id="livekit" class="text-[24pt]">LiveKit</p>
-          <p id="livekit-alt" class="text-[14pt]">功能完备的安同 OS 救援环境</p>
-          <p class="mt-8">
-            <AccordionNavigation
-              :navigation-list="liveKitNavigationList"
-              link-class=""
-              >·</AccordionNavigation
-            >
-          </p>
-        </div>
-      </div>
+    <!-- WSL, Virtual Machine and Docker -->
+    <div ref="otherDownload" class="flex flex-warp">
       <div
-        id="livekit-buttons"
-        class="flex flex-col flex pr-[2rem] ml-auto my-2">
-        <div class="my-auto" :style="{ minHeight: liveKitDivHeight + 'px' }">
-          <div
-            class="button-container-aoscos buttons-col"
-            v-if="versionArch.length > 0">
-            <span v-for="(item, index) in antong1List" :key="item.title">
-              <DownloadButton
-                :popover-data="{
-                  ...item.popoverData,
-                  placement: livekitPPlacement[index]
-                }"
-                :second-line-font-size="8"
-                :width="200"
-                :first-line-font-size="10"
-                :arch-name="item.zhLabel"
-                :url="`https://releases.aosc.io/${item.livekit.path}`"
-                :isa-info="item.livekit"
-                :sources="sources" />
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="wsl-container w-[100%] flex flex-row">
-      <div class="flex flex-col pl-[2rem] py-[1rem]">
-        <p id="wsl" class="text-[24pt]">WSL 环境</p>
-        <p id="wsl-alt" class="text-[14pt]">适用于 WSL 的安同 OS</p>
-        <p class="mt-8">
-          <AccordionNavigation
-            :navigation-list="wslNavigationList"
-            link-class=""
-            >·</AccordionNavigation
-          >
-        </p>
-      </div>
-      <div id="wsl-buttons" class="flex mt-auto mr-9 ml-auto">
+        class="wsl-container flex-2 flex flex-col justify-between p-[24px_30px]">
+        <TitleComponent title="WSL" description="适用于 WSL 的安同 OS" />
+        <!-- The badge's height is fixed and we can only modify predefined parts of shadow root -->
         <ms-store-badge
+          class="relative [&::part(img)]:h-[48px] [&::part(img)]:absolute [&::part(img)]:bottom-0"
           productid="9NMDF21NV65Z"
           window-mode="popup"
           theme="dark"
           animation="on">
         </ms-store-badge>
       </div>
-    </div>
-    <category-second class="highlight" title="实用工具" />
-    <div
-      id="oma-download"
-      ref="omaDownload"
-      class="oma-container w-[100%] flex flex-row py-[1rem]">
-      <div class="pl-[2rem]">
-        <p class="text-[24pt]">小熊猫包管理 (oma)</p>
-        <p class="text-[14pt]">简明好用的 APT 软件包管理界面</p>
-        <p class="mt-2">
-          <AccordionNavigation
-            :navigation-list="omaNavigationList"
-            link-class=""
-            >·</AccordionNavigation
-          >
-        </p>
-        <div class="mt-6">
-          <div class="bg-black/60 py-2 pr-14">
-            <code class="text-white pl-[1em]"
-              >{{ omaInstallScript }}
-              <v-icon
-                name="fa-copy"
-                class="ml-6 mt-[2px] absolute cursor-pointer"
-                @click="copy(omaInstallScript)"></v-icon>
-            </code>
-          </div>
-          <p class="mt-[6px] text-[10pt]"
-            >使用终端运行该命令可在 Debian、Ubuntu 及衍生版，以及
-            deepin、开放麒麟 (openKylin) 等<br />发行版安装小熊猫包管理
-          </p>
-        </div>
-      </div>
-    </div>
-    <div id="otherDownload">
-      <category-second id="tier-2-downloads" title="安同 OS（二级架构）" />
-      <div ref="tier2Downloads" class="w-[100%] flex-row py-[1rem] flex mb-8">
-        <div class="pl-[2rem] my-auto">
-          <p class="text-[13pt]">安同 OS 支持支持众多处理器微架构。</p>
-          <p class="text-[13pt] mt-1">除 x86-64、AArch64 及 LoongArch 外，</p>
-          <p class="text-[13pt] mt-1"
-            >我们还支持一众存量较少或软件支持尚未完善的架构，</p
-          >
-          <p class="text-[13pt] mt-1">并发布镜像供各位玩家试用和评估。</p>
-        </div>
+
+      <div class="vm-container flex-1 flex flex-col *:p-[24px_30px]">
         <div
-          class="flex flex-col pr-[2rem] gap-y-[0.5rem] ml-auto"
-          v-if="versionArch.length > 0">
-          <div v-for="item in antong2List" :key="item.title">
+          class="flex-1 flex justify-between bg-[#dddddd]">
+          <TitleComponent title="虚拟机镜像" description="用于虚拟化及云服务" />
+          <div
+            class="flex flex-col gap-2 [&_.theme-bg-color-secondary-primary]:py-2">
+            <DownloadButton arch-name="虚拟机镜像下载" button-color="#8d8d8d" />
+            <DownloadButton arch-name="虚拟机镜像下载" button-color="#8d8d8d" />
+          </div>
+        </div>
+
+        <div
+          class="docker-container flex-1 flex justify-between bg-[#66ccff]">
+          <TitleComponent title="Docker" description="便捷部署安同 OS 容器" />
+          <div class="flex items-center">
             <DownloadButton
-              :popover-data="item.popoverData"
-              :second-line-font-size="8"
-              :width="200"
-              v-if="item.installer !== undefined"
-              :first-line-font-size="10"
-              :arch-name="item.zhLabel"
-              :url="`https://releases.aosc.io/${item.installer.path}`"
-              :isa-info="item.installer"
-              :sources="sources" />
+              arch-name="Docker Hub"
+              width="140"
+              button-color="#336699"
+              class="h-fit [&_.theme-bg-color-secondary-primary]:py-2" />
           </div>
         </div>
       </div>
-      <!-- 暂时不提供，需要确定架构支持等信息
-      <category-second
-        id="downloadDocker"
-        title="容器镜像" />
-      <div
-        ref="downloadDocker"
-        class="pt-[20px] pb-[30px] px-[30px]">
-        <div class="text-[14pt]">
-          我们为 Docker 用户提供了容器镜像，您可以通过如下命令获取安同 OS 容器。
-        </div>
-        <app-highlight
-          lang="bash"
-          code="docker pull aosc/aosc-os" />
+    </div>
+
+    <!-- Afterglow -->
+    <div
+      ref="afterglowDownload"
+      class="afterglow-container flex flex-warp justify-between p-[30px] text-white gap-6">
+      <TitleComponent
+        title="星霞 OS"
+        description="老设备也能发光发热"
+        :navigation-list="afterglowOsNavigationList" />
+      <div class="flex flex-col justify-end gap-2">
+        <DownloadButtonGroup
+          :title="archGroupInfo.first.name"
+          :description="archGroupInfo.first.description"
+          :button-props="
+            xingxia1List.map((item) => ({
+              archName: item.zhLabel,
+              popoverData: item.popoverData,
+              isaInfo: item,
+              sources: sources
+            }))
+          " />
+        <DownloadButtonGroup
+          :title="archGroupInfo.second.name"
+          :description="archGroupInfo.second.description"
+          :button-props="
+            xingxia2List.map((item) => ({
+              archName: item.zhLabel,
+              popoverData: item.popoverData,
+              isaInfo: item,
+              sources: sources
+            }))
+          " />
       </div>
-      -->
+    </div>
+
+    <category-second class="highlight" title="实用工具" />
+
+    <!-- oma -->
+    <div
+      ref="omaDownload"
+      class="oma-container p-[30px]">
+      <TitleComponent
+        title="小熊猫包管理 (oma)"
+        description="简明好用的 APT 软件包管理界面"
+        :navigation-list="omaNavigationList" />
+      <div class="bg-black/60 py-2 pr-14 mt-4 w-fit">
+        <code class="text-white pl-[1em]"
+          >{{ omaInstallScript }}
+          <v-icon
+            name="fa-copy"
+            class="ml-6 mt-[2px] absolute cursor-pointer"
+            @click="copy(omaInstallScript)"></v-icon>
+        </code>
+      </div>
+      <p class="mt-[6px] text-[10pt]"
+        >使用终端运行该命令可在 Debian、Ubuntu 及衍生版，以及 deepin、开放麒麟
+        (openKylin) 等<br />发行版安装小熊猫包管理
+      </p>
     </div>
   </div>
 </template>
 
 <style scoped>
-.download-container {
-  display: flex;
-  flex-flow: column;
-}
-
-p {
-  line-height: 1.2;
-}
-
-.text-aosc-os {
-  display: flex;
-  text-align: right;
-  flex-flow: column;
-}
-
-.text-afterglow {
-  display: flex;
-  text-align: left;
-  flex-flow: column;
-}
-
-.afterglow {
-  background: linear-gradient(90deg, rgb(0 0 0 / 65%), 100%, transparent),
-    url(/assets/backgrounds/afterglow.webp);
-  background-size: auto 150%;
-  background-color: black;
-  width: 50%;
-  display: flex;
-  flex-flow: row;
-  justify-content: space-around;
-}
-
-.normal-p {
-  font-size: 12pt;
-  color: #fff;
-  justify-content: right;
-  display: flex;
-}
-
-.button-p {
-  font-size: 10pt;
-}
-
-.button-container-aoscos {
-  display: flex;
-  justify-content: right;
-  flex-flow: column;
-  row-gap: 0.5em;
-  align-self: flex-end;
-  margin: 0 auto;
-}
-
-.button-container-aoscos-multicolumn {
-  display: flex;
-  row-gap: 0.5em;
-  flex-wrap: wrap;
-  align-self: flex-end;
-}
-
-.button-container-afterglow {
-  display: flex;
-  justify-content: left;
-  flex-flow: column;
-  row-gap: 0.5em;
-  margin-top: 1em;
-}
+/* These background styles are too complicated for inline tailwindcss */
+/* For background images here: url() [position]/[size] [extra] */
 
 .aosc-os-container {
-  background: linear-gradient(90deg, rgb(255 255 255 / 0%), 100%, transparent),
-    url(/assets/backgrounds/aosc-os.webp);
-  background-size: auto 300%;
-}
-
-.livekit-container {
-  background: linear-gradient(90deg, #f6d5ac, 50%, transparent),
-    url('/assets/backgrounds/livekit.jpg');
-  background-position-x: 0%, 100%;
-}
-
-.oma-container {
-  background-color: rgb(218 206 187 / 100%);
-  background-image: url(/assets/download/oma-mascot.svg),
-    url(/assets/download/oma.svg);
-  background-size:
-    144px auto,
-    100% auto;
-  background-position:
-    right 38px bottom -4px,
-    center;
-  background-repeat: no-repeat, no-repeat;
-}
-
-.oma-mascot {
-  background: url(/assets/download/oma_item-1.svg);
-  align-self: flex-end;
+  background:
+    linear-gradient(90deg, rgb(255 255 255 / 0%), 100%, transparent),
+    url(/assets/backgrounds/aosc-os.webp) 0 15% / auto 380%;
 }
 
 .wsl-container {
-  background: linear-gradient(90deg, #b7e4fc, 50%, transparent),
-    url('/assets/backgrounds/aosc-os-wsl.webp');
-  background-color: #000;
-  background-position-x: 0%, 30rem;
-  background-size: 100%, 50rem;
-  background-repeat: no-repeat;
+  background:
+    linear-gradient(180deg, #b7e4fc, 70%, transparent),
+    url(/assets/backgrounds/aosc-os-wsl.webp) 30px 120px / 200% no-repeat,
+    #000;
 }
 
-.buttons-col button {
-  padding: 0.25rem 0;
+.afterglow-container {
+  background:
+    linear-gradient(180deg, #000, 60%, transparent),
+    url(/assets/backgrounds/afterglow.webp) 0 40% / auto 320% no-repeat;
 }
 
-ms-store-badge::part(img) {
-  width: 200px;
-  display: block;
+.oma-container {
+  background:
+    url(/assets/download/oma-mascot.svg) right 40px bottom -4px / 160px auto no-repeat,
+    url(/assets/download/oma.svg) left/ auto 250%,
+    rgb(218 206 187 / 100%);
 }
 </style>

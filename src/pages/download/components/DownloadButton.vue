@@ -12,18 +12,21 @@ const props = defineProps({
   },
   secondLineFontSize: {
     type: Number,
-    default: 10
+    default: 9
   },
   firstLineFontSize: {
     type: Number,
-    default: 12
+    default: 11
   },
   width: {
     type: Number,
-    default: 224
+    default: 140
   },
   popoverData: {
-    type: Object
+    type: {
+      placement: { type: String },
+      content: { type: String }
+    }
   },
   buttonColor: {
     type: String
@@ -36,26 +39,24 @@ const props = defineProps({
   }
 });
 
-const dialogVisible = ref(false);
 const router = useRouter();
-
-const byteToGb = (bytes) => {
-  return (bytes / 1024 / 1024 / 1024).toFixed(2);
-};
+const dialogVisible = ref(false);
+const archNameBrackets = props.archName.match(/(.*)([（(].*[）)])/);
 </script>
 <template>
   <div
-    class="flex mx-1"
+    class="flex"
     :style="{
       '--download-button-p-fount-size1': $props.firstLineFontSize + 'pt',
       '--download-button-p-fount-size2': $props.secondLineFontSize + 'pt',
       width: $props.width + 'px'
     }">
     <el-popover
-      :placement="popoverData.placement"
+      :disabled="popoverData === undefined"
+      :placement="popoverData?.placement"
       :hide-after="0"
       trigger="hover"
-      :content="popoverData.content">
+      :content="popoverData?.content">
       <template #reference>
         <div
           :style="{
@@ -63,27 +64,29 @@ const byteToGb = (bytes) => {
             backgroundColor: buttonColor
           }"
           @click="
-            url.startsWith('#') ? router.push(url) : (dialogVisible = true)
+            url?.startsWith('#') ? router.push(url) : (dialogVisible = true)
           "
           class="theme-bg-color-secondary-primary flex h-full flex-col grow hover:no-underline cursor-pointer py-1">
           <slot></slot>
-          <p v-if="archName" class="first-line-p">{{ archName }}</p>
-          <p v-if="isaInfo" class="second-line-p"
-            >{{ byteToGb(isaInfo.downloadSize) }}GiB ISO</p
-          >
+          <p v-if="!archNameBrackets" class="first-line-p">{{ archName }}</p>
+          <p v-if="archNameBrackets" class="first-line-p">{{
+            archNameBrackets[1]
+          }}</p>
+          <p v-if="archNameBrackets" class="second-line-p">{{
+            archNameBrackets[2]
+          }}</p>
         </div>
       </template>
     </el-popover>
 
     <el-dialog
+      v-if="isaInfo?.installer && isaInfo?.livekit && sources"
       v-model="dialogVisible"
-      title="下载详情"
-      style="--el-border-radius-base: 0">
+      title="下载详情">
       <DownloadDetails
         :arch="archName"
         :content="popoverData.content"
-        :path="isaInfo.path"
-        :sha256sum="isaInfo.sha256sum"
+        :isa-info="isaInfo"
         :sources="sources" />
     </el-dialog>
   </div>
