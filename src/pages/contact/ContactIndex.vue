@@ -43,12 +43,12 @@ const antiqueComputer = [
     aText: '加入聊天室'
   },
   {
-    spanText: 'IRC: #aosc @ Libera Chat — ',
+    spanText: 'IRC: #aosc-retro @ Libera Chat — ',
     url: 'irc://irc.libera.chat:6697/aosc-retro',
     aText: '加入频道'
   },
   {
-    spanText: 'Matrix: #aosc:matrix.aosc.io — ',
+    spanText: 'Matrix: #retro:matrix.aosc.io — ',
     url: 'https://matrix.to/#/%23retro:matrix.aosc.io',
     aText: '加入聊天室'
   }
@@ -66,12 +66,12 @@ const waterGroup = [
     aText: '加入聊天室'
   },
   {
-    spanText: 'IRC: #aosc @ Libera Chat — ',
+    spanText: 'IRC: #aosc-offtopic @ Libera Chat — ',
     url: 'irc://irc.libera.chat:6697/aosc-offtopic',
     aText: '加入频道'
   },
   {
-    spanText: 'Matrix: #aosc:matrix.aosc.io — ',
+    spanText: 'Matrix: #offtopic:matrix.aosc.io — ',
     url: 'https://matrix.to/#/%23offtopic:matrix.aosc.io',
     aText: '加入聊天室'
   }
