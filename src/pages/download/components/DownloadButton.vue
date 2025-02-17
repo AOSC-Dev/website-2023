@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 import DownloadDetails from './DownloadDetails.vue';
+import { useDownloadPageStore } from '../../../stores/download-page.js';
 import { useRouter } from 'vue-router';
 
 const props = defineProps({
@@ -40,8 +41,17 @@ const props = defineProps({
 });
 
 const router = useRouter();
-const dialogVisible = ref(false);
+const dialogState = ref(false);
+const downloadPageStore = useDownloadPageStore();
 const archNameBrackets = props.archName.match(/(.*)([（(].*[）)])/);
+
+const setDialogState = (state) => {
+  if (props.isaInfo?.title === 'arm64') {
+    downloadPageStore.dialogArm64State = state;
+  } else {
+    dialogState.value = state;
+  }
+};
 </script>
 <template>
   <div
@@ -64,7 +74,7 @@ const archNameBrackets = props.archName.match(/(.*)([（(].*[）)])/);
             backgroundColor: buttonColor
           }"
           @click="
-            url?.startsWith('#') ? router.push(url) : (dialogVisible = true)
+            url?.startsWith('#') ? router.push(url) : setDialogState(true)
           "
           class="theme-bg-color-secondary-primary flex h-full flex-col grow hover:no-underline cursor-pointer py-1">
           <slot></slot>
@@ -79,16 +89,27 @@ const archNameBrackets = props.archName.match(/(.*)([（(].*[）)])/);
       </template>
     </el-popover>
 
-    <el-dialog
-      v-if="isaInfo?.installer && isaInfo?.livekit && sources"
-      v-model="dialogVisible"
-      title="下载详情">
-      <DownloadDetails
-        :arch="archName"
-        :content="popoverData.content"
-        :isa-info="isaInfo"
-        :sources="sources" />
-    </el-dialog>
+    <template v-if="isaInfo?.installer && isaInfo?.livekit && sources">
+      <el-dialog
+        v-if="isaInfo.title === 'arm64'"
+        v-model="downloadPageStore.dialogArm64State"
+        width="50%"
+        title="下载详情">
+        <DownloadDetails
+          :arch="archName"
+          :content="popoverData.content"
+          :isa-info="isaInfo"
+          :sources="sources" />
+      </el-dialog>
+
+      <el-dialog v-else v-model="dialogState" width="50%" title="下载详情">
+        <DownloadDetails
+          :arch="archName"
+          :content="popoverData.content"
+          :isa-info="isaInfo"
+          :sources="sources" />
+      </el-dialog>
+    </template>
   </div>
 </template>
 
