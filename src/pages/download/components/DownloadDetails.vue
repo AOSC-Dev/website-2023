@@ -1,8 +1,9 @@
 <script setup>
-import { ref } from 'vue';
+import { computed } from 'vue';
 import { ElTabs, ElTabPane } from 'element-plus';
 import DownloadDetailsMain from './DownloadDetailsMain.vue';
 import DownloadDetailsAppleSiliconInstruction from './DownloadDetailsAppleSiliconInstruction.vue';
+import { useDownloadPageStore } from '../../../stores/download-page.js';
 
 const props = defineProps({
   isaInfo: {
@@ -24,7 +25,20 @@ const props = defineProps({
   }
 });
 
-const activeTab = ref('installer');
+const downloadPageStore = useDownloadPageStore();
+const activeTab = computed({
+  get() {
+    return props.isaInfo.title === 'arm64'
+      ? downloadPageStore.dialogTabArm64
+      : downloadPageStore.dialogTab;
+  },
+  set(value) {
+    if (['installer', 'livekit'].includes(value)) {
+      downloadPageStore.dialogTab = value;
+    }
+    downloadPageStore.dialogTabArm64 = value;
+  }
+});
 </script>
 
 <template>
@@ -64,5 +78,15 @@ const activeTab = ref('installer');
       disabled>
       <!-- TODO -->
     </el-tab-pane>
+    <el-tab-pane
+      label="Docker"
+      name="docker"
+      disabled
+    />
+    <el-tab-pane
+      label="虚拟机镜像"
+      name="vm"
+      disabled
+    />
   </el-tabs>
 </template>
