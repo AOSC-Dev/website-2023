@@ -542,6 +542,11 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
 </template>
 
 <style scoped>
+/* For dialogs in this page */
+:deep(.el-dialog) {
+  max-width: 800px;
+}
+
 /* These background styles are too complicated for inline tailwindcss */
 /* For background images here: url() [position]/[size] [extra] */
 

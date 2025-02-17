@@ -93,7 +93,7 @@ const setDialogState = (state) => {
       <el-dialog
         v-if="isaInfo.title === 'arm64'"
         v-model="downloadPageStore.dialogArm64State"
-        width="50%"
+        width="80%"
         title="下载详情">
         <DownloadDetails
           :arch="archName"
@@ -102,7 +102,7 @@ const setDialogState = (state) => {
           :sources="sources" />
       </el-dialog>
 
-      <el-dialog v-else v-model="dialogState" width="50%" title="下载详情">
+      <el-dialog v-else v-model="dialogState" width="80%" title="下载详情">
         <DownloadDetails
           :arch="archName"
           :content="popoverData.content"
