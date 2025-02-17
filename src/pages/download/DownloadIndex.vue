@@ -6,8 +6,9 @@ import { ref, useTemplateRef, watch, computed } from 'vue';
 import DownloadButton from './components/DownloadButton.vue';
 import { useRoute } from 'vue-router';
 import useClipboard from 'vue-clipboard3';
-import { ElMessage, ElInputNumber } from 'element-plus';
+import { ElMessage } from 'element-plus';
 import { useHighBrightnessControllerStore } from '../../stores/miscellaneous.js';
+import { useDownloadPageStore } from '../../stores/download-page.js';
 import { highlightElement } from '../../utils/animation.ts';
 import { requestGetJson } from '../../utils/utils.js';
 
@@ -24,8 +25,7 @@ const archGroupInfo = {
 };
 
 const route = useRoute();
-
-const primaryGap = ref(40);
+const downloadPageStore = useDownloadPageStore();
 //#endregion
 
 //#region Clipboard
@@ -194,6 +194,18 @@ const aoscOsNavigationList = ref([
   {
     title: '配置需求',
     path: '/aosc-os/requirements'
+  }
+]);
+const appleSiliconNavigationList = ref([
+  {
+    title: '1970/1/1'
+  },
+  {
+    title: '发行注记'
+  },
+  {
+    title: '配置需求',
+    path: 'https://github.com/AsahiLinux/docs/wiki/Feature-Support'
   }
 ]);
 const antong1List = ref([
@@ -437,7 +449,7 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
       </div>
     </div>
 
-    <!-- WSL, Virtual Machine and Docker -->
+    <!-- WSL, Apple silicon -->
     <div ref="otherDownload" class="flex flex-warp">
       <div
         class="wsl-container flex-2 flex flex-col justify-between p-[24px_30px]">
@@ -452,27 +464,20 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
         </ms-store-badge>
       </div>
 
-      <div class="vm-container flex-1 flex flex-col *:p-[24px_30px]">
+      <div class="flex-1 flex justify-between p-[24px_30px] bg-[#dddddd]">
+        <TitleComponent
+          title="Apple Silicon"
+          description="适用于基于 Apple silicon 的安同 OS"
+          :navigation-list="appleSiliconNavigationList" />
         <div
-          class="flex-1 flex justify-between bg-[#dddddd]">
-          <TitleComponent title="虚拟机镜像" description="用于虚拟化及云服务" />
-          <div
-            class="flex flex-col gap-2 [&_.theme-bg-color-secondary-primary]:py-2">
-            <DownloadButton arch-name="虚拟机镜像下载" button-color="#8d8d8d" />
-            <DownloadButton arch-name="虚拟机镜像下载" button-color="#8d8d8d" />
-          </div>
-        </div>
-
-        <div
-          class="docker-container flex-1 flex justify-between bg-[#66ccff]">
-          <TitleComponent title="Docker" description="便捷部署安同 OS 容器" />
-          <div class="flex items-center">
-            <DownloadButton
-              arch-name="Docker Hub"
-              width="140"
-              button-color="#336699"
-              class="h-fit [&_.theme-bg-color-secondary-primary]:py-2" />
-          </div>
+          class="flex flex-col self-end [&_.theme-bg-color-secondary-primary]:py-4">
+          <DownloadButton
+            arch-name="下载"
+            button-color="#8d8d8d"
+            @click="
+              downloadPageStore.dialogTabArm64 = 'apple-silicon-instruction';
+              downloadPageStore.dialogArm64State = true;
+            " />
         </div>
       </div>
     </div>
@@ -514,9 +519,7 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
     <category-second class="highlight" title="实用工具" />
 
     <!-- oma -->
-    <div
-      ref="omaDownload"
-      class="oma-container p-[30px]">
+    <div ref="omaDownload" class="oma-container p-[30px]">
       <TitleComponent
         title="小熊猫包管理 (oma)"
         description="简明好用的 APT 软件包管理界面"
