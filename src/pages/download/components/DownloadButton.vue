@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import DownloadDetails from './DownloadDetails.vue';
 import { useDownloadPageStore } from '../../../stores/download-page.js';
 import { useRouter } from 'vue-router';
@@ -45,6 +45,11 @@ const dialogState = ref(false);
 const downloadPageStore = useDownloadPageStore();
 const archNameBrackets = props.archName.match(/(.*)([（(].*[）)])/);
 
+const osName = '安同 OS'; // TODO: dynamic OS name (AOSC OS / Afterglow OS)
+const dialogTitle = computed(
+  () => `下载详情：${osName} - ${props.isaInfo?.zhLabel}`
+);
+
 const setDialogState = (state) => {
   if (props.isaInfo?.title === 'arm64') {
     downloadPageStore.dialogArm64State = state;
@@ -52,6 +57,21 @@ const setDialogState = (state) => {
     dialogState.value = state;
   }
 };
+
+const dialogModel = computed({
+  get() {
+    return props.isaInfo.title === 'arm64'
+      ? downloadPageStore.dialogArm64State
+      : dialogState.value;
+  },
+  set(value) {
+    if (props.isaInfo.title === 'arm64') {
+      downloadPageStore.dialogArm64State = value;
+    } else {
+      dialogState.value = value;
+    }
+  }
+});
 </script>
 <template>
   <div
@@ -89,27 +109,17 @@ const setDialogState = (state) => {
       </template>
     </el-popover>
 
-    <template v-if="isaInfo?.installer && isaInfo?.livekit && sources">
-      <el-dialog
-        v-if="isaInfo.title === 'arm64'"
-        v-model="downloadPageStore.dialogArm64State"
-        width="80%"
-        title="下载详情">
-        <DownloadDetails
-          :arch="archName"
-          :content="popoverData.content"
-          :isa-info="isaInfo"
-          :sources="sources" />
-      </el-dialog>
-
-      <el-dialog v-else v-model="dialogState" width="80%" title="下载详情">
-        <DownloadDetails
-          :arch="archName"
-          :content="popoverData.content"
-          :isa-info="isaInfo"
-          :sources="sources" />
-      </el-dialog>
-    </template>
+    <el-dialog
+      v-if="isaInfo?.installer && isaInfo?.livekit && sources"
+      v-model="dialogModel"
+      width="80%"
+      :title="dialogTitle">
+      <DownloadDetails
+        :arch="archName"
+        :content="popoverData.content"
+        :isa-info="isaInfo"
+        :sources="sources" />
+    </el-dialog>
   </div>
 </template>
 
