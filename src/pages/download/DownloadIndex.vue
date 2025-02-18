@@ -453,7 +453,10 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
     <div ref="otherDownload" class="flex flex-warp">
       <div
         class="wsl-container flex-2 flex flex-col justify-between p-[24px_30px]">
-        <TitleComponent title="WSL" description="适用于 WSL 的安同 OS" />
+        <TitleComponent
+          title="WSL"
+          description="适用于 WSL 的安同 OS"
+          small-title />
         <!-- The badge's height is fixed and we can only modify predefined parts of shadow root -->
         <ms-store-badge
           class="relative [&::part(img)]:h-[48px] [&::part(img)]:absolute [&::part(img)]:bottom-0"
@@ -468,7 +471,8 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
         <TitleComponent
           title="Apple Silicon"
           description="适用于基于 Apple silicon 的安同 OS"
-          :navigation-list="appleSiliconNavigationList" />
+          :navigation-list="appleSiliconNavigationList"
+          small-title />
         <div
           class="flex flex-col self-end [&_.theme-bg-color-secondary-primary]:py-4">
           <DownloadButton
