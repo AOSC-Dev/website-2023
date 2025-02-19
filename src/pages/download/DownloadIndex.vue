@@ -453,7 +453,7 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
     <!-- WSL, Apple silicon -->
     <div ref="otherDownload" class="flex flex-warp">
       <div
-        class="wsl-container flex-2 flex flex-col justify-between p-[24px_30px]">
+        class="wsl-container flex-2 flex flex-col justify-between text-white p-[24px_30px]">
         <TitleComponent
           title="WSL"
           description="在 Windows 上使用安同 OS"
@@ -478,7 +478,6 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
           class="flex flex-col self-end [&_.theme-bg-color-secondary-primary]:py-2">
           <DownloadButton
             arch-name="下载"
-            button-color="#8d8d8d"
             @click="
               downloadPageStore.dialogTabArm64 = 'apple-silicon-instruction';
               downloadPageStore.dialogArm64State = true;
@@ -539,8 +538,8 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
         </code>
       </div>
       <p class="mt-[6px] text-[10pt]"
-        >使用终端运行该命令可在 Debian、Ubuntu 及衍生版，以及 deepin、开放麒麟
-        (openKylin) 等<br />发行版安装小熊猫包管理
+        >使用终端运行该命令可在 Debian、Ubuntu、Linux Mint 及衍生版，以及 deepin、<br />开放麒麟
+        (openKylin) 等发行版安装小熊猫包管理
       </p>
     </div>
   </div>
@@ -556,26 +555,23 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
 /* For background images here: url() [position]/[size] [extra] */
 
 .aosc-os-container {
-  background:
-    linear-gradient(90deg, rgb(255 255 255 / 0%), 100%, transparent),
-    url(/assets/backgrounds/aosc-os.webp) 0 15% / auto 380%;
+  background-image: url(/assets/backgrounds/aosc-os.webp);
+  background-size: 105%;
 }
 
 .wsl-container {
-  background:
-    linear-gradient(180deg, #b7e4fc, 70%, transparent),
-    url(/assets/backgrounds/aosc-os-wsl.webp) 30px 120px / 200% no-repeat,
-    #000;
+  background-image: url(/assets/backgrounds/aosc-os-wsl.webp);
+  background-size: 100%;
 }
 
 .apple-silicon-container {
-  background: url(/assets/download/oma.svg) left/ auto 250%;
+  background-image: url(/assets/backgrounds/aosc-os-asahi.jpg);
+  background-size: 120%;
 }
 
 .afterglow-container {
-  background:
-    linear-gradient(180deg, #000, 60%, transparent),
-    url(/assets/backgrounds/afterglow.webp) 0 45% / auto 400% no-repeat;
+  background: url(/assets/backgrounds/afterglow.webp);
+  background-size: 100%;
 }
 
 .oma-container {

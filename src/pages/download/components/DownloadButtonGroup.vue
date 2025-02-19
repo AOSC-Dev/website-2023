@@ -15,10 +15,10 @@ const expand = ref(false);
 <template>
   <div class="flex flex-col gap-1">
     <div class="leading-none">
-      <span v-if="title" class="text-[10pt]">{{ title }}</span>
+      <span v-if="title" class="font-[450] text-[10pt]">{{ title }}</span>
       <el-popover placement="top" width="233" :content="description">
         <template #reference>
-          <span class="text-[8pt]">（这是什么？）</span>
+          <span class="font-[450] text-[8pt]">（这是什么？）</span>
         </template>
       </el-popover>
     </div>

@@ -18,7 +18,7 @@ const props = defineProps({
       "
       >{{ title }}</h2
     >
-    <h3 class="text-[14pt]">{{ description }}</h3>
+    <h3 class="font-[450] text-[14pt]">{{ description }}</h3>
     <div class="text-[11pt]">
       <AccordionNavigation
         v-if="navigationList"
