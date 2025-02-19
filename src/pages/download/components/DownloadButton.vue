@@ -126,10 +126,12 @@ const dialogModel = computed({
 <style scoped>
 .first-line-p {
   font-size: var(--download-button-p-fount-size1);
+  font-weight: 450;
 }
 
 .second-line-p {
   font-size: var(--download-button-p-fount-size2);
+  font-weight: 400;
 }
 
 p {
