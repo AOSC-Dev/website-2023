@@ -28,7 +28,7 @@ const props = defineProps({
         v-for="buttonProp in buttonProps"
         :key="buttonProp.archName"
         v-bind="buttonProp"
-        class="*:py-3" />
+        class="*:py-2" />
     </div>
   </div>
 </template>
