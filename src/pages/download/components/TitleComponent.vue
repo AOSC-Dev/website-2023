@@ -13,7 +13,8 @@ const props = defineProps({
   <div class="flex flex-col">
     <h2
       :class="
-        'leading-none pb-2 ' + (smallTitle ? 'text-[24pt]' : 'text-[32pt]')
+        'font-[450] leading-[0.8] pb-2 ' +
+        (smallTitle ? 'text-[24pt]' : 'text-[32pt]')
       "
       >{{ title }}</h2
     >
