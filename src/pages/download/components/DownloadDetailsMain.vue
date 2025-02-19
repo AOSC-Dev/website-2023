@@ -27,12 +27,12 @@ const mediaWritersInfo = [
     extension: 'exe'
   },
   {
-    name: 'macOS (Intel)',
+    name: 'macOS（Intel 芯片）',
     type: 'osx',
     extension: 'dmg'
   },
   {
-    name: 'macOS (Apple Silicon)',
+    name: 'macOS（Apple 芯片）',
     type: 'osx-arm64',
     extension: 'dmg'
   }

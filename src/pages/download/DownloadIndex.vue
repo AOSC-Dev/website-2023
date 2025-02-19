@@ -16,11 +16,11 @@ import { requestGetJson } from '../../utils/utils.js';
 const archGroupInfo = {
   first: {
     name: '一级架构',
-    description: '这是一级架构'
+    description: '“一级架构”是我们支持水平最高的一类目标架构，各类更新及时且特性完整，亦最受维护者关注、测试设备充分'
   },
   second: {
     name: '二级架构',
-    description: '这是二级架构'
+    description: '“二级架构”功能相对完整，但由于设备数量稀少、普遍性能较差或受维护者关注度不足，虽会及时响应安全更新，但其他类型更新、测试及反馈响应度可能略逊于一级架构'
   }
 };
 
@@ -454,7 +454,7 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
         class="wsl-container flex-2 flex flex-col justify-between p-[24px_30px]">
         <TitleComponent
           title="WSL"
-          description="适用于 WSL 的安同 OS"
+          description="在 Windows 上使用安同 OS"
           small-title />
         <!-- The badge's height is fixed and we can only modify predefined parts of shadow root -->
         <ms-store-badge
@@ -469,7 +469,7 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
       <div class="apple-silicon-container flex-1 flex justify-between p-[24px_30px] bg-[#dddddd]">
         <TitleComponent
           title="Apple Silicon"
-          description="适用于基于 Apple silicon 的安同 OS"
+          description="适用于基于 Apple 芯片的 Mac 设备"
           :navigation-list="appleSiliconNavigationList"
           small-title />
         <div
