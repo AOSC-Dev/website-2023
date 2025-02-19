@@ -530,7 +530,7 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
         description="简明好用的 APT 软件包管理界面"
         :navigation-list="omaNavigationList" />
       <div class="bg-black/60 py-2 pr-14 mt-4 w-fit">
-        <code class="text-white pl-[1em]"
+        <code class="text-white text-[0.9em] pl-[1em]"
           >{{ omaInstallScript }}
           <v-icon
             name="fa-copy"
