@@ -456,9 +456,8 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
           title="WSL"
           description="在 Windows 上使用安同 OS"
           small-title />
-        <!-- The badge's height is fixed and we can only modify predefined parts of shadow root -->
         <ms-store-badge
-          class="relative [&::part(img)]:h-[48px] [&::part(img)]:absolute [&::part(img)]:bottom-0"
+          class="relative [&::part(img)]:h-[48px] [&::part(img)]:absolute [&::part(img)]:bottom-0 h-[80px]"
           productid="9NMDF21NV65Z"
           window-mode="popup"
           theme="dark"
@@ -466,14 +465,15 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
         </ms-store-badge>
       </div>
 
-      <div class="apple-silicon-container flex-1 flex justify-between p-[24px_30px] bg-[#dddddd]">
+      <div
+        class="apple-silicon-container flex-1 flex flex-col justify-between p-[24px_30px] bg-[#dddddd]">
         <TitleComponent
           title="Apple Silicon"
           description="适用于基于 Apple 芯片的 Mac 设备"
           :navigation-list="appleSiliconNavigationList"
           small-title />
         <div
-          class="flex flex-col self-end [&_.theme-bg-color-secondary-primary]:py-4">
+          class="flex flex-col self-end [&_.theme-bg-color-secondary-primary]:py-2">
           <DownloadButton
             arch-name="下载"
             button-color="#8d8d8d"
@@ -567,8 +567,7 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
 }
 
 .apple-silicon-container {
-  background:
-    url(/assets/download/oma.svg) left/ auto 250%;
+  background: url(/assets/download/oma.svg) left/ auto 250%;
 }
 
 .afterglow-container {
