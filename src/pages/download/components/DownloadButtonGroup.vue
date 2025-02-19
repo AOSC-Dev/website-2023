@@ -15,6 +15,7 @@ const props = defineProps({
       <span v-if="title" class="text-[10pt]">{{ title }}</span>
       <el-popover
         placement="top"
+        width="233"
         :content="description">
         <template #reference>
           <span class="text-[8pt]">（这是什么？）</span>
