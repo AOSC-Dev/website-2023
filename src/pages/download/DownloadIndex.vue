@@ -575,7 +575,7 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
 .afterglow-container {
   background:
     linear-gradient(180deg, #000, 60%, transparent),
-    url(/assets/backgrounds/afterglow.webp) 0 40% / auto 320% no-repeat;
+    url(/assets/backgrounds/afterglow.webp) 0 45% / auto 400% no-repeat;
 }
 
 .oma-container {
