@@ -552,11 +552,10 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
 }
 
 /* These background styles are too complicated for inline tailwindcss */
-/* For background images here: url() [position]/[size] [extra] */
-
 .aosc-os-container {
   background-image: url(/assets/backgrounds/aosc-os.webp);
-  background-size: 105%;
+  background-position: 0 -40px;
+  background-size: 1100px;
 }
 
 .wsl-container {
@@ -566,12 +565,13 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
 
 .apple-silicon-container {
   background-image: url(/assets/backgrounds/aosc-os-asahi.jpg);
-  background-size: 120%;
+  background-position: 0 -40px;
+  background-size: 800px;
 }
 
 .afterglow-container {
-  background: url(/assets/backgrounds/afterglow.webp);
-  background-size: 100%;
+  background-image: url(/assets/backgrounds/afterglow.webp);
+  background-size: 1100px;
 }
 
 .oma-container {
