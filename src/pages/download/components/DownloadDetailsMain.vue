@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue';
 import { ElButton, ElContainer, ElOption, ElSelect } from 'element-plus';
+import pangu from 'pangu';
 import AppLink from '../../../components/AppLink.vue';
 import AppH2 from '../../../components/AppH2.vue';
 import CopyCodeComponent from './CopyCodeComponent.vue';
@@ -42,7 +43,11 @@ const mediaWritersInfo = [
 <template>
   <div class="flex flex-col gap-2">
     <app-h2>基础信息</app-h2>
-    <p> 您正在下载 {{ arch }} 版安同 OS {{ fileType }}，{{ content }}。</p>
+    <p>
+      {{
+        pangu.spacing(`您正在下载${arch}版安同 OS${fileType}，${content}。`)
+      }}</p
+    >
     <p>
       您可以根据自身网络配置和物理位置选择最合适的镜像源，以便更快完成下载。
     </p>
