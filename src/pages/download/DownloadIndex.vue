@@ -204,7 +204,7 @@ const appleSiliconNavigationList = ref([
   },
   {
     title: '配置需求',
-    path: 'https://github.com/AsahiLinux/docs/wiki/Feature-Support'
+    url: 'https://github.com/AsahiLinux/docs/wiki/Feature-Support'
   }
 ]);
 const antong1List = ref([
@@ -466,7 +466,7 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
         </ms-store-badge>
       </div>
 
-      <div class="flex-1 flex justify-between p-[24px_30px] bg-[#dddddd]">
+      <div class="apple-silicon-container flex-1 flex justify-between p-[24px_30px] bg-[#dddddd]">
         <TitleComponent
           title="Apple Silicon"
           description="适用于基于 Apple silicon 的安同 OS"
@@ -564,6 +564,11 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
     linear-gradient(180deg, #b7e4fc, 70%, transparent),
     url(/assets/backgrounds/aosc-os-wsl.webp) 30px 120px / 200% no-repeat,
     #000;
+}
+
+.apple-silicon-container {
+  background:
+    url(/assets/download/oma.svg) left/ auto 250%;
 }
 
 .afterglow-container {
