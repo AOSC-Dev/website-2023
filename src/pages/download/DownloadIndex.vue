@@ -290,7 +290,7 @@ const antong2List = ref([
 //#region Afterglow OS
 const afterglowOsNavigationList = ref([
   {
-    title: '敬请期待吧'
+    title: '敬请期待'
   },
   {
     title: '发行注记',
