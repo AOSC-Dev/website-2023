@@ -96,14 +96,16 @@ const dialogModel = computed({
           :disabled="disabled"
           :style="{
             borderColor: 'var(--primary)',
-            backgroundColor: buttonColor,
+            backgroundColor: buttonColor
           }"
           @click="
             url?.startsWith('#') ? router.push(url) : setDialogState(true)
           "
-          class="theme-bg-color-secondary-primary flex h-full flex-col grow hover:no-underline cursor-pointer py-1">
+          class="theme-bg-color-secondary-primary flex h-full flex-col grow hover:no-underline cursor-pointer py-1 overflow-hidden">
           <slot></slot>
-          <span v-if="!archNameBrackets" class="first-line-p">{{ archName }}</span>
+          <span v-if="!archNameBrackets" class="first-line-p">{{
+            archName
+          }}</span>
           <span v-if="archNameBrackets" class="first-line-p">{{
             archNameBrackets[1]
           }}</span>
@@ -147,10 +149,10 @@ span {
 
 button:disabled {
   cursor: not-allowed;
-  background-color: #8d8d8d
+  background-color: #8d8d8d;
 }
 
 button:disabled span {
-  color: #dddddd
+  color: #dddddd;
 }
 </style>
