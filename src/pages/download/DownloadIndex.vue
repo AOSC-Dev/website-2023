@@ -503,7 +503,8 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
               archName: item.zhLabel,
               popoverData: item.popoverData,
               isaInfo: item,
-              sources: sources
+              sources: sources,
+              disabled: true
             }))
           " />
         <DownloadButtonGroup
@@ -514,7 +515,8 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
               archName: item.zhLabel,
               popoverData: item.popoverData,
               isaInfo: item,
-              sources: sources
+              sources: sources,
+              disabled: true
             }))
           " />
       </div>
@@ -538,8 +540,8 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
         </code>
       </div>
       <p class="mt-[6px] text-[10pt]"
-        >使用终端运行该命令可在 Debian、Ubuntu、Linux Mint 及衍生版，以及 deepin、<br />开放麒麟
-        (openKylin) 等发行版安装小熊猫包管理
+        >使用终端运行该命令可在 Debian、Ubuntu、Linux Mint 及衍生版，以及
+        deepin、<br />开放麒麟 (openKylin) 等发行版安装小熊猫包管理
       </p>
     </div>
   </div>
