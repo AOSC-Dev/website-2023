@@ -37,6 +37,10 @@ const props = defineProps({
   },
   sources: {
     type: Array
+  },
+  disabled: {
+    type: Boolean,
+    default: false
   }
 });
 
@@ -60,12 +64,12 @@ const setDialogState = (state) => {
 
 const dialogModel = computed({
   get() {
-    return props.isaInfo.title === 'arm64'
+    return props.isaInfo?.title === 'arm64'
       ? downloadPageStore.dialogArm64State
       : dialogState.value;
   },
   set(value) {
-    if (props.isaInfo.title === 'arm64') {
+    if (props.isaInfo?.title === 'arm64') {
       downloadPageStore.dialogArm64State = value;
     } else {
       dialogState.value = value;
@@ -88,29 +92,30 @@ const dialogModel = computed({
       trigger="hover"
       :content="popoverData?.content">
       <template #reference>
-        <div
+        <button
+          :disabled="disabled"
           :style="{
             borderColor: 'var(--primary)',
-            backgroundColor: buttonColor
+            backgroundColor: buttonColor,
           }"
           @click="
             url?.startsWith('#') ? router.push(url) : setDialogState(true)
           "
           class="theme-bg-color-secondary-primary flex h-full flex-col grow hover:no-underline cursor-pointer py-1">
           <slot></slot>
-          <p v-if="!archNameBrackets" class="first-line-p">{{ archName }}</p>
-          <p v-if="archNameBrackets" class="first-line-p">{{
+          <span v-if="!archNameBrackets" class="first-line-p">{{ archName }}</span>
+          <span v-if="archNameBrackets" class="first-line-p">{{
             archNameBrackets[1]
-          }}</p>
-          <p v-if="archNameBrackets" class="second-line-p">{{
+          }}</span>
+          <span v-if="archNameBrackets" class="second-line-p">{{
             archNameBrackets[2]
-          }}</p>
-        </div>
+          }}</span>
+        </button>
       </template>
     </el-popover>
 
     <el-dialog
-      v-if="isaInfo?.installer && isaInfo?.livekit && sources"
+      v-if="!disabled"
       v-model="dialogModel"
       width="80%"
       :title="dialogTitle">
@@ -134,9 +139,18 @@ const dialogModel = computed({
   font-weight: 400;
 }
 
-p {
+span {
   margin: auto 0;
   text-align: center;
   color: white;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  background-color: #8d8d8d
+}
+
+button:disabled span {
+  color: #dddddd
 }
 </style>
