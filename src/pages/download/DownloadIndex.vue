@@ -96,6 +96,8 @@ function getAntongDate() {
 }
 const antongDate = computed(getAntongDate);
 
+const appleSiliconDate = ref('...');
+
 /**
  * 比较 ISO 的日期（或版本）
  */
@@ -159,6 +161,21 @@ const getNewVersionArch = (arch, type) => {
     ElMessage.warning('版本信息获取失败');
   }
 
+  // Apple silicon
+  const [siliconRes, siliconError] = await requestGetJson(
+    'https://releases.aosc.io/os-arm64/asahi/installer_data.json'
+  );
+  if (siliconError) {
+    console.log(siliconError);
+    ElMessage.warning('版本信息获取失败');
+  } else if (siliconRes) {
+    const appleSiliconDateRaw =
+      siliconRes.data.os_list[0].name.match(/\((.*)\)/)[1];
+    appleSiliconDate.value = `${appleSiliconDateRaw.substring(0, 4)}/${parseInt(
+      appleSiliconDateRaw.substring(4, 6)
+    )}/${parseInt(appleSiliconDateRaw.substring(6, 8))}`;
+  }
+
   // Mirrors
   const [recipeResponse, recipeError] = await requestGetJson(
     'https://releases.aosc.io/manifest/recipe.json'
@@ -199,7 +216,7 @@ const aoscOsNavigationList = ref([
 ]);
 const appleSiliconNavigationList = ref([
   {
-    title: '1970/1/1'
+    title: appleSiliconDate
   },
   {
     title: '发行注记'
@@ -273,7 +290,7 @@ const antong2List = ref([
 //#region Afterglow OS
 const afterglowOsNavigationList = ref([
   {
-    title: '1970/1/1'
+    title: '敬请期待吧'
   },
   {
     title: '发行注记',
