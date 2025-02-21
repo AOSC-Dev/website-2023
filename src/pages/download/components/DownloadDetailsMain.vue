@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import { ElButton, ElContainer, ElOption, ElSelect } from 'element-plus';
 import pangu from 'pangu';
 import AppLink from '../../../components/AppLink.vue';
@@ -38,16 +38,16 @@ const mediaWritersInfo = [
     extension: 'dmg'
   }
 ];
+
+onMounted(() => {
+  pangu.spacingElementByClassName('download-details-main');
+});
 </script>
 
 <template>
-  <div class="flex flex-col gap-2">
+  <div class="download-details-main flex flex-col gap-2">
     <app-h2>基础信息</app-h2>
-    <p>
-      {{
-        pangu.spacing(`您正在下载${arch}版安同 OS${fileType}，${content}。`)
-      }}</p
-    >
+    <p>您正在下载{{ arch }}版安同 OS {{ fileType }}，{{ content }}。</p>
     <p>
       您可以根据自身网络配置和物理位置选择最合适的镜像源，以便更快完成下载。
     </p>
@@ -96,7 +96,7 @@ const mediaWritersInfo = [
       <AppLink to="https://etcher.balena.io/" target="_blank">
         balenaetcher
       </AppLink>
-      工具制作 {{ fileType }}。
+      工具制作{{ fileType }}。
     </p>
 
     <app-h2>帮助与支持</app-h2>
