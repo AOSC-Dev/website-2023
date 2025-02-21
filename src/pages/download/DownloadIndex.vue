@@ -94,9 +94,11 @@ function getAntongDate() {
     dateStr.substring(4, 6)
   )}/${parseInt(dateStr.substring(6, 8))}`;
 }
-const antongDate = computed(getAntongDate);
 
+const antongDate = computed(getAntongDate);
 const appleSiliconDate = ref('...');
+const omaVersion = ref('...');
+
 
 /**
  * 比较 ISO 的日期（或版本）
@@ -158,7 +160,7 @@ const getNewVersionArch = (arch, type) => {
       v.livekit = getNewVersionArch(v.title, 'livekit');
     });
   } else if (err) {
-    ElMessage.warning('版本信息获取失败');
+    ElMessage.warning('AOSC OS 版本信息获取失败');
   }
 
   // Apple silicon
@@ -167,13 +169,23 @@ const getNewVersionArch = (arch, type) => {
   );
   if (siliconError) {
     console.log(siliconError);
-    ElMessage.warning('版本信息获取失败');
+    ElMessage.warning('AOSC OS Apple Silicon 版本信息获取失败');
   } else if (siliconRes) {
     const appleSiliconDateRaw =
       siliconRes.data.os_list[0].name.match(/\((.*)\)/)[1];
     appleSiliconDate.value = `${appleSiliconDateRaw.substring(0, 4)}/${parseInt(
       appleSiliconDateRaw.substring(4, 6)
     )}/${parseInt(appleSiliconDateRaw.substring(6, 8))}`;
+  }
+
+  // oma
+  const [omaRes, omaResError] = await requestGetJson("https://packages.aosc.io/packages/oma?type=json");
+  if (omaResError) {
+    console.log(omaResError);
+    ElMessage.warning('oma 版本信息获取失败');
+  }
+  else if (omaRes) {
+    omaVersion.value = omaRes.data.pkg.version;
   }
 
   // Mirrors
@@ -184,7 +196,7 @@ const getNewVersionArch = (arch, type) => {
     'https://releases.aosc.io/manifest/recipe-i18n.json'
   );
   if (recipeError || recipeI18nError) {
-    ElMessage.warning('版本信息获取失败');
+    ElMessage.warning('镜像信息获取失败');
     console.log(recipeError, recipeI18nError);
   } else {
     recipe.value = recipeResponse.data;
@@ -410,7 +422,7 @@ document.head.appendChild(msStoreScript);
 //#region oma
 const omaNavigationList = [
   {
-    title: '1.14.514'
+    title: omaVersion,
   },
   {
     title: '详细介绍',
