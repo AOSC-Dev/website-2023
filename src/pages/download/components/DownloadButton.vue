@@ -118,7 +118,7 @@ const dialogModel = computed({
     </el-popover>
 
     <el-dialog
-      v-if="!disabled"
+      v-if="!disabled && popoverData && isaInfo"
       v-model="dialogModel"
       width="80%"
       :title="dialogTitle">
