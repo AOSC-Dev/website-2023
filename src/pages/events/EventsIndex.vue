@@ -156,14 +156,12 @@ const navigationList = [
       </p>
       <div class="pt-4 pb-4 px-16">
         <ul class="list-disc">
-          <li
-            ><b>2024 年：</b
-            ><a
-              class="text-[#0056cc] no-underline"
-              href="https://www.bilibili.com/video/BV1Fj421X7gX"
-              >甲辰烙饼会（2024 年 2 月 15 日）</a
-            ></li
-          >
+          <li>
+            <b>2025 年：</b><a class="text-[#0056cc] no-underline" href="https://www.bilibili.com/video/BV1CNcFeYEBQ/">乙巳烙饼会（2025 年 2 月 1 日）</a>
+          </li>
+          <li>
+            <b>2024 年：</b><a class="text-[#0056cc] no-underline" href="https://www.bilibili.com/video/BV1Fj421X7gX">甲辰烙饼会（2024 年 2 月 15 日）</a>
+          </li>
         </ul>
       </div>
     </div>
