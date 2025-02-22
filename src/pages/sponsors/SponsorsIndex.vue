@@ -32,6 +32,11 @@ const sponsorList = ref([
     title: '镜像源',
     list: [
       {
+        name: '北京大学开源镜像站',
+        web: 'https://mirrors.pku.edu.cn/',
+        img: 'pku'
+      },
+      {
         name: '北京外国语大学开源软件镜像站',
         web: 'https://mirrors.bfsu.edu.cn/',
         img: 'bfsu'
@@ -82,14 +87,14 @@ const sponsorList = ref([
         img: 'nyist-cips'
       },
       {
+        name: '齐鲁工业大学开源软件镜像站 ',
+        web: 'https://mirrors.qlu.edu.cn/',
+        img: 'qlu'
+      },
+      {
         name: '清华大学 TUNA 协会',
         web: 'https://tuna.moe/',
         img: 'tuna'
-      },
-      {
-        name: 'QVQNetwork',
-        web: 'https://mirrors.qvq.net.cn/',
-        img: 'qvq'
       },
       {
         name: '山东大学（青岛）网管会镜像站学生运营团队',
@@ -100,6 +105,11 @@ const sponsorList = ref([
         name: '上海交通大学 Linux 用户组',
         web: 'https://mirror.sjtu.edu.cn/',
         img: 'sjtug'
+      },
+      {
+        name: '南方科技大学开源软件镜像站',
+        web: 'https://mirrors.sustech.edu.cn/',
+        img: 'sustech'
       },
       {
         name: '上海科技大学 Geekpie 协会',
@@ -205,6 +215,11 @@ const sponsorList = ref([
         name: '重庆邮电大学 Linux 用户组',
         web: 'https://github.com/cquptlug',
         img: 'cqupt-lug'
+      },
+      {
+        name: 'QVQNetwork',
+        web: 'https://mirrors.qvq.net.cn/',
+        img: 'qvq'
       },
       {
         name: '上海大学开源社区',
