@@ -231,7 +231,8 @@ const appleSiliconNavigationList = ref([
     title: appleSiliconDate
   },
   {
-    title: '发行注记'
+    title: '发行注记',
+    url: '/aosc-os/asahi/relnote'
   },
   {
     title: '配置需求',
