@@ -296,7 +296,7 @@ const sponsorList = ref([
             <td>okami2012</td>
             <td>要塞姬Ilikara</td>
             <td>Yo Kaslana</td>
-            <td></td>
+            <td>梓瑶</td>
           </tr>
         </tbody>
       </table>
