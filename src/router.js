@@ -35,6 +35,7 @@ import AoscLivekitRelnote from './pages/aosc-os/livekit/relnote/AoscLivekitRelno
 import AoscWslRelnote from './pages/aosc-os/wsl/relnote/AoscWslRelnote.vue';
 import AoscLivekitRequirements from './pages/aosc-os/livekit/requirements/AoscLivekitRequirements.vue';
 import AoscWslRequirements from './pages/aosc-os/wsl/requirements/AoscWslRequirements.vue';
+import AoscAsahiRelnote from './pages/aosc-os/asahi/relnote/AoscAsahiRelnote.vue';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -141,6 +142,14 @@ const router = createRouter({
       component: AoscWslRelnote,
       meta: {
         title: '发行注记 (AOSC OS on WSL)'
+      }
+    },
+    {
+      path: '/aosc-os/asahi/relnote',
+      name: 'asahirelnote',
+      component: AoscAsahiRelnote,
+      meta: {
+        title: '发行注记（安同 OS，适用于基于 Apple 芯片的 Mac 设备）'
       }
     },
     {
