@@ -271,6 +271,36 @@ const sponsorList = ref([
         </div>
       </div>
     </div>
+
+    <category-second title="个人捐赠者" />
+    <div class="p-6">
+      <p>
+        社区的持续运行同样离不开离不开社区好友以个人名义的捐赠，多年来，他们向社区捐赠各类硬件、积极参与社区发起的众筹项目，在支持各社区项目维护高效运转的同时，还为社区贡献者们分担了许多经济压力。
+      </p><br />
+      <p>
+        2025 年前，社区未有鸣谢个人捐赠者的流程，亦有提出希望保持匿名的朋友，因此本列表并不完整。我社谨以本节鸣谢一切未有留名的个人捐赠者。
+      </p><br />
+
+      <table>
+        <caption class="text-[12pt] font-semibold">
+          软件源源服务器冷存储用硬盘（2025 年 2 月 6 日）
+        </caption>
+        <tbody>
+          <tr>
+            <td>冲浪的小鱼</td>
+            <td>黄逸君</td>
+            <td>kf</td>
+            <td>刘璨贤</td>
+          </tr>
+          <tr>
+            <td>okami2012</td>
+            <td>要塞姬Ilikara</td>
+            <td>Yo Kaslana</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>
 
