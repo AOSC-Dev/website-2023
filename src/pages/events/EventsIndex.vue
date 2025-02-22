@@ -101,7 +101,7 @@ const navigationList = [
             ><a
               class="text-[#0056cc] no-underline"
               href="https://wiki.aosc.io/zh/community/aoscc/2017/"
-              >广东工业大学（2019 年 7 月 14 - 16 日）</a
+              >广东工业大学（2017 年 7 月 14 - 16 日）</a
             ></li
           >
           <li><b>2016 年：</b>上海科技大学（2016 年 7 月）</li>
