@@ -121,22 +121,29 @@ const navigationList = [
       <div class="pt-4 pb-4 px-16">
         <ul class="list-disc">
           <li>
+            <b>2024 年 12 月 15 日：</b><a class="text-[#0056cc] no-underline" href="https://www.bilibili.com/video/BV14MBTYNEi8/">西安电子科技大学</a>
+          </li>
+          <li>
+            <b>2024 年 12 月 7 日：</b><a class="text-[#0056cc] no-underline" href="https://www.bilibili.com/video/BV1caiyY4E3p/">山东大学（青岛）</a>
+          </li>
+          <li>
+            <b>2024 年 11 月 10 日：</b><a class="text-[#0056cc] no-underline" href="https://www.bilibili.com/video/BV1yUm6YEEWK/">兰州大学</a>
+          </li>
+          <li>
             <b>2024 年 10 月 27 日：</b><a class="text-[#0056cc] no-underline" href="https://www.bilibili.com/video/BV1Vc1eYgEpm/">澳门科技大学</a>
           </li>
           <li>
             <b>2024 年 10 月 20 日：</b><a class="text-[#0056cc] no-underline" href="https://www.bilibili.com/video/BV1BYyzYfEd5/">宁夏理工学院</a>
           </li>
           <li>
-            <b>2024 年 3 月：</b><a class="text-[#0056cc] no-underline" href="https://www.bilibili.com/video/BV1wr42187aT/">曲阜师范大学（“社团开放活动：计算进化”）</a>
+            <b>2024 年 3 月 20 日：</b><a class="text-[#0056cc] no-underline" href="https://www.bilibili.com/video/BV1wr42187aT/">曲阜师范大学（“社团开放活动：计算进化”）</a>
           </li>
         </ul>
       </div>
       <p> 如下是近期规划内的“安同校园行”目的地： </p>
       <div class="pt-4 pb-4 px-16">
         <ul class="list-disc">
-          <li><b>2024 年 11 月 10 日：</b>兰州大学</li>
-          <li><b>2024 年 12 月 8 日：</b>山东大学（青岛）</li>
-          <li><b>2024 年 12 月：</b>西安电子科技大学</li>
+          <li><b>2025 年 3 月 15 日：</b>河海大学</li>
         </ul>
       </div>
     </div>
