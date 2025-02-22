@@ -168,6 +168,9 @@ const sponsorList = ref([
       }
     ]
   },
+]);
+
+const sponsorsListHistoric = ref([
   {
     title: '历史赞助方（服务与设施）',
     list: [
@@ -301,7 +304,32 @@ const sponsorList = ref([
         </tbody>
       </table>
     </div>
+
+    <div v-for="item in sponsorsListHistoric" :key="item.title">
+      <category-second :title="item.title" />
+      <div class="p-6">
+        <div class="grid grid-cols-4 gap-6 p-2">
+          <a
+            v-for="sponsor in item.list"
+            :key="sponsor.name"
+            class="cursor-pointer text-center"
+            :href="sponsor.web"
+            target="_blank">
+            <div class="min-h-[91.74px]">
+              <img
+                loading="lazy"
+                :src="`/assets/sponsors/${sponsor.img}.svg`"
+                :alt="sponsor.name"
+                class="w-[100%] max-w-[100%]" />
+            </div>
+            <div class="text-link">{{ sponsor.name }}</div>
+          </a>
+        </div>
+      </div>
+
+    </div>
   </div>
+
 </template>
 
 <style scoped></style>
