@@ -484,7 +484,7 @@ const liveKitDivHeight = (
                 :url="`https://releases.aosc.io/${item.livekit.path}`"
                 :isa-info="item.livekit">
                 <template #dropdown-items>
-                  <el-dropdown-item @click="copy(item.installer.sha256sum)"
+                  <el-dropdown-item @click="copy(item.livekit.sha256sum)"
                     >复制校验和</el-dropdown-item
                   >
                 </template>
