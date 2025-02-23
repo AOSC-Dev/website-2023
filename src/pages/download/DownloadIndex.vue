@@ -489,7 +489,7 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
           description="在 Windows 上使用安同 OS"
           small-title />
         <ms-store-badge
-          class="relative [&::part(img)]:h-[48px] [&::part(img)]:absolute [&::part(img)]:bottom-0 h-[80px]"
+          class="relative [&::part(img)]:absolute [&::part(img)]:bottom-0 [&::part(img)]:h-[48px] h-[80px] w-fit"
           productid="9NMDF21NV65Z"
           window-mode="popup"
           theme="dark"
