@@ -47,7 +47,7 @@ const props = defineProps({
 const router = useRouter();
 const dialogState = ref(false);
 const downloadPageStore = useDownloadPageStore();
-const archNameBrackets = props.archName.match(/(.*)([（(].*[）)])/);
+const archNameBrackets = props.archName.match(/^(.*?)([（(].*[）)])?$/);
 
 const osName = '安同 OS'; // TODO: dynamic OS name (AOSC OS / Afterglow OS)
 const dialogTitle = computed(
@@ -79,13 +79,7 @@ const dialogModel = computed({
 </script>
 
 <template>
-  <div
-    class="flex"
-    :style="{
-      '--download-button-p-fount-size1': $props.firstLineFontSize + 'pt',
-      '--download-button-p-fount-size2': $props.secondLineFontSize + 'pt',
-      width: $props.width + 'px'
-    }">
+  <div>
     <el-popover
       :disabled="popoverData === undefined"
       :placement="popoverData?.placement"
@@ -97,22 +91,16 @@ const dialogModel = computed({
           :disabled="disabled"
           :style="{
             borderColor: 'var(--primary)',
-            backgroundColor: buttonColor
+            backgroundColor: buttonColor,
+            width: $props.width + 'px'
           }"
           @click="
             url?.startsWith('#') ? router.push(url) : setDialogState(true)
           "
-          class="theme-bg-color-secondary-primary flex h-full flex-col grow hover:no-underline cursor-pointer py-1 overflow-hidden">
+          class="theme-bg-color-secondary-primary h-full grow hover:no-underline cursor-pointer py-2 overflow-hidden">
           <slot></slot>
-          <span v-if="!archNameBrackets" class="first-line-p">{{
-            archName
-          }}</span>
-          <span v-if="archNameBrackets" class="first-line-p">{{
-            archNameBrackets[1]
-          }}</span>
-          <span v-if="archNameBrackets" class="second-line-p">{{
-            archNameBrackets[2]
-          }}</span>
+          <span class="first-line-p">{{ archNameBrackets[1] }}</span>
+          <span class="second-line-p">{{ archNameBrackets[2] }}</span>
         </button>
       </template>
     </el-popover>
@@ -133,12 +121,12 @@ const dialogModel = computed({
 
 <style scoped>
 .first-line-p {
-  font-size: var(--download-button-p-fount-size1);
+  font-size: v-bind(firstLineFontSize + 'pt');
   font-weight: 450;
 }
 
 .second-line-p {
-  font-size: var(--download-button-p-fount-size2);
+  font-size: v-bind(secondLineFontSize + 'pt');
   font-weight: 400;
 }
 
@@ -146,6 +134,7 @@ span {
   margin: auto 0;
   text-align: center;
   color: white;
+  display: block;
 }
 
 button:disabled {
