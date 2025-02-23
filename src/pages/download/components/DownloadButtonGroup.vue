@@ -32,12 +32,11 @@ const expand = ref(false);
     </div>
 
     <div
-      :class="`buttons grid grid-cols-[repeat(3,1fr)] auto-rows-fr gap-x-4 gap-y-2 ${buttonProps.length <= 3 || expand ? 'expand':''}`">
+      :class="`buttons grid grid-cols-[repeat(3,1fr)] auto-rows-fr gap-x-4 gap-y-2 ${buttonProps.length <= 3 || expand ? 'expand' : ''}`">
       <DownloadButton
         v-for="buttonProp in buttonProps"
         :key="buttonProp.archName"
-        v-bind="buttonProp"
-        class="*:py-2" />
+        v-bind="buttonProp" />
     </div>
   </div>
 </template>
