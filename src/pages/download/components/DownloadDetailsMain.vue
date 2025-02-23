@@ -94,7 +94,7 @@ onMounted(() => {
       <AppLink to="https://rufus.ie" target="_blank">Rufus</AppLink>（dd
       模式）或
       <AppLink to="https://etcher.balena.io/" target="_blank">
-        balenaetcher
+        balenaEtcher
       </AppLink>
       工具制作{{ fileType }}。
     </p>
