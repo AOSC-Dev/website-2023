@@ -2,11 +2,12 @@
 import CategorySecond from '../../components/CategorySecond.vue';
 import TitleComponent from './components/TitleComponent.vue';
 import DownloadButtonGroup from './components/DownloadButtonGroup.vue';
+import WslDetails from './components/WslDetails.vue';
 import { ref, useTemplateRef, watch, computed } from 'vue';
 import DownloadButton from './components/DownloadButton.vue';
 import { useRoute } from 'vue-router';
 import useClipboard from 'vue-clipboard3';
-import { ElMessage } from 'element-plus';
+import { ElMessage, ElDialog } from 'element-plus';
 import { useHighBrightnessControllerStore } from '../../stores/miscellaneous.js';
 import { useDownloadPageStore } from '../../stores/download-page.js';
 import { highlightElement } from '../../utils/animation.ts';
@@ -99,7 +100,6 @@ const antongDate = computed(getAntongDate);
 const appleSiliconDate = ref('...');
 const omaVersion = ref('...');
 
-
 /**
  * 比较 ISO 的日期（或版本）
  */
@@ -179,12 +179,13 @@ const getNewVersionArch = (arch, type) => {
   }
 
   // oma
-  const [omaRes, omaResError] = await requestGetJson("https://packages.aosc.io/packages/oma?type=json");
+  const [omaRes, omaResError] = await requestGetJson(
+    'https://packages.aosc.io/packages/oma?type=json'
+  );
   if (omaResError) {
     console.log(omaResError);
     ElMessage.warning('oma 版本信息获取失败');
-  }
-  else if (omaRes) {
+  } else if (omaRes) {
     omaVersion.value = omaRes.data.pkg.version;
   }
 
@@ -411,6 +412,8 @@ const xingxia2List = ref([
 //#endregion
 
 //#region WSL
+const wslDialogState = ref(false);
+
 // For ms-store-badge. Ref: https://github.com/microsoft/app-store-badge
 let msStoreScript = document.createElement('script');
 msStoreScript.setAttribute(
@@ -423,7 +426,7 @@ document.head.appendChild(msStoreScript);
 //#region oma
 const omaNavigationList = [
   {
-    title: omaVersion,
+    title: omaVersion
   },
   {
     title: '详细介绍',
@@ -484,12 +487,24 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
     <div ref="otherDownload" class="flex flex-warp">
       <div
         class="wsl-container flex-2 flex flex-col justify-between text-white p-[24px_30px]">
-        <TitleComponent
-          title="WSL"
-          description="在 Windows 上使用安同 OS"
-          small-title />
+        <div>
+          <TitleComponent
+            title="WSL"
+            description="在 Windows 上使用安同 OS"
+            small-title />
+          <span
+            @click="wslDialogState = true"
+            class="hover:underline cursor-pointer text-[11pt]"
+            >其他下载方式与支持详情</span
+          >
+        </div>
+
+        <el-dialog v-model="wslDialogState" width="80%">
+          <WslDetails />
+        </el-dialog>
+
         <ms-store-badge
-          class="relative [&::part(img)]:absolute [&::part(img)]:bottom-0 [&::part(img)]:h-[48px] h-[80px] w-fit"
+          class="relative [&::part(img)]:absolute [&::part(img)]:bottom-0 [&::part(img)]:h-[48px] h-[65px] w-fit"
           productid="9NMDF21NV65Z"
           window-mode="popup"
           theme="dark"
@@ -498,7 +513,7 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
       </div>
 
       <div
-        class="apple-silicon-container flex-1 flex flex-col justify-between p-[24px_30px] bg-[#dddddd]">
+        class="apple-silicon-container flex-1 flex flex-col justify-between p-[24px_30px]">
         <TitleComponent
           title="Apple Silicon"
           description="适用于基于 Apple 芯片的 Mac 设备"
