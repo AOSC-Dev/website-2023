@@ -105,10 +105,12 @@ const dialogModel = computed({
       </template>
     </el-popover>
 
+    <!-- Ensure dialogs have a higher z-index than popovers (default is 2000) -->
     <el-dialog
       v-if="!disabled && popoverData && isaInfo"
       v-model="dialogModel"
       width="80%"
+      :z-index=3000
       :title="dialogTitle">
       <DownloadDetails
         :arch="archName"
