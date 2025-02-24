@@ -452,7 +452,7 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
     <!-- AOSC OS -->
     <div
       ref="aoscOsDownload"
-      class="aosc-os-container flex flex-warp justify-between p-[30px] gap-6">
+      class="aosc-os-container flex flex-wrap justify-between p-[30px] gap-6">
       <TitleComponent
         title="安同 OS"
         description="称心得意的桌面操作系统"
@@ -484,7 +484,7 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
     </div>
 
     <!-- WSL, Apple silicon -->
-    <div ref="otherDownload" class="flex flex-warp">
+    <div ref="otherDownload" class="flex flex-wrap">
       <div
         class="wsl-container flex-2 flex flex-col justify-between text-white p-[24px_30px]">
         <div>
@@ -534,7 +534,7 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
     <!-- Afterglow -->
     <div
       ref="afterglowDownload"
-      class="afterglow-container flex flex-warp justify-between p-[30px] text-white gap-6">
+      class="afterglow-container flex flex-wrap justify-between p-[30px] text-white gap-6">
       <TitleComponent
         title="星霞 OS"
         description="老设备也能发光发热"
