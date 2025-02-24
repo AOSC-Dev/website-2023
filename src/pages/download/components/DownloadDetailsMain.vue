@@ -76,7 +76,7 @@ onMounted(() => {
     <p>我们推荐您在下载后校验相关文件的 SHA-256 校验和，详情如下：</p>
     <CopyCodeComponent :content="sha256sum" button-text="复制 SHA-256 校验和" />
 
-    <p>要制作{{ fileType }}，我们建议您使用我社开发的启动盘制作向导。</p>
+    <p>要制作{{ fileType }}，我们建议您使用启动盘制作向导。</p>
     <el-container class="flex-wrap">
       <el-button v-for="info in mediaWritersInfo" :key="info.type">
         <AppLink
