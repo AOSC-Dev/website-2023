@@ -15,7 +15,7 @@ import AppLink from '../../../components/AppLink.vue';
       animation="on">
     </ms-store-badge>
     <p
-      >为满足不同用户的喜爱和需要，我们还提供了如下几种安装或下载 WLS 版安同 OS
+      >为满足不同用户的喜爱和需要，我们还提供了如下几种安装或下载 WSL 版安同 OS
       (AOSC OS on WSL) 的方式：</p
     >
     <div>
