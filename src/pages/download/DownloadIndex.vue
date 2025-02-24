@@ -495,7 +495,7 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
           <span
             @click="wslDialogState = true"
             class="hover:underline cursor-pointer text-[11pt]"
-            >其他下载方式与支持详情</span
+            >其他下载方式与支持详情...</span
           >
         </div>
 
