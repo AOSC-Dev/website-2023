@@ -91,11 +91,8 @@ onMounted(() => {
       如果您在使用安同 OS，可从应用菜单直接启动“启动盘制作向导”工具制作{{
         fileType
       }}；如果您在使用其他 Linux 系统，建议使用
-      <AppLink to="https://rufus.ie" target="_blank">Rufus</AppLink>（dd
-      模式）或
-      <AppLink to="https://etcher.balena.io/" target="_blank">
-        balenaEtcher
-      </AppLink>
+      <AppLink to="https://etcher.balena.io/" target="_blank">balenaEtcher</AppLink> 或
+      <AppLink to="https://gitlab.com/bztsrc/usbimager" target="_blank">usbimager</AppLink>
       工具制作{{ fileType }}。
     </p>
 
