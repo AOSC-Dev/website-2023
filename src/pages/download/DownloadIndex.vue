@@ -237,7 +237,7 @@ const appleSiliconNavigationList = ref([
   },
   {
     title: '配置需求',
-    url: 'https://github.com/AsahiLinux/docs/wiki/Feature-Support'
+    url: 'https://asahilinux.org/docs/Feature-Support/'
   }
 ]);
 const antong1List = ref([

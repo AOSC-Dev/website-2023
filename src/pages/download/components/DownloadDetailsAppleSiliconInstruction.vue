@@ -8,7 +8,7 @@ import CopyCodeComponent from './CopyCodeComponent.vue';
   <div class="flex flex-col gap-2">
     <p>
       安同 OS 可在基于 Apple 芯片的 Mac 设备上安装使用，具体设备兼容与外设支持情况请见
-      <AppLink to="https://github.com/asahilinux/docs/wiki">
+      <AppLink to="https://asahilinux.org/docs/">
         Asahi Linux 官方文档</AppLink
       >。
     </p>
