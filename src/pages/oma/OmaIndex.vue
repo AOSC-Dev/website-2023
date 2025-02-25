@@ -3,7 +3,6 @@ import { reactive } from 'vue';
 import CategorySecond from '/src/components/CategorySecond.vue';
 import AppLink from '../../components/AppLink.vue';
 import AccordionNavigation from '../../components/AccordionNavigation.vue';
-import { onImgLoad, useSeizeSeat } from '../../utils/utils';
 const navigationList = [
   {
     title: '代码仓库',
@@ -34,8 +33,6 @@ const _docList = reactive([
     url: '#'
   }
 ]);
-
-const [observer, imgHeights] = useSeizeSeat('bgImg', 1.5167);
 </script>
 
 <template>
@@ -81,12 +78,8 @@ const [observer, imgHeights] = useSeizeSeat('bgImg', 1.5167);
       <div>
         <AccordionNavigation :navigation-list="navigationList" />
       </div>
-      <div ref="bgImg" class="bg-img-height">
-        <img
-          @load="onImgLoad(observer, imgHeights[0])"
-          src="/assets/oma/oma.png"
-          class="w-full h-auto mt-2"
-          alt=""
+      <div ref="bgImg">
+        <img src="/assets/oma/oma.png" class="w-full imgScale1 mt-2" alt=""
       /></div>
     </div>
 
@@ -97,8 +90,8 @@ const [observer, imgHeights] = useSeizeSeat('bgImg', 1.5167);
 </template>
 
 <style scoped>
-.bg-img-height {
-  height: v-bind('imgHeights[0].value');
+.imgScale1 {
+  aspect-ratio: 3/2; /* 91/60 近似值 */
 }
 </style>
 ./components/Header.vue
