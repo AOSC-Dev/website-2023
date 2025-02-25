@@ -3,15 +3,14 @@ import CategorySecond from '../../components/CategorySecond.vue';
 import TitleComponent from './components/TitleComponent.vue';
 import DownloadButtonGroup from './components/DownloadButtonGroup.vue';
 import WslDetails from './components/WslDetails.vue';
-import { ref, useTemplateRef, watch, computed } from 'vue';
+import { ref, useTemplateRef , computed } from 'vue';
 import DownloadButton from './components/DownloadButton.vue';
 import { useRoute } from 'vue-router';
 import useClipboard from 'vue-clipboard3';
 import { ElMessage, ElDialog } from 'element-plus';
-import { useHighBrightnessControllerStore } from '../../stores/miscellaneous.js';
 import { useDownloadPageStore } from '../../stores/download-page.js';
 import { highlightElement } from '../../utils/animation.ts';
-import { requestGetJson } from '../../utils/utils.js';
+import { requestGetJson, useHighlightWatch } from '../../utils/utils.js';
 
 //#region Common
 const archGroupInfo = {
@@ -45,8 +44,6 @@ const otherRef = useTemplateRef('otherDownload');
 const afterglowRef = useTemplateRef('afterglowDownload');
 const omaRef = useTemplateRef('omaDownload');
 
-const highBrightnessControllerStore = useHighBrightnessControllerStore();
-
 const switchHash = () => {
   switch (route.hash) {
     case '#aosc-os-download':
@@ -63,16 +60,7 @@ const switchHash = () => {
       break;
   }
 };
-
-watch(
-  () => highBrightnessControllerStore.obj[route.path],
-  () => {
-    switchHash();
-  },
-  {
-    flush: 'post'
-  }
-);
+useHighlightWatch(switchHash);
 //#endregion
 
 //#region remote
@@ -533,6 +521,7 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
 
     <!-- Afterglow -->
     <div
+      id="afterglow-download"
       ref="afterglowDownload"
       class="afterglow-container flex flex-wrap justify-between p-[30px] text-white gap-6">
       <TitleComponent
@@ -570,7 +559,7 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
     <category-second class="highlight" title="实用工具" />
 
     <!-- oma -->
-    <div ref="omaDownload" class="oma-container p-[30px]">
+    <div id="oma-download" ref="omaDownload" class="oma-container p-[30px]">
       <TitleComponent
         title="小熊猫包管理 (oma)"
         description="简明好用的 APT 软件包管理界面"

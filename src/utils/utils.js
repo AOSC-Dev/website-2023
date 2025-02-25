@@ -1,5 +1,7 @@
 import router from '../router.js';
+import { watch } from 'vue';
 import axios from 'axios';
+import { useRoute } from 'vue-router';
 import { ElMessage } from 'element-plus';
 import yaml from 'js-yaml';
 import {
@@ -10,6 +12,7 @@ import {
   toValue,
   useTemplateRef
 } from 'vue';
+import { useHighBrightnessControllerStore } from '../stores/miscellaneous.js';
 
 export function getImgUrl(url) {
   return new URL(`${url}`, import.meta.url).href;
@@ -177,4 +180,21 @@ export const useSeizeSeat = (refName, proportion, imgHeights, fixedHeight) => {
     deObserver(observer.value);
   });
   return [observer, imgHeights];
+};
+
+export const useHighlightWatch = (switchHash) => {
+  const highBrightnessControllerStore = useHighBrightnessControllerStore();
+  const route = useRoute();
+  watch(
+    () => highBrightnessControllerStore.obj[route.path.replace(/\/+$/, '')],
+    () => {
+      switchHash();
+    },
+    {
+      flush: 'post'
+    }
+  );
+  onMounted(() => {
+    switchHash();
+  });
 };
