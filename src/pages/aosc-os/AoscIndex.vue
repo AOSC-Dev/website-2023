@@ -6,7 +6,7 @@ import { useRoute } from 'vue-router';
 import highlightElement from '../../utils/animation';
 import AppSupport from '../../components/AppSupport.vue';
 import AccordionNavigation from '../../components/AccordionNavigation.vue';
-import { onImgLoad, useHighlightWatch, useSeizeSeat } from '../../utils/utils';
+import { useHighlightWatch } from '../../utils/utils';
 
 const route = useRoute();
 
@@ -64,8 +64,6 @@ const docList = reactive([
     url: '/'
   } */
 ]);
-
-const [observer, imgHeights] = useSeizeSeat('bgImg', 1.6006);
 </script>
 
 <template>
@@ -81,11 +79,10 @@ const [observer, imgHeights] = useSeizeSeat('bgImg', 1.6006);
       <div>
         <AccordionNavigation :navigation-list="navigationList" />
       </div>
-      <div ref="bgImg" class="bg-img-height">
+      <div ref="bgImg">
         <img
-          @load="onImgLoad(observer, imgHeights[0])"
           src="/assets/aosc-os/aosc-os.zh-cn.jpg"
-          class="w-full h-auto mt-2"
+          class="w-full imgScale1 mt-2"
           alt="" />
       </div>
     </div>
@@ -132,8 +129,8 @@ const [observer, imgHeights] = useSeizeSeat('bgImg', 1.6006);
 </template>
 
 <style scoped>
-.bg-img-height {
-  height: v-bind('imgHeights[0].value');
+.imgScale1 {
+  aspect-ratio: 8/5;
 }
 </style>
 ./components/Header.vue
