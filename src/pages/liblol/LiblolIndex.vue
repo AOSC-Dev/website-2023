@@ -3,7 +3,6 @@ import { reactive } from 'vue';
 import CategorySecond from '../../components/CategorySecond.vue';
 import AppSupport from '../../components/AppSupport.vue';
 import AccordionNavigation from '../../components/AccordionNavigation.vue';
-import { onImgLoad, useSeizeSeat } from '../../utils/utils';
 
 const navigationList = [
   {
@@ -50,8 +49,6 @@ const docList = reactive([
     url: 'https://liblol.aosc.io/docs/dev/design/'
   }
 ]);
-
-const [observer, imgHeights] = useSeizeSeat('bgImg', 2.8);
 </script>
 
 <template>
@@ -69,13 +66,10 @@ const [observer, imgHeights] = useSeizeSeat('bgImg', 2.8);
       <div>
         <AccordionNavigation :navigation-list="navigationList" />
       </div>
-      <div
-        ref="bgImg"
-        class="bg-img-height">
+      <div ref="bgImg" class="bg-img-height">
         <img
-          @load="onImgLoad(observer, imgHeights[0])"
           src="/assets/liblol/liblol.svg"
-          class="w-full h-auto mt-2"
+          class="w-full mt-2 imgScale1"
           alt="" />
       </div>
     </div>
@@ -85,8 +79,8 @@ const [observer, imgHeights] = useSeizeSeat('bgImg', 2.8);
 </template>
 
 <style scoped>
-.bg-img-height {
-  height: v-bind('imgHeights[0].value');
+.imgScale1 {
+  aspect-ratio: 14/5;
 }
 </style>
 ./components/Header.vue

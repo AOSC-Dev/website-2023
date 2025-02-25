@@ -2,7 +2,7 @@
 import { reactive, ref } from 'vue';
 import CategorySecond from '/src/components/CategorySecond.vue';
 import NewsCategoryList from '/src/pages/news/components/NewsCategoryList.vue';
-import { onImgLoad, requestGetJson, useSeizeSeat } from '../../../utils/utils';
+import { requestGetJson } from '../../../utils/utils';
 import { ElIcon } from 'element-plus';
 
 /**
@@ -50,20 +50,14 @@ const zhuanlanList = reactive([
       '我社一向以友好负责的支持工作著称，尊重用户的时间与精力是我们的工作准则。社区也是信息共享的强大后盾——在各社区聊天群组，我们时刻准备着为您排忧解难。'
   }
 ]);
-
-const [ observer, imgHeights ] = useSeizeSeat('bgImg', 1.4545);
 </script>
 
 <template>
   <div class="w-[62.5%] bg-content-main-bg p-0">
-    <a
-      ref="bgImg"
+    <app-link
       href="/download#aosc-os-download"
-      class="bg-img-height w-full flex">
-      <el-image
-        @load="onImgLoad(observer, imgHeights[0])"
-        class="w-full"
-        src="/assets/jumbotron/main1.svg">
+      class="w-full flex">
+      <el-image class="w-full imgScale1" src="/assets/jumbotron/main1.svg">
         <template #error>
           <div class="image-slot cursor-pointer">
             <el-icon>
@@ -72,7 +66,7 @@ const [ observer, imgHeights ] = useSeizeSeat('bgImg', 1.4545);
           </div>
         </template>
       </el-image>
-    </a>
+    </app-link>
     <!-- 资讯要点 -->
     <div>
       <category-second title="资讯要点" />
@@ -120,8 +114,8 @@ const [ observer, imgHeights ] = useSeizeSeat('bgImg', 1.4545);
 </template>
 
 <style scoped>
-.bg-img-height {
-  height: v-bind('imgHeights[0].value');
+.imgScale1 {
+  aspect-ratio: 16/11;
 }
 </style>
 ../../../components/CategorySecond.vue
