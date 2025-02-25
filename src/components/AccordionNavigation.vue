@@ -22,7 +22,7 @@ const props = defineProps({
     :key="item.title"
     class="inline-block">
     <AppLink
-      v-if="item.path || item.url"
+      v-if="item.path || item.url || item.hash"
       :to="item.url ? item.url : { path: item.path, hash: item.hash }"
       :class="linkClass">
       {{ item.title }}</AppLink
