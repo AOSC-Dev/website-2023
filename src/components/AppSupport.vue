@@ -2,9 +2,9 @@
 import AppLink from './AppLink.vue';
 import CategorySecond from '../components/CategorySecond.vue';
 import highlightElement from '../utils/animation';
-import { ref, watch } from 'vue';
-import { useHighBrightnessControllerStore } from '../stores/miscellaneous';
+import { ref } from 'vue';
 import { useRoute } from 'vue-router';
+import { useHighlightWatch } from '../utils/utils';
 
 const route = useRoute();
 
@@ -14,21 +14,14 @@ const props = defineProps({
     required: true
   }
 });
-const highBrightnessControllerStore = useHighBrightnessControllerStore();
-
-watch(
-  () => highBrightnessControllerStore.obj[route.path],
-  () => {
-    switch (route.hash) {
-      case '#support':
-        highlightElement(support);
-        break;
-    }
-  },
-  {
-    flush: 'post'
+const switchHash = () => {
+  switch (route.hash) {
+    case '#support':
+      highlightElement(support);
+      break;
   }
-);
+};
+useHighlightWatch(switchHash);
 
 const support = ref();
 </script>

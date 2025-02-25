@@ -1,33 +1,26 @@
 <script setup>
-import { reactive, ref, watch } from 'vue';
+import { reactive, ref } from 'vue';
 import CategorySecond from '../../components/CategorySecond.vue';
 import AppH2 from '../../components/AppH2.vue';
 import { useRoute } from 'vue-router';
 import highlightElement from '../../utils/animation';
-import { useHighBrightnessControllerStore } from '../../stores/miscellaneous';
 import AppSupport from '../../components/AppSupport.vue';
 import AccordionNavigation from '../../components/AccordionNavigation.vue';
-import { onImgLoad, useSeizeSeat } from '../../utils/utils';
+import { onImgLoad, useHighlightWatch, useSeizeSeat } from '../../utils/utils';
 
 const route = useRoute();
 
 const features = ref();
 
-const highBrightnessControllerStore = useHighBrightnessControllerStore();
-
-watch(
-  () => highBrightnessControllerStore.obj[route.path],
-  () => {
-    switch (route.hash) {
-      case '#features':
-        highlightElement(features);
-        break;
-    }
-  },
-  {
-    flush: 'post'
+const switchHash = () => {
+  switch (route.hash) {
+    case '#features':
+      highlightElement(features);
+      break;
   }
-);
+};
+
+useHighlightWatch(switchHash);
 
 const navigationList = [
   {
