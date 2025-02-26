@@ -71,7 +71,7 @@ const sources = ref([
   {
     name: 'MirrorZ',
     loc: '自动',
-    url: 'https://m.mirrorz.org/anthon/aosc-os/'
+    url: 'https://m.mirrors.cernet.edu.cn/anthon/aosc-os/'
   },
   { name: '官方源', loc: '香港特别行政区', url: 'https://releases.aosc.io/' }
 ]);
