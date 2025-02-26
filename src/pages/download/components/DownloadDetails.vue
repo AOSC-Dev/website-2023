@@ -1,9 +1,8 @@
 <script setup>
-import { computed } from 'vue';
+import { ref } from 'vue';
 import { ElTabs, ElTabPane } from 'element-plus';
 import DownloadDetailsMain from './DownloadDetailsMain.vue';
 import DownloadDetailsAppleSiliconInstruction from './DownloadDetailsAppleSiliconInstruction.vue';
-import { useDownloadPageStore } from '../../../stores/download-page.js';
 
 const props = defineProps({
   isaInfo: {
@@ -22,27 +21,18 @@ const props = defineProps({
   sources: {
     type: [{ name: String, loc: String, url: String }],
     required: true
+  },
+  initialTab: {
+    type: String,
+    default: 'installer'
   }
 });
 
-const downloadPageStore = useDownloadPageStore();
-const activeTab = computed({
-  get() {
-    return props.isaInfo.title === 'arm64'
-      ? downloadPageStore.dialogTabArm64
-      : downloadPageStore.dialogTab;
-  },
-  set(value) {
-    if (['installer', 'livekit'].includes(value)) {
-      downloadPageStore.dialogTab = value;
-    }
-    downloadPageStore.dialogTabArm64 = value;
-  }
-});
+const dialogTab = ref(props.initialTab);
 </script>
 
 <template>
-  <el-tabs v-model="activeTab" class="*:px-2 pb-2">
+  <el-tabs v-model="dialogTab" class="*:px-2 pb-2">
     <el-tab-pane
       :disabled="!isaInfo.installer"
       label="系统安装盘"
@@ -78,15 +68,7 @@ const activeTab = computed({
       disabled>
       <!-- TODO -->
     </el-tab-pane>
-    <el-tab-pane
-      label="Docker"
-      name="docker"
-      disabled
-    />
-    <el-tab-pane
-      label="虚拟机镜像"
-      name="vm"
-      disabled
-    />
+    <el-tab-pane label="Docker" name="docker" disabled />
+    <el-tab-pane label="虚拟机镜像" name="vm" disabled />
   </el-tabs>
 </template>

@@ -3,12 +3,11 @@ import CategorySecond from '../../components/CategorySecond.vue';
 import TitleComponent from './components/TitleComponent.vue';
 import DownloadButtonGroup from './components/DownloadButtonGroup.vue';
 import WslDetails from './components/WslDetails.vue';
-import { ref, useTemplateRef , computed } from 'vue';
+import { ref, useTemplateRef, computed } from 'vue';
 import DownloadButton from './components/DownloadButton.vue';
 import { useRoute } from 'vue-router';
 import useClipboard from 'vue-clipboard3';
 import { ElMessage, ElDialog } from 'element-plus';
-import { useDownloadPageStore } from '../../stores/download-page.js';
 import { highlightElement } from '../../utils/animation.ts';
 import { requestGetJson, useHighlightWatch } from '../../utils/utils.js';
 
@@ -27,7 +26,6 @@ const archGroupInfo = {
 };
 
 const route = useRoute();
-const downloadPageStore = useDownloadPageStore();
 //#endregion
 
 //#region Clipboard
@@ -507,14 +505,15 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
           description="适用于基于 Apple 芯片的 Mac 设备"
           :navigation-list="appleSiliconNavigationList"
           small-title />
-        <div
-          class="flex flex-col self-end [&_.theme-bg-color-secondary-primary]:py-2">
+        <div class="self-end">
           <DownloadButton
             arch-name="下载"
-            @click="
-              downloadPageStore.dialogTabArm64 = 'apple-silicon-instruction';
-              downloadPageStore.dialogArm64State = true;
-            " />
+            :popover-data="
+              antong1List.filter((i) => i.title === 'arm64')[0].popoverData
+            "
+            :isa-info="antong1List.filter((i) => i.title === 'arm64')[0]"
+            :sources="sources"
+            initial-dialog-tab="apple-silicon-instruction" />
         </div>
       </div>
     </div>

@@ -1,7 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue';
 import DownloadDetails from './DownloadDetails.vue';
-import { useDownloadPageStore } from '../../../stores/download-page.js';
 import { useRouter } from 'vue-router';
 
 const props = defineProps({
@@ -41,12 +40,15 @@ const props = defineProps({
   disabled: {
     type: Boolean,
     default: false
+  },
+  initialDialogTab: {
+    type: String,
+    default: 'installer'
   }
 });
 
 const router = useRouter();
 const dialogState = ref(false);
-const downloadPageStore = useDownloadPageStore();
 const archNameBrackets = props.archName.match(/^(.*?)([（(].*[）)])?$/);
 
 const osName = '安同 OS'; // TODO: dynamic OS name (AOSC OS / Afterglow OS)
@@ -54,34 +56,19 @@ const dialogTitle = computed(
   () => `下载详情：${osName} - ${props.isaInfo?.zhLabel}`
 );
 
-const setDialogState = (state) => {
-  if (props.isaInfo?.title === 'arm64') {
-    downloadPageStore.dialogArm64State = state;
+const onClick = () => {
+  if (props.url) {
+    router.push(props.url);
   } else {
-    dialogState.value = state;
+    dialogState.value = true;
   }
 };
-
-const dialogModel = computed({
-  get() {
-    return props.isaInfo?.title === 'arm64'
-      ? downloadPageStore.dialogArm64State
-      : dialogState.value;
-  },
-  set(value) {
-    if (props.isaInfo?.title === 'arm64') {
-      downloadPageStore.dialogArm64State = value;
-    } else {
-      dialogState.value = value;
-    }
-  }
-});
 </script>
 
 <template>
   <div>
     <el-popover
-      :disabled="popoverData === undefined || dialogModel"
+      :disabled="popoverData === undefined || dialogState"
       :placement="popoverData?.placement"
       :hide-after="0"
       trigger="hover"
@@ -94,9 +81,7 @@ const dialogModel = computed({
             backgroundColor: buttonColor,
             width: $props.width + 'px'
           }"
-          @click="
-            url?.startsWith('#') ? router.push(url) : setDialogState(true)
-          "
+          @click="onClick"
           class="theme-bg-color-secondary-primary h-full grow hover:no-underline cursor-pointer py-2 overflow-hidden">
           <slot></slot>
           <span class="first-line-p">{{ archNameBrackets[1] }}</span>
@@ -107,14 +92,17 @@ const dialogModel = computed({
 
     <el-dialog
       v-if="!disabled && popoverData && isaInfo"
-      v-model="dialogModel"
+      v-model="dialogState"
       width="80%"
+      destroy-on-close
       :title="dialogTitle">
       <DownloadDetails
         :arch="archName"
         :content="popoverData.content"
         :isa-info="isaInfo"
-        :sources="sources" />
+        :sources="sources"
+        :initial-tab="initialDialogTab"
+      />
     </el-dialog>
   </div>
 </template>
