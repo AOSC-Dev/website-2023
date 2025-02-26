@@ -472,7 +472,7 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
     <!-- WSL, Apple silicon -->
     <div ref="otherDownload" class="flex flex-wrap">
       <div
-        class="wsl-container flex-2 flex flex-col justify-between text-white p-[24px_30px]">
+        class="wsl-container flex flex-col justify-between text-white p-[24px_30px]">
         <div>
           <TitleComponent
             title="WSL"
