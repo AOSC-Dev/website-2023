@@ -81,7 +81,7 @@ const dialogModel = computed({
 <template>
   <div>
     <el-popover
-      :disabled="popoverData === undefined"
+      :disabled="popoverData === undefined || dialogModel"
       :placement="popoverData?.placement"
       :hide-after="0"
       trigger="hover"
@@ -110,7 +110,6 @@ const dialogModel = computed({
       v-if="!disabled && popoverData && isaInfo"
       v-model="dialogModel"
       width="80%"
-      :z-index=3000
       :title="dialogTitle">
       <DownloadDetails
         :arch="archName"
