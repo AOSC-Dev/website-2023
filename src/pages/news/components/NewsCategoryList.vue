@@ -19,7 +19,7 @@ const props = defineProps({
           <span class="truncate flex-1">
             {{ item.Title }}
           </span>
-          <span class="flex-0 pr-6">[{{ item.Date }}]</span>
+          <span class=" pr-6">[{{ item.Date }}]</span>
         </router-link>
       </div>
     </div>

@@ -33,5 +33,4 @@ const newsDate = ref('');
 </template>
 
 <style lang="css" scoped>
-@import '/src/css/index.scss';
 </style>
