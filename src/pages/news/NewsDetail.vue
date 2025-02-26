@@ -28,11 +28,10 @@ const newsDate = ref('');
     <category-second
       :title="yamlDoc['title']"
       :right-text="newsDate"
-      class="sticky top-0 z-[1]" />
+      class="sticky top-0 z-1" />
     <v-md-preview :text="mdRes"></v-md-preview>
   </div>
 </template>
 
 <style lang="css" scoped>
-@import '/src/css/index.scss';
 </style>
