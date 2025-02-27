@@ -60,9 +60,7 @@ const sponsorList = [
                 :alt="sponsor.title"
                 class="w-[100%] max-w-[100%]" />
             </div>
-            <div class="text-link">{{
-              getSpecifiedTitle(sponsor)
-            }}</div>
+            <div class="text-link">{{ getSpecifiedTitle(sponsor) }}</div>
             <div v-if="sponsor.title == 'JetBrains'">
               <span style="font-size: 0.7rem; color: #666">
                 Copyright © 2000-2024 JetBrains s.r.o. JetBrains and the

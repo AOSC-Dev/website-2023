@@ -12,7 +12,7 @@ const themeStore = useThemeStore();
       <div class="p-0 my-0 min-h-[100vh] flex flex-col">
         <BarHeader />
         <div class="main-content flex pb-[2.5rem] flex-1 justify-center">
-          <div class="content-container shadow flex">
+          <div class="content-container myShadow flex">
             <div
               class="min-w-[12rem] w-[15%] *:text-nowrap sticky top-0 bg-leftbar-bg">
               <BarLeft class="min-w-[100%] *:text-nowrap sticky top-0" />

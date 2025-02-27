@@ -31,7 +31,7 @@ const commonLinkList = [
 </script>
 
 <template>
-  <div class="bg-right-bar-bg w-[37.5%] flex flex-col">
+  <div class="w-[37.5%] flex flex-col">
     <AppLink to="/aosc-os/right-for-me">
       <img
         src="/jumbotron/minor1.svg"
@@ -72,7 +72,7 @@ const commonLinkList = [
         </div>
       </article>
       <CategorySecond :title="textValue.title2" />
-      <div class="border-l theme-border-secondary flex flex-col flex-grow">
+      <div class="border-l theme-border-secondary flex flex-col grow">
         <app-link
           v-for="(item, index) in commonLinkList"
           :key="`BarRight-1-link-${index}`"

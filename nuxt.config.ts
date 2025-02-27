@@ -1,4 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import tailwindcss from '@tailwindcss/vite';
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
@@ -11,12 +12,6 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n'
   ],
   css: ['~/assets/css/main.css', '~/assets/index.scss'],
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {}
-    }
-  },
   content: {
     documentDriven: false,
     highlight: {
@@ -52,6 +47,7 @@ export default defineNuxtConfig({
   },
   extends: '@nuxt-themes/docus',
   vite: {
+    plugins: [tailwindcss()],
     server: {
       proxy: {
         '/pasteApi': {
