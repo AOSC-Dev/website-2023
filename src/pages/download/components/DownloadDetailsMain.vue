@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue';
-import { ElButton, ElContainer, ElOption, ElSelect } from 'element-plus';
+import { ElContainer, ElOption, ElSelect } from 'element-plus';
 import pangu from 'pangu';
 import AppLink from '../../../components/AppLink.vue';
 import AppH2 from '../../../components/AppH2.vue';
@@ -62,14 +62,12 @@ onMounted(() => {
           <span class="float-right">{{ source.loc }}</span>
         </el-option>
       </el-select>
-      <el-button class="el-button-primary">
-        <AppLink
-          :to="`${selected_source_url}${path}`"
-          target="_blank"
-          class="hover:no-underline border-0">
-          下载
-        </AppLink>
-      </el-button>
+      <AppLink
+        :to="`${selected_source_url}${path}`"
+        target="_blank"
+        class="flex items-center h-[32px] px-[15px] text-nowrap text-white bg-[var(--secondary)] hover:no-underline hover:bg-[var(--primary)]">
+        下载
+      </AppLink>
     </el-container>
 
     <app-h2>校验和使用</app-h2>
@@ -78,21 +76,26 @@ onMounted(() => {
 
     <p>要制作{{ fileType }}，我们建议您使用启动盘制作向导。</p>
     <el-container class="flex-wrap">
-      <el-button v-for="info in mediaWritersInfo" :key="info.type">
-        <AppLink
-          :to="`${selected_source_url}writer/AOSCMediaWriter-${info.type}-${mediaWriterVersion}.${info.extension}`"
-          target="_blank"
-          class="hover:no-underline">
-          {{ info.name }}
-        </AppLink>
-      </el-button>
+      <AppLink
+        v-for="info in mediaWritersInfo"
+        :key="info.type"
+        :to="`${selected_source_url}writer/AOSCMediaWriter-${info.type}-${mediaWriterVersion}.${info.extension}`"
+        target="_blank"
+        class="el-button hover:no-underline">
+        {{ info.name }}
+      </AppLink>
     </el-container>
     <p>
       如果您在使用安同 OS，可从应用菜单直接启动“启动盘制作向导”工具制作{{
         fileType
       }}；如果您在使用其他 Linux 系统，建议使用
-      <AppLink to="https://etcher.balena.io/" target="_blank">balenaEtcher</AppLink> 或
-      <AppLink to="https://gitlab.com/bztsrc/usbimager" target="_blank">usbimager</AppLink>
+      <AppLink to="https://etcher.balena.io/" target="_blank"
+        >balenaEtcher</AppLink
+      >
+      或
+      <AppLink to="https://gitlab.com/bztsrc/usbimager" target="_blank"
+        >usbimager</AppLink
+      >
       工具制作{{ fileType }}。
     </p>
 
@@ -105,11 +108,4 @@ onMounted(() => {
   </div>
 </template>
 
-<style scoped>
-.el-button-primary {
-  --el-button-bg-color: var(--secondary);
-  --el-button-hover-bg-color: var(--primary);
-  --el-button-text-color: white;
-  --el-button-hover-text-color: white;
-}
-</style>
+<style scoped></style>

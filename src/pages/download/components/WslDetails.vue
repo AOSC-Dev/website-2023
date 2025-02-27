@@ -19,14 +19,12 @@ import AppLink from '../../../components/AppLink.vue';
       (AOSC OS on WSL) 的方式：</p
     >
     <div>
-      <el-button>
-        <AppLink
-          to="https://github.com/AOSC-Dev/AOSCOSLauncher/releases/latest"
-          target="_blank"
-          class="hover:no-underline border-0">
-          GitHub Releases（无须使用 Microsoft Store）
-        </AppLink>
-      </el-button>
+      <AppLink
+        to="https://github.com/AOSC-Dev/AOSCOSLauncher/releases/latest"
+        target="_blank"
+        class="el-button hover:no-underline">
+        GitHub Releases（无须使用 Microsoft Store）
+      </AppLink>
       <el-button disabled> WSL 一键包（敬请期待） </el-button>
     </div>
 
