@@ -76,7 +76,7 @@ import AppH2 from '../../components/AppH2.vue';
 
       <p>对于两个大类，我们又将这些条例进一步分为“硬性规定”和“软性规定”：</p
       ><br />
-      <ul class="list-disc pl-10 pb-8">
+      <ul class="list-disc pb-8 pl-10">
         <li
           >硬性规定包含了社区所有成员必须遵守的规定，不遵守将受到处罚（在每一类别下都有具体规定）。</li
         >
@@ -102,7 +102,7 @@ import AppH2 from '../../components/AppH2.vue';
       </p>
 
       <app-h2>硬性规定</app-h2>
-      <ul class="list-decimal pl-10 pb-2">
+      <ul class="list-decimal pb-2 pl-10">
         <li
           >禁止在
           <a
@@ -163,7 +163,7 @@ import AppH2 from '../../components/AppH2.vue';
       </ul>
 
       <app-h2>软性规定</app-h2>
-      <ul class="list-decimal pl-10 pb-2">
+      <ul class="list-decimal pb-2 pl-10">
         <li>尊重他人的言论自由。 </li>
         <ul class="list-disc pl-10">
           <li
@@ -210,7 +210,7 @@ import AppH2 from '../../components/AppH2.vue';
       </ul>
 
       <app-h2>主群组和工作群组</app-h2>
-      <ul class="list-decimal pl-10 pt-2 pb-2">
+      <ul class="list-decimal pt-2 pb-2 pl-10">
         <li>AOSC バカ（AOSC OS 开发及打包工作组）</li>
         <li>AOSC infra-wg（AOSC 网络设施维护工作组）</li>
       </ul>
@@ -219,7 +219,7 @@ import AppH2 from '../../components/AppH2.vue';
       >
 
       <app-h2>硬性规定</app-h2>
-      <ul class="list-decimal pl-10 pb-2">
+      <ul class="list-decimal pb-2 pl-10">
         <li>禁止使用 Telegram 贴纸或是 GIF 动图。 </li>
         <ul class="list-disc pl-10">
           <li>您可以使用 Emoji 或颜文字作为替代。</li>
@@ -231,7 +231,7 @@ import AppH2 from '../../components/AppH2.vue';
       </ul>
 
       <app-h2>软性规定</app-h2>
-      <ul class="list-decimal pl-10 pb-2">
+      <ul class="list-decimal pb-2 pl-10">
         <li>少灌水 —— 学会张弛有度，不要给点雨水就泛滥。 </li>
       </ul>
 
@@ -242,7 +242,7 @@ import AppH2 from '../../components/AppH2.vue';
 
       <app-h2>兴趣小组</app-h2>
       <p>安同开源社区的兴趣小组包括：</p>
-      <ul class="list-disc pl-10 pt-2 pb-2">
+      <ul class="list-disc pt-2 pb-2 pl-10">
         <li>AOSC Memes (AOSC 梗)</li>
         <li>AOSC Moe-ification（AOSC 萌化工作组）</li>
         <li>AOSC Retro Computing（AOSC 古董计算机兴趣小组）</li>

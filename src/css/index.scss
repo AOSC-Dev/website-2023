@@ -95,10 +95,12 @@ $bg-secondary: #3f6075;
     margin-top: 32px;
     margin-bottom: 32px;
     background-size: 4px 1px;
-    background-image: linear-gradient(to left,
-        $blue 0%,
-        $blue 25%,
-        transparent 50%);
+    background-image: linear-gradient(
+      to left,
+      $blue 0%,
+      $blue 25%,
+      transparent 50%
+    );
   }
 
   code {
@@ -118,7 +120,7 @@ $bg-secondary: #3f6075;
     font-family: var(--font-family-monospace);
     line-height: 1.75;
 
-    >code {
+    > code {
       font-size: 12px;
       padding: 15px 12px;
       overflow-x: auto;
@@ -291,7 +293,6 @@ table {
   border-collapse: collapse;
 
   tr {
-
     th,
     td {
       border: 1px solid $bg-secondary;
@@ -326,7 +327,9 @@ td {
 }
 
 .vuepress-markdown-body div[class*='v-md-pre-wrapper-'] pre,
-.vuepress-markdown-body div[class*='v-md-pre-wrapper-'] pre[class*='v-md-prism-'] {
+.vuepress-markdown-body
+  div[class*='v-md-pre-wrapper-']
+  pre[class*='v-md-prism-'] {
   z-index: 0;
 }
 
