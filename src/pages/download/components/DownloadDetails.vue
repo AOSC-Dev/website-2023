@@ -32,7 +32,7 @@ const dialogTab = ref(props.initialTab);
 </script>
 
 <template>
-  <el-tabs v-model="dialogTab" class="*:px-2 pb-2">
+  <el-tabs v-model="dialogTab" class="pb-2 *:px-2">
     <el-tab-pane
       :disabled="!isaInfo.installer"
       label="系统安装盘"
@@ -40,8 +40,8 @@ const dialogTab = ref(props.initialTab);
       <DownloadDetailsMain
         :arch="isaInfo.zhLabel"
         :content="isaInfo.popoverData.content"
-        :path="isaInfo.installer?.path??''"
-        :sha256sum="isaInfo.installer?.sha256sum??''"
+        :path="isaInfo.installer?.path ?? ''"
+        :sha256sum="isaInfo.installer?.sha256sum ?? ''"
         :sources="sources" />
     </el-tab-pane>
     <el-tab-pane
@@ -51,8 +51,8 @@ const dialogTab = ref(props.initialTab);
       <DownloadDetailsMain
         :arch="isaInfo.zhLabel"
         :content="isaInfo.popoverData.content"
-        :path="isaInfo.livekit?.path??''"
-        :sha256sum="isaInfo.livekit?.sha256sum??''"
+        :path="isaInfo.livekit?.path ?? ''"
+        :sha256sum="isaInfo.livekit?.sha256sum ?? ''"
         :sources="sources" />
     </el-tab-pane>
     <el-tab-pane

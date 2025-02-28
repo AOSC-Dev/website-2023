@@ -137,7 +137,7 @@ const aoscOsRequirementsList = ref();
     </div>
 
     <category-second title="补充说明" id="support" />
-    <div class="pt-4 pb-4 px-16">
+    <div class="px-16 pt-4 pb-4">
       <ul class="list-disc">
         <li
           >WSL 版安同 OS (AOSC OS on WSL) 不支持 32 位 x86 (Windows x86) 及 ARM

@@ -15,7 +15,7 @@ const themeList = {
   springNight: {
     primary: '#718c71',
     secondary: '#7f9e7f',
-    backageImg:'spring.svg'
+    backageImg: 'spring.svg'
   },
   summerDrak: {
     primary: '#346c75',
@@ -24,7 +24,7 @@ const themeList = {
   summerNight: {
     primary: '#577c8a',
     secondary: '#6a8a96',
-    backageImg:'summer.svg'
+    backageImg: 'summer.svg'
   },
   autumnDrak: {
     primary: '#422c24',
@@ -33,7 +33,7 @@ const themeList = {
   autumnNight: {
     primary: '#a59571',
     secondary: '#b4a582',
-    backageImg:'autumn.svg'
+    backageImg: 'autumn.svg'
   },
   winterDrak: {
     primary: '#003049',
@@ -42,7 +42,7 @@ const themeList = {
   winterNight: {
     primary: '#757791',
     secondary: '#80829b',
-    backageImg:'winter.svg'
+    backageImg: 'winter.svg'
   }
 };
 

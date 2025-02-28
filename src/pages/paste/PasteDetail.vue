@@ -63,7 +63,7 @@ function copyLink() {
               <div>过期时间: {{ details.expDate }}</div>
             </div>
             <button
-              class="text-white px-[3em] theme-bg-color-primary-static py-[1em]"
+              class="theme-bg-color-primary-static px-[3em] py-[1em] text-white"
               @click="copyLink">
               复制共享链接
             </button>
@@ -73,7 +73,7 @@ function copyLink() {
               class="el-upload-list__item is-ready"
               v-for="filename in details.fileList"
               :key="filename">
-              <div class="items-center flex">
+              <div class="flex items-center">
                 <el-icon class="mr-2"><Document /></el-icon>
                 <span
                   ><img
@@ -93,7 +93,7 @@ function copyLink() {
           </ul>
         </div>
         <app-highlight
-          class="w-full my-[20px]"
+          class="my-[20px] w-full"
           :code="details.content"
           :lang="details.language" />
       </div>

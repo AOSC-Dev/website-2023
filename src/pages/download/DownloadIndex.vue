@@ -438,7 +438,7 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
     <!-- AOSC OS -->
     <div
       ref="aoscOsDownload"
-      class="aosc-os-container flex flex-wrap justify-between p-[30px] gap-6">
+      class="aosc-os-container flex flex-wrap justify-between gap-6 p-[30px]">
       <TitleComponent
         title="安同 OS"
         description="称心得意的桌面操作系统"
@@ -472,7 +472,7 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
     <!-- WSL, Apple silicon -->
     <div ref="otherDownload" class="flex flex-wrap">
       <div
-        class="wsl-container flex flex-col justify-between text-white p-[24px_30px]">
+        class="wsl-container flex flex-col justify-between p-[24px_30px] text-white">
         <div>
           <TitleComponent
             title="WSL"
@@ -480,7 +480,7 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
             small-title />
           <span
             @click="wslDialogState = true"
-            class="hover:underline cursor-pointer text-[11pt]"
+            class="cursor-pointer text-[11pt] hover:underline"
             >其他下载方式与支持详情...</span
           >
         </div>
@@ -490,7 +490,7 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
         </el-dialog>
 
         <ms-store-badge
-          class="relative [&::part(img)]:absolute [&::part(img)]:bottom-0 [&::part(img)]:h-[48px] h-[65px] translate-y-[5.5px] w-fit"
+          class="relative h-[65px] w-fit translate-y-[5.5px] [&::part(img)]:absolute [&::part(img)]:bottom-0 [&::part(img)]:h-[48px]"
           productid="9NMDF21NV65Z"
           window-mode="popup"
           theme="dark"
@@ -499,7 +499,7 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
       </div>
 
       <div
-        class="apple-silicon-container flex-1 flex flex-col justify-between p-[24px_30px]">
+        class="apple-silicon-container flex flex-1 flex-col justify-between p-[24px_30px]">
         <TitleComponent
           title="Apple Silicon"
           description="适用于基于 Apple 芯片的 Mac 设备"
@@ -522,7 +522,7 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
     <div
       id="afterglow-download"
       ref="afterglowDownload"
-      class="afterglow-container flex flex-wrap justify-between p-[30px] text-white gap-6">
+      class="afterglow-container flex flex-wrap justify-between gap-6 p-[30px] text-white">
       <TitleComponent
         title="星霞 OS"
         description="老设备也能发光发热"
@@ -563,12 +563,12 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
         title="小熊猫包管理 (oma)"
         description="简明好用的 APT 软件包管理界面"
         :navigation-list="omaNavigationList" />
-      <div class="bg-black/60 py-2 pr-14 mt-4 w-fit">
-        <code class="text-white text-[0.9em] pl-[1em]"
+      <div class="mt-4 w-fit bg-black/60 py-2 pr-14">
+        <code class="pl-[1em] text-[0.9em] text-white"
           >{{ omaInstallScript }}
           <v-icon
             name="fa-copy"
-            class="ml-6 mt-[2px] absolute cursor-pointer"
+            class="absolute mt-[2px] ml-6 cursor-pointer"
             @click="copy(omaInstallScript)"></v-icon>
         </code>
       </div>
