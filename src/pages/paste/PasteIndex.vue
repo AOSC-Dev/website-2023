@@ -122,13 +122,13 @@ const handleChange = (uploadFile, uploadFiles) => {
 <template>
   <div class="pl-[1px]" v-loading="submiting">
     <category-second title="公共粘贴板" />
-    <div class="py-[30px] px-[100px]">
-      <div class="flex justify-between mb-[10px]">
+    <div class="px-[100px] py-[30px]">
+      <div class="mb-[10px] flex justify-between">
         <div class="flex">
           <select
             v-model="pasteFormData.language"
             filterable
-            class="border-2 theme-border-primary rounded-none mr-[20px]">
+            class="theme-border-primary mr-[20px] rounded-none border-2">
             <option v-for="item in languageList" :key="item" :value="item">
               {{ item }}
             </option>
@@ -137,7 +137,7 @@ const handleChange = (uploadFile, uploadFiles) => {
           <input
             required
             type="date"
-            class="border-2 theme-border-primary rounded-none"
+            class="theme-border-primary rounded-none border-2"
             v-model="pasteFormData.expDate"
             :min="dayjs().add(1, 'day').format('YYYY-MM-DD')" />
         </div>
@@ -150,12 +150,12 @@ const handleChange = (uploadFile, uploadFiles) => {
 
       <input
         type="text"
-        class="border-2 theme-border-primary rounded-none w-full mb-[10px] py-[10px]"
+        class="theme-border-primary mb-[10px] w-full rounded-none border-2 py-[10px]"
         placeholder="标题"
         v-model="pasteFormData.title" />
       <!-- 内容编辑器 -->
       <vue-monaco-editor
-        class="border-2 theme-border-primary rounded-none"
+        class="theme-border-primary rounded-none border-2"
         :language="pasteFormData.language"
         v-model:value="pasteFormData.content"
         :options="editorOptions"
@@ -168,7 +168,7 @@ const handleChange = (uploadFile, uploadFiles) => {
         :on-change="handleChange"
         drag
         multiple>
-        <div class="h-[26px] my-[-26px]">
+        <div class="my-[-26px] h-[26px]">
           <el-icon size="24"><upload-filled /></el-icon>
           <div class="el-upload__text">
             将文件拖拽到此处 <em>或点击上传</em>

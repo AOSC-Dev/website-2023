@@ -27,7 +27,7 @@ const support = ref();
 </script>
 <template>
   <CategorySecond title="支持文档" id="support" />
-  <div ref="support" class="pt-4 pb-[60px] px-16">
+  <div ref="support" class="px-16 pt-4 pb-[60px]">
     <ul class="list-disc">
       <li v-for="item in navigationList" :key="item.title">
         <AppLink

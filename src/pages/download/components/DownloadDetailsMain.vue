@@ -65,7 +65,7 @@ onMounted(() => {
       <AppLink
         :to="`${selected_source_url}${path}`"
         target="_blank"
-        class="flex items-center h-[32px] px-[15px] text-nowrap text-white bg-[var(--secondary)] hover:no-underline hover:bg-[var(--primary)]">
+        class="flex h-[32px] items-center bg-[var(--secondary)] px-[15px] text-nowrap text-white hover:bg-[var(--primary)] hover:no-underline">
         下载
       </AppLink>
     </el-container>

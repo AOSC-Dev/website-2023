@@ -32,5 +32,4 @@ const newsDate = ref('');
   </div>
 </template>
 
-<style lang="css" scoped>
-</style>
+<style lang="css" scoped></style>

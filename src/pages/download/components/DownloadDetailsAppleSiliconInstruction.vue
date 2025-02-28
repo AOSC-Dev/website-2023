@@ -7,9 +7,9 @@ import CopyCodeComponent from './CopyCodeComponent.vue';
 <template>
   <div class="flex flex-col gap-2">
     <p>
-      安同 OS 可在基于 Apple 芯片的 Mac 设备上安装使用，具体设备兼容与外设支持情况请见
-      <AppLink to="https://asahilinux.org/docs/">
-        Asahi Linux 官方文档</AppLink
+      安同 OS 可在基于 Apple 芯片的 Mac
+      设备上安装使用，具体设备兼容与外设支持情况请见
+      <AppLink to="https://asahilinux.org/docs/"> Asahi Linux 官方文档</AppLink
       >。
     </p>
     <p>在 macOS Ventura (13) 或更新版本的系统中输入如下命令即可安装安同 OS：</p>

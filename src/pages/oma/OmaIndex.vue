@@ -47,7 +47,7 @@ const _docList = reactive([
         >
         的默认包管理界面。小熊猫包管理的主要设计目标有：
       </p>
-      <div class="pt-4 pb-4 px-16">
+      <div class="px-16 pt-4 pb-4">
         <ul class="list-disc">
           <li
             ><b>改良 APT 界面：</b>兼容 dpkg 发行版常用的 APT
@@ -79,7 +79,7 @@ const _docList = reactive([
         <AccordionNavigation :navigation-list="navigationList" />
       </div>
       <div ref="bgImg">
-        <img src="/assets/oma/oma.png" class="w-full aspect-3/2 mt-2" alt=""
+        <img src="/assets/oma/oma.png" class="mt-2 aspect-3/2 w-full" alt=""
       /></div>
     </div>
 
