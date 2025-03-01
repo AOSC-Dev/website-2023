@@ -259,7 +259,7 @@ const antong1List = ref([
 const antong2List = ref([
   {
     title: 'ppc64el',
-    zhLabel: 'POWER（64 位）',
+    zhLabel: 'POWER（64 位，小端序）',
     enLabel: 'POWER (64-bit, little endian)',
     popoverData: {
       content: '适用于兼容 Power ISA v2.07 及以上版本的 64 位、小端序模式设备',
