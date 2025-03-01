@@ -247,7 +247,7 @@ const antong1List = ref([
   },
   {
     title: 'loongarch64',
-    zhLabel: 'LoongArch',
+    zhLabel: '龙架构',
     enLabel: 'LoongArch',
     popoverData: {
       content:
