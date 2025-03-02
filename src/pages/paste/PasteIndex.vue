@@ -39,7 +39,7 @@ const submit = async () => {
     ElMessage.error({
       showClose: true,
       duration: 10000,
-      message: `剪贴板大小超出了 10MiB 限制：文本占用了 ${formdataSize}B (${BToMB(formdataSize)}MiB)、附件占用了 ${toailFileSize}B (${BToMB(toailFileSize)}MiB)`
+      message: `剪贴板大小超出了 10MiB 限制：文本占用了 ${formdataSize}B (${BToMB(formdataSize,3)}MiB)、附件占用了 ${toailFileSize}B (${BToMB(toailFileSize,3)}MiB)`
     });
   }
   submiting.value = true;
@@ -85,24 +85,6 @@ const editorOptions = ref({
     enabled: false
   }
 });
-
-// const showSize = (() => {
-//   let isShow = true;
-//   return () => {
-//     if (isShow) {
-//       isShow = false;
-//       const formdataSize = getFormDataSize();
-//       ElMessage.error({
-//         showClose: true,
-//         duration: 0,
-//         message: `当前文本占用了${formdataSize}B (${BToMB(formdataSize)}MB)`,
-//         onClose: () => {
-//           isShow = true;
-//         }
-//       });
-//     }
-//   };
-// })();
 
 const handleChange = (uploadFile, uploadFiles) => {
   const formdataSize = getFormDataSize();
