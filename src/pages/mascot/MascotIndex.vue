@@ -40,7 +40,7 @@ const navigationList = [
               <link-button
                 class="h-full"
                 text="下载设定稿"
-                link="https://repo.aosc.io/mascots/mascots.zip" />
+                link="https://github.com/AOSC-Dev/fumo-anan" />
             </div>
             <div class="grid grid-col-1 gap-y-3"
               ><app-link to="https://tysontan.com" class="text-link"
