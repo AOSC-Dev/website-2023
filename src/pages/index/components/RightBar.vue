@@ -73,7 +73,7 @@ const commonLinkList = reactive([
         class="w-full cursor-pointer aspect-96/55"
         href="https://bbs.aosc.io/" />
     </a>
-    <div class="flex flex-col grow">
+    <div class="flex flex-col flex-grow">
       <category-second
         title="系统方案"
         class="border-l border-solid border-content-main-bg" />
@@ -114,7 +114,7 @@ const commonLinkList = reactive([
         </div>
       </article>
       <category-second title="常用链接" />
-      <div class="border-l theme-border-secondary flex flex-col grow">
+      <div class="border-l theme-border-secondary flex flex-col flex-grow">
         <a
           v-for="item in commonLinkList"
           :key="item.title"
