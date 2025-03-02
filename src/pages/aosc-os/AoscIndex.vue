@@ -82,7 +82,7 @@ const docList = reactive([
       <div ref="bgImg">
         <img
           src="/assets/aosc-os/aosc-os.zh-cn.jpg"
-          class="mt-2 aspect-8/5 w-full"
+          class="w-full aspect-8/5 mt-2"
           alt="" />
       </div>
     </div>

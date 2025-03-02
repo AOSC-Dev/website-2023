@@ -21,11 +21,7 @@ onMounted(() => {
         (URL) 是否正确。</p
       >
       <p>
-        如果该页面链接是其他网页中所引用的，请<AppLink
-          target="_blank"
-          to="https://aosc.io/contact/"
-          >与我们联系</AppLink
-        >。
+        如果该页面链接是其他网页中所引用的，请<AppLink target="_blank" to="https://aosc.io/contact/">与我们联系</AppLink>。
       </p>
     </div>
   </div>

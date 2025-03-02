@@ -8,7 +8,7 @@ import AppLink from '../../../components/AppLink.vue';
   <div class="flex flex-col gap-2 pb-1">
     <app-h2>下载 WSL 版安同 OS</app-h2>
     <ms-store-badge
-      class="h-[48px] w-fit [&::part(img)]:h-[48px]"
+      class="[&::part(img)]:h-[48px] h-[48px] w-fit"
       productid="9NMDF21NV65Z"
       window-mode="popup"
       theme="dark"

@@ -60,30 +60,30 @@ const commonLinkList = reactive([
 </script>
 
 <template>
-  <div class="bg-right-bar-bg flex w-[37.5%] flex-col">
+  <div class="bg-right-bar-bg w-[37.5%] flex flex-col">
     <a href="/aosc-os/right-for-me" ref="bgImg1" class="bg-img-height1">
       <img
         ref="bgImg"
         src="/assets/jumbotron/minor1.svg"
-        class="aspect-96/55 w-full cursor-pointer" />
+        class="w-full cursor-pointer aspect-96/55" />
     </a>
     <a href="https://bbs.aosc.io/" ref="bgImg2" class="bg-img-height2">
       <img
         src="/assets/jumbotron/minor2.svg"
-        class="aspect-96/55 w-full cursor-pointer"
+        class="w-full cursor-pointer aspect-96/55"
         href="https://bbs.aosc.io/" />
     </a>
-    <div class="flex grow flex-col">
+    <div class="flex flex-col grow">
       <category-second
         title="系统方案"
         class="border-l border-solid border-content-main-bg" />
       <article
-        class="theme-border-secondary border-l pt-[1em] pb-[0.5em] pl-[1em]">
+        class="pt-[1em] pb-[0.5em] pl-[1em] border-l theme-border-secondary">
         <div
           class="flex items-center pb-[15px]"
           v-for="item in distroList"
           :key="item.title">
-          <div class="mr-[20px] ml-[0.5em] basis-[50px]">
+          <div class="basis-[50px] mr-[20px] ml-[0.5em]">
             <img :src="item.img" alt="" class="w-full" />
           </div>
           <div class="flex-1 p-0">
@@ -99,7 +99,7 @@ const commonLinkList = reactive([
                   path: item.downloadPath,
                   hash: item.downloadHash
                 }"
-                class="mr-2 text-link"
+                class="text-link mr-2"
                 >系统下载</AppLink
               >
               <AppLink
@@ -114,12 +114,12 @@ const commonLinkList = reactive([
         </div>
       </article>
       <category-second title="常用链接" />
-      <div class="theme-border-secondary flex grow flex-col border-l">
+      <div class="border-l theme-border-secondary flex flex-col grow">
         <a
           v-for="item in commonLinkList"
           :key="item.title"
           :href="item.url"
-          class="flex h-[2rem] cursor-pointer flex-row items-center justify-between bg-white px-[1rem] odd:bg-[#fefaf6] hover:bg-leftbar-bg">
+          class="hover:bg-leftbar-bg cursor-pointer flex flex-row justify-between items-center px-[1rem] h-[2rem] odd:bg-[#fefaf6] bg-white">
           <span>{{ item.title }}</span>
           <v-icon name="hi-solid-external-link" />
         </a>

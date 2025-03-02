@@ -72,7 +72,7 @@ const docList = reactive([
       <div ref="bgImg">
         <img
           src="/assets/afterglow/afterglow.zh-cn.jpg"
-          class="mt-2 aspect-4/3 w-full"
+          class="w-full aspect-4/3 mt-2"
           alt="" />
       </div>
     </div>

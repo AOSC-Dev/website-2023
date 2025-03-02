@@ -16,7 +16,7 @@ import CategorySecond from '/src/components/CategorySecond.vue';
     <div class="p-6">
       <p>除将系统组件更新到 2024 年 9 月的基线外，LiveKit 还包含如下新特性：</p
       ><br />
-      <div class="px-16 pt-2 pb-4">
+      <div class="pt-2 pb-4 px-16">
         <ul class="list-disc">
           <li>更新 Linux 内核至 6.10 分支，支持更多新硬件</li>
           <li>支持龙架构旧世界固件引导安同 OS 安装盘</li>

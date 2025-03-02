@@ -15,10 +15,10 @@ const expand = ref(false);
 <template>
   <div class="flex flex-col gap-1">
     <div class="leading-none">
-      <span v-if="title" class="text-[10pt] font-[450]">{{ title }}</span>
+      <span v-if="title" class="font-[450] text-[10pt]">{{ title }}</span>
       <el-popover placement="top" width="233" :content="description">
         <template #reference>
-          <span class="text-[8pt] font-[450]">（这是什么？）</span>
+          <span class="font-[450] text-[8pt]">（这是什么？）</span>
         </template>
       </el-popover>
     </div>
@@ -26,13 +26,13 @@ const expand = ref(false);
     <div
       v-if="buttonProps.length > 3"
       @click="expand = !expand"
-      class="theme-bg-color-secondary-primary mb-1 flex cursor-pointer items-center justify-center py-1 text-[11pt]">
+      class="flex justify-center items-center theme-bg-color-secondary-primary text-[11pt] py-1 mb-1 cursor-pointer">
       <span>{{ expand ? '收起架构' : '展开架构' }}</span>
       <v-icon name="md-arrowdropdown" :class="expand ? 'rotate-180' : ''" />
     </div>
 
     <div
-      :class="`buttons grid auto-rows-fr grid-cols-[repeat(3,1fr)] gap-x-4 gap-y-2 ${buttonProps.length <= 3 || expand ? 'expand' : ''}`">
+      :class="`buttons grid grid-cols-[repeat(3,1fr)] auto-rows-fr gap-x-4 gap-y-2 ${buttonProps.length <= 3 || expand ? 'expand' : ''}`">
       <DownloadButton
         v-for="buttonProp in buttonProps"
         :key="buttonProp.archName"

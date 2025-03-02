@@ -69,7 +69,7 @@ const docList = reactive([
       <div ref="bgImg" class="bg-img-height">
         <img
           src="/assets/liblol/liblol.svg"
-          class="mt-2 aspect-14/5 w-full"
+          class="w-full mt-2 aspect-14/5"
           alt="" />
       </div>
     </div>

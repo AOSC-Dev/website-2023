@@ -13,12 +13,12 @@ const props = defineProps({
   <div class="flex flex-col">
     <h2
       :class="
-        'pb-2 leading-[0.8] font-[450] ' +
+        'font-[450] leading-[0.8] pb-2 ' +
         (smallTitle ? 'text-[24pt]' : 'text-[32pt]')
       "
       >{{ title }}</h2
     >
-    <h3 class="text-[14pt] font-[450]">{{ description }}</h3>
+    <h3 class="font-[450] text-[14pt]">{{ description }}</h3>
     <div class="text-[11pt]">
       <AccordionNavigation
         v-if="navigationList"

@@ -54,8 +54,8 @@ const zhuanlanList = reactive([
 
 <template>
   <div class="w-[62.5%] bg-content-main-bg p-0">
-    <app-link to="/download#aosc-os-download" class="flex w-full">
-      <el-image class="aspect-16/11 w-full" src="/assets/jumbotron/main1.svg">
+    <app-link to="/download#aosc-os-download" class="w-full flex">
+      <el-image class="w-full aspect-16/11" src="/assets/jumbotron/main1.svg">
         <template #error>
           <div class="image-slot cursor-pointer">
             <el-icon>
@@ -71,7 +71,7 @@ const zhuanlanList = reactive([
       <article v-if="isLoad">
         <news-category-list :news-list="newsList" />
         <div
-          class="px-[15px] py-[10px] text-right leading-6 font-[12pt] text-link">
+          class="text-right px-[15px] py-[10px] font-[12pt] leading-6 text-link">
           <router-link to="/news">
             <span>查阅最新社区资讯</span>
             <v-icon name="bi-chevron-double-right" />
@@ -87,7 +87,7 @@ const zhuanlanList = reactive([
           class="flex items-center pb-[15px]"
           v-for="item in zhuanlanList"
           :key="item.title">
-          <div class="mr-[20px] ml-[0.5em] basis-[50px]">
+          <div class="basis-[50px] mr-[20px] ml-[0.5em]">
             <img :src="item.img" />
           </div>
           <div class="flex-1 p-0">
@@ -99,7 +99,7 @@ const zhuanlanList = reactive([
             </div>
           </div>
         </div>
-        <div class="px-[15px] text-right text-[12pt] leading-6">
+        <div class="text-right px-[15px] text-[12pt] leading-6">
           <router-link
             class="text-[#0056cc] no-underline"
             to="/aosc-os/right-for-me">

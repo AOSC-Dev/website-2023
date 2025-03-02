@@ -43,7 +43,7 @@ function closeBigImg() {
             loading="lazy"
             :src="`/galleryFile/thumbs/${photo.file}.jpg`"
             :alt="photo.desc"
-            class="aspect-video w-[100%] max-w-[100%] cursor-pointer object-cover"
+            class="cursor-pointer w-[100%] max-w-[100%] object-cover aspect-video"
             @click="clickImg(gallery, index)" />
         </div>
       </div>
@@ -52,7 +52,7 @@ function closeBigImg() {
     <!-- 弹出框 -->
     <div
       v-if="showBig"
-      class="fixed top-0 left-0 h-[100vh] w-[100vw] content-center bg-gray/[.9]">
+      class="fixed content-center top-0 left-0 w-[100vw] h-[100vh] bg-gray/[.9]">
       <el-carousel
         height="100vh"
         indicator-position="outside"
@@ -63,9 +63,9 @@ function closeBigImg() {
           v-for="photo in curGallery.album"
           :key="photo.file"
           :label="photo.desc">
-          <div class="flex h-[100%] w-[100%] justify-center">
+          <div class="flex justify-center w-[100%] h-[100%]">
             <img
-              class="h-[auto] w-[100%] object-contain"
+              class="w-[100%] h-[auto] object-contain"
               :src="`/galleryFile/${photo.file}`"
               :alt="photo.desc" />
           </div>
@@ -73,7 +73,7 @@ function closeBigImg() {
       </el-carousel>
       <!-- 关闭按钮 -->
       <div
-        class="theme-bg-color-primary-static fixed top-[20px] right-[20px] z-999 cursor-pointer rounded-full p-[2px]"
+        class="fixed top-[20px] right-[20px] p-[2px] rounded-full cursor-pointer z-999 theme-bg-color-primary-static"
         @click="closeBigImg">
         <v-icon scale="1.5" fill="#fff" name="io-close-circle-outline" />
       </div>

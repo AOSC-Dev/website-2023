@@ -15,7 +15,7 @@ const props = defineProps({
   <a
     target="_blank"
     :href="link"
-    class="theme-bg-color-primary-static block flex items-center justify-center text-white hover:no-underline hover:opacity-85"
+    class="flex justify-center items-center text-white block hover:no-underline hover:opacity-85 theme-bg-color-primary-static"
     >{{ text }}</a
   >
 </template>

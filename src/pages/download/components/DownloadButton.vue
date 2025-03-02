@@ -82,7 +82,7 @@ const onClick = () => {
             width: $props.width + 'px'
           }"
           @click="onClick"
-          class="theme-bg-color-secondary-primary h-full grow cursor-pointer overflow-hidden py-2 hover:no-underline">
+          class="theme-bg-color-secondary-primary h-full grow hover:no-underline cursor-pointer py-2 overflow-hidden">
           <slot></slot>
           <span class="first-line-p">{{ archNameBrackets[1] }}</span>
           <span class="second-line-p">{{ archNameBrackets[2] }}</span>
@@ -101,7 +101,8 @@ const onClick = () => {
         :content="popoverData.content"
         :isa-info="isaInfo"
         :sources="sources"
-        :initial-tab="initialDialogTab" />
+        :initial-tab="initialDialogTab"
+      />
     </el-dialog>
   </div>
 </template>

@@ -6,7 +6,7 @@
       <div class="grow"></div>
       <div class="content-container flex justify-end">
         <div
-          class="theme-bg-color-primary-static flex justify-end py-[5px] pr-[0.5rem] pl-[50px] text-clip whitespace-nowrap text-white *:ml-[12px] *:no-underline">
+          class="theme-bg-color-primary-static text-white flex justify-end py-[5px] whitespace-nowrap text-clip *:ml-[12px] *:no-underline pl-[50px] pr-[0.5rem]">
           <router-link to="/download">下载中心</router-link>
           <span>|</span>
           <a href="https://bbs.aosc.io/" target="_blank">社区论坛 </a>
@@ -32,7 +32,7 @@
           </section> -->
         </div>
       </div>
-      <div class="theme-bg-color-primary-static grow"></div>
+      <div class="grow theme-bg-color-primary-static"></div>
     </div>
     <div class="flex justify-center">
       <div class="content-container h-[69.2px]">

@@ -31,7 +31,7 @@ const linkArr = reactive([
       {
         title: '参考文档 (Wiki)',
         link: 'https://wiki.aosc.io/zh/'
-      }
+      },
     ],
     show: true
   },
@@ -226,7 +226,7 @@ onMounted(() => {
       <div
         id="sticky-top-button"
         ref="stickyTopButton"
-        class="theme-bg-color-primary-secondary m-0 flex h-[2rem] cursor-pointer items-center justify-between border-b border-b-white px-[10px] text-white select-none"
+        class="theme-bg-color-primary-secondary text-white h-[2rem] px-[10px] m-0 select-none flex justify-between items-center cursor-pointer border-b border-b-white"
         onclick="window.scrollTo(0,0, 'smooth')"
         v-show="backToTopBtnShow">
         <v-icon name="bi-chevron-bar-up" />
@@ -235,7 +235,7 @@ onMounted(() => {
     </Transition>
     <div v-for="item1 in linkArr" :key="item1.title">
       <div
-        class="theme-bg-color-primary-secondary m-0 flex h-[2rem] cursor-pointer items-center justify-between px-[10px] py-[5px] text-white select-none"
+        class="theme-bg-color-primary-secondary text-white h-[2rem] px-[10px] py-[5px] m-0 select-none flex justify-between items-center cursor-pointer"
         @click="toggle(item1)">
         <span>
           {{ item1.title }}
@@ -245,7 +245,7 @@ onMounted(() => {
           inverse />
       </div>
       <Transition name="menu">
-        <ul class="nav-container flex py-[3px]" v-show="item1.show">
+        <ul class="py-[3px] flex nav-container" v-show="item1.show">
           <template v-for="item2 in item1.children" :key="item2.title">
             <router-link
               v-if="!item2.link.startsWith('http')"
@@ -254,7 +254,7 @@ onMounted(() => {
               :class="{
                 'bg-[#dcdcdc]': $route.path.trim().startsWith(item2.link.trim())
               }"
-              class="navitem-flex href-noline block cursor-pointer pr-[10px] pl-[16px] leading-4 text-wrap select-none hover:bg-[#dcdcdc]"
+              class="leading-4 navitem-flex hover:bg-[#dcdcdc] cursor-pointer pr-[10px] pl-[16px] block text-wrap select-none href-noline"
               >{{ item2.title }}</router-link
             >
             <a
@@ -264,7 +264,7 @@ onMounted(() => {
               :class="{
                 'bg-[#dcdcdc]': $route.path.trim().startsWith(item2.link.trim())
               }"
-              class="navitem-flex href-noline block cursor-pointer pr-[10px] pl-[16px] leading-4 text-wrap select-none hover:bg-[#dcdcdc]"
+              class="leading-4 navitem-flex hover:bg-[#dcdcdc] cursor-pointer pr-[10px] pl-[16px] block text-wrap select-none href-noline"
               >{{ item2.title }}</a
             >
           </template>

@@ -38,7 +38,7 @@ const categories = ref({});
           :show-right-chevron="true" />
         <news-category-list
           :news-list="categories.news || []"
-          class="theme-border-secondary overflow-y-auto border-l-[1px]" />
+          class="overflow-y-auto border-l-[1px] theme-border-secondary" />
       </div>
       <div>
         <category-second
@@ -60,7 +60,7 @@ const categories = ref({});
           class="border-l border-l-white" />
         <news-category-list
           :news-list="categories.minutes || []"
-          class="theme-border-secondary overflow-y-auto border-l-[1px]" />
+          class="overflow-y-auto border-l-[1px] theme-border-secondary" />
       </div>
       <!--  暂不实现 -->
       <!-- <div class="h-[20vw]" style="width: 100%">

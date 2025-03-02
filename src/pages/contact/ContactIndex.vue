@@ -99,7 +99,7 @@ const waterGroup = [
     <category-second title="主群组" id="main" />
     <div class="p-6">
       <p>社区主群组用于开发交流、技术支持及相关技术话题讨论：</p>
-      <ul class="mt-2 list-disc pl-10">
+      <ul class="list-disc pl-10 mt-2">
         <li v-for="(item, index) in mainGroup" :key="index">
           <span v-if="item.spanText">{{ item.spanText }}</span>
           <AppLink v-if="item.url" :to="item.url">{{ item.aText }}</AppLink>
@@ -111,7 +111,7 @@ const waterGroup = [
     <category-second title="古董计算机兴趣小组" id="retro" />
     <div class="p-6">
       <p>该小组用于讨论各类古董软硬件及 Afterglow（星霞 OS）开发。</p>
-      <ul class="mt-2 list-disc pl-10">
+      <ul class="list-disc pl-10 mt-2">
         <li v-for="(item, index) in antiqueComputer" :key="index">
           <span v-if="item.spanText">{{ item.spanText }}</span>
           <AppLink v-if="item.url" :to="item.url">{{ item.aText }}</AppLink>
@@ -126,7 +126,7 @@ const waterGroup = [
         水群用于讨论各式话题，但需注意遵守我社
         <AppLink to="/guidelines">人际关系准则</AppLink>
       </p>
-      <ul class="mt-2 list-disc pl-10">
+      <ul class="list-disc pl-10 mt-2">
         <li v-for="(item, index) in waterGroup" :key="index">
           <span v-if="item.spanText">{{ item.spanText }}</span>
           <AppLink v-if="item.url" :to="item.url">{{ item.aText }}</AppLink>

@@ -26,15 +26,12 @@ const navigationList = [
     <category-second title="社区活动" />
     <div class="p-6">
       <p>
-        除日常开发活动外，我社还定期组织形式多样的线上及线下活动，以期活跃社区氛围、分享社区资源。作为主要活跃于互联网的开源社区，这些活动亦有拉近人际关系、让社区贡献及参与的概念具象化的作用。社区自
-        2015 年起每年暑期均会举办名为 AOSCC
-        的年度聚会，邀请包括社区贡献者、成员、校园社团、企业和个人参与，在向外界宣传社区工作的同时，为爱好者和行业代表提供了分享技术技巧和行业知识及动向的平台。自
-        2024
-        年起，我们还组织了春节“烙饼会”，与社区好友们共享节日气氛，谋划来年的工作目标。 </p
-      ><br />
+        除日常开发活动外，我社还定期组织形式多样的线上及线下活动，以期活跃社区氛围、分享社区资源。作为主要活跃于互联网的开源社区，这些活动亦有拉近人际关系、让社区贡献及参与的概念具象化的作用。社区自 2015 年起每年暑期均会举办名为 AOSCC 的年度聚会，邀请包括社区贡献者、成员、校园社团、企业和个人参与，在向外界宣传社区工作的同时，为爱好者和行业代表提供了分享技术技巧和行业知识及动向的平台。自 2024
+        年起，我们还组织了春节“烙饼会”，与社区好友们共享节日气氛，谋划来年的工作目标。
+      </p><br />
       <p>
-        此外，社区还积极组织与高校社团协办“安同校园行”活动，也参与了许多由其他社区、社团等组织的交流活动，以期增进社区与各地社团、社群与行业内组织的联系，为消除知识壁垒和信息差作出积极努力。 </p
-      ><br />
+        此外，社区还积极组织与高校社团协办“安同校园行”活动，也参与了许多由其他社区、社团等组织的交流活动，以期增进社区与各地社团、社群与行业内组织的联系，为消除知识壁垒和信息差作出积极努力。
+      </p><br />
       <div>
         <AccordionNavigation :navigation-list="navigationList" />
       </div>
@@ -48,7 +45,7 @@ const navigationList = [
         均由中国高校社团协办，每年吸引超过 100 来自与会者参与。以下是自 2015
         年的 AOSCC 活动地点、日期和会议信息记录：
       </p>
-      <div class="px-16 pt-4 pb-4">
+      <div class="pt-4 pb-4 px-16">
         <ul class="list-disc">
           <li
             ><b>2024 年：</b
@@ -121,60 +118,30 @@ const navigationList = [
         年起，我们与众多高校社团协作，组织“安同校园行”活动，邀请社区贡献者、行业代表等走进校园，分享社区和专业工作经验，让更多学生接触、了解和融入开源社区乃至行业前沿。 </p
       ><br />
       <p> 如下是我社“安同校园行”的足迹： </p>
-      <div class="px-16 pt-4 pb-4">
+      <div class="pt-4 pb-4 px-16">
         <ul class="list-disc">
           <li>
-            <b>2024 年 12 月 15 日：</b
-            ><a
-              class="text-[#0056cc] no-underline"
-              href="https://www.bilibili.com/video/BV14MBTYNEi8/"
-              >西安电子科技大学</a
-            >
+            <b>2024 年 12 月 15 日：</b><a class="text-[#0056cc] no-underline" href="https://www.bilibili.com/video/BV14MBTYNEi8/">西安电子科技大学</a>
           </li>
           <li>
-            <b>2024 年 12 月 7 日：</b
-            ><a
-              class="text-[#0056cc] no-underline"
-              href="https://www.bilibili.com/video/BV1caiyY4E3p/"
-              >山东大学（青岛）</a
-            >
+            <b>2024 年 12 月 7 日：</b><a class="text-[#0056cc] no-underline" href="https://www.bilibili.com/video/BV1caiyY4E3p/">山东大学（青岛）</a>
           </li>
           <li>
-            <b>2024 年 11 月 10 日：</b
-            ><a
-              class="text-[#0056cc] no-underline"
-              href="https://www.bilibili.com/video/BV1yUm6YEEWK/"
-              >兰州大学</a
-            >
+            <b>2024 年 11 月 10 日：</b><a class="text-[#0056cc] no-underline" href="https://www.bilibili.com/video/BV1yUm6YEEWK/">兰州大学</a>
           </li>
           <li>
-            <b>2024 年 10 月 27 日：</b
-            ><a
-              class="text-[#0056cc] no-underline"
-              href="https://www.bilibili.com/video/BV1Vc1eYgEpm/"
-              >澳门科技大学</a
-            >
+            <b>2024 年 10 月 27 日：</b><a class="text-[#0056cc] no-underline" href="https://www.bilibili.com/video/BV1Vc1eYgEpm/">澳门科技大学</a>
           </li>
           <li>
-            <b>2024 年 10 月 20 日：</b
-            ><a
-              class="text-[#0056cc] no-underline"
-              href="https://www.bilibili.com/video/BV1BYyzYfEd5/"
-              >宁夏理工学院</a
-            >
+            <b>2024 年 10 月 20 日：</b><a class="text-[#0056cc] no-underline" href="https://www.bilibili.com/video/BV1BYyzYfEd5/">宁夏理工学院</a>
           </li>
           <li>
-            <b>2024 年 3 月 20 日：</b
-            ><a
-              class="text-[#0056cc] no-underline"
-              href="https://www.bilibili.com/video/BV1wr42187aT/"
-              >曲阜师范大学（“社团开放活动：计算进化”）</a
-            >
+            <b>2024 年 3 月 20 日：</b><a class="text-[#0056cc] no-underline" href="https://www.bilibili.com/video/BV1wr42187aT/">曲阜师范大学（“社团开放活动：计算进化”）</a>
           </li>
         </ul>
       </div>
       <p> 如下是近期规划内的“安同校园行”目的地： </p>
-      <div class="px-16 pt-4 pb-4">
+      <div class="pt-4 pb-4 px-16">
         <ul class="list-disc">
           <li><b>2025 年 3 月 15 日：</b>河海大学</li>
         </ul>
@@ -187,23 +154,13 @@ const navigationList = [
         自 2023
         年始，为更及时地展示和沟通社区工作进展和规划，我们开始在春节假期组织线上“烙饼会”（取画饼之意），邀请贡献者和社区好友一道交流成果、计划与期望。如下是往期“烙饼会”的直播录像：
       </p>
-      <div class="px-16 pt-4 pb-4">
+      <div class="pt-4 pb-4 px-16">
         <ul class="list-disc">
           <li>
-            <b>2025 年：</b
-            ><a
-              class="text-[#0056cc] no-underline"
-              href="https://www.bilibili.com/video/BV1CNcFeYEBQ/"
-              >乙巳烙饼会（2025 年 2 月 1 日）</a
-            >
+            <b>2025 年：</b><a class="text-[#0056cc] no-underline" href="https://www.bilibili.com/video/BV1CNcFeYEBQ/">乙巳烙饼会（2025 年 2 月 1 日）</a>
           </li>
           <li>
-            <b>2024 年：</b
-            ><a
-              class="text-[#0056cc] no-underline"
-              href="https://www.bilibili.com/video/BV1Fj421X7gX"
-              >甲辰烙饼会（2024 年 2 月 15 日）</a
-            >
+            <b>2024 年：</b><a class="text-[#0056cc] no-underline" href="https://www.bilibili.com/video/BV1Fj421X7gX">甲辰烙饼会（2024 年 2 月 15 日）</a>
           </li>
         </ul>
       </div>
@@ -214,7 +171,7 @@ const navigationList = [
       <p>
         作为社区、校园乃至企业交流的一环，社区贡献者积极参与各公开会议、聚会活动。如下是我们的参与记录及录像：
       </p>
-      <div class="px-16 pt-4 pb-4">
+      <div class="pt-4 pb-4 px-16">
         <ul class="list-disc">
           <li
             ><b>2024 年：</b

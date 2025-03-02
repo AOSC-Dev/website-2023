@@ -40,7 +40,7 @@ const navigationList = [
           >各聊天群组</router-link
         >与我们联系，从英雄帖拿下属于您的立功机会：
       </p>
-      <div class="px-16 pt-4 pb-4">
+      <div class="pt-4 pb-4 px-16">
         <ul class="list-disc">
           <li><b>安同 OS：</b>改善 RISC-V 架构支持情况并制作安装介质</li>
           <li><b>安同 OS：</b>制作并发布虚拟机（及云服务）镜像</li>
@@ -63,7 +63,7 @@ const navigationList = [
         自 2020
         年起，我社贡献者以导师的角色积极参与中科院软件所的“开源之夏”活动，成功指导多名学生完成实习项目，直接参与到社区的贡献中来。如下是我们过去参与指导的项目列表：
       </p>
-      <div class="px-16 pt-4 pb-4">
+      <div class="pt-4 pb-4 px-16">
         <ul class="list-disc">
           <li
             ><b>开源之夏 2024：</b

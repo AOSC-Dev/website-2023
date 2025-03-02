@@ -21,7 +21,7 @@ import CategorySecond from '/src/components/CategorySecond.vue';
     <category-second title="设计理念" id="design" />
     <div class="p-6">
       <p>安同 OS 的设计基于如下目标和理念：</p>
-      <div class="px-16 pt-4 pb-2">
+      <div class="pt-4 pb-2 px-16">
         <ul class="list-disc">
           <li>如非必要不切分软件包，即每个应用一个软件包。</li>
           <li>为不同语言的用户提供良好的开箱体验。</li>
@@ -34,7 +34,7 @@ import CategorySecond from '/src/components/CategorySecond.vue';
     <category-second title="安同 OS 的主要优点" id="pros" />
     <div class="p-6">
       <p>安同 OS 主要优点如下：</p>
-      <div class="px-16 pt-4 pb-2">
+      <div class="pt-4 pb-2 px-16">
         <ul class="list-disc">
           <li>部署快捷，开箱即用。</li>
           <li>系统管理简单明了。</li>
@@ -52,7 +52,7 @@ import CategorySecond from '/src/components/CategorySecond.vue';
     <category-second title="安同 OS 的主要缺点" id="cons" />
     <div class="p-6">
       <p>与此同时，安同 OS 有如下几个主要缺点，供您参考：</p>
-      <div class="px-16 pt-4 pb-2">
+      <div class="pt-4 pb-2 px-16">
         <ul class="list-disc">
           <li>系统比较庞大，相对于其他发行版需要更多存储空间。</li>
           <li>缺少 multilib 和 multiarch 支持，跨架构开发较为繁琐。</li>
@@ -66,7 +66,7 @@ import CategorySecond from '/src/components/CategorySecond.vue';
     <category-second title="适用场景" id="recommended-usage" />
     <div class="p-6">
       <p>适用本系统的场景如下：</p>
-      <div class="px-16 pt-4 pb-2">
+      <div class="pt-4 pb-2 px-16">
         <ul class="list-disc">
           <li>个人和家庭用途。</li>
           <li>硬件条件较为理想：存储充分且互联网连接较为稳定。</li>
@@ -80,7 +80,7 @@ import CategorySecond from '/src/components/CategorySecond.vue';
     <category-second title="不适用场景" id="discouraged-usage" />
     <div class="p-6">
       <p>我们不推荐在如下场景部署和使用安同 OS：</p>
-      <div class="px-16 pt-4 pb-2">
+      <div class="pt-4 pb-2 px-16">
         <ul class="list-disc">
           <li>无 Linux 使用和管理经验。</li>
           <li>对系统轻量化或可定制性有要求。</li>

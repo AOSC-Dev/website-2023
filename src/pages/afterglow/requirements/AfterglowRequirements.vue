@@ -75,7 +75,7 @@ const afterLowRequirementsList = ref();
     </div>
 
     <category-second title="补充说明" id="support" />
-    <div class="px-16 pt-4 pb-4">
+    <div class="pt-4 pb-4 px-16">
       <ul class="list-disc">
         <li
           >关于星霞 OS 兼容的处理器，详请见<AppLink to="/afterglow/isa"
