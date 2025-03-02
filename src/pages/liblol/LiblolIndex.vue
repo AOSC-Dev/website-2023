@@ -69,7 +69,7 @@ const docList = reactive([
       <div ref="bgImg" class="bg-img-height">
         <img
           src="/assets/liblol/liblol.svg"
-          class="w-full mt-2 aspect-14/5"
+          class="w-full mt-2 imgScale1"
           alt="" />
       </div>
     </div>
@@ -78,5 +78,9 @@ const docList = reactive([
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.imgScale1 {
+  aspect-ratio: 14/5;
+}
+</style>
 ./components/Header.vue

@@ -71,8 +71,9 @@ const docList = reactive([
       </div>
       <div ref="bgImg">
         <img
+         
           src="/assets/afterglow/afterglow.zh-cn.jpg"
-          class="w-full aspect-4/3 mt-2"
+          class="w-full imgScale1 mt-2"
           alt="" />
       </div>
     </div>
@@ -103,5 +104,9 @@ const docList = reactive([
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.imgScale1 {
+  aspect-ratio: 4/3;
+}
+</style>
 ./components/Header.vue

@@ -65,12 +65,12 @@ const commonLinkList = reactive([
       <img
         ref="bgImg"
         src="/assets/jumbotron/minor1.svg"
-        class="w-full cursor-pointer aspect-96/55" />
+        class="w-full cursor-pointer imgScale1" />
     </a>
     <a href="https://bbs.aosc.io/" ref="bgImg2" class="bg-img-height2">
       <img
         src="/assets/jumbotron/minor2.svg"
-        class="w-full cursor-pointer aspect-96/55"
+        class="w-full cursor-pointer imgScale1"
         href="https://bbs.aosc.io/" />
     </a>
     <div class="flex flex-col flex-grow">
@@ -128,4 +128,8 @@ const commonLinkList = reactive([
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.imgScale1 {
+  aspect-ratio: 96/55;
+}
+</style>

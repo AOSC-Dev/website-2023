@@ -54,8 +54,10 @@ const zhuanlanList = reactive([
 
 <template>
   <div class="w-[62.5%] bg-content-main-bg p-0">
-    <app-link href="/download#aosc-os-download" class="w-full flex">
-      <el-image class="w-full aspect-16/11" src="/assets/jumbotron/main1.svg">
+    <app-link
+      href="/download#aosc-os-download"
+      class="w-full flex">
+      <el-image class="w-full imgScale1" src="/assets/jumbotron/main1.svg">
         <template #error>
           <div class="image-slot cursor-pointer">
             <el-icon>
@@ -111,5 +113,9 @@ const zhuanlanList = reactive([
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.imgScale1 {
+  aspect-ratio: 16/11;
+}
+</style>
 ../../../components/CategorySecond.vue

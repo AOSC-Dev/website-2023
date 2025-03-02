@@ -79,7 +79,7 @@ const _docList = reactive([
         <AccordionNavigation :navigation-list="navigationList" />
       </div>
       <div ref="bgImg">
-        <img src="/assets/oma/oma.png" class="w-full aspect-3/2 mt-2" alt=""
+        <img src="/assets/oma/oma.png" class="w-full imgScale1 mt-2" alt=""
       /></div>
     </div>
 
@@ -89,5 +89,9 @@ const _docList = reactive([
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.imgScale1 {
+  aspect-ratio: 3/2; /* 91/60 近似值 */
+}
+</style>
 ./components/Header.vue

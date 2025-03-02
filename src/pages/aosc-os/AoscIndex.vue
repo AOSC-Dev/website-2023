@@ -82,7 +82,7 @@ const docList = reactive([
       <div ref="bgImg">
         <img
           src="/assets/aosc-os/aosc-os.zh-cn.jpg"
-          class="w-full aspect-8/5 mt-2"
+          class="w-full imgScale1 mt-2"
           alt="" />
       </div>
     </div>
@@ -128,5 +128,9 @@ const docList = reactive([
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.imgScale1 {
+  aspect-ratio: 8/5;
+}
+</style>
 ./components/Header.vue
