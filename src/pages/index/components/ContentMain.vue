@@ -54,7 +54,7 @@ const zhuanlanList = reactive([
 
 <template>
   <div class="w-[62.5%] bg-content-main-bg p-0">
-    <app-link to="/download#aosc-os-download" class="w-full flex">
+    <app-link href="/download#aosc-os-download" class="w-full flex">
       <el-image class="w-full aspect-16/11" src="/assets/jumbotron/main1.svg">
         <template #error>
           <div class="image-slot cursor-pointer">
