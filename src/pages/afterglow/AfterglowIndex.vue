@@ -4,9 +4,10 @@ import CategorySecond from '../../components/CategorySecond.vue';
 import AppH2 from '../../components/AppH2.vue';
 import { useRoute } from 'vue-router';
 import highlightElement from '../../utils/animation';
+import { useHighBrightnessControllerStore } from '../../stores/miscellaneous';
 import AppSupport from '../../components/AppSupport.vue';
 import AccordionNavigation from '../../components/AccordionNavigation.vue';
-import { useHighlightWatch } from '../../utils/utils';
+import { onImgLoad, useHighlightWatch, useSeizeSeat } from '../../utils/utils';
 
 const route = useRoute();
 
@@ -55,6 +56,8 @@ const docList = reactive([
     path: '/afterglow/isa'
   }
 ]);
+
+const [observer, imgHeights] = useSeizeSeat('bgImg', 1.3333);
 </script>
 
 <template>
@@ -69,11 +72,11 @@ const docList = reactive([
       <div>
         <AccordionNavigation :navigation-list="navigationList" />
       </div>
-      <div ref="bgImg">
+      <div ref="bgImg" class="bg-img-height">
         <img
-         
+          @load="onImgLoad(observer, imgHeights[0])"
           src="/assets/afterglow/afterglow.zh-cn.jpg"
-          class="w-full imgScale1 mt-2"
+          class="w-full h-auto mt-2"
           alt="" />
       </div>
     </div>
@@ -105,8 +108,8 @@ const docList = reactive([
 </template>
 
 <style scoped>
-.imgScale1 {
-  aspect-ratio: 4/3;
+.bg-img-height {
+  height: v-bind('imgHeights[0].value');
 }
 </style>
 ./components/Header.vue

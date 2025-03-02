@@ -2,6 +2,7 @@
 import { reactive } from 'vue';
 import CategorySecond from '/src/components/CategorySecond.vue';
 import AppLink from '../../../components/AppLink.vue';
+import { onImgLoad, useSeizeSeat } from '../../../utils/utils';
 
 const distroList = reactive([
   {
@@ -57,20 +58,25 @@ const commonLinkList = reactive([
     title: '赞助硬件或服务'
   }
 ]);
+
+const [observer1, buffer] = useSeizeSeat('bgImg1', 1.7455);
+const [observer2, imgHeights] = useSeizeSeat('bgImg2', 1.7455, buffer);
 </script>
 
 <template>
   <div class="bg-right-bar-bg w-[37.5%] flex flex-col">
     <a href="/aosc-os/right-for-me" ref="bgImg1" class="bg-img-height1">
       <img
+        @load="onImgLoad(observer1, imgHeights[0])"
         ref="bgImg"
         src="/assets/jumbotron/minor1.svg"
-        class="w-full cursor-pointer imgScale1" />
+        class="w-full cursor-pointer" />
     </a>
     <a href="https://bbs.aosc.io/" ref="bgImg2" class="bg-img-height2">
       <img
+        @load="onImgLoad(observer2, imgHeights[1])"
         src="/assets/jumbotron/minor2.svg"
-        class="w-full cursor-pointer imgScale1"
+        class="w-full cursor-pointer"
         href="https://bbs.aosc.io/" />
     </a>
     <div class="flex flex-col flex-grow">
@@ -129,7 +135,10 @@ const commonLinkList = reactive([
 </template>
 
 <style scoped>
-.imgScale1 {
-  aspect-ratio: 96/55;
+.bg-img-height1 {
+  height: v-bind('imgHeights[0].value');
+}
+.bg-img-height2 {
+  height: v-bind('imgHeights[1].value');
 }
 </style>
