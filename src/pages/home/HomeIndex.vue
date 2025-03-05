@@ -7,8 +7,8 @@ import { RouterView } from 'vue-router';
 
 <template>
   <div class="min-h-[100vh] min-w-[960px]">
-    <div class="my-0 flex min-h-[100vh] flex-col p-0">
-      <HeaderBar />
+    <div class="my-0 flex h-[100vh] flex-col p-0" style="scrollbar-gutter: stable both-edges; overflow-y:auto">
+      <HeaderBar style="width: 100vw; margin-left: calc((100% - 100vw)/2)" />
       <div class="main-content flex flex-1 justify-center pb-[2.5rem]">
         <div class="content-container flex shadow">
           <div
@@ -18,7 +18,7 @@ import { RouterView } from 'vue-router';
 
           <router-view
             class="flex-1"
-            style="scrollbar-gutter: stable; min-width: 0"></router-view>
+            style="min-width: 0"></router-view>
         </div>
       </div>
     </div>
