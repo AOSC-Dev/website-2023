@@ -23,13 +23,21 @@ document.documentElement.style.setProperty('--secondary', themeStore.secondary);
 </script>
 
 <template>
-  <HomeIndex
-    :style="{
-      backgroundImage: `url(/assets/backgrounds/${themeStore.backageImg})`
-    }" />
+  <el-scrollbar height="100vh" class="set-color">
+    <HomeIndex
+      :style="{
+        backgroundImage: `url(/assets/backgrounds/${themeStore.backageImg})`
+      }" />
+  </el-scrollbar>
 </template>
 
 <style scoped>
+.set-color {
+  --el-scrollbar-bg-color: #646cffaa;
+  --el-scrollbar-hover-bg-color: #42b883aa;
+  --el-scrollbar-opacity: 1;
+  --el-scrollbar-hover-opacity: 1;
+}
 .logo {
   height: 6em;
   padding: 1.5em;

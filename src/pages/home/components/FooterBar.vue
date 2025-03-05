@@ -44,7 +44,6 @@ const navigationList = [
   .footerbar .content-container {
     width: 100%;
     min-width: 0;
-    overflow: auto;
   }
 }
 </style>
