@@ -21,7 +21,7 @@ const navigationList = [
 
 <template>
   <div
-    class="theme-bg-color-secondary-static footerbar flex w-full justify-center py-[2px] text-white">
+    class="theme-bg-color-secondary-static footerbar flex w-full justify-center py-[2px] text-white drop-shadow-xl">
     <div class="m-auto">
       <span class="pl-[0.5rem]"
         >&copy; 安同开源社区&nbsp;&nbsp;&nbsp;&nbsp;2011 - {{ nowYear }}</span
