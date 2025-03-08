@@ -4,7 +4,6 @@ categories:
 title: "龙芯 LoongGPU 驱动推送公告与安装指南"
 date: 2025-01-22T23:30:00+08:00
 important: true
-home: true
 ---
 ![搭配 LoongGPU 驱动使用安同 OS 桌面](/assets/news/loongapu-driver.png)
 

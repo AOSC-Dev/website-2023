@@ -4,7 +4,6 @@ categories:
 title: "喜迎第二春：安同 OS 发布龙芯三号 (MIPS) 安装盘"
 date: 2025-01-28T21:58:00+08:00
 important: true
-home: true
 ---
 
 ![](/assets/news/aosc-os-loongson3.png)
