@@ -129,7 +129,7 @@ const navigationList = [
               <link-button
                 class="my-auto h-full"
                 text="下载设定稿"
-                link="https://github.com/AOSC-Dev/fumo" /> </div
+                link="https://github.com/AOSC-Dev/fumo-anan" /> </div
             ><div class="grid-col-1 grid gap-y-3">
               <div class="invisible">占位</div><div class="invisible">占位</div>
             </div>
