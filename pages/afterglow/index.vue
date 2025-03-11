@@ -9,20 +9,7 @@ const switchHash = () => {
       break;
   }
 };
-const highBrightnessControllerStore = useHighBrightnessControllerStore();
-watch(
-  () => highBrightnessControllerStore.obj[route.path.replace(/\/+$/, '')],
-  () => {
-    switchHash();
-  },
-  {
-    flush: 'post'
-  }
-);
-
-onMounted(() => {
-  switchHash();
-});
+useHighlightWatch(switchHash);
 
 const { tm, locale } = useI18n();
 const textValue = tm('afterglow.index');
@@ -54,7 +41,7 @@ const docList = [
         <AccordionNavigation :navigation-list="navigationList" />
       </div>
       <div id="bgImg" ref="bgImg">
-        <img src="/afterglow/afterglow.jpg" class="w-full h-auto mt-2" alt="" />
+        <img src="/afterglow/afterglow.jpg" class="mt-2 h-auto w-full" alt="" />
       </div>
     </div>
 

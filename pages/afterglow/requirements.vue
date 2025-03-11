@@ -15,20 +15,7 @@ const switchHash = () => {
       break;
   }
 };
-const highBrightnessControllerStore = useHighBrightnessControllerStore();
-watch(
-  () => highBrightnessControllerStore.obj[route.path.replace(/\/+$/, '')],
-  () => {
-    switchHash();
-  },
-  {
-    flush: 'post'
-  }
-);
-
-onMounted(() => {
-  switchHash();
-});
+useHighlightWatch(switchHash);
 
 const afterlowRequirementsList = ref();
 </script>

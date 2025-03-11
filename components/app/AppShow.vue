@@ -7,6 +7,7 @@ const props = defineProps({
   }
 });
 </script>
+
 <template>
   <span
     v-for="(item, index) in title.texts"

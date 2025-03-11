@@ -2,6 +2,7 @@
 const { tm, locale } = useI18n();
 const textValue = tm('guidelines.index');
 const linkValue = tm('allUniversalLink');
+const locallink = linkValue.local;
 </script>
 
 <template>
@@ -51,7 +52,7 @@ const linkValue = tm('allUniversalLink');
           <link-standard :link="linkValue.AOSCWiki" />{{ textValue.p8 }}
           <link-standard :link="linkValue.GitHub" />
           {{ textValue.p9 }}
-          <link-standard :link="linkValue.local.home" />
+          <link-standard :link="locallink.home" />
           {{ textValue.p10 }}
         </b>
       </p>
@@ -77,11 +78,11 @@ const linkValue = tm('allUniversalLink');
         <link-standard :link="linkValue.AOSCWiki" />{{ textValue.p8 }}
         <link-standard :link="linkValue.GitHub" />
         {{ textValue.p9 }}
-        <link-standard :link="linkValue.local.home" />{{ textValue.p13 }}
+        <link-standard :link="locallink.home" />{{ linkValue.aPeriod }}
       </p>
 
       <app-h2>{{ textValue.subheading2 }}</app-h2>
-      <ul class="list-decimal pl-10 pb-2">
+      <ul class="list-decimal pb-2 pl-10">
         <li
           >{{ textValue.p14 }}
           <link-standard :link="linkValue.aoscReceptionPoint" />
@@ -96,7 +97,8 @@ const linkValue = tm('allUniversalLink');
           >{{ textValue.p19 }}
         </li>
         <ul class="list-disc pl-10">
-          <li>{{ textValue.clean[0] }}<b>{{ textValue.p37 }}</b
+          <li
+            >{{ textValue.clean[0] }}<b>{{ textValue.p37 }}</b
             >{{ textValue.clean[1] }}</li
           >
         </ul>
@@ -129,14 +131,15 @@ const linkValue = tm('allUniversalLink');
           >{{ textValue.p25 }}
         </li>
         <ul class="list-disc pl-10">
-          <li>{{ textValue.clean[0] }}<b>{{ textValue.p37 }}</b
+          <li
+            >{{ textValue.clean[0] }}<b>{{ textValue.p37 }}</b
             >{{ textValue.clean[1] }}</li
           >
         </ul>
       </ul>
 
       <app-h2>{{ textValue.subheading3 }}</app-h2>
-      <ul class="list-decimal pl-10 pb-2">
+      <ul class="list-decimal pb-2 pl-10">
         <template
           v-for="(item, index) in textValue.ul4.li"
           :key="`guidelines-4-li-${index}`"
@@ -161,7 +164,7 @@ const linkValue = tm('allUniversalLink');
       </ul>
 
       <app-h2>{{ textValue.subheading4 }}</app-h2>
-      <ul class="list-decimal pl-10 pt-2 pb-2">
+      <ul class="list-decimal pt-2 pb-2 pl-10">
         <li
           v-for="(item, index) in textValue.ul5.li"
           :key="`guidelines-index-5-li-${index}`"
@@ -171,7 +174,7 @@ const linkValue = tm('allUniversalLink');
       <p class="pb-2">{{ textValue.p26 }}</p>
 
       <app-h2>{{ textValue.subheading2 }}</app-h2>
-      <ul class="list-decimal pl-10 pb-2">
+      <ul class="list-decimal pb-2 pl-10">
         <li
           v-for="(item, index) in textValue.ul6.li"
           :key="`guidelines-index-6-li-${index}`">
@@ -184,7 +187,7 @@ const linkValue = tm('allUniversalLink');
       </ul>
 
       <app-h2>{{ textValue.subheading3 }}</app-h2>
-      <ul class="list-decimal pl-10 pb-2">
+      <ul class="list-decimal pb-2 pl-10">
         <li
           v-for="(item, index) in textValue.ul7.li"
           :key="`guidelines-index-7-li-${index}`"
@@ -197,7 +200,7 @@ const linkValue = tm('allUniversalLink');
 
       <app-h2>{{ textValue.subheading6 }}</app-h2>
       <p>{{ textValue.p28 }}</p>
-      <ul class="list-disc pl-10 pt-2 pb-2">
+      <ul class="list-disc pt-2 pb-2 pl-10">
         <li
           v-for="(item, index) in textValue.ul8.li"
           :key="`guidelines-index-8-li-${index}`"

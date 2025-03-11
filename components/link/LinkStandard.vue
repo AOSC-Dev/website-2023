@@ -1,4 +1,5 @@
 <script setup lang="js">
+const route = useRoute();
 const props = defineProps({
   link: {
     type: Object,
@@ -7,6 +8,7 @@ const props = defineProps({
 });
 const linkTitle = getSpecifiedTitle(props.link);
 </script>
+
 <template>
   <app-link
     :to="

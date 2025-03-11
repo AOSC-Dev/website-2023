@@ -3,6 +3,7 @@
     "title": [""],
     "url": ""
   },
+  "aPeriod": "。",
   "barFooter": {
     "navigation": {
       "websiteSourceCode": {
@@ -14,6 +15,26 @@
         "url": "https://github.com/AOSC-Dev/website-2023/issues"
       }
     }
+  },
+  "AOSCPackages": {
+    "title": ["查询软件包信息"],
+    "url": "https://packages.aosc.io/"
+  },
+  "asahiLinux": {
+    "title": ["Asahi Linux 官方文档"],
+    "url": "https://asahilinux.org/docs/"
+  },
+  "balenaEtcher": {
+    "title": ["balenaEtcher"],
+    "url": "https://etcher.balena.io/"
+  },
+  "AOSCOSLauncher": {
+    "title": ["GitHub Releases（无须使用 Microsoft Store）"],
+    "url": "https://github.com/AOSC-Dev/AOSCOSLauncher/releases/latest"
+  },
+  "usbimager": {
+    "title": ["usbimager"],
+    "url": "https://gitlab.com/bztsrc/usbimager"
   },
   "crowdfundingProjectRecord": {
     "title": ["众筹项目记录"],
@@ -67,6 +88,10 @@
     "title": ["加入聊天室"],
     "url": "https://matrix.to/#/%23offtopic:matrix.aosc.io"
   },
+  "asahiRequirements": {
+    "title": ["配置需求"],
+    "url": "https://asahilinux.org/docs/Feature-Support/"
+  },
   "local": {
     "download": {
       "title": ["系统下载", "下载 oma"],
@@ -83,6 +108,10 @@
       "url": "/aosc-os/relnote",
       "hash": ["#issuance-note"]
     },
+    "aoscRelnoteAsahi": {
+      "title": ["发行注记"],
+      "url": "/aosc-os/relnote/asahi"
+    },
     "aoscLivekitRelnote": {
       "title": ["发行注记"],
       "url": "/aosc-os/livekit/relnote"
@@ -96,7 +125,7 @@
       "url": "/aosc-os/wsl/relnote"
     },
     "aoscWslRequirements": {
-      "title": ["配置需求"],
+      "title": ["配置需求", "WSL 版安同 OS 系统配置需求表"],
       "url": "/aosc-os/wsl/requirements"
     },
     "aoscRequirements": {
@@ -119,7 +148,12 @@
       "hash": ["#issuance-note"]
     },
     "afterglowRequirements": {
-      "title": ["系统配置需求", "系统配置需求表"],
+      "title": [
+        "系统配置需求",
+        "系统配置需求表",
+        "配置需求",
+        "星霞 OS 系统需求配置表"
+      ],
       "url": "/afterglow/requirements",
       "hash": ["#afterlowRequirementsTitle"]
     },
@@ -127,29 +161,24 @@
       "title": ["架构支持规格表"],
       "url": "/afterglow/isa"
     },
-    "afterlowRequirementsTitle": {
-      "title": ["星霞 OS 系统需求配置表"],
-      "url": "/afterglow/requirements#afterlowRequirementsTitle"
-    },
     "afterlowIsaTitle": {
       "title": ["星霞 OS 架构支持规格表"],
       "url": "/afterglow/isa",
       "hash": ["#afterlowIsaTitle"]
     },
-    "about": { "title": ["关于社区"], "url": "/about" },
-    "contact": {
-      "title": ["各聊天群组", "联系方式"],
-      "url": "/contact"
+    "about": {
+      "title": ["关于社区"],
+      "url": "/about"
     },
-    "contactMain": {
-      "title": ["报告系统使用问题"],
-      "url": "/contact#main"
+    "contact": {
+      "title": ["各聊天群组", "联系方式", "社区聊天群组", "报告系统使用问题"],
+      "url": "/contact",
+      "hash": ["#main"]
     },
     "home": {
       "title": ["社区门户", "返回主页"],
       "url": "/"
     },
-
     "aoscOs": {
       "title": ["安同 OS"],
       "url": "/aosc-os"
@@ -171,7 +200,7 @@
       "url": "/l10n"
     },
     "news": {
-      "title": ["新闻资讯"],
+      "title": ["新闻资讯", "查阅最新社区资讯"],
       "url": "/news"
     },
     "gallery": {
@@ -209,7 +238,13 @@
       "url": "/crowdsourcing"
     },
     "guidelines": {
-      "title": ["人际关系准则", { "texts": ["人际关系准则"], "book": [0] }],
+      "title": [
+        "人际关系准则",
+        {
+          "texts": ["人际关系准则"],
+          "book": [0]
+        }
+      ],
       "url": "/guidelines"
     },
     "mascot": {
@@ -245,7 +280,10 @@
     "title": ["自动化设施"],
     "url": "https://buildit.aosc.io/"
   },
-  "forum": { "title": ["社区论坛"], "url": "https://bbs.aosc.io/" },
+  "forum": {
+    "title": ["社区论坛"],
+    "url": "https://bbs.aosc.io/"
+  },
   "QQtexture": {
     "title": ["QQ 表情包"],
     "url": "https://zb.vip.qq.com/hybrid/emoticonmall/detail?id=239191"
@@ -517,21 +555,32 @@
     "url": "https://github.com/AOSC-Dev/aoscc/tree/master/2019/stickers"
   },
   "contributorConvention": {
-    "title": [{ "texts": ["贡献者公约"], "book": [0] }],
+    "title": [
+      {
+        "texts": ["贡献者公约"],
+        "book": [0]
+      }
+    ],
     "url": "https://www.contributor-covenant.org/version/1/4/code-of-conduct/"
   },
   "thisPageSupport": {
     "title": ["支持文档"],
     "hash": "#support"
   },
-  "thisPageFeatures": { "title": ["系统特性"], "hash": "#features" },
+  "thisPageFeatures": {
+    "title": ["系统特性"],
+    "hash": "#features"
+  },
   "weblate": {
     "title": ["社区 Weblate 平台"],
     "url": "https://weblate.aosc.io/"
   },
   "l10nWorkGuide": {
     "title": [
-      { "texts": ["大陆简中自由软件本地化工作指南", "1.5.4 版"], "book": [0] }
+      {
+        "texts": ["大陆简中自由软件本地化工作指南", "1.5.4 版"],
+        "book": [0]
+      }
     ],
     "url": "https://repo.aosc.io/aosc-l10n/zh_CN_l10n_1.5.4.pdf"
   },
@@ -558,7 +607,7 @@
     },
     "doc": {
       "oldAndNewWorlds": {
-        "title": ["关于“新世界”与“旧世界”"],
+        "title": ["关于 “新世界” 与 “旧世界”"],
         "url": "https://areweloongyet.com/docs/old-and-new-worlds/"
       },
       "faq": {

@@ -3,80 +3,105 @@
     "title": [""],
     "url": ""
   },
+  "aPeriod": "。",
   "barFooter": {
     "navigation": {
       "websiteSourceCode": {
-        "title": ["Web Source Code"],
+        "title": ["Web page source code"],
         "url": "https://github.com/AOSC-Dev/website-2023"
       },
       "websiteIssuse": {
-        "title": ["Report Content Issues"],
+        "title": ["Report content issues"],
         "url": "https://github.com/AOSC-Dev/website-2023/issues"
       }
     }
   },
+  "AOSCPackages": {
+    "title": ["Query package information"],
+    "url": "https://packages.aosc.io/"
+  },
+  "asahiLinux": {
+    "title": ["Asahi Linux official documentation"],
+    "url": "https://asahilinux.org/docs/"
+  },
+  "balenaEtcher": {
+    "title": ["balenaEtcher"],
+    "url": "https://etcher.balena.io/"
+  },
+  "AOSCOSLauncher": {
+    "title": ["GitHub Releases (no need to use the Microsoft Store)"],
+    "url": "https://github.com/AOSC-Dev/AOSCOSLauncher/releases/latest"
+  },
+  "usbimager": {
+    "title": ["usbimager"],
+    "url": "https://gitlab.com/bztsrc/usbimager"
+  },
   "crowdfundingProjectRecord": {
-    "title": ["Crowdfunding Project Records"],
+    "title": ["Crowdfunding project records"],
     "url": "https://wiki.aosc.io/community/crowdsourcing/"
   },
   "systemSecurityIssuse": {
-    "title": ["Report Security Vulnerabilities"],
+    "title": ["Report security vulnerabilities"],
     "url": "https://github.com/AOSC-Dev/aosc-os-abbs/issues/new?assignees=&labels=security&projects=&template=security-vulnerabilities-report.yml"
   },
   "howToMirror": {
-    "title": ["Mirror Source Support"],
+    "title": ["Mirror source support"],
     "url": "https://wiki.aosc.io/zh/developer/infrastructure/knowledge-base/00002-how-to-mirror/'"
   },
   "telegramMain": {
-    "title": ["Join Group"],
+    "title": ["Join the group"],
     "url": "https://t.me/aosc_main"
   },
   "telegramRetro": {
-    "title": ["Join Group"],
+    "title": ["Join the group"],
     "url": "https://t.me/aosc_retro"
   },
   "telegramTuosai": {
-    "title": ["Join Group"],
+    "title": ["Join the group"],
     "url": "https://t.me/aosc_tuosai"
   },
   "discord": {
-    "title": ["Join Chat Room"],
+    "title": ["Join the chat room"],
     "url": "https://discord.gg/VYPHgt9"
   },
   "ircMain": {
-    "title": ["Join Channel"],
+    "title": ["Join the channel"],
     "url": "irc://irc.libera.chat:6697/aosc"
   },
   "ircRetro": {
-    "title": ["Join Channel"],
+    "title": ["Join the channel"],
     "url": "irc://irc.libera.chat:6697/aosc-retro"
   },
   "ircTuosai": {
-    "title": ["Join Channel"],
+    "title": ["Join the channel"],
     "url": "irc://irc.libera.chat:6697/aosc-offtopic"
   },
   "MatrixMain": {
-    "title": ["Join Chat Room"],
+    "title": ["Join the chat room"],
     "url": "https://matrix.to/#/%23aosc:matrix.aosc.io"
   },
   "MatrixRetro": {
-    "title": ["Join Chat Room"],
+    "title": ["Join the chat room"],
     "url": "https://matrix.to/#/%23retro:matrix.aosc.io"
   },
   "MatrixTuosai": {
-    "title": ["Join Chat Room"],
+    "title": ["Join the chat room"],
     "url": "https://matrix.to/#/%23offtopic:matrix.aosc.io"
+  },
+  "asahiRequirements": {
+    "title": ["Configuration requirements"],
+    "url": "https://asahilinux.org/docs/Feature-Support/"
   },
   "local": {
     "download": {
-      "title": ["System Download", "Download oma"],
+      "title": ["System download", "Download oma"],
       "url": "/download",
       "hash": ["#aosc-os-download", "#afterglow-download", "#oma-download"]
     },
     "aoscIsaTableTitle": {
       "title": [
-        "Antong OS Architecture Support Specification",
-        "Architecture Support Specification"
+        "Antong OS architecture support specification sheet",
+        "Architecture Support Specification Table"
       ],
       "url": "/aosc-os/isa",
       "hash": ["#aoscOsIsaTableTitle"]
@@ -86,12 +111,16 @@
       "url": "/aosc-os/relnote",
       "hash": ["#issuance-note"]
     },
+    "aoscRelnoteAsahi": {
+      "title": ["Release Notes"],
+      "url": "/aosc-os/relnote/asahi"
+    },
     "aoscLivekitRelnote": {
       "title": ["Release Notes"],
       "url": "/aosc-os/livekit/relnote"
     },
     "aoscLivekitRequirements": {
-      "title": ["Configuration Requirements"],
+      "title": ["Configuration requirements"],
       "url": "/aosc-os/livekit/requirements"
     },
     "aoscWslRelnote": {
@@ -99,22 +128,25 @@
       "url": "/aosc-os/wsl/relnote"
     },
     "aoscWslRequirements": {
-      "title": ["Configuration Requirements"],
+      "title": [
+        "Configuration requirements",
+        "WSL version of Antong OS system configuration requirements table"
+      ],
       "url": "/aosc-os/wsl/requirements"
     },
     "aoscRequirements": {
       "title": [
-        "System Configuration Requirements",
-        "Antong OS System Requirements Specification",
-        "Configuration Requirements",
-        "System Configuration Requirements Table"
+        "System configuration requirements",
+        "Antong OS system requirements configuration table",
+        "Configuration requirements",
+        "System configuration requirements table"
       ],
       "url": "/aosc-os/requirements",
       "hash": ["#aoscOsRequirementsTitle"]
     },
     "aoscRightForMe": {
       "title": [
-        "Is Antong OS Right for Me?",
+        "Is Antong OS suitable for me?",
         "For details, please see: Is Antong OS suitable for me?"
       ],
       "url": "/aosc-os/right-for-me"
@@ -125,20 +157,21 @@
       "hash": ["#issuance-note"]
     },
     "afterglowRequirements": {
-      "title": ["System Configuration Requirements"],
+      "title": [
+        "System configuration requirements",
+        "System configuration requirements table",
+        "Configuration requirements",
+        "Xingxia OS system requirements configuration table"
+      ],
       "url": "/afterglow/requirements",
       "hash": ["#afterlowRequirementsTitle"]
     },
     "afterglowIsa": {
-      "title": ["Architecture Support Specification"],
+      "title": ["Architecture Support Specification Table"],
       "url": "/afterglow/isa"
     },
-    "afterlowRequirementsTitle": {
-      "title": ["Xingxia OS System Requirements Specification"],
-      "url": "/afterglow/requirements#afterlowRequirementsTitle"
-    },
     "afterlowIsaTitle": {
-      "title": ["Xingxia OS Architecture Support Specification"],
+      "title": ["Xingxia OS architecture support specification table"],
       "url": "/afterglow/isa",
       "hash": ["#afterlowIsaTitle"]
     },
@@ -147,15 +180,17 @@
       "url": "/about"
     },
     "contact": {
-      "title": ["Various Chat Groups", "Contact Information"],
-      "url": "/contact"
-    },
-    "contactMain": {
-      "title": ["Report System Usage Issues"],
-      "url": "/contact#main"
+      "title": [
+        "Chat groups",
+        "Contact information",
+        "Community Chat Group",
+        "Report system usage issues"
+      ],
+      "url": "/contact",
+      "hash": ["#main"]
     },
     "home": {
-      "title": ["Community Portal", "Return to Homepage"],
+      "title": ["Community Portal", "Return to home page"],
       "url": "/"
     },
     "aoscOs": {
@@ -168,59 +203,62 @@
     },
     "liblol": {
       "title": ["libLoL Compatibility Layer"],
-      "url": "/liblol"
+      "url": "/libl"
     },
     "oma": {
-      "title": ["Panda Package Management (oma)", "Detailed Introduction"],
+      "title": [
+        "Little Panda Package Management (oma)",
+        "Detailed introduction"
+      ],
       "url": "/oma"
     },
     "l10n": {
-      "title": ["Software Localization"],
+      "title": ["Software localization"],
       "url": "/l10n"
     },
     "news": {
-      "title": ["News and Information"],
+      "title": ["News", "Check out the latest community information"],
       "url": "/news"
     },
     "gallery": {
-      "title": ["Event Album"],
+      "title": ["Activity album"],
       "url": "/gallery"
     },
     "events": {
       "title": [
-        "Community Events",
-        "Check Recent Event Information",
+        "Community Activities",
+        "Check recent events information",
         "AOSCC: Community Annual Gathering",
         "Antong Campus Tour",
-        "Spring Festival Pancake Party",
-        "Other Events"
+        "Spring Festival pancake party",
+        "Other Activities"
       ],
       "url": "/events",
       "hash": ["#aoscc", "#campus", "#springcon", "#others"]
     },
     "internship": {
       "title": [
-        "Internship Resources",
-        "Check Recent Internship Opportunities and To-Do Projects",
-        "Hero Post: To-Do Projects",
-        "Internship Project: Open Source Summer"
+        "Internship resources",
+        "Check out recent internship opportunities and back-to-do projects",
+        "Hero post: To-do project",
+        "Internship project: Summer of Open Source"
       ],
       "url": "/internship",
       "hash": ["#todo", "#ospp"]
     },
     "sponsors": {
-      "title": ["Sponsor Overview"],
+      "title": ["Sponsors at a glance"],
       "url": "/sponsors"
     },
     "crowdsourcing": {
-      "title": ["Community Crowdfunding", "Sponsor Hardware or Services"],
+      "title": ["Community crowdfunding", "Sponsored hardware or services"],
       "url": "/crowdsourcing"
     },
     "guidelines": {
       "title": [
-        "Interpersonal Guidelines",
+        "Interpersonal relationship guidelines",
         {
-          "texts": ["Interpersonal Guidelines"],
+          "texts": ["Interpersonal relationship guidelines"],
           "book": [0]
         }
       ],
@@ -231,7 +269,7 @@
       "url": "/mascot"
     },
     "paste": {
-      "title": ["Public Clipboard", "Use Public Clipboard"],
+      "title": ["Public paste board", "Using a public clipboard"],
       "url": "/paste"
     }
   },
@@ -252,11 +290,11 @@
     "url": "https://mail20.mymailcheap.com/"
   },
   "buildbots": {
-    "title": ["Build Server"],
+    "title": ["Build a server"],
     "url": "https://wiki.aosc.io/developer/infrastructure/buildbots/"
   },
   "buildit": {
-    "title": ["Automation Facilities"],
+    "title": ["Automation facilities"],
     "url": "https://buildit.aosc.io/"
   },
   "forum": {
@@ -264,7 +302,7 @@
     "url": "https://bbs.aosc.io/"
   },
   "QQtexture": {
-    "title": ["QQ Sticker Pack"],
+    "title": ["QQ emoticon pack"],
     "url": "https://zb.vip.qq.com/hybrid/emoticonmall/detail?id=239191"
   },
   "Telegramtexture": {
@@ -272,15 +310,15 @@
     "url": "https://t.me/addstickers/AnAnTongTong"
   },
   "mascotsTexture": {
-    "title": ["Sticker Pack Materials"],
+    "title": ["Sticker pack material"],
     "url": "https://repo.aosc.io/mascots/zhaxia-stickers-v1.zip"
   },
   "antongMascotsSetDraft": {
-    "title": ["download Set draft"],
+    "title": ["Download the settings"],
     "url": "https://repo.aosc.io/mascots/mascots.zip"
   },
   "fumoMascotsSetDraft": {
-    "title": ["download Set draft"],
+    "title": ["Download the settings"],
     "url": "https://repo.aosc.io/mascots/fumo.zip"
   },
   "tysontan": {
@@ -292,7 +330,7 @@
     "url": "https://figuramc.org/"
   },
   "ananMcFigura": {
-    "title": ["Download Character Model"],
+    "title": ["Download the character model"],
     "url": "https://github.com/OvOla2/AnAn-Figura-avatar"
   },
   "mailtoTysontan": {
@@ -300,18 +338,18 @@
     "url": "mailto:tysontan@tysontan.com"
   },
   "tomatoScrambledEggsHuaJia": {
-    "title": ["huajia"],
+    "title": ["Drawing plus"],
     "url": "https://huajia.163.com/main/profile/LBpmxjyE"
   },
   "tomatoScrambledEggsGoofish": {
-    "title": ["goofish"],
+    "title": ["Living fish"],
     "url": "https://m.tb.cn/h.TegyiGv?tk=zBfT3w1AVmz"
   },
   "omaSourceGithub": {
     "title": [
       "Code Repository",
-      "Panda Package Management (oma)",
-      "Source Code"
+      "Little Panda Package Management (oma)",
+      "source code"
     ],
     "url": "https://github.com/AOSC-Dev/oma"
   },
@@ -329,7 +367,7 @@
       "globalsign": {
         "title": ["GlobalSign"],
         "url": "https://www.globalsign.com/",
-        "img": "globalsign"
+        "img": "Globalsign"
       },
       "loongson": {
         "title": ["Loongson Zhongke (Wuhan) Technology Co., Ltd."],
@@ -339,13 +377,13 @@
       "microsoft": {
         "title": ["Microsoft Open Source"],
         "url": "https://opensource.microsoft.com/",
-        "img": "microsoft"
+        "img": "Microsoft"
       }
     },
     "imageSource": {
       "bfsu": {
         "title": [
-          "Beijing Foreign Studies University Open Source Software Mirror Site"
+          "Beijing Foreign Studies University Open Source Software Mirror Station"
         ],
         "url": "https://mirrors.bfsu.edu.cn/",
         "img": "bfsu"
@@ -370,7 +408,7 @@
         "img": "hit-lug"
       },
       "nluug": {
-        "title": ["Dutch Local Unix User Group (NLUUG)"],
+        "title": ["Netherlands Local Unix User Group (NLUUG)"],
         "url": "https://nluug.nl/",
         "img": "nluug"
       },
@@ -404,7 +442,7 @@
       "tuna": {
         "title": ["Tsinghua University TUNA Association"],
         "url": "https://tuna.moe/",
-        "img": "tuna"
+        "img": "Tuna"
       },
       "qvq": {
         "title": ["QVQNetwork"],
@@ -413,13 +451,13 @@
       },
       "sdu": {
         "title": [
-          "Shandong University (Qingdao) Network Management Team Mirror Site Student Operations Team"
+          "Student Operation Team of Shandong University (Qingdao) Network Management Association Mirror Station"
         ],
         "url": "https://mirrors.sdu.edu.cn/",
         "img": "sdu"
       },
       "sjtu": {
-        "title": ["Shanghai Jiao Tong University Linux User Group"],
+        "title": ["Shanghai Jiaotong University Linux User Group"],
         "url": "https://mirror.sjtu.edu.cn/",
         "img": "sjtug"
       },
@@ -464,7 +502,7 @@
       "codeweavers": {
         "title": ["CodeWeavers"],
         "url": "https://www.codeweavers.com/",
-        "img": "crossover"
+        "img": "Crossover"
       },
       "jetbrains": {
         "title": ["JetBrains"],
@@ -486,7 +524,7 @@
       "ossplanet": {
         "title": ["OSSPlanet"],
         "url": "https://ossplanet.net/",
-        "img": "ossplanet"
+        "img": "osplanet"
       },
       "qingcloud": {
         "title": ["QingCloud"],
@@ -534,15 +572,15 @@
     "url": "https://dictionary.cambridge.org/dictionary/english/community"
   },
   "AOSCWiki": {
-    "title": ["AOSC Wiki", "Reference document (Wiki)"],
-    "url": "https://wiki.aosc.io/"
+    "title": ["AOSC Wiki", "Reference Documents (Wiki)"],
+    "url": "https://wiki.aosc.io/zh"
   },
   "GitHub": {
     "title": ["GitHub Organization", "Code Repository"],
     "url": "https://github.com/AOSC-Dev/"
   },
   "aoscReceptionPoint": {
-    "title": ["AOSC Chin Rest Group and Hospitality Point"],
+    "title": ["AOSC Chime Holding Group and Hospitality Site"],
     "url": "https://t.me/joinchat/BMnG9zvfjCgZUTIAoycKkg"
   },
   "AOSCPastebin": {
@@ -556,14 +594,14 @@
   "contributorConvention": {
     "title": [
       {
-        "texts": ["Contributor Covenant"],
+        "texts": ["Contributors Convention"],
         "book": [0]
       }
     ],
     "url": "https://www.contributor-covenant.org/version/1/4/code-of-conduct/"
   },
   "thisPageSupport": {
-    "title": ["Support Documents"],
+    "title": ["Support documentation"],
     "hash": "#support"
   },
   "thisPageFeatures": {
@@ -578,7 +616,7 @@
     "title": [
       {
         "texts": [
-          "Mainland Simplified Chinese Free Software Localization Work Guide",
+          "Guide to localization of free software in mainland China",
           "Version 1.5.4"
         ],
         "book": [0]
@@ -600,7 +638,7 @@
       "url": "https://liblol.aosc.io/docs/apps/"
     },
     "sourceHomepage": {
-      "title": ["Project Homepage", "libLoL"],
+      "title": ["Project Home Page", "libLoL"],
       "url": "https://liblol.aosc.io/"
     },
     "usage": {
@@ -609,23 +647,23 @@
     },
     "doc": {
       "oldAndNewWorlds": {
-        "title": ["About 'New World' and 'Old World'"],
+        "title": ["About \"New World\" and \"Old World\""],
         "url": "https://areweloongyet.com/docs/old-and-new-worlds/"
       },
       "faq": {
-        "title": ["Frequently Asked Questions"],
+        "title": ["FAQ"],
         "url": "https://liblol.aosc.io/docs/faq/"
       },
       "changelog": {
-        "title": ["Changelog"],
+        "title": ["Update log"],
         "url": "https://liblol.aosc.io/docs/dev/changelog/"
       },
       "packaging": {
-        "title": ["Packaging Notes"],
+        "title": ["Packaging precautions"],
         "url": "https://liblol.aosc.io/docs/dev/packaging/"
       },
       "design": {
-        "title": ["Implementation Principles"],
+        "title": ["Implementation principle"],
         "url": "https://liblol.aosc.io/docs/dev/design/"
       }
     }

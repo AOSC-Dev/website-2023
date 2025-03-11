@@ -23,21 +23,7 @@ const switchHash = () => {
       break;
   }
 };
-const highBrightnessControllerStore = useHighBrightnessControllerStore();
-watch(
-  () => highBrightnessControllerStore.obj[route.path.replace(/\/+$/, '')],
-  () => {
-    switchHash();
-  },
-  {
-    flush: 'post'
-  }
-);
-
-onMounted(() => {
-  switchHash();
-});
-
+useHighlightWatch(switchHash);
 const docList = [
   localLink.aoscRightForMe,
   useHIndex(useTIndex(localLink.aoscRequirements, 3), 0),
@@ -56,7 +42,7 @@ const docList = [
         <AccordionNavigation :navigation-list="navigationList" />
       </div>
       <div ref="bgImg" class="h-649.12">
-        <img src="/aosc-os/aosc-os.jpg" class="w-full h-auto mt-2" alt="" />
+        <img src="/aosc-os/aosc-os.jpg" class="mt-2 h-auto w-full" alt="" />
       </div>
     </div>
 

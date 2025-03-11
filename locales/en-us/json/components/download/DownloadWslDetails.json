@@ -1,0 +1,12 @@
+{
+  "title1": "Download WSL version of Antong OS",
+  "text2": "To meet the love and needs of different users, we also provide the following ways to install or download the WSL version of Antong OS (AOSC OS on WSL):",
+  "text4": "WSL one-click package (stay tuned)",
+  "title2": "System requirements",
+  "text6": "The WSL version of Antong OS (AOSC OS on WSL) can be used for devices running Windows. The basic system requirements are similar to Antong OS. However, since it relies on technical architectures such as WSL and WSLg, there are certain requirements for Windows system component versions, in addition to device processors, graphics cards, storage and Internet connections.",
+  "text7": "For details of specific requirements, please refer to",
+  "text8": "WSL version of Antong OS system configuration requirements table",
+  "title3": "Help and support",
+  "text11": "If you have problems installing or using the OS, please",
+  "text13": "Contact us."
+}

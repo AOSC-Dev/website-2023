@@ -1,22 +1,27 @@
 <script setup>
+const { tm, locale } = useI18n();
+const textValue = tm('NewsCategoryList');
+
+console.log(textValue.defaultText);
+
 const props = defineProps({
   newsList: {
-    type: Array
+    type: [Array, undefined, null]
   }
 });
 </script>
 
 <template>
   <div>
-    <div v-if="props.newsList == undefined || props.newsList.length == 0">
-      暂无数据
+    <div v-if="!props.newsList || props.newsList.length === 0">
+      {{ textValue.defaultText }}
     </div>
     <div v-else class="flex flex-col">
       <div v-for="item in newsList" :key="item.title" class="newslist-item">
         <NuxtLinkLocale
           :to="'/news/' + item.Path.replace(/.md$/, '')"
-          class="hover:bg-leftbar-bg flex cursor-pointer pl-6 h-[2rem] leading-8">
-          <span class="truncate flex-1">
+          class="flex h-[2rem] cursor-pointer pl-6 leading-8 hover:bg-leftbar-bg">
+          <span class="flex-1 truncate">
             {{ item.Title }}
           </span>
           <span class="pr-6">[{{ item.Date }}]</span>

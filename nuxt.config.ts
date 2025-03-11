@@ -1,16 +1,18 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import tailwindcss from '@tailwindcss/vite';
+
 export default defineNuxtConfig({
-  compatibilityDate: '2024-04-03',
-  devtools: { enabled: true },
+  extends: '@nuxt-themes/docus',
   modules: [
     '@element-plus/nuxt',
     '@pinia/nuxt',
     '@nuxt/content',
     '@nuxt/eslint',
     'nuxt-monaco-editor',
-    '@nuxtjs/i18n'
+    '@nuxtjs/i18n',
+    '@nuxt/icon'
   ],
+  devtools: { enabled: true },
   css: ['~/assets/css/main.css', '~/assets/index.scss'],
   content: {
     documentDriven: false,
@@ -21,6 +23,19 @@ export default defineNuxtConfig({
         default: 'github-light',
         // Theme used if `html.dark`
         sepia: 'monokai'
+      }
+    }
+  },
+  compatibilityDate: '2024-04-03',
+  vite: {
+    plugins: [tailwindcss()],
+    server: {
+      proxy: {
+        '/pasteApi': {
+          target: 'http://localhost:46203',
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/pasteApi/, '')
+        }
       }
     }
   },
@@ -43,19 +58,6 @@ export default defineNuxtConfig({
       useCookie: true,
       cookieKey: 'i18n_redirected',
       redirectOn: 'root'
-    }
-  },
-  extends: '@nuxt-themes/docus',
-  vite: {
-    plugins: [tailwindcss()],
-    server: {
-      proxy: {
-        '/pasteApi': {
-          target: 'http://localhost:46203',
-          changeOrigin: true,
-          rewrite: (path) => path.replace(/^\/pasteApi/, '')
-        }
-      }
     }
   }
 });

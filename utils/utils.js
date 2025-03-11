@@ -103,36 +103,6 @@ export const BToMB = (byteSize, fixed = 3) => {
   return (byteSize / 1024 / 1024).toFixed(fixed);
 };
 
-export const deObserver = (observers) => {
-  if (Array.isArray(observers)) {
-    observers.forEach((observer) => {
-      observer.disconnect();
-    });
-  } else if (observers) {
-    observers.disconnect();
-  }
-};
-
-export const imgPreOccupiedSpace = (
-  anchorImg,
-  imgHeight,
-  proportion,
-  fixedHeight
-) => {
-  const observer = new ResizeObserver(() => {
-    imgHeight.value = fixedHeight
-      ? fixedHeight
-      : (anchorImg.value.clientWidth / proportion).toFixed(2) + 'px';
-  });
-  observer.observe(anchorImg.value);
-  return observer;
-};
-
-export const onImgLoad = (observers, imgHeight) => {
-  deObserver(toValue(observers));
-  imgHeight.value = 'auto';
-};
-
 export const copyToClipboard = (text) => {
   navigator.clipboard
     .writeText(text)
@@ -144,51 +114,40 @@ export const copyToClipboard = (text) => {
     });
 };
 
-export const useSeizeSeat = (refName, proportion, imgHeights, fixedHeight) => {
-  const newHeights = ref(0);
-  if (imgHeights !== undefined) {
-    imgHeights.value.push(newHeights);
-  } else {
-    imgHeights = shallowRef([newHeights]);
+export const setNestedKeyValue = (objects, strings, keyPath) => {
+  // 确保对象数组和字符串数组的长度相同
+  if (objects.length !== strings.length) {
+    console.error('对象数组和字符串数组长度不匹配');
+    return;
   }
-  const img = useTemplateRef(refName);
 
-  // 此处异步执行，如果不使用ref包裹返回的observer为null
-  let observer = ref();
+  // 将 keyPath 转换为数组形式（如果传的是字符串）
+  if (typeof keyPath === 'string') {
+    keyPath = keyPath.split('.');
+  }
 
-  onMounted(() => {
-    observer.value = imgPreOccupiedSpace(
-      img,
-      newHeights,
-      proportion,
-      fixedHeight
-    );
+  // 遍历对象数组，按指定的路径添加或修改值
+  objects.forEach((obj, index) => {
+    // 使用递归设置嵌套的键值
+    setValueByPath(obj, keyPath, strings[index]);
   });
 
-  onUnmounted(() => {
-    // 在组件销毁前取消观察
-    deObserver(observer.value);
-  });
-  return [observer, imgHeights];
+  return objects;
 };
 
-export const mergedObjectArrays = (array1, array2) => {
-  return array1.map((item, index) => {
-    return { ...item, ...array2[index] };
-  });
-};
-
-export const expandObjectArray = (arrObjects, arrValues, key) => {
-  // 确保两个数组的长度相同
-  if (arrObjects.length !== arrValues.length) {
-    throw new Error('数组长度不匹配');
-  }
-  // 遍历对象数组和普通数组，合并指定的 key
-  return arrObjects.map((obj, index) => {
-    // 使用指定的 key 为每个对象添加值
-    obj[key] = arrValues[index];
-    return obj;
-  });
+const setValueByPath = (obj, path, value) => {
+  // 遍历路径中的每一层，逐层创建
+  path.reduce((acc, key, i) => {
+    if (i === path.length - 1) {
+      acc[key] = value; // 设置最终的键值
+    } else {
+      // 如果对象的键不存在，则创建该键并赋值为对象
+      if (!acc[key]) {
+        acc[key] = {};
+      }
+    }
+    return acc[key];
+  }, obj);
 };
 
 export const getSpecifiedTitle = (linkItem) => {
@@ -205,4 +164,21 @@ export const useTIndex = (linkItem, tIndex) => {
 // hash index
 export const useHIndex = (linkItem, hIndex) => {
   return { ...linkItem, hIndex };
+};
+
+export const useHighlightWatch = (switchHash) => {
+  const highBrightnessControllerStore = useHighBrightnessControllerStore();
+  const route = useRoute();
+  watch(
+    () => highBrightnessControllerStore.obj[route.path.replace(/\/+$/, '')],
+    () => {
+      switchHash();
+    },
+    {
+      flush: 'post'
+    }
+  );
+  onMounted(() => {
+    switchHash();
+  });
 };

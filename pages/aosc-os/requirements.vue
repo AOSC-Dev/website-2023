@@ -16,19 +16,7 @@ const switchHash = () => {
       break;
   }
 };
-onMounted(() => {
-  switchHash();
-});
-const highBrightnessControllerStore = useHighBrightnessControllerStore();
-watch(
-  () => highBrightnessControllerStore.obj[route.path.replace(/\/+$/, '')],
-  () => {
-    switchHash();
-  },
-  {
-    flush: 'post'
-  }
-);
+useHighlightWatch(switchHash);
 const aoscOsRequirementsRef = useTemplateRef('aoscOsRequirementsList');
 </script>
 

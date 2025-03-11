@@ -30,7 +30,7 @@ if (import.meta.client) {
     if (results.value.code != 0) {
       failReason.value = results.value.message;
     } else {
-      //此处是正常返回值
+      // 此处是正常返回值
       details.value = results.value.data;
     }
   } else {

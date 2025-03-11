@@ -18,6 +18,7 @@ const props = defineProps({
   }
 });
 </script>
+
 <template>
   <ul :class="props.class">
     <li

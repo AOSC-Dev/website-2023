@@ -13,7 +13,7 @@
 
 export const highlightElement = (dom: Ref<HTMLDivElement>) => {
   if (isRef(dom)) {
-   if (dom.value) {
+    if (dom.value) {
       dom.value.animate({ opacity: [1, 0.3, 1] }, 1500);
     } else {
       console.log('dom不存在');
@@ -22,3 +22,4 @@ export const highlightElement = (dom: Ref<HTMLDivElement>) => {
 };
 
 export default highlightElement;
+  

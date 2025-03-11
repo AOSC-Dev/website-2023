@@ -16,20 +16,7 @@ const switchHash = () => {
 };
 
 const aoscOsRequirementsRef = useTemplateRef('aoscOsRequirementsList');
-const highBrightnessControllerStore = useHighBrightnessControllerStore();
-watch(
-  () => highBrightnessControllerStore.obj[route.path.replace(/\/+$/, '')],
-  () => {
-    switchHash();
-  },
-  {
-    flush: 'post'
-  }
-);
-
-onMounted(() => {
-  switchHash();
-});
+useHighlightWatch(switchHash);
 </script>
 
 <template>
@@ -39,7 +26,7 @@ onMounted(() => {
       <p>
         {{ textValue.p1 }}
       </p>
-      <table class="mt-6 mb-1.5rem" ref="aoscOsRequirementsList">
+      <table ref="aoscOsRequirementsList" class="mb-1.5rem mt-6">
         <caption class="text-[12pt] font-semibold">
           {{ textValue.table1.caption }}
         </caption>
@@ -92,7 +79,7 @@ onMounted(() => {
     </div>
 
     <category-second id="support" :title="textValue.title2" />
-    <div class="pt-4 pb-4 px-16">
+    <div class="px-16 pt-4 pb-4">
       <ul class="list-disc">
         <li
           v-for="(item, index) in textValue.ul1.li"

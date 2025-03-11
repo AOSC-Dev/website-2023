@@ -21,20 +21,7 @@ const switchHash = () => {
       break;
   }
 };
-const highBrightnessControllerStore = useHighBrightnessControllerStore();
-watch(
-  () => highBrightnessControllerStore.obj[route.path.replace(/\/+$/, '')],
-  () => {
-    switchHash();
-  },
-  {
-    flush: 'post'
-  }
-);
-
-onMounted(() => {
-  switchHash();
-});
+useHighlightWatch(switchHash);
 
 const summerOfOpenSource = textValue.summerOfOpenSource.map((obj) => {
   obj.url = linkValue.summerOspp.url + obj.url;
@@ -63,7 +50,7 @@ const summerOfOpenSource = textValue.summerOfOpenSource.map((obj) => {
         <link-standard :link="linkValue.local.contact" />
         {{ textValue.p2 }}
       </p>
-      <div class="pt-4 pb-4 px-16">
+      <div class="px-16 pt-4 pb-4">
         <ul class="list-disc">
           <li
             v-for="(item, index) in textValue.ul1.li"
@@ -80,7 +67,7 @@ const summerOfOpenSource = textValue.summerOfOpenSource.map((obj) => {
       <p>
         {{ textValue.p3 }}
       </p>
-      <div class="pt-4 pb-4 px-16">
+      <div class="px-16 pt-4 pb-4">
         <ul class="list-disc">
           <li
             v-for="(item, index) in textValue.ul2.li"

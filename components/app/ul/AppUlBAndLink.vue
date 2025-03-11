@@ -14,6 +14,7 @@ const props = defineProps({
   }
 });
 </script>
+
 <template>
   <ul :class="props.class">
     <li v-for="(item, index) in lis" :key="`${myKey}-li-${index}`"

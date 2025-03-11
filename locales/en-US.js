@@ -21,9 +21,25 @@ import contact from './en-us/json/page/contact.json';
 import crowdsourcing from './en-us/json/page/crowdsourcing.json';
 import download from './en-us/json/page/download.json';
 import paste from './en-us/json/page/paste.json';
+import NewsCategoryList from './en-us/json/components/NewsCategoryList.json';
+import CopyButton from './en-us/json/components/copy/CopyButton.json';
+import DownloadButtonGroup from './en-us/json/components/download/DownloadButtonGroup.json';
+import DownloadWslDetails from './en-us/json/components/download/DownloadWslDetails.json';
+import DownloadButton from './en-us/json/components/download/DownloadButton.json';
+import DownloadDetails from './en-us/json/components/download/DownloadDetails.json';
+import DownloadDetailsAppleSiliconInstruction from './en-us/json/components/download/DownloadDetailsAppleSiliconInstruction.json';
+import DownloadDetailsMain from './en-us/json/components/download/DownloadDetailsMain.json';
 
 export default {
+  DownloadButtonGroup,
+  DownloadButton,
+  DownloadDetails,
+  DownloadDetailsAppleSiliconInstruction,
+  DownloadWslDetails,
+  DownloadDetailsMain,
   allUniversalLink,
+  CopyButton,
+  NewsCategoryList,
   AppSupport,
   sponsors,
   mascot,

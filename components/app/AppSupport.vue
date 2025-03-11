@@ -17,26 +17,14 @@ const switchHash = () => {
       break;
   }
 };
-const highBrightnessControllerStore = useHighBrightnessControllerStore();
-watch(
-  () => highBrightnessControllerStore.obj[route.path.replace(/\/+$/, '')],
-  () => {
-    switchHash();
-  },
-  {
-    flush: 'post'
-  }
-);
-
-onMounted(() => {
-  switchHash();
-});
+useHighlightWatch(switchHash);
 
 const supportRef = useTemplateRef('support');
 </script>
+
 <template>
   <CategorySecond id="support" :title="textValue.title1" />
-  <div ref="support" class="pt-4 pb-[60px] px-16">
+  <div ref="support" class="px-16 pt-4 pb-[60px]">
     <ul class="list-disc">
       <li
         v-for="(item, index) in navigationList"

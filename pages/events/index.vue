@@ -25,20 +25,8 @@ const switchHash = () => {
       break;
   }
 };
-const highBrightnessControllerStore = useHighBrightnessControllerStore();
-watch(
-  () => highBrightnessControllerStore.obj[route.path.replace(/\/+$/, '')],
-  () => {
-    switchHash();
-  },
-  {
-    flush: 'post'
-  }
-);
+useHighlightWatch(switchHash);
 
-onMounted(() => {
-  switchHash();
-});
 
 const evelink = localLink.events;
 const navigationList = [

@@ -13,20 +13,7 @@ const switchHash = () => {
   }
 };
 const route = useRoute();
-const highBrightnessControllerStore = useHighBrightnessControllerStore();
-watch(
-  () => highBrightnessControllerStore.obj[route.path.replace(/\/+$/, '')],
-  () => {
-    switchHash();
-  },
-  {
-    flush: 'post'
-  }
-);
-
-onMounted(() => {
-  switchHash();
-});
+useHighlightWatch(switchHash);
 
 const mainGroup = textValue.mainGroup;
 const mainGroupLinks = [

@@ -22,24 +22,18 @@ onMounted(() => {
   });
 });
 </script>
+
 <template>
   <NuxtLayout>
-    <div ref="mainBody" class="flex-1 pl-[1px]"><NuxtPage /> </div
+    <div ref="mainBody" class="element-plus-theme flex-1 pl-[1px]"
+      ><NuxtPage /> </div
   ></NuxtLayout>
 </template>
+
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+.element-plus-theme {
+  --el-color-primary: var(--primary);
+  --el-border-radius-base: 0;
+  --el-popover-border-radius: 0;
 }
 </style>

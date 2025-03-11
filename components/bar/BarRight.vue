@@ -7,7 +7,10 @@ const localLink = linkValue.local;
 const distroList = [
   {
     img: '/distros/aosc-os.svg',
-    links: [useHIndex(localLink.download, 0), useHIndex(localLink.aoscRelnote,0)],
+    links: [
+      useHIndex(localLink.download, 0),
+      useHIndex(localLink.aoscRelnote, 0)
+    ],
     description: textValue.description1,
     title: textValue.title3
   },
@@ -20,8 +23,9 @@ const distroList = [
 ];
 
 const commonLinkList = [
-  localLink.contactMain,
+  useTIndex(useHIndex(localLink.contact, 0), 3),
   useTIndex(localLink.paste, 1),
+  useTIndex(linkValue.AOSCPackages),
   useTIndex(localLink.events, 1),
   useTIndex(localLink.internship, 1),
   linkValue.systemSecurityIssuse,
@@ -31,28 +35,28 @@ const commonLinkList = [
 </script>
 
 <template>
-  <div class="w-[37.5%] flex flex-col">
+  <div class="flex w-[37.5%] flex-col">
     <AppLink to="/aosc-os/right-for-me">
       <img
         src="/jumbotron/minor1.svg"
-        class="w-full imgScale1 cursor-pointer" />
+        class="imgScale1 w-full cursor-pointer" />
     </AppLink>
     <AppLink to="https://bbs.aosc.io/">
       <img
         src="/jumbotron/minor2.svg"
-        class="w-full imgScale1 cursor-pointer" />
+        class="imgScale1 w-full cursor-pointer" />
     </AppLink>
-    <div class="flex flex-col grow">
+    <div class="flex grow flex-col">
       <CategorySecond
         :title="textValue.title1"
         class="border-l border-solid border-content-main-bg" />
       <article
-        class="pt-[1em] pb-[0.5em] pl-[1em] border-l theme-border-secondary">
+        class="theme-border-secondary border-l pt-[1em] pb-[0.5em] pl-[1em]">
         <div
           v-for="(item, index) in distroList"
           :key="`BarRight-1-div-${index}`"
           class="flex items-center pb-[15px]">
-          <div class="basis-[50px] mr-[20px] ml-[0.5em]">
+          <div class="mr-[20px] ml-[0.5em] basis-[50px]">
             <img :src="item.img" alt="" class="w-full" />
           </div>
           <div class="flex-1 p-0">
@@ -64,7 +68,7 @@ const commonLinkList = [
             </div>
             <div class="text-[12pt]">
               <link-standard
-                class="text-link mr-[0.5rem]"
+                class="mr-[0.5rem] text-link"
                 :link="item.links[0]" />
               <link-standard :link="item.links[1]" />
             </div>
@@ -72,15 +76,12 @@ const commonLinkList = [
         </div>
       </article>
       <CategorySecond :title="textValue.title2" />
-      <div class="border-l theme-border-secondary flex flex-col grow">
-        <app-link
+      <div class="theme-border-secondary flex grow flex-col border-l">
+        <link-standard
           v-for="(item, index) in commonLinkList"
           :key="`BarRight-1-link-${index}`"
-          :to="item.hIndex ? `${item.url}${item.hash[item.hIndex]}` : item.url"
-          class="hover:bg-leftbar-bg cursor-pointer flex flex-row justify-between items-center px-[1rem] h-[2rem] odd:bg-[#fefaf6] bg-white">
-          <span>{{ getSpecifiedTitle(item) }}</span>
-          <!-- <v-icon name="hi-solid-external-link" /> -->
-        </app-link>
+          class="flex h-[2rem] cursor-pointer flex-row items-center justify-between bg-white px-[1rem] odd:bg-[#fefaf6] hover:bg-leftbar-bg"
+          :link="item" />
       </div>
     </div>
   </div>

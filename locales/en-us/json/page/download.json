@@ -1,5 +1,15 @@
 {
   "index": {
+    "archGroupInfo": {
+      "first": {
+        "name": "Level 1 architecture",
+        "description": "\"Level 1 architecture\" is the type of target architecture with the highest level of support. All kinds of updates are timely and have complete characteristics. They are also the most concerned by maintainers and sufficient testing equipment."
+      },
+      "second": {
+        "name": "Level 2 architecture",
+        "description": "The \"Level 2 architecture\" functions are relatively complete, but due to the scarce number of equipment, generally poor performance or insufficient attention from maintainers, although security updates will be responded to in a timely manner, other types of updates, tests and feedback may be slightly inferior to those of the first-level architecture."
+      }
+    },
     "antong1TextList": {
       "lable": ["x86-64", "AArch64", "LoongArch"],
       "conten": [

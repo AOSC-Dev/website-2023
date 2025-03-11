@@ -1,6 +1,14 @@
 <script setup lang="js">
 const themeStore = useThemeStore();
+onMounted(() => {
+  document.documentElement.style.setProperty('--primary', themeStore.primary);
+  document.documentElement.style.setProperty(
+    '--secondary',
+    themeStore.secondary
+  );
+});
 </script>
+
 <template>
   <div
     :style="{
@@ -8,14 +16,14 @@ const themeStore = useThemeStore();
       '--secondary': themeStore.secondary,
       backgroundImage: `url(/backgrounds/${themeStore.backageImg})`
     }">
-    <div class="min-w-[960px] min-h-[100vh]">
-      <div class="p-0 my-0 min-h-[100vh] flex flex-col">
+    <div class="min-h-[100vh] min-w-[960px]">
+      <div class="my-0 flex min-h-[100vh] flex-col p-0">
         <BarHeader />
-        <div class="main-content flex pb-[2.5rem] flex-1 justify-center">
+        <div class="main-content flex flex-1 justify-center pb-[2.5rem]">
           <div class="content-container myShadow flex">
             <div
-              class="min-w-[12rem] w-[15%] *:text-nowrap sticky top-0 bg-leftbar-bg">
-              <BarLeft class="min-w-[100%] *:text-nowrap sticky top-0" />
+              class="sticky top-0 w-[15%] min-w-[12rem] bg-leftbar-bg *:text-nowrap">
+              <BarLeft class="sticky top-0 min-w-[100%] *:text-nowrap" />
             </div>
             <slot></slot>
           </div>
@@ -25,6 +33,7 @@ const themeStore = useThemeStore();
     </div>
   </div>
 </template>
+
 <style scoped>
 .logo {
   height: 6em;

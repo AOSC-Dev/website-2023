@@ -18,8 +18,8 @@ const { data: newsList } = await useFetch(
 <template>
   <div class="flex">
     <div class="w-[62.5%] bg-content-main-bg p-0">
-      <app-link to="/download#aosc-os-download" class="w-full flex">
-        <img class="w-full imgScale1" src="/jumbotron/main1.svg" />
+      <app-link to="/download#aosc-os-download" class="flex w-full">
+        <img class="imgScale1 w-full" src="/jumbotron/main1.svg" />
       </app-link>
       <!-- 资讯要点 -->
       <div>
@@ -27,11 +27,8 @@ const { data: newsList } = await useFetch(
         <article>
           <NewsCategoryList :news-list="newsList" />
           <div
-            class="text-right px-[15px] py-[10px] font-[12pt] leading-6 text-link">
-            <NuxtLinkLocale to="/news">
-              <span>{{ textValue.link1 }}</span>
-              <!-- <v-icon name="bi-chevron-double-right" /> -->
-            </NuxtLinkLocale>
+            class="px-[15px] py-[10px] text-right leading-6 font-[12pt] text-link">
+            <link-standard :link="useTIndex(localLink.news, 1)" />
           </div>
         </article>
       </div>
@@ -43,7 +40,7 @@ const { data: newsList } = await useFetch(
             v-for="(item, index) in textValue.columnTextList"
             :key="item.title"
             class="flex items-center pb-[15px]">
-            <div class="basis-[50px] mr-[20px] ml-[0.5em]">
+            <div class="mr-[20px] ml-[0.5em] basis-[50px]">
               <img :src="columnBorderlessList[index]" />
             </div>
             <div class="flex-1 p-0">
@@ -55,7 +52,7 @@ const { data: newsList } = await useFetch(
               </div>
             </div>
           </div>
-          <div class="text-right px-[15px] text-[12pt] leading-6">
+          <div class="px-[15px] text-right text-[12pt] leading-6">
             <link-standard :link="useTIndex(localLink.aoscRightForMe, 1)" />
           </div>
         </article>

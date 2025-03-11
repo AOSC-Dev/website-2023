@@ -51,9 +51,12 @@ $bg-secondary: #3f6075;
   border-color: var(--secondary);
 }
 
-p:not(:last-of-type) {
-  margin-bottom: 1.5rem;
+@layer utilities {
+  .container-p p:not(:last-of-type) {
+    margin-bottom: 1.5rem;
+  }
 }
+
 
 .theme-text-primary {
   color: var(--primary);
@@ -361,6 +364,7 @@ td {
     background-size: 100% 3px
   }
 }
+
 .language-menu {
   margin-top: -7px;
 }

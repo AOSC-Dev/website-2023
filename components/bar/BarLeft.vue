@@ -145,7 +145,7 @@ onMounted(() => {
     if (resule) {
       height = height + item.children.length * rowHeight;
       if (highlyIsQualified(height)) {
-        //记下可以展开，但先不展开，因为要给这个放到队列尾
+        // 记下可以展开，但先不展开，因为要给这个放到队列尾
         thisColumnIsShow = true;
       }
       thisTitle = item.title;
@@ -164,7 +164,7 @@ onMounted(() => {
       }
     }
   }
-  //剩余栏目展开完毕，展开当前所在栏目，此时屏幕缩小优先关闭其他栏目
+  // 剩余栏目展开完毕，展开当前所在栏目，此时屏幕缩小优先关闭其他栏目
   if (thisColumnIsShow) {
     openMenuList.add(thisTitle);
     menuRef.value.open(thisTitle);
