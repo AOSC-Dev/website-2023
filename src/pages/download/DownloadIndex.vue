@@ -486,7 +486,9 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
         </div>
 
         <el-dialog v-model="wslDialogState" width="80%">
-          <WslDetails />
+          <WslDetails
+            :sources="sources"
+          />
         </el-dialog>
 
         <ms-store-badge
