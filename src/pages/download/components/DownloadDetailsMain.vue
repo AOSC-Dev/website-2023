@@ -74,7 +74,7 @@ onMounted(() => {
     <p>我们推荐您在下载后校验相关文件的 SHA-256 校验和，详情如下：</p>
     <CopyCodeComponent :content="sha256sum" button-text="复制 SHA-256 校验和" />
 
-    <p>要制作{{ fileType }}，我们建议您使用启动盘制作向导。</p>
+    <p>如果您在使用 Windows 或 macOS，我们建议您从这里下载“AOSC 启动盘制作向导”用来制作{{ fileType }}：</p>
     <el-container class="flex-wrap">
       <AppLink
         v-for="info in mediaWritersInfo"
@@ -85,17 +85,11 @@ onMounted(() => {
         {{ info.name }}
       </AppLink>
     </el-container>
-    <p>
-      如果您在使用安同 OS，可从应用菜单直接启动“启动盘制作向导”工具制作{{
-        fileType
-      }}；如果您在使用其他 Linux 系统，建议使用
-      <AppLink to="https://etcher.balena.io/" target="_blank"
-        >balenaEtcher</AppLink
-      >
+    <p>如果您在使用安同 OS，可从应用菜单直接启动“启动盘制作向导”工具制作{{ fileType }}。</p>
+    <p>如果您在使用其他 Linux 系统，建议使用
+      <AppLink to="https://etcher.balena.io/" target="_blank">balenaEtcher</AppLink>
       或
-      <AppLink to="https://gitlab.com/bztsrc/usbimager" target="_blank"
-        >usbimager</AppLink
-      >
+      <AppLink to="https://gitlab.com/bztsrc/usbimager" target="_blank">usbimager</AppLink>
       工具制作{{ fileType }}。
     </p>
 
