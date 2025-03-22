@@ -65,14 +65,6 @@ const onClick = () => {
 };
 </script>
 
-<script>
-export default {
-  data() {
-    return { isVisible: false }
-  }
-}
-</script>
-
 <template>
   <div>
     <el-popover
@@ -80,11 +72,10 @@ export default {
       :placement="popoverData?.placement"
       :hide-after="0"
       trigger="hover"
-      :content="popoverData?.content"
-      ref="whatsThisArchPopup"
-      manual
-      v-model="isVisible">
-      <div @click="$refs.whatsThisArchPopup.hide()">{{ popoverData?.content }}</div>
+      ref="whatsThisArchPopup">
+      <div @click="$refs.whatsThisArchPopup.hide()">{{
+        popoverData?.content
+      }}</div>
       <template #reference>
         <button
           :disabled="disabled"
