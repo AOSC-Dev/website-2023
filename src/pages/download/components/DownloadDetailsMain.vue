@@ -74,7 +74,7 @@ onMounted(() => {
     <p>我们推荐您在下载后校验相关文件的 SHA-256 校验和，详情如下：</p>
     <CopyCodeComponent :content="sha256sum" button-text="复制 SHA-256 校验和" />
 
-    <p>如果您在使用 Windows 或 macOS，我们建议您从这里下载“AOSC 启动盘制作向导”用来制作{{ fileType }}：</p>
+    <p>如果您在使用 Windows 或 macOS，我们建议您下载“AOSC 启动盘制作向导”来制作{{ fileType }}：</p>
     <el-container class="flex-wrap">
       <AppLink
         v-for="info in mediaWritersInfo"
