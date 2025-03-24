@@ -4,7 +4,6 @@ categories:
 title: "【已解决】近期 Linux 固件更新可能导致 AMD 显卡驱动故障"
 date: 2025-01-23T16:44:00+08:00
 important: true
-home: true
 ---
 
 ![](/assets/news/amdgpu-fault-firmware-20250120.png)
