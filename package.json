@@ -10,6 +10,10 @@
     "postinstall": "nuxt prepare",
     "lint": "eslint ."
   },
+  "overrides": {
+    "@rollup/plugin-commonjs": "^28.0.3",
+    "@vercel/nft": "0.29.2"
+  },
   "dependencies": {
     "@element-plus/nuxt": "^1.0.10",
     "@mdi/font": "^7.4.47",
@@ -22,7 +26,6 @@
     "@tailwindcss/vite": "^4.0.9",
     "axios": "^1.7.7",
     "element-plus": "^2.8.4",
-    "eslit": "^6.0.0",
     "highlightjs": "^9.16.2",
     "mitt": "^3.0.1",
     "monaco-editor": "^0.52.0",

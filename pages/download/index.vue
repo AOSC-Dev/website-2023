@@ -396,8 +396,8 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
             :description="textValue.y2.x0.p2"
             small-title />
           <span
-            @click="wslDialogState = true"
             class="cursor-pointer text-[11pt] hover:underline"
+            @click="wslDialogState = true"
             >{{ textValue.y2.x0.p3 }}</span
           >
         </div>

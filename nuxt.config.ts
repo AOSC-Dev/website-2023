@@ -59,5 +59,8 @@ export default defineNuxtConfig({
       cookieKey: 'i18n_redirected',
       redirectOn: 'root'
     }
-  }
+  },
+  pinceau: {
+    preflight: false
+  },
 });
