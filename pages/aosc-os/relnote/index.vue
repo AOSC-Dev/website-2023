@@ -21,9 +21,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <div>
+  <div class="container-p">
     <category-second id="issuance-note" :title="textValue.title1" />
-    <div ref="issuance-note" class="p-6">
+    <div ref="issuance-note" class="p-6 ">
       <p>{{ textValue.p1 }}</p>
       <p>{{ textValue.p2 }}</p>
       <p
@@ -32,7 +32,7 @@ onMounted(() => {
     </div>
 
     <category-second id="platform-support" :title="textValue.title2" />
-    <div class="p-6">
+    <div class="p-6 ">
       <p>{{ textValue.p3 }}</p>
       <div class="pt-2 pb-4 px-16">
         <app-ul-ordinary :lis="textValue.ul1.li" my-key="aosc-os-relnote-1" />

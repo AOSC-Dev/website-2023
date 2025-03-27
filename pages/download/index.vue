@@ -98,6 +98,75 @@ const initSinglePopoverData = (items, index) => {
   });
   return items;
 };
+
+// #region AOSC OS
+const aoscOsNavigationList = [
+  {
+    title: antongDate,
+    notLink: true
+  },
+  localLink.aoscRelnote,
+  useTIndex(localLink.aoscRequirements, 2)
+];
+const appleSiliconNavigationList = ref([
+  {
+    title: appleSiliconDate,
+    notLink: true
+  },
+  localLink.aoscRelnoteAsahi,
+  linkValue.asahiRequirements
+]);
+
+const antong1List = ref(
+  initSinglePopoverData(
+    setNestedKeyValue(
+      setNestedKeyValue(
+        [
+          {
+            title: 'amd64'
+          },
+          {
+            title: 'arm64'
+          },
+          {
+            title: 'loongarch64'
+          }
+        ],
+        textValue.contents.antong1,
+        'popoverData.content'
+      ),
+      textValue.labels.antong1,
+      'label'
+    ),
+    1
+  )
+);
+const antong2List = ref(
+  initSinglePopoverData(
+    setNestedKeyValue(
+      setNestedKeyValue(
+        [
+          {
+            title: 'ppc64el'
+          },
+          {
+            title: 'riscv64'
+          },
+          {
+            title: 'loongson3'
+          }
+        ],
+        textValue.contents.antong2,
+        'popoverData.content'
+      ),
+      textValue.labels.antong2,
+      'label'
+    ),
+    2
+  )
+);
+// #endregion
+
 /**
  * 根据架构找出最新的下载信息
  */
@@ -181,74 +250,6 @@ const isReady = ref(false);
     );
   }
 })();
-// #endregion
-
-// #region AOSC OS
-const aoscOsNavigationList = [
-  {
-    title: antongDate,
-    notLink: true
-  },
-  localLink.aoscRelnote,
-  useTIndex(localLink.aoscRequirements, 2)
-];
-const appleSiliconNavigationList = ref([
-  {
-    title: appleSiliconDate,
-    notLink: true
-  },
-  localLink.aoscRelnoteAsahi,
-  linkValue.asahiRequirements
-]);
-
-const antong1List = ref(
-  initSinglePopoverData(
-    setNestedKeyValue(
-      setNestedKeyValue(
-        [
-          {
-            title: 'amd64'
-          },
-          {
-            title: 'arm64'
-          },
-          {
-            title: 'loongarch64'
-          }
-        ],
-        textValue.contents.antong1,
-        'popoverData.content'
-      ),
-      textValue.labels.antong1,
-      'label'
-    ),
-    1
-  )
-);
-const antong2List = ref(
-  initSinglePopoverData(
-    setNestedKeyValue(
-      setNestedKeyValue(
-        [
-          {
-            title: 'ppc64el'
-          },
-          {
-            title: 'riscv64'
-          },
-          {
-            title: 'loongson3'
-          }
-        ],
-        textValue.contents.antong2,
-        'popoverData.content'
-      ),
-      textValue.labels.antong2,
-      'label'
-    ),
-    2
-  )
-);
 // #endregion
 
 // #region Afterglow OS
