@@ -50,13 +50,13 @@ export const useThemeStore = defineStore('themeStore', {
   state: () => {
     const now = new Date();
     const month = now.getMonth() + 1;
-    if (month >= 1 && month <= 3) {
+    if (month >= 3 && month <= 5) {
       return themeList['springNight'];
-    } else if (month >= 4 && month <= 6) {
+    } else if (month >= 6 && month <= 8) {
       return themeList['summerNight'];
-    } else if (month >= 7 && month <= 9) {
+    } else if (month >= 9 && month <= 11) {
       return themeList['autumnNight'];
-    } else if (month >= 10 && month <= 12) {
+    } else {
       return themeList['winterNight'];
     }
   },
