@@ -3,7 +3,7 @@
 categories:
   - advisories
 title: "安同 OS 自动镜像跳转服务 (redir.aosc.io) 开放测试"
-date: 2024-03-05T22:00:00+08:00
+date: 2025-03-05T22:00:00+08:00
 important: true
 home: true
 ---

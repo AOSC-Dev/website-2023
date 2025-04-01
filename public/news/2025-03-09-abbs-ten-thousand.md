@@ -3,7 +3,7 @@
 categories:
   - news
 title: "aosc-os-abbs 喜迎第 10000 号 PR"
-date: 2024-03-09T22:00:00+08:00
+date: 2025-03-09T22:00:00+08:00
 important: true
 home: true
 ---

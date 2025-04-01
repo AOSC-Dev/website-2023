@@ -3,7 +3,7 @@
 categories:
   - advisories
 title: "社区软件源签名迭代公告"
-date: 2024-03-10T22:00:00+08:00
+date: 2025-03-10T22:00:00+08:00
 important: true
 home: true
 ---
