@@ -69,8 +69,4 @@ app.component('AppLink', AppLink);
 app.use(router);
 app.use(pinia);
 app.use(VMdPreview);
-if (new Date().getMonth() === 3 && new Date().getDate() === 1) {
-  setTimeout(() => app.mount('#app'), 1000);
-} else {
-  app.mount('#app');
-}
+app.mount('#app');

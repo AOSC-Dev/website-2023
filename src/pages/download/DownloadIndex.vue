@@ -432,7 +432,6 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
 
 onMounted(() => {
   const oma = document.getElementById('floating-oma');
-  if (!oma) return;
 
   let playAnimation = true;
   // position
@@ -634,13 +633,12 @@ onMounted(() => {
     </div>
 
     <div
-      v-if="new Date().getMonth() === 3 && new Date().getDate() === 1"
       id="floating-oma"
-      class="cursor-pointer p-1"
+      class="p-1 cursor-pointer"
       @click="router.push('#oma-download')">
       <img src="/assets/download/oma-mascot.svg" alt="floating oma mascot" />
       <div class="flex justify-center">
-        <span class="text-center text-[16pt] leading-none font-bold"
+        <span class="font-bold text-[16pt] leading-none text-center"
           >可爱 oma<br />在线装包</span
         >
       </div>
