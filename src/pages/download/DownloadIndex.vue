@@ -3,9 +3,9 @@ import CategorySecond from '../../components/CategorySecond.vue';
 import TitleComponent from './components/TitleComponent.vue';
 import DownloadButtonGroup from './components/DownloadButtonGroup.vue';
 import WslDetails from './components/WslDetails.vue';
-import { ref, useTemplateRef, computed, onMounted } from 'vue';
+import { ref, useTemplateRef, computed } from 'vue';
 import DownloadButton from './components/DownloadButton.vue';
-import { useRoute, useRouter } from 'vue-router';
+import { useRoute } from 'vue-router';
 import useClipboard from 'vue-clipboard3';
 import { ElMessage, ElDialog } from 'element-plus';
 import { highlightElement } from '../../utils/animation.ts';
@@ -26,7 +26,6 @@ const archGroupInfo = {
 };
 
 const route = useRoute();
-const router = useRouter();
 //#endregion
 
 //#region Clipboard
@@ -429,59 +428,6 @@ const omaNavigationList = [
   // }
 ];
 const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
-
-onMounted(() => {
-  const oma = document.getElementById('floating-oma');
-
-  let playAnimation = true;
-  // position
-  let x = window.innerWidth * Math.random();
-  let y = window.innerWidth * Math.random();
-  // velocity
-  let vx = (1 + Math.random()) * (Math.random() > 0.5 ? 1 : -1);
-  let vy = Math.sqrt(4 - vx * vx) * (Math.random() > 0.5 ? 1 : -1);
-  const maxv = 6;
-
-  function updateFloatingOmaPosition() {
-    if (!playAnimation) {
-      requestAnimationFrame(updateFloatingOmaPosition);
-      return;
-    }
-
-    x += vx;
-    y += vy;
-
-    if (x <= 0 || x > window.innerWidth - oma.offsetWidth) {
-      vx = -vx + (Math.random() - 0.5);
-      vx = vx > 0 ? Math.min(vx, maxv) : Math.max(vx, -maxv);
-      x = x <= 0 ? 0 : window.innerWidth - oma.offsetWidth;
-    }
-    if (y <= 0 || y > window.innerHeight - oma.offsetHeight) {
-      vy = -vy + (Math.random() - 0.5);
-      vy = vy > 0 ? Math.min(vy, maxv) : Math.max(vy, -maxv);
-      y = y <= 0 ? 0 : window.innerHeight - oma.offsetHeight;
-    }
-
-    oma.style.left = x + 'px';
-    oma.style.top = y + 'px';
-
-    requestAnimationFrame(updateFloatingOmaPosition);
-  }
-  updateFloatingOmaPosition();
-
-  oma.addEventListener('mouseover', () => {
-    playAnimation = false;
-  });
-  oma.addEventListener('mouseout', () => {
-    playAnimation = true;
-  });
-
-  window.addEventListener('resize', () => {
-    x = Math.min(x, window.innerWidth - oma.offsetWidth);
-    y = Math.min(y, window.innerHeight - oma.offsetHeight);
-  });
-});
-
 //#endregion
 </script>
 
@@ -631,89 +577,10 @@ onMounted(() => {
         deepin、<br />开放麒麟 (openKylin) 等发行版安装小熊猫包管理
       </p>
     </div>
-
-    <div
-      id="floating-oma"
-      class="p-1 cursor-pointer"
-      @click="router.push('#oma-download')">
-      <img src="/assets/download/oma-mascot.svg" alt="floating oma mascot" />
-      <div class="flex justify-center">
-        <span class="font-bold text-[16pt] leading-none text-center"
-          >可爱 oma<br />在线装包</span
-        >
-      </div>
-    </div>
   </div>
 </template>
 
 <style scoped>
-@property --rotate {
-  syntax: '<angle>';
-  initial-value: 45deg;
-  inherits: false;
-}
-
-@keyframes stupidScale {
-  0% {
-    scale: 90%;
-  }
-  50% {
-    scale: 110%;
-  }
-  100% {
-    scale: 90%;
-  }
-}
-@keyframes stupidBackgroundMovement {
-  from {
-    --rotate: 0deg;
-  }
-  to {
-    --rotate: 360deg;
-  }
-}
-@keyframes stupidFont {
-  0% {
-    color: #fff;
-  }
-  49% {
-    color: #fff;
-  }
-  50% {
-    color: #000;
-  }
-  100% {
-    color: #000;
-  }
-}
-
-#floating-oma {
-  position: fixed;
-  z-index: 114514;
-  width: 128px;
-  background: conic-gradient(
-    from var(--rotate),
-    rgba(255, 0, 0, 1) 0%,
-    rgba(255, 154, 0, 1) 10%,
-    rgba(208, 222, 33, 1) 20%,
-    rgba(79, 220, 74, 1) 30%,
-    rgba(63, 218, 216, 1) 40%,
-    rgba(47, 201, 226, 1) 50%,
-    rgba(28, 127, 238, 1) 60%,
-    rgba(95, 21, 242, 1) 70%,
-    rgba(186, 12, 248, 1) 80%,
-    rgba(251, 7, 217, 1) 90%,
-    rgba(255, 0, 0, 1) 100%
-  );
-  animation:
-    stupidScale 1s infinite linear,
-    stupidBackgroundMovement 1s infinite linear;
-}
-
-#floating-oma span {
-  animation: stupidFont 1s infinite;
-}
-
 /* For dialogs in this page */
 :deep(.el-dialog) {
   max-width: 800px;
