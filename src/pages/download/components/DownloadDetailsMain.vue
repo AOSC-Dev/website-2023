@@ -72,7 +72,7 @@ onMounted(() => {
 
     <AppLink
       :to="`/aosc-os${props.path.includes('livekit') ? '/livekit' : ''}/relnote`"
-      >查阅最新发行注记…</AppLink
+      >查阅最新发行注记...</AppLink
     >
 
     <app-h2>校验和使用</app-h2>
