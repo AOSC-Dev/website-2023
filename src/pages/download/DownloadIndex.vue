@@ -66,12 +66,12 @@ const versionArch = ref([]);
 const recipe = ref({});
 const recipeI18n = ref({});
 const sources = ref([
+  { name: '官方软件源', loc: '自动', url: 'https://releases.aosc.io/' },
   {
     name: '校园网联合镜像站',
     loc: '自动',
     url: 'https://mirrors.cernet.edu.cn/anthon/aosc-os/'
-  },
-  { name: '官方源', loc: '香港特别行政区', url: 'https://releases.aosc.io/' }
+  }
 ]);
 
 function getAntongDate() {
