@@ -29,7 +29,7 @@ import CategorySecond from '/src/components/CategorySecond.vue';
       <div class="px-12 pt-2 pb-4">
         <ul class="list-disc">
           <li>
-            Linux 内核更新至 6.14.1，包含针对龙芯 3C6000/D 多路服务器、龙芯 3A5000/6000 + 7A2000 台式机与笔记本、瑞芯微 RK3588 等平台支持的改进，新增了对 AMD XDNA 控制器（AI Engine）、Intel Touch Host Controller 及 Thunderbolt3 替代模式 (Alternative Mode) 等硬件或功能的支持，改善了龙架构平台对 AMD Radeon RX 9000 系列与 Intel DG1/DG2/Battlemage 系列显卡等支持
+            Linux 内核更新至 6.14.1，包含针对龙芯 3C6000/D 多路服务器、龙芯 3A5000/6000 + 7A2000 台式机与笔记本、瑞芯微 RK3588 等平台支持的改进，新增了对 AMD XDNA 控制器（AI Engine）、Intel Touch Host Controller 及 Thunderbolt 3 替代模式 (Alternative Mode) 等硬件或功能的支持，改善了龙架构平台对 AMD Radeon RX 9000 与 Intel DG1/DG2/Battlemage 系列显卡等支持
           </li>
           <li>
             更新 Mesa 至 25.0.3，大幅度改善 Intel DG1/DG2/Battlemage 系列显卡的性能，修复 AMD Radeon RX 9000 系列显卡无法从睡眠唤醒的问题
@@ -42,7 +42,7 @@ import CategorySecond from '/src/components/CategorySecond.vue';
       <div class="px-12 pt-2 pb-4">
         <ul class="list-disc">
           <li>修复 Intel Battlemage 系列（如 Intel Arc B580）显卡在使用硬件视频加速播放本地视频时，视频播放器会立即崩溃的问题</li>
-          <li>预装 <code>libva-intel-driver</code> 与 <code>libva-nvidia-driver</code>，分别改善 Intel Broadwell 或更早平台，以及 NVIDIA 显卡（搭配官方驱动）的视频回放体验</li>
+          <li>预装 <code>libva-intel-driver</code> 与 <code>libva-nvidia-driver</code>，分别改善 Intel Broadwell 或更早平台，以及 NVIDIA 显卡（搭配官方驱动）的视频播放体验</li>
         </ul>
       </div>
       <p>
