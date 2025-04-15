@@ -62,7 +62,7 @@ import CategorySecond from '/src/components/CategorySecond.vue';
       </p>
       <div class="px-12 pt-2 pb-4">
         <ul class="list-disc">
-          <li>将内核支持的最大处理器数量提高到 128 个，理论上可支持双路龙芯 3C6000/Q 平台（共 256 个逻辑核心）</li>
+          <li>将内核支持的最大处理器数量提高到 256 个，理论上可支持双路龙芯 3C6000/Q 平台（共 256 个逻辑核心）</li>
           <li>修复双路 3C6000/D 服务器由于可编程 I/O 控制器数量设置不正确，导致其无法启动的问题</li>
           <li>修复在龙架构平台插入 AMD Radeon RX 9000 系列显卡后，系统无法启动及无法从 ACPI S3 睡眠唤醒的问题</li>
           <li>修复在华硕 XC-LS3A6M 等主板上 USB 设备（尤其是键盘和鼠标）随机丢失的问题</li>
