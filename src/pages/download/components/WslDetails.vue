@@ -65,6 +65,8 @@ const selected_source_url = ref(props.sources[0].url);
       GitHub Releases（无须使用 Microsoft Store）
     </AppLink>
 
+    <AppLink :to="`/aosc-os/wsl/relnote`">查阅最新发行注记…</AppLink>
+
     <app-h2>系统需求</app-h2>
     <p
       >WSL 版安同 OS (AOSC OS on WSL) 可用于运行 Windows
