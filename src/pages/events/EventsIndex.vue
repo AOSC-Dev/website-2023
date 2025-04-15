@@ -124,6 +124,14 @@ const navigationList = [
       <div class="px-16 pt-4 pb-4">
         <ul class="list-disc">
           <li>
+            <b>2025 年 3 月 15 日：</b
+            ><a
+              class="text-[#0056cc] no-underline"
+              href="https://www.bilibili.com/video/BV1uQQtYYEpY/"
+              >河海大学</a
+            >
+          </li>
+          <li>
             <b>2024 年 12 月 15 日：</b
             ><a
               class="text-[#0056cc] no-underline"
@@ -176,7 +184,7 @@ const navigationList = [
       <p> 如下是近期规划内的“安同校园行”目的地： </p>
       <div class="px-16 pt-4 pb-4">
         <ul class="list-disc">
-          <li><b>2025 年 3 月 15 日：</b>河海大学</li>
+          <li><b>2025 年 4 月 19 日：</b>北京站（北京大学、北京航空航天大学与中国人民大学合办）</li>
         </ul>
       </div>
     </div>
