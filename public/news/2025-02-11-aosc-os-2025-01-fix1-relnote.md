@@ -4,7 +4,6 @@ categories:
 title: "安同 OS 发行更新公告（2025 年 1 月修订版）"
 date: 2025-02-11T18:00:00+08:00
 important: true
-home: true
 ---
 
 ![](/assets/news/aosc-os-2025-01-fix1-relnote.png)
