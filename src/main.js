@@ -9,6 +9,8 @@ import { install as VueMonacoEditorPlugin } from '@guolao/vue-monaco-editor';
 import VMdPreview from '@kangc/v-md-editor/lib/preview';
 import '@kangc/v-md-editor/lib/style/preview.css';
 import vuepressTheme from '@kangc/v-md-editor/lib/theme/vuepress.js';
+import createCopyCodePlugin from '@kangc/v-md-editor/lib/plugins/copy-code/index';
+import '@kangc/v-md-editor/lib/plugins/copy-code/copy-code.css';
 import '@kangc/v-md-editor/lib/theme/style/vuepress.css';
 import './css/index.scss';
 import './css/element-plus.scss';
@@ -46,6 +48,9 @@ import Prism from 'prismjs';
 VMdPreview.use(vuepressTheme, {
   Prism
 });
+
+// copy code
+VMdPreview.use(createCopyCodePlugin());
 
 // highlightjs
 import 'highlight.js/styles/stackoverflow-light.css';

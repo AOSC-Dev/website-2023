@@ -5,9 +5,12 @@
 import { ref } from 'vue';
 import CategorySecond from '../../components/CategorySecond.vue';
 import { useRoute, useProps } from 'vue-router';
-import { setTitle } from '../../utils/utils.js';
-import { requestGetJson } from '../utils/utils.js';
-import { requestToYaml } from '../utils/utils.js';
+import {
+  setTitle,
+  requestGetJson,
+  requestToYaml,
+  handleCopyCodeSuccess
+} from '../../utils/utils.js';
 
 const props = useProps(['mdPath']);
 
@@ -32,7 +35,7 @@ const newsDate = ref('');
       :title="yamlDoc['title']"
       :right-text="newsDate"
       class="absolute w-[calc(59.5vw-1px)]" />
-    <v-md-preview :text="mdRes" class="pt-[50px]"></v-md-preview>
+    <v-md-preview :text="mdRes" class="pt-[50px]" @copy-code-success="handleCopyCodeSuccess" />
   </div>
 </template>
 
