@@ -140,3 +140,7 @@ export const useHighlightWatch = (switchHash) => {
     switchHash();
   });
 };
+
+export const handleCopyCodeSuccess = () => {
+  ElMessage.success('复制成功');
+};
