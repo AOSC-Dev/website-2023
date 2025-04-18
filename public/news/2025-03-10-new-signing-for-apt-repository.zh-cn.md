@@ -5,7 +5,6 @@ categories:
 title: "社区软件源签名迭代公告"
 date: 2025-03-10T22:00:00+08:00
 important: true
-home: true
 ---
 
 自 Ubuntu 24.10 及 APT 2.8 发布后，其更新了[APT 加密签名算法要求](https://discourse.ubuntu.com/t/new-requirements-for-apt-repository-signing-in-24-04/42854)，而我社先前使用的软件源 GPG 公钥算法 (nistp521) 已不再符合新要求；新要求中列出的算法包括：
