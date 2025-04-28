@@ -487,8 +487,11 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
 
         <el-dialog v-model="wslDialogState" width="80%">
           <WslDetails
+            v-if="Object.keys(recipe).length > 0"
+            :recipe-wsl="recipe.variants.find(variant => variant.name === 'WSL')"
             :sources="sources"
           />
+          <div v-else>正在加载...</div>
         </el-dialog>
 
         <ms-store-badge

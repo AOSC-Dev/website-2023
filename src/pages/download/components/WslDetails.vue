@@ -5,11 +5,19 @@ import AppLink from '../../../components/AppLink.vue';
 import { ref } from 'vue';
 
 const props = defineProps({
-  sources: { type: [{ name: String, loc: String, url: String }] }
+  recipeWsl: { type: {}, required: true },
+  sources: {
+    type: [{ name: String, loc: String, url: String }],
+    required: true
+  }
 });
 const selected_source_url = ref(props.sources[0].url);
 
-// TODO: dynamic WSL version
+function latestTarball(tarballs, arch) {
+  return tarballs
+    .filter((tarball) => tarball.arch === arch)
+    .reduce((max, obj) => (+obj.date > +max.date ? obj : max));
+}
 </script>
 
 <template>
@@ -41,13 +49,13 @@ const selected_source_url = ref(props.sources[0].url);
         </el-option>
       </el-select>
       <AppLink
-        :to="`${selected_source_url}os-amd64/wsl/aosc-os_wsl_20250319_amd64.wsl`"
+        :to="`${selected_source_url}${latestTarball(recipeWsl.tarballs, 'amd64').path}`"
         target="_blank"
         class="flex h-[32px] items-center border-r bg-[var(--secondary)] px-[15px] text-nowrap text-white hover:bg-[var(--primary)] hover:no-underline">
         下载 x86-64
       </AppLink>
       <AppLink
-        :to="`${selected_source_url}os-arm64/wsl/aosc-os_wsl_20250319_arm64.wsl`"
+        :to="`${selected_source_url}${latestTarball(recipeWsl.tarballs, 'arm64').path}`"
         target="_blank"
         class="flex h-[32px] items-center bg-[var(--secondary)] px-[15px] text-nowrap text-white hover:bg-[var(--primary)] hover:no-underline">
         下载 AArch64
