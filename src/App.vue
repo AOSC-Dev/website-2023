@@ -12,7 +12,6 @@ const router = useRouter();
 router.afterEach((to, from) => {
   highBrightnessControllerStore.obj[to.path] =
     !highBrightnessControllerStore.obj[to.path];
-  console.log(highBrightnessControllerStore.obj[to.path], 2);
 });
 
 const themeStore = useThemeStore();
