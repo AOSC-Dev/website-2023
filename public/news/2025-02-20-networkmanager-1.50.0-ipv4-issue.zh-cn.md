@@ -4,7 +4,6 @@ categories:
 title: "【已解决】NetworkManager 1.50.0 更新可能导致 DHCP 客户端无法获取 IPv4 地址"
 date: 2025-02-20T09:53:00+08:00
 important: true
-home: true
 ---
 
 全架构均已推送更新修复（镜像源用户可能会有延迟），更新时请注意 `networkmanager` 版本为 >= 1.50.2。

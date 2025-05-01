@@ -5,7 +5,6 @@ categories:
 title: "参会指南：《安同校园行》北京站"
 date: 2025-04-16T22:00:00+08:00
 important: true
-home: true
 ---
  
 本次安同校园行线下会场位于北京航空航天大学学院路校区。

@@ -5,7 +5,6 @@ categories:
 title: "活动预告：《安同校园行》北京站"
 date: 2025-04-16T22:00:00+08:00
 important: true
-home: true
 ---
  
 ![](/assets/news/aosc-buaa.png)
