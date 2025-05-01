@@ -4,7 +4,6 @@ categories:
 title: "社区贴纸包开放订购"
 date: 2025-02-10T23:00:00+08:00
 important: true
-home: true
 ---
 
 应社区好友要求，我们决定开放一批共 200 套社区贴纸包供各位订购，扫描如下二维码或[点此链接](https://f.wps.cn/g/eVWc4lGC/)即可填写订购意向表。
