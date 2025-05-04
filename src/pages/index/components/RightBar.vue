@@ -61,17 +61,17 @@ const commonLinkList = reactive([
 
 <template>
   <div class="bg-right-bar-bg flex w-[37.5%] flex-col">
-    <a href="/aosc-os/right-for-me" ref="bgImg1" class="bg-img-height1">
+    <a href="/download" ref="bgImg1" class="bg-img-height1">
       <img
         ref="bgImg"
         src="/assets/jumbotron/minor1.svg"
         class="aspect-96/55 w-full cursor-pointer" />
     </a>
-    <a href="https://bbs.aosc.io/" ref="bgImg2" class="bg-img-height2">
+    <a href="/aosc-os/right-for-me" ref="bgImg2" class="bg-img-height2">
       <img
         src="/assets/jumbotron/minor2.svg"
         class="aspect-96/55 w-full cursor-pointer"
-        href="https://bbs.aosc.io/" />
+        href="/aosc-os/right-for-me" />
     </a>
     <div class="flex grow flex-col">
       <category-second
