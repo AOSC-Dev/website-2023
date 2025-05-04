@@ -5,7 +5,7 @@ categories:
 title: "aosc-os-abbs 喜迎第 10000 号 PR"
 date: 2025-03-09T22:00:00+08:00
 important: true
-home: true
+home: false
 ---
 ![](/assets/news/abbs-ten-thousand.png)
 
