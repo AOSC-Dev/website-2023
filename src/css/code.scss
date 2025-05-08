@@ -1,0 +1,68 @@
+.vuepress-markdown-body div[class*=v-md-pre-wrapper-].copy-code-mode{
+    background-color: #f2f1f1;
+    pre[class*="v-md-prism-"] code{
+        color: #383A42;
+    }
+  }
+
+  .token.comment,
+  .token.prolog,
+  .token.doctype,
+  .token.cdata {
+      color: #999988; font-style: italic;
+  }
+  
+  .token.namespace {
+      opacity: .7;
+  }
+  
+  .token.string,
+  .token.attr-value {
+      color: #e3116c;
+  }
+  .token.punctuation,
+  .token.operator {
+      color: #393A34; /* no highlight */
+  }
+  
+  .token.entity,
+  .token.url,
+  .token.symbol,
+  .token.number,
+  .token.boolean,
+  .token.variable,
+  .token.constant,
+  .token.property,
+  .token.regex,
+  .token.inserted {
+      color: #36acaa;
+  }
+  
+  .token.atrule,
+  .token.keyword,
+  .token.attr-name,
+  .language-autohotkey .token.selector {
+      color: #00a4db;
+  }
+  
+  .token.function,
+  .token.deleted,
+  .language-autohotkey .token.tag {
+      color: #9a050f;
+  }
+  
+  .token.tag,
+  .token.selector,
+  .language-autohotkey .token.keyword {
+      color: #00009f;
+  }
+  
+  .token.important,
+  .token.function,
+  .token.bold {
+      font-weight: bold;
+  }
+  
+  .token.italic {
+      font-style: italic;
+  }
