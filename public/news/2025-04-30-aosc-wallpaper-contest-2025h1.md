@@ -1,11 +1,9 @@
-
 ---
 categories:
   - news
 title: "安同 OS 壁纸征集公告（2025 年上半年）"
 date: 2025-04-30T22:00:00+08:00
 important: true
-home: true
 ---
  
 ![](/assets/news/wallpaper-contest-banner-2025h1.png)
