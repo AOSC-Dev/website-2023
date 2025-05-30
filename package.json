@@ -12,7 +12,8 @@
   },
   "overrides": {
     "@rollup/plugin-commonjs": "^28.0.3",
-    "@vercel/nft": "0.29.2"
+    "@vercel/nft": "0.29.2",
+    "pinceau": "0.20.0"
   },
   "dependencies": {
     "@element-plus/nuxt": "^1.0.10",
