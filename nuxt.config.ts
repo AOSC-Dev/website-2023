@@ -14,6 +14,11 @@ export default defineNuxtConfig({
   ],
   devtools: { enabled: true },
   css: ['~/assets/css/main.css', '~/assets/index.scss'],
+  vue: {
+    compilerOptions: {
+      isCustomElement: (tag) => ["ms-store-badge"].includes(tag)
+    }
+  },
   content: {
     documentDriven: false,
     highlight: {
