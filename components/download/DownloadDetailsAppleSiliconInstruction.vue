@@ -24,7 +24,7 @@ const linkValue = tm('allUniversalLink');
 
     <p>
       {{ textValue.text4
-      }}<link-standard :link="useTIndex(localLink.contact, 2)" />{{
+      }}<link-standard :link="useTIndex(linkValue.contact, 2)" />{{
         textValue.text5
       }}
     </p>
