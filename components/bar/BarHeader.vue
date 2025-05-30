@@ -29,9 +29,9 @@ const switchLanguage = async (to) => {
         <div
           class="theme-bg-color-primary-static text-white flex justify-end py-[5px] whitespace-nowrap text-clip *:no-underline pl-[50px] pr-[0.5rem]">
           <el-dropdown
-            teleported="false"
-            show-timeout="0"
-            hide-timeout="50"
+            :teleported=false
+            :show-timeout=0
+            :hide-timeout=50
             popper-class="language-menu">
             <span class="w-[1.5rem] fill-white">
               <svg
