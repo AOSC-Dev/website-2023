@@ -11,7 +11,7 @@ const props = defineProps({
 
 <template>
   <div
-    class="theme-bg-color-secondary-static flex justify-between items-end text-white py-[5px] px-[10px] m-p select-none h-[2rem] leading-none items-center">
+    class="theme-bg-color-secondary-static flex justify-between text-white py-[5px] px-[10px] m-p select-none h-[2rem] leading-none items-center">
     <span>
       {{ props.title }}
     </span>
