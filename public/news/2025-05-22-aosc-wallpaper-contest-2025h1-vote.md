@@ -4,7 +4,7 @@ categories:
 title: "安同 OS 默认壁纸投票（2025 年上半年）"
 date: 2025-05-22T22:00:00+08:00
 important: true
-home: true
+home: false
 ---
  
 ![](/assets/news/Collage.png)

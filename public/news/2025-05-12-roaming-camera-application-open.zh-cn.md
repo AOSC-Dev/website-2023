@@ -4,7 +4,7 @@ categories:
 title: "“流浪相机”2025 期开放报名"
 date: 2025-05-12T22:19:13-08:00
 important: false
-home: true
+home: false
 ---
 ![](/assets/news/roaming-camera-2025.png)
 
