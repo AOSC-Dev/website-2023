@@ -73,9 +73,6 @@ import CategorySecond from '/src/components/CategorySecond.vue';
           <li>修复部分平台上的 Spectre-BHB 敏感信息泄漏漏洞</li>
         </ul>
       </div>
-      <p>
-        <b>设备支持 — 龙芯三号 (MIPS)</b>
-      </p>
     </div>
 
     <category-second title="关键组件更新" id="component-updates" />
