@@ -14,7 +14,7 @@ import CategorySecond from '/src/components/CategorySecond.vue';
     <category-second title="组件更新" id="component-updates" />
     <div class="p-6">
       <p>
-        本次发行属常规更新，包含截至 2024 年 6 月 5 日的所有系统更新。
+        本次发行属常规更新，包含截至 2025 年 6 月 5 日的所有系统更新。
       </p><br />
     </div>
 
