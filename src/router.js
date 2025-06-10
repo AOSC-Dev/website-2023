@@ -36,6 +36,7 @@ import AoscWslRelnote from './pages/aosc-os/wsl/relnote/AoscWslRelnote.vue';
 import AoscLivekitRequirements from './pages/aosc-os/livekit/requirements/AoscLivekitRequirements.vue';
 import AoscWslRequirements from './pages/aosc-os/wsl/requirements/AoscWslRequirements.vue';
 import AoscAsahiRelnote from './pages/aosc-os/asahi/relnote/AoscAsahiRelnote.vue';
+import AosccIndex from './pages/aoscc/AosccIndex.vue';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -183,6 +184,19 @@ const router = createRouter({
       meta: {
         title: '发行注记（星霞 OS）'
       }
+    },
+    {
+      path: '/aoscc',
+      name: 'aoscc',
+      component: AosccIndex,
+      meta: {
+        title: 'AOSCC'
+      }
+    },
+    {
+      path: '/aoscc/detail/:newsPath/',
+      name: 'aosccDetail',
+      component: NewsDetail
     },
     {
       path: '/liblol',
