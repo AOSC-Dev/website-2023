@@ -4,7 +4,6 @@ categories:
 title: "预告：AOSCC 2025 与会者报名即将开放"
 date: 2025-06-09T23:19:13-08:00
 important: false
-home: true
 ---
 
 ![](/assets/news/aoscc-2025-registration.png)
