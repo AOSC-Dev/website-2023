@@ -39,12 +39,16 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-vue": "^9.27.0",
     "globals": "^15.9.0",
+    "markdown-it-anchor": "^9.2.0",
+    "markdown-it-container": "^4.0.0",
+    "pinyin": "^4.0.0",
     "prettier": "^3.3.3",
     "prettier-eslint": "^16.3.0",
     "sass": "^1.72.0",
     "sass-loader": "^14.1.1",
     "svgo": "^3.3.2",
     "tailwindcss": "^4.0.9",
+    "vite-plugin-md": "^0.21.5",
     "vue-eslint-parser": "^9.4.3"
   },
   "overrides": {
