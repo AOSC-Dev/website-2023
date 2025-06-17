@@ -2,20 +2,24 @@
 import CategorySecond from '../../../components/CategorySecond.vue';
 import PageNotFound from '../../../components/PageNotFound.vue';
 import { useRoute } from 'vue-router';
-import { ref, computed, defineAsyncComponent } from 'vue';
+import { ref, defineAsyncComponent, watch } from 'vue';
 
 const route = useRoute();
 const error = ref();
+const articleComponent = ref();
 
-const articleComponent = computed(() => {
-  const slug = route.params.slug;
-  return defineAsyncComponent(() =>
-    import(`../articles/${slug}.zh.md`).catch((err) => {
+function loadArticle() {
+  const slugWithoutHash = route.params.slug.split('#')[0];
+  articleComponent.value = defineAsyncComponent(() =>
+    import(`../articles/${slugWithoutHash}.zh.md`).catch((err) => {
       console.error('Article not found:', err);
       error.value = err;
     })
   );
-});
+}
+
+loadArticle();
+watch(() => route.params.slug.split('#')[0], loadArticle);
 </script>
 
 <template>
@@ -25,7 +29,7 @@ const articleComponent = computed(() => {
     </template>
     <template v-else>
       <div class=""></div>
-      <category-second v-if="!error" title="AOSCC" class="sticky top-0 z-1" />
+      <category-second v-if="!error" title="AOSCC" />
       <component class="vuepress-markdown-body" :is="articleComponent" />
     </template>
   </div>
