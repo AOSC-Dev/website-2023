@@ -37,6 +37,7 @@ import AoscLivekitRequirements from './pages/aosc-os/livekit/requirements/AoscLi
 import AoscWslRequirements from './pages/aosc-os/wsl/requirements/AoscWslRequirements.vue';
 import AoscAsahiRelnote from './pages/aosc-os/asahi/relnote/AoscAsahiRelnote.vue';
 import AosccIndex from './pages/aoscc/AosccIndex.vue';
+import AosccDetail from './pages/aoscc/components/AosccDetail.vue';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -194,9 +195,9 @@ const router = createRouter({
       }
     },
     {
-      path: '/aoscc/detail/:newsPath/',
+      path: '/aoscc/:slug',
       name: 'aosccDetail',
-      component: NewsDetail
+      component: AosccDetail
     },
     {
       path: '/liblol',
