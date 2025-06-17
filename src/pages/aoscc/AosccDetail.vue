@@ -1,6 +1,6 @@
 <script setup>
-import CategorySecond from '../../../components/CategorySecond.vue';
-import PageNotFound from '../../../components/PageNotFound.vue';
+import CategorySecond from '../../components/CategorySecond.vue';
+import PageNotFound from '../../components/PageNotFound.vue';
 import { useRoute } from 'vue-router';
 import { ref, defineAsyncComponent, watch } from 'vue';
 
@@ -11,7 +11,7 @@ const articleComponent = ref();
 function loadArticle() {
   const slugWithoutHash = route.params.slug.split('#')[0];
   articleComponent.value = defineAsyncComponent(() =>
-    import(`../articles/${slugWithoutHash}.zh.md`).catch((err) => {
+    import(`./articles/${slugWithoutHash}.zh.md`).catch((err) => {
       console.error('Article not found:', err);
       error.value = err;
     })
