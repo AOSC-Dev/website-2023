@@ -48,7 +48,7 @@
     "sass-loader": "^14.1.1",
     "svgo": "^3.3.2",
     "tailwindcss": "^4.0.9",
-    "vite-plugin-md": "^0.21.5",
+    "vite-plugin-md": "github:antfu/vite-plugin-md",
     "vue-eslint-parser": "^9.4.3"
   },
   "overrides": {
