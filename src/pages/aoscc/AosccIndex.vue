@@ -3,6 +3,11 @@ import AosccLinkButton from './components/AosccLinkButton.vue';
 import AppLink from '../../components/AppLink.vue';
 
 const aosccList = [
+  {
+    year: 2025,
+    title: '上海交通大学（2025 年 7 月 26 - 27 日）',
+    hasLink: true
+  },
   { year: 2024, title: '吉林大学（2024 年 7 月 13 - 14 日）', hasLink: true },
   {
     year: 2023,
@@ -45,8 +50,10 @@ const aosccList = [
     <category-second title="AOSCC" />
     <div class="aoscc-banner-bg relative h-[280px] px-10 py-6 text-white">
       <div class="absolute bottom-0 mb-10 ml-1">
-        <AosccLinkButton href="/aoscc" class="mr-4">前往报名</AosccLinkButton>
-        <AosccLinkButton href="/aoscc">实用信息</AosccLinkButton>
+        <AosccLinkButton to="https://aoscc.aosc.io" class="mr-4"
+          >前往报名</AosccLinkButton
+        >
+        <AosccLinkButton to="/aoscc/2025">实用信息</AosccLinkButton>
       </div>
     </div>
     <category-second title="AOSCC：社区年度聚会" id="aoscc" />
@@ -61,9 +68,7 @@ const aosccList = [
         <ul class="list-disc">
           <li v-for="{ year, title, hasLink } in aosccList" :key="year">
             <b>{{ year }} 年：</b>
-            <AppLink v-if="hasLink" :to="`./aoscc/${year}`">{{
-              title
-            }}</AppLink>
+            <AppLink v-if="hasLink" :to="`${year}`">{{ title }}</AppLink>
             <span v-else>{{ title }}</span>
           </li>
         </ul>
