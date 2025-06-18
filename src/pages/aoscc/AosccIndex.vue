@@ -68,7 +68,7 @@ const aosccList = [
         <ul class="list-disc">
           <li v-for="{ year, title, hasLink } in aosccList" :key="year">
             <b>{{ year }} 年：</b>
-            <AppLink v-if="hasLink" :to="`${year}`">{{ title }}</AppLink>
+            <AppLink v-if="hasLink" :to="`/aoscc/${year}`">{{ title }}</AppLink>
             <span v-else>{{ title }}</span>
           </li>
         </ul>

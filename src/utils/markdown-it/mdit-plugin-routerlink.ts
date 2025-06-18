@@ -1,8 +1,14 @@
 import type MarkdownIt from 'markdown-it';
 
 function markdownItRouterLink(md: MarkdownIt) {
-  const defaultRender =
+  const defaultRenderLinkOpen =
     md.renderer.rules.link_open ||
+    function (tokens, idx, options, env, self) {
+      return self.renderToken(tokens, idx, options);
+    };
+
+  const defaultRenderLinkClose =
+    md.renderer.rules.link_close ||
     function (tokens, idx, options, env, self) {
       return self.renderToken(tokens, idx, options);
     };
@@ -10,12 +16,13 @@ function markdownItRouterLink(md: MarkdownIt) {
   md.renderer.rules.link_open = function (tokens, idx, options, env, self) {
     const token = tokens[idx];
     const hrefIndex = token.attrIndex('href');
+    env.isInternalLink = false;
 
     if (hrefIndex >= 0 && token.attrs) {
       const href = token.attrs[hrefIndex][1];
-      const isInternal = isInternalLink(href);
 
-      if (isInternal) {
+      if (isInternalLink(href)) {
+        env.isInternalLink = true;
         token.tag = 'router-link';
         token.attrSet('to', href);
       } else {
@@ -23,7 +30,15 @@ function markdownItRouterLink(md: MarkdownIt) {
       }
     }
 
-    return defaultRender(tokens, idx, options, env, self);
+    return defaultRenderLinkOpen(tokens, idx, options, env, self);
+  };
+
+  md.renderer.rules.link_close = function (tokens, idx, options, env, self) {
+    if (env.isInternalLink) {
+      tokens[idx].tag = 'router-link';
+      env.isInternalLink = false;
+    }
+    return defaultRenderLinkClose(tokens, idx, options, env, self);
   };
 }
 
