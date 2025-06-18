@@ -38,6 +38,7 @@ import AoscWslRequirements from './pages/aosc-os/wsl/requirements/AoscWslRequire
 import AoscAsahiRelnote from './pages/aosc-os/asahi/relnote/AoscAsahiRelnote.vue';
 import AosccIndex from './pages/aoscc/AosccIndex.vue';
 import AosccDetail from './pages/aoscc/AosccDetail.vue';
+import CrowdsourcingDetail from './pages/crowdsourcing/CrowdsourcingDetail.vue';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -267,6 +268,14 @@ const router = createRouter({
       path: '/crowdsourcing',
       name: 'crowdsourcing',
       component: CrowdsourcingIndex,
+      meta: {
+        title: '社区众筹'
+      }
+    },
+    {
+      path: '/crowdsourcing/:slug',
+      name: 'crowdsourcingDetail',
+      component: CrowdsourcingDetail,
       meta: {
         title: '社区众筹'
       }

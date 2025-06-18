@@ -7,19 +7,17 @@ import { ref, defineAsyncComponent, watch } from 'vue';
 const route = useRoute();
 const error = ref();
 const articleComponent = ref();
+const articles = import.meta.glob('./articles/*.zh.md');
 
-function loadArticle() {
-  const slugWithoutHash = route.params.slug.split('#')[0];
-  articleComponent.value = defineAsyncComponent(() =>
-    import(`./articles/${slugWithoutHash}.zh.md`).catch((err) => {
-      console.error('Article not found:', err);
-      error.value = err;
-    })
-  );
+function loadArticle(slug) {
+  const path = `./articles/${slug.split('#')[0]}.zh.md`;
+  const loader = articles[path];
+  if (!loader) error.value = true;
+  articleComponent.value = defineAsyncComponent(loader);
 }
 
-loadArticle();
-watch(() => route.params.slug.split('#')[0], loadArticle);
+loadArticle(route.params.slug);
+watch(() => route.params.slug.split('#')[0], loadArticle(route.params.slug));
 </script>
 
 <template>
@@ -28,7 +26,6 @@ watch(() => route.params.slug.split('#')[0], loadArticle);
       <page-not-found />
     </template>
     <template v-else>
-      <div class=""></div>
       <category-second v-if="!error" title="AOSCC" />
       <component class="vuepress-markdown-body" :is="articleComponent" />
     </template>
