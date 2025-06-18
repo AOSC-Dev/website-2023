@@ -42,7 +42,12 @@ export default defineConfig({
   plugins: [
     // ...
     vue({ include: [/\.vue$/, /\.md$/] }),
-    Markdown({ markdownItSetup }),
+    Markdown({
+      html: true,
+      xhtmlOut: true,
+      linkify: true,
+      markdownItSetup
+    }),
     tailwindcss(),
     AutoImport({
       resolvers: [ElementPlusResolver()]
