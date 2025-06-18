@@ -5,7 +5,7 @@ import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
 import tailwindcss from '@tailwindcss/vite';
-import Markdown from 'vite-plugin-md';
+import Markdown from 'unplugin-vue-markdown/vite';
 import { markdownItSetup } from './src/utils/markdown-it/mdit-setup';
 
 // Enabled highlight languages for Prism
