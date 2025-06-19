@@ -1,5 +1,22 @@
 <script setup>
 import CategorySecond from '/src/components/CategorySecond.vue';
+import AppLink from '../../components/AppLink.vue';
+
+const csArticleFrontmatters = import.meta.glob(
+  ['./articles/*.zh.md', '!./articles/template*'],
+  // Tricky solution for importing only the titles statically.
+  // The `query` parameter creates a unique import identifier for Vite
+  //   which prevents conflicts with dynamic imports of the same files
+  //   in AosccDetail.
+  // The query's name doesn't matter, but it must end with `.md`
+  //   for the plugin to pick it up.
+  { eager: true, import: 'title', query: 'title.md' }
+);
+
+const catalog = Object.entries(csArticleFrontmatters).map(([path, title]) => {
+  const slug = path.split('/').pop().replace('.zh.md', '');
+  return { slug, title };
+});
 </script>
 
 <template>
@@ -13,13 +30,6 @@ import CategorySecond from '/src/components/CategorySecond.vue';
         AOSCC
         年度聚会等场合）时经常需要资金及物质支持。因此，我们接受针对特定项目及购买计划的金钱、物品（如电脑机箱、电源及硬盘等）及服务（如网站服务器资源等）捐赠。</p
       ><br />
-      <p
-        >您可以前往 Wiki 站点查阅<a
-          class="text-link"
-          href="https://wiki.aosc.io/community/crowdsourcing/"
-          >众筹项目记录</a
-        >。</p
-      >
     </div>
 
     <category-second title="补充条例" />
@@ -43,6 +53,17 @@ import CategorySecond from '/src/components/CategorySecond.vue';
           <li>如捐款者不接受退款，可根据需要调整众筹内容。</li>
         </ul>
         <li>如众筹项目被取消，将全额退还捐款予捐赠者。</li>
+      </ul>
+    </div>
+
+    <category-second title="众筹项目记录" />
+    <div class="p-6">
+      <ul class="list-disc py-6 pl-16">
+        <li v-for="item in catalog" :key="item.slug">
+          <app-link :to="`/crowdsourcing/${item.slug}`">{{
+            item.title
+          }}</app-link>
+        </li>
       </ul>
     </div>
   </div>

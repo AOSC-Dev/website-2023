@@ -36,6 +36,9 @@ import AoscWslRelnote from './pages/aosc-os/wsl/relnote/AoscWslRelnote.vue';
 import AoscLivekitRequirements from './pages/aosc-os/livekit/requirements/AoscLivekitRequirements.vue';
 import AoscWslRequirements from './pages/aosc-os/wsl/requirements/AoscWslRequirements.vue';
 import AoscAsahiRelnote from './pages/aosc-os/asahi/relnote/AoscAsahiRelnote.vue';
+import AosccIndex from './pages/aoscc/AosccIndex.vue';
+import AosccDetail from './pages/aoscc/AosccDetail.vue';
+import CrowdsourcingDetail from './pages/crowdsourcing/CrowdsourcingDetail.vue';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -185,6 +188,19 @@ const router = createRouter({
       }
     },
     {
+      path: '/aoscc',
+      name: 'aoscc',
+      component: AosccIndex,
+      meta: {
+        title: 'AOSCC'
+      }
+    },
+    {
+      path: '/aoscc/:slug',
+      name: 'aosccDetail',
+      component: AosccDetail
+    },
+    {
       path: '/liblol',
       name: 'liblol',
       component: LiblolIndex,
@@ -252,6 +268,14 @@ const router = createRouter({
       path: '/crowdsourcing',
       name: 'crowdsourcing',
       component: CrowdsourcingIndex,
+      meta: {
+        title: '社区众筹'
+      }
+    },
+    {
+      path: '/crowdsourcing/:slug',
+      name: 'crowdsourcingDetail',
+      component: CrowdsourcingDetail,
       meta: {
         title: '社区众筹'
       }
