@@ -13,6 +13,7 @@
     "@guolao/vue-monaco-editor": "1.5.4",
     "@kangc/v-md-editor": "^2.3.18",
     "@tailwindcss/vite": "^4.0.9",
+    "@unhead/vue": "^2.0.10",
     "@vitejs/plugin-vue": "5.0.4",
     "axios": "1.7.7",
     "dayjs": "1.11.13",

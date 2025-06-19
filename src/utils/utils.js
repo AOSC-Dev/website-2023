@@ -4,15 +4,9 @@ import axios from 'axios';
 import { useRoute } from 'vue-router';
 import { ElMessage } from 'element-plus';
 import yaml from 'js-yaml';
-import {
-  onMounted,
-  onUnmounted,
-  ref,
-  shallowRef,
-  toValue,
-  useTemplateRef
-} from 'vue';
+import { onMounted } from 'vue';
 import { useHighBrightnessControllerStore } from '../stores/miscellaneous.js';
+import { useHead } from '@unhead/vue';
 
 export function getImgUrl(url) {
   return new URL(`${url}`, import.meta.url).href;
@@ -22,10 +16,8 @@ export function toOutUrl(url) {
   window.open(url);
 }
 
-export const title = '安同开源社区 (AOSC)';
-
 export function setTitle(titlePre) {
-  document.title = titlePre + '｜' + title;
+  useHead({ title: titlePre });
 }
 
 export function toUrl(url) {
