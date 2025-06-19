@@ -2,22 +2,32 @@
 import CategorySecond from './CategorySecond.vue';
 import PageNotFound from './PageNotFound.vue';
 import { useRoute } from 'vue-router';
-import { ref, shallowRef, defineAsyncComponent, watchEffect } from 'vue';
+import { useHead } from '@unhead/vue';
+import {
+  shallowRef,
+  defineAsyncComponent,
+  watch,
+  onMounted,
+  onBeforeUnmount
+} from 'vue';
 
 const props = defineProps({
+  // const articles = import.meta.glob('./articles/*.zh.md');
   articles: {
     type: Object,
     required: true
   },
-  title: String,
+  defaultTitle: String,
   pathPrefix: String,
   pathSuffix: String
 });
-// const articles = import.meta.glob('./articles/*.zh.md');
+
+useHead({ title: props.defaultTitle });
 
 const route = useRoute();
 const loadError = shallowRef(false);
-const articleComponent = ref();
+const articleComponent = shallowRef();
+const title = shallowRef(props.defaultTitle);
 
 function loadArticle(slug) {
   const path = `${props.pathPrefix ?? './articles/'}${slug.split('#')[0]}${props.pathSuffix ?? '.md'}`;
@@ -31,13 +41,27 @@ function loadArticle(slug) {
   });
 }
 
-loadArticle(route.params.slug);
-watchEffect(
+watch(
   () => route.params.slug.split('#')[0],
-  () => {
-    loadArticle(route.params.slug);
-  }
+  (newSlug) => loadArticle(newSlug),
+  { immediate: true }
 );
+
+// Update CategorySecond's title
+// I guess there would be a better solution :(
+let observer;
+onMounted(() => {
+  observer = new MutationObserver((mutations) => {
+    title.value = mutations[0].target.text.split('|')[0].trim();
+  }).observe(document.querySelector('title'), {
+    subtree: true,
+    characterData: true,
+    childList: true
+  });
+});
+onBeforeUnmount(() => {
+  if (observer) console.log(observer.disconnect());
+});
 </script>
 
 <template>
@@ -46,11 +70,8 @@ watchEffect(
       <PageNotFound />
     </template>
     <template v-else>
-      <CategorySecond v-if="title" :title="title" />
-      <component
-        class="vuepress-markdown-body"
-        :is="articleComponent"
-        ref="mdComponent" />
+      <CategorySecond :title="title" />
+      <component class="vuepress-markdown-body" :is="articleComponent" />
     </template>
   </div>
 </template>
