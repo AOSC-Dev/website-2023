@@ -5,5 +5,8 @@ const articles = import.meta.glob('./articles/*.zh.md');
 </script>
 
 <template>
-  <MarkdownDetail :articles="articles" title="AOSCC" path-suffix=".zh.md" />
+  <MarkdownDetail
+    :articles="articles"
+    default-title="AOSCC"
+    path-suffix=".zh.md" />
 </template>
