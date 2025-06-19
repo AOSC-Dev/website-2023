@@ -46,6 +46,7 @@ export default defineConfig({
       html: true,
       xhtmlOut: true,
       linkify: true,
+      headEnabled: true, // For setting title automatically using Unhead
       markdownItSetup
     }),
     tailwindcss(),

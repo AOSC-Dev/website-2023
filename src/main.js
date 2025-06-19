@@ -1,5 +1,6 @@
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
+import { createHead } from '@unhead/vue/client';
 import './style.css';
 import 'element-plus/dist/index.css';
 import App from './App.vue';
@@ -78,4 +79,5 @@ app.component('AppLink', AppLink);
 app.use(router);
 app.use(pinia);
 app.use(VMdPreview);
+app.use(createHead({ init: [{ titleTemplate: '%s | 安同开源社区 (AOSC)' }] }));
 app.mount('#app');
