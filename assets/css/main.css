@@ -35,6 +35,10 @@
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
   }
+
+  a:hover {
+    text-decoration: underline;
+  }
 }
 
 body {
@@ -45,10 +49,6 @@ body {
   font-family: 'Noto Sans CJK SC', sans-serif;
   font-size: 12pt;
   min-width: 800px;
-}
-
-a:hover {
-  text-decoration: underline;
 }
 
 @media (min-width: 960px) {
