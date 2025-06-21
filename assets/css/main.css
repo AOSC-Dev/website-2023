@@ -49,6 +49,11 @@ body {
   font-family: 'Noto Sans CJK SC', sans-serif;
   font-size: 12pt;
   min-width: 800px;
+
+  /* Global style for Element Plus created components (located outside #app) */
+  --el-color-primary: var(--primary);
+  --el-border-radius-base: 0;
+  --el-popover-border-radius: 0;
 }
 
 @media (min-width: 960px) {
