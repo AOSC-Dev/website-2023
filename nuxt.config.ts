@@ -2,7 +2,8 @@
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineNuxtConfig({
-  extends: '@nuxt-themes/docus',
+  // extends: '@nuxt-themes/docus',
+
   modules: [
     '@element-plus/nuxt',
     '@pinia/nuxt',
@@ -12,29 +13,32 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxt/icon'
   ],
+
   devtools: { enabled: true },
   css: ['~/assets/css/main.css', '~/assets/index.scss'],
+
   vue: {
     compilerOptions: {
       isCustomElement: (tag) => ['ms-store-badge'].includes(tag)
     }
   },
-  colorMode: {  // TODO: implement dark mode
-    preference: 'light'
-  },
+
   content: {
-    documentDriven: false,
-    highlight: {
-      // Theme used in all color schemes.
-      theme: {
-        // Default theme (same as single string)
-        default: 'github-light',
-        // Theme used if `html.dark`
-        sepia: 'monokai'
+    build: {
+      markdown: {
+        highlight: {
+          // Theme used in all color schemes.
+          theme: {
+            // Default theme (same as single string)
+            default: 'github-light',
+          }
+        }
       }
     }
   },
-  compatibilityDate: '2024-04-03',
+
+  compatibilityDate: '2025-06-22',
+
   vite: {
     plugins: [tailwindcss()],
     server: {
@@ -47,6 +51,7 @@ export default defineNuxtConfig({
       }
     }
   },
+
   i18n: {
     vueI18n: '~/i18n.config.ts',
     strategy: 'prefix_except_default',
@@ -67,8 +72,5 @@ export default defineNuxtConfig({
       cookieKey: 'i18n_redirected',
       redirectOn: 'root'
     }
-  },
-  pinceau: {
-    preflight: false
-  },
+  }
 });
