@@ -1,30 +1,40 @@
-<script setup>
-const { tm, locale } = useI18n();
-const textValue = tm('NewsCategoryList');
+<script lang="ts" setup>
+const { locale } = useI18n();
+// const textValue = tm('NewsCategoryList');
 
-console.log(textValue.defaultText);
+const props = defineProps<{ category: string; limit: number }>();
 
-const props = defineProps({
-  newsList: {
-    type: [Array, undefined, null]
-  }
-});
+const queryCollectionCategory =
+  (category: string, limit: number = 0) =>
+  () =>
+    queryCollection('news')
+      .select('path', 'title', 'date')
+      .where('path', 'LIKE', `%${locale.value}/%`)
+      .where('categories', 'LIKE', `%"${category}"%`) // ["category1","category2"]
+      .order('date', 'DESC')
+      .limit(limit)
+      .all();
+
+const { data, error, status } = await useAsyncData(
+  `newsCategories.${props.category}`,
+  queryCollectionCategory(props.category, props.limit)
+);
 </script>
 
 <template>
   <div>
-    <div v-if="!props.newsList || props.newsList.length === 0">
-      {{ textValue.defaultText }}
+    <div v-if="status === 'error'">
+      {{ error }}
     </div>
-    <div v-else class="flex flex-col">
-      <div v-for="item in newsList" :key="item.title" class="newslist-item">
+    <div v-else-if="status === 'success'" class="flex flex-col">
+      <div v-for="item in data" :key="item.path" class="newslist-item">
         <NuxtLinkLocale
-          :to="'/news/' + item.Path.replace(/.md$/, '')"
+          :to="item.path"
           class="flex h-[2rem] cursor-pointer pl-6 leading-8 hover:bg-leftbar-bg">
           <span class="flex-1 truncate">
-            {{ item.Title }}
+            {{ item.title }}
           </span>
-          <span class="pr-6">[{{ item.Date }}]</span>
+          <span class="pr-6">[{{ item.date.split('T')[0] }}]</span>
         </NuxtLinkLocale>
       </div>
     </div>

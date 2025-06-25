@@ -1,11 +1,8 @@
 <script setup>
-const { tm, locale } = useI18n();
+const { tm } = useI18n();
 const textValue = tm('news.index');
-const linkValue = tm('allUniversalLink');
-
-const { data: categories } = await useFetch(
-  `http://localhost:3001/newsCategories/${locale.value}.json`
-);
+// const linkValue = tm('allUniversalLink');
+const newsLimit = 10;
 </script>
 
 <template>
@@ -17,7 +14,8 @@ const { data: categories } = await useFetch(
         right-url="/news/list/advisories"
         :show-right-chevron="true" />
       <news-category-list
-        :news-list="categories.advisories || []"
+        category="advisories"
+        :limit="newsLimit"
         class="overflow-y-auto" />
     </div>
     <div class="">
@@ -28,8 +26,9 @@ const { data: categories } = await useFetch(
         class="border-l border-l-white"
         :show-right-chevron="true" />
       <news-category-list
-        :news-list="categories.news || []"
-        class="overflow-y-auto border-l-[1px] theme-border-secondary" />
+        category="news"
+        :limit="newsLimit"
+        class="theme-border-secondary overflow-y-auto border-l-[1px]" />
     </div>
     <div>
       <category-second
@@ -38,7 +37,8 @@ const { data: categories } = await useFetch(
         right-url="/news/list/journals"
         :show-right-chevron="true" />
       <news-category-list
-        :news-list="categories.journals || []"
+        category="journals"
+        :limit="newsLimit"
         class="overflow-y-auto" />
     </div>
 
@@ -50,8 +50,9 @@ const { data: categories } = await useFetch(
         :show-right-chevron="true"
         class="border-l border-l-white" />
       <news-category-list
-        :news-list="categories.minutes || []"
-        class="overflow-y-auto border-l-[1px] theme-border-secondary" />
+        category="minutes"
+        :limit="newsLimit"
+        class="theme-border-secondary overflow-y-auto border-l-[1px]" />
     </div>
   </div>
 </template>
