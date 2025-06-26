@@ -11,10 +11,10 @@ const navigationList = [
 const switchLanguage = async (to) => {
   switch (to) {
     case 'en-us':
-      await setLocale('en-us');
+      await setLocale('en');
       break;
     case 'zh-cn':
-      await setLocale('zh-cn');
+      await setLocale('zh');
       break;
   }
   location.reload();

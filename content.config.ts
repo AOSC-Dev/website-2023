@@ -1,17 +1,30 @@
 import { defineCollection, defineContentConfig, z } from '@nuxt/content';
 
+const newsSchema = z.object({
+  title: z.string(),
+  date: z.date(),
+  categories: z.array(z.string()),
+  important: z.optional(z.boolean()),
+  home: z.optional(z.boolean())
+});
+
 export default defineContentConfig({
   collections: {
-    news: defineCollection({
-      source: 'news/**',
+    zh: defineCollection({
+      source: {
+        include: 'zh/**',
+        prefix: '/'
+      },
       type: 'page',
-      schema: z.object({
-        title: z.string(),
-        date: z.date(),
-        categories: z.array(z.string()),
-        important: z.optional(z.boolean()),
-        home: z.optional(z.boolean())
-      })
+      schema: newsSchema
+    }),
+    en: defineCollection({
+      source: {
+        include: 'en/**',
+        prefix: '/'
+      },
+      type: 'page',
+      schema: newsSchema
     })
   }
 });

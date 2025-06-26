@@ -3,10 +3,10 @@ import enUSData from '~/locales/en-US.js';
 
 export default defineI18nConfig(() => ({
   legacy: false,
-  fallbackLocale: 'zh-cn',
-  locale: 'zh-cn',
+  fallbackLocale: 'zh',
+  locale: 'zh',
   messages: {
-    'en-us': enUSData,
-    'zh-cn': zhCNData
+    'en': enUSData,
+    'zh': zhCNData
   }
 }));

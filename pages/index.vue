@@ -1,5 +1,5 @@
 <script setup>
-const { tm, locale } = useI18n();
+const { tm } = useI18n();
 const textValue = tm('index');
 const linkValue = tm('allUniversalLink');
 const localLink = linkValue.local;
@@ -10,9 +10,6 @@ const columnBorderlessList = [
   '/icons/tools-wizard.min.svg',
   '/icons/love.min.svg'
 ];
-const { data: newsList } = await useFetch(
-  `http://localhost:3001/newsCategories/home.${locale.value}.json`
-);
 </script>
 
 <template>
@@ -25,7 +22,7 @@ const { data: newsList } = await useFetch(
       <div>
         <CategorySecond :title="textValue.title1" />
         <article>
-          <NewsCategoryList :news-list="newsList" />
+          <NewsCategoryList :limit=10 />
           <div
             class="px-[15px] py-[10px] text-right leading-6 font-[12pt] text-link">
             <link-standard :link="useTIndex(localLink.news, 1)" />

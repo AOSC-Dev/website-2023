@@ -2,18 +2,21 @@
 const { locale } = useI18n();
 // const textValue = tm('NewsCategoryList');
 
-const props = defineProps<{ category: string; limit: number }>();
+const props = defineProps<{
+  category?: string;
+  limit?: number;
+}>();
 
-const queryCollectionCategory =
-  (category: string, limit: number = 0) =>
-  () =>
-    queryCollection('news')
-      .select('path', 'title', 'date')
-      .where('path', 'LIKE', `%${locale.value}/%`)
-      .where('categories', 'LIKE', `%"${category}"%`) // ["category1","category2"]
-      .order('date', 'DESC')
-      .limit(limit)
-      .all();
+const queryCollectionCategory = (category?: string, limit: number = 0) => {
+  const q = queryCollection(locale.value)
+    .select('path', 'title', 'date')
+    .where('path', 'LIKE', '/news%')
+    .order('date', 'DESC')
+    .limit(limit);
+  return category
+    ? () => q.where('categories', 'LIKE', `%"${category}"%`).all() // ["category1","category2"]
+    : () => q.all();
+};
 
 const { data, error, status } = await useAsyncData(
   `newsCategories.${props.category}`,
