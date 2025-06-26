@@ -13,7 +13,7 @@ export default defineContentConfig({
     zh: defineCollection({
       source: {
         include: 'zh/**',
-        prefix: '/'
+        prefix: '/' // prefixes handled by @nuxtjs/i18n
       },
       type: 'page',
       schema: newsSchema

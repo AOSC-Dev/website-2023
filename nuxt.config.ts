@@ -30,7 +30,7 @@ export default defineNuxtConfig({
           // Theme used in all color schemes.
           theme: {
             // Default theme (same as single string)
-            default: 'github-light',
+            default: 'github-light'
           }
         }
       }
@@ -70,6 +70,10 @@ export default defineNuxtConfig({
       useCookie: true,
       cookieKey: 'i18n_redirected',
       redirectOn: 'root'
+    },
+    // https://github.com/nuxt-modules/i18n/issues/3238#issuecomment-2672492536
+    bundle: {
+      optimizeTranslationDirective: false
     }
   }
 });
