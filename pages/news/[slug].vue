@@ -1,20 +1,29 @@
-<script setup>
+<script lang="ts" setup>
 const route = useRoute();
 const { locale } = useI18n();
+
+const { data: page } = await useAsyncData(
+  computed(() => `${locale.value}:news:${route.params.slug}`),
+  () => {
+    return queryCollection(locale.value)
+      .path(`/news/${route.params.slug}`)
+      .first();
+  }
+);
 </script>
 
 <template>
   <div>
-    <ContentDoc v-slot="{ doc }" :path="`/news/${locale}/${route.params.slug}`"
-      ><article>
-        <category-second
-          :title="doc.title"
-          :right-text="doc.date.substring(0, 10)"
-          class="sticky top-0 z-1" />
-        <div class="my-12 mx-24">
-          <ContentRenderer :value="doc" />
-        </div> </article></ContentDoc
-  ></div>
+    <article>
+      <category-second
+        :title="page?.title"
+        :right-text="page?.date.substring(0, 10)"
+        class="sticky top-0 z-1" />
+      <div v-if="page" class="p-6">
+        <ContentRenderer :value="page" />
+      </div>
+    </article>
+  </div>
 </template>
 
 <style lang="css" scoped></style>

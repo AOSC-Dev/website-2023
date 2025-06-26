@@ -1,11 +1,7 @@
 <script setup>
 const route = useRoute();
-const { tm, locale } = useI18n();
+const { tm } = useI18n();
 const textValue = tm('news.index');
-
-const { data: categories } = await useFetch(
-  `http://localhost:3001/newsCategories/${route.params.category}.${locale.value}.json`
-);
 
 const categoryTitle = () => {
   switch (route.params.category) {
@@ -26,7 +22,7 @@ const categoryTitle = () => {
     <category-second
       :title="categoryTitle()"
       class="border-r-solid border-r-white" />
-    <news-category-list :news-list="categories || []" />
+    <news-category-list :category="route.params.category" />
   </div>
 </template>
 
