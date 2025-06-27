@@ -8,9 +8,17 @@ $purple: #e699e6;
 $green: #a7ecad;
 $bg-secondary: #3f6075;
 
+@use 'heti/lib/heti.scss'
+  with(
+    $line-length: none,
+    $darkmode: 'manual',
+    $manualmode-dark-selector: 'body.dark &'
+  );
+
 :root {
-  --font-family-monospace: 'Source Code Pro', 'Menlo', 'Consolas',
-    'DejaVu Sans Mono', -apple-system, monospace;
+  --font-family-monospace:
+    'Source Code Pro', 'Menlo', 'Consolas', 'DejaVu Sans Mono', -apple-system,
+    monospace;
 }
 
 @media (min-width: 1280px) {
@@ -57,7 +65,6 @@ $bg-secondary: #3f6075;
   }
 }
 
-
 .theme-text-primary {
   color: var(--primary);
 }
@@ -102,10 +109,12 @@ $bg-secondary: #3f6075;
     margin-top: 32px;
     margin-bottom: 32px;
     background-size: 4px 1px;
-    background-image: linear-gradient(to left,
-        $blue 0%,
-        $blue 25%,
-        transparent 50%);
+    background-image: linear-gradient(
+      to left,
+      $blue 0%,
+      $blue 25%,
+      transparent 50%
+    );
   }
 
   code {
@@ -125,7 +134,7 @@ $bg-secondary: #3f6075;
     font-family: var(--font-family-monospace);
     line-height: 1.75;
 
-    >code {
+    > code {
       font-size: 12px;
       padding: 15px 12px;
       overflow-x: auto;
@@ -180,7 +189,8 @@ $bg-secondary: #3f6075;
     }
   }
 
-  blockquote {}
+  blockquote {
+  }
 
   ol,
   ul {
@@ -300,7 +310,6 @@ table {
   border-collapse: collapse;
 
   tr {
-
     th,
     td {
       border: 1px solid $bg-secondary;
@@ -335,7 +344,9 @@ td {
 }
 
 .vuepress-markdown-body div[class*='v-md-pre-wrapper-'] pre,
-.vuepress-markdown-body div[class*='v-md-pre-wrapper-'] pre[class*='v-md-prism-'] {
+.vuepress-markdown-body
+  div[class*='v-md-pre-wrapper-']
+  pre[class*='v-md-prism-'] {
   z-index: 0;
 }
 
@@ -356,12 +367,12 @@ td {
 }
 
 .loader:before {
-  content: "Loading..."
+  content: 'Loading...';
 }
 
 @keyframes l2 {
   to {
-    background-size: 100% 3px
+    background-size: 100% 3px;
   }
 }
 

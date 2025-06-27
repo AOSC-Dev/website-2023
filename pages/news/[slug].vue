@@ -19,7 +19,7 @@ const { data: page } = await useAsyncData(
         :title="page?.title"
         :right-text="page?.date.substring(0, 10)"
         class="sticky top-0 z-1" />
-      <div v-if="page" class="p-6">
+      <div v-if="page" class="heti p-6">
         <ContentRenderer :value="page" />
       </div>
     </article>

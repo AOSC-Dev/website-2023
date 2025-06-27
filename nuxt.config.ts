@@ -41,6 +41,13 @@ export default defineNuxtConfig({
 
   vite: {
     plugins: [tailwindcss()],
+    css: {
+      preprocessorOptions: {
+        scss: {
+          quietDeps: true // For heti
+        }
+      }
+    },
     server: {
       proxy: {
         '/pasteApi': {

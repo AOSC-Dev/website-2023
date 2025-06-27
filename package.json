@@ -27,6 +27,7 @@
     "axios": "^1.7.7",
     "better-sqlite3": "^11.10.0",
     "element-plus": "^2.8.4",
+    "heti": "^0.9.5",
     "highlightjs": "^9.16.2",
     "mitt": "^3.0.1",
     "monaco-editor": "^0.52.0",
