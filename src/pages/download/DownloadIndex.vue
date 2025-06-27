@@ -223,7 +223,7 @@ const appleSiliconNavigationList = ref([
   },
   {
     title: '配置需求',
-    url: 'https://asahilinux.org/docs/Feature-Support/'
+    url: 'https://asahilinux.org/docs/hw/devices/device-list/'
   }
 ]);
 const antong1List = ref([
