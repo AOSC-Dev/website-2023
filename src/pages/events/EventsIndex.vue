@@ -1,5 +1,6 @@
 <script setup>
 import CategorySecond from '/src/components/CategorySecond.vue';
+import AppLink from '../../components/AppLink.vue';
 
 const navigationList = [
   {
@@ -18,6 +19,52 @@ const navigationList = [
     title: '其他活动',
     hash: '#others'
   }
+];
+
+const aosccList = [
+  {
+    year: 2025,
+    title: '上海交通大学（2025 年 7 月 26 - 27 日）',
+    hasLink: true
+  },
+  { year: 2024, title: '吉林大学（2024 年 7 月 13 - 14 日）', hasLink: true },
+  {
+    year: 2023,
+    title: '上海科技大学（2023 年 7 月 15 - 16 日）',
+    hasLink: true
+  },
+  {
+    year: 2022,
+    title: '由于新冠肺炎疫情，于线上举办（2022 年 9 月 17 日）',
+    hasLink: true
+  },
+  {
+    year: 2021,
+    title: '由于新冠肺炎疫情，于线上举办（2021 年 9 月 19 - 20 日）',
+    hasLink: true
+  },
+  {
+    year: 2020,
+    title: '由于新冠肺炎疫情，于线上举办（2020 年 9 月 25 - 26 日）',
+    hasLink: true
+  },
+  {
+    year: 2019,
+    title: '中国科学技术大学（2019 年 7 月 12 - 14 日）',
+    hasLink: true
+  },
+  {
+    year: 2018,
+    title: '于线上举办（2018 年 7 月 21 日）',
+    hasLink: true
+  },
+  {
+    year: 2017,
+    title: '广东工业大学（2017 年 7 月 14 - 16 日）',
+    hasLink: true
+  },
+  { year: 2016, title: '上海科技大学（2016 年 7 月）', hasLink: false },
+  { year: 2015, title: '深圳长虹科技大厦（2015 年 7 月）', hasLink: false }
 ];
 </script>
 
@@ -50,65 +97,11 @@ const navigationList = [
       </p>
       <div class="px-16 pt-4 pb-4">
         <ul class="list-disc">
-          <li
-            ><b>2024 年：</b
-            ><a
-              class="text-[#0056cc] no-underline"
-              href="https://wiki.aosc.io/zh/community/aoscc/2024/"
-              >吉林大学（2024 年 7 月 13 - 14 日）</a
-            ></li
-          >
-          <li
-            ><b>2023 年：</b
-            ><a
-              class="text-[#0056cc] no-underline"
-              href="https://wiki.aosc.io/zh/community/aoscc/2023/"
-              >上海科技大学（2023 年 7 月 15 - 16 日）</a
-            ></li
-          >
-          <li
-            ><b>2022 年：</b
-            ><a
-              class="text-[#0056cc] no-underline"
-              href="https://wiki.aosc.io/zh/community/aoscc/2022/"
-              >由于新冠肺炎疫情，于线上举办（2022 年 9 月 17 日）</a
-            ></li
-          >
-          <li
-            ><b>2021 年：</b
-            ><a
-              class="text-[#0056cc] no-underline"
-              href="https://wiki.aosc.io/zh/community/aoscc/2021/"
-              >由于新冠肺炎疫情，于线上举办（2021 年 9 月 19 - 20 日）</a
-            ></li
-          >
-          <li
-            ><b>2020 年：</b
-            ><a
-              class="text-[#0056cc] no-underline"
-              href="https://wiki.aosc.io/zh/community/aoscc/2020/"
-              >由于新冠肺炎疫情，于线上举办（2020 年 9 月 25 - 26 日）</a
-            ></li
-          >
-          <li
-            ><b>2019 年：</b
-            ><a
-              class="text-[#0056cc] no-underline"
-              href="https://wiki.aosc.io/zh/community/aoscc/2019/"
-              >中国科学技术大学（2019 年 7 月 12 - 14 日）</a
-            ></li
-          >
-          <li><b>2018 年：</b>聚会取消</li>
-          <li
-            ><b>2017 年：</b
-            ><a
-              class="text-[#0056cc] no-underline"
-              href="https://wiki.aosc.io/zh/community/aoscc/2017/"
-              >广东工业大学（2017 年 7 月 14 - 16 日）</a
-            ></li
-          >
-          <li><b>2016 年：</b>上海科技大学（2016 年 7 月）</li>
-          <li><b>2015 年：</b>深圳长虹科技大厦（2015 年 7 月）</li>
+          <li v-for="{ year, title, hasLink } in aosccList" :key="year">
+            <b>{{ year }} 年：</b>
+            <AppLink v-if="hasLink" :to="`/aoscc/${year}`">{{ title }}</AppLink>
+            <span v-else>{{ title }}</span>
+          </li>
         </ul>
       </div>
     </div>
@@ -184,7 +177,10 @@ const navigationList = [
       <p> 如下是近期规划内的“安同校园行”目的地： </p>
       <div class="px-16 pt-4 pb-4">
         <ul class="list-disc">
-          <li><b>2025 年 4 月 19 日：</b>北京站（北京大学、北京航空航天大学与中国人民大学合办）</li>
+          <li
+            ><b>2025 年 4 月 19 日：</b
+            >北京站（北京大学、北京航空航天大学与中国人民大学合办）</li
+          >
         </ul>
       </div>
     </div>
