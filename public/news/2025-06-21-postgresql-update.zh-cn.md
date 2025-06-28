@@ -1,85 +1,38 @@
 ---
 categories:
   - advisories
-title: "小熊猫包管理 (oma) v1.18 测试公告"
-date: 2025-06-18T16:00:00+08:00
+title: "PostgreSQL 因打包方式变化需要手动介入升级"
+date: 2025-06-21T16:00:00+08:00
 important: true
 home: true
 ---
 
-![啊噫——！](/assets/news/oma-1.18.webp)
-> 不就是小熊猫上树吗，你瞅啥？
+由于 PostgreSQL 属于多分支维护的服务端软件、且大版本之间并不兼容，而安同 OS 的 PostgreSQL 由于没有按照大版本独立打包，导致源内 PostgreSQL 版本较为落后。因此我们在此次 PostgreSQL 维护之际，对 PostgreSQL 的打包方式做出了一些改动：
 
-小熊猫包管理 (oma) v1.18 来啦！本版更新，我们引入了用于依赖树分析的`tree` 及 `why` 命令、增强了软件包信息查阅功能，还对现有界面操作逻辑进行优化并修复了数个细节问题。
+- `postgresql` 软件包不再包含二进制，仅包含指向当前最新 PostgreSQL 大版本的可执行及库文件的兼容性软链接
+- PostgreSQL 拆分为 `postgresql` 及 `postgresql-runtime` 软件包，以减少非服务端用户的依赖大小
+- 开始打包并维护 PostgreSQL 官方支持的所有 LTS 版本，所有软件包均以 `postgresql-大版本` 及 `postgresql-runtime-大版本` 格式命名，如 `postgresql-17` 及 `postgresql-runtime-17`
+- `postgresql-大版本` 软件包将会安装至 `/usr/lib/postgresql-大版本` 目录下，所有二进制文件均带有大版本后缀，如 `psql-17` 等
+- `postgresqld.service` 根据大版本重新命名至 `postgresqld-大版本.service`，如 `postgresqld-17.service`
 
-让我们来一起详细了解本版 oma 的新特性和修复吧～
+在该更新推送至主线后，您会在升级期间收到打包方式出现变动的提示。如果您并没有使用系统中的 PostgreSQL 提供数据库服务，您可以直接继续升级。
 
-安装指南
+针对正在使用系统 PostgreSQL 提供数据库服务的用户的提示
 ---
 
-安同 OS 可通过系统更新直接获取 oma 1.18 更新。
-
-Debian、Ubuntu 及衍生版，Linux Mint、deepin 及 openKylin 用户可通过如下命令获取 oma：
+如果您在本次推送之前已经通过系统的 PostgreSQL 提供数据库服务，您需要在升级前暂时停止所有连接了系统 PostgreSQL 的应用及服务，然后再停止 PostgreSQL 服务，以免造成数据库损坏；如果您的数据库涉及到关键服务，请您自行计划维护时间：
 
 ```bash
-curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh
+sudo systemctl stop postgresqld.service
 ```
 
-如果您在使用 oma 的过程中遇到问题或有任何建议，欢迎您来我社[各聊天群组](https://aosc.io/contact/)与我们联系反馈。
+在升级期间，您也会收到需要停止 PostgreSQL 服务的提示。同时，由于系统之前使用的 PostgreSQL 大版本并未自动安装至系统中，因此您需要手动安装之前发行的 PostgreSQL 13：
 
-新特性
----
+```bash
+sudo oma install postgresql-13
+sudo systemctl start postgresqld-13.service
+```
 
-### 上树探路：软件包依赖树分析器
+在安装 PostgreSQL 13 后，您可以选择继续使用 PostgreSQL 13 为您的应用或服务提供数据库服务，或者将现有数据迁移至 PostgreSQL 17。
 
-继 oma 1.17 引入软件包磁盘占用分析器后，oma 1.18 针对用户希望分析系统存储占用、查看软件包安装情况的需求，新增了依赖树分析器功能。依赖树分析器使用十分简单，输入如下命令：
-
-- **`oma tree [软件包]`** - 查阅某个软件包的依赖树
-- **`oma why [软件包]`** - 查阅某个软件包的反向依赖（即“为什么这个软件包安装在了我的电脑上？”）
-
-![](/assets/news/oma-1.18-why.webp)
-
-oma 会如上图一样，针对您指定的软件包，将依赖关系以树状图的方式呈现出来。
-
-### 查阅功能增强：本地软件包元信息读取支持
-
-为方便用户朋友直接查看本地或第三方软件包的依赖等信息，oma 1.18 引入了本地软件包元信息读取支持。
-
-![](/assets/news/oma-1.18-show-local.webp)
-
-如同先前 `show`（查看基础信息）, `depends`（查看依赖）及 `rdepends`（查看逆向依赖）命令一般，除了可以如 `oma show bash` 一样显示 `bash` 软件包的基础信息外，现在还支持如上图一样在安装前查阅如腾讯 QQ 这样的第三方软件包的基础信息、依赖和逆向依赖，实现“指哪打哪”的功能一致性。
-
-### 少卡一步：无 D-Bus 环境操作体验优化
-
-在 chroot、Docker 等无 D-Bus 环境下使用过 oma 的朋友应该遇到过这样一个小麻烦：oma 会因为无法在这种环境下探测系统运行状态（如是否接入交流电）警告用户，并要求其附加 `--no-check-dbus` 参数或修改配置文件才能继续操作。
-
-然而，一两次还好，（尤其是在 chroot 环境修复系统的时候）多了血压就高了对吧？这可不行。于是乎，oma 1.18 对这一警告进行了修改并引入了是/否询问：
-
-![](/assets/news/oma-1.18-dbus-prompt.webp)
-
-这样一来，有急事 chroot 的时候，相信您也能稍微少点烦恼了。
-
-问题修复
----
-
-oma 1.18 除了特性及功能修改外，还修复了数个界面和使用问题。
-
-### 强迫症狂喜：下载进度条对齐修正
-
-说来 oma 有个老毛病：在软件包或版本号名较长的时候，进度条可能无法正确对齐，这让强迫症患者们很是苦恼。oma 1.18 通过重构这一部分界面的绘制和布局计算逻辑，彻底修复了这一问题：
-
-![](/assets/news/oma-1.18-alignment.webp)
-
-看，这多整齐啊——
-
-### 提权提示修复
-
-先前版本的 oma 未正确设置其可执行文件的路径，导致图形化提权无法正确显示提权原因。oma 1.18 已修正这一问题：
-
-![](/assets/news/oma-1.18-polkit.webp)
-
-### 其他问题修复
-
-- 修复 `command-not-found`（未知命令提示）功能错误列出模拟运行时环境（如 EmuKit）中的可执行文件的问题，提示信息更可靠
-- 修复使用 `--dry-run`（试运行）模式执行 oma 管理操作时，oma 仍执行 dpkg 状态修复流程的问题
-- 修复 `oma provides`（软件包文件反查）无法正确补全系统文件路径的问题
+我们为此带来的不便表示歉意，如您在升级过程中遇到任何问题，请及时分享日志，或将问题截图或拍照发送至社区各群组。
