@@ -4,7 +4,7 @@ categories:
 title: "AOSCC 2025：上交大见！"
 date: 2025-05-05T00:00:00+08:00
 important: true
-home: true
+home: false
 ---
  
 ![](/assets/news/aoscc-2025-announce.png)

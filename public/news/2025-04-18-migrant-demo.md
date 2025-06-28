@@ -4,7 +4,7 @@ categories:
 title: "视觉小说《候鸟》试玩版现已登陆安同 OS"
 date: 2025-04-18T22:00:00+08:00
 important: true
-home: true
+home: false
 ---
 
 ![](/assets/news/migrant-demo.png)
