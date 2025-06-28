@@ -26,12 +26,11 @@ const linkArr = reactive([
     title: '资讯与支持',
     children: [
       { title: '新闻资讯', link: '/news' },
+      { title: '社区活动', link: '/events' },
+      { title: 'AOSCC', link: '/aoscc' },
       { title: '活动相册', link: '/gallery' },
       { title: '联系方式', link: '/contact' },
-      {
-        title: '参考文档 (Wiki)',
-        link: 'https://wiki.aosc.io/zh/'
-      }
+      { title: '参考文档 (Wiki)', link: 'https://wiki.aosc.io/zh/' }
     ],
     show: true
   },
@@ -39,18 +38,10 @@ const linkArr = reactive([
     title: '事务与文化',
     children: [
       { title: '关于社区', link: '/about' },
-      { title: '社区活动', link: '/events' },
-      { title: 'AOSCC', link: '/aoscc' },
       { title: '实习资源', link: '/internship' },
+      { title: '社区众筹', link: '/crowdsourcing' },
       { title: '赞助方一览', link: '/sponsors' },
-      {
-        title: '社区众筹',
-        link: '/crowdsourcing'
-      },
-      {
-        title: '人际关系准则',
-        link: '/guidelines'
-      },
+      { title: '人际关系准则', link: '/guidelines' },
       { title: '社区吉祥物', link: '/mascot' }
     ],
     show: true
@@ -58,34 +49,13 @@ const linkArr = reactive([
   {
     title: '服务设施',
     children: [
-      {
-        title: '公共粘贴板',
-        link: '/paste'
-      },
-      {
-        title: '社区论坛',
-        link: 'https://bbs.aosc.io/'
-      },
-      {
-        title: '代码仓库',
-        link: 'https://github.com/AOSC-Dev'
-      },
-      {
-        title: '贡献者邮箱',
-        link: 'https://mail20.mymailcheap.com/'
-      },
-      {
-        title: '构建服务器',
-        link: 'https://wiki.aosc.io/developer/infrastructure/buildbots/'
-      },
-      {
-        title: '自动化设施',
-        link: 'https://buildit.aosc.io/'
-      },
-      {
-        title: '软件包查询站',
-        link: 'https://packages.aosc.io/'
-      }
+      { title: '公共粘贴板', link: '/paste' },
+      { title: '社区论坛', link: 'https://bbs.aosc.io/' },
+      { title: '代码仓库', link: 'https://github.com/AOSC-Dev' },
+      { title: '贡献者邮箱', link: 'https://mail20.mymailcheap.com/' },
+      { title: '构建服务器', link: 'https://wiki.aosc.io/developer/infrastructure/buildbots/' },
+      { title: '自动化设施', link: 'https://buildit.aosc.io/' },
+      { title: '软件包查询站', link: 'https://packages.aosc.io/' }
     ],
     show: true
   }
