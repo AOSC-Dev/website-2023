@@ -34,7 +34,11 @@ const aosccList = [
     title: '中国科学技术大学（2019 年 7 月 12 - 14 日）',
     hasLink: true
   },
-  { year: 2018, title: '聚会取消', hasLink: false },
+  {
+    year: 2018,
+    title: '于线上举办（2018 年 7 月 21 日）',
+    hasLink: true
+  },
   {
     year: 2017,
     title: '广东工业大学（2017 年 7 月 14 - 16 日）',
