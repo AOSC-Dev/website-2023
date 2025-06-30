@@ -8,7 +8,7 @@ const props = defineProps({
 </script>
 <template>
   <div
-    class="theme-bg-color-secondary-static m-p flex h-[2rem] items-center justify-between px-[10px] py-[5px] leading-none text-white select-none">
+    class="theme-bg-color-secondary-static m-p category-second">
     <span>
       {{ props.title }}
     </span>
