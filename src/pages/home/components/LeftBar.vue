@@ -23,11 +23,20 @@ const linkArr = reactive([
     show: true
   },
   {
+    title: 'AOSCC 2025',
+    children: [
+      { title: '会议信息', link: '/aoscc' },
+      { title: '会议日程', link: '/aoscc/2025-schedule' },
+      { title: '交通和住宿', link: '/aoscc/2025-guide' },
+      { title: '往届 AOSCC', link: '/events#aoscc' }
+    ],
+    show: true
+  },
+  {
     title: '资讯与支持',
     children: [
       { title: '新闻资讯', link: '/news' },
       { title: '社区活动', link: '/events' },
-      { title: 'AOSCC', link: '/aoscc' },
       { title: '活动相册', link: '/gallery' },
       { title: '联系方式', link: '/contact' },
       { title: '参考文档 (Wiki)', link: 'https://wiki.aosc.io/zh/' }
@@ -53,7 +62,10 @@ const linkArr = reactive([
       { title: '社区论坛', link: 'https://bbs.aosc.io/' },
       { title: '代码仓库', link: 'https://github.com/AOSC-Dev' },
       { title: '贡献者邮箱', link: 'https://mail20.mymailcheap.com/' },
-      { title: '构建服务器', link: 'https://wiki.aosc.io/developer/infrastructure/buildbots/' },
+      {
+        title: '构建服务器',
+        link: 'https://wiki.aosc.io/developer/infrastructure/buildbots/'
+      },
       { title: '自动化设施', link: 'https://buildit.aosc.io/' },
       { title: '软件包查询站', link: 'https://packages.aosc.io/' }
     ],
