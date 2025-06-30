@@ -1,4 +1,5 @@
-$line-space: 22px;
+$line-space: 8px;
+$space-lg: $line-space * 3;
 $bg-color: rgba(224, 224, 224, 0.1);
 $th-bg-color: rgba(224, 224, 224, 0.3);
 $blue: #37b2ff;
@@ -11,12 +12,6 @@ $bg-secondary: #3f6075;
 :root {
   --font-family-monospace: 'Source Code Pro', 'Menlo', 'Consolas',
     'DejaVu Sans Mono', -apple-system, monospace;
-}
-
-@media (min-width: 1280px) {
-  .vuepress-markdown-body {
-    padding: 2rem 10% !important;
-  }
 }
 
 .theme-bg-color-secondary-static {
@@ -55,9 +50,43 @@ $bg-secondary: #3f6075;
   color: var(--primary);
 }
 
+// h2 == category-second in md context
+.category-second,
+.vuepress-markdown-body h2 {
+  font-size: 1em !important;
+  font-weight: normal !important;
+  background-color: var(--secondary);
+  display: flex !important;
+  height: 2rem !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  line-height: normal !important;
+  color: #fff !important;
+  user-select: none !important;
+}
+
 .vuepress-markdown-body {
   background: none;
   background-color: #fafafa !important;
+  margin-bottom: $space-lg;
+
+  > * {
+    margin-bottom: $line-space;
+  }
+
+  // Left and right margin for every direct child except 'category-second'
+  > *:not(h2) {
+    margin-inline: $space-lg !important;
+  }
+
+  // Override the default article paddings
+  &:not(.custom) {
+    padding: 0 !important;
+  }
 
   h1 {
     background-color: $bg-secondary;
@@ -71,11 +100,18 @@ $bg-secondary: #3f6075;
 
   h2 {
     border-bottom-width: 0;
+    // Vuepress' CSS has already removed the top margin for the first child
+    // so the top margin here works as expected
+    margin-top: $space-lg !important;
+    margin-bottom: $space-lg !important;
+  }
+
+  h3 {
+    font-size: 1.2rem !important;
   }
 
   p {
-    line-height: inherit;
-    margin-bottom: $line-space;
+    line-height: inherit !important;
   }
 
   img {
@@ -139,6 +175,7 @@ $bg-secondary: #3f6075;
     transition: 300ms;
     display: inline-block;
     vertical-align: bottom;
+    color: var(--color-link) !important;
 
     &::before {
       content: 'READ MORE +';
@@ -178,9 +215,10 @@ $bg-secondary: #3f6075;
   ol,
   ul {
     padding-left: 28px;
+    line-height: inherit !important;
 
     li {
-      line-height: 2em;
+      // line-height: 2em;
       margin-bottom: 0;
       list-style: inherit;
 

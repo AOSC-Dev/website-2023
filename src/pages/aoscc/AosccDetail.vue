@@ -1,5 +1,4 @@
 <script setup>
-import CategorySecond from '../../components/CategorySecond.vue';
 import PageNotFound from '../../components/PageNotFound.vue';
 import { useRoute } from 'vue-router';
 import { ref, defineAsyncComponent, watch } from 'vue';
@@ -28,8 +27,6 @@ watch(() => route.params.slug.split('#')[0], loadArticle);
       <page-not-found />
     </template>
     <template v-else>
-      <div class=""></div>
-      <category-second v-if="!error" title="AOSCC" />
       <component class="vuepress-markdown-body" :is="articleComponent" />
     </template>
   </div>
