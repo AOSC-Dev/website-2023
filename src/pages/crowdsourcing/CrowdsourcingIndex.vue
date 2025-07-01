@@ -29,7 +29,7 @@ const catalog = Object.entries(csArticleFrontmatters).map(([path, title]) => {
         >的要求，社区不接受作为社区及项目运转资金之用的捐款。但由于我社作为无运作资本的志愿者社区，在社区日常运营及为具体项目购置大宗物件（如构建用服务器和
         AOSCC
         年度聚会等场合）时经常需要资金及物质支持。因此，我们接受针对特定项目及购买计划的金钱、物品（如电脑机箱、电源及硬盘等）及服务（如网站服务器资源等）捐赠。</p
-      ><br />
+      >
     </div>
 
     <category-second title="补充条例" />

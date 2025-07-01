@@ -1,8 +1,7 @@
 <script setup>
-import CategorySecond from './CategorySecond.vue';
 import PageNotFound from './PageNotFound.vue';
 import { useRoute } from 'vue-router';
-import { ref, shallowRef, defineAsyncComponent, watchEffect } from 'vue';
+import { shallowRef, defineAsyncComponent, watch } from 'vue';
 
 const props = defineProps({
   articles: {
@@ -17,7 +16,7 @@ const props = defineProps({
 
 const route = useRoute();
 const loadError = shallowRef(false);
-const articleComponent = ref();
+const articleComponent = shallowRef();
 
 function loadArticle(slug) {
   const path = `${props.pathPrefix ?? './articles/'}${slug.split('#')[0]}${props.pathSuffix ?? '.md'}`;
@@ -32,11 +31,10 @@ function loadArticle(slug) {
 }
 
 loadArticle(route.params.slug);
-watchEffect(
+watch(
   () => route.params.slug.split('#')[0],
-  () => {
-    loadArticle(route.params.slug);
-  }
+  (newSlug) => loadArticle(newSlug),
+  { immediate: true }
 );
 </script>
 
@@ -46,11 +44,7 @@ watchEffect(
       <PageNotFound />
     </template>
     <template v-else>
-      <CategorySecond v-if="title" :title="title" />
-      <component
-        class="vuepress-markdown-body"
-        :is="articleComponent"
-        ref="mdComponent" />
+      <component class="vuepress-markdown-body" :is="articleComponent" />
     </template>
   </div>
 </template>
