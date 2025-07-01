@@ -60,10 +60,7 @@ $bg-secondary: #3f6075;
   height: 2rem !important;
   align-items: center !important;
   justify-content: space-between !important;
-  padding-left: 10px !important;
-  padding-right: 10px !important;
-  padding-top: 5px !important;
-  padding-bottom: 5px !important;
+  padding: 5px 10px !important;
   line-height: normal !important;
   color: #fff !important;
   user-select: none !important;
@@ -88,6 +85,12 @@ $bg-secondary: #3f6075;
     padding: 0 !important;
   }
 
+  // Vuepress' CSS has already removed the top margin for the first child
+  // Add it back as we've removed default paddings
+  > :first-child:not(h2){
+    margin-top: $space-lg !important;
+  }
+
   h1 {
     background-color: $bg-secondary;
     color: #fff;
@@ -100,8 +103,6 @@ $bg-secondary: #3f6075;
 
   h2 {
     border-bottom-width: 0;
-    // Vuepress' CSS has already removed the top margin for the first child
-    // so the top margin here works as expected
     margin-top: $space-lg !important;
     margin-bottom: $space-lg !important;
   }
