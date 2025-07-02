@@ -25,6 +25,20 @@ export default defineContentConfig({
       },
       type: 'page',
       schema: newsSchema
+    }),
+    gallery: defineCollection({
+      source: 'all/gallery.yml',
+      type: 'data',
+      schema: z.object({
+        gallery: z.array(
+          z.object({
+            title: z.string(),
+            album: z.array(
+              z.object({ desc: z.string(), date: z.string(), file: z.string() })
+            )
+          })
+        )
+      })
     })
   }
 });

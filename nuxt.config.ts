@@ -54,6 +54,10 @@ export default defineNuxtConfig({
           target: 'http://localhost:46203',
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/pasteApi/, '')
+        },
+        '/galleryFile': {
+          target: 'https://aosc.io',
+          changeOrigin: true
         }
       }
     }
