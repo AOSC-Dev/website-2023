@@ -13,8 +13,7 @@ const props = defineProps({
 
 <template>
   <el-icon class="cursor-pointer my-auto" v-bind="props" @click="copyToClipboard(props.contentTarget)">
-    <el-icon-document-copy> </el-icon-document-copy
-  ></el-icon>
+    <el-icon-document-copy/></el-icon>
 </template>
 
 <style scoped></style>

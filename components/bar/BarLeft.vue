@@ -206,8 +206,7 @@ const backToTopBtnShow = ref(false);
             behavior: 'smooth' 
         })">
         <el-icon class="my-auto ml-4" size="20"
-          ><el-icon-top></el-icon-top
-        ></el-icon>
+          ><el-icon-top/></el-icon>
         <span class="mr-4">{{ textValue.span1 }}</span>
       </div>
     </Transition>

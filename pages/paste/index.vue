@@ -52,7 +52,7 @@ const submit = async () => {
     formdata.append('fileList', toRaw(file.raw), file.name);
   });
   formdata.append('expDate', pasteFormData.value.expDate);
-  let [res, err] = await requestPostJson('/pasteApi/paste', formdata);
+  const [res, err] = await requestPostJson('/pasteApi/paste', formdata);
   if (res) {
     const results = res.data;
     if (results.code == 0) {

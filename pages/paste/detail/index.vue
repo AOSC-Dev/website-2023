@@ -64,16 +64,16 @@ const returnHref = () => window.location.href;
           </div>
           <ul class="el-upload-list el-upload-list--text">
             <li
-              class="el-upload-list__item is-ready"
               v-for="filename in details.fileList"
-              :key="filename">
+              :key="filename"
+              class="el-upload-list__item is-ready">
               <div class="items-center flex">
                 <el-icon class="mr-2"><Document /></el-icon>
                 <span
                   ><img
+                    v-if="isImg(filename)"
                     :src="getAttachUrl(filename)"
-                    class="w-full"
-                    v-if="isImg(filename)" />
+                    class="w-full" />
                   <a
                     v-else
                     class="text-link"

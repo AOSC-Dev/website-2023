@@ -24,7 +24,7 @@ const switchLanguage = async (to) => {
 <template>
   <div class="bg-cover">
     <div class="flex">
-      <div class="grow"></div>
+      <div class="grow"/>
       <div class="content-container flex justify-end">
         <div
           class="theme-bg-color-primary-static text-white flex justify-end py-[5px] whitespace-nowrap text-clip *:no-underline pl-[50px] pr-[0.5rem]">
@@ -65,7 +65,7 @@ const switchLanguage = async (to) => {
             :navigation-list="navigationList" />
         </div>
       </div>
-      <div class="grow theme-bg-color-primary-static"></div>
+      <div class="grow theme-bg-color-primary-static"/>
     </div>
     <div class="flex justify-center">
       <div class="content-container h-[69.2px]">

@@ -13,8 +13,7 @@ const localLink = linkValue.local;
       productid="9NMDF21NV65Z"
       window-mode="popup"
       theme="dark"
-      animation="on">
-    </ms-store-badge>
+      animation="on"/>
     <p class="mb-0">{{ textValue.text2 }}</p>
     <div>
       <el-button>
