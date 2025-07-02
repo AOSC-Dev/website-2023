@@ -1,6 +1,6 @@
 <script setup>
 const { locale } = useI18n();
-const props = defineProps({
+defineProps({
   title: {
     type: [Object],
     required: true

@@ -1,8 +1,8 @@
 <script setup>
-const { tm, locale } = useI18n();
+const { tm } = useI18n();
 const textValue = tm('aosc-os.relnote.asahi');
-const linkValue = tm('allUniversalLink');
-const localLink = linkValue.local;
+// const linkValue = tm('allUniversalLink');
+// const localLink = linkValue.local;
 </script>
 
 <template>

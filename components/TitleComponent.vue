@@ -1,8 +1,8 @@
 <script setup>
-const props = defineProps({
+defineProps({
   title: { type: String, required: true },
   description: { type: String, required: true },
-  navigationList: { type: Array },
+  navigationList: { type: Array, default: () => [] },
   smallTitle: { type: Boolean, default: false }
 });
 </script>

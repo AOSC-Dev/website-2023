@@ -1,13 +1,15 @@
 <script setup>
-const { tm, locale } = useI18n();
+const { tm } = useI18n();
 const textValue = tm('DownloadButton');
 
 const props = defineProps({
   archName: {
-    type: String
+    type: String,
+    required: true
   },
   isaInfo: {
-    type: Object
+    type: Object,
+    required: true
   },
   secondLineFontSize: {
     type: Number,
@@ -22,19 +24,20 @@ const props = defineProps({
     default: 140
   },
   popoverData: {
-    type: {
-      placement: { type: String },
-      content: { type: String }
-    }
+    type: Object,
+    required: true
   },
   buttonColor: {
-    type: String
+    type: String,
+    required: true
   },
   url: {
-    type: String
+    type: String,
+    required: true
   },
   sources: {
-    type: Array
+    type: Array,
+    required: true
   },
   disabled: {
     type: Boolean,

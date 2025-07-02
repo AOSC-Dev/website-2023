@@ -1,8 +1,8 @@
 <script setup>
-const { tm, locale } = useI18n();
+const { tm } = useI18n();
 const textValue = tm('aosc-os.relnote.index');
 const linkValue = tm('allUniversalLink');
-const localLink = linkValue.local;
+// const localLink = linkValue.local;
 
 const issuanceNoteRef = useTemplateRef('issuance-note');
 const route = useRoute();

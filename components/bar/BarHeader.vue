@@ -1,6 +1,6 @@
 <script setup>
 const { tm, locale, setLocale } = useI18n();
-const textValue = tm('BarHeader');
+// const textValue = tm('BarHeader');
 const linkValue = tm('allUniversalLink');
 const navigationList = [
   linkValue.local.download,

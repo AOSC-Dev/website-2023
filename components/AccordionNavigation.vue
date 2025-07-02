@@ -1,6 +1,6 @@
 <script setup>
 const route = useRoute();
-const props = defineProps({
+defineProps({
   navigationList: {
     type: Array,
     required: true

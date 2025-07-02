@@ -1,5 +1,5 @@
 <script setup>
-const { tm, locale } = useI18n();
+const { tm } = useI18n();
 const textValue = tm('oma.index');
 const linkValue = tm('allUniversalLink');
 const localLink = linkValue.local;

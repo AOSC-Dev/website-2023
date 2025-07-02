@@ -1,15 +1,15 @@
 <script setup>
-const { tm, locale } = useI18n();
+const { tm } = useI18n();
 const textValue = tm('DownloadDetailsMain');
 const linkValue = tm('allUniversalLink');
 const locallink = linkValue.local;
 
 const props = defineProps({
-  arch: { type: String },
-  content: { type: String },
-  path: { type: String },
-  sha256sum: { type: String },
-  sources: { type: [{ name: String, loc: String, url: String }] }
+  arch: { type: String, required: true },
+  content: { type: String, required: true },
+  path: { type: String, required: true },
+  sha256sum: { type: String, required: true },
+  sources: { type: [{ name: String, loc: String, url: String }], required: true }
 });
 
 const selected_source_url = ref(props.sources[0].url);

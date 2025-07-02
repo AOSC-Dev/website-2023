@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import path from 'node:path';
 import pangu from 'pangu';
 
 const processJson = (data) => {
@@ -16,7 +17,7 @@ const processJson = (data) => {
   } else if (typeof data === 'object' && data !== null) {
     // 如果是对象，递归处理对象的每一个键值对
     for (let key in data) {
-      if (data.hasOwnProperty(key)) {
+      if (Object.prototype.hasOwnProperty.call(data, key)) {
         result[key] = processJson(data[key]);
       }
     }
@@ -28,7 +29,7 @@ const processJson = (data) => {
 };
 
 // 从 JSON 文件读取数据并处理
-const processJsonFile = (outputFilePath) => {
+const processJsonFile = (inputFilePath, outputFilePath) => {
   // 处理 JSON 数据
   fs.readFile(inputFilePath, 'utf8', (err, data) => {
     if (err) {
@@ -63,8 +64,8 @@ const processJsonFile = (outputFilePath) => {
   });
 };
 
-const processFilesInDirectory = () => {
-  fs.readdir('../locales/zh-cn', (err, files) => {
+const processFilesInDirectory = (directoryPath) => {
+  fs.readdir(directoryPath, (err, files) => {
     if (err) {
       console.error('读取目录失败:', err);
       return;
@@ -92,4 +93,4 @@ const processFilesInDirectory = () => {
     });
   });
 };
-processFilesInDirectory(directoryPath);
+processFilesInDirectory('../locales/zh-cn');

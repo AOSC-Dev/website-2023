@@ -2,7 +2,7 @@
 const highBrightnessControllerStore = useHighBrightnessControllerStore();
 const router = useRouter();
 
-router.afterEach((to, from) => {
+router.afterEach((to, _from) => {
   highBrightnessControllerStore.obj[to.path] =
     !highBrightnessControllerStore.obj[to.path];
 });

@@ -11,7 +11,7 @@ const switchHash = () => {
 };
 useHighlightWatch(switchHash);
 
-const { tm, locale } = useI18n();
+const { tm } = useI18n();
 const textValue = tm('afterglow.index');
 const linkValue = tm('allUniversalLink');
 const localLink = linkValue.local;

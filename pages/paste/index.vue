@@ -2,9 +2,9 @@
 import dayjs from 'dayjs';
 import hljs from 'highlight.js/lib/core';
 
-const { tm, locale } = useI18n();
+const { tm } = useI18n();
 const textValue = tm('paste.index');
-const linkValue = tm('allUniversalLink');
+// const linkValue = tm('allUniversalLink');
 
 const languageList = ref(hljs.listLanguages());
 

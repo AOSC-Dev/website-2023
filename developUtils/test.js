@@ -4,26 +4,26 @@ import fs from 'node:fs';
 const jsonData = urlList;
 
 // 用正则表达式匹配中文字符
-const chineseRegex = /[\u4e00-\u9fa5]/;
+// const chineseRegex = /[\u4e00-\u9fa5]/;
 
 // 用来存储符合条件的中文字符串
-let result = [];
+// let result = [];
 
 // 递归函数，遍历嵌套结构
-const extractChineseNodes = (node) => {
-  if (typeof node === 'string') {
-    // 如果是字符串，检查是否包含中文
-    if (chineseRegex.test(node)) {
-      result.push(node);
-    }
-  } else if (Array.isArray(node)) {
-    // 如果是数组，递归检查每个元素
-    node.forEach((item) => extractChineseNodes(item));
-  } else if (typeof node === 'object' && node !== null) {
-    // 如果是对象，递归遍历所有值
-    Object.values(node).forEach((value) => extractChineseNodes(value));
-  }
-};
+// const extractChineseNodes = (node) => {
+//   if (typeof node === 'string') {
+//     // 如果是字符串，检查是否包含中文
+//     if (chineseRegex.test(node)) {
+//       result.push(node);
+//     }
+//   } else if (Array.isArray(node)) {
+//     // 如果是数组，递归检查每个元素
+//     node.forEach((item) => extractChineseNodes(item));
+//   } else if (typeof node === 'object' && node !== null) {
+//     // 如果是对象，递归遍历所有值
+//     Object.values(node).forEach((value) => extractChineseNodes(value));
+//   }
+// };
 const chineseToEnglish = (jsonObj, englishList) => {
   // 如果是数组，遍历数组中的每个元素
   if (Array.isArray(jsonObj)) {
@@ -54,15 +54,15 @@ const chineseToEnglish = (jsonObj, englishList) => {
 // main1 用来提取 json 中文件包含中文的根节点，修改输入源请更改顶层 import
 // 用法：先用 main1 读取你要替换的 json 文件，拿到一个中文 string 数组，丢
 // 给翻译，然后去 main2 替换原来的文件并输出新文件，完成一个多语言翻译
-const main1 = () => {
-  // 调用递归函数，提取中文根节点
-  extractChineseNodes(jsonData);
-  fs.writeFileSync(
-    './extractChineseNodes-result.json',
-    JSON.stringify(result, null, 2),
-    'utf-8'
-  );
-};
+// const main1 = () => {
+//   // 调用递归函数，提取中文根节点
+//   extractChineseNodes(jsonData);
+//   fs.writeFileSync(
+//     './extractChineseNodes-result.json',
+//     JSON.stringify(result, null, 2),
+//     'utf-8'
+//   );
+// };
 
 const sss = [
   'Web Source Code',

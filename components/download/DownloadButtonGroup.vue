@@ -1,10 +1,10 @@
 <script setup>
-const { tm, locale } = useI18n();
+const { tm } = useI18n();
 const textValue = tm('DownloadButtonGroup');
 
-const props = defineProps({
-  title: { type: String },
-  description: { type: String },
+defineProps({
+  title: { type: String, default: '' },
+  description: { type: String, default: '' },
   buttonProps: { type: Array[Object], required: true }
 });
 const expand = ref(false);

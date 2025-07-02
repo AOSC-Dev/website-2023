@@ -1,8 +1,8 @@
 <script setup>
-const { tm, locale } = useI18n();
+const { tm } = useI18n();
 const textValue = tm('AppSupport');
 
-const props = defineProps({
+defineProps({
   navigationList: {
     type: Array,
     required: true

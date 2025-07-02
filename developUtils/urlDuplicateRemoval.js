@@ -9,7 +9,7 @@ function findAndDeduplicateUrls(obj) {
   // 遍历对象的所有属性
   const traverse = (curr) => {
     for (let key in curr) {
-      if (curr.hasOwnProperty(key)) {
+      if (Object.prototype.hasOwnProperty.call(curr, key)) {
         // 如果key是url，收集url的值
         if (key === 'url' && typeof curr[key] === 'string') {
           if (urlValues.includes(curr[key])) {

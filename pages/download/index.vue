@@ -1,7 +1,7 @@
 <script setup>
 // #region Common
 
-const { tm, locale } = useI18n();
+const { tm } = useI18n();
 const textValue = tm('download.index');
 const linkValue = tm('allUniversalLink');
 const localLink = linkValue.local;
@@ -176,7 +176,6 @@ const getNewVersionArch = (arch, type) => {
   list = list.sort(isoVersionCmp);
   return list[0];
 };
-const isReady = ref(false);
 (async () => {
   // Installer and LiveKit
   const [res, err] = await requestGetJson(

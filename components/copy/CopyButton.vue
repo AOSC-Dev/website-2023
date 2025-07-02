@@ -1,12 +1,11 @@
 <script setup>
-const { tm, locale } = useI18n();
+const { tm } = useI18n();
 const textValue = tm('CopyButton');
 
-const props = defineProps({
-  content: { type: String },
+defineProps({
+  content: { type: String, required: true },
   buttonText: {
     type: [String, undefined],
-    optional: true,
     default: undefined
   }
 });

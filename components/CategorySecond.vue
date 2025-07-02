@@ -1,11 +1,11 @@
 <script setup>
 const props = defineProps({
-  title: { type: String },
-  rightText: { type: String },
-  rightUrl: { type: String },
-  rightName: { type: String },
+  title: { type: String, required: true },
+  rightText: { type: String, default: '' },
+  rightUrl: { type: String, default: '' },
+  rightName: { type: String, default: '' },
   showRightChevron: { type: Boolean },
-  params: { type: String }
+  params: { type: String, default: '' }
 });
 </script>
 

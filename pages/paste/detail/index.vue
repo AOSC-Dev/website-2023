@@ -6,9 +6,8 @@ const failReason = ref('');
 
 const themeStore = useThemeStore();
 
-const { tm, locale } = useI18n();
+const { tm } = useI18n();
 const textValue = tm('paste.detail');
-const linkValue = tm('allUniversalLink');
 
 const isImg = (name) => {
   const suffixIndex = name.lastIndexOf('.');
@@ -22,7 +21,7 @@ const getAttachUrl = (name) => {
 
 const isReady = ref(false);
 if (import.meta.client) {
-  const [res, err] = await requestGetJson('/pasteApi/paste', {
+  const [res, _err] = await requestGetJson('/pasteApi/paste', {
     id: route.query.id
   });
 
