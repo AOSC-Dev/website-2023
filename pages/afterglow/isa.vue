@@ -12,7 +12,7 @@ const switchHash = () => {
   switch (route.hash) {
     case '#afterlowIsaTitle':
       highlightElement(afterlowIsaListRef);
-      break; 
+      break;
   }
 };
 useHighlightWatch(switchHash);

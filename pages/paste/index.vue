@@ -98,13 +98,13 @@ const handleChange = (uploadFile, uploadFiles) => {
 <template>
   <div v-loading="submiting">
     <category-second :title="textValue.title1" />
-    <div class="py-[30px] px-[10%]">
-      <div class="flex justify-between mb-[10px]">
+    <div class="px-[10%] py-[30px]">
+      <div class="mb-[10px] flex justify-between">
         <div class="flex">
           <select
             v-model="pasteFormData.language"
             filterable
-            class="border-2 theme-border-primary rounded-none mr-[20px]">
+            class="theme-border-primary mr-[20px] rounded-none border-2">
             <option v-for="item in languageList" :key="item" :value="item">
               {{ item }}
             </option>
@@ -113,7 +113,7 @@ const handleChange = (uploadFile, uploadFiles) => {
             v-model="pasteFormData.expDate"
             required
             type="date"
-            class="border-2 theme-border-primary rounded-none"
+            class="theme-border-primary rounded-none border-2"
             :min="dayjs().add(1, 'day').format('YYYY-MM-DD')" />
         </div>
         <button
@@ -125,12 +125,12 @@ const handleChange = (uploadFile, uploadFiles) => {
       <input
         v-model="pasteFormData.title"
         type="text"
-        class="border-2 theme-border-primary rounded-none w-full mb-[10px] py-[10px]"
+        class="theme-border-primary mb-[10px] w-full rounded-none border-2 py-[10px]"
         :placeholder="textValue.placeholder1" />
       <!-- 内容编辑器 -->
       <MonacoEditor
         v-model="pasteFormData.content"
-        class="border-2 theme-border-primary h-[50vh] rounded-none"
+        class="theme-border-primary h-[50vh] rounded-none border-2"
         :lang="pasteFormData.language" />
       <!-- 文件选择器 -->
       <el-upload
@@ -140,7 +140,7 @@ const handleChange = (uploadFile, uploadFiles) => {
         :on-change="handleChange"
         drag
         multiple>
-        <div class="h-[26px] my-[-26px]">
+        <div class="my-[-26px] h-[26px]">
           <el-icon size="24"><el-icon-upload-filled /></el-icon>
           <div ref="div1" class="el-upload__text">
             {{ textValue.div1[0] }} <em>{{ textValue.div1[1] }}</em>

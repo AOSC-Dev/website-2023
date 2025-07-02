@@ -6,3 +6,6 @@ deploy/*
 website/*
 auto-imports.d.ts
 components.d.ts
+content/*
+locales/*
+fileServe/*

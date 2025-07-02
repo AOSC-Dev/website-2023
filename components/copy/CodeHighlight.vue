@@ -38,7 +38,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="py-2 flex">
+  <div class="flex py-2">
     <code ref="code" class="pl-[1em]" :class="props.codeClass">{{
       codeText
     }}</code>

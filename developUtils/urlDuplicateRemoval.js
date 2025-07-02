@@ -1,4 +1,4 @@
-import urlList from '../locales/json/zh-cnallUniversalLink.json' with { type: "json" };
+import urlList from '../locales/json/zh-cnallUniversalLink.json' with { type: 'json' };
 
 // 这个工具用来查找 allUniversalLink.json 里重复的 url
 

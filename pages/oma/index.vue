@@ -19,7 +19,7 @@ const navigationList = [
         <link-standard :link="linkValue.dpkgWiki" />
         {{ textValue.p2 }}
       </p>
-      <div class="pt-4 pb-4 px-16">
+      <div class="px-16 pt-4 pb-4">
         <ul class="list-disc">
           <li
             v-for="(item, index) in textValue.ul1.li"
@@ -33,7 +33,7 @@ const navigationList = [
         <AccordionNavigation :navigation-list="navigationList" />
       </div>
       <div ref="bgImg" class="h-[685px]">
-        <img src="/oma/oma.png" class="w-full h-auto mt-2" alt=""
+        <img src="/oma/oma.png" class="mt-2 h-auto w-full" alt=""
       /></div>
     </div>
   </div>

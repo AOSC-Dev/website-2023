@@ -56,7 +56,7 @@ const returnHref = () => window.location.href;
               <div ref="div2">{{ textValue.div2 + details.expDate }}</div>
             </div>
             <button
-              class="text-white px-[3em] theme-bg-color-primary-static py-[1em]"
+              class="theme-bg-color-primary-static px-[3em] py-[1em] text-white"
               @click="copyToClipboard(returnHref())">
               {{ textValue.button1 }}
             </button>
@@ -66,7 +66,7 @@ const returnHref = () => window.location.href;
               v-for="filename in details.fileList"
               :key="filename"
               class="el-upload-list__item is-ready">
-              <div class="items-center flex">
+              <div class="flex items-center">
                 <el-icon class="mr-2"><Document /></el-icon>
                 <span
                   ><img
@@ -86,7 +86,7 @@ const returnHref = () => window.location.href;
           </ul>
         </div>
         <CodeHighlight
-          class="bg-[#ccccccc3]/15 mt-4 justify-between"
+          class="mt-4 justify-between bg-[#ccccccc3]/15"
           button-class="mr-8"
           :button-color="themeStore.primary"
           :code-text="details.content"

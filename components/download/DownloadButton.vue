@@ -84,7 +84,7 @@ const onClick = () => {
           }"
           class="theme-bg-color-secondary-primary h-full grow cursor-pointer overflow-hidden py-2 hover:no-underline"
           @click="onClick">
-          <slot/>
+          <slot />
           <span class="first-line-p">{{ archNameBrackets[1] }}</span>
           <span class="second-line-p">{{ archNameBrackets[2] }}</span>
         </button>

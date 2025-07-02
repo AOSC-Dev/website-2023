@@ -23,7 +23,7 @@ onMounted(() => {
 <template>
   <div class="container-p">
     <category-second id="issuance-note" :title="textValue.title1" />
-    <div ref="issuance-note" class="p-6 ">
+    <div ref="issuance-note" class="p-6">
       <p>{{ textValue.p1 }}</p>
       <p>{{ textValue.p2 }}</p>
       <p
@@ -32,9 +32,9 @@ onMounted(() => {
     </div>
 
     <category-second id="platform-support" :title="textValue.title2" />
-    <div class="p-6 ">
+    <div class="p-6">
       <p>{{ textValue.p3 }}</p>
-      <div class="pt-2 pb-4 px-16">
+      <div class="px-16 pt-2 pb-4">
         <app-ul-ordinary :lis="textValue.ul1.li" my-key="aosc-os-relnote-1" />
       </div>
     </div>
@@ -45,7 +45,7 @@ onMounted(() => {
         >{{ textValue.p4[0] }}<code>{{ textValue.p4[1] }}</code
         >{{ textValue.p4[2] }}</p
       >
-      <div class="pt-2 pb-4 px-16">
+      <div class="px-16 pt-2 pb-4">
         <app-ul-ordinary :lis="textValue.ul2.li" my-key="aosc-os-relnote-2" />
       </div>
     </div>
@@ -53,7 +53,7 @@ onMounted(() => {
     <category-second id="component-updates" :title="textValue.titl4" />
     <div class="p-6">
       <p>{{ textValue.p5 }}</p>
-      <div class="pt-2 pb-4 px-16">
+      <div class="px-16 pt-2 pb-4">
         <ul class="list-disc">
           <li
             v-for="(item, index) in textValue.ul3.li"
@@ -84,7 +84,7 @@ onMounted(() => {
     <category-second id="bugfixes" :title="textValue.title5" />
     <div class="p-6">
       <p>{{ textValue.p6 }}</p>
-      <div class="pt-2 pb-4 px-16">
+      <div class="px-16 pt-2 pb-4">
         <ul class="list-disc">
           <li
             v-for="(item, index) in textValue.ul4.li"
@@ -100,7 +100,7 @@ onMounted(() => {
     <category-second id="installation-media" :title="textValue.title6" />
     <div class="p-6">
       <p>{{ textValue.p7 }}</p>
-      <div class="pt-2 pb-4 px-16">
+      <div class="px-16 pt-2 pb-4">
         <ul class="list-disc">
           <li
             v-for="(item, index) in textValue.ul5.li"

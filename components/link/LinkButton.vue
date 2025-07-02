@@ -10,7 +10,7 @@ defineProps({
 <template>
   <link-standard
     :link="link"
-    class="flex justify-center items-center text-white hover:no-underline hover:opacity-85 theme-bg-color-primary-static" />
+    class="theme-bg-color-primary-static flex items-center justify-center text-white hover:no-underline hover:opacity-85" />
 </template>
 
 <style scoped></style>

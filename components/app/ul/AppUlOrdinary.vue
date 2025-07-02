@@ -31,7 +31,7 @@ const props = defineProps({
           :lis="item"
           :li-class="liClass"
           :my-key="`${myKey}-${index}`"
-          class="pl-[2.5rem] py-[0.5rem]" /></template
+          class="py-[0.5rem] pl-[2.5rem]" /></template
     ></li>
   </ul>
 </template>

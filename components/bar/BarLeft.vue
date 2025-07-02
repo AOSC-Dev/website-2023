@@ -199,14 +199,13 @@ const backToTopBtnShow = ref(false);
     <Transition name="anim-button">
       <div
         v-show="backToTopBtnShow"
-        class="flex justify-between text-white leading-8 mb-[1px] to-top-color"
+        class="to-top-color mb-[1px] flex justify-between leading-8 text-white"
         onclick="window.scrollTo({
             top: 0,
             left: 0,
             behavior: 'smooth' 
         })">
-        <el-icon class="my-auto ml-4" size="20"
-          ><el-icon-top/></el-icon>
+        <el-icon class="my-auto ml-4" size="20"><el-icon-top /></el-icon>
         <span class="mr-4">{{ textValue.span1 }}</span>
       </div>
     </Transition>

@@ -186,8 +186,7 @@ const sss = [
   'Implementation Principles'
 ];
 
-
-// mian2 用来替换一个json 文件中每一个包含中文的根节点，其输入 sss 
+// mian2 用来替换一个json 文件中每一个包含中文的根节点，其输入 sss
 // 应该为 main1 的输出，输入jsonData应该是你要替换的json文件。
 const main2 = () => {
   chineseToEnglish(jsonData, sss);

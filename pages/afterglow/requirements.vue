@@ -55,15 +55,14 @@ const afterlowRequirementsList = ref();
     </div>
 
     <category-second :title="textValue.title2" />
-    <div class="pt-4 pb-4 px-16">
+    <div class="px-16 pt-4 pb-4">
       <ul class="list-disc">
         <li
           v-for="(item, index) in textValue.ul1.li"
           :key="`afterlow-requirements-1-li-${index}`"
           ><div v-if="index === 0"
             >{{ item
-            }}<link-standard
-              :link="useHIndex(localLink.afterlowIsaTitle, 0)" />
+            }}<link-standard :link="useHIndex(localLink.afterlowIsaTitle, 0)" />
           </div>
           <div v-else>{{ item }}</div></li
         >

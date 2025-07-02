@@ -54,7 +54,7 @@ const aoscOsRequirementsList = ref();
     </div>
 
     <category-second :title="textValue.title2" />
-    <div class="pt-[1rem] pb-[2rem] px-[4rem]">
+    <div class="px-[4rem] pt-[1rem] pb-[2rem]">
       <ul class="list-disc">
         <li
           v-for="(item, index) in textValue.ul1.li"

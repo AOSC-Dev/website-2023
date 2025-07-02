@@ -4,7 +4,6 @@ const textValue = tm('aosc-os.requirements');
 const linkValue = tm('allUniversalLink');
 const localLink = linkValue.local;
 
-
 const docList = [useHIndex(localLink.aoscIsaTableTitle, 0)];
 
 const route = useRoute();
@@ -33,7 +32,7 @@ const aoscOsRequirementsRef = useTemplateRef('aoscOsRequirementsList');
     </div>
 
     <category-second id="support" :title="textValue.title2" />
-    <div class="pt-4 pb-4 px-16">
+    <div class="px-16 pt-4 pb-4">
       <ul class="list-disc">
         <li
           v-for="(item, index) in textValue.ul1.li"
@@ -41,8 +40,7 @@ const aoscOsRequirementsRef = useTemplateRef('aoscOsRequirementsList');
           ><template v-if="index === 0"
             >{{ item
             }}<link-standard
-              :link="useHIndex(localLink.aoscIsaTableTitle, 0)" />
-            </template
+              :link="useHIndex(localLink.aoscIsaTableTitle, 0)" /> </template
           ><template v-else>{{ item }}</template></li
         >
       </ul>

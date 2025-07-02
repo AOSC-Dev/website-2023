@@ -22,4 +22,3 @@ export const highlightElement = (dom: Ref<HTMLDivElement>) => {
 };
 
 export default highlightElement;
-  

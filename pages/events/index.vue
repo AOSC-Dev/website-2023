@@ -27,7 +27,6 @@ const switchHash = () => {
 };
 useHighlightWatch(switchHash);
 
-
 const evelink = localLink.events;
 const navigationList = [
   useTIndex(useHIndex(evelink, 0), 2),
@@ -71,7 +70,7 @@ const lis5 = textValue.ul5.li.map((obj, index) => {
       <p>
         {{ textValue.p3 }}
       </p>
-      <div class="pt-4 pb-4 px-16">
+      <div class="px-16 pt-4 pb-4">
         <ul class="list-disc">
           <li
             v-for="(item, index) in textValue.ul1.b"
@@ -100,7 +99,7 @@ const lis5 = textValue.ul5.li.map((obj, index) => {
         <app-ul-b-and-link :lis="lis2" my-key="events-index-2-li" />
       </div>
       <p class="pt-[1rem]"> {{ textValue.p6 }} </p>
-      <div  class="pl-[3rem] pt-[1rem]">
+      <div class="pt-[1rem] pl-[3rem]">
         <li
           v-for="(item, index) in textValue.ul3.li"
           :key="`events-index-3-li-${index}`"
@@ -115,7 +114,7 @@ const lis5 = textValue.ul5.li.map((obj, index) => {
       <p>
         {{ textValue.p7 }}
       </p>
-      <div class="pt-4 pb-4 px-16">
+      <div class="px-16 pt-4 pb-4">
         <app-ul-b-and-link :lis="lis4" my-key="events-index-4-li" />
       </div>
     </div>
@@ -125,7 +124,7 @@ const lis5 = textValue.ul5.li.map((obj, index) => {
       <p>
         {{ textValue.p8 }}
       </p>
-      <div class="pt-4 pb-4 px-16">
+      <div class="px-16 pt-4 pb-4">
         <app-ul-b-and-link :lis="lis5" my-key="events-index-5-li" />
       </div>
     </div>

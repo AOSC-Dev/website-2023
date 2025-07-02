@@ -22,7 +22,7 @@ const props = defineProps({
         ><app-ul-b-and-link
           :lis="item"
           :my-key="`${myKey}-${index}`"
-          class="pl-[2.5rem] py-[0.5rem]" /></template
+          class="py-[0.5rem] pl-[2.5rem]" /></template
       ><template v-else
         ><b>{{ item.b }}</b
         ><app-link :to="item.link.url">{{

@@ -25,7 +25,7 @@ onMounted(() => {
               class="sticky top-0 w-[15%] min-w-[12rem] bg-leftbar-bg *:text-nowrap">
               <BarLeft class="sticky top-0 min-w-[100%] *:text-nowrap" />
             </div>
-            <slot/>
+            <slot />
           </div>
         </div>
       </div>

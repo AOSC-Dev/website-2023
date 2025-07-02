@@ -27,7 +27,7 @@ const docList = [
         <AccordionNavigation :navigation-list="navigationList" />
       </div>
       <div class="liblolsvg">
-        <img src="/liblol/liblol.svg" class="w-full h-auto mt-2" alt="" />
+        <img src="/liblol/liblol.svg" class="mt-2 h-auto w-full" alt="" />
       </div>
     </div>
 

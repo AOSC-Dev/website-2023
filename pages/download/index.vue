@@ -411,7 +411,7 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
           productid="9NMDF21NV65Z"
           window-mode="popup"
           theme="dark"
-          animation="off"/>
+          animation="off" />
       </div>
 
       <div

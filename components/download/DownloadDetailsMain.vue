@@ -9,7 +9,10 @@ const props = defineProps({
   content: { type: String, required: true },
   path: { type: String, required: true },
   sha256sum: { type: String, required: true },
-  sources: { type: [{ name: String, loc: String, url: String }], required: true }
+  sources: {
+    type: [{ name: String, loc: String, url: String }],
+    required: true
+  }
 });
 
 const selected_source_url = ref(props.sources[0].url);
@@ -37,7 +40,6 @@ const mediaWritersInfo = setNestedKeyValue(
   textValue.mediaWritersInfo,
   'name'
 );
-
 </script>
 
 <template>

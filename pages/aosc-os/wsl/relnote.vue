@@ -17,6 +17,5 @@ const textValue = tm('aosc-os.wsl.relnote');
   </div>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
 ./components/Header.vue

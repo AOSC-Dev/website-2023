@@ -24,14 +24,14 @@ const switchLanguage = async (to) => {
 <template>
   <div class="bg-cover">
     <div class="flex">
-      <div class="grow"/>
+      <div class="grow" />
       <div class="content-container flex justify-end">
         <div
-          class="theme-bg-color-primary-static text-white flex justify-end py-[5px] whitespace-nowrap text-clip *:no-underline pl-[50px] pr-[0.5rem]">
+          class="theme-bg-color-primary-static flex justify-end py-[5px] pr-[0.5rem] pl-[50px] text-clip whitespace-nowrap text-white *:no-underline">
           <el-dropdown
-            :teleported=false
-            :show-timeout=0
-            :hide-timeout=50
+            :teleported="false"
+            :show-timeout="0"
+            :hide-timeout="50"
             popper-class="language-menu">
             <span class="w-[1.5rem] fill-white">
               <svg
@@ -65,7 +65,7 @@ const switchLanguage = async (to) => {
             :navigation-list="navigationList" />
         </div>
       </div>
-      <div class="grow theme-bg-color-primary-static"/>
+      <div class="theme-bg-color-primary-static grow" />
     </div>
     <div class="flex justify-center">
       <div class="content-container h-[69.2px]">

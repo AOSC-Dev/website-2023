@@ -14,7 +14,7 @@ const navigationList = [
   <div class="grid grid-cols-1">
     <category-second :title="textValue.title1" />
 
-    <div> <img class="w-full imgScale1" src="/mascot/anan.png" /></div>
+    <div> <img class="imgScale1 w-full" src="/mascot/anan.png" /></div>
 
     <div class="grid grid-cols-2">
       <category-second :title="textValue.title3" />
@@ -34,16 +34,16 @@ const navigationList = [
                 class="h-full"
                 :link="linkValue.antongMascotsSetDraft" />
             </div>
-            <div class="grid grid-col-1 gap-y-3"
+            <div class="grid-col-1 grid gap-y-3"
               ><link-standard :link="linkValue.tysontan" /><link-standard
                 :link="linkValue.mailtoTysontan"
             /></div>
           </div>
         </div>
       </div>
-      <div class="border-l flex theme-border-secondary"
+      <div class="theme-border-secondary flex border-l"
         ><div
-          class="p-[1.75rem] flex flex-col justify-between text-[0.8rem] xl:text-[1.07rem] 2xl:text-[1.2rem]">
+          class="flex flex-col justify-between p-[1.75rem] text-[0.8rem] xl:text-[1.07rem] 2xl:text-[1.2rem]">
           <p>
             {{ textValue.p6 }}<link-standard :link="linkValue.figuramc" />{{
               textValue.p7
@@ -54,7 +54,7 @@ const navigationList = [
             <link-button
               class="h-full w-[50%]"
               :link="linkValue.ananMcFigura" />
-            <div class="grid grid-col-1 gap-y-3">
+            <div class="grid-col-1 grid gap-y-3">
               <div class="invisible">占位</div><div class="invisible">占位</div>
             </div>
           </div>
@@ -66,14 +66,14 @@ const navigationList = [
         :title="textValue.title5"
         class="border-l border-l-white" />
       <div class="flex">
-        <div class="p-[1.75rem] grid grid-cols-2">
+        <div class="grid grid-cols-2 p-[1.75rem]">
           <div class="mr-[1.5rem]">
             <div>
               <img src="/mascot/qr.png" alt="二维码" />
             </div>
 
             <p
-              class="text-[0.95em] xl:text-[1.3em] 2xl:text-[1.5em] text-center">
+              class="text-center text-[0.95em] xl:text-[1.3em] 2xl:text-[1.5em]">
               {{ textValue.p1 }}
             </p>
           </div>
@@ -84,7 +84,7 @@ const navigationList = [
               :key="`mascot-index-1-link-${index}`"
               class="flex flex-row"
               ><link-button class="w-full" :link="item" />
-              <div class="grid grid-col-1 gap-y-3 w-0 whitespace-pre">
+              <div class="grid-col-1 grid w-0 gap-y-3 whitespace-pre">
                 <div class="invisible">占位 </div
                 ><div class="invisible">占位</div>
               </div>
@@ -92,9 +92,9 @@ const navigationList = [
           </div>
         </div>
       </div>
-      <div class="flex border-l theme-border-secondary"
+      <div class="theme-border-secondary flex border-l"
         ><div
-          class="p-[1.75rem] flex-col flex justify-between text-[0.8rem] xl:text-[1.07rem] 2xl:text-[1.2rem]">
+          class="flex flex-col justify-between p-[1.75rem] text-[0.8rem] xl:text-[1.07rem] 2xl:text-[1.2rem]">
           <div
             ><p>
               {{ textValue.p3 }}
@@ -115,7 +115,7 @@ const navigationList = [
                 class="h-full"
                 :link="linkValue.fumoMascotsSetDraft" />
             </div>
-            <div class="grid grid-col-1 gap-y-3 w-0 whitespace-pre">
+            <div class="grid-col-1 grid w-0 gap-y-3 whitespace-pre">
               <div class="invisible">占位</div><div class="invisible">占位</div>
             </div>
           </div>
@@ -135,7 +135,7 @@ const navigationList = [
         <app-ul-ordinary
           li-class="my-[1rem]"
           :lis="textValue.ul1.li"
-          class="list-disc list-inside"
+          class="list-inside list-disc"
           :my-key="`mascot-index-1`" />
 
         <p
@@ -146,7 +146,7 @@ const navigationList = [
         <app-ul-ordinary
           li-class="my-[1rem]"
           :lis="textValue.ul2.li"
-          class="list-disc list-inside"
+          class="list-inside list-disc"
           :my-key="`mascot-index-2`" />
       </div>
 
@@ -155,7 +155,7 @@ const navigationList = [
         <app-ul-ordinary
           li-class="my-[1rem]"
           :lis="textValue.ul3.li"
-          class="list-disc list-inside"
+          class="list-inside list-disc"
           :my-key="`mascot-index-3`" />
         <p
           v-for="(item, index) in textValue.ps3"
@@ -165,7 +165,7 @@ const navigationList = [
         <app-ul-ordinary
           li-class="my-[1rem]"
           :lis="textValue.ul4.li"
-          class="list-disc list-inside"
+          class="list-inside list-disc"
           :my-key="`mascot-index-4`" />
         <p
           v-for="(item, index) in textValue.ps4"
@@ -175,7 +175,7 @@ const navigationList = [
         <app-ul-ordinary
           li-class="my-[1rem]"
           :lis="textValue.ul5.li"
-          class="list-disc list-inside"
+          class="list-inside list-disc"
           :my-key="`mascot-index-5`" />
       </div>
     </div>
