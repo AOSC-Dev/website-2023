@@ -7,24 +7,59 @@ $orange: orange;
 $purple: #e699e6;
 $green: #a7ecad;
 $bg-secondary: #3f6075;
+$common-margin: 24px;
 
-@use 'heti/lib/heti.scss'
+@use 'heti'
   with(
     $line-length: none,
     $darkmode: 'manual',
-    $manualmode-dark-selector: 'body.dark &'
+    $manualmode-dark-selector: 'body.dark &',
+    $font-size-h2: normal,
+    $line-height-size-h2: normal
   );
+
+.heti {
+  > :not(h2) {
+    margin-inline: $common-margin;
+  }
+
+  > :first-child:not(h2) {
+    margin-block-start: $common-margin !important;
+  }
+
+  margin-bottom: $common-margin;
+
+  h2 {
+    margin-bottom: $common-margin;
+  }
+
+  blockquote {
+    > :first-child {
+      margin-top: 0;
+    }
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.category-second,
+.heti h2 {
+  font-weight: normal;
+  background-color: var(--secondary);
+  display: flex;
+  height: 2rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px;
+  color: white;
+  user-select: none;
+}
 
 :root {
   --font-family-monospace:
     'Source Code Pro', 'Menlo', 'Consolas', 'DejaVu Sans Mono', -apple-system,
     monospace;
-}
-
-@media (min-width: 1280px) {
-  .vuepress-markdown-body {
-    padding: 2rem 10% !important;
-  }
 }
 
 .theme-bg-color-secondary-static {
@@ -69,238 +104,6 @@ $bg-secondary: #3f6075;
   color: var(--primary);
 }
 
-.vuepress-markdown-body {
-  background: none;
-  background-color: #fafafa !important;
-
-  h1 {
-    background-color: $bg-secondary;
-    color: #fff;
-    padding: 5px 10px 5px 10px;
-    font-size: 12pt;
-    font-weight: normal;
-    line-height: inherit;
-    margin-left: -31px;
-  }
-
-  h2 {
-    border-bottom-width: 0;
-  }
-
-  p {
-    line-height: inherit;
-    margin-bottom: $line-space;
-  }
-
-  img {
-    max-width: 70% !important;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 2px 2px 5px #777;
-  }
-
-  hr:first-of-type {
-    display: none;
-  }
-
-  hr {
-    height: 1px;
-    border: none;
-    margin-top: 32px;
-    margin-bottom: 32px;
-    background-size: 4px 1px;
-    background-image: linear-gradient(
-      to left,
-      $blue 0%,
-      $blue 25%,
-      transparent 50%
-    );
-  }
-
-  code {
-    margin: 0 4px;
-    font-family: var(--font-family-monospace);
-    word-break: break-word;
-    overflow-x: auto;
-    background-color: #fff7f7;
-    color: #f06;
-    font-size: 0.87em;
-    padding: 0.065em 0.4em;
-  }
-
-  pre {
-    margin: 15px 8px;
-    border: 1px solid rgb(245, 245, 247);
-    font-family: var(--font-family-monospace);
-    line-height: 1.75;
-
-    > code {
-      font-size: 12px;
-      padding: 15px 12px;
-      overflow-x: auto;
-      margin: 0;
-      word-break: normal;
-      display: block;
-      color: #333;
-      background-color: #fff;
-      overflow-x: auto;
-    }
-  }
-
-  a {
-    margin: 0 16px;
-    text-decoration: none;
-    transition: 300ms;
-    display: inline-block;
-    vertical-align: bottom;
-
-    &::before {
-      content: 'READ MORE +';
-      bottom: 90%;
-      width: 120px;
-      max-width: 0px;
-      color: #fff;
-      position: absolute;
-      white-space: nowrap;
-      transition: 300ms;
-      box-sizing: border-box;
-      pointer-events: none;
-      overflow: hidden;
-    }
-
-    &::after {
-      content: '';
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      position: absolute;
-    }
-
-    &:hover {
-      text-decoration: underline;
-    }
-
-    &:active {
-      &::before {
-        max-width: 120px;
-        padding-left: 14px;
-      }
-    }
-  }
-
-  blockquote {
-  }
-
-  ol,
-  ul {
-    padding-left: 28px;
-
-    li {
-      line-height: 2em;
-      margin-bottom: 0;
-      list-style: inherit;
-
-      & .task-list-item {
-        list-style: none;
-
-        ul,
-        ol {
-          margin-top: 0;
-        }
-      }
-    }
-
-    ul,
-    ol {
-      margin-top: 3px;
-
-      li {
-        border-bottom: none;
-      }
-    }
-  }
-
-  ol li {
-    padding-left: 6px;
-    list-style: decimal-leading-zero;
-  }
-
-  .contains-task-list {
-    padding-left: 0;
-  }
-
-  .task-list-item {
-    list-style: none;
-  }
-
-  input[type='checkbox'] {
-    position: relative;
-
-    @keyframes router-highlight {
-      0% {
-        opacity: 1;
-      }
-
-      25% {
-        opacity: 0.3;
-      }
-
-      100% {
-        opacity: 1;
-      }
-    }
-
-    .router-highlight-animation {
-      animation: router-highlight 3s;
-    }
-
-    &::before {
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      content: '';
-      width: inherit;
-      height: inherit;
-      background: #f0f8ff;
-      border: 1px solid #add6ff;
-      border-radius: 2px;
-      box-sizing: border-box;
-      z-index: 1;
-      position: absolute;
-    }
-
-    &:checked::after {
-      content: '';
-      top: 10%;
-      left: 18%;
-      width: 90%;
-      height: 40%;
-      border-left: 2px solid $blue;
-      border-bottom: 2px solid $blue;
-      color: $blue;
-      z-index: 2;
-      transform: rotate(-45deg);
-      position: absolute;
-    }
-  }
-
-  @media (max-width: 720px) {
-    h1 {
-      font-size: 24px;
-    }
-
-    h2 {
-      font-size: 20px;
-    }
-
-    h3 {
-      font-size: 18px;
-    }
-  }
-}
-
 table {
   width: 100%;
   max-width: 100%;
@@ -341,17 +144,6 @@ td {
 td {
   min-width: 120px;
   border: 1px dashed #fff;
-}
-
-.vuepress-markdown-body div[class*='v-md-pre-wrapper-'] pre,
-.vuepress-markdown-body
-  div[class*='v-md-pre-wrapper-']
-  pre[class*='v-md-prism-'] {
-  z-index: 0;
-}
-
-.vuepress-markdown-body div[class*='v-md-pre-wrapper-']::before {
-  z-index: 0;
 }
 
 /* HTML: <div class="loader"></div> */
