@@ -1,5 +1,4 @@
 import axios from 'axios';
-import yaml from 'js-yaml';
 
 export function getImgUrl(url) {
   return new URL(`${url}`, import.meta.url).href;
@@ -86,14 +85,6 @@ export const requestPostJson = (() => {
     }
   };
 })();
-
-export const requestToYaml = (res) => {
-  // 将头信息和内容分开，头信息为yml格式
-  let mdContent = res.data.substring(4);
-  let i = mdContent.indexOf('---');
-  let ymlContent = mdContent.substring(0, i);
-  return [mdContent.substring(i), yaml.load(ymlContent)];
-};
 
 export const setBackgroundColor = (color) => {
   return 'bg-[' + color + ']';
