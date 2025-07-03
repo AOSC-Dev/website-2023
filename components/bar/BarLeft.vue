@@ -1,56 +1,61 @@
 <script setup>
 const { tm } = useI18n();
-const textValue = tm('BarLeft');
-const linkValue = tm('allUniversalLink');
-const localLink = linkValue.local;
-const navigationList = [
-  {
-    title: textValue.title1,
-    children: [
-      localLink.aoscOs,
-      localLink.afterglow,
-      localLink.liblol,
-      localLink.oma,
-      localLink.l10n
-    ],
-    show: true
-  },
-  {
-    title: textValue.title2,
-    children: [
-      localLink.news,
-      localLink.gallery,
-      useTIndex(localLink.contact, 1),
-      useTIndex(linkValue.AOSCWiki, 1)
-    ],
-    show: true
-  },
-  {
-    title: textValue.title3,
-    children: [
-      localLink.about,
-      localLink.events,
-      localLink.internship,
-      localLink.sponsors,
-      localLink.crowdsourcing,
-      localLink.guidelines,
-      localLink.mascot
-    ],
-    show: true
-  },
-  {
-    title: textValue.title4,
-    children: [
-      localLink.paste,
-      linkValue.forum,
-      useTIndex(linkValue.GitHub, 1),
-      linkValue.mail20,
-      linkValue.buildbots,
-      linkValue.buildit
-    ],
-    show: true
-  }
-];
+
+const navigationList = computed(() => {
+  const textValue = tm('BarLeft');
+  const linkValue = tm('allUniversalLink');
+  const localLink = linkValue.local;
+
+  return [
+    {
+      title: textValue.title1,
+      children: [
+        localLink.aoscOs,
+        localLink.afterglow,
+        localLink.liblol,
+        localLink.oma,
+        localLink.l10n
+      ],
+      show: true
+    },
+    {
+      title: textValue.title2,
+      children: [
+        localLink.news,
+        localLink.gallery,
+        useTIndex(localLink.contact, 1),
+        useTIndex(linkValue.AOSCWiki, 1)
+      ],
+      show: true
+    },
+    {
+      title: textValue.title3,
+      children: [
+        localLink.about,
+        localLink.events,
+        localLink.internship,
+        localLink.sponsors,
+        localLink.crowdsourcing,
+        localLink.guidelines,
+        localLink.mascot
+      ],
+      show: true
+    },
+    {
+      title: textValue.title4,
+      children: [
+        localLink.paste,
+        linkValue.forum,
+        useTIndex(linkValue.GitHub, 1),
+        linkValue.mail20,
+        linkValue.buildbots,
+        linkValue.buildit
+      ],
+      show: true
+    }
+  ];
+});
+
 const openMenuList = new Set();
 
 const menuDivRef = useTemplateRef('menuDiv');
@@ -61,7 +66,9 @@ const rowHeightpx = `${rowHeight}px`;
 const route = useRoute();
 
 const openMenu = (MenuOpenEvent) => {
-  const result = navigationList.find((item) => item.title === MenuOpenEvent);
+  const result = navigationList.value.find(
+    (item) => item.title === MenuOpenEvent
+  );
   let height =
     result.children.length * rowHeight + menuDivRef.value.clientHeight;
   for (const item of openMenuList) {
@@ -70,7 +77,8 @@ const openMenu = (MenuOpenEvent) => {
     } else {
       height =
         height -
-        navigationList.find((item1) => item1.title === item).children.length *
+        navigationList.value.find((item1) => item1.title === item).children
+          .length *
           rowHeight;
       openMenuList.delete(item);
       menuRef.value.close(item);
@@ -114,7 +122,8 @@ const retractMenuBar = () => {
       if (openMenuList.size === 1) break;
       height =
         height -
-        navigationList.find((item1) => item1.title === item).children.length *
+        navigationList.value.find((item1) => item1.title === item).children
+          .length *
           rowHeight;
       openMenuList.delete(item);
       menuRef.value.close(item);
@@ -138,7 +147,7 @@ onMounted(() => {
   // 记一下目前所在分类的title
   let thisTitle = null;
   let thisColumnIsShow = false;
-  for (const item of navigationList.values()) {
+  for (const item of navigationList.value.values()) {
     const resule = item.children.find(
       (item1) => item1.url === route.path.replace(/\/+$/, '')
     );
@@ -153,7 +162,7 @@ onMounted(() => {
     }
   }
   // 然后在剩余空间里按顺序遍历栏目，能展开尽量展开
-  for (const item of navigationList) {
+  for (const item of navigationList.value) {
     if (thisTitle !== item.title) {
       height = height + item.children.length * rowHeight;
       if (highlyIsQualified(height)) {
@@ -206,7 +215,7 @@ const backToTopBtnShow = ref(false);
             behavior: 'smooth' 
         })">
         <el-icon class="my-auto ml-4" size="20"><el-icon-top /></el-icon>
-        <span class="mr-4">{{ textValue.span1 }}</span>
+        <span class="mr-4">{{ $t('BarLeft.span1') }}</span>
       </div>
     </Transition>
     <div ref="menuDiv">

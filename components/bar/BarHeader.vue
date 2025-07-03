@@ -1,12 +1,10 @@
 <script setup>
 const { tm, locale, setLocale } = useI18n();
 // const textValue = tm('BarHeader');
-const linkValue = tm('allUniversalLink');
-const navigationList = [
-  linkValue.local.download,
-  linkValue.forum,
-  linkValue.local.about
-];
+const navigationList = computed(() => {
+  const linkValue = tm('allUniversalLink');
+  return [linkValue.local.download, linkValue.forum, linkValue.local.about];
+});
 
 const switchLanguage = async (to) => {
   switch (to) {
@@ -17,7 +15,7 @@ const switchLanguage = async (to) => {
       await setLocale('zh');
       break;
   }
-  location.reload();
+  // location.reload();
 };
 </script>
 
