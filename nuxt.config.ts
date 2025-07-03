@@ -64,6 +64,10 @@ export default defineNuxtConfig({
         '/galleryFile': {
           target: 'https://aosc.io',
           changeOrigin: true
+        },
+        '/assets/news': {
+          target: 'https://aosc.io',
+          changeOrigin: true
         }
       }
     }

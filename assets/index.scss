@@ -33,6 +33,11 @@ $common-margin: 24px;
     margin-bottom: $common-margin;
   }
 
+  img {
+    margin-inline: auto;
+    max-width: 70%;
+  }
+
   blockquote {
     > :first-child {
       margin-top: 0;
