@@ -14,7 +14,13 @@ export default defineNuxtConfig({
     '@nuxt/icon'
   ],
 
+  icon: {
+    mode: 'css',
+    cssLayer: 'base'
+  },
+
   devtools: { enabled: true },
+  
   css: ['~/assets/css/main.css', '~/assets/index.scss'],
 
   vue: {

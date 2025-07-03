@@ -1,5 +1,7 @@
 <script setup>
-const { data:galleryList } = useAsyncData(() => queryCollection('gallery').first());
+const { data: galleryList } = useAsyncData(() =>
+  queryCollection('gallery').first()
+);
 
 const curGallery = ref({});
 const curIndex = ref(0);
@@ -55,9 +57,9 @@ function closeBigImg() {
       </el-carousel>
       <!-- 关闭按钮 -->
       <div
-        class="theme-bg-color-primary-static fixed top-[20px] right-[20px] z-999 cursor-pointer rounded-full p-[2px]"
+        class="theme-bg-color-primary-static fixed top-[20px] right-[20px] z-999 cursor-pointer rounded-full p-[2px] leading-4"
         @click="closeBigImg">
-        <!-- <v-icon scale="1.5" fill="#fff" name="io-close-circle-outline" /> -->
+        <Icon name="ion-close-circle-outline" class="size-6" />
       </div>
     </div>
   </div>
