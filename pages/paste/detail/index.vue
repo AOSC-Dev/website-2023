@@ -1,4 +1,6 @@
 <script setup>
+import CodeHighlight from '~/components/copy/CodeHighlight.vue';
+
 const route = useRoute();
 const details = ref(null);
 const imgSuffixList = ['jpg', 'jpeg', 'png', 'gif'];
@@ -20,23 +22,25 @@ const getAttachUrl = (name) => {
 };
 
 const isReady = ref(false);
-if (import.meta.client) {
+
+onBeforeMount(async () => {
   const [res, _err] = await requestGetJson('/pasteApi/paste', {
     id: route.query.id
   });
 
   if (res) {
-    if (results.value.code != 0) {
-      failReason.value = results.value.message;
+    const results = res.data;
+    if (results.code != 0) {
+      failReason.value = results.message;
     } else {
       // 此处是正常返回值
-      details.value = results.value.data;
+      details.value = results.data;
     }
   } else {
     failReason.value = `${textValue.message1}`;
   }
   isReady.value = true;
-}
+});
 
 const back = () => {
   failReason.value = '';
@@ -67,7 +71,7 @@ const returnHref = () => window.location.href;
               :key="filename"
               class="el-upload-list__item is-ready">
               <div class="flex items-center">
-                <el-icon class="mr-2"><Document /></el-icon>
+                <el-icon class="mr-2"><ElIconDocument /></el-icon>
                 <span
                   ><img
                     v-if="isImg(filename)"
