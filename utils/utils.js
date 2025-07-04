@@ -173,3 +173,8 @@ export const useHighlightWatch = (switchHash) => {
     switchHash();
   });
 };
+
+// 盘古的简单版本，只在有部分头尾字符时加个空格，用于组合已知且有限的 SSR 场景
+// 盘古还有个特点是不会删多余空格，如果多语言的话要么中文双空格要么英文缺空格了
+export const spaceWord = (word) =>
+  word.replace(/^[\w()]/, (m) => ` ${m}`).replace(/[\w()]$/, (m) => `${m} `);

@@ -45,8 +45,8 @@ const mediaWritersInfo = setNestedKeyValue(
 <template>
   <div class="download-details-main flex flex-col gap-2">
     <app-h2>{{ textValue.title1 }}</app-h2>
-    <p v-pangu
-      >{{ textValue.text1 }}{{ arch }}{{ textValue.text2 }}{{ fileType }}，{{
+    <p
+      >{{ textValue.text1 }}{{ spaceWord(arch) }}{{ spaceWord(textValue.text2) }}{{ fileType }}，{{
         content
       }}{{ linkValue.aPeriod }}</p
     >
@@ -78,7 +78,7 @@ const mediaWritersInfo = setNestedKeyValue(
     <p>{{ textValue.text6 }}</p>
     <CopyButton :content="sha256sum" :button-text="textValue.text7" />
 
-    <p v-pangu>{{ textValue.text8 }}{{ fileType }}{{ textValue.text9 }}</p>
+    <p>{{ textValue.text8 }}{{ spaceWord(fileType) }}{{ textValue.text9 }}</p>
     <el-container class="flex-wrap">
       <AppLink
         v-for="info in mediaWritersInfo"
@@ -89,12 +89,12 @@ const mediaWritersInfo = setNestedKeyValue(
         {{ info.name }}
       </AppLink>
     </el-container>
-    <p v-pangu>
-      {{ textValue.text10 }}{{ fileType }}{{ textValue.text11 }}
+    <p>
+      {{ textValue.text10 }}{{ spaceWord(fileType) }}{{ textValue.text11 }}
       <link-standard :link="linkValue.balenaEtcher" />
       {{ textValue.text12 }}
       <link-standard :link="linkValue.usbimager" />
-      {{ textValue.text13 }}{{ fileType }}{{ linkValue.aPeriod }}
+      {{ textValue.text13 }}{{ spaceWord(fileType) }}{{ linkValue.aPeriod }}
     </p>
 
     <app-h2>{{ textValue.title3 }}</app-h2>
