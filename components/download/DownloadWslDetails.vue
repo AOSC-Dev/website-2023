@@ -29,8 +29,9 @@ const localLink = linkValue.local;
     <p>{{ textValue.text6 }}</p>
     <p
       >{{ textValue.text7 }}
-      <link-standard :link="useTIndex(localLink.aoscWslRequirements, 1)" />
-      {{ linkValue.aPeriod }}</p
+      <link-standard :link="useTIndex(localLink.aoscWslRequirements, 1)" />{{
+        linkValue.aPeriod
+      }}</p
     >
 
     <app-h2>{{ textValue.title3 }}</app-h2>

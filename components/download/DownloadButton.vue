@@ -29,11 +29,11 @@ const props = defineProps({
   },
   buttonColor: {
     type: String,
-    required: true
+    default: undefined
   },
   url: {
     type: String,
-    required: true
+    default: ''
   },
   sources: {
     type: Array,
