@@ -19,8 +19,14 @@ export default defineNuxtConfig({
     cssLayer: 'base'
   },
 
-  devtools: { enabled: true },
-  
+  devtools: {
+    enabled: true,
+
+    timeline: {
+      enabled: true
+    }
+  },
+
   css: ['~/assets/css/main.css', '~/assets/index.scss'],
 
   vue: {
@@ -57,9 +63,12 @@ export default defineNuxtConfig({
     server: {
       proxy: {
         '/pasteApi': {
-          target: 'http://localhost:46203',
-          changeOrigin: true,
-          rewrite: (path) => path.replace(/^\/pasteApi/, '')
+          target: 'https://aosc.io',
+          changeOrigin: true
+        },
+        '/pasteContent': {
+          target: 'https://aosc.io',
+          changeOrigin: true
         },
         '/galleryFile': {
           target: 'https://aosc.io',
