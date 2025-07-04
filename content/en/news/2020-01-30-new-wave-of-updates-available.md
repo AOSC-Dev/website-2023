@@ -131,7 +131,7 @@ eventually worsened to the point that it was practically impossible to even
 complete elements of the original design (distribution downloads), let alone
 for new features to be implemented.
 
-Therefore, with the help from [@liushuyu](/en-us), a new design was
+Therefore, with the help from [@liushuyu](/en), a new design was
 made with minimalism in mind, and it is already
 [better documented](https://wiki.aosc.io/developer/infrastructure/-portal) than
 the last. It might look simple and plain, but it loads extremely fast, and is

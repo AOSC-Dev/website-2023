@@ -7,7 +7,7 @@ title: Winter Distribution Updates (and Looking Ahead)!
 ---
 
 
-You might have already noticed by looking at the [Downloads](/en-us/download#aosc-os-download) page that we have expanded our line-up of releases (again). The winter distribution updates is a major update to our AOSC OS releases, and it packs a lot more than just software updates:
+You might have already noticed by looking at the [Downloads](/en/download#aosc-os-download) page that we have expanded our line-up of releases (again). The winter distribution updates is a major update to our AOSC OS releases, and it packs a lot more than just software updates:
 
 - Cinnamon and LXDE are added as new variants.
 - SD/eMMC images based on the "Base" variant are now available for ARM devices (Raspberry Pi and Allwinner).

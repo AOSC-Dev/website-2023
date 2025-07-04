@@ -34,7 +34,7 @@ Take this example of our MATE release, as you can see:
 
 It now comes with all the appearance customization mentioned above, in addition to bluetooth connectivity support - powered by Blueberry from the [Linux Mint Project](https://github.com/linuxmint/blueberry) - everything should function out of the box, so you can jump right into work and entertainment.
 
-You may now head over to our [Download](/en-us/download#aosc-os-download) section to get the new system releases, or simply update your existing installation.
+You may now head over to our [Download](/en/download#aosc-os-download) section to get the new system releases, or simply update your existing installation.
 
 
 ### Known issues:

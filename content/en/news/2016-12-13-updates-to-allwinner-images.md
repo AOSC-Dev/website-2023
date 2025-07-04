@@ -15,4 +15,4 @@ To enroll your device, run the following series of commands as `root` (just copy
 
     echo deb http://repo.aosc.io/os-armel/sunxi/os3-dpkg / > /etc/apt/sources.list.d/10-sunxi.list && apt update && apt dist-upgrade -y && apt install aosc-os-armel-sunxi-boot aosc-os-arm-boot-flasher -y && FLASHER_CAPABILITIES='bootloader kernel' aosc-arm-flasher
 
-New images are now available in the [Downloads](/en-us/download#aosc-os/) page.
+New images are now available in the [Downloads](/en/download#aosc-os/) page.

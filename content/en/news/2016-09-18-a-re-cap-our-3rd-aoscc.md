@@ -25,7 +25,7 @@ Photographs and blog posts
 
 Friends of our community have kindly taken some nice photographs during AOSCC, and they are listed below:
 
-- A photo gallery from our [Community](/en-us) page.
+- A photo gallery from our [Community](/en) page.
 - From ホロ's blog:
   - [Day 1](https://blog.yoitsu.moe/aosc/aoscc_2016.html)
   - [Day 2](https://blog.yoitsu.moe/aosc/aoscc_2016_2.html)

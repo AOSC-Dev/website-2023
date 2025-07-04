@@ -22,9 +22,9 @@ Therefore, with this batch of AMD64 (x86_64) tarballs (in partcular, those bundl
 - NVIDIA 390.* (`aosc-os_${variant}+nvidia390_${date}.tar.xz`): For NVIDIA GeForce 400 series (GT400, GTX400, etc.) series, their equivalent Quadro series, and above.
 - NVIDIA 340.* (`aosc-os_${variant}+nvidia340_${date}.tar.xz`): For NVIDIA GeForce 8000 series, their equivalent Quadro series, and above.
 
-For a full list of devices supported by the aforementioned NVIDIA Unix Driver series, please refer to their [Unix Drivers](https://www.nvidia.com/en-us/drivers/unix/) page.
+For a full list of devices supported by the aforementioned NVIDIA Unix Driver series, please refer to their [Unix Drivers](https://www.nvidia.com/en/drivers/unix/) page.
 
-_Note: By downloading AOSC OS preloaded with proprietary NVIDIA Unix Drivers (variants suffixed with +nvidia, +nvidia340, or +nvidia+390), you agree to the [LICENSE FOR CUSTOMER USE OF NVIDIA GEFORCE SOFTWARE](https://www.nvidia.com/en-us/drivers/geforce-license/), also enclosed within the relevant AOSC OS distributions._
+_Note: By downloading AOSC OS preloaded with proprietary NVIDIA Unix Drivers (variants suffixed with +nvidia, +nvidia340, or +nvidia+390), you agree to the [LICENSE FOR CUSTOMER USE OF NVIDIA GEFORCE SOFTWARE](https://www.nvidia.com/en/drivers/geforce-license/), also enclosed within the relevant AOSC OS distributions._
 
 Automated Tarball Generation
 ----------------------------

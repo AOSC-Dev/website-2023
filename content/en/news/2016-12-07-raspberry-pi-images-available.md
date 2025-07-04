@@ -7,7 +7,7 @@ title: Raspberry Pi images available!
 ---
 
 
-Shortly after the release of Allwinner AOSC OS images, the image for Raspberry Pi 2/3 is now available as well. The image is based on the "Base" variant of AOSC OS releases and they can now be obtained in the respective section in the [Download](/en-us/download#aosc-os-download) page.
+Shortly after the release of Allwinner AOSC OS images, the image for Raspberry Pi 2/3 is now available as well. The image is based on the "Base" variant of AOSC OS releases and they can now be obtained in the respective section in the [Download](/en/download#aosc-os-download) page.
 
 Note that currently the image is based on ARMv7 (therefore 32-bit) userspace, as the official kernel that Raspberry Pi supplies (BSP) is ARMv6/ARMv7 only. We will be releasing separate images for Raspberry Pi 3 soon, as mainline Kernel support will land for this particular board.
 

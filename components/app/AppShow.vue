@@ -13,8 +13,8 @@ defineProps({
     v-for="(item, index) in title.texts"
     :key="`${title.texts[0]}-${index}`">
     <span v-if="title.book.includes(index)">
-      <span v-if="locale === 'zh-cn'">《{{ item }}》</span>
-      <span v-else-if="locale === 'en-us'"
+      <span v-if="locale === 'zh'">《{{ item }}》</span>
+      <span v-else-if="locale === 'en'"
         ><i>{{ item }}</i></span
       >
     </span>
