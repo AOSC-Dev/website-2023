@@ -7,6 +7,7 @@ export default defineNuxtConfig({
   modules: [
     '@element-plus/nuxt',
     '@pinia/nuxt',
+    '@nuxtjs/seo',
     '@nuxt/content',
     '@nuxt/eslint',
     'nuxt-monaco-editor',
