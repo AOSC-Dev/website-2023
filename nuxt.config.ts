@@ -2,7 +2,30 @@
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineNuxtConfig({
-  // extends: '@nuxt-themes/docus',
+  app: {
+    head: {
+      title: '社区门户',
+      templateParams: {
+        separator: '|'
+      }
+    }
+  },
+
+  site: {
+    name: '安同开源社区 (AOSC)'
+  },
+
+  seo: {
+    meta: {
+      description:
+        '安同开源社区（Anthon Open Source Community，简称 AOSC）是一个由计算机爱好者志愿组织工作，主要活动于线上的开源社区。',
+      twitterCreator: '@aosc_dev_cn'
+    }
+  },
+
+  ogImage: {
+    fonts: ['Noto+Sans+SC:400']
+  },
 
   modules: [
     '@element-plus/nuxt',

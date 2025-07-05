@@ -2,6 +2,8 @@
 const highBrightnessControllerStore = useHighBrightnessControllerStore();
 const router = useRouter();
 
+defineOgImageComponent('NuxtSeo')
+
 router.afterEach((to, _from) => {
   highBrightnessControllerStore.obj[to.path] =
     !highBrightnessControllerStore.obj[to.path];
