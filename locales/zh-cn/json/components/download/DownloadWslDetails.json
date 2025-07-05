@@ -8,5 +8,15 @@
   "text8": "WSL 版安同 OS 系统配置需求表",
   "title3": "帮助与支持",
   "text11": "如果您在安装或使用安同 OS 时遇到问题，请于",
-  "text13": "与我们联系。"
+  "text13": "与我们联系。",
+  "selectSourcePlaceholder": "请选择下载源",
+  "download": {
+    "x86_64": "下载 x86-64",
+    "aarch64": "下载 AArch64"
+  },
+  "manualDownload": {
+    "description": "如无法使用上述两种方式，也可手动下载 AppX 侧载包部署：",
+    "githubLink": "GitHub Releases（无须使用 Microsoft Store）"
+  },
+  "viewReleaseNotes": "查阅最新发行注记..."
 }

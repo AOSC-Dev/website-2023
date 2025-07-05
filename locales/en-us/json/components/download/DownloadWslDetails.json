@@ -8,5 +8,15 @@
   "text8": "WSL version of Antong OS system configuration requirements table",
   "title3": "Help and support",
   "text11": "If you have problems installing or using the OS, please",
-  "text13": "Contact us."
+  "text13": "Contact us.",
+  "selectSourcePlaceholder": "Select a download source",
+  "download": {
+    "x86_64": "Download x86-64",
+    "aarch64": "Download AArch64"
+  },
+  "manualDownload": {
+    "description": "If you can't use the methods above, you can also manually download the AppX package for sideloading:",
+    "githubLink": "GitHub Releases (Microsoft Store not required)"
+  },
+  "viewReleaseNotes": "View the latest release notes..."
 }

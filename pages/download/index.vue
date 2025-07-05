@@ -403,7 +403,12 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
         </div>
 
         <el-dialog v-model="wslDialogState" width="80%">
-          <download-wsl-details />
+          <download-wsl-details
+            v-if="Object.keys(recipe).length > 0"
+            :recipe-wsl="
+              recipe.variants.find((variant) => variant.name === 'WSL')
+            "
+            :sources="sources" />
         </el-dialog>
 
         <ms-store-badge
