@@ -57,7 +57,7 @@ const lis5 = textValue.ul5.li.map((obj, index) => {
 <template>
   <div>
     <category-second :title="textValue.title1" />
-    <div class="p-6">
+    <div class="heti">
       <p>{{ textValue.p1 }} </p>
       <p> {{ textValue.p2 }} </p>
       <p>

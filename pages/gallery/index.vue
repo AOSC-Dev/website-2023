@@ -19,7 +19,7 @@ function closeBigImg() {
 
 <template>
   <div>
-    <div v-for="gallery in galleryList.gallery" :key="gallery.title">
+    <div v-for="gallery in galleryList?.gallery" :key="gallery.title">
       <category-second :title="gallery.title" class="sticky top-0" />
       <div class="grid grid-cols-4 gap-2 p-2">
         <div v-for="(photo, index) in gallery.album" :key="photo.file">

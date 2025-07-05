@@ -20,14 +20,14 @@ const docList = [
 <template>
   <div>
     <category-second :title="textValue.title1" />
-    <div class="p-6">
+    <div class="heti">
       <p> {{ textValue.p1 }} </p>
       <p>{{ textValue.p2 }} </p>
       <div class="mt-[1rem]">
         <AccordionNavigation :navigation-list="navigationList" />
       </div>
       <div class="liblolsvg">
-        <img src="/liblol/liblol.svg" class="mt-2 h-auto w-full" alt="" />
+        <img src="/liblol/liblol.svg" class="mt-2 h-auto !max-w-full" alt="" />
       </div>
     </div>
 

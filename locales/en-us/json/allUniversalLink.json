@@ -851,20 +851,12 @@
     ],
     "url": "https://weblate.aosc.io/"
   },
-  "l10nWorkGuide": {
-    "title": [
-      {
-        "texts": [
-          "Guide to localization of free software in mainland China",
-          "Version 1.5.4"
-        ],
-        "book": [
-          0
-        ]
-      }
-    ],
-    "url": "https://repo.aosc.io/aosc-l10n/zh_CN_l10n_1.5.4.pdf"
-  },
+  "l10nWorkGuide": [
+    {
+      "title": "Guide to localization of free software in mainland China Version 1.5.4",
+      "url": "https://repo.aosc.io/aosc-l10n/zh_CN_l10n_1.5.4.pdf"
+    }
+  ],
   "dkcli": {
     "title": [
       "dkcli"
