@@ -91,7 +91,7 @@ const returnHref = () => window.location.href;
         </div>
         <CodeHighlight
           class="mt-4 justify-between bg-[#ccccccc3]/15"
-          button-class="mr-8"
+          button-class="mr-3"
           :button-color="themeStore.primary"
           :code-text="details.content"
           :language="details.language" />

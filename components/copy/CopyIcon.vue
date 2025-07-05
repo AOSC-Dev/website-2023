@@ -12,12 +12,11 @@ const props = defineProps({
 </script>
 
 <template>
-  <el-icon
-    class="my-auto cursor-pointer"
+  <Icon
+    class="cursor-pointer !bg-(--primary)"
     v-bind="props"
-    @click="copyToClipboard(props.contentTarget)">
-    <el-icon-document-copy
-  /></el-icon>
+    name="ep-document-copy"
+    @click="copyToClipboard(props.contentTarget)" />
 </template>
 
 <style scoped></style>

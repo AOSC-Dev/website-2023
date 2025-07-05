@@ -488,11 +488,11 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
         :description="textValue.p10"
         :navigation-list="omaNavigationList" />
       <CopyCodeHighlight
-        class="mt-4 w-fit bg-black/60 py-2 pr-14"
+        class="mt-4 w-fit bg-black/60 py-2 pr-6"
         language="bash"
         :use-hljs="false"
         code-class="text-white"
-        button-class="ml-6"
+        button-class="ml-6 mt-[2px] bg-white"
         :code-text="omaInstallScript" />
       <p class="mt-[6px] text-[10pt]"
         >{{ textValue.p11[0] }}<br />{{ textValue.p11[1] }}

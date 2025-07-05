@@ -38,7 +38,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="flex py-2">
+  <pre class="flex py-3">
     <code ref="code" class="pl-[1em]" :class="props.codeClass">{{
       codeText
     }}</code>
@@ -46,7 +46,7 @@ onMounted(() => {
       :class="props.buttonClass"
       :color="props.buttonColor"
       :content-target="props.codeText" />
-  </div>
+  </pre>
 </template>
 
 <style scoped></style>
