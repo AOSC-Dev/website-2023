@@ -18,7 +18,7 @@
   "dependencies": {
     "@element-plus/nuxt": "^1.0.10",
     "@mdi/font": "^7.4.47",
-    "@nuxt/content": "^3.6.2",
+    "@nuxt/content": "^3.6.3",
     "@nuxt/eslint": "^1.1.0",
     "@nuxt/icon": "^1.11.0",
     "@nuxtjs/i18n": "^9.5.6",
