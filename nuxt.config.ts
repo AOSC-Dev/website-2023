@@ -2,11 +2,22 @@
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineNuxtConfig({
+  site: {
+    url: 'https://aosc.io'
+  },
+
+  // TODO: Fix generated schema.org fields
   schemaOrg: {
     enabled: false
   },
 
+  // TODO: Make custom OpenGraph templates
   ogImage: {
+    enabled: false
+  },
+
+  // TODO: Check links in content
+  linkChecker: {
     enabled: false
   },
 
