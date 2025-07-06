@@ -95,12 +95,14 @@ export default defineNuxtConfig({
     defaultLocale: 'zh',
     locales: [
       {
-        code: 'en',
-        language: 'en-US'
+        code: 'zh',
+        language: 'zh-CN',
+        name: '简体中文'
       },
       {
-        code: 'zh',
-        language: 'zh-CN'
+        code: 'en',
+        language: 'en-US',
+        name: 'English(en-US)'
       }
     ],
     detectBrowserLanguage: {
