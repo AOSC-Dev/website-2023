@@ -3,6 +3,7 @@ const { tm } = useI18n();
 const textValue = tm('contact.index');
 const linkValue = tm('allUniversalLink');
 const localLink = linkValue.local;
+useHead({ title: textValue.title1 });
 
 const mainRef = useTemplateRef('main');
 const switchHash = () => {

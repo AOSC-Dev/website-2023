@@ -3,6 +3,7 @@ const { tm } = useI18n();
 const textValue = tm('guidelines.index');
 const linkValue = tm('allUniversalLink');
 const locallink = linkValue.local;
+useHead({ title: textValue.title1 });
 </script>
 
 <template>

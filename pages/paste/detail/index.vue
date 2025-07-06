@@ -10,6 +10,7 @@ const themeStore = useThemeStore();
 
 const { tm } = useI18n();
 const textValue = tm('paste.detail');
+useHead({ title: textValue.title1 });
 
 const isImg = (name) => {
   const suffixIndex = name.lastIndexOf('.');

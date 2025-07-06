@@ -3,6 +3,7 @@ const { tm } = useI18n();
 const textValue = tm('aosc-os.requirements');
 const linkValue = tm('allUniversalLink');
 const localLink = linkValue.local;
+useHead({ title: textValue.title1 });
 
 const docList = [useHIndex(localLink.aoscIsaTableTitle, 0)];
 

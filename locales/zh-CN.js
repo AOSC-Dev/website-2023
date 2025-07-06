@@ -4,6 +4,7 @@ import guidelines from './zh-cn/json/page/guidelines.json';
 import allUniversalLink from './zh-cn/json/allUniversalLink.json';
 import internship from './zh-cn/json/page/internship.json';
 import l10n from './zh-cn/json/page/l10n.json';
+import liblol from './zh-cn/json/page/liblol.json';
 import AppSupport from './zh-cn/json/components/AppSupport.json';
 import mascot from './zh-cn/json/page/mascot.json';
 import news from './zh-cn/json/page/news.json';
@@ -61,5 +62,6 @@ export default {
   guidelines,
   internship,
   l10n,
+  liblol,
   paste
 };

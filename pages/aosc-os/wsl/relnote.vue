@@ -1,6 +1,7 @@
 <script setup>
 const { tm } = useI18n();
 const textValue = tm('aosc-os.wsl.relnote');
+useHead({ title: textValue.title1 });
 </script>
 
 <template>

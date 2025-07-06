@@ -3,6 +3,7 @@ const { tm } = useI18n();
 const textValue = tm('news.index');
 // const linkValue = tm('allUniversalLink');
 const newsLimit = 10;
+useHead({ title: textValue.title1 });
 </script>
 
 <template>

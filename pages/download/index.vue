@@ -6,6 +6,7 @@ const textValue = tm('download.index');
 const linkValue = tm('allUniversalLink');
 const localLink = linkValue.local;
 const route = useRoute();
+useHead({ title: textValue.title1 });
 // #endregion
 
 // #region Highlight

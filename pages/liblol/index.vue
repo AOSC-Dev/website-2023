@@ -1,8 +1,9 @@
 <script setup>
 const { tm } = useI18n();
-const textValue = tm('l10n.index');
+const textValue = tm('liblol.index');
 const linkValue = tm('allUniversalLink');
 const liblolLink = linkValue.liblol;
+useHead({ title: textValue.title1 });
 
 const navigationList = [
   liblolLink.sourceHomepage,

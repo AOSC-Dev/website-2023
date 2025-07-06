@@ -3,6 +3,7 @@ const { tm } = useI18n();
 const textValue = tm('internship.index');
 const linkValue = tm('allUniversalLink');
 const localLink = linkValue.local;
+useHead({ title: textValue.title1 });
 
 const navigationList = [
   useTIndex(useHIndex(localLink.internship, 0), 2),

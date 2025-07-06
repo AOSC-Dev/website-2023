@@ -3,6 +3,7 @@ const { tm } = useI18n();
 const textValue = tm('aosc-os.relnote.index');
 const linkValue = tm('allUniversalLink');
 // const localLink = linkValue.local;
+useHead({ title: textValue.title1 });
 
 const issuanceNoteRef = useTemplateRef('issuance-note');
 const route = useRoute();

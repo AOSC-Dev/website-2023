@@ -15,6 +15,7 @@ const { tm } = useI18n();
 const textValue = tm('afterglow.index');
 const linkValue = tm('allUniversalLink');
 const localLink = linkValue.local;
+useHead({ title: textValue.title1 });
 
 const navigationList = [
   useHIndex(localLink.download, 1),

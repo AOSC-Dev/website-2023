@@ -1,6 +1,7 @@
 <script setup>
 const { tm } = useI18n();
 const textValue = tm('about');
+useHead({ title: textValue.title1 });
 </script>
 
 <template>

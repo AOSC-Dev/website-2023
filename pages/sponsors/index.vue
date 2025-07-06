@@ -2,6 +2,7 @@
 const { tm } = useI18n();
 const textValue = tm('sponsors.index');
 const linkValue = tm('allUniversalLink');
+useHead({ title: textValue.title1 });
 const linkDevelopmentEquipment = linkValue.sponsors.developmentEquipment;
 const sponsorList = [
   {

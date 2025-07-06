@@ -5,6 +5,7 @@ import hljs from 'highlight.js/lib/core';
 const { tm } = useI18n();
 const textValue = tm('paste.index');
 // const linkValue = tm('allUniversalLink');
+useHead({ title: textValue.title1 });
 
 const languageList = ref(hljs.listLanguages());
 

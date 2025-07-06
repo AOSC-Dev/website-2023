@@ -7,7 +7,8 @@ export default defineNuxtConfig({
       title: '社区门户',
       templateParams: {
         separator: '|'
-      }
+      },
+      link: [{ rel: 'icon', type: 'image/svg+xml', href: '/aosc.svg' }]
     }
   },
 

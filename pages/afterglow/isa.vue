@@ -3,6 +3,7 @@ const { tm } = useI18n();
 const textValue = tm('afterglow.isa');
 const linkValue = tm('allUniversalLink');
 const localLink = linkValue.local;
+useHead({ title: textValue.title1 });
 
 const docList = [useHIndex(useTIndex(localLink.afterglowRequirements, 3), 0)];
 

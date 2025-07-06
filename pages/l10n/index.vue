@@ -2,6 +2,7 @@
 const { tm } = useI18n();
 const textValue = tm('l10n.index');
 const linkValue = tm('allUniversalLink');
+useHead({ title: textValue.title1 });
 const navigationList = [linkValue.thisPageSupport, linkValue.weblate];
 
 const docList = linkValue.l10nWorkGuide;
