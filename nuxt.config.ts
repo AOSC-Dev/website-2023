@@ -2,28 +2,6 @@
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineNuxtConfig({
-  app: {
-    head: {
-      title: '社区门户',
-      templateParams: {
-        separator: '|'
-      },
-      link: [{ rel: 'icon', type: 'image/svg+xml', href: '/aosc.svg' }]
-    }
-  },
-
-  site: {
-    name: '安同开源社区 (AOSC)'
-  },
-
-  seo: {
-    meta: {
-      description:
-        '安同开源社区（Anthon Open Source Community，简称 AOSC）是一个由计算机爱好者志愿组织工作，主要活动于线上的开源社区。',
-      twitterCreator: '@aosc_dev_cn'
-    }
-  },
-
   schemaOrg: {
     enabled: false
   },

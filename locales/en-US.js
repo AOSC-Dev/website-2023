@@ -30,6 +30,7 @@ import DownloadButton from './en-us/json/components/download/DownloadButton.json
 import DownloadDetails from './en-us/json/components/download/DownloadDetails.json';
 import DownloadDetailsAppleSiliconInstruction from './en-us/json/components/download/DownloadDetailsAppleSiliconInstruction.json';
 import DownloadDetailsMain from './en-us/json/components/download/DownloadDetailsMain.json';
+import seo from './en-us/json/seo.json';
 
 export default {
   DownloadButtonGroup,
@@ -63,5 +64,6 @@ export default {
   internship,
   l10n,
   liblol,
-  paste
+  paste,
+  seo
 };

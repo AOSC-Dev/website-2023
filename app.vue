@@ -1,6 +1,18 @@
 <script setup lang="js">
 const highBrightnessControllerStore = useHighBrightnessControllerStore();
 const router = useRouter();
+const { t } = useI18n();
+
+useHead({
+  title: t('seo.head.title'),
+  titleTemplate: (title) => `${title} | ${t('seo.site.name')}`,
+  link: [{ rel: 'icon', type: 'image/svg+xml', href: '/aosc.svg' }]
+});
+
+useSeoMeta({
+  description: t('seo.seo.description'),
+  ogImage: '/aosc.svg',
+});
 
 router.afterEach((to, _from) => {
   highBrightnessControllerStore.obj[to.path] =
