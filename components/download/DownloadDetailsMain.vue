@@ -46,9 +46,8 @@ const mediaWritersInfo = setNestedKeyValue(
   <div class="download-details-main flex flex-col gap-2">
     <app-h2>{{ textValue.title1 }}</app-h2>
     <p
-      >{{ textValue.text1 }}{{ spaceWord(arch) }}{{ spaceWord(textValue.text2) }}{{ fileType }}，{{
-        content
-      }}{{ linkValue.aPeriod }}</p
+      >{{ textValue.text1 }}{{ spaceWord(arch) }}{{ spaceWord(textValue.text2)
+      }}{{ fileType }}，{{ content }}{{ linkValue.aPeriod }}</p
     >
     <p>
       {{ textValue.text3 }}

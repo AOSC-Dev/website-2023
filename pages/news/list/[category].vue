@@ -22,9 +22,7 @@ useHead({ title: title });
 
 <template>
   <div>
-    <category-second
-      :title="title"
-      class="border-r-solid border-r-white" />
+    <category-second :title="title" class="border-r-solid border-r-white" />
     <news-category-list :category="route.params.category" />
   </div>
 </template>

@@ -11,7 +11,7 @@ useHead({
 
 useSeoMeta({
   description: t('seo.seo.description'),
-  ogImage: '/aosc.svg',
+  ogImage: '/aosc.svg'
 });
 
 router.afterEach((to, _from) => {
