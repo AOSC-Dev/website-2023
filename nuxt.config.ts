@@ -59,6 +59,12 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-06-22',
 
   vite: {
+    resolve: {
+      alias: {
+        // Workaround for form-data (axios)
+        'form-data': 'form-data/lib/form_data.js'
+      }
+    },
     plugins: [tailwindcss()],
     css: {
       preprocessorOptions: {
