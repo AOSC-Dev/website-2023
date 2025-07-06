@@ -23,8 +23,12 @@ export default defineNuxtConfig({
     }
   },
 
+  schemaOrg: {
+    enabled: false
+  },
+
   ogImage: {
-    fonts: ['Noto+Sans+SC:400']
+    enabled: false
   },
 
   modules: [
