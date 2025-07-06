@@ -3,6 +3,7 @@ const { tm } = useI18n();
 const textValue = tm('index');
 const linkValue = tm('allUniversalLink');
 const localLink = linkValue.local;
+useHead({ title: textValue.title });
 
 const columnBorderlessList = [
   '/icons/key-enter.min.svg',

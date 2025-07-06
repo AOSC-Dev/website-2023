@@ -10,6 +10,7 @@ const { data: page } = await useAsyncData(
       .first();
   }
 );
+useHead({ title: page.value?.title });
 </script>
 
 <template>
