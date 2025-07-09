@@ -129,8 +129,9 @@ const handleChange = (uploadFile, uploadFiles) => {
         class="theme-border-primary mb-[10px] w-full rounded-none border-2 py-[10px]"
         :placeholder="textValue.placeholder1" />
       <!-- 内容编辑器 -->
-      <MonacoEditor
+      <LazyMonacoEditor
         v-model="pasteFormData.content"
+        hydrate-on-visible
         class="theme-border-primary h-[50vh] rounded-none border-2"
         :lang="pasteFormData.language" />
       <!-- 文件选择器 -->
