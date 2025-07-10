@@ -45,7 +45,7 @@ export default defineNuxtConfig({
     }
   },
 
-  css: ['~/assets/css/main.css', '~/assets/index.scss'],
+  css: ['~/assets/css/main.css', '~/assets/index.scss', '~/assets/theme.scss'],
 
   vue: {
     compilerOptions: {

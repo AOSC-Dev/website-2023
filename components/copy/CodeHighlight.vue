@@ -14,10 +14,6 @@ const props = defineProps({
     type: String,
     default: ''
   },
-  buttonColor: {
-    type: String,
-    default: 'white'
-  },
   buttonClass: {
     type: String,
     default: ''
@@ -44,7 +40,6 @@ onMounted(() => {
     }}</code>
     <CopyIcon
       :class="props.buttonClass"
-      :color="props.buttonColor"
       :content-target="props.codeText" />
   </pre>
 </template>

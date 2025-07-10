@@ -6,8 +6,6 @@ const details = ref(null);
 const imgSuffixList = ['jpg', 'jpeg', 'png', 'gif'];
 const failReason = ref('');
 
-const themeStore = useThemeStore();
-
 const { tm } = useI18n();
 const textValue = tm('paste.detail');
 useHead({ title: textValue.title1 });
@@ -93,7 +91,6 @@ const returnHref = () => window.location.href;
         <CodeHighlight
           class="mt-4 justify-between bg-[#ccccccc3]/15"
           button-class="mr-3"
-          :button-color="themeStore.primary"
           :code-text="details.content"
           :language="details.language" />
       </div>

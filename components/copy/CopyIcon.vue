@@ -1,9 +1,5 @@
 <script setup>
 const props = defineProps({
-  color: {
-    type: String,
-    default: 'white'
-  },
   contentTarget: {
     type: String,
     required: true

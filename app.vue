@@ -6,7 +6,17 @@ const { t } = useI18n();
 useHead({
   title: t('seo.head.title'),
   titleTemplate: (title) => `${title} | ${t('seo.site.name')}`,
-  link: [{ rel: 'icon', type: 'image/svg+xml', href: '/aosc.svg' }]
+  link: [{ rel: 'icon', type: 'image/svg+xml', href: '/aosc.svg' }],
+  script: [
+    {
+      // This script will execute before the browser renders the <body>,
+      // ensuring the correct season class is set from the very beginning.
+      textContent:
+        'document.documentElement.classList.add(["spring","summer","autumn","winter"][(new Date().getMonth()+10)%12/3|0])',
+      type: 'text/javascript',
+      tagPosition: 'head'
+    }
+  ]
 });
 
 useSeoMeta({
