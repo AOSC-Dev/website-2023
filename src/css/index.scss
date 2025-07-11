@@ -325,9 +325,9 @@ td {
 .vuepress-markdown-body
   div[class*='v-md-pre-wrapper-']
   pre[class*='v-md-prism-'] {
-  z-index: 0;
+  z-index: unset !important;
 }
 
 .vuepress-markdown-body div[class*='v-md-pre-wrapper-']::before {
-  z-index: 0;
+  z-index: unset !important;
 }
