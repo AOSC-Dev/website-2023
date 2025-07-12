@@ -53,6 +53,10 @@ const router = useRouter();
 const dialogState = ref(false);
 const archNameBrackets = props.archName.match(/^(.*?)([（(].*[）)])?$/);
 
+// Adding "+ 'pt'" in  v-bind() won't work correctly in SSG
+const firstLineFontSize = props.firstLineFontSize + 'pt';
+const secondLineFontSize = props.secondLineFontSize + 'pt';
+
 const dialogTitle = computed(
   () => `${textValue.text1}${textValue.osName} - ${props.isaInfo?.label}`
 );
@@ -109,12 +113,12 @@ const onClick = () => {
 
 <style scoped>
 .first-line-p {
-  font-size: v-bind(firstLineFontSize + 'pt');
+  font-size: v-bind(firstLineFontSize);
   font-weight: 450;
 }
 
 .second-line-p {
-  font-size: v-bind(secondLineFontSize + 'pt');
+  font-size: v-bind(secondLineFontSize);
   font-weight: 400;
 }
 
