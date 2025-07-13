@@ -1,14 +1,25 @@
 <script setup>
 import PageNotFound from './PageNotFound.vue';
 import { useRoute } from 'vue-router';
-import { shallowRef, defineAsyncComponent, watch } from 'vue';
+import {
+  shallowRef,
+  defineAsyncComponent,
+  watch,
+  useTemplateRef,
+  computed
+} from 'vue';
+import CategorySecond from './CategorySecond.vue';
 
 const props = defineProps({
   articles: {
     type: Object,
     required: true
   },
-  title: String,
+  showTitle: {
+    type: Boolean,
+    default: false
+  },
+  defaultTitle: String,
   pathPrefix: String,
   pathSuffix: String
 });
@@ -17,6 +28,10 @@ const props = defineProps({
 const route = useRoute();
 const loadError = shallowRef(false);
 const articleComponent = shallowRef();
+const articleComponentRef = useTemplateRef('articleComponentRef');
+const articleTitle = computed(
+  () => articleComponentRef.value?.frontmatter.title
+);
 
 function loadArticle(slug) {
   const path = `${props.pathPrefix ?? './articles/'}${slug.split('#')[0]}${props.pathSuffix ?? '.md'}`;
@@ -44,7 +59,13 @@ watch(
       <PageNotFound />
     </template>
     <template v-else>
-      <component class="vuepress-markdown-body" :is="articleComponent" />
+      <CategorySecond
+        v-if="showTitle"
+        :title="articleTitle ?? defaultTitle" />
+      <component
+        ref="articleComponentRef"
+        class="vuepress-markdown-body"
+        :is="articleComponent" />
     </template>
   </div>
 </template>
