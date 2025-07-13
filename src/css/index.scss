@@ -317,6 +317,7 @@ $bg-secondary: #3f6075;
   }
 
   table {
+    display: table !important;
     width: calc(100% - $space-lg * 2);
     background-color: unset;
   }
