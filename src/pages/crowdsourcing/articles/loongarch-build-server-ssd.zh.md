@@ -1,6 +1,7 @@
 ---
 title: '[众筹成功] 为 LoongArch 构建服务器购买 Intel 750 SSD'
 draft: false
+date: 2023-06-08
 ---
 
 ## 导言

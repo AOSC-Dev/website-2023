@@ -1,6 +1,7 @@
 ---
 title: '[COMPLETE] Build Server Upgrades'
 draft: false
+date: 2023-10-30
 ---
 
 ## Rationale

@@ -1,5 +1,6 @@
 ---
 title: '[众筹成功] 购买用作 AArch64 构建服务器的 Mac mini M1'
+date: 2021-10-27
 ---
 
 本文为众筹 Mac mini M1 的计划书。这台机器将替代目前托管在广州市的 Mac mini (Relay 24242) 用作 AArch64 构建服务器。

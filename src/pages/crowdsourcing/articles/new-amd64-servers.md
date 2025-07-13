@@ -1,6 +1,7 @@
 ---
 title: '[COMPLETE] New (x86-64) Build Servers'
 draft: false
+date: 2024-06-12
 ---
 
 ## Rationale
