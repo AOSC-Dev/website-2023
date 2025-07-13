@@ -315,6 +315,11 @@ $bg-secondary: #3f6075;
       font-size: 18px;
     }
   }
+
+  table {
+    width: calc(100% - $space-lg * 2);
+    background-color: unset;
+  }
 }
 
 table {
