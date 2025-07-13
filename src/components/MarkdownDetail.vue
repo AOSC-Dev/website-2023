@@ -29,8 +29,8 @@ const route = useRoute();
 const loadError = shallowRef(false);
 const articleComponent = shallowRef();
 const articleComponentRef = useTemplateRef('articleComponentRef');
-const articleTitle = computed(
-  () => articleComponentRef.value?.frontmatter.title
+const articleFrontmatter = computed(
+  () => articleComponentRef.value?.frontmatter
 );
 
 function loadArticle(slug) {
@@ -61,7 +61,8 @@ watch(
     <template v-else>
       <CategorySecond
         v-if="showTitle"
-        :title="articleTitle ?? defaultTitle" />
+        :title="articleFrontmatter?.title ?? defaultTitle"
+        :right-text="articleFrontmatter?.date?.split('T')[0]" />
       <component
         ref="articleComponentRef"
         class="vuepress-markdown-body"
