@@ -38,7 +38,7 @@ const catalog = Object.entries(csArticleTitles).map(([path, title]) => {
     </div>
 
     <category-second title="补充条例" />
-    <ul class="list-disc py-6 pl-16">
+    <ul class="list-disc py-6 px-16">
       <li>
         资金及物品捐赠必须用于具体社区项目（例：为 AOSC OS
         移植构建或升级构建用服务器）。
