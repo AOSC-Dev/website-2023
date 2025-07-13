@@ -22,7 +22,7 @@ articleComponent.value = defineAsyncComponent(() =>
         <AosccLinkButton to="https://aoscc.aosc.io" target="_blank"
           >订购纪念品</AosccLinkButton
         >
-        <AosccLinkButton to="/aoscc/2025-schedule" >会议日程</AosccLinkButton>
+        <AosccLinkButton to="/aoscc/2025-schedule">会议日程</AosccLinkButton>
         <AosccLinkButton to="/aoscc/2025-guide">交通和住宿</AosccLinkButton>
       </div>
     </div>
@@ -31,7 +31,7 @@ articleComponent.value = defineAsyncComponent(() =>
       <p>
         AOSCC
         是我社每年一度的线下聚会，公开邀请社区好友参与。活动期间，社区邀请社区贡献者、高校社团成员和行业代表等分享、交流工作，并组织抽奖、代号投票等趣味活动。近年来，AOSCC
-        均由中国高校社团协办，每年吸引超过 100 与会者参与。
+        均由中国高校社团协办，每年吸引超过 100 名与会者参与。
       </p>
     </div>
     <template v-if="error">
