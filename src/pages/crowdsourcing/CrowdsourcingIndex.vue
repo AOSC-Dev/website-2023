@@ -2,7 +2,7 @@
 import CategorySecond from '/src/components/CategorySecond.vue';
 import AppLink from '../../components/AppLink.vue';
 
-const csArticleFrontmatters = import.meta.glob(
+const csArticleTitles = import.meta.glob(
   ['./articles/*.zh.md', '!./articles/template*'],
   // Tricky solution for importing only the titles statically.
   // The `query` parameter creates a unique import identifier for Vite
@@ -13,9 +13,14 @@ const csArticleFrontmatters = import.meta.glob(
   { eager: true, import: 'title', query: 'title.md' }
 );
 
-const catalog = Object.entries(csArticleFrontmatters).map(([path, title]) => {
+const csArticleDates = import.meta.glob(
+  ['./articles/*.zh.md', '!./articles/template*'],
+  { eager: true, import: 'date', query: 'date.md' }
+);
+
+const catalog = Object.entries(csArticleTitles).map(([path, title]) => {
   const slug = path.split('/').pop().replace('.zh.md', '');
-  return { slug, title };
+  return { slug, title, date: csArticleDates[path] };
 });
 </script>
 
@@ -55,11 +60,17 @@ const catalog = Object.entries(csArticleFrontmatters).map(([path, title]) => {
     </ul>
 
     <category-second title="众筹项目记录" />
-    <ul class="list-disc py-6 pl-16">
-      <li v-for="item in catalog" :key="item.slug">
-        <app-link :to="`/crowdsourcing/${item.slug}`">{{
-          item.title
-        }}</app-link>
+    <ul class="list-disc px-16 py-6">
+      <li
+        v-for="item in catalog.toSorted(
+          (a, b) => Date.parse(a.date) - Date.parse(b.date)
+        )"
+        :key="item.slug"
+        class="flex justify-between">
+        <app-link :to="`/crowdsourcing/${item.slug}`">
+          {{ item.title }}
+        </app-link>
+        <span>[{{ item.date.split('T')[0] }}]</span>
       </li>
     </ul>
   </div>
