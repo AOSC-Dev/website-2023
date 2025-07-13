@@ -1,5 +1,6 @@
 ---
 title: '[COMPLETE] Upgrade BuildBot for the Loongson 3 Port'
+date: 2021-05-22
 ---
 
 ::: success

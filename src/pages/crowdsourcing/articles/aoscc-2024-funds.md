@@ -1,6 +1,7 @@
 ---
 title: '[COMPLETE] AOSCC 2024 Budgets (Wave 1)'
 draft: false
+date: 2023-07-05
 ---
 
 ## Rationale

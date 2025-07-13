@@ -1,6 +1,7 @@
 ---
 title: '[众筹成功] AOSCC 2023 会务款项'
 draft: false
+date: 2023-07-05
 ---
 
 ## 导言

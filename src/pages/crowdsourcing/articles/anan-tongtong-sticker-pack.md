@@ -1,6 +1,7 @@
 ---
 title: '[COMPLETE] An-an & Tong-tong Stickers Pack'
 draft: false
+date: 2024-06-01
 ---
 
 ## Rationale

@@ -1,6 +1,7 @@
 ---
 title: '[COMPLETE] Intel 750 SSD for LoongArch Build Server'
 draft: false
+date: 2023-06-08
 ---
 
 ## Rationale

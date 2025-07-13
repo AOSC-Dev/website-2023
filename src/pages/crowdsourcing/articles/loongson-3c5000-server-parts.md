@@ -1,5 +1,6 @@
 ---
 title: '[COMPLETE] Loongson 3C5000 Server Parts'
+date: 2024-12-22
 ---
 
 This crowdsourcing project aims to fund components and peripherals for a Loongson 3C5000 server build.

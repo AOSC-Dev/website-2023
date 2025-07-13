@@ -1,5 +1,6 @@
 ---
 title: '[COMPLETE] Additional Loongson 3A5000 Relay'
+date: 2022-07-27
 ---
 
 This crowdsourcing project aims to fund an additional Loongson 3A5000 device as

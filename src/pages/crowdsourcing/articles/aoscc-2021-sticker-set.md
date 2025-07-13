@@ -1,5 +1,6 @@
 ---
 title: '[COMPLETE] Printing the AOSCC 2021 Sticker Set'
+date: 2021-12-01
 ---
 
 This is a proposal to crowdsource the necessary funds to print the AOSCC 2021 Sticker Set.

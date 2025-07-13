@@ -1,6 +1,7 @@
 ---
 title: '[COMPLETE] AOSCC 2023 Budgets'
 draft: false
+date: 2023-07-05
 ---
 
 ## Rationale

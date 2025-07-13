@@ -1,5 +1,6 @@
 ---
 title: '[COMPLETE] Purchase Apple Mac mini M1 as AArch64 Build Server'
+date: 2021-10-27
 ---
 
 This is a proposal to crowdsource a Apple Mac mini with M1 SoC to replace the current AArch64 BuildBot located in Guangzhou (Relay 24242, also a Mac mini M1).

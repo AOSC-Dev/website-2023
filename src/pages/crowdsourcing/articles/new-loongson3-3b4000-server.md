@@ -1,6 +1,7 @@
 ---
 title: '[COMPLETE] Components for A New Loongson 3B4000 Build Server'
 draft: false
+date: 2023-12-02
 ---
 
 ## Rationale

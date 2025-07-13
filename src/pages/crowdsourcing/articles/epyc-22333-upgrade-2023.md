@@ -1,6 +1,7 @@
 ---
 title: '[COMPLETE] Upgrade Primary AMD64 Build Server (22333)'
 draft: false
+date: 2023-01-27
 ---
 
 This page outlines the plans to upgrade our primary AMD64 build server (22333).

@@ -1,6 +1,7 @@
 ---
 title: '[COMPLETE] New Repository Server in Hong Kong'
 draft: false
+date: 2024-05-05
 ---
 
 ## Rationale

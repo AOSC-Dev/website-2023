@@ -1,5 +1,6 @@
 ---
 title: '[COMPLETE] Upgrade Primary Repository Server'
+date: 2021-06-05
 ---
 
 This is a proposal to crowdsource an HPE (Hewlett Packard Enterprise) ProLiant MicroServer Gen10 Plus to host the community's primary repo and source code caching (for offline package building purposes) services.
