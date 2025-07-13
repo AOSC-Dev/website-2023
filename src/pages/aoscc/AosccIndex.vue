@@ -20,9 +20,9 @@ articleComponent.value = defineAsyncComponent(() =>
     <div class="aoscc-banner-bg relative h-[280px] px-10 py-6 text-white">
       <div class="absolute bottom-0 mb-10 ml-1">
         <AosccLinkButton to="https://aoscc.aosc.io" class="mr-4"
-          >前往报名</AosccLinkButton
+          >订购纪念品</AosccLinkButton
         >
-        <AosccLinkButton to="/aoscc/2025">实用信息</AosccLinkButton>
+        <AosccLinkButton to="/aoscc/2025-guide">实用信息</AosccLinkButton>
       </div>
     </div>
     <div class="vuepress-markdown-body">
