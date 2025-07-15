@@ -7,7 +7,7 @@ const articleComponent = ref();
 
 articleComponent.value = defineAsyncComponent(() =>
   //@ts-ignore
-  import('./articles/2025-info.zh.md').catch((err) => {
+  import('./articles/2025.zh.md').catch((err) => {
     console.error('Article not found:', err);
     error.value = err;
   })
@@ -38,7 +38,6 @@ articleComponent.value = defineAsyncComponent(() =>
       <page-not-found />
     </template>
     <template v-else>
-      <category-second v-if="!error" title="AOSCC 2025" class="mb-6" />
       <component class="vuepress-markdown-body" :is="articleComponent" />
     </template>
   </div>

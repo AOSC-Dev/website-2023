@@ -188,12 +188,12 @@ const router = createRouter({
       }
     },
     {
-      path: '/aoscc',
-      name: 'aoscc',
-      component: AosccIndex,
-      meta: {
-        title: 'AOSCC'
-      }
+      path:'/aoscc',
+      redirect:'/aoscc/2025'
+    },
+    {
+      path: '/aoscc/2025',
+      component: AosccIndex
     },
     {
       path: '/aoscc/:slug',
