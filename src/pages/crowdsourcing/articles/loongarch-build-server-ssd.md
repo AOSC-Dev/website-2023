@@ -4,8 +4,6 @@ draft: false
 date: 2023-06-08
 ---
 
-## Rationale
-
 Recently, Loongson Technologies (Wuhan) sponsored a LoongArch build server
 (Relay 27863). However, its scratch disk is a mechanical hard drive, slowing
 down builds. This crowdsourcing attempts to fund an (already purchased) Intel

@@ -4,8 +4,6 @@ draft: false
 date: 2023-12-02
 ---
 
-## Rationale
-
 This crowdsourcing project aims to source key components for our new Loongson 3B4000 build server, which will help alleviate performance shortfall of our lone MIPS Loongson build server. In particular, we are requesting support for the case, CPU coolers, and RAM.
 
 ## Budget

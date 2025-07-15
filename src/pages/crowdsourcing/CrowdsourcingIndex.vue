@@ -63,7 +63,7 @@ const catalog = Object.entries(csArticleTitles).map(([path, title]) => {
     <ul class="list-disc px-16 py-6">
       <li
         v-for="item in catalog.toSorted(
-          (a, b) => Date.parse(a.date) - Date.parse(b.date)
+          (a, b) => Date.parse(b.date) - Date.parse(a.date)
         )"
         :key="item.slug"
         class="flex justify-between">

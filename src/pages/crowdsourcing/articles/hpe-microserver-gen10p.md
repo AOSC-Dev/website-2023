@@ -5,8 +5,6 @@ date: 2021-06-05
 
 This is a proposal to crowdsource an HPE (Hewlett Packard Enterprise) ProLiant MicroServer Gen10 Plus to host the community's primary repo and source code caching (for offline package building purposes) services.
 
-## Rationale
-
 Currently, the community's primary repository server is sponsored by xTom, but the storage space on that server is limited. Therefore, the community hopes to acquire a server with sufficient storage capacities to replace the current one. In addition, with the expanded storage capacities, the community also hopes to use this server for storing the source archives of packages, which would enable building packages offline. Finally, the current repository server is also slightly underpowered for the p-vector dependency scanner, and the community hopes to have this rectified. 
 
 This proposal aims to acquire a server with sufficient storage capacities and performance to host the aforementioned services, while still keeping the total costs under control. The ProLiant MicroServer Gen10 Plus has just enough storage and memory capacity for these services, and with a proper CPU upgrade, will have enough compute capability to fulfill the needs of the p-vector dependency scanner.

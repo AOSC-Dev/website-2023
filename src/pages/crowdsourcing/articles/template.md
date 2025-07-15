@@ -16,8 +16,6 @@ This is a proposal to crowdsource a dual Loongson 3B4000 motherboard from Lemote
 
 -->
 
-## Rationale
-
 <!--
 
 A detailed description of the reason for the purchase, focusing on the potential benefits for community activities.
