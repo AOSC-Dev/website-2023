@@ -20,7 +20,7 @@ articleComponent.value = defineAsyncComponent(() =>
     <div class="aoscc-banner-bg relative h-[280px] px-10 py-6 text-white">
       <div class="absolute bottom-0 mb-10 ml-1 flex gap-4">
         <AosccLinkButton to="https://aoscc.aosc.io" target="_blank"
-          >订购纪念品</AosccLinkButton
+          >报名与签到</AosccLinkButton
         >
         <AosccLinkButton to="/aoscc/2025-schedule">会议日程</AosccLinkButton>
         <AosccLinkButton to="/aoscc/2025-guide">交通和住宿</AosccLinkButton>
