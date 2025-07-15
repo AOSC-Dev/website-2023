@@ -4,8 +4,6 @@ draft: false
 date: 2024-05-05
 ---
 
-## Rationale
-
 To improve reliability and access performance for our repository server, we plan to deploy a new repository server at [Aperture Internet Laboratory](https://apernet.io/)'s Hong Kong location. The new server will:
 
 - Be built upon an [ASUS RS700A-E9-RS12V2](https://servers.asus.com/products/Servers/Rack-Servers/RS700A-E9-RS12V2) based on AMD's EPYC 7002 platform.

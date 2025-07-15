@@ -4,8 +4,6 @@ draft: false
 date: 2024-06-01
 ---
 
-## Rationale
-
 We have commissioned a sticker pack from [五十根炸虾](https://www.mihuashi.com/profiles/571437) to help promote our community mascots. These stickers will be available as chat stickers and used as (parts of) our souvenirs and merchandises.
 
 ## Budget

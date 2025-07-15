@@ -4,8 +4,6 @@ draft: false
 date: 2024-05-05
 ---
 
-## 导言
-
 本众筹项目将通过在 [Aperture Internet Laboratory（光圈网络）](https://apernet.io/) 的香港机房部署新软件源服务器提高服务质量和性能；新的服务器：
 
 - 基于 AMD EPYC 7002 平台的 [华硕 RS700A-E9-RS12V2](https://servers.asus.com/products/Servers/Rack-Servers/RS700A-E9-RS12V2) 机架组装

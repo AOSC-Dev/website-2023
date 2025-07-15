@@ -4,8 +4,6 @@ draft: false
 date: 2023-10-30
 ---
 
-## Rationale
-
 This crowdsourcing campaign aims to upgrade two of our build servers, "kp920" (AArch64, 24426) and "Stomatapoda" (LoongArch, 27863), to alleviate each of their performance constraints. 
 
 - The scratch disk (buildroots) on kp920 was powered by a mechanical SAS drive, which significantly dragged out Ciel's intensive I/O operations - such as system upgrades and dependency installation. We would like to purchase a SAS SSD for this machine.

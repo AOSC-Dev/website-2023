@@ -9,8 +9,6 @@ Thanks to sponsors listed below, this project has completed.
 
 This is a proposal to crowdsource a dual Loongson 3B4000 motherboard from Lemote to supplement the current 3A4000 BuildBot (Relay 23869).
 
-## Rationale
-
 The current BuildBot for the AOSC OS Loongson 3 port is built and tested on a 3A4000-based server (Lemote LX-1901), which, with only four cores, hardly suffices as a sole BuildBot for distribution maintenance. The significant performance discrepancy when compared to AMD64 and AArch64 BuildBots also makes it difficult to coordinate packaging among our four mainline ports.
 
 This proposal attempts to improve the computing capacity for the Loongson 3 port with the addition of a dual 3B4000-based system, which, with a total of eight cores (across two processors) can potentially provide double the performance compared to the current BuildBot.

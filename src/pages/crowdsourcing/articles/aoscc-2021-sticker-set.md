@@ -5,8 +5,6 @@ date: 2021-12-01
 
 This is a proposal to crowdsource the necessary funds to print the AOSCC 2021 Sticker Set.
 
-## Rationale
-
 Per community tradition, we have created a new sticker set that includes community logos, memes, and mascots - a set of three pages.
 
 Due to material change (from paper to PVC to improve quality and durability) and supply chain issues, the price to print this year's community sticker set rised significantly. Stickers will be distributed free-of-cost by request, recipients will pay postage.

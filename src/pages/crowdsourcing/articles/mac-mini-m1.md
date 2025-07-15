@@ -5,8 +5,6 @@ date: 2021-10-27
 
 This is a proposal to crowdsource a Apple Mac mini with M1 SoC to replace the current AArch64 BuildBot located in Guangzhou (Relay 24242, also a Mac mini M1).
 
-## Rationale
-
 By purchasing an additional Mac mini M1, we plan to effectively relocate the current AArch64 BuildBot (Relay 24242) to South California, United States of America. By doing so, we expect to see more reliable and faster Internet access, and we will utilise the retired Mac mini M1 in Guangzhou for desktop testing targetting the AArch64 port, and especially for the Apple Silicon platforms.
 
 ## Budget

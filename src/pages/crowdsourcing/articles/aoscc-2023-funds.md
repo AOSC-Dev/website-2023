@@ -4,8 +4,6 @@ draft: false
 date: 2023-07-05
 ---
 
-## Rationale
-
 After four long years, AOSCC 2023 is finally returning in-person. To procure souvenirs and lucky draw items, community contributors have or will spend private funds. This crowdsourcing campaign aims to reimburse these spendings.
 
 ## Budget

@@ -4,8 +4,6 @@ draft: false
 date: 2024-06-12
 ---
 
-## Rationale
-
 This crowdsourcing project aims to source components for *four* new AMD64 (x86-64) build servers to help digest our BuildIt! queues. Currently, there are only two (albeit very powerful) available build servers for our `amd64` jobs, we aim to deploy four more to enable more build jobs to run in parallel.
 
 Of course, our BuildIt! infrastructure will benefit from either a job server or better use of containers and cgroups. However, in any case, more build servers means more redundancy and better overall performance.

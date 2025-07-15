@@ -6,8 +6,6 @@ date: 2023-01-27
 
 This page outlines the plans to upgrade our primary AMD64 build server (22333).
 
-## Rationale
-
 After over three years in service, our primary AMD64 build server started to exhibit performance issues (especially with Qemu-built ports, such as RISC-V and MIPS R6, which saturated our PorterAle emulated build host). Moreover, some of the parts on the server began to show excess wear (the Intel SSD 750 which hosts our scratch disk has a total write of over 350TiB, which is more than 100TiB over manufacturer’s specifications). 
 
 These circumstances, in addition to the core count and RAM capacity limitations found with our current AM4/X570 platform, has led us to believe that our primary AMD64 build server can benefit from a platform upgrade. This upgrade aims to achieve the following:

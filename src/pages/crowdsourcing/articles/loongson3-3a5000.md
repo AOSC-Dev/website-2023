@@ -6,8 +6,6 @@ date: 2022-07-27
 This crowdsourcing project aims to fund an additional Loongson 3A5000 device as
 a community relay.
 
-## Rationale
-
 We plan on kickstarting our `loongarch64` mainline port this summer. While we
 already have a Loongson 3A5000 setup (Relay 27001), having just one such device
 makes it challenging to maintain and test the port efficiently.

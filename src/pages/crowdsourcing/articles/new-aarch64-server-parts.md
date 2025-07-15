@@ -5,8 +5,6 @@ date: 2023-08-02
 
 We plan to deploy two new AArch64 servers donated by friends of the community. However, these servers needs additional components before deployment, this crowdsourcing project will reimburse purchases already made for these servers.
 
-## Rationale
-
 Two new AArch64 servers will be deployed later this month as additional build hosts (a Phytium FT2000/64-based server and another with a 64-core Huawei Kunpeng 920 SoC), as Relays 24114 and 24514. We will install the following parts before deployment:
 
 - Huawei Kungpeng 920

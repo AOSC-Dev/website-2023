@@ -4,8 +4,6 @@ draft: false
 date: 2023-07-05
 ---
 
-## Rationale
-
 AOSCC 2024 will be held at Jilin University on July 13 - 14th. To procure souvenirs and other materials, community contributors have spent private funds ahead of time. This crowdsourcing campaign aims to reimburse these spendings.
 
 This crowdsourcing campaign reimburses items that were already purchased with concrete quotes. We are yet to finalise the budgets on printed goods, trash bags, etc. As we finalise budgets on those items, we will launch a second wave to reimburse the rest of the spendings.

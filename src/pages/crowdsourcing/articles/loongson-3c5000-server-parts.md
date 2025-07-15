@@ -5,8 +5,6 @@ date: 2024-12-22
 
 This crowdsourcing project aims to fund components and peripherals for a Loongson 3C5000 server build.
 
-## Rationale
-
 In December 2024, we received a generous donation of a Loongson 3C5000 motherboard, RAM, and heatsink from [Xinmudotmoe](http://t.me/xm_moe). However, it is still missing parts before it could be hosted and go online. We would like to source funds to complete the purchase of several key components (PSU, SSD, and adaptor), as well as a rackable chassis and rails.
 
 ## Budget
