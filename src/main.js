@@ -79,5 +79,9 @@ app.component('AppLink', AppLink);
 app.use(router);
 app.use(pinia);
 app.use(VMdPreview);
-app.use(createHead({ init: [{ titleTemplate: '%s | 安同开源社区 (AOSC)' }] }));
+app.use(
+  createHead({
+    init: [{ title: '社区门户', titleTemplate: '%s | 安同开源社区 (AOSC)' }]
+  })
+);
 app.mount('#app');
