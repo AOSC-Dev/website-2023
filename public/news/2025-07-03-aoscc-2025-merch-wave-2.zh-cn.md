@@ -4,7 +4,7 @@ categories:
 title: "AOSCC 2025 纪念品团购（第二期）"
 date: 2025-07-03T00:10:00+08:00
 important: false
-home: true
+home: false
 ---
 
 第二期 AOSC 文创周边如约而至。本期推出的周边均为**按单生产，**由于工期紧张，**订购将于 7 月 10 日中午 12 时截止，欲购从速！**

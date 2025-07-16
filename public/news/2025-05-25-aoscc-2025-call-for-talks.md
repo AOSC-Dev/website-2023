@@ -4,7 +4,7 @@ categories:
 title: "AOSCC 2025 讲者与选题招募 (Call for Talks)"
 date: 2025-05-25T00:00:00+08:00
 important: true
-home: true
+home: false
 ---
  
 ![](/assets/news/aoscc-2025-cfp.png)

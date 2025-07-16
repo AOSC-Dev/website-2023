@@ -4,7 +4,7 @@ categories:
 title: "AOSCC 2025 议程前瞻"
 date: 2025-06-27T21:00:00+08:00
 important: false
-home: true
+home: false
 ---
 ![](/assets/news/aoscc-2025-registration.png)
 
