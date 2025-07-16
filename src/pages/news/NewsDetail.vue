@@ -1,18 +1,19 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import CategorySecond from '../../components/CategorySecond.vue';
 import { useRoute } from 'vue-router';
 import {
-  setTitle,
   requestGetJson,
   requestToYaml,
   handleCopyCodeSuccess
 } from '../../utils/utils.js';
+import { useHead } from '@unhead/vue';
 
 const mdRes = ref();
 const route = useRoute();
 const yamlDoc = ref({});
 const newsDate = ref('');
+useHead({ title: computed(() => yamlDoc.value?.title) });
 
 (async () => {
   const newsPath = route.params.newsPath;
@@ -20,7 +21,6 @@ const newsDate = ref('');
   let [res, err] = await requestGetJson(`/news/${newsPath}`);
   if (res) {
     [mdRes.value, yamlDoc.value] = requestToYaml(res);
-    setTitle(yamlDoc.value['title']);
   } else if (err) {
     console.log(err);
   }
