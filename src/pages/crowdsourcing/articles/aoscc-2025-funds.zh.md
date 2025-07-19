@@ -1,5 +1,5 @@
 ---
-title: '[筹款中] AOSCC 2025 会务款项'
+title: '[众筹成功] AOSCC 2025 会务款项'
 draft: false
 date: 2025-07-19
 ---
