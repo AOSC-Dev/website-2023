@@ -1,7 +1,7 @@
 ---
 title: '[COMPLETE] AOSCC 2024 Budgets (Wave 1)'
 draft: false
-date: 2023-07-05
+date: 2024-07-05
 ---
 
 AOSCC 2024 will be held at Jilin University on July 13 - 14th. To procure souvenirs and other materials, community contributors have spent private funds ahead of time. This crowdsourcing campaign aims to reimburse these spendings.
