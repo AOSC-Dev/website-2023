@@ -29,16 +29,7 @@ const supportRef = useTemplateRef('support');
       <li
         v-for="(item, index) in navigationList"
         :key="`${route.path}-${getSpecifiedTitle(item)}-${index}`">
-        <AppLink
-          :to="
-            item.url
-              ? Number.isFinite(item.hIndex)
-                ? `${item.url}${item.hash[item.hIndex]}`
-                : item.url
-              : `${route.path.replace(/\/+$/, '')}${item.hash}`
-          "
-          >{{ getSpecifiedTitle(item) }}</AppLink
-        >
+        <LinkStandard :link="item" />
       </li>
     </ul>
   </div>

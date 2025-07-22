@@ -575,12 +575,15 @@
     "title": ["社区 Weblate 平台"],
     "url": "https://weblate.aosc.io/"
   },
-  "l10nWorkGuide": [
-    {
-      "title": "《大陆简中自由软件本地化工作指南》1.5.4 版",
-      "url": "https://repo.aosc.io/aosc-l10n/zh_CN_l10n_1.5.4.pdf"
-    }
-  ],
+   "l10nWorkGuide": {
+    "title": [
+      {
+        "texts": ["大陆简中自由软件本地化工作指南", "1.5.4 版"],
+        "book": [0]
+      }
+    ],
+    "url": "https://repo.aosc.io/aosc-l10n/zh_CN_l10n_1.5.4.pdf"
+  },
   "dkcli": {
     "title": ["dkcli"],
     "url": "https://github.com/AOSC-Dev/dkcli"
