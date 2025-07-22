@@ -1,7 +1,9 @@
 <script lang="ts" setup>
 import NewsCategoryList from '~/components/NewsCategoryList.vue';
+import { Charset, Document } from 'flexsearch';
 
 const { locale } = useI18n();
+useHead({ title: '支持中心' });
 
 const categoryList = [
   {
@@ -17,10 +19,10 @@ const categoryList = [
     icon: 'ic:baseline-install-desktop'
   },
   {
-    path: 'loong',
-    name: '你二龙吗？',
-    description: '安安同同与双倍龙量的信息',
-    icon: 'noto:dragon-face'
+    path: 'hardware',
+    name: '硬件',
+    description: 'CPU、冰箱贴与安安 Fumo',
+    icon: 'ic:baseline-hardware'
   },
   {
     path: 'infra',
@@ -33,6 +35,12 @@ const categoryList = [
     name: '你知道吗？',
     description: '你 8d 吗',
     icon: 'ic:baseline-question-mark'
+  },
+  {
+    path: '/contact',
+    name: '还有高手 →',
+    description: '联系安安同临时工',
+    icon: 'ic:baseline-contact-page'
   }
 ];
 
@@ -41,12 +49,12 @@ const faqList = [
   { path: '2', title: 'AOSC OS 是台湾发行版吗？' },
   { path: '3', title: '我是来退出这个安装器的' },
   { path: '4', title: '安安耳朵为什么尖尖的？' },
-  { path: '5', title: '我的问题还是没有解决怎么办？' }
+  { path: '5', title: '得找个地方放 wiki 指引' },
+  { path: '6', title: '我的问题还是没有解决怎么办？' }
 ];
 
 const query = ref('');
 const queryCategory = ref('all');
-const queryState: Ref<ananReactionType> = ref('idle');
 
 const queryCategoryList = [
   { path: 'all', name: 'ALL' },
@@ -68,7 +76,7 @@ const ananReactionList: Record<
     img: ananImgPrefix + 'afterglow.png'
   },
   success: {
-    text: '安安找到了这些',
+    text: '安安找到了这些：',
     img: ananImgPrefix + 'success.svg'
   },
   failed: {
@@ -80,6 +88,56 @@ const ananReactionList: Record<
     img: ananImgPrefix + 'oma.svg'
   }
 };
+
+type contentSearchResult = {
+  id: string;
+  title: string;
+  titles: Array<string>;
+  content: string;
+  level: number;
+};
+
+const { data: store, status } = await useAsyncData<contentSearchResult[]>(() =>
+  queryCollectionSearchSections(locale.value)
+);
+
+const index = new Document({
+  preset: 'default',
+  encoder: Charset.CJK,
+  document: { id: 'id', index: ['title', 'content'] }
+});
+// TODO: genereate index on server & reactivity
+if (store.value) {
+  for (const item of store.value) {
+    index.add(item);
+  }
+}
+
+const storeDict = store.value?.reduce(
+  (acc, obj) => {
+    acc[obj.id] = obj;
+    return acc;
+  },
+  {} as Record<string, contentSearchResult>
+);
+
+const results = computed(() =>
+  storeDict
+    ? index
+        .search(query.value, { merge: true, limit: 10 })
+        .map((item) => storeDict[item.id])
+    : null
+);
+
+const queryState: Ref<ananReactionType> = computed(() => {
+  // TODO: & async searching
+  //if (searching)return 'searching';
+  if (query.value.toLowerCase().includes('oma')) return 'oma';
+  if (query.value && !results.value?.length) return 'failed';
+  if (status.value === 'success' && results.value?.length) return 'success';
+  if (status.value === 'error') return 'failed';
+  return 'idle';
+});
 </script>
 
 <template>
@@ -87,10 +145,11 @@ const ananReactionList: Record<
     <category-second title="芝士中心" />
     <div class="m-6">
       <p>这里应该会有一些说明性的文字或者 banner，不过可能也可以没有这块</p>
+      <p>还是希望搜索能出现在页面偏上方一些，因为更好展示候选</p>
     </div>
     <category-second title="问问安安" />
     <div class="mx-6 my-2 flex items-center gap-4">
-      <!-- <img :src="ananReactionList[queryState].img" class="h-32 w-32" /> -->
+      <img :src="ananReactionList[queryState].img" class="h-32 w-32" />
       <div class="flex-grow">
         <span>{{ ananReactionList[queryState].text }}</span>
         <div class="mt-2 flex">
@@ -101,11 +160,27 @@ const ananReactionList: Record<
               :label="category.name"
               :value="category.path" />
           </el-select>
-          <el-input
-            v-model="query"
-            inputmode="search"
-            placeholder="Search..."
-            class="sm:max-w-[70%]" />
+          <div class="w-full">
+            <el-input
+              v-model="query"
+              inputmode="search"
+              placeholder="请输入文字"
+              class="max-full" />
+            <div v-if="results?.length" class="relative">
+              <!--TODO: investigate z-index?-->
+              <ul
+                class="absolute z-1 w-full border-1 border-(--primary) bg-white px-3 py-1">
+                <li v-for="result in results" :key="result.id">
+                  <span v-for="title in result.titles" :key="title">
+                    {{ title }} >
+                  </span>
+                  <NuxtLinkLocale :to="result.id">
+                    <span class="text-link">{{ result.title }}</span>
+                  </NuxtLinkLocale>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -136,17 +211,8 @@ const ananReactionList: Record<
       </div>
       <div>
         <category-second title="最新资讯" />
-        <NewsCategoryList :limit="8" class="my-1" />
+        <NewsCategoryList :limit="Math.sqrt(0x8d + 3)" class="my-1" />
       </div>
-    </div>
-    <category-second title="还有高手" />
-    <div class="m-6">
-      <p>还可以通过这些方式寻求帮助：</p>
-      <ul class="list-disc px-[2em]">
-        <li>安同开源社区论坛</li>
-        <li>社区聊天群组</li>
-        <li>这边还没做，不一定是列表</li>
-      </ul>
     </div>
   </div>
 </template>
