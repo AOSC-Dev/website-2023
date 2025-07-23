@@ -6,7 +6,7 @@ title: AOSCC 2025 交通和住宿信息
 
 上海交通大学闵行校区暑期封闭了部分校园入口，**请您从思源门（东川路 800 号）入校。** 入校时，保卫人员将要求您在闸机刷身份证，确认身份后方可入校。
 
-![navigation-campus](/assets/news/aoscc-2025-navigation-campus.webp)
+![navigation-campus](/assets/aoscc/aoscc-2025-navigation-campus.webp)
 
 如上图所示，从思源门前往会场的路线如下：
 
@@ -14,7 +14,7 @@ title: AOSCC 2025 交通和住宿信息
 - 沿南洋南路直走
 - 在南洋南路・元培路口前左转，从南入口进入东上院（如下图）
 
-![navigation-building-entrance](/assets/news/aoscc-2025-navigation-building-entrance.webp)
+![navigation-building-entrance](/assets/aoscc/aoscc-2025-navigation-building-entrance.webp)
 
 入门后请跟随现场路牌到达会址：东上院 阶梯教室 100。
 
