@@ -8,7 +8,7 @@ useHead({ title: textValue.title1 });
   <div>
     <CategorySecond :title="textValue.title1" />
     <div class="p-6">
-      <p class="mb-[1.5rem]"> {{ textValue.p1 }} </p>
+      <p class="mb-[1.5rem]">{{ textValue.p1 }}</p>
     </div>
 
     <CategorySecond :title="textValue.title2" />
@@ -20,12 +20,12 @@ useHead({ title: textValue.title1 });
             v-for="(item, index) in textValue.ul1.li"
             :key="`aosc-os-livekit-relnote-1-li-${index}`">
             <template v-if="index !== 4">{{ item }}</template>
-            <template v-else
-              >{{ item[0]
-              }}<AppLink to="https://github.com/AOSC-Dev/dkcli">dkcli</AppLink
-              >{{ item[1] }}</template
-            ></li
-          >
+            <template v-else>
+              {{ item[0] }}
+              <AppLink to="https://github.com/AOSC-Dev/dkcli">dkcli</AppLink>
+              {{ item[1] }}
+            </template>
+          </li>
         </ul>
       </div>
     </div>

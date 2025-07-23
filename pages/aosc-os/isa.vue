@@ -44,10 +44,8 @@ const aoscOsIsaList2 = ref();
       <p>
         {{ textValue.p2 }}
       </p>
-      <div ref="aoscOsIsaList1"
-        ><app-table-isa
-          my-key="aosc-os-isa-1"
-          :table-value="textValue.table1" />
+      <div ref="aoscOsIsaList1">
+        <app-table-isa my-key="aosc-os-isa-1" :table-value="textValue.table1" />
       </div>
 
       <p>
@@ -57,7 +55,7 @@ const aoscOsIsaList2 = ref();
 
     <category-second id="aoscOsIsaTableTitle2" :title="textValue.title3" />
     <div class="p-6">
-      <p> {{ textValue.p4 }}</p>
+      <p>{{ textValue.p4 }}</p>
       <div ref="aoscOsIsaList2">
         <app-table-isa my-key="aosc-os-isa-2" :table-value="textValue.table2" />
       </div>

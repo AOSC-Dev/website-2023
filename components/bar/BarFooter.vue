@@ -14,10 +14,10 @@ const navigationList = [
   <div
     class="theme-bg-color-secondary-static footerbar flex w-full justify-center py-[2px] text-white">
     <div class="m-auto">
-      <span class="pl-[0.5rem]"
-        >&copy; {{ textValue.antong }}&nbsp;&nbsp;&nbsp;&nbsp;2011 -
-        {{ nowYear }}</span
-      >
+      <span class="pl-[0.5rem]">
+        &copy; {{ textValue.antong }}&nbsp;&nbsp;&nbsp;&nbsp;2011 -
+        {{ nowYear }}
+      </span>
       <span class="mx-[20px]">|</span>
       <AccordionNavigation
         :navigation-list="navigationList"

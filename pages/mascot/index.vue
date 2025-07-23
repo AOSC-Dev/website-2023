@@ -15,7 +15,7 @@ const navigationList = [
   <div class="grid grid-cols-1">
     <category-second :title="textValue.title1" />
 
-    <div> <img class="imgScale1 w-full" src="/mascot/anan.png" /></div>
+    <div><img class="imgScale1 w-full" src="/mascot/anan.png" /></div>
 
     <div class="grid grid-cols-2">
       <category-second :title="textValue.title3" />
@@ -23,8 +23,8 @@ const navigationList = [
         :title="textValue.title6"
         class="border-l border-l-white" />
 
-      <div class="flex"
-        ><div
+      <div class="flex">
+        <div
           class="p-[1.75rem] text-[0.8rem] xl:text-[1.07rem] 2xl:text-[1.2rem]">
           <p>
             {{ textValue.p2 }}
@@ -35,20 +35,20 @@ const navigationList = [
                 class="h-full"
                 :link="linkValue.antongMascotsSetDraft" />
             </div>
-            <div class="grid-col-1 grid gap-y-3"
-              ><link-standard :link="linkValue.tysontan" /><link-standard
-                :link="linkValue.mailtoTysontan"
-            /></div>
+            <div class="grid-col-1 grid gap-y-3">
+              <link-standard :link="linkValue.tysontan" />
+              <link-standard :link="linkValue.mailtoTysontan" />
+            </div>
           </div>
         </div>
       </div>
-      <div class="theme-border-secondary flex border-l"
-        ><div
+      <div class="theme-border-secondary flex border-l">
+        <div
           class="flex flex-col justify-between p-[1.75rem] text-[0.8rem] xl:text-[1.07rem] 2xl:text-[1.2rem]">
           <p>
-            {{ textValue.p6 }}<link-standard :link="linkValue.figuramc" />{{
-              textValue.p7
-            }}
+            {{ textValue.p6 }}
+            <link-standard :link="linkValue.figuramc" />
+            {{ textValue.p7 }}
           </p>
 
           <div class="mt-[1rem] flex flex-row justify-between">
@@ -56,11 +56,12 @@ const navigationList = [
               class="h-full w-[50%]"
               :link="linkValue.ananMcFigura" />
             <div class="grid-col-1 grid gap-y-3">
-              <div class="invisible">占位</div><div class="invisible">占位</div>
+              <div class="invisible">占位</div>
+              <div class="invisible">占位</div>
             </div>
           </div>
-        </div></div
-      >
+        </div>
+      </div>
 
       <category-second :title="textValue.title2" />
       <category-second
@@ -83,32 +84,31 @@ const navigationList = [
             <div
               v-for="(item, index) in navigationList"
               :key="`mascot-index-1-link-${index}`"
-              class="flex flex-row"
-              ><link-button class="w-full" :link="item" />
+              class="flex flex-row">
+              <link-button class="w-full" :link="item" />
               <div class="grid-col-1 grid w-0 gap-y-3 whitespace-pre">
-                <div class="invisible">占位 </div
-                ><div class="invisible">占位</div>
+                <div class="invisible">占位</div>
+                <div class="invisible">占位</div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="theme-border-secondary flex border-l"
-        ><div
+      <div class="theme-border-secondary flex border-l">
+        <div
           class="flex flex-col justify-between p-[1.75rem] text-[0.8rem] xl:text-[1.07rem] 2xl:text-[1.2rem]">
-          <div
-            ><p>
+          <div>
+            <p>
               {{ textValue.p3 }}
             </p>
             <p>
-              {{ textValue.p4
-              }}<link-standard :link="linkValue.tomatoScrambledEggsGoofish" />{{
-                textValue.p5
-              }}<link-standard :link="linkValue.tomatoScrambledEggsHuaJia" />{{
-                textValue.p8
-              }}
-            </p></div
-          >
+              {{ textValue.p4 }}
+              <link-standard :link="linkValue.tomatoScrambledEggsGoofish" />
+              {{ textValue.p5 }}
+              <link-standard :link="linkValue.tomatoScrambledEggsHuaJia" />
+              {{ textValue.p8 }}
+            </p>
+          </div>
 
           <div class="mt-[1rem] flex flex-row justify-between">
             <div class="w-[50%]">
@@ -117,7 +117,8 @@ const navigationList = [
                 :link="linkValue.fumoMascotsSetDraft" />
             </div>
             <div class="grid-col-1 grid w-0 gap-y-3 whitespace-pre">
-              <div class="invisible">占位</div><div class="invisible">占位</div>
+              <div class="invisible">占位</div>
+              <div class="invisible">占位</div>
             </div>
           </div>
         </div>
@@ -129,9 +130,9 @@ const navigationList = [
       <div class="basis-1/2 pr-[1.75rem]">
         <p
           v-for="(item, index) in textValue.ps1"
-          :key="`mascot-index-1-p-${index}`"
-          >{{ item }}</p
-        >
+          :key="`mascot-index-1-p-${index}`">
+          {{ item }}
+        </p>
 
         <app-ul-ordinary
           li-class="my-[1rem]"
@@ -141,9 +142,9 @@ const navigationList = [
 
         <p
           v-for="(item, index) in textValue.ps2"
-          :key="`mascot-index-2-p-${index}`"
-          >{{ item }}</p
-        >
+          :key="`mascot-index-2-p-${index}`">
+          {{ item }}
+        </p>
         <app-ul-ordinary
           li-class="my-[1rem]"
           :lis="textValue.ul2.li"
@@ -160,9 +161,9 @@ const navigationList = [
           :my-key="`mascot-index-3`" />
         <p
           v-for="(item, index) in textValue.ps3"
-          :key="`mascot-index-3-p-${index}`"
-          >{{ item }}</p
-        >
+          :key="`mascot-index-3-p-${index}`">
+          {{ item }}
+        </p>
         <app-ul-ordinary
           li-class="my-[1rem]"
           :lis="textValue.ul4.li"
@@ -170,9 +171,9 @@ const navigationList = [
           :my-key="`mascot-index-4`" />
         <p
           v-for="(item, index) in textValue.ps4"
-          :key="`mascot-index-4-p-${index}`"
-          >{{ item }}</p
-        >
+          :key="`mascot-index-4-p-${index}`">
+          {{ item }}
+        </p>
         <app-ul-ordinary
           li-class="my-[1rem]"
           :lis="textValue.ul5.li"

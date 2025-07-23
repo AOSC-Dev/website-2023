@@ -48,6 +48,6 @@ onMounted(() => {
 
 <template>
   <NuxtLayout>
-    <div ref="mainBody" class="flex-1 pl-[1px]"><NuxtPage /> </div
-  ></NuxtLayout>
+    <div ref="mainBody" class="flex-1 pl-[1px]"><NuxtPage /></div>
+  </NuxtLayout>
 </template>

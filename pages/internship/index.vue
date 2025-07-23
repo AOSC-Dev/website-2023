@@ -36,9 +36,9 @@ const summerOfOpenSource = textValue.summerOfOpenSource.map((obj) => {
     <div class="p-6">
       <p
         v-for="(item, index) in textValue.ps1"
-        :key="`internship-index-1-ps-${index}`"
-        >{{ item }}</p
-      >
+        :key="`internship-index-1-ps-${index}`">
+        {{ item }}
+      </p>
       <p>
         <AccordionNavigation :navigation-list="navigationList" />
       </p>
@@ -46,8 +46,8 @@ const summerOfOpenSource = textValue.summerOfOpenSource.map((obj) => {
 
     <category-second id="todo" :title="localLink.internship.title[2]" />
     <div ref="todo" class="p-6">
-      <p
-        >{{ textValue.p1 }}
+      <p>
+        {{ textValue.p1 }}
         <link-standard :link="linkValue.local.contact" />
         {{ textValue.p2 }}
       </p>
@@ -55,10 +55,10 @@ const summerOfOpenSource = textValue.summerOfOpenSource.map((obj) => {
         <ul class="list-disc">
           <li
             v-for="(item, index) in textValue.ul1.li"
-            :key="`internship-index-1-li-${index}`"
-            ><b>{{ item[0] }}</b
-            >{{ item[1] }}</li
-          >
+            :key="`internship-index-1-li-${index}`">
+            <b>{{ item[0] }}</b>
+            {{ item[1] }}
+          </li>
         </ul>
       </div>
     </div>
@@ -72,10 +72,10 @@ const summerOfOpenSource = textValue.summerOfOpenSource.map((obj) => {
         <ul class="list-disc">
           <li
             v-for="(item, index) in textValue.ul2.li"
-            :key="`internship-index-1-li-${index}`"
-            ><b>{{ textValue.ul2.header + item + '：' }}</b
-            ><link-standard :link="summerOfOpenSource[index]"
-          /></li>
+            :key="`internship-index-1-li-${index}`">
+            <b>{{ textValue.ul2.header + item + '：' }}</b>
+            <link-standard :link="summerOfOpenSource[index]" />
+          </li>
         </ul>
       </div>
     </div>

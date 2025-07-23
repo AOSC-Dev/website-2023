@@ -24,14 +24,15 @@ const props = defineProps({
     <li
       v-for="(item, index) in lis"
       :key="`${myKey}-li-${index}`"
-      :class="Array.isArray(item) ? 'list-none' : liClass"
-      ><template v-if="typeof item === 'string'">{{ item }}</template
-      ><template v-else-if="Array.isArray(item)"
-        ><app-ul-ordinary
+      :class="Array.isArray(item) ? 'list-none' : liClass">
+      <template v-if="typeof item === 'string'">{{ item }}</template>
+      <template v-else-if="Array.isArray(item)">
+        <app-ul-ordinary
           :lis="item"
           :li-class="liClass"
           :my-key="`${myKey}-${index}`"
-          class="py-[0.5rem] pl-[2.5rem]" /></template
-    ></li>
+          class="py-[0.5rem] pl-[2.5rem]" />
+      </template>
+    </li>
   </ul>
 </template>

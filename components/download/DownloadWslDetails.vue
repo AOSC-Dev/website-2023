@@ -74,19 +74,17 @@ function latestTarball(tarballs, arch) {
 
     <app-h2>{{ textValue.title2 }}</app-h2>
     <p>{{ textValue.text6 }}</p>
-    <p
-      >{{ textValue.text7 }}
-      <link-standard :link="useTIndex(localLink.aoscWslRequirements, 1)" />{{
-        linkValue.aPeriod
-      }}</p
-    >
+    <p>
+      {{ textValue.text7 }}
+      <link-standard :link="useTIndex(localLink.aoscWslRequirements, 1)" />
+      {{ linkValue.aPeriod }}
+    </p>
 
     <app-h2>{{ textValue.title3 }}</app-h2>
     <p>
-      {{ textValue.text11
-      }}<link-standard :link="useTIndex(localLink.contact, 2)" />{{
-        textValue.text13
-      }}
+      {{ textValue.text11 }}
+      <link-standard :link="useTIndex(localLink.contact, 2)" />
+      {{ textValue.text13 }}
     </p>
   </div>
 </template>

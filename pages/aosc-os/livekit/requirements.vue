@@ -35,9 +35,9 @@ const aoscOsRequirementsList = ref();
           <tr>
             <th
               v-for="(item, index) in textValue.table1.th"
-              :key="`aosc-os-livekit-require-1-th-${index}`"
-              >{{ item }}</th
-            >
+              :key="`aosc-os-livekit-require-1-th-${index}`">
+              {{ item }}
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -46,9 +46,9 @@ const aoscOsRequirementsList = ref();
             :key="`aosc-os-livekit-require-1-tr-${index1}`">
             <td
               v-for="(item2, index2) in item1"
-              :key="`aosc-os-livekit-require-1-td-${index1}-${index2}`"
-              >{{ item2 }}</td
-            >
+              :key="`aosc-os-livekit-require-1-td-${index1}-${index2}`">
+              {{ item2 }}
+            </td>
           </tr>
         </tbody>
       </table>
@@ -59,12 +59,13 @@ const aoscOsRequirementsList = ref();
       <ul class="list-disc">
         <li
           v-for="(item, index) in textValue.ul1.li"
-          :key="`aosc-os-livekit-requirem-1-li-${index}`"
-          ><template v-if="index === 0"
-            >{{ item[0]
-            }}<link-standard :link="localLink.aoscIsaTableTitle" /></template
-          ><template v-else>{{ item }}</template></li
-        >
+          :key="`aosc-os-livekit-requirem-1-li-${index}`">
+          <template v-if="index === 0">
+            {{ item[0] }}
+            <link-standard :link="localLink.aoscIsaTableTitle" />
+          </template>
+          <template v-else>{{ item }}</template>
+        </li>
       </ul>
     </div>
     <AppSupport :navigation-list="docList" />

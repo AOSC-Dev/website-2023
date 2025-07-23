@@ -14,9 +14,9 @@ defineProps({
     :key="`${title.texts[0]}-${index}`">
     <span v-if="title.book.includes(index)">
       <span v-if="locale === 'zh'">《{{ item }}》</span>
-      <span v-else-if="locale === 'en'"
-        ><i>{{ item }}</i></span
-      >
+      <span v-else-if="locale === 'en'">
+        <i>{{ item }}</i>
+      </span>
     </span>
     <span v-else>{{ item }}</span>
   </span>

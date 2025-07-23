@@ -23,9 +23,9 @@ const props = defineProps({
       <tr>
         <th
           v-for="(item, index) in tableValue.th"
-          :key="`${myKey}-th-${index}`"
-          >{{ item }}</th
-        >
+          :key="`${myKey}-th-${index}`">
+          {{ item }}
+        </th>
       </tr>
     </thead>
     <tbody>
@@ -34,14 +34,14 @@ const props = defineProps({
         :key="`${myKey}-tr-${index1}`">
         <td
           v-for="(item2, index2) in item1[0]"
-          :key="`${myKey}-td-${index1}-${index2}`"
-          >{{ item2 }}</td
-        >
+          :key="`${myKey}-td-${index1}-${index2}`">
+          {{ item2 }}
+        </td>
         <td
           v-for="(item3, index3) in item1[1]"
-          :key="`${myKey}-td-${index1}-${index3 + item1[0].length}`"
-          ><code>{{ item3 }}</code></td
-        >
+          :key="`${myKey}-td-${index1}-${index3 + item1[0].length}`">
+          <code>{{ item3 }}</code>
+        </td>
       </tr>
     </tbody>
   </table>

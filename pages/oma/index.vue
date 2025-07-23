@@ -24,18 +24,18 @@ const navigationList = [
         <ul class="list-disc">
           <li
             v-for="(item, index) in textValue.ul1.li"
-            :key="`oma-index-1-li-${index}`"
-            ><b>{{ item[0] }}</b
-            >{{ item[1] }}</li
-          >
+            :key="`oma-index-1-li-${index}`">
+            <b>{{ item[0] }}</b>
+            {{ item[1] }}
+          </li>
         </ul>
       </div>
       <div>
         <AccordionNavigation :navigation-list="navigationList" />
       </div>
       <div ref="bgImg" class="h-[685px]">
-        <img src="/oma/oma.png" class="mt-2 h-auto w-full" alt=""
-      /></div>
+        <img src="/oma/oma.png" class="mt-2 h-auto w-full" alt="" />
+      </div>
     </div>
   </div>
 </template>

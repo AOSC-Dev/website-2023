@@ -2,7 +2,7 @@
   "semi": true,
   "bracketSameLine": true,
   "arrowParens": "always",
-  "htmlWhitespaceSensitivity": "strict",
+  "htmlWhitespaceSensitivity": "ignore",
   "vueIndentScriptAndStyle": false,
   "singleQuote": true,
   "trailingComma": "none",

@@ -13,17 +13,17 @@ defineProps({
       :class="
         'pb-2 leading-[0.8] font-[450] ' +
         (smallTitle ? 'text-[24pt]' : 'text-[32pt]')
-      "
-      >{{ title }}</h2
-    >
+      ">
+      {{ title }}
+    </h2>
     <h3 class="text-[14pt] font-[450]">{{ description }}</h3>
     <div class="text-[11pt]">
       <AccordionNavigation
         v-if="navigationList"
         :navigation-list="navigationList"
-        link-class=""
-        >·</AccordionNavigation
-      >
+        link-class="">
+        ·
+      </AccordionNavigation>
     </div>
   </div>
 </template>

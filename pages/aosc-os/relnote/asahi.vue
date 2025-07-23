@@ -10,17 +10,20 @@ useHead({ title: textValue.title1 });
   <div class="pl-[1px]">
     <category-second :title="textValue.title1" />
     <div class="p-6">
-      <p> {{ textValue.p1 }} </p><br />
+      <p>{{ textValue.p1 }}</p>
+      <br />
     </div>
 
     <category-second :title="textValue.title2" />
     <div class="p-6">
-      <p> {{ textValue.p2 }} </p><br />
+      <p>{{ textValue.p2 }}</p>
+      <br />
     </div>
 
     <category-second :title="textValue.title3" />
     <div class="p-6">
-      <p> {{ textValue.p3 }} </p><br />
+      <p>{{ textValue.p3 }}</p>
+      <br />
       <div class="px-12 pt-2 pb-4">
         <app-ul-ordinary
           key="aosc-os-relnote-asahi-1"

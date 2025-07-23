@@ -55,7 +55,7 @@ const returnHref = () => window.location.href;
         <div class="flex flex-col">
           <div class="flex justify-between">
             <div>
-              <div ref="div1"> {{ textValue.div1 + details.title }}</div>
+              <div ref="div1">{{ textValue.div1 + details.title }}</div>
               <div ref="div2">{{ textValue.div2 + details.expDate }}</div>
             </div>
             <button
@@ -70,9 +70,11 @@ const returnHref = () => window.location.href;
               :key="filename"
               class="el-upload-list__item is-ready">
               <div class="flex items-center">
-                <el-icon class="mr-2"><ElIconDocument /></el-icon>
-                <span
-                  ><img
+                <el-icon class="mr-2">
+                  <ElIconDocument />
+                </el-icon>
+                <span>
+                  <img
                     v-if="isImg(filename)"
                     :src="getAttachUrl(filename)"
                     class="w-full" />
@@ -80,12 +82,12 @@ const returnHref = () => window.location.href;
                     v-else
                     class="text-link"
                     :href="getAttachUrl(filename)"
-                    target="_blank"
-                    >{{ filename }}</a
-                  ></span
-                ></div
-              ></li
-            >
+                    target="_blank">
+                    {{ filename }}
+                  </a>
+                </span>
+              </div>
+            </li>
           </ul>
         </div>
         <CodeHighlight
@@ -101,9 +103,9 @@ const returnHref = () => window.location.href;
           v-if="failReason === '密码错误' || failReason === '需要密码'"
           ref="button2"
           type="primary"
-          @click="back"
-          >{{ textValue.button2 }}</el-button
-        >
+          @click="back">
+          {{ textValue.button2 }}
+        </el-button>
       </template>
     </el-result>
   </ShowLoading>

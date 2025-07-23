@@ -8,7 +8,7 @@ useHead({ title: textValue.title1 });
   <div>
     <CategorySecond :title="textValue.title1" />
     <div class="p-6">
-      <p class="mb-[1.5rem]"> {{ textValue.p1 }} </p>
+      <p class="mb-[1.5rem]">{{ textValue.p1 }}</p>
     </div>
   </div>
 </template>

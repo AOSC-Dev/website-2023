@@ -8,19 +8,19 @@ useHead({ title: textValue.title1 });
   <div>
     <category-second :title="textValue.title1" />
     <div class="heti">
-      <p> {{ textValue.p1 }} </p>
-      <p> {{ textValue.p2 }} </p>
-      <p> {{ textValue.p3 }} </p>
-      <p> {{ textValue.p4 }} </p>
+      <p>{{ textValue.p1 }}</p>
+      <p>{{ textValue.p2 }}</p>
+      <p>{{ textValue.p3 }}</p>
+      <p>{{ textValue.p4 }}</p>
     </div>
 
     <category-second :title="textValue.title2" />
     <div class="heti">
-      <p>{{ textValue.p5 }} </p>
+      <p>{{ textValue.p5 }}</p>
       <h3 class="mt-[1.5rem]">{{ textValue.subheading1 }}</h3>
       <div>
-        <p>{{ textValue.p6 }} </p>
-        <p>{{ textValue.p7 }} </p>
+        <p>{{ textValue.p6 }}</p>
+        <p>{{ textValue.p7 }}</p>
       </div>
       <h3>{{ textValue.subheading2 }}</h3>
       <div>
@@ -28,7 +28,7 @@ useHead({ title: textValue.title1 });
       </div>
       <h3>{{ textValue.subheading3 }}</h3>
       <div>
-        <p>{{ textValue.p9 }} </p>
+        <p>{{ textValue.p9 }}</p>
       </div>
       <h3>{{ textValue.subheading4 }}</h3>
       <div>

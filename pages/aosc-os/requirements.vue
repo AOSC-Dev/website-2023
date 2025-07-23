@@ -28,8 +28,8 @@ const aoscOsRequirementsRef = useTemplateRef('aoscOsRequirementsList');
       <div ref="aoscOsRequirementsList">
         <app-table-ordinary
           :table-value="textValue.table1"
-          my-key="aosc-os-require-1"
-      /></div>
+          my-key="aosc-os-require-1" />
+      </div>
     </div>
 
     <category-second id="support" :title="textValue.title2" />
@@ -37,13 +37,13 @@ const aoscOsRequirementsRef = useTemplateRef('aoscOsRequirementsList');
       <ul class="list-disc">
         <li
           v-for="(item, index) in textValue.ul1.li"
-          :key="`aosc-os-requirem-1-li-${index}`"
-          ><template v-if="index === 0"
-            >{{ item
-            }}<link-standard
-              :link="useHIndex(localLink.aoscIsaTableTitle, 0)" /> </template
-          ><template v-else>{{ item }}</template></li
-        >
+          :key="`aosc-os-requirem-1-li-${index}`">
+          <template v-if="index === 0">
+            {{ item }}
+            <link-standard :link="useHIndex(localLink.aoscIsaTableTitle, 0)" />
+          </template>
+          <template v-else>{{ item }}</template>
+        </li>
       </ul>
     </div>
     <br />

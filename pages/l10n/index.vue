@@ -12,8 +12,8 @@ const docList = [linkValue.l10nWorkGuide];
   <div>
     <category-second :title="textValue.title1" />
     <div class="heti">
-      <p> {{ textValue.p1 }} </p>
-      <p> {{ textValue.p2 }} </p>
+      <p>{{ textValue.p1 }}</p>
+      <p>{{ textValue.p2 }}</p>
       <div class="mt-[1rem]">
         <AccordionNavigation :navigation-list="navigationList" />
       </div>

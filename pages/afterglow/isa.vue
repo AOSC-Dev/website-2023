@@ -28,11 +28,13 @@ const afterlowIsaListRef = useTemplateRef('afterlowIsaList');
         {{ textValue.p1 }}
       </p>
       <div ref="afterlowIsaList">
-        <app-table-isa my-key="afterlow-isa-1" :table-value="textValue.table1"
-      /></div>
+        <app-table-isa
+          my-key="afterlow-isa-1"
+          :table-value="textValue.table1" />
+      </div>
     </div>
     <div class="mb-[1rem] p-6">
-      <p> {{ textValue.p2 }} </p>
+      <p>{{ textValue.p2 }}</p>
       <p>{{ textValue.p3 }}</p>
     </div>
     <AppSupport :navigation-list="docList" />

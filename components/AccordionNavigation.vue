@@ -36,8 +36,8 @@ defineProps({
           : `${route.path.replace(/\/+$/, '')}${item.hash}`
       "
       :class="linkClass">
-      {{ getSpecifiedTitle(item) }}</AppLink
-    >
+      {{ getSpecifiedTitle(item) }}
+    </AppLink>
   </span>
 </template>
 

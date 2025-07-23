@@ -398,9 +398,9 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
             small-title />
           <span
             class="cursor-pointer text-[11pt] hover:underline"
-            @click="wslDialogState = true"
-            >{{ textValue.y2.x0.p3 }}</span
-          >
+            @click="wslDialogState = true">
+            {{ textValue.y2.x0.p3 }}
+          </span>
         </div>
 
         <el-dialog v-model="wslDialogState" width="80%">
@@ -495,8 +495,10 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
         code-class="text-white"
         button-class="ml-6 mt-[2px] bg-white"
         :code-text="omaInstallScript" />
-      <p class="mt-[6px] text-[10pt]"
-        >{{ textValue.p11[0] }}<br />{{ textValue.p11[1] }}
+      <p class="mt-[6px] text-[10pt]">
+        {{ textValue.p11[0] }}
+        <br />
+        {{ textValue.p11[1] }}
       </p>
     </div>
   </div>

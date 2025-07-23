@@ -145,7 +145,8 @@ const handleChange = (uploadFile, uploadFiles) => {
         <div class="my-[-26px] h-[26px]">
           <el-icon size="24"><el-icon-upload-filled /></el-icon>
           <div ref="div1" class="el-upload__text">
-            {{ textValue.div1[0] }} <em>{{ textValue.div1[1] }}</em>
+            {{ textValue.div1[0] }}
+            <em>{{ textValue.div1[1] }}</em>
           </div>
         </div>
       </el-upload>

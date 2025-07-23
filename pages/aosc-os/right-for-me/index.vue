@@ -21,9 +21,9 @@ useHead({ title: textValue.title1 });
       <ul class="list-disc">
         <li
           v-for="(item, index) in textValue.ul1.li"
-          :key="`aosc-os-right-for-me-index-1-li-${index}`"
-          >{{ item }}</li
-        >
+          :key="`aosc-os-right-for-me-index-1-li-${index}`">
+          {{ item }}
+        </li>
       </ul>
     </div>
     <category-second id="pros" :title="textValue.title3" />
@@ -32,9 +32,9 @@ useHead({ title: textValue.title1 });
       <ul class="list-disc">
         <li
           v-for="(item, index) in textValue.ul2.li"
-          :key="`aosc-os-right-for-me-index-2-li-${index}`"
-          >{{ item }}</li
-        >
+          :key="`aosc-os-right-for-me-index-2-li-${index}`">
+          {{ item }}
+        </li>
       </ul>
     </div>
     <category-second id="cons" :title="textValue.title4" />
@@ -43,9 +43,9 @@ useHead({ title: textValue.title1 });
       <ul class="list-disc">
         <li
           v-for="(item, index) in textValue.ul3.li"
-          :key="`aosc-os-right-for-me-index-3-li-${index}`"
-          >{{ item }}</li
-        >
+          :key="`aosc-os-right-for-me-index-3-li-${index}`">
+          {{ item }}
+        </li>
       </ul>
     </div>
     <category-second id="recommended-usage" :title="textValue.title5" />
@@ -54,9 +54,9 @@ useHead({ title: textValue.title1 });
       <ul class="list-disc">
         <li
           v-for="(item, index) in textValue.ul4.li"
-          :key="`aosc-os-right-for-me-index-4-li-${index}`"
-          >{{ item }}</li
-        >
+          :key="`aosc-os-right-for-me-index-4-li-${index}`">
+          {{ item }}
+        </li>
       </ul>
     </div>
     <category-second id="discouraged-usage" :title="textValue.title6" />
@@ -66,9 +66,9 @@ useHead({ title: textValue.title1 });
       <ul class="list-disc">
         <li
           v-for="(item, index) in textValue.ul5.li"
-          :key="`aosc-os-right-for-me-index-5-li-${index}`"
-          >{{ item }}</li
-        >
+          :key="`aosc-os-right-for-me-index-5-li-${index}`">
+          {{ item }}
+        </li>
       </ul>
     </div>
   </div>

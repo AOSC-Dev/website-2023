@@ -59,8 +59,8 @@ const lis5 = textValue.ul5.li.map((obj, index) => {
   <div>
     <category-second :title="textValue.title1" />
     <div class="heti">
-      <p>{{ textValue.p1 }} </p>
-      <p> {{ textValue.p2 }} </p>
+      <p>{{ textValue.p1 }}</p>
+      <p>{{ textValue.p2 }}</p>
       <p>
         <AccordionNavigation :navigation-list="navigationList" />
       </p>
@@ -75,38 +75,38 @@ const lis5 = textValue.ul5.li.map((obj, index) => {
         <ul class="list-disc">
           <li
             v-for="(item, index) in textValue.ul1.b"
-            :key="`events-index-1-li-${index}`"
-            ><b>{{ item }}</b
-            ><template
+            :key="`events-index-1-li-${index}`">
+            <b>{{ item }}</b>
+            <template
               v-if="
                 index < textValue.ul1.b.length - 2 &&
                 index !== textValue.ul1.b.length - 4
-              "
-              ><AppLink
-                :to="linkValue.aosccWiki.url + ul1TextLinks[index][1]"
-                >{{ ul1TextLinks[index][0] }}</AppLink
-              ></template
-            ><template v-else>{{ ul1TextLinks[index] }}</template></li
-          >
+              ">
+              <AppLink :to="linkValue.aosccWiki.url + ul1TextLinks[index][1]">
+                {{ ul1TextLinks[index][0] }}
+              </AppLink>
+            </template>
+            <template v-else>{{ ul1TextLinks[index] }}</template>
+          </li>
         </ul>
       </div>
     </div>
 
     <category-second id="campus" :title="textValue.title3" />
     <div ref="campus" class="p-6">
-      <p> {{ textValue.p4 }} </p>
-      <p> {{ textValue.p5 }} </p>
+      <p>{{ textValue.p4 }}</p>
+      <p>{{ textValue.p5 }}</p>
       <div class="pl-[4rem]">
         <app-ul-b-and-link :lis="lis2" my-key="events-index-2-li" />
       </div>
-      <p class="pt-[1rem]"> {{ textValue.p6 }} </p>
+      <p class="pt-[1rem]">{{ textValue.p6 }}</p>
       <div class="pt-[1rem] pl-[3rem]">
         <li
           v-for="(item, index) in textValue.ul3.li"
-          :key="`events-index-3-li-${index}`"
-          ><b>{{ item[0] }}</b
-          >{{ item[1] }}</li
-        >
+          :key="`events-index-3-li-${index}`">
+          <b>{{ item[0] }}</b>
+          {{ item[1] }}
+        </li>
       </div>
     </div>
 

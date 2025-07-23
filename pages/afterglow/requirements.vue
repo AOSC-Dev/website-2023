@@ -36,9 +36,9 @@ const afterlowRequirementsList = ref();
           <tr>
             <th
               v-for="(item, index) in textValue.table1.th"
-              :key="`afterlow-requirements-1-th-${index}`"
-              >{{ item }}</th
-            >
+              :key="`afterlow-requirements-1-th-${index}`">
+              {{ item }}
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -47,9 +47,9 @@ const afterlowRequirementsList = ref();
             :key="`afterlow-requirements-1-tr-${index1}`">
             <td
               v-for="(item2, index2) in item1"
-              :key="`afterlow-requirements-1-td-${index1}-${index2}`"
-              >{{ item2 }}</td
-            >
+              :key="`afterlow-requirements-1-td-${index1}-${index2}`">
+              {{ item2 }}
+            </td>
           </tr>
         </tbody>
       </table>
@@ -60,13 +60,13 @@ const afterlowRequirementsList = ref();
       <ul class="list-disc">
         <li
           v-for="(item, index) in textValue.ul1.li"
-          :key="`afterlow-requirements-1-li-${index}`"
-          ><div v-if="index === 0"
-            >{{ item
-            }}<link-standard :link="useHIndex(localLink.afterlowIsaTitle, 0)" />
+          :key="`afterlow-requirements-1-li-${index}`">
+          <div v-if="index === 0">
+            {{ item }}
+            <link-standard :link="useHIndex(localLink.afterlowIsaTitle, 0)" />
           </div>
-          <div v-else>{{ item }}</div></li
-        >
+          <div v-else>{{ item }}</div>
+        </li>
       </ul>
     </div>
     <br />

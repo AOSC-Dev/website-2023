@@ -231,13 +231,13 @@ const backToTopBtnShow = ref(false);
           <template #title>
             <span>{{ item.title }}</span>
           </template>
-          <div class="my-item-ul"
-            ><AppLink
+          <div class="my-item-ul">
+            <AppLink
               v-for="(item2, index2) in item.children"
               :key="`barleft-2-link-${index2}`"
               :to="item2.url"
-              class="hover:no-underline"
-              ><el-menu-item
+              class="hover:no-underline">
+              <el-menu-item
                 :index="getSpecifiedTitle(item2)"
                 class="my-el-menu-item"
                 :class="{
@@ -245,11 +245,11 @@ const backToTopBtnShow = ref(false);
                     .replace(/\/+$/, '')
                     .trim()
                     .startsWith(item2.url.trim())
-                }"
-                >{{ getSpecifiedTitle(item2) }}</el-menu-item
-              ></AppLink
-            ></div
-          >
+                }">
+                {{ getSpecifiedTitle(item2) }}
+              </el-menu-item>
+            </AppLink>
+          </div>
         </el-sub-menu>
       </el-menu>
     </div>

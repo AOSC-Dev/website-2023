@@ -32,12 +32,12 @@ useHighlightWatch(switchHash);
           {{ textValue.table1.caption }}
         </caption>
         <thead>
-          <tr
-            ><th
+          <tr>
+            <th
               v-for="(item, index) in textValue.table1.th"
-              :key="`aosc-os-wsl-require-1-th-${index}`"
-              >{{ item }}</th
-            >
+              :key="`aosc-os-wsl-require-1-th-${index}`">
+              {{ item }}
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -46,9 +46,9 @@ useHighlightWatch(switchHash);
             :key="`aosc-os-wsl-require-1-tr-${index1}`">
             <td
               v-for="(item2, index2) in item1"
-              :key="`aosc-os-wsl-require-1-td-${index1}-${index2}`"
-              >{{ item2 }}</td
-            >
+              :key="`aosc-os-wsl-require-1-td-${index1}-${index2}`">
+              {{ item2 }}
+            </td>
           </tr>
         </tbody>
       </table>
@@ -60,9 +60,9 @@ useHighlightWatch(switchHash);
           <tr>
             <th
               v-for="(item, index) in textValue.table2.th"
-              :key="`aosc-os-wsl-require-2-th-${index}`"
-              >{{ item }}</th
-            >
+              :key="`aosc-os-wsl-require-2-th-${index}`">
+              {{ item }}
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -71,9 +71,9 @@ useHighlightWatch(switchHash);
             :key="`aosc-os-wsl-require-2-tr-${index1}`">
             <td
               v-for="(item2, index2) in item1"
-              :key="`aosc-os-wsl-require-2-td-${index1}-${index2}`"
-              >{{ item2 }}</td
-            >
+              :key="`aosc-os-wsl-require-2-td-${index1}-${index2}`">
+              {{ item2 }}
+            </td>
           </tr>
         </tbody>
       </table>
@@ -84,9 +84,9 @@ useHighlightWatch(switchHash);
       <ul class="list-disc">
         <li
           v-for="(item, index) in textValue.ul1.li"
-          :key="`aosc-os-wsl-requirem-1-li-${index}`"
-          >{{ item }}</li
-        >
+          :key="`aosc-os-wsl-requirem-1-li-${index}`">
+          {{ item }}
+        </li>
       </ul>
     </div>
 

@@ -17,10 +17,8 @@ const linkTitle = getSpecifiedTitle(props.link);
           ? `${link.url}${link.hash[link.hIndex]}`
           : link.url
         : `${route.path.replace(/\/+$/, '')}${link.hash}`
-    "
-    ><app-show v-if="typeof linkTitle === 'object'" :title="linkTitle" /><span
-      v-else
-      >{{ linkTitle }}</span
-    ></app-link
-  >
+    ">
+    <app-show v-if="typeof linkTitle === 'object'" :title="linkTitle" />
+    <span v-else>{{ linkTitle }}</span>
+  </app-link>
 </template>
