@@ -16,7 +16,13 @@ $common-margin: 24px;
     $manualmode-dark-selector: 'body.dark &',
     $font-size-h2: normal,
     $line-height-size-h2: normal,
-    $std-block-unit: 16px
+    $std-block-unit: 16px,
+
+    // TODO: discussion on website font config
+    // Heti's default font family displays Chinese quotes half-width
+    //   so they have been removed for backward compatibility.
+    $_font-stack-sans: '',
+    $_font-stack-serif: ''
   );
 
 .heti {
