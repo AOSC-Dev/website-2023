@@ -19,12 +19,12 @@ useHead({ title: textValue.title1 });
           <li
             v-for="(item, index) in textValue.ul1.li"
             :key="`aosc-os-livekit-relnote-1-li-${index}`">
-            <template v-if="index !== 4">{{ item }}</template>
-            <template v-else>
-              {{ item[0] }}
+            <span v-if="index !== 4">{{ item }}</span>
+            <span v-else>
+              <span>{{ item[0] }}</span>
               <AppLink to="https://github.com/AOSC-Dev/dkcli">dkcli</AppLink>
-              {{ item[1] }}
-            </template>
+              <span>{{ item[1] }}</span>
+            </span>
           </li>
         </ul>
       </div>

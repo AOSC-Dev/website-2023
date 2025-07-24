@@ -40,9 +40,7 @@ const sponsorList = [
 <template>
   <div>
     <category-second :title="textValue.title7" />
-    <div class="p-6">
-      {{ textValue.p1 }}
-    </div>
+    <div class="p-6">{{ textValue.p1 }}</div>
 
     <div v-for="item in sponsorList" :key="item.title">
       <category-second :title="item.title" />

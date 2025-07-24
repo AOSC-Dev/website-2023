@@ -496,9 +496,9 @@ const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
         button-class="ml-6 mt-[2px] bg-white"
         :code-text="omaInstallScript" />
       <p class="mt-[6px] text-[10pt]">
-        {{ textValue.p11[0] }}
+        <span>{{ textValue.p11[0] }}</span>
         <br />
-        {{ textValue.p11[1] }}
+        <span>{{ textValue.p11[1] }}</span>
       </p>
     </div>
   </div>

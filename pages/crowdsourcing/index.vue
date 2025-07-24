@@ -11,14 +11,14 @@ useHead({ title: textValue.title1 });
     <category-second :title="textValue.title1" />
     <div class="p-6">
       <p>
-        {{ textValue.p1.text[0] }}
+        <span>{{ textValue.p1.text[0] }}</span>
         <link-standard :link="useTIndex(localLink.guidelines, 1)" />
-        {{ textValue.p1.text[1] }}
+        <span>{{ textValue.p1.text[1] }}</span>
       </p>
       <p>
-        {{ textValue.p2.text[0] }}
+        <span>{{ textValue.p2.text[0] }}</span>
         <link-standard :link="linkValue.crowdfundingProjectRecord" />
-        {{ textValue.p2.text[1] }}
+        <span>{{ textValue.p2.text[1] }}</span>
       </p>
     </div>
 

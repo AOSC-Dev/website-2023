@@ -33,24 +33,17 @@ const aoscOsIsaList2 = ref();
   <div>
     <category-second :title="textValue.title1" />
     <div class="p-6">
-      <p>
-        {{ textValue.p1 }}
-      </p>
+      <p>{{ textValue.p1 }}</p>
     </div>
     <div id="aoscOsIsaTableTitle">
       <category-second id="aoscOsIsaTableTitle1" :title="textValue.title2" />
     </div>
     <div class="p-6">
-      <p>
-        {{ textValue.p2 }}
-      </p>
+      <p>{{ textValue.p2 }}</p>
       <div ref="aoscOsIsaList1">
         <app-table-isa my-key="aosc-os-isa-1" :table-value="textValue.table1" />
       </div>
-
-      <p>
-        {{ textValue.p3 }}
-      </p>
+      <p>{{ textValue.p3 }}</p>
     </div>
 
     <category-second id="aoscOsIsaTableTitle2" :title="textValue.title3" />
@@ -59,10 +52,7 @@ const aoscOsIsaList2 = ref();
       <div ref="aoscOsIsaList2">
         <app-table-isa my-key="aosc-os-isa-2" :table-value="textValue.table2" />
       </div>
-
-      <p>
-        {{ textValue.p5 }}
-      </p>
+      <p>{{ textValue.p5 }}</p>
     </div>
     <AppSupport :navigation-list="docList" />
     <!-- <category-second title="实验性架构" id="tier3" />

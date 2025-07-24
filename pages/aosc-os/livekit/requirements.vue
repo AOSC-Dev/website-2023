@@ -60,11 +60,11 @@ const aoscOsRequirementsList = ref();
         <li
           v-for="(item, index) in textValue.ul1.li"
           :key="`aosc-os-livekit-requirem-1-li-${index}`">
-          <template v-if="index === 0">
-            {{ item[0] }}
+          <span v-if="index === 0">
+            <span>{{ item[0] }}</span>
             <link-standard :link="localLink.aoscIsaTableTitle" />
-          </template>
-          <template v-else>{{ item }}</template>
+          </span>
+          <span v-else>{{ item }}</span>
         </li>
       </ul>
     </div>

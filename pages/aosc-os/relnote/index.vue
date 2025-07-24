@@ -43,9 +43,9 @@ onMounted(() => {
     <category-second id="architectural-changes" :title="textValue.title3" />
     <div class="p-6">
       <p>
-        {{ textValue.p4[0] }}
+        <span>{{ textValue.p4[0] }}</span>
         <code>{{ textValue.p4[1] }}</code>
-        {{ textValue.p4[2] }}
+        <span>{{ textValue.p4[2] }}</span>
       </p>
       <div class="px-16 pt-2 pb-4">
         <app-ul-ordinary :lis="textValue.ul2.li" my-key="aosc-os-relnote-2" />
@@ -60,32 +60,32 @@ onMounted(() => {
           <li
             v-for="(item, index) in textValue.ul3.li"
             :key="`aosc-os-relnote-3-li-${index}`">
-            <template v-if="index === 1">
+            <span v-if="index === 1">
               <link-standard :link="useTIndex(linkValue.omaSourceGithub, 1)" />
-              {{ item }}
-            </template>
-            <template v-else-if="index === 2">
+              <span>{{ item }}</span>
+            </span>
+            <span v-else-if="index === 2">
               <link-standard
                 :link="useTIndex(linkValue.liblol.sourceHomepage, 1)" />
-              {{ item[0] }}
+              <span>{{ item[0] }}</span>
               <code>statx()</code>
-              {{ item[1] }}
+              <span>{{ item[1] }}</span>
               <code>lxstat64()</code>
-              {{ item[2] }}
-            </template>
-            <template v-else-if="index === 8">
-              {{ item[0] }}
+              <span>{{ item[2] }}</span>
+            </span>
+            <span v-else-if="index === 8">
+              <span>{{ item[0] }}</span>
               <code>ssh-agent.service</code>
-              {{ item[1] }}
-            </template>
-            <template v-else-if="index === 9">
-              {{ item[0] }}
+              <span>{{ item[1] }}</span>
+            </span>
+            <span v-else-if="index === 9">
+              <span>{{ item[0] }}</span>
               <code>x11-app</code>
-              {{ item[1] }}
+              <span>{{ item[1] }}</span>
               <code>x11perf</code>
-              {{ item[2] }}
-            </template>
-            <template v-else>{{ item }}</template>
+              <span>{{ item[2] }}</span>
+            </span>
+            <span v-else>{{ item }}</span>
           </li>
         </ul>
       </div>
@@ -99,12 +99,12 @@ onMounted(() => {
           <li
             v-for="(item, index) in textValue.ul4.li"
             :key="`aosc-os-relnote-4-li-${index}`">
-            <template v-if="index === 2">
-              {{ item[0] }}
+            <span v-if="index === 2">
+              <span>{{ item[0] }}</span>
               <code>$PATH</code>
-              {{ item[1] }}
-            </template>
-            <template v-else>{{ item }}</template>
+              <span>{{ item[1] }}</span>
+            </span>
+            <span v-else>{{ item }}</span>
           </li>
         </ul>
       </div>
@@ -118,22 +118,22 @@ onMounted(() => {
           <li
             v-for="(item, index) in textValue.ul5.li"
             :key="`aosc-os-relnote-5-li-${index}`">
-            <template v-if="index === 1">
-              {{ item[0] }}
+            <span v-if="index === 1">
+              <span>{{ item[0] }}</span>
               <link-standard :link="linkValue.dkcli" />
-              {{ item[1] }}
-            </template>
-            <template v-if="index === 3">
-              {{ item[0] }}
+              <span>{{ item[1] }}</span>
+            </span>
+            <span v-if="index === 3">
+              <span>{{ item[0] }}</span>
               <code>live</code>
-              {{ item[1] }}
-            </template>
-            <template v-if="index === 6">
-              {{ item[0] }}
+              <span>{{ item[1] }}</span>
+            </span>
+            <span v-if="index === 6">
+              <span>{{ item[0] }}</span>
               <link-standard :link="linkValue.memtest" />
-              {{ item[1] }}
-            </template>
-            <template v-else>{{ item }}</template>
+              <span>{{ item[1] }}</span>
+            </span>
+            <span v-else>{{ item }}</span>
           </li>
         </ul>
       </div>

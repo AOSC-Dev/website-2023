@@ -26,9 +26,7 @@ const navigationList = [
       <div class="flex">
         <div
           class="p-[1.75rem] text-[0.8rem] xl:text-[1.07rem] 2xl:text-[1.2rem]">
-          <p>
-            {{ textValue.p2 }}
-          </p>
+          <p>{{ textValue.p2 }}</p>
           <div class="mt-[1rem] flex flex-row justify-between">
             <div class="w-[50%]">
               <link-button
@@ -46,9 +44,9 @@ const navigationList = [
         <div
           class="flex flex-col justify-between p-[1.75rem] text-[0.8rem] xl:text-[1.07rem] 2xl:text-[1.2rem]">
           <p>
-            {{ textValue.p6 }}
+            <span>{{ textValue.p6 }}</span>
             <link-standard :link="linkValue.figuramc" />
-            {{ textValue.p7 }}
+            <span>{{ textValue.p7 }}</span>
           </p>
 
           <div class="mt-[1rem] flex flex-row justify-between">
@@ -98,15 +96,13 @@ const navigationList = [
         <div
           class="flex flex-col justify-between p-[1.75rem] text-[0.8rem] xl:text-[1.07rem] 2xl:text-[1.2rem]">
           <div>
+            <p>{{ textValue.p3 }}</p>
             <p>
-              {{ textValue.p3 }}
-            </p>
-            <p>
-              {{ textValue.p4 }}
+              <span>{{ textValue.p4 }}</span>
               <link-standard :link="linkValue.tomatoScrambledEggsGoofish" />
-              {{ textValue.p5 }}
+              <span>{{ textValue.p5 }}</span>
               <link-standard :link="linkValue.tomatoScrambledEggsHuaJia" />
-              {{ textValue.p8 }}
+              <span>{{ textValue.p8 }}</span>
             </p>
           </div>
 

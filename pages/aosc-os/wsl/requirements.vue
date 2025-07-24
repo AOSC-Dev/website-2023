@@ -24,9 +24,7 @@ useHighlightWatch(switchHash);
   <div>
     <category-second id="aoscOsRequirementsTitle" :title="textValue.title1" />
     <div class="p-6">
-      <p>
-        {{ textValue.p1 }}
-      </p>
+      <p>{{ textValue.p1 }}</p>
       <table ref="aoscOsRequirementsList" class="mb-1.5rem mt-6">
         <caption class="text-[12pt] font-semibold">
           {{ textValue.table1.caption }}

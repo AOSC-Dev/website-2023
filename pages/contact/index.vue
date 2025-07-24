@@ -46,9 +46,7 @@ const waterGroupLinks = [
   <div>
     <category-second :title="textValue.title1" />
     <div class="p-6">
-      <p>
-        {{ textValue.p1 }}
-      </p>
+      <p>{{ textValue.p1 }}</p>
     </div>
 
     <category-second :title="textValue.title2" />
@@ -61,7 +59,7 @@ const waterGroupLinks = [
       <p>{{ textValue.p3 }}</p>
       <ul class="mt-2 list-disc pl-10">
         <li v-for="(item, index) in mainGroup" :key="index">
-          {{ item }}
+          <span>{{ item }}</span>
           <link-standard v-if="index > 1" :link="mainGroupLinks[index - 2]" />
         </li>
       </ul>
@@ -72,7 +70,7 @@ const waterGroupLinks = [
       <p>{{ textValue.p4 }}</p>
       <ul class="mt-2 list-disc pl-10">
         <li v-for="(item, index) in antiqueComputer" :key="index">
-          {{ item }}
+          <span>{{ item }}</span>
           <link-standard :link="antiqueComputerLinks[index]" />
         </li>
       </ul>
@@ -81,12 +79,12 @@ const waterGroupLinks = [
     <category-second id="offtopic" :title="textValue.title5" />
     <div class="p-6">
       <p>
-        {{ textValue.p5 }}
+        <span>{{ textValue.p5 }}</span>
         <link-standard :link="localLink.guidelines" />
       </p>
       <ul class="mt-2 list-disc pl-10">
         <li v-for="(item, index) in waterGroup" :key="index">
-          {{ item }}
+          <span>{{ item }}</span>
           <link-standard :link="waterGroupLinks[index]" />
         </li>
       </ul>

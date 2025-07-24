@@ -47,9 +47,9 @@ const summerOfOpenSource = textValue.summerOfOpenSource.map((obj) => {
     <category-second id="todo" :title="localLink.internship.title[2]" />
     <div ref="todo" class="p-6">
       <p>
-        {{ textValue.p1 }}
+        <span>{{ textValue.p1 }}</span>
         <link-standard :link="linkValue.local.contact" />
-        {{ textValue.p2 }}
+        <span>{{ textValue.p2 }}</span>
       </p>
       <div class="px-16 pt-4 pb-4">
         <ul class="list-disc">
@@ -57,7 +57,7 @@ const summerOfOpenSource = textValue.summerOfOpenSource.map((obj) => {
             v-for="(item, index) in textValue.ul1.li"
             :key="`internship-index-1-li-${index}`">
             <b>{{ item[0] }}</b>
-            {{ item[1] }}
+            <span>{{ item[1] }}</span>
           </li>
         </ul>
       </div>
@@ -65,9 +65,7 @@ const summerOfOpenSource = textValue.summerOfOpenSource.map((obj) => {
 
     <category-second id="ospp" :title="localLink.internship.title[3]" />
     <div ref="ospp" class="p-6">
-      <p>
-        {{ textValue.p3 }}
-      </p>
+      <p>{{ textValue.p3 }}</p>
       <div class="px-16 pt-4 pb-4">
         <ul class="list-disc">
           <li

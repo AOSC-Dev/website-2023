@@ -36,9 +36,7 @@ const docList = [
   <div>
     <category-second :title="textValue.title1" />
     <div class="p-6">
-      <p>
-        {{ textValue.p1 }}
-      </p>
+      <p>{{ textValue.p1 }}</p>
       <div class="mt-[1.5rem]">
         <AccordionNavigation :navigation-list="navigationList" />
       </div>

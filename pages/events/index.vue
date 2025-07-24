@@ -68,16 +68,14 @@ const lis5 = textValue.ul5.li.map((obj, index) => {
 
     <category-second id="aoscc" :title="textValue.title2" />
     <div ref="aoscc" class="p-6">
-      <p>
-        {{ textValue.p3 }}
-      </p>
+      <p>{{ textValue.p3 }}</p>
       <div class="px-16 pt-4 pb-4">
         <ul class="list-disc">
           <li
             v-for="(item, index) in textValue.ul1.b"
             :key="`events-index-1-li-${index}`">
             <b>{{ item }}</b>
-            <template
+            <span
               v-if="
                 index < textValue.ul1.b.length - 2 &&
                 index !== textValue.ul1.b.length - 4
@@ -85,8 +83,8 @@ const lis5 = textValue.ul5.li.map((obj, index) => {
               <AppLink :to="linkValue.aosccWiki.url + ul1TextLinks[index][1]">
                 {{ ul1TextLinks[index][0] }}
               </AppLink>
-            </template>
-            <template v-else>{{ ul1TextLinks[index] }}</template>
+            </span>
+            <span v-else>{{ ul1TextLinks[index] }}</span>
           </li>
         </ul>
       </div>
@@ -105,16 +103,14 @@ const lis5 = textValue.ul5.li.map((obj, index) => {
           v-for="(item, index) in textValue.ul3.li"
           :key="`events-index-3-li-${index}`">
           <b>{{ item[0] }}</b>
-          {{ item[1] }}
+          <span>{{ item[1] }}</span>
         </li>
       </div>
     </div>
 
     <category-second id="springcon" :title="textValue.title4" />
     <div ref="springcon" class="p-6">
-      <p>
-        {{ textValue.p7 }}
-      </p>
+      <p>{{ textValue.p7 }}</p>
       <div class="px-16 pt-4 pb-4">
         <app-ul-b-and-link :lis="lis4" my-key="events-index-4-li" />
       </div>
@@ -122,9 +118,7 @@ const lis5 = textValue.ul5.li.map((obj, index) => {
 
     <category-second id="others" :title="textValue.title5" />
     <div ref="others" class="p-6">
-      <p>
-        {{ textValue.p8 }}
-      </p>
+      <p>{{ textValue.p8 }}</p>
       <div class="px-16 pt-4 pb-4">
         <app-ul-b-and-link :lis="lis5" my-key="events-index-5-li" />
       </div>

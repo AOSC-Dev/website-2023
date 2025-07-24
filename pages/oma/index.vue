@@ -16,9 +16,9 @@ const navigationList = [
     <category-second :title="textValue.title1" />
     <div class="p-6">
       <p>
-        {{ textValue.p1 }}
+        <span>{{ textValue.p1 }}</span>
         <link-standard :link="linkValue.dpkgWiki" />
-        {{ textValue.p2 }}
+        <span>{{ textValue.p2 }}</span>
       </p>
       <div class="px-16 pt-4 pb-4">
         <ul class="list-disc">
@@ -26,7 +26,7 @@ const navigationList = [
             v-for="(item, index) in textValue.ul1.li"
             :key="`oma-index-1-li-${index}`">
             <b>{{ item[0] }}</b>
-            {{ item[1] }}
+            <span>{{ item[1] }}</span>
           </li>
         </ul>
       </div>

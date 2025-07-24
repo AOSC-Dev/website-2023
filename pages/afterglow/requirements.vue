@@ -62,7 +62,7 @@ const afterlowRequirementsList = ref();
           v-for="(item, index) in textValue.ul1.li"
           :key="`afterlow-requirements-1-li-${index}`">
           <div v-if="index === 0">
-            {{ item }}
+            <span>{{ item }}</span>
             <link-standard :link="useHIndex(localLink.afterlowIsaTitle, 0)" />
           </div>
           <div v-else>{{ item }}</div>

@@ -13,18 +13,16 @@ useHead({ title: textValue.title1 });
       <p class="pb-[1rem]">{{ textValue.p1 }}</p>
       <i>&nbsp;&nbsp;{{ textValue.i1 }}</i>
       <p class="py-2">
-        {{ textValue.p2 }}
+        <span>{{ textValue.p2 }}</span>
         <link-standard :link="linkValue.CambridgeED" />
       </p>
-      <p>
-        {{ textValue.p3 }}
-      </p>
+      <p>{{ textValue.p3 }}</p>
     </div>
 
     <category-second id="rationale" :title="textValue.title2" />
     <div class="p-6">
       <p>
-        {{ textValue.p4 }}
+        <span>{{ textValue.p4 }}</span>
         <b>{{ textValue.b1 }}</b>
       </p>
     </div>
@@ -32,17 +30,17 @@ useHead({ title: textValue.title1 });
     <category-second id="principles" :title="textValue.title3" />
     <div class="p-6">
       <p class="pb-[1rem]">
-        {{ textValue.p5 }}
+        <span>{{ textValue.p5 }}</span>
         <b>{{ textValue.b2 }}</b>
-        {{ textValue.p6 }}
+        <span>{{ textValue.p6 }}</span>
       </p>
       <ul class="list-disc pl-10">
         <li
           v-for="(item, index) in textValue.ul1.li"
           :key="`guidelines-index-1-li-${index}`">
-          {{ item[0] }}
+          <span>{{ item[0] }}</span>
           <b>{{ item[1] }}</b>
-          {{ item[2] }}
+          <span>{{ item[2] }}</span>
         </li>
       </ul>
     </div>
@@ -50,15 +48,15 @@ useHead({ title: textValue.title1 });
     <category-second id="overview" :title="textValue.title4" />
     <div class="p-6">
       <p>
-        {{ textValue.p7 }}
+        <span>{{ textValue.p7 }}</span>
         <b>
-          {{ textValue.b3 }}
+          <span>{{ textValue.b3 }}</span>
           <link-standard :link="linkValue.AOSCWiki" />
-          {{ textValue.p8 }}
+          <span>{{ textValue.p8 }}</span>
           <link-standard :link="linkValue.GitHub" />
-          {{ textValue.p9 }}
+          <span>{{ textValue.p9 }}</span>
           <link-standard :link="locallink.home" />
-          {{ textValue.p10 }}
+          <span>{{ textValue.p10 }}</span>
         </b>
       </p>
 
@@ -67,12 +65,12 @@ useHead({ title: textValue.title1 });
         <li
           v-for="(item, index) in textValue.ul1.li"
           :key="`guidelines-index-2-li-${index}`">
-          <template v-if="Array.isArray(item)">
-            {{ item[0] }}
+          <span v-if="Array.isArray(item)">
+            <span>{{ item[0] }}</span>
             <b>{{ item[1] }}</b>
-            {{ item[2] }}
-          </template>
-          <template v-else>{{ item }}</template>
+            <span>{{ item[2] }}</span>
+          </span>
+          <span v-else>{{ item }}</span>
         </li>
       </ul>
     </div>
@@ -81,102 +79,102 @@ useHead({ title: textValue.title1 });
     <div id="codes" class="p-6">
       <app-h2>{{ textValue.subheading1 }}</app-h2>
       <p class="pb-2">
-        {{ textValue.p12 }}
+        <span>{{ textValue.p12 }}</span>
         <link-standard :link="linkValue.AOSCWiki" />
-        {{ textValue.p8 }}
+        <span>{{ textValue.p8 }}</span>
         <link-standard :link="linkValue.GitHub" />
-        {{ textValue.p9 }}
+        <span>{{ textValue.p9 }}</span>
         <link-standard :link="locallink.home" />
-        {{ linkValue.aPeriod }}
+        <span>{{ linkValue.aPeriod }}</span>
       </p>
 
       <app-h2>{{ textValue.subheading2 }}</app-h2>
       <ul class="list-decimal pb-2 pl-10">
         <li>
-          {{ textValue.p14 }}
+          <span>{{ textValue.p14 }}</span>
           <link-standard :link="linkValue.aoscReceptionPoint" />
-          {{ textValue.p15 }}
+          <span>{{ textValue.p15 }}</span>
           <b>{{ textValue.b4 }}</b>
-          {{ textValue.p16 }}
+          <span>{{ textValue.p16 }}</span>
         </li>
         <ul class="list-disc pl-10">
           <li>{{ textValue.warning }}</li>
         </ul>
         <li>
-          {{ textValue.p17 }}
+          <span>{{ textValue.p17 }}</span>
           <b>{{ textValue.p18 }}</b>
-          {{ textValue.p19 }}
+          <span>{{ textValue.p19 }}</span>
         </li>
         <ul class="list-disc pl-10">
           <li>
-            {{ textValue.clean[0] }}
+            <span>{{ textValue.clean[0] }}</span>
             <b>{{ textValue.p37 }}</b>
-            {{ textValue.clean[1] }}
+            <span>{{ textValue.clean[1] }}</span>
           </li>
         </ul>
         <li>
-          {{ textValue.p17 }}
+          <span>{{ textValue.p17 }}</span>
           <b>{{ textValue.p18 }}</b>
-          {{ textValue.p20 }}
+          <span>{{ textValue.p20 }}</span>
         </li>
         <ul class="list-disc pl-10">
           <li>{{ textValue.p21 }}</li>
           <li>{{ textValue.warning }}</li>
         </ul>
         <li>
-          {{ textValue.p17 }}
+          <span>{{ textValue.p17 }}</span>
           <b>{{ textValue.p18 }}</b>
-          {{ textValue.p22 }}
+          <span>{{ textValue.p22 }}</span>
         </li>
         <ul class="list-disc pl-10">
           <li>{{ textValue.warning }}</li>
         </ul>
         <li>
-          {{ textValue.p17 }}
+          <span>{{ textValue.p17 }}</span>
           <b>{{ textValue.p18 }}</b>
-          {{ textValue.p23 }}
+          <span>{{ textValue.p23 }}</span>
           <link-standard :link="linkValue.AOSCPastebin" />
-          {{ textValue.p24 }}
+          <span>{{ textValue.p24 }}</span>
         </li>
         <ul class="list-disc pl-10">
           <li>{{ textValue.warning }}</li>
         </ul>
         <li>
-          {{ textValue.p17 }}
+          <span>{{ textValue.p17 }}</span>
           <b>{{ textValue.p18 }}</b>
-          {{ textValue.p25 }}
+          <span>{{ textValue.p25 }}</span>
         </li>
         <ul class="list-disc pl-10">
           <li>
-            {{ textValue.clean[0] }}
+            <span>{{ textValue.clean[0] }}</span>
             <b>{{ textValue.p37 }}</b>
-            {{ textValue.clean[1] }}
+            <span>{{ textValue.clean[1] }}</span>
           </li>
         </ul>
       </ul>
 
       <app-h2>{{ textValue.subheading3 }}</app-h2>
       <ul class="list-decimal pb-2 pl-10">
-        <template
+        <span
           v-for="(item, index) in textValue.ul4.li"
           :key="`guidelines-4-li-${index}`">
           <li>{{ item }}</li>
-          <template v-if="index !== 1">
+          <span v-if="index !== 1">
             <app-ul-ordinary
               class="list-disc pl-10"
               :lis="textValue.ul4[`ul${index + 1}`].li"
               :my-key="`guidelines-index-4-${index}`" />
-          </template>
-          <template v-else>
+          </span>
+          <span v-else>
             <ul class="list-disc pl-10">
               <li>
-                {{ textValue.ul4[`ul${index + 1}`].li[0][0] }}
+                <span>{{ textValue.ul4[`ul${index + 1}`].li[0][0] }}</span>
                 <link-standard :link="linkValue.AOSCStickerPack" />
-                {{ textValue.ul4[`ul${index + 1}`].li[0][1] }}
+                <span>{{ textValue.ul4[`ul${index + 1}`].li[0][1] }}</span>
               </li>
             </ul>
-          </template>
-        </template>
+          </span>
+        </span>
       </ul>
 
       <app-h2>{{ textValue.subheading4 }}</app-h2>
@@ -229,9 +227,9 @@ useHead({ title: textValue.title1 });
     <category-second :title="textValue.title6" />
     <div id="against-coc" class="p-6">
       <p>
-        {{ textValue.p30 }}
+        <span>{{ textValue.p30 }}</span>
         <link-standard :link="linkValue.contributorConvention" />
-        {{ textValue.p31 }}
+        <span>{{ textValue.p31 }}</span>
       </p>
       <p>{{ textValue.p32 }}</p>
       <p>{{ textValue.p33 }}</p>

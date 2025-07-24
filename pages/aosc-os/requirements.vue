@@ -38,11 +38,11 @@ const aoscOsRequirementsRef = useTemplateRef('aoscOsRequirementsList');
         <li
           v-for="(item, index) in textValue.ul1.li"
           :key="`aosc-os-requirem-1-li-${index}`">
-          <template v-if="index === 0">
-            {{ item }}
+          <span v-if="index === 0">
+            <span>{{ item }}</span>
             <link-standard :link="useHIndex(localLink.aoscIsaTableTitle, 0)" />
-          </template>
-          <template v-else>{{ item }}</template>
+          </span>
+          <span v-else>{{ item }}</span>
         </li>
       </ul>
     </div>

@@ -24,9 +24,7 @@ const afterlowIsaListRef = useTemplateRef('afterlowIsaList');
   <div>
     <category-second id="afterlowIsaTitle" :title="textValue.title1" />
     <div class="p-6">
-      <p>
-        {{ textValue.p1 }}
-      </p>
+      <p>{{ textValue.p1 }}</p>
       <div ref="afterlowIsaList">
         <app-table-isa
           my-key="afterlow-isa-1"

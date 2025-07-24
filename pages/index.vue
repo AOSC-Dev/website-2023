@@ -42,12 +42,8 @@ const columnBorderlessList = [
               <img :src="columnBorderlessList[index]" />
             </div>
             <div class="flex-1 p-0">
-              <div class="text-[14pt] font-semibold">
-                {{ item.title }}
-              </div>
-              <div class="text-[12pt]">
-                {{ item.description }}
-              </div>
+              <div class="text-[14pt] font-semibold">{{ item.title }}</div>
+              <div class="text-[12pt]">{{ item.description }}</div>
             </div>
           </div>
           <div class="px-[15px] text-right text-[12pt] leading-6">

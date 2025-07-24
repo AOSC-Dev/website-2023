@@ -8,12 +8,8 @@ useHead({ title: textValue.title1 });
   <div>
     <category-second id="aoscOsRequirementsTitle" :title="textValue.title1" />
     <div class="p-6">
-      <p class="pb-[1rem]">
-        {{ textValue.p1 }}
-      </p>
-      <p>
-        {{ textValue.p2 }}
-      </p>
+      <p class="pb-[1rem]">{{ textValue.p1 }}</p>
+      <p>{{ textValue.p2 }}</p>
     </div>
     <category-second id="design" :title="textValue.title2" />
     <div class="p-6">
