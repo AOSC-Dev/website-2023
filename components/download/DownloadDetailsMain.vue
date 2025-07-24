@@ -98,9 +98,9 @@ const mediaWritersInfo = setNestedKeyValue(
 
     <app-h2>{{ textValue.title3 }}</app-h2>
     <p>
-      {{ textValue.text14 }}
+      <span>{{ textValue.text14 }}</span>
       <link-standard :link="useTIndex(locallink.contact, 2)" />
-      {{ textValue.text15 }}
+      <span>{{ textValue.text15 }}</span>
     </p>
   </div>
 </template>
