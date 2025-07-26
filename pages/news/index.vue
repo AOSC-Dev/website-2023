@@ -4,6 +4,7 @@ const textValue = tm('news.index');
 // const linkValue = tm('allUniversalLink');
 const newsLimit = 10;
 useHead({ title: textValue.title });
+const filters = (newsCategory) => [{ key: 'categories', value: newsCategory }];
 </script>
 
 <template>
@@ -14,9 +15,10 @@ useHead({ title: textValue.title });
         :right-text="textValue.all"
         right-url="/news/list/advisories"
         :show-right-chevron="true" />
-      <news-category-list
-        category="advisories"
+      <category-list
+        category="news"
         :limit="newsLimit"
+        :filters="filters('advisories')"
         class="overflow-y-auto" />
     </div>
     <div class="">
@@ -26,9 +28,10 @@ useHead({ title: textValue.title });
         right-url="/news/list/news"
         class="border-l border-l-white"
         :show-right-chevron="true" />
-      <news-category-list
+      <category-list
         category="news"
         :limit="newsLimit"
+        :filters="filters('news')"
         class="theme-border-secondary overflow-y-auto border-l-[1px]" />
     </div>
     <div>
@@ -37,9 +40,10 @@ useHead({ title: textValue.title });
         :right-text="textValue.all"
         right-url="/news/list/journals"
         :show-right-chevron="true" />
-      <news-category-list
-        category="journals"
+      <category-list
+        category="news"
         :limit="newsLimit"
+        :filters="filters('journals')"
         class="overflow-y-auto" />
     </div>
 
@@ -50,9 +54,10 @@ useHead({ title: textValue.title });
         right-url="/news/list/minutes"
         :show-right-chevron="true"
         class="border-l border-l-white" />
-      <news-category-list
-        category="minutes"
+      <category-list
+        category="news"
         :limit="newsLimit"
+        :filters="filters('minutes')"
         class="theme-border-secondary overflow-y-auto border-l-[1px]" />
     </div>
   </div>

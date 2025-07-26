@@ -1,34 +1,18 @@
 <script lang="ts" setup>
-import type { Collections } from '@nuxt/content';
-
 const { locale } = useI18n();
 // const textValue = tm('NewsCategoryList');
 
 const props = defineProps<{
   category?: string;
+  filters?: Array<{ key: string; value: string }>;
   limit?: number;
 }>();
 
-const queryNewsCollectionCategory = (
-  locale: keyof Collections,
-  category?: string,
-  limit: number = 0
-) => {
-  const q = queryCollection(locale)
-    .select('path', 'title', 'date')
-    .where('path', 'LIKE', '/news%')
-    .order('date', 'DESC')
-    .limit(limit);
-  return category
-    ? () => q.where('categories', 'LIKE', `%"${category}"%`).all() // `["category1","category2"]`
-    : () => q.all();
-};
-
 const { data, error, status } = await useAsyncData(
   computed(
-    () => `${locale.value}:NewsCategoriesList:${props.category}:${props.limit}`
+    () => `${locale.value}:CategoriesList:${props.category}:${props.limit}`
   ),
-  queryNewsCollectionCategory(locale.value, props.category, props.limit)
+  queryCollectionCategory(props.category, props.limit, props.filters)
 );
 </script>
 
