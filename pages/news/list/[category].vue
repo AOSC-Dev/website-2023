@@ -23,7 +23,9 @@ useHead({ title: title });
 <template>
   <div>
     <category-second :title="title" class="border-r-solid border-r-white" />
-    <news-category-list :category="route.params.category" />
+    <category-list
+      category="news"
+      :filters="[{ key: 'categories', value: route.params.category }]" />
   </div>
 </template>
 

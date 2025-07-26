@@ -23,7 +23,7 @@ const columnBorderlessList = [
       <div>
         <CategorySecond :title="textValue.title1" />
         <article>
-          <NewsCategoryList :limit="10" />
+          <CategoryList category="news" :limit="10" />
           <div
             class="px-[15px] py-[10px] text-right leading-6 font-[12pt] text-link">
             <link-standard :link="useTIndex(localLink.news, 1)" />
