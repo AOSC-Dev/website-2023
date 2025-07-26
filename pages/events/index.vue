@@ -36,8 +36,6 @@ const navigationList = [
   useTIndex(useHIndex(evelink, 3), 5)
 ];
 
-const ul1TextLinks = textValue.ul1.link;
-
 const lis2 = textValue.ul2.li.map((obj) => {
   obj.link.url = linkValue.bilibili.url + obj.link.url;
   return obj;
@@ -72,19 +70,11 @@ const lis5 = textValue.ul5.li.map((obj, index) => {
       <div class="px-16 pt-4 pb-4">
         <ul class="list-disc">
           <li
-            v-for="(item, index) in textValue.ul1.b"
-            :key="`events-index-1-li-${index}`">
-            <b>{{ item }}</b>
-            <span
-              v-if="
-                index < textValue.ul1.b.length - 2 &&
-                index !== textValue.ul1.b.length - 4
-              ">
-              <AppLink :to="linkValue.aosccWiki.url + ul1TextLinks[index][1]">
-                {{ ul1TextLinks[index][0] }}
-              </AppLink>
-            </span>
-            <span v-else>{{ ul1TextLinks[index] }}</span>
+            v-for="{ year, title, hasLink } in textValue.aosccList"
+            :key="year">
+            <b>{{ year }} 年：</b>
+            <AppLink v-if="hasLink" :to="`/aoscc/${year}`">{{ title }}</AppLink>
+            <span v-else>{{ title }}</span>
           </li>
         </ul>
       </div>
