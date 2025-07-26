@@ -9,6 +9,7 @@ const props = defineProps({
 
 <template>
   <Icon
+    v-if="contentTarget !== 'undefined'"
     class="cursor-pointer !bg-(--primary)"
     v-bind="props"
     name="ep-document-copy"

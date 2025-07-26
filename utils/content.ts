@@ -23,7 +23,7 @@ export const queryCollectionCategory = (
 
   if (filters) {
     for (const filter of filters) {
-      q = q.where(filter.key, 'LIKE', `%"${filter.value}"%`);
+      q = q.where(filter.key, 'LIKE', filter.value);
     }
   }
 
