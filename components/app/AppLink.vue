@@ -1,8 +1,8 @@
 <script setup>
-import { RouterLink } from 'vue-router';
+import { NuxtLink } from '#components';
 
 const props = defineProps({
-  ...RouterLink.props,
+  ...NuxtLink.props,
   class: {
     type: String,
     default: 'text-link'

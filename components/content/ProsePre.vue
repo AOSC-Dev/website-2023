@@ -32,7 +32,7 @@ const pre = useTemplateRef('prose-pre');
 <template>
   <pre ref="prose-pre" :class="`${$props.class} relative`"><slot /><CopyIcon
     class="absolute top-3 right-3" 
-    :content-target="pre?.textContent??undefined" /></pre>
+    :content-target="pre?.textContent??'undefined'" /></pre>
 </template>
 
 <style>

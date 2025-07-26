@@ -53,6 +53,10 @@ $common-margin: 24px;
       margin-bottom: 0;
     }
   }
+  
+  table {
+    max-width: calc(100% - 2*$common-margin);
+  }
 }
 
 .category-second,

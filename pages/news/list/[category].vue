@@ -18,14 +18,16 @@ const title = computed(() => {
   }
 });
 useHead({ title: title });
+
+const categoryFilter = computed(() => [
+  { key: 'categories', value: `%"${route.params.category}"%` }
+]);
 </script>
 
 <template>
   <div>
     <category-second :title="title" class="border-r-solid border-r-white" />
-    <category-list
-      category="news"
-      :filters="[{ key: 'categories', value: route.params.category }]" />
+    <category-list category="news" :filters="categoryFilter" />
   </div>
 </template>
 
