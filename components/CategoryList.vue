@@ -22,8 +22,8 @@ const { data, error, status } = await useAsyncData(
     <div v-if="status === 'error'">
       {{ error }}
     </div>
-    <div v-else-if="status === 'success'" class="flex flex-col">
-      <div v-for="item in data" :key="item.path" class="newslist-item">
+    <ul v-else-if="status === 'success'">
+      <li v-for="item in data" :key="item.path" class="even:bg-[#fefaf6] odd:bg-white">
         <NuxtLinkLocale
           :to="item.path"
           class="flex h-[2rem] cursor-pointer pl-6 leading-8 hover:bg-leftbar-bg">
@@ -34,16 +34,7 @@ const { data, error, status } = await useAsyncData(
             [{{ item.date.split('T')[0] }}]
           </span>
         </NuxtLinkLocale>
-      </div>
-    </div>
+      </li>
+    </ul>
   </div>
 </template>
-
-<style scoped>
-.newslist-item:nth-child(2n) {
-  background-color: #fefaf6;
-}
-.newslist-item:nth-child(2n + 1) {
-  background-color: white;
-}
-</style>

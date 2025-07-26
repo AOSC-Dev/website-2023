@@ -1,11 +1,10 @@
 <script lang="ts" setup>
-import NewsCategoryList from '~/components/NewsCategoryList.vue';
 import { Charset, Document } from 'flexsearch';
 
 const { locale } = useI18n();
 useHead({ title: '支持中心' });
 
-const categoryList = [
+const supportCategoryList = [
   {
     path: 'system',
     name: '系统',
@@ -187,7 +186,7 @@ const queryState: Ref<ananReactionType> = computed(() => {
     <category-second title="支持类别" />
     <div class="m-6 grid grid-cols-3 gap-6">
       <div
-        v-for="category in categoryList"
+        v-for="category in supportCategoryList"
         :key="category.path"
         class="flex items-center gap-4">
         <Icon :name="category.icon" size="24" />
@@ -211,7 +210,7 @@ const queryState: Ref<ananReactionType> = computed(() => {
       </div>
       <div>
         <category-second title="最新资讯" />
-        <NewsCategoryList :limit="Math.sqrt(0x8d + 3)" class="my-1" />
+        <category-list category="news" :limit="12" />
       </div>
     </div>
   </div>
