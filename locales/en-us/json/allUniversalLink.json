@@ -548,6 +548,11 @@
       }
     },
     "imageSource": {
+      "pku": {
+        "title": ["Beijing University Open Source Mirror"],
+        "url": "https://mirrors.pku.edu.cn/",
+        "img": "pku"
+      },
       "bfsu": {
         "title": [
           "Beijing Foreign Studies University Open Source Software Mirror Station"
@@ -618,19 +623,17 @@
         "url": "https://cips.nyist.edu.cn/",
         "img": "nyist-cips"
       },
+      "qlu": {
+        "title": ["Qilu University of Technology Open Source Software Mirror Site"],
+        "url": "https://mirrors.qlu.edu.cn/",
+        "img": "qlu"
+      },
       "tuna": {
         "title": [
           "Tsinghua University TUNA Association"
         ],
         "url": "https://tuna.moe/",
         "img": "Tuna"
-      },
-      "qvq": {
-        "title": [
-          "QVQNetwork"
-        ],
-        "url": "https://mirrors.qvq.net.cn/",
-        "img": "qvq"
       },
       "sdu": {
         "title": [
@@ -645,6 +648,11 @@
         ],
         "url": "https://mirror.sjtu.edu.cn/",
         "img": "sjtug"
+      },
+      "sustech": {
+        "title": ["Southern University of Science and Technology Open Source Software Mirror Site"],
+        "url": "https://mirrors.sustech.edu.cn/",
+        "img": "sustech"
       },
       "geekpie": {
         "title": [
@@ -765,6 +773,11 @@
         ],
         "url": "https://github.com/cquptlug",
         "img": "cqupt-lug"
+      },
+      "qvq": {
+        "title": ["QVQNetwork"],
+        "url": "https://mirrors.qvq.net.cn/",
+        "img": "qvq"
       },
       "shuosc": {
         "title": [
