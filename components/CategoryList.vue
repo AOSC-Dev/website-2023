@@ -10,7 +10,8 @@ const props = defineProps<{
 
 const { data, error, status } = await useAsyncData(
   computed(
-    () => `${locale.value}:CategoriesList:${props.category}:${props.limit}`
+    () =>
+      `${locale.value}:CategoryList:${props.category}:${props.limit}:${props.filters?.map((obj) => `${obj.key}-${obj.value}`).join('--')}`
   ),
   queryCollectionCategory(props.category, props.limit, props.filters)
 );
@@ -29,7 +30,9 @@ const { data, error, status } = await useAsyncData(
           <span class="flex-1 truncate">
             {{ item.title }}
           </span>
-          <span v-if="item.date" class="pr-6">[{{ item.date.split('T')[0] }}]</span>
+          <span v-if="item.date" class="pr-6">
+            [{{ item.date.split('T')[0] }}]
+          </span>
         </NuxtLinkLocale>
       </div>
     </div>
