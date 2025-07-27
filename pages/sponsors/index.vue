@@ -2,7 +2,7 @@
 const { tm } = useI18n();
 const textValue = tm('sponsors.index');
 const linkValue = tm('allUniversalLink');
-useHead({ title: textValue.title1 });
+useHead({ title: textValue.title7 });
 const linkDevelopmentEquipment = linkValue.sponsors.developmentEquipment;
 const sponsorList = [
   {
@@ -27,6 +27,9 @@ const sponsorList = [
     list: [...Object.values(linkValue.sponsors.softwareLicense)]
   },
   {
+    title: textValue.individualDonors.title
+  },
+  {
     title: textValue.title5,
     list: [...Object.values(linkValue.sponsors.oldServicesAndFacilities)]
   },
@@ -44,7 +47,7 @@ const sponsorList = [
 
     <div v-for="item in sponsorList" :key="item.title">
       <category-second :title="item.title" />
-      <div class="p-6">
+      <div v-if="item.title !== textValue.individualDonors.title" class="p-6">
         <div class="grid grid-cols-4 gap-6 p-2">
           <app-link
             v-for="sponsor in item.list"
@@ -68,6 +71,25 @@ const sponsorList = [
             </div>
           </app-link>
         </div>
+      </div>
+      <div v-else class="heti">
+        <p
+          v-for="description in textValue.individualDonors.description"
+          :key="description">
+          {{ description }}
+        </p>
+        <table>
+          <caption class="text-[12pt] font-semibold">
+            {{ textValue.individualDonors.table.caption }}
+          </caption>
+          <tbody>
+            <tr
+              v-for="(line, index) in textValue.individualDonors.table.table"
+              :key="index">
+              <td v-for="cell in line" :key="cell">{{ cell }}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>

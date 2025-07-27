@@ -530,7 +530,7 @@
           "GlobalSign"
         ],
         "url": "https://www.globalsign.com/",
-        "img": "Globalsign"
+        "img": "globalsign"
       },
       "loongson": {
         "title": [
@@ -544,7 +544,7 @@
           "Microsoft Open Source"
         ],
         "url": "https://opensource.microsoft.com/",
-        "img": "Microsoft"
+        "img": "microsoft"
       }
     },
     "imageSource": {
@@ -633,7 +633,7 @@
           "Tsinghua University TUNA Association"
         ],
         "url": "https://tuna.moe/",
-        "img": "Tuna"
+        "img": "tuna"
       },
       "sdu": {
         "title": [
@@ -705,7 +705,7 @@
           "CodeWeavers"
         ],
         "url": "https://www.codeweavers.com/",
-        "img": "Crossover"
+        "img": "crossover"
       },
       "jetbrains": {
         "title": [
@@ -735,7 +735,7 @@
           "OSSPlanet"
         ],
         "url": "https://ossplanet.net/",
-        "img": "osplanet"
+        "img": "ossplanet"
       },
       "qingcloud": {
         "title": [

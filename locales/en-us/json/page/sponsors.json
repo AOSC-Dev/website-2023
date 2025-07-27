@@ -7,6 +7,20 @@
     "title5": "Historical Sponsors (Services and Facilities)",
     "title6": "Historical sponsors (mirror source)",
     "title7": "List of sponsors",
-    "p1": "Over the years, many friends within and outside the community have generously contributed to providing ongoing support in the form of server hosting, test equipment, and mirror sources. While reducing project development and maintenance costs and improving work experience, it also allows users of various projects in the community to enjoy the best possible service quality. The strong support of sponsors allows the Antong open source community to survive and develop while maintaining the basic principles of independent operation and volunteer drive. We here display the various sponsoring units and individuals in the community today and in history, and would like to express our sincerity of gratitude."
+    "p1": "Over the years, many friends within and outside the community have generously contributed to providing ongoing support in the form of server hosting, test equipment, and mirror sources. While reducing project development and maintenance costs and improving work experience, it also allows users of various projects in the community to enjoy the best possible service quality. The strong support of sponsors allows the Antong open source community to survive and develop while maintaining the basic principles of independent operation and volunteer drive. We here display the various sponsoring units and individuals in the community today and in history, and would like to express our sincerity of gratitude.",
+    "individualDonors": {
+      "title": "Individual Donors",
+      "description": [
+        "The community's continued operation also relies on donations from community friends in their personal capacity. Over the years, they have donated various hardware to the community, actively participated in crowdfunding projects initiated by the community, and supported the efficient operation of various community projects while also alleviating much of the financial pressure on community contributors.",
+        "Prior to 2025, the community did not have a process for acknowledging individual donors, and some friends requested to remain anonymous, so this list is not exhaustive. We hereby express our gratitude to all individual donors who have not left their names."
+      ],
+      "table": {
+        "caption": "Hard drives for software source cold storage servers (February 6, 2025)",
+        "table": [
+          ["冲浪的小鱼", "黄逸君", "kf", "刘璨贤"],
+          ["okami2012", "要塞姬Ilikara", "Yo Kaslana", "梓瑶"]
+        ]
+      }
+    }
   }
 }
