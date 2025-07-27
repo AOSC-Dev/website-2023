@@ -26,6 +26,9 @@ useHead({ title: textValue.title1 });
     <div class="p-6 py-6 pl-16">
       <app-ul-ordinary :lis="textValue.ul1.li" my-key="crowdsourcing-1" />
     </div>
+
+    <category-second :title="textValue.title3" />
+    <category-list category="crowdsourcing" />
   </div>
 </template>
 
