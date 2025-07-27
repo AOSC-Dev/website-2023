@@ -4,7 +4,7 @@ const textValue = tm('news.index');
 // const linkValue = tm('allUniversalLink');
 const newsLimit = 10;
 useHead({ title: textValue.title });
-const filters = (newsCategory) => [{ key: 'categories', value: newsCategory }];
+const filters = (newsCategory) => [{ key: 'categories', value: `%"${newsCategory}"%` }];
 </script>
 
 <template>
