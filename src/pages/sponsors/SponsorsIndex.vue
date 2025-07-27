@@ -53,7 +53,7 @@ const sponsorList = ref([
       },
       {
         name: '哈尔滨工业大学 Linux 开源学生俱乐部',
-        web: 'https://lug.hit.edu.cn',
+        web: 'https://github.com/hitlug',
         img: 'hit-lug'
       },
       {
