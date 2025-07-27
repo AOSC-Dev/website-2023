@@ -360,6 +360,11 @@
       }
     },
     "imageSource": {
+      "pku": {
+        "title": ["北京大学开源镜像站"],
+        "url": "https://mirrors.pku.edu.cn/",
+        "img": "pku"
+      },
       "bfsu": {
         "title": ["北京外国语大学开源软件镜像站"],
         "url": "https://mirrors.bfsu.edu.cn/",
@@ -410,15 +415,15 @@
         "url": "https://cips.nyist.edu.cn/",
         "img": "nyist-cips"
       },
+      "qlu": {
+        "title": ["齐鲁工业大学开源软件镜像站 "],
+        "url": "https://mirrors.qlu.edu.cn/",
+        "img": "qlu"
+      },
       "tuna": {
         "title": ["清华大学 TUNA 协会"],
         "url": "https://tuna.moe/",
         "img": "tuna"
-      },
-      "qvq": {
-        "title": ["QVQNetwork"],
-        "url": "https://mirrors.qvq.net.cn/",
-        "img": "qvq"
       },
       "sdu": {
         "title": ["山东大学（青岛）网管会镜像站学生运营团队"],
@@ -429,6 +434,11 @@
         "title": ["上海交通大学 Linux 用户组"],
         "url": "https://mirror.sjtu.edu.cn/",
         "img": "sjtug"
+      },
+      "sustech": {
+        "title": ["南方科技大学开源软件镜像站"],
+        "url": "https://mirrors.sustech.edu.cn/",
+        "img": "sustech"
       },
       "geekpie": {
         "title": ["上海科技大学 Geekpie 协会"],
@@ -517,6 +527,11 @@
         "title": ["重庆邮电大学 Linux 用户组"],
         "url": "https://github.com/cquptlug",
         "img": "cqupt-lug"
+      },
+      "qvq": {
+        "title": ["QVQNetwork"],
+        "url": "https://mirrors.qvq.net.cn/",
+        "img": "qvq"
       },
       "shuosc": {
         "title": ["上海大学开源社区"],
