@@ -41,7 +41,7 @@ const docList = [
         <AccordionNavigation :navigation-list="navigationList" />
       </div>
       <div ref="bgImg" class="h-649.12">
-        <img src="/aosc-os/aosc-os.jpg" class="mt-2 h-auto w-full" alt="" />
+        <img src="/aosc-os/aosc-os.webp" class="mt-2 h-auto w-full" alt="" />
       </div>
     </div>
 
