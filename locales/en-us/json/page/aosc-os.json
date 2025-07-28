@@ -352,7 +352,17 @@
     },
     "asahi": {
       "p1": "Antong OS (Apple Silicon) is a system version released for Mac devices based on Apple chips. This update includes the following main content.",
-      "p2": "This release is a regular update and includes all system updates as of February 15, 2024; among them, the Linux kernel version is updated to version 6.12.12, with the latest Asahi Linux patch set."
+      "p2": "This release is a regular update and includes all system updates as of February 15, 2024; among them, the Linux kernel version is updated to version 6.12.12, with the latest Asahi Linux patch set.",
+      "p3": "The current release contains the following known issues, which we will fix as soon as possible:",
+      "title1": "Release Notes: February 2025",
+      "title2": "Component update",
+      "title3": "Known issues",
+      "ul1": {
+        "li": [
+          "Due to previous lack of test equipment and no relevant support components were introduced, the speakers of MacBook Air (M1, 2020) are not driven correctly yet",
+          "OpenGL graphics acceleration is temporarily unavailable, we are collated asahi Linux patch set"
+        ]
+      }
     }
   },
   "requirements": {

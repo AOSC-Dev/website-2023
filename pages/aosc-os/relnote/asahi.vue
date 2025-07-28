@@ -26,7 +26,7 @@ useHead({ title: textValue.title1 });
       <br />
       <div class="px-12 pt-2 pb-4">
         <app-ul-ordinary
-          key="aosc-os-relnote-asahi-1"
+          my-key="aosc-os-relnote-asahi-1"
           :lis="textValue.ul1.li" />
       </div>
     </div>
