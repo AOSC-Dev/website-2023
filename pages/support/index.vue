@@ -43,15 +43,6 @@ const supportCategoryList = [
   }
 ];
 
-const faqList = [
-  { path: '1', title: '如何安安装 QQ、微信？' },
-  { path: '2', title: 'AOSC OS 是台湾发行版吗？' },
-  { path: '3', title: '我是来退出这个安装器的' },
-  { path: '4', title: '安安耳朵为什么尖尖的？' },
-  { path: '5', title: '得找个地方放 wiki 指引' },
-  { path: '6', title: '我的问题还是没有解决怎么办？' }
-];
-
 const query = ref('');
 const queryCategory = ref('all');
 
@@ -199,14 +190,10 @@ const queryState: Ref<ananReactionType> = computed(() => {
     <div class="grid grid-cols-2">
       <div class="border-r-1 border-white">
         <category-second title="常见问题" />
-        <ul class="my-1">
-          <li
-            v-for="item in faqList"
-            :key="item.path"
-            class="flex h-[2rem] cursor-pointer px-6 leading-8 odd:bg-white even:bg-[#fefaf6] hover:bg-leftbar-bg hover:underline">
-            {{ item.title }}
-          </li>
-        </ul>
+        <category-list category="support/faq" :limit="Math.sqrt(0x8d + 3)" />
+        <div class="mx-6 my-1">
+          <NuxtLinkLocale>我的问题还是没有解决怎么办？</NuxtLinkLocale>
+        </div>
       </div>
       <div>
         <category-second title="最新资讯" />
