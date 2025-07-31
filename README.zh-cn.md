@@ -15,7 +15,7 @@
 - [参考甲：Windows XP 主页（2001 年末）](https://web.archive.org/web/20011211230629/http://microsoft.com/windowsxp/default.asp)
 - [参考乙：Windows XP 中期主页（2004 年）](https://web.archive.org/web/20040204080626/http://www.microsoft.com/china/windows/default.mspx)
 
-技术架构方面，该网站是使用 Nuxt 构建，采用服务端渲染技术。
+技术架构方面，该网站是使用 Nuxt 构建，采用静态网站生成技术。
 
 目前网站亦未对移动端、低性能（星霞 OS 目标）设备及功能受限的浏览器优化，我们计划在后续研判是否通过实现专用网站解决此问题。
 
@@ -30,17 +30,17 @@
 oma install nodejs
 ```
 
-而后，使用如下命令启动网站构建及服务：
+而后，使用如下命令启动网站构建及预览：
 
 ```
-npm run build
-node .output/server/index.mjs
+npm run generate
+npm run preview
 ```
 
 提交新闻
 ---
 
-本站新闻使用 Markdown 格式编写，存放于 `/content/news`；额外文件（如图片等）存放于 `/assets/...`。引用额外文件时，应使用站内引用（`/assets/...`）而非站外引用（`https://...`）。
+本站新闻使用 Markdown 格式编写，存放于 `/content/{language}/news`；额外文件（如图片等）存放于 `/public/...`。引用额外文件时，应使用站内引用（`/...`）而非站外引用（`https://...`）。
 
 新闻文件均带有文件头，如下例：
 
@@ -67,8 +67,8 @@ home: true
 
 ### 新闻本地化
 
-本地化新闻文章时，在文件名后加语言代号作为后缀即可（如 `.zh-cn`）：
+本地化新闻文章时，在对应语言文件夹下添加同名文件即可（如 `/content/en/`）：
 
 ```
-2024-09-18-aosc-os-relnote.zh-cn.md
+/content/en/news/2024-09-18-aosc-os-relnote.md
 ```
