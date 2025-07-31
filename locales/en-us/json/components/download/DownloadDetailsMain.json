@@ -1,0 +1,26 @@
+{
+  "title1": "Basic information",
+  "title2": "Checksum usage",
+  "text1": "You are downloading",
+  "text2": "Version Antong OS",
+  "text3": "You can select the most appropriate mirror source based on your network configuration and physical location to complete the download faster.",
+  "fileType": ["LiveKit Rescue Startup Disk", "Installation disk"],
+  "placeholder1": "Please select the download source",
+  "text4": "download",
+  "text6": "We recommend that you check the SHA-256 checksum of relevant files after downloading. The details are as follows:",
+  "text7": "Copy SHA-256 Checksum",
+  "text8": "To make",
+  "text9": ", we recommend that you use the Startup Disk Maker Wizard.",
+  "text10": "If you are using Antong OS, you can directly start the \"Startup Disk Production Wizard\" tool production from the application menu",
+  "text11": ";If you are using another Linux system, it is recommended to use",
+  "text12": "or",
+  "text13": "Tool making",
+  "title3": "Help and support",
+  "text14": "If you have problems installing or using the OS, please",
+  "text15": "Contact us.",
+  "mediaWritersInfo": [
+    "Windows (x64)",
+    "macOS (Intel chip)",
+    "macOS (Apple chip)"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "columnTextList": [
+    {
+      "title": "Work efficiently",
+      "description": "Designed with the primary goal of being usable right out of the box, Antong OS is a powerful assistant for your daily work. From text office to server operation and maintenance, photography post-production to 3D modeling, class notes to document translation, our system helps you deploy quickly, work efficiently, and create to your heart's content."
+    },
+    {
+      "title": "High compatibility",
+      "description": "We believe that the operating system is the stage for applications and productivity. In addition to the officially verified software provided in the software source, Antong OS also supports cross-distribution ecosystems such as Ruyi Linglong, Flatpak, Snap and AppImage, expanding the scope of software support. In addition, the Spiral project improves compatibility of Debian and Ubuntu packages."
+    },
+    {
+      "title": "Easy to manage",
+      "description": "From installation to system updates, from component management to routine maintenance, Antong OS has many built-in easy-to-use management tools to help you manage it easily and use it comfortably. The built-in Red Panda Package Management (oma), with its concise and user-friendly interface, makes system management as low-risk, time-consuming and highly reliable as possible."
+    },
+    {
+      "title": "Follow like a shadow",
+      "description": "Our company has always been known for its friendly and responsible support work. Respecting users' time and energy is our working principle. The community is also a strong backing for information sharing - in various community chat groups, we are always ready to help you solve problems."
+    }
+  ],
+  "title": "Portal",
+  "title1": "Key points of information",
+  "title2": "Column: First introduction to Antong OS",
+  "link2": "For details, see: Is Antong OS right for me?"
+}

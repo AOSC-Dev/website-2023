@@ -1,0 +1,12 @@
+{
+  "head": {
+    "title": "Community Portal"
+  },
+  "site": {
+    "name": "Anthon Open Source Community (AOSC)"
+  },
+  "seo": {
+    "description": "Anthon Open Source Community (AOSC) is a volunteer-run online open source community of computer enthusiasts.",
+    "twitterCreator": "@aosc_dev"
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "index": {
+    "navigationTextList": [
+      "Hero Post: To-Do Projects",
+      "Internship Project: Summer of Open Source"
+    ],
+    "title1": "Internship Resources",
+    "ps1": [
+      "Our company attaches great importance to ecological collaboration and skill sharing around open source software: in recent years, our company has also arranged contributors to participate in open source project promotion activities at home and abroad as mentors every year, such as the Institute of Software, Chinese Academy of Sciences (hereinafter omitted: Institute of Software, Chinese Academy of Sciences) The \"Open Source Summer\" activity leads domestic and foreign college students to exercise application and research and development capabilities and accumulate professional experience.",
+      "In addition to the above activities, many of our projects are maintained and managed by contributors on a voluntary basis. Many projects in the community not only have direct and close connections with other communities and even upstream projects, but also have a certain reputation in the industry. Over the past few years, many contributors have honed their technical skills and accumulated personal experience by participating in community projects and management, and have fully demonstrated the positive significance of these experiences when employed.",
+      "This page introduces the internship projects that the community has participated in in history, and briefly introduces the current manpower shortage and pending projects for the reference of community friends."
+    ],
+    "p1": "Our company has many projects but few staff. Whether it is a big project or a small project, it is often difficult to implement it due to manpower problems. The following are the projects that are currently to be completed. You are welcome to pass",
+    "p2": "Contact us and get your own contribution opportunities from the hero post:",
+    "p3": "Since 2020, our contributors have actively participated in the \"Open Source Summer\" activities of the Institute of Software, Chinese Academy of Sciences in the role of mentors, successfully guided many students to complete internship projects, and directly participated in community contributions. The following is a list of projects we have participated in guiding in the past:",
+    "ul1": {
+      "li": [
+        [
+          "Antong OS:",
+          "Improve RISC-V architecture support and create installation media"
+        ],
+        [
+          "Antong OS:",
+          "Create and publish virtual machine (and cloud service) images"
+        ],
+        [
+          "Xingxia OS:",
+          "Write maintenance guides and conduct feature planning"
+        ],
+        [
+          "Community Portal:",
+          "Implement the \"Support Center\" column (framework construction, content writing and indexing functions, etc.)"
+        ],
+        [
+          "Community Outreach:",
+          "Produce guides and user support videos for Bilibili and YouTube platforms"
+        ]
+      ]
+    },
+    "ul2": {
+      "header": "Summer of Open Source",
+      "li": [
+        "2024",
+        "2024",
+        "2024",
+        "2023",
+        "2023",
+        "2023",
+        "2022",
+        "2022",
+        "2021",
+        "2021",
+        "2021",
+        "2021",
+        "2021",
+        "2020",
+        "2020",
+        "2020",
+        "2020",
+        "2020",
+        "2020"
+      ]
+    },
+    "summerOfOpenSource": [
+      {
+        "title": "Free and open source software localization work in Simplified Chinese (mentor: Bai Mingcong)",
+        "url": "org/prodetail/24f3e0160"
+      },
+      {
+        "title": "Design and write Antong OS user manual and writing specifications (instructor: Wen Rou)",
+        "url": "org/prodetail/24f3e0161"
+      },
+      {
+        "title": "Provide Antong OS system image for RISC-V development board (Instructor: Icenowy Zheng)",
+        "url": "org/prodetail/24f3e0162"
+      },
+      {
+        "title": "To implement the DeployKit graphical interface (mentor: Liu Zixing)",
+        "url": "2023/org/prodetail/23f3e0031"
+      },
+      {
+        "title": "Free and open source software localization work in Simplified Chinese (mentor: Liu Zixing, student: Liu Wantao)",
+        "url": "2023/org/prodetail/23f3e0032"
+      },
+      {
+        "title": "Autobuild 3 automated packaging testing framework (instructor: Huang Xuanning, student: Li Zerui)",
+        "url": "2023/org/prodetail/23f3e0033"
+      },
+      {
+        "title": "Allwinner RISC-V chip mainline development work (mentor: Icenowy Zheng, student: Moteen Shah)",
+        "url": "2022/#/org/prodetail/22f3e0079"
+      },
+      {
+        "title": "Re-implementation of AOSC’s software package information website (mentor: Liu Zixing, student: Gui Minqiang)",
+        "url": "2022/#/org/prodetail/22f3e0080"
+      },
+      {
+        "title": "Quanzhi RISC-V chip mainline development work (mentor: Icenowy Zheng)",
+        "url": "2021/#/org/prodetail/210080041"
+      },
+      {
+        "title": "Semi-automatic software package retirement, archiving and organization system (Instructor: Zhang Shunran, student: Li Zongwen)",
+        "url": "2021/#/org/prodetail/210080042"
+      },
+      {
+        "title": "Free and open source software localization work in Simplified Chinese (Instructor: Bai Mingcong, student: Gong Jianwei)",
+        "url": "2021/#/org/prodetail/210080099"
+      },
+      {
+        "title": "Implementation of the installer DeployKit (Instructor: Liu Zixing)",
+        "url": "2021/#/org/prodetail/210080100"
+      },
+      {
+        "title": "LoongArch transplantation of AOSC OS (Instructor: Bai Mingcong, student: Xu Yanqi)",
+        "url": "2021/#/org/prodetail/210080299"
+      },
+      {
+        "title": "Semi-automatic software package retirement, archiving and organization system (Instructor: Zhang Shunran, student: Mu Xindong)",
+        "url": "2020/#/organisations/aosc"
+      },
+      {
+        "title": "Free and open source software localization work in Simplified Chinese (Instructor: Bai Mingcong, student: Xu Weiyi)",
+        "url": "2020/#/organisations/aosc"
+      },
+      {
+        "title": "Release build automation: packaging scheduler (Instructor: Dingyuan Wang)",
+        "url": "2020/#/organisations/aosc"
+      },
+      {
+        "title": "Release build automation: automated testing framework (Instructor: Dingyuan Wang)",
+        "url": "2020/#/organisations/aosc"
+      },
+      {
+        "title": "Implementation of the installer DeployKit (Instructor: Li Minyong)",
+        "url": "2020/#/organisations/aosc"
+      },
+      {
+        "title": "Implement \"Circular Srolling\" for the libinput framework (Instructor: Bai Mingcong)",
+        "url": "2020/#/organisations/aosc"
+      }
+    ]
+  }
+}
