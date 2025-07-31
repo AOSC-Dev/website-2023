@@ -38,6 +38,10 @@ $common-margin: 24px;
 
   h2 {
     margin-bottom: $common-margin;
+
+    a:hover {
+      border-block-end: inherit;
+    }
   }
 
   img {
@@ -53,9 +57,9 @@ $common-margin: 24px;
       margin-bottom: 0;
     }
   }
-  
+
   table {
-    max-width: calc(100% - 2*$common-margin);
+    max-width: calc(100% - 2 * $common-margin);
   }
 }
 
