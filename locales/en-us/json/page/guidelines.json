@@ -1,0 +1,162 @@
+{
+  "index": {
+    "b1": "But in general, our goal is not to restrict or penalize behavior that is inconsistent with these values.",
+    "b2": "no doubt",
+    "b3": "We will not and have no right to restrict or restrict community members’ access to the community (including all Antong Open Source Community Telegram channels/groups (and corresponding Discord and IRC channels/groups),",
+    "b4": "any form",
+    "b5": "\"Project maintainers have the right and obligation to delete, edit, and reject comments, commits, code, Wiki edits, issues, and other contributions that violate this standard of conduct; project maintainers can ban them temporarily or permanently Any participant they deem to be behaving inappropriately, threatening, offensive, harmful.",
+    "b6": "\"Project maintenance personnel who fail to effectively abide by or implement this standard of conduct may be temporarily or permanently deprived of the qualification to participate in this project upon resolution by the project leader or other members.\"",
+    "p1": "Welcome to the Antong Open Source Community (AOSC) founded in 2011!",
+    "p2": "— Community (n.), definition from the",
+    "p3": "As a member of the Antong open source community, our common hobby is to explore computer technology, especially the development and localization of open source software. Over the past few years, the Antong open source community has focused most of its energy on the AOSC OS distribution and the interest projects of multiple community members. For example, in 2019, we created the AOSC Retro Computing Group to provide a communication platform for antique computer enthusiasts to buy, play with, and play with antique computers. We even transplanted and adapted the AOSC OS to these computers. .",
+    "p4": "Without years of exchanges and collisions, there would be no Antong open source community - these exchanges and collisions have directly affected our sense of community. In light of this, a focused explanation of our community's values ​​is necessary. Before we list all the specific guidelines, a quick note: These guidelines list guidelines that are generally accepted by community members and apply to all community members.",
+    "p5": "Listed in this section are those in our community",
+    "p6": "Several basic principles:",
+    "p7": "Given that most of the activities and communications in our community are carried out on Telegram channels/groups (and corresponding Discord and IRC channels/groups), the following regulations will be divided into two categories: \"applicable to the entire community\" and \"applicable to specific scenarios\" kind.",
+    "p8": "、",
+    "p9": "and",
+    "p10": ").",
+    "p11": "For two broad categories, we further divide these regulations into \"hard regulations\" and \"soft regulations\":",
+    "p12": "The following regulations apply to all Antong Open Source Community Telegram channels/groups (and corresponding Discord and IRC channels/groups),",
+    "p14": "prohibited from",
+    "p15": "(i.e. water group) outside",
+    "p16": "Discussions on topics related to politics, religion, and sex.",
+    "p17": "Banned from the community",
+    "p18": "any occasion",
+    "p19": "Discuss or encourage physical harm to self or others.",
+    "p20": "Abuse and insult towards members of the community and those associated with them.",
+    "p21": "This does not include the occasional, obviously joking, profanity, but if this offends anyone, please stop immediately.",
+    "p22": "Humiliate and discriminate against any person, religion, ideology or geography.",
+    "p23": "To post a message that is too long, you should use",
+    "p24": "or other tools.",
+    "p25": "Post spam.",
+    "p26": "On these occasions, while adhering to all of the community rules mentioned above, please be aware of the following additional rules:",
+    "p27": "That is, \"Antong Kaiyuan Community Support Group and Reception Point\". Please be sure to abide by all community rules mentioned above and the privileged topics for this group on this channel.",
+    "p28": "Interest groups in the Antong open source community include:",
+    "p29": "Please note: All of the \"community-wide\" rules mentioned above also apply to interest groups.",
+    "p30": "Our community is built on our unique sense of community, shaped by members' interest in computing technology, and is maintained and managed according to their wishes. although",
+    "p31": "The starting point is good, but the provisions of the Convention do not apply to our community.",
+    "p32": "We believe that members of our community have grown through ongoing practice and found their niche through their understanding of technology and their unique character traits. The Contributor Covenant doesn't take this seriously and tries to treat them as the same.",
+    "p33": "These are the original words of the chapter \"Our Obligations\" in the Convention:",
+    "p34": "Various infrastructures in our community have long been used as development tools. For this reason, any non-development related activities are prohibited and community members will condemn any form of indiscretion. The Contributor Covenant uses four overly vague (and often overlapping) adjectives to describe the so-called \"inappropriate, threatening, offensive, harmful\" behavior, and does not give those who have been misjudged a full opportunity to defend themselves. We believe that establishing dedicated infrastructure is an effective way to eliminate so-called unacceptable behavior (and unwarranted accusations or accusations) in our development work.",
+    "p35": "In addition, some implementation processes mentioned in the Contributor Covenant have principle conflicts with the nature of our community:",
+    "p36": "Our community is maintained and managed by contributors. Although our community has a so-called \"founder\" (or de facto \"leader\"), he (Bai Mingcong) recognizes that his power is shared and exercised by many contributors. In our community, there is actually no obvious superior-subordinate relationship between founders and other roles such as contributors and maintainers. Therefore, the above constraints are invalid for our community. Overall, the Contributors Covenant does not acknowledge the factual existence of hierarchical communities and makes many assumptions based on them. What is even more worrying is that the Contributor Covenant pays too much attention to and doubts the meaning of the words. In summary, we believe that introducing and enforcing the Contributor Covenant in the community is inappropriate, ineffective, and even dangerous.",
+    "warning": "Moderators will stop and warn offenders (including everyone involved in the topic). Repeat offenders will be removed from the group chat (you can rejoin immediately, but must stop your offending behavior).",
+    "clean": "Violators (including everyone who participates in the topic) will be removed from the group chat immediately (you can rejoin immediately, but must stop your offending behavior).",
+    "i1": "“All the people who live in a particular area, or a group of people who are considered as a unit because of their shared interests or background.”",
+    "title1": "principles of human relations",
+    "title2": "Why we need Community Guidelines",
+    "title3": "basic principles",
+    "title4": "Code Ordinance",
+    "title5": "Regulations",
+    "title6": "Why not introduce a Contributor Covenant?",
+    "subheading1": "Applies to the entire community",
+    "subheading2": "Hard rules",
+    "subheading3": "soft rules",
+    "subheading4": "Main group and work group",
+    "subheading5": "Cheek support group",
+    "subheading6": "interest group",
+    "ul1": {
+      "li": [
+        [
+          "Antong open source community will always be a",
+          "An independent community for enthusiasts and enthusiasts.",
+          ""
+        ],
+        [
+          "Antong open source community",
+          "Won't",
+          "Provide monetary and material rewards to contributors."
+        ],
+        [
+          "Antong open source community",
+          "Never",
+          "Plagiarism of any kind will be tolerated."
+        ]
+      ]
+    },
+    "ul2": {
+      "li": [
+        "Hard rules contain rules that all members of the community must abide by, with penalties for noncompliance (specific rules exist under each category).",
+        "Administrators who fail to comply will be immediately removed from their posts and will be subject to equally severe penalties.",
+        [
+          "Soft rules are just some of the things we do to keep the conversation civil, productive, and interesting",
+          "suggestion",
+          ". Failure to comply with these rules will only make you less and less popular, and will also affect the communication and working atmosphere in the community, so please remember these rules."
+        ],
+        "The final interpretation rights of the following regulations belong to the community group administrator."
+      ]
+    },
+    "ul4": {
+      "li": [
+        "Respect the freedom of speech of others.",
+        "Keep it humorous.",
+        "Your uniqueness is not the same as specialness.",
+        "Avoid discussing multiple topics at once.",
+        "Please do not stray off topic."
+      ],
+      "ul1": {
+        "li": [
+          "Disputes often occur. Don't always expect the administrator to take action. Please try to use your own intelligence to resolve problems. Only mutual respect can prevent personal attacks.",
+          "When calling someone by a fancy name, consider the feelings of the person being addressed to avoid resentment or confusion.",
+          "Differences of opinion happen, and offensive comments will not help others convince and agree with your point of view.",
+          "Consider the purpose of swearing before you use it: Does swearing help get your point across? Mind you, swearing is really annoying when used too much.",
+          "You can use any language you like, but be considerate of the language abilities of others. Most members speak Chinese and English, please consider using translation tools if necessary."
+        ]
+      },
+      "ul2": {
+        "li": [
+          [
+            "our",
+            "It is designed and produced based on memes generated from daily conversations in the community."
+          ]
+        ]
+      },
+      "ul3": {
+        "li": [
+          "People listen to you because they are interested, but they are not obligated to follow your orders all the time."
+        ]
+      },
+      "ul4": {
+        "li": [
+          "Having multiple discussions running simultaneously in a discussion channel is bound to cause confusion.",
+          "Control the time occupied by each topic. If Mai Ba behaves impolitely, he will be disliked by others."
+        ]
+      },
+      "ul5": {
+        "li": [
+          "Please don't discuss your new MacBook in AOSC's Antique Computers Interest Group."
+        ]
+      }
+    },
+    "ul5": {
+      "li": [
+        "AOSC バカ (AOSC OS development and packaging working group)",
+        "AOSC infra-wg (AOSC Network Facilities Maintenance Working Group)"
+      ]
+    },
+    "ul6": {
+      "li": ["No Telegram stickers or GIFs allowed."],
+      "ul1": {
+        "li": [
+          "You can use Emoji or kaomoji instead.",
+          "Images and videos related to technical or work topics are allowed.",
+          "Moderators will stop and warn offenders (including everyone involved in the topic). Repeat offenders will be removed from the group chat (you can rejoin immediately, but must stop your offending behavior)."
+        ]
+      }
+    },
+    "ul7": {
+      "li": [
+        "Irrigate less - learn to be relaxed and moderate, and don't flood with a little rain."
+      ]
+    },
+    "ul8": {
+      "li": [
+        "AOSC Memes (AOSC memes)",
+        "AOSC Moe-ification (AOSC Moe-ification Working Group)",
+        "AOSC Retro Computing (AOSC Antique Computer Interest Group)",
+        "AOSCC Sticker Squad (AOSCC sticker design team)"
+      ]
+    }
+  }
+}

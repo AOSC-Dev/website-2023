@@ -1,0 +1,137 @@
+{
+  "index": {
+    "p1": "In addition to daily development activities, our company also regularly organizes various online and offline activities in order to activate the community atmosphere and share community resources. As an open source community that is mainly active on the Internet, these activities also have the effect of bringing closer interpersonal relationships and making the concepts of community contribution and participation concrete. The community has held an annual gathering called AOSCC every summer since 2015, inviting community contributors, members, campus clubs, businesses and individuals to participate. While promoting the work of the community to the outside world, it also provides opportunities for enthusiasts and industry representatives A platform to share technical skills and industry knowledge and trends. Starting in 2024, we have also organized a Spring Festival “Pancake Party” to share the festive atmosphere with community friends and plan work goals for the coming year.",
+    "p2": "In addition, the community actively organizes the \"Antong Campus Tour\" activity in collaboration with university clubs, and also participates in many exchange activities organized by other communities, clubs, etc., in order to enhance the connection between the community and local clubs, communities and industry organizations, and make positive efforts to eliminate knowledge barriers and information gaps.",
+    "p3": "AOSCC is our company’s annual offline gathering, and we openly invite community friends to participate. During the event, the community invites community contributors, university club members and industry representatives to share and exchange work, and organizes fun activities such as lottery draws and code voting. In recent years, AOSCC has been co-organized by Chinese university societies, attracting more than 100 attendees every year. The following is a record of AOSCC event locations, dates and meeting information since 2015:",
+    "p4": "Antong Open Source Community was born on campus. The development of campus and grassroots open source communities and organizations was also one of the original intentions when the community was established. Nowadays, university societies are also the objects of our society’s attention and support. Since 2024, we have collaborated with many university societies to organize the \"Antong Campus Tour\" event, inviting community contributors, industry representatives, etc. to the campus to share community and professional work experience, so that more students can contact, understand and integrate open source community and even the forefront of the industry.",
+    "p5": "The following is the footprint of our agency’s “Antong Campus Tour”:",
+    "p6": "The following are the destinations for the “Antong Campus Tour” planned in the near future:",
+    "p7": "Starting in 2023, in order to display and communicate community work progress and plans in a more timely manner, we began to organize online \"pancake parties\" (meaning to take picture cakes) during the Spring Festival holiday, inviting contributors and community friends to exchange results, plans and expectations . The following is the live video of past \"Pancake Party\":",
+    "p8": "As part of the communication between the community, campus and even enterprises, community contributors actively participate in various public meetings and gatherings. The following is our participation record and video:",
+    "title1": "community activities",
+    "title2": "AOSCC: Annual gathering of the community",
+    "title3": "Antong Campus Tour",
+    "title4": "Spring Festival Pancake Party",
+    "title5": "Other activities",
+    "ul1": {
+      "b": [
+        "2024:",
+        "2023:",
+        "2022:",
+        "2021:",
+        "2020:",
+        "2019:",
+        "2018:",
+        "2017:",
+        "2016:",
+        "2015:"
+      ],
+      "link": [
+        ["Jilin University (July 13-14, 2024)", 2024],
+        ["ShanghaiTech University (July 15-16, 2023)", 2023],
+        ["Held online due to the COVID-19 pandemic (September 17, 2022)", 2022],
+        [
+          "Due to the COVID-19 epidemic, held online (September 19-20, 2021)",
+          2021
+        ],
+        [
+          "Due to the COVID-19 epidemic, held online (September 25-26, 2020)",
+          2020
+        ],
+        [
+          "University of Science and Technology of China (July 12-14, 2019)",
+          2019
+        ],
+        "Party canceled",
+        ["Guangdong University of Technology (July 14-16, 2017)", 2017],
+        "ShanghaiTech University (July 2016)",
+        "Shenzhen Changhong Technology Building (July 2015)"
+      ]
+    },
+    "ul2": {
+      "li": [
+        {
+          "b": "October 27, 2024:",
+          "link": {
+            "title": "Macau University of Science and Technology",
+            "url": "BV1Vc1eYgEpm"
+          }
+        },
+        {
+          "b": "October 20, 2024:",
+          "link": {
+            "title": "Ningxia Institute of Technology",
+            "url": "BV1BYyzYfEd5"
+          }
+        },
+        {
+          "b": "March 2024:",
+          "link": {
+            "title": "Qufu Normal University (\"Open Club Activities: Computational Evolution\")",
+            "url": "BV1wr42187aT"
+          }
+        }
+      ]
+    },
+    "ul3": {
+      "li": [
+        ["November 10, 2024:", "Lanzhou University"],
+        ["December 8, 2024:", "Shandong University (Qingdao)"],
+        [
+          "December 2024:",
+          "Xi'an University of Electronic Science and Technology"
+        ]
+      ]
+    },
+    "ul4": {
+      "li": [
+        {
+          "b": "2024:",
+          "link": {
+            "title": "Jiachen Pancake Party (February 15, 2024)",
+            "url": "BV1Fj421X7gX"
+          }
+        }
+      ]
+    },
+    "ul5": {
+      "li": [
+        {
+          "b": "2024:",
+          "link": {
+            "title": "Summer of Open Source 2024 Campus Tour: Jilin University (Bai Mingcong: Confessions of a Grassroots Community - Antong Open Source Community, Open Source Industry and National Innovation)",
+            "url": "BV1K142127oB"
+          }
+        },
+        {
+          "b": "2024:",
+          "link": {
+            "title": "Co-organized by Peking University Linux Club and Tsinghua University TUNA Association: Towards Modern Distro (Bai Mingcong: Talking about the daily life, ambition and helplessness of the distribution community from AOSC OS)",
+            "url": "BV1K142127oB"
+          }
+        },
+        {
+          "b": "2022:",
+          "link": {
+            "title": "FOSDEM 2022 (Bai Mingcong: AOSC OS/Retro - Our Ongoing Quest for the Possibility of Modern Linux on Vintage Hardware)",
+            "url": "fosdem-2022/20210113-slides.odp"
+          }
+        },
+        {
+          "b": "2018:",
+          "link": {
+            "title": "Student Open Source Annual Conference (SOSCON18) (Bai Mingcong, Li Minyong: From publicity team to large society-A review of the history, projects and culture of the Antong Open Source Community)",
+            "url": "soscon-2018/slide.pdf"
+          }
+        },
+        {
+          "b": "2014:",
+          "link": {
+            "title": "Hong Kong Open Source People Annual Conference (HKOSC 2014) (Ye Xiaoxing: Antong Open Source Community - Open Source Youth, Open Source China)",
+            "url": "hkosc-2014/HK_Presentation.pdf"
+          }
+        }
+      ]
+    }
+  }
+}

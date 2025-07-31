@@ -1,0 +1,397 @@
+{
+  "livekit": {
+    "relnote": {
+      "title1": "Release Notes: September 2024",
+      "title2": "New features and changes",
+      "p1": "LiveKit is a removable environment for maintaining Antong OS and performing bug fixes. The new features and changes included in this release are as follows.",
+      "p2": "In addition to updating system components to the September 2024 baseline, LiveKit includes the following new features:",
+      "ul1": {
+        "li": [
+          "Update the Linux kernel to the 6.10 branch to support more new hardware",
+          "Support Dragon architecture old world firmware boot Antong OS installation disk",
+          "Fixed multi-graphics card device support with Optimus (dual graphics card device with core graphics and NVIDIA discrete graphics) function",
+          "Update Antong OS installer (online mode) to the latest version to fix a large number of known issues",
+          [
+            "A new command line installer written based on the new DeployKit backend",
+            "Replaces the old command line installer to support unattended installation"
+          ],
+          "Disable power functions such as screen power saving and automatic sleep for installation and trial environments to avoid unexpected failures.",
+          "Take steps to avoid pre-generating SSH host keys when generating installation disks",
+          "Delete default `live` user password",
+          "Upgrade the memory testing tool Memtest86+ to 7.00",
+          "Added Simplified Chinese translation of the rescue and repair console (command line installation environment) description text"
+        ]
+      }
+    },
+    "requirements": {
+      "title1": "LiveKit system configuration requirements table",
+      "title2": "Additional information",
+      "p1": "LiveKit is a removable environment for maintaining and troubleshooting Anthon OS. Its system requirements are similar to Antong OS, but because this environment includes functions such as system maintenance and installation, and has a graphical interface, it has certain requirements for device processors, graphics cards, storage, and Internet connections. Based on our tests, we have summarized the following system configuration requirements table based on a good user experience.",
+      "table1": {
+        "caption": "Antong OS system configuration requirements table",
+        "th": ["Hardware components", "Configuration requirements"],
+        "tr": [
+          ["processor", "Any processor compatible with Android OS"],
+          ["Memory", "At least 2GiB"],
+          [
+            "show",
+            "Supports output at 1024x768 resolution (graphics mode), or basic framebuffer support (command line mode)"
+          ],
+          ["storage", "At least 4GiB of removable media"],
+          ["network connection", "international internet connection"]
+        ]
+      },
+      "ul1": {
+        "li": [
+          "For more information about Anton OS compatible processors, please see",
+          "When browsing the web, system memory and processor usage will increase significantly: If you need to browse a lot of web pages and watch high-definition streaming content, it is recommended to use LiveKit on a device with at least 4 processor cores and 4GiB of memory.",
+          "If your monitor resolution is lower than 1024x768, you will not be able to use LiveKit's graphics mode properly.",
+          "If the device does not support framebuffering (usually provided through EFI and VESA VBIOS, etc.), non-Latin languages ​​cannot be used in command line mode.",
+          "LiveKit can install Antong OS through the Internet. If necessary, please ensure that the Internet connection is smooth"
+        ]
+      }
+    }
+  },
+  "right-for-me": {
+    "index": {
+      "title1": "Is Antong OS right for me?",
+      "title2": "design concept",
+      "title3": "Key Benefits of Antong OS",
+      "title4": "Main Disadvantages of Antong OS",
+      "title5": "Applicable scenarios",
+      "title6": "Not applicable scenarios",
+      "p1": "Antong OS is an operating system that uses dpkg package management and is independently built and maintained based on the Linux kernel and various components. Antong OS is mainly aimed at users who have some experience in using Linux and optimizes the experience for personal devices. Additionally, Antong OS strives to work out-of-the-box, simplify system management, and provide a reliable working environment.",
+      "p2": "Antong OS is one of the many Linux distributions. Therefore, when choosing a Linux distribution, you may suffer from \"difficulty in choosing\". This article aims to introduce Antong OS from many aspects to help you make a choice.",
+      "p3": "The design of Antong OS is based on the following goals and concepts:",
+      "p4": "The main advantages of Antong OS are as follows:",
+      "p5": "At the same time, Antong OS has the following major shortcomings for your reference:",
+      "p6": "The scenarios applicable to this system are as follows:",
+      "p7": "We do not recommend deploying and using Antong OS in the following scenarios:",
+      "ul1": {
+        "li": [
+          "Do not split the software package unless necessary, that is, one package for each application.",
+          "Provide a good unboxing experience for users in different languages.",
+          "Treat open source and closed source software equally.",
+          "Pay attention to system reliability.",
+          "Provide similar functions and experiences on different architectures."
+        ]
+      },
+      "ul2": {
+        "li": [
+          "Deployment is fast and works right out of the box.",
+          "System administration is simple and straightforward.",
+          "Maintainers value technical support.",
+          "Closed source and commercial software are well supported.",
+          "Multi-language support is available out of the box.",
+          "Hardware driver support is complete.",
+          "Power management configuration is available out of the box.",
+          "Preloaded with region-specific network connectivity tools.",
+          "Good Windows application support via Wine.",
+          "The experience of each architecture is unified and fully optimized."
+        ]
+      },
+      "ul3": {
+        "li": [
+          "The system is relatively large and requires more storage space than other distributions.",
+          "Lack of multilib and multiarch support makes cross-architecture development more cumbersome.",
+          "Software repositories are smaller in size.",
+          "Limited support for third-party commercial software.",
+          "Maintainers have limited manpower and are slow to respond to software fixes and security updates.",
+          "Pre-installed closed source and non-free software."
+        ]
+      },
+      "ul4": {
+        "li": [
+          "Personal and household use.",
+          "The hardware conditions are ideal: sufficient storage and a stable Internet connection.",
+          "Requires ease of deployment and prefers systems that work out of the box.",
+          "There are lower requirements for software update speed.",
+          "Devices that are sensitive to energy consumption and heat dissipation, such as laptops.",
+          "You want to participate in Antong OS development."
+        ]
+      },
+      "ul5": {
+        "li": [
+          "No experience in Linux usage and management.",
+          "There are requirements for system lightweight or customizability.",
+          "The response speed of software updates is required to be high.",
+          "Commercial or environments with high reliability requirements.",
+          "Environments with high storage costs, such as public clouds or virtual servers.",
+          "Sensitive to non-free software."
+        ]
+      }
+    }
+  },
+  "wsl": {
+    "relnote": {
+      "title1": "Release Notes: September 2024",
+      "title2": "New features and changes",
+      "p1": "AOSC OS on WSL is the Antong OS version for Windows Subsystem for Linux environment. This update contains the following changes.",
+      "p2": "This release is a regular update and includes all system updates as of September 16, 2024.",
+      "p3": ""
+    },
+    "requirements": {
+      "title1": "AOSC OS on WSL system configuration requirements table",
+      "title2": "Additional information",
+      "p1": "The WSL version of AOSC OS on WSL can be used on devices running Windows. Its basic system requirements are similar to those of AOSC OS. However, because it relies on technical architectures such as WSL and WSLg to run, in addition to the device processor, graphics card, and storage In addition to Internet connection, there are certain requirements for Windows system component versions. Based on our tests, we have summarized the following system configuration requirements table based on a good user experience.",
+      "table1": {
+        "caption": "AOSC OS on WSL system configuration requirements table (x64)",
+        "th": ["Software/hardware components", "Configuration requirements"],
+        "tr": [
+          [
+            "processor",
+            "The processor needs to support x86-64 (such as Intel 64 or AMD64) instruction set, VMM features such as Intel VT or AMD-V, XD bit or NX bit, and SLAT"
+          ],
+          [
+            "system components",
+            "Windows 10, Version 1607 and above (If you want to use WSLg to run graphical applications, you need Windows 10, Version 2004 and above or Windows 11)"
+          ],
+          [
+            "show",
+            "WSLg-compatible GPU driver (when using WSLg to run graphical, OpenGL-accelerated applications)"
+          ],
+          ["Memory", "At least 4GiB"],
+          ["storage", "At least 4GiB"],
+          ["network connection", "international internet connection"]
+        ]
+      },
+      "table2": {
+        "caption": "WSL version of AOSC OS on WSL system configuration requirements table (ARM64)",
+        "th": ["Software/hardware components", "Configuration requirements"],
+        "tr": [
+          ["processor", "64-bit ARM processor compatible with Windows on ARM"],
+          [
+            "system components",
+            "Windows 10, Version 1709 and above (If you want to use WSLg to run graphical applications, you need Windows 10, Version 2004 and above or Windows 11)"
+          ],
+          [
+            "show",
+            "Windows-compatible GPU driver (when using WSLg to run graphical, OpenGL-accelerated applications)"
+          ],
+          ["Memory", "At least 4GiB"],
+          ["storage", "At least 4GiB of removable media"],
+          ["network connection", "international internet connection"]
+        ]
+      },
+      "ul1": {
+        "li": [
+          "AOSC OS on WSL does not support 32-bit x86 (Windows x86) and ARM (Windows ARM32) architectures",
+          "Nested virtualization support needs to be turned on when running the WSL version of AOSC OS on WSL in a virtual machine",
+          "Most AOSC OS applications assume good VT support, and it is recommended to use the latest version of Windows Terminal instead of Windows Console (the former requires Windows 10, Version 2004 and above)",
+          "Systemd support in WSL 2 requires WSL components version 0.67.6 or newer",
+          "It is recommended to use the latest operating system, WSL and Windows Terminal versions. Developers may not be able to provide assistance with compatibility issues in versions of software that are not supported by Microsoft.",
+          "If possible, it is recommended to use a solid-state drive as the main storage of the system: the advantages of solid-state drives in random read and write performance will significantly improve system response, software installation, and use experience in multi-tasking scenarios.",
+          "Antong OS obtains updates through the Internet. Please ensure that the Internet connection is smooth to obtain system updates in time."
+        ]
+      }
+    }
+  },
+  "index": {
+    "title1": "Antong OS",
+    "title2": "System characteristics",
+    "subheading1": "Work efficiently",
+    "subheading2": "Easy to manage",
+    "subheading3": "High compatibility",
+    "subheading4": "available everywhere",
+    "subheading5": "Follow like a shadow",
+    "p1": "Antong OS (English translation: AOSC OS) is a Linux distribution designed and maintained with \"simple and reliable\" as its goal. This system is mainly aimed at users with some experience in using Linux, optimizing the experience for personal desktop devices, and is committed to providing users with an out-of-the-box, simple and reliable working environment.",
+    "p2": "Designed with the primary goal of being usable right out of the box, Antong OS is a powerful assistant for your daily work. From text office to server operation and maintenance, photography post-production to 3D modeling, class notes to document translation, our system helps you deploy quickly, work efficiently, and create to your heart's content.",
+    "p3": "From installation to system updates, from component management to routine maintenance, Antong OS has many built-in easy-to-use management tools to help you manage it easily and use it comfortably. For example, Antong OS's built-in Red Panda Package Management (oma) has a concise and user-friendly interface that makes system management as low-risk, time-consuming, and highly reliable as possible.",
+    "p4": "We believe that the operating system is the stage for applications and productivity. In addition to the officially verified software provided in the software source, Andong OS also supports cross-distribution ecosystems such as Ruyi Linglong, Flatpak, Snap and AppImage, expanding the scope of software support; in addition, Spiral compatibility marks can provide Debian and Ubuntu software Package compatibility.",
+    "p5": "Built on the highly flexible Linux kernel, Antong OS supports desktops, laptops, microcontrollers, servers and other types of devices based on various mainstream processor architectures, and is optimized for various usage scenarios to help you take full advantage of them. device potential.",
+    "p6": "Our agency has always been known for its friendly and responsible support work. Respecting users' time and energy is our working principle, and the community is also a strong backing for information sharing - in various community chat groups, we are always ready to help you solve problems."
+  },
+  "isa": {
+    "title1": "Antong OS architecture support specification sheet",
+    "title2": "Level 1 architecture",
+    "title3": "Second level architecture",
+    "p1": "Antong OS supports multiple processor architectures. This table introduces the supported various processor architectures and the corresponding microarchitecture instruction set extension support, software package architecture name, compiler target name and other information. This table is divided into three groups: first-level architecture, second-level architecture and experimental architecture, corresponding to different levels of support and maintenance.",
+    "p2": "The first-level architecture includes the highest level of processor architecture supported by Antong OS, supports the most complete software and features, and is updated in the most timely manner. This type of architecture has many users among developers, and it is possible to conduct more complete usage tests.",
+    "p3": "*: Some software (such as Blender) may require more advanced microarchitecture instruction set support, such as AVX2",
+    "p4": "The second-level architecture includes a relatively complete first-class processor architecture supported by Antong OS. The supported software and features may be limited, and updates are sometimes delayed. This type of architecture may have fewer users among developers, and usage testing may be incomplete due to various factors such as fewer usage opportunities.",
+    "p5": "*: This series of processors includes Loongson 3A1000, 3A1500-I, 3A2000(C), 3A3000, 3A4000, 3B1000, 3B1500, 3B2000, 3B3000, 3B4000 and other models; models 5000 or higher are based on the Dragon architecture (LoongArch ) processor",
+    "p6": "",
+    "p7": "",
+    "table1": {
+      "caption": "Antong OS supports processor architecture (first-level architecture) table",
+      "th": [
+        "Processor architecture name",
+        "Microarchitectural instruction set extension support requirements",
+        "Package schema name",
+        "Compiler target name"
+      ],
+      "tr": [
+        [
+          ["x86-64", "SSE2*"],
+          ["amd64", "x86_64-aosc-linux-gnu"]
+        ],
+        [
+          ["AArch64", "ARMv8.0, NEON"],
+          ["arm64", "aarch64-aosc-linux-gnu"]
+        ],
+        [
+          ["LoongArch", "LSX"],
+          ["loongarch64", "loongarch64-aosc-linux-gnu"]
+        ]
+      ]
+    },
+    "table2": {
+      "caption": "Antong OS supports processor architecture (secondary architecture) table",
+      "th": [
+        "Processor architecture name",
+        "Microarchitectural instruction set extension support requirements",
+        "Package schema name",
+        "Compiler target name"
+      ],
+      "tr": [
+        [
+          ["MIPS-based Loongson-3*", "none"],
+          ["loongson3", "mips64el-aosc-linux-gnuabi64"]
+        ],
+        [
+          ["IBM POWER (little endian)", "AltiVec, VMW, VSX"],
+          ["ppc64el", "powerpc64le-aosc-linux-gnu"]
+        ],
+        [
+          ["RISC-V (64-bit)", "G,C"],
+          ["riscv64", "riscv64-aosc-linux-gnu"]
+        ]
+      ]
+    }
+  },
+  "relnote": {
+    "index": {
+      "title1": "Release Notes: September 2024",
+      "title2": "Platform support",
+      "title3": "System structure adjustment",
+      "title4": "Key component updates",
+      "title5": "Feature fixes",
+      "title6": "Installation experience",
+      "p1": "Recently, we released a new batch of Antong OS system releases, including various system component updates and security fixes since early August. The main content of this update includes optimization of functions and support for virtualization platforms such as Hyper-V, VMware, and VirtualBox, newer x86 devices, and Dragon architecture platforms. This release note will briefly introduce the relevant changes.",
+      "p2": "This release also comes with a number of fixes for the installation experience, which are also described in the release notes.",
+      "p3": "This update includes the following updates and fixes for hardware platform support:",
+      "p4": [
+        "Based on user feedback, we have improved the system package (",
+        "*-base",
+        ")'s dependency structure has been adjusted:"
+      ],
+      "p5": "This system release update contains many component updates, among which the more critical updates and fixes are:",
+      "p6": "In addition to the fixes brought by feature updates, we have also fixed problems in some system functions based on user feedback:",
+      "p7": "The installation disk included in this release update also contains many fixes and improvements, specifically:",
+      "b1": "Please note: If you have installed Antong OS, the fixes and changes mentioned in this release note have been pushed through system updates, and you do not need to reinstall the system or install any additional software packages.",
+      "ul1": {
+        "li": [
+          "Linux kernel updated to 6.10.10, including support fixes for some AMD graphics cards and virtualization platforms",
+          "Integrated Dragon architecture \"old world\" firmware support now supports booting and installing Antong OS on any known 3A5000 and 3A6000 series platforms",
+          "Fixed the problem that Hyper-V and VMware/VirtualBox cannot boot into the desktop normally under some configurations; among them, we disabled the frame buffer driver (hyperv_fb) of Hyper-V virtual video and replaced it with a DRM driver (hyperv_drm) that has better support for it. )",
+          "Fixed an issue where the desktop could not be entered normally when using a multi-graphics card configuration that includes NVIDIA and non-NVIDIA GPUs",
+          "Fixed an issue where the sound cards of some Intel Core Ultra (codenamed Meteor Lake) platform laptop computers could not be used.",
+          "Fixed an issue where Lenovo ThinkBook 14 2024 Core Edition and Ryzen Edition (also known as ThinkBook 14 G6+ IMH/AHP) occasionally reset during sleep and the Fn + F5 key combination may trigger an unexpected power outage.",
+          "Disabled VC-1 hardware decoding support (commonly used for WMV format video) on ATI/AMD R600 to TeraScale 3 series GPUs, support for the format was never complete and could cause system crashes"
+        ]
+      },
+      "ul2": {
+        "li": [
+          "Any non-essential components have been downgraded from the original \"hard dependencies (Depends)\" to \"soft dependencies (Recommends)\", which are automatically installed by default but allow users to uninstall according to their needs and preferences",
+          "Mark some tools that may hinder system repair and management after deletion (such as NetworkManager and oma, etc.) as \"Essential\" and do not allow users to delete them by default"
+        ]
+      },
+      "ul3": {
+        "li": [
+          "The system core package (Core) is updated to 11.5.2, which increases the default memory mapping number to fix the problem of insufficient memory reported when compiling some large software; fixes a file conflict with the foot terminal configuration",
+          "Updated to 1.10, including multiple rounds of function and interface fixes, and improved support for some Debian/Ubuntu third-party sources",
+          [
+            "Dragon architecture \"old world\" application compatibility layer updated to 0.1.6, adapted to glibc 2.40 update and Linux kernel introduction",
+            "System calls and other changes and fixes",
+            "Implementation of system calls"
+          ],
+          "OpenSSH releases update to centrally match, remove and regenerate previously leaked OpenSSH host keys",
+          "Mesa graphics library updated to 24.2.2, libdrm direct rendering manager runtime library updated to 2.4.123, including support for various new and old graphics cards",
+          "curl network tool and runtime updated to 8.10.0, including multiple security vulnerability fixes",
+          "OpenSSL updated to 3.3.2 with multiple security bug fixes from early August",
+          "NVIDIA official graphics card driver updated to 560.35.03, including optimization of support for the latest graphics cards, graphics applications, and games",
+          [
+            "Introduced for OpenSSH components",
+            "User service to facilitate key authentication and registration when logging in"
+          ],
+          [
+            "Update X11 Base Toolkit (",
+            ") components, which include",
+            "A crash caused by the tool testing trapezoidal drawing performance not properly handling unsupported material formats (used by UnixBench's 2D graphics test)",
+            "Update Intel processor microcode to 20240910 to fix some known security issues"
+          ]
+        ]
+      },
+      "ul4": {
+        "li": [
+          "Fixed an issue where colored emoji glyphs could not be displayed correctly",
+          "Fixed the issue where Bilibili did not correctly recognize AV1 metadata, resulting in the inability to correctly enable hardware decoding, which can improve the viewing experience on some platforms.",
+          [
+            "Executable search path in default Bash configuration (",
+            "Variables) being incorrectly overwritten in non-login sessions"
+          ]
+        ]
+      },
+      "ul5": {
+        "li": [
+          "Fixed an issue where the installation disk would not boot properly on multi-graphics devices containing NVIDIA and non-NVIDIA GPUs",
+          [
+            "Replace the installer in the Rescue and Recovery Console (command line mode) with",
+            ", which is functionally equivalent to the graphical installer and supports unattended installation mode"
+          ],
+          "Added boot and installation support on Dragon architecture \"old world\" firmware",
+          [
+            "delete default",
+            "User password to avoid the problem of too obvious privilege escalation path when SSH service is enabled by default"
+          ],
+          "Disable screen power saving, sleep and other functions to avoid unexpected failures",
+          "Added localized support for the Rescue and Recovery Console startup prompt, and updated channel information for reporting system issues",
+          ["renew", "Memory Test Tool to 7.00"]
+        ]
+      }
+    },
+    "asahi": {
+      "p1": "Antong OS (Apple Silicon) is a system version released for Mac devices based on Apple chips. This update includes the following main content.",
+      "p2": "This release is a regular update and includes all system updates as of February 15, 2024; among them, the Linux kernel version is updated to version 6.12.12, with the latest Asahi Linux patch set.",
+      "p3": "The current release contains the following known issues, which we will fix as soon as possible:",
+      "title1": "Release Notes: February 2025",
+      "title2": "Component update",
+      "title3": "Known issues",
+      "ul1": {
+        "li": [
+          "Due to previous lack of test equipment and no relevant support components were introduced, the speakers of MacBook Air (M1, 2020) are not driven correctly yet",
+          "OpenGL graphics acceleration is temporarily unavailable, we are collated asahi Linux patch set"
+        ]
+      }
+    }
+  },
+  "requirements": {
+    "title1": "Antong OS system configuration requirements table",
+    "title2": "Additional information",
+    "p1": "Antong OS is a desktop-oriented operating system with relatively complete functions. Pre-installed software and basic management features have certain requirements for device processors, graphics cards, storage and Internet connections. Based on our tests, we have summarized the following system configuration requirements table based on a good user experience.",
+    "table1": {
+      "caption": "Antong OS system configuration requirements table",
+      "th": ["Hardware components", "Configuration requirements"],
+      "tr": [
+        ["processor", "Any processor compatible with Android OS"],
+        ["Memory", "At least 2GiB"],
+        [
+          "graphics card",
+          "Graphics card supporting OpenGL 2.1 / OpenGL ES 3.1 or above"
+        ],
+        ["storage", "At least 64GiB"],
+        ["network connection", "international internet connection"]
+      ]
+    },
+    "ul1": {
+      "li": [
+        "For more information about Anton OS compatible processors, please see",
+        "When browsing the web, system memory and processor usage will increase significantly: If you need to browse a lot of web pages and watch high-definition streaming content, it is recommended to use Antong OS on a device with at least 4 processor cores and 4GiB of memory.",
+        "Generally speaking, a 4K resolution screen requires a graphics card with 2GiB of video memory to use the Antong OS desktop interface smoothly.",
+        "The recommendations on storage requirements are based on the fact that there is enough space for daily work and system updates after the system is installed; if your device has larger memory, the size of the default swap space (virtual memory file) created by the installer will also change accordingly. large, so you should also make relevant considerations when partitioning",
+        "If possible, it is recommended to use a solid-state drive as the main storage of the system: the advantages of solid-state drives in random read and write performance will significantly improve system response, software installation, and use experience in multi-tasking scenarios.",
+        "Antong OS obtains updates through the Internet. Please ensure a smooth Internet connection to obtain system updates in a timely manner."
+      ]
+    }
+  }
+}

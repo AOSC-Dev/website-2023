@@ -1,0 +1,78 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-*: initial;
+  --color-leftbar-bg: #ececec;
+  --color-rightbar-bg: #fcfcfc;
+  --color-content-main-bg: #fcfcfc;
+  --color-white: #fff;
+  --color-link: #0056cc;
+  --color-gray: #333;
+  --color-black: #000;
+
+  --text-*: initial;
+
+  --text-xl: 1.5rem;
+  --text-2xl: 1.8rem;
+  --text-3xl: 2rem;
+  --text-4xl: 2.5rem;
+  --text-5xl: 3rem;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 12pt;
+  font-family: 'Noto Sans CJK SC', sans-serif;
+  font-size: 12pt;
+  min-width: 800px;
+
+  /* Global style for Element Plus created components (located outside #app) */
+  --el-color-primary: var(--primary);
+  --el-border-radius-base: 0;
+  --el-popover-border-radius: 0;
+}
+
+@media (min-width: 960px) {
+  .content-container {
+    width: 90vw !important;
+  }
+}
+
+.content-container {
+  width: 70vw;
+  min-width: 960px;
+  max-width: 1280px;
+  /* flex: 0 0 100%; */
+}
+
+.myShadow {
+  box-shadow: 0px 0px 10px #999;
+  background: #fafafa;
+}
+
+.v-code-block--code {
+  z-index: 0 !important;
+}

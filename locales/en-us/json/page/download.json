@@ -1,0 +1,129 @@
+{
+  "index": {
+    "y0": {
+      "p1": "operating system"
+    },
+    "y1": {
+      "x0": {
+        "p1": "Antong OS",
+        "p2": "A satisfying desktop operating system"
+      }
+    },
+    "y2": {
+      "x0": {
+        "p1": "WSL",
+        "p2": "Using Antong OS on Windows",
+        "p3": "Other download methods and support details..."
+      },
+      "x1": {
+        "p1": "Apple Silicon",
+        "p2": "For Mac devices based on Apple chips",
+        "b0": "download"
+      }
+    },
+    "y3": {
+      "x0": {
+        "p1": "Xingxia OS",
+        "p2": "Old equipment can also shine and heat",
+        "p3": "Stay tuned"
+      }
+    },
+    "sources": [
+      {
+        "name": "MirrorZ",
+        "loc": "automatic",
+        "url": "https://m.mirrorz.org/anthon/aosc-os/"
+      },
+      {
+        "name": "Official source",
+        "loc": "Hong Kong Special Administrative Region",
+        "url": "https://releases.aosc.io/"
+      }
+    ],
+    "errors": {
+      "aosc": "AOSC OS version information failed to obtain",
+      "apple": "AOSC OS Apple Silicon version information failed",
+      "oma": "oma version information failed to obtain",
+      "mirrors": "Mirror information acquisition failed",
+      "isBug": "Internal error, please report"
+    },
+    "archGroupInfo": {
+      "first": {
+        "name": "First-level architecture",
+        "description": "\"First-level architecture\" is the type of target architecture that we support the highest level. All kinds of updates are timely and have complete characteristics. They are also the most concerned by maintainers and sufficient testing equipment."
+      },
+      "second": {
+        "name": "Secondary architecture",
+        "description": "The \"secondary architecture\" functions are relatively complete, but due to the scarce number of equipment, generally poor performance or insufficient attention from maintainers, although it will respond to security updates in a timely manner, other types of updates, tests and feedback responses may be slightly inferior to those of the first-level architecture."
+      }
+    },
+    "contents": {
+      "antong1": [
+        "For x86 devices compatible with AMD64 or Intel 64 instruction set extensions",
+        "Suitable for 64-bit Arm devices compatible with Armv8-A and above",
+        "64-bit devices that are compatible with the LoongArch instruction set and 128-bit vector extension (LSX)"
+      ],
+      "antong2": [
+        "Suitable for 64-bit, small-endian device compatible with Power ISA v2.07 and above",
+        "For 64-bit RISC-V devices compatible with RVA20 Architecture Profile",
+        "Suitable for MIPS-based Loongson 3 equipment"
+      ],
+      "xingxia1": [
+        "For 32-bit x86 devices compatible with i486 (Intel486)",
+        "Suitable for LoongMMI instruction set extensions based on MIPS and supports LoongMMI instruction set",
+        "Suitable for 32-bit large-endian devices (IBM CHRP/PReP or Apple Macintosh and compatible platforms) that are compatible with PowerPC instruction sets"
+      ],
+      "xingxia2": [
+        "For Arm devices compatible with ARMv4 instruction sets",
+        "Suitable for Arm devices compatible with ARMv6 instruction set and Thumb-2 and NEON extensions",
+        "Suitable for Arm devices compatible with ARMv7 instruction set and Thumb-2 and NEON extensions",
+        "Suitable for devices based on DEC Alpha (formerly Alpha AXP) instruction set architecture",
+        "Suitable for devices compatible with IA-64 instruction set architecture (Itanium)",
+        "For devices compatible with Motorola 68020 and equipped with a memory management unit (MMU)",
+        "Suitable for 64-bit large-endian devices (IBM CHRP/PReP and Apple Macintosh and compatible platforms) that are compatible with PowerPC instruction sets",
+        "Suitable for 64-bit SPARC devices compatible with SPARC V9 instruction set and VIS 1.0 extension"
+      ]
+    },
+    "labels": {
+      "antong1": ["x86-64", "AArch64", "LoongArch"],
+      "antong2": ["POWER (64 bits)", "RISC-V (64-bit)", "Loongson 3 (MIPS)"],
+      "xingxia1": [
+        "x86 (32 bits)",
+        "Loongson 2 (MIPS)",
+        "PowerPC (32-bit, big-endian)"
+      ],
+      "xingxia2": [
+        "ARMv4",
+        "ARMv6 (hard floating point)",
+        "ARMv7 (hard floating point)",
+        "DEC Alpha",
+        "IA-64",
+        "Motorola 68000",
+        "PowerPC (64-bit, big-endian)",
+        "SPARC (64-bit)"
+      ]
+    },
+    "title2": "Practical Tools",
+    "title3": "Antong OS (secondary architecture)",
+    "p3": "Xingxia OS",
+    "p4": "Old equipment can also shine and heat",
+    "p5": "Stay tuned...",
+    "p6": "Full-featured Antong OS rescue environment",
+    "p9": "Little Panda Package Management (oma)",
+    "p10": "Concise and easy-to-use APT package management interface",
+    "p11": [
+      "Run this command using the terminal to run it in Debian, Ubuntu, Linux Mint and derivatives, as well as deepin,",
+      "OpenKylin (openKylin) and other distributions to install the red panda package management"
+    ],
+    "p12": "Antong OS supports many processor microarchitectures.",
+    "p13": "Except for x86-64, AArch64 and LoongArch,",
+    "p14": "We also support a number of architectures with low stock or software support that are not yet perfect.",
+    "p15": "And release a mirror for players to try and evaluate.",
+    "otherDownloadButtons": {
+      "popoverData": {
+        "conten": "Secondary architecture, Docker, and virtual machine images and other downloads"
+      },
+      "archName": "Other downloads"
+    }
+  }
+}
