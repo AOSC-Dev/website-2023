@@ -10,20 +10,19 @@ $bg-secondary: #3f6075;
 $common-margin: 24px;
 
 @use 'heti'
-  with(
-    $line-length: none,
-    $darkmode: 'manual',
-    $manualmode-dark-selector: 'body.dark &',
-    $font-size-h2: normal,
-    $line-height-size-h2: normal,
-    $std-block-unit: 16px,
+with ($line-length: none,
+  $darkmode: 'manual',
+  $manualmode-dark-selector: 'body.dark &',
+  $font-size-h2: normal,
+  $line-height-size-h2: normal,
+  $std-block-unit: 16px,
 
-    // TODO: discussion on website font config
-    // Heti's default font family displays Chinese quotes half-width
-    //   so they have been removed for backward compatibility.
-    $_font-stack-sans: '',
-    $_font-stack-serif: ''
-  );
+  // TODO: discussion on website font config
+  // Heti's default font family displays Chinese quotes half-width
+  //   so they have been removed for backward compatibility.
+  $_font-stack-sans: '',
+  $_font-stack-serif: ''
+);
 
 .heti {
   > :not(h2) {
@@ -41,6 +40,7 @@ $common-margin: 24px;
 
     a:hover {
       border-block-end: inherit;
+      padding-block-end: 0;
     }
   }
 
@@ -53,6 +53,7 @@ $common-margin: 24px;
     > :first-child {
       margin-top: 0;
     }
+
     > :last-child {
       margin-bottom: 0;
     }
@@ -133,6 +134,7 @@ table {
   border-collapse: collapse;
 
   tr {
+
     th,
     td {
       border: 1px solid $bg-secondary;

@@ -1,33 +1,27 @@
 <script setup>
 const props = defineProps({
   title: { type: String, required: true },
-  rightText: { type: String, default: '' },
-  rightUrl: { type: String, default: '' },
-  rightName: { type: String, default: '' },
-  showRightChevron: { type: Boolean },
-  params: { type: String, default: '' }
+  titleUrl: { type: String, default: undefined },
+  rightText: { type: String, default: undefined },
+  rightUrl: { type: String, default: undefined },
+  showRightChevron: { type: Boolean }
 });
 </script>
 
 <template>
   <div class="category-second">
-    <span>
-      {{ props.title }}
+    <span v-if="titleUrl === undefined">
+      {{ title }}
     </span>
+    <AppLink v-else :to="titleUrl" class="no-underline">{{ title }}</AppLink>
 
-    <span v-if="props.rightText">
-      <span v-if="props.rightUrl === undefined">
-        {{ props.rightText }}
+    <span v-if="rightText !== undefined">
+      <span v-if="rightUrl === undefined">
+        {{ rightText }}
       </span>
-      <NuxtLinkLocale
-        v-else
-        :to="
-          props.params
-            ? { name: props.rightUrl, params: props.params }
-            : props.rightUrl
-        ">
-        {{ props.rightText }}
-      </NuxtLinkLocale>
+      <AppLink v-else class="" :to="rightUrl">
+        {{ rightText }}
+      </AppLink>
       <!-- 右箭头 -->
       <Icon
         v-if="showRightChevron"

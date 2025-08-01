@@ -19,8 +19,10 @@ useHead({ title: page.value?.title });
   <article v-if="page">
     <category-second
       v-if="page?.body.value[0][0] !== 'h2'"
+      :id="page?.title"
       :title="page?.title"
-      :right-text="page?.date.substring(0, 10)" />
+      :right-text="page?.date.substring(0, 10)"
+      :title-url="`${route.path}#${page.title}`" />
     <ContentRenderer :value="page" class="heti" />
   </article>
 </template>
