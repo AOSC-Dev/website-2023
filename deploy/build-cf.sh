@@ -1,4 +1,4 @@
 #! /bin/bash
 
 npm run generate
-cp -r .output/public website
+cp -r dist website
