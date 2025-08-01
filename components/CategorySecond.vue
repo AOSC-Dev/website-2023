@@ -1,5 +1,5 @@
 <script setup>
-const props = defineProps({
+defineProps({
   title: { type: String, required: true },
   titleUrl: { type: String, default: undefined },
   rightText: { type: String, default: undefined },
