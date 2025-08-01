@@ -9,8 +9,8 @@ $green: #a7ecad;
 $bg-secondary: #3f6075;
 $common-margin: 24px;
 
-@use 'heti'
-with ($line-length: none,
+@use 'heti' with (
+  $line-length: none,
   $darkmode: 'manual',
   $manualmode-dark-selector: 'body.dark &',
   $font-size-h2: normal,
@@ -37,11 +37,6 @@ with ($line-length: none,
 
   h2 {
     margin-bottom: $common-margin;
-
-    a:hover {
-      border-block-end: inherit;
-      padding-block-end: 0;
-    }
   }
 
   img {
@@ -75,6 +70,15 @@ with ($line-length: none,
   padding: 5px 10px;
   color: white;
   user-select: none;
+
+  > a:hover {
+    border-block-end: inherit;
+    padding-block-end: 0;
+
+    &::after {
+      content: '¶';
+    }
+  }
 }
 
 :root {
@@ -134,7 +138,6 @@ table {
   border-collapse: collapse;
 
   tr {
-
     th,
     td {
       border: 1px solid $bg-secondary;
