@@ -105,8 +105,7 @@
     },
     "aoscRelnote": {
       "title": ["发行注记"],
-      "url": "/aosc-os/relnote",
-      "hash": ["#issuance-note"]
+      "url": "/aosc-os/relnote"
     },
     "aoscRelnoteAsahi": {
       "title": ["发行注记"],
@@ -144,8 +143,7 @@
     },
     "afterglowRelnote": {
       "title": ["发行注记"],
-      "url": "/afterglow/relnote",
-      "hash": ["#issuance-note"]
+      "url": "/afterglow/relnote"
     },
     "afterglowRequirements": {
       "title": [
