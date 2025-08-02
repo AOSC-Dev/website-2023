@@ -125,6 +125,11 @@ const sponsorList = ref([
         name: '中国科学技术大学 Linux 用户组 (LUG@USTC)',
         web: 'https://lug.ustc.edu.cn/',
         img: 'lug-ustc'
+      },
+      {
+        name: '中山大学网络与信息中心 & Matrix 开发团队',
+        web: 'http://mirror.sysu.edu.cn/',
+        img: 'sysu'
       }
     ]
   },
