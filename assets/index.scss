@@ -39,6 +39,20 @@ $common-margin: 24px;
     margin-bottom: $common-margin;
   }
 
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    > a {
+      color: inherit;
+    }
+  }
+
+  a {
+    color: var(--color-link);
+  }
+
   img {
     margin-inline: auto;
     max-width: 70%;
