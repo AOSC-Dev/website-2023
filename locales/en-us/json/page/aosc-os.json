@@ -1,28 +1,5 @@
 {
   "livekit": {
-    "relnote": {
-      "title1": "Release Notes: September 2024",
-      "title2": "New features and changes",
-      "p1": "LiveKit is a removable environment for maintaining Antong OS and performing bug fixes. The new features and changes included in this release are as follows.",
-      "p2": "In addition to updating system components to the September 2024 baseline, LiveKit includes the following new features:",
-      "ul1": {
-        "li": [
-          "Update the Linux kernel to the 6.10 branch to support more new hardware",
-          "Support Dragon architecture old world firmware boot Antong OS installation disk",
-          "Fixed multi-graphics card device support with Optimus (dual graphics card device with core graphics and NVIDIA discrete graphics) function",
-          "Update Antong OS installer (online mode) to the latest version to fix a large number of known issues",
-          [
-            "A new command line installer written based on the new DeployKit backend",
-            "Replaces the old command line installer to support unattended installation"
-          ],
-          "Disable power functions such as screen power saving and automatic sleep for installation and trial environments to avoid unexpected failures.",
-          "Take steps to avoid pre-generating SSH host keys when generating installation disks",
-          "Delete default `live` user password",
-          "Upgrade the memory testing tool Memtest86+ to 7.00",
-          "Added Simplified Chinese translation of the rescue and repair console (command line installation environment) description text"
-        ]
-      }
-    },
     "requirements": {
       "title1": "LiveKit system configuration requirements table",
       "title2": "Additional information",
@@ -123,13 +100,6 @@
     }
   },
   "wsl": {
-    "relnote": {
-      "title1": "Release Notes: September 2024",
-      "title2": "New features and changes",
-      "p1": "AOSC OS on WSL is the Antong OS version for Windows Subsystem for Linux environment. This update contains the following changes.",
-      "p2": "This release is a regular update and includes all system updates as of September 16, 2024.",
-      "p3": ""
-    },
     "requirements": {
       "title1": "AOSC OS on WSL system configuration requirements table",
       "title2": "Additional information",
@@ -257,112 +227,6 @@
           ["riscv64", "riscv64-aosc-linux-gnu"]
         ]
       ]
-    }
-  },
-  "relnote": {
-    "index": {
-      "title1": "Release Notes: September 2024",
-      "title2": "Platform support",
-      "title3": "System structure adjustment",
-      "title4": "Key component updates",
-      "title5": "Feature fixes",
-      "title6": "Installation experience",
-      "p1": "Recently, we released a new batch of Antong OS system releases, including various system component updates and security fixes since early August. The main content of this update includes optimization of functions and support for virtualization platforms such as Hyper-V, VMware, and VirtualBox, newer x86 devices, and Dragon architecture platforms. This release note will briefly introduce the relevant changes.",
-      "p2": "This release also comes with a number of fixes for the installation experience, which are also described in the release notes.",
-      "p3": "This update includes the following updates and fixes for hardware platform support:",
-      "p4": [
-        "Based on user feedback, we have improved the system package (",
-        "*-base",
-        ")'s dependency structure has been adjusted:"
-      ],
-      "p5": "This system release update contains many component updates, among which the more critical updates and fixes are:",
-      "p6": "In addition to the fixes brought by feature updates, we have also fixed problems in some system functions based on user feedback:",
-      "p7": "The installation disk included in this release update also contains many fixes and improvements, specifically:",
-      "b1": "Please note: If you have installed Antong OS, the fixes and changes mentioned in this release note have been pushed through system updates, and you do not need to reinstall the system or install any additional software packages.",
-      "ul1": {
-        "li": [
-          "Linux kernel updated to 6.10.10, including support fixes for some AMD graphics cards and virtualization platforms",
-          "Integrated Dragon architecture \"old world\" firmware support now supports booting and installing Antong OS on any known 3A5000 and 3A6000 series platforms",
-          "Fixed the problem that Hyper-V and VMware/VirtualBox cannot boot into the desktop normally under some configurations; among them, we disabled the frame buffer driver (hyperv_fb) of Hyper-V virtual video and replaced it with a DRM driver (hyperv_drm) that has better support for it. )",
-          "Fixed an issue where the desktop could not be entered normally when using a multi-graphics card configuration that includes NVIDIA and non-NVIDIA GPUs",
-          "Fixed an issue where the sound cards of some Intel Core Ultra (codenamed Meteor Lake) platform laptop computers could not be used.",
-          "Fixed an issue where Lenovo ThinkBook 14 2024 Core Edition and Ryzen Edition (also known as ThinkBook 14 G6+ IMH/AHP) occasionally reset during sleep and the Fn + F5 key combination may trigger an unexpected power outage.",
-          "Disabled VC-1 hardware decoding support (commonly used for WMV format video) on ATI/AMD R600 to TeraScale 3 series GPUs, support for the format was never complete and could cause system crashes"
-        ]
-      },
-      "ul2": {
-        "li": [
-          "Any non-essential components have been downgraded from the original \"hard dependencies (Depends)\" to \"soft dependencies (Recommends)\", which are automatically installed by default but allow users to uninstall according to their needs and preferences",
-          "Mark some tools that may hinder system repair and management after deletion (such as NetworkManager and oma, etc.) as \"Essential\" and do not allow users to delete them by default"
-        ]
-      },
-      "ul3": {
-        "li": [
-          "The system core package (Core) is updated to 11.5.2, which increases the default memory mapping number to fix the problem of insufficient memory reported when compiling some large software; fixes a file conflict with the foot terminal configuration",
-          "Updated to 1.10, including multiple rounds of function and interface fixes, and improved support for some Debian/Ubuntu third-party sources",
-          [
-            "Dragon architecture \"old world\" application compatibility layer updated to 0.1.6, adapted to glibc 2.40 update and Linux kernel introduction",
-            "System calls and other changes and fixes",
-            "Implementation of system calls"
-          ],
-          "OpenSSH releases update to centrally match, remove and regenerate previously leaked OpenSSH host keys",
-          "Mesa graphics library updated to 24.2.2, libdrm direct rendering manager runtime library updated to 2.4.123, including support for various new and old graphics cards",
-          "curl network tool and runtime updated to 8.10.0, including multiple security vulnerability fixes",
-          "OpenSSL updated to 3.3.2 with multiple security bug fixes from early August",
-          "NVIDIA official graphics card driver updated to 560.35.03, including optimization of support for the latest graphics cards, graphics applications, and games",
-          [
-            "Introduced for OpenSSH components",
-            "User service to facilitate key authentication and registration when logging in"
-          ],
-          [
-            "Update X11 Base Toolkit (",
-            ") components, which include",
-            "A crash caused by the tool testing trapezoidal drawing performance not properly handling unsupported material formats (used by UnixBench's 2D graphics test)",
-            "Update Intel processor microcode to 20240910 to fix some known security issues"
-          ]
-        ]
-      },
-      "ul4": {
-        "li": [
-          "Fixed an issue where colored emoji glyphs could not be displayed correctly",
-          "Fixed the issue where Bilibili did not correctly recognize AV1 metadata, resulting in the inability to correctly enable hardware decoding, which can improve the viewing experience on some platforms.",
-          [
-            "Executable search path in default Bash configuration (",
-            "Variables) being incorrectly overwritten in non-login sessions"
-          ]
-        ]
-      },
-      "ul5": {
-        "li": [
-          "Fixed an issue where the installation disk would not boot properly on multi-graphics devices containing NVIDIA and non-NVIDIA GPUs",
-          [
-            "Replace the installer in the Rescue and Recovery Console (command line mode) with",
-            ", which is functionally equivalent to the graphical installer and supports unattended installation mode"
-          ],
-          "Added boot and installation support on Dragon architecture \"old world\" firmware",
-          [
-            "delete default",
-            "User password to avoid the problem of too obvious privilege escalation path when SSH service is enabled by default"
-          ],
-          "Disable screen power saving, sleep and other functions to avoid unexpected failures",
-          "Added localized support for the Rescue and Recovery Console startup prompt, and updated channel information for reporting system issues",
-          ["renew", "Memory Test Tool to 7.00"]
-        ]
-      }
-    },
-    "asahi": {
-      "p1": "Antong OS (Apple Silicon) is a system version released for Mac devices based on Apple chips. This update includes the following main content.",
-      "p2": "This release is a regular update and includes all system updates as of February 15, 2024; among them, the Linux kernel version is updated to version 6.12.12, with the latest Asahi Linux patch set.",
-      "p3": "The current release contains the following known issues, which we will fix as soon as possible:",
-      "title1": "Release Notes: February 2025",
-      "title2": "Component update",
-      "title3": "Known issues",
-      "ul1": {
-        "li": [
-          "Due to previous lack of test equipment and no relevant support components were introduced, the speakers of MacBook Air (M1, 2020) are not driven correctly yet",
-          "OpenGL graphics acceleration is temporarily unavailable, we are collated asahi Linux patch set"
-        ]
-      }
     }
   },
   "requirements": {

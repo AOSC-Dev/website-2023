@@ -165,11 +165,11 @@
       ],
       "url": "/aosc-os/relnote"
     },
-    "aoscRelnoteAsahi": {
+    "aoscAsahiRelnote": {
       "title": [
         "Release Notes"
       ],
-      "url": "/aosc-os/relnote/asahi"
+      "url": "/aosc-os/asahi/relnote"
     },
     "aoscLivekitRelnote": {
       "title": [
