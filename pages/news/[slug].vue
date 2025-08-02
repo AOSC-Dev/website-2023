@@ -1,3 +1,3 @@
 <template>
-  <common-content category="news" />
+  <common-content />
 </template>

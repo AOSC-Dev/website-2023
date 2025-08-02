@@ -32,6 +32,12 @@ export default defineNuxtConfig({
     '@nuxt/icon'
   ],
 
+  router: {
+    options: {
+      scrollBehaviorType: 'smooth'
+    }
+  },
+
   icon: {
     mode: 'css',
     cssLayer: 'base'
