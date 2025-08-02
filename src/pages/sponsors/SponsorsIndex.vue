@@ -128,7 +128,7 @@ const sponsorList = ref([
       },
       {
         name: '中山大学网络与信息中心 & Matrix 开发团队',
-        web: 'http://mirror.sysu.edu.cn/',
+        web: 'https://mirror.sysu.edu.cn/',
         img: 'sysu'
       }
     ]
