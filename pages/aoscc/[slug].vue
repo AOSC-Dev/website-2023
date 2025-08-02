@@ -1,3 +1,3 @@
 <template>
-  <common-content category="aoscc" />
+  <common-content />
 </template>
