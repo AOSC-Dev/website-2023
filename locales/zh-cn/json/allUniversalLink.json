@@ -107,9 +107,9 @@
       "title": ["发行注记"],
       "url": "/aosc-os/relnote"
     },
-    "aoscRelnoteAsahi": {
+    "aoscAsahiRelnote": {
       "title": ["发行注记"],
-      "url": "/aosc-os/relnote/asahi"
+      "url": "/aosc-os/asahi/relnote"
     },
     "aoscLivekitRelnote": {
       "title": ["发行注记"],
