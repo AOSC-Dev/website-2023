@@ -114,7 +114,7 @@ const appleSiliconNavigationList = ref([
     title: appleSiliconDate,
     notLink: true
   },
-  localLink.aoscRelnoteAsahi,
+  localLink.aoscAsahiRelnote,
   linkValue.asahiRequirements
 ]);
 

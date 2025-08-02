@@ -12,7 +12,7 @@ const featuresRef = useTemplateRef('features');
 const navigationList = [
   useHIndex(localLink.download, 0),
   linkValue.thisPageFeatures,
-  useHIndex(localLink.aoscRelnote, 0),
+  localLink.aoscRelnote,
   useHIndex(localLink.aoscRequirements, 0),
   linkValue.thisPageSupport
 ];
