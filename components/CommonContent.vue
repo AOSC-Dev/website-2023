@@ -1,8 +1,12 @@
 <script lang="ts" setup>
+import { useScrollStore } from '~/stores/scroll';
+
 const props = defineProps<{ path?: string }>();
 
 const route = useRoute();
 const { locale } = useI18n();
+const scrollStore = useScrollStore();
+const contentRef = useTemplateRef('contentRef');
 
 const contentPath = computed(() => {
   if (props.path) return props.path;
@@ -27,6 +31,10 @@ if (error.value || !page.value) {
     fatal: true
   });
 }
+
+watch(contentRef, () => {
+  if (route.hash) scrollStore.scrollAndClear();
+});
 </script>
 
 <template>
@@ -37,6 +45,6 @@ if (error.value || !page.value) {
       :title="page.title"
       :right-text="page.date?.substring(0, 10)"
       :title-url="`${route.path}#${page.title}`" />
-    <ContentRenderer :value="page" class="heti" />
+    <ContentRenderer ref="contentRef" :value="page" class="heti" />
   </article>
 </template>
