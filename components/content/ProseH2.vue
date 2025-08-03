@@ -4,7 +4,7 @@
       v-if="props.id && generate"
       :href="`#${props.id}`"
     >
-      <slot />
+      <slot mdc-unwrap="p" />
     </a>
     <slot v-else />
   </h2>
