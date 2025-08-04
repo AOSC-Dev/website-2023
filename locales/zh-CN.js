@@ -1,5 +1,4 @@
 import gallery from './zh-cn/json/page/gallery.json';
-import guidelines from './zh-cn/json/page/guidelines.json';
 import allUniversalLink from './zh-cn/json/allUniversalLink.json';
 import internship from './zh-cn/json/page/internship.json';
 import l10n from './zh-cn/json/page/l10n.json';
@@ -50,7 +49,6 @@ export default {
   crowdsourcing,
   download,
   gallery,
-  guidelines,
   internship,
   l10n,
   liblol,
