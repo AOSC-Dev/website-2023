@@ -15,7 +15,6 @@ import BarHeader from './zh-cn/json/components/BarHeader.json';
 import BarLeft from './zh-cn/json/components/BarLeft.json';
 import BarRight from './zh-cn/json/components/BarRight.json';
 import index from './zh-cn/json/page/index.json';
-import afterglow from './zh-cn/json/page/afterglow.json';
 import aoscOs from './zh-cn/json/page/aosc-os.json';
 import contact from './zh-cn/json/page/contact.json';
 import crowdsourcing from './zh-cn/json/page/crowdsourcing.json';
@@ -51,7 +50,6 @@ export default {
   BarLeft,
   BarRight,
   index,
-  afterglow,
   'aosc-os': aoscOs,
   contact,
   crowdsourcing,
