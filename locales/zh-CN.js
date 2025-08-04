@@ -1,4 +1,3 @@
-import events from './zh-cn/json/page/events.json';
 import gallery from './zh-cn/json/page/gallery.json';
 import guidelines from './zh-cn/json/page/guidelines.json';
 import allUniversalLink from './zh-cn/json/allUniversalLink.json';
@@ -50,7 +49,6 @@ export default {
   index,
   crowdsourcing,
   download,
-  events,
   gallery,
   guidelines,
   internship,
