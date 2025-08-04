@@ -1,6 +1,5 @@
 import gallery from './en-us/json/page/gallery.json';
 import allUniversalLink from './en-us/json/allUniversalLink.json';
-import l10n from './en-us/json/page/l10n.json';
 import liblol from './en-us/json/page/liblol.json';
 import AppSupport from './en-us/json/components/AppSupport.json';
 import mascot from './en-us/json/page/mascot.json';
@@ -48,7 +47,6 @@ export default {
   crowdsourcing,
   download,
   gallery,
-  l10n,
   liblol,
   paste,
   seo
