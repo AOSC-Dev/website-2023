@@ -3,7 +3,6 @@ import allUniversalLink from './zh-cn/json/allUniversalLink.json';
 import AppSupport from './zh-cn/json/components/AppSupport.json';
 import mascot from './zh-cn/json/page/mascot.json';
 import news from './zh-cn/json/page/news.json';
-import oma from './zh-cn/json/page/oma.json';
 import sponsors from './zh-cn/json/page/sponsors.json';
 import BarFooter from './zh-cn/json/components/BarFooter.json';
 import BarHeader from './zh-cn/json/components/BarHeader.json';
@@ -37,7 +36,6 @@ export default {
   sponsors,
   mascot,
   news,
-  oma,
   BarFooter,
   BarHeader,
   BarLeft,
