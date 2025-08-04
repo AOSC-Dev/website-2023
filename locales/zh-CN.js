@@ -15,7 +15,6 @@ import BarHeader from './zh-cn/json/components/BarHeader.json';
 import BarLeft from './zh-cn/json/components/BarLeft.json';
 import BarRight from './zh-cn/json/components/BarRight.json';
 import index from './zh-cn/json/page/index.json';
-import contact from './zh-cn/json/page/contact.json';
 import crowdsourcing from './zh-cn/json/page/crowdsourcing.json';
 import download from './zh-cn/json/page/download.json';
 import paste from './zh-cn/json/page/paste.json';
@@ -49,7 +48,6 @@ export default {
   BarLeft,
   BarRight,
   index,
-  contact,
   crowdsourcing,
   download,
   events,
