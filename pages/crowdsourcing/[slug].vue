@@ -1,3 +1,3 @@
 <template>
-  <common-content category="crowdsourcing" />
+  <common-content />
 </template>

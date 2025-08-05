@@ -36,7 +36,7 @@ $common-margin: 24px;
   margin-bottom: $common-margin;
 
   h2 {
-    margin-bottom: $common-margin;
+    margin-block: $common-margin;
   }
 
   h2,
@@ -70,6 +70,7 @@ $common-margin: 24px;
 
   table {
     max-width: calc(100% - 2 * $common-margin);
+    table-layout: auto;
   }
 }
 
