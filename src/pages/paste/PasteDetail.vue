@@ -4,7 +4,9 @@ import { useRoute } from 'vue-router';
 import useClipboard from 'vue-clipboard3';
 import AppHighlight from '../../components/AppHighlight.vue';
 import { requestGetJson } from '../../utils/utils';
+import { useHead } from '@unhead/vue';
 
+useHead({ meta: { name: 'robots', content: 'noindex, nofollow' } });
 const { toClipboard } = useClipboard();
 const loading = ref(true);
 const route = useRoute();
