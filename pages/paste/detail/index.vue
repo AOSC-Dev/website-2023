@@ -9,6 +9,9 @@ const failReason = ref('');
 const { tm } = useI18n();
 const textValue = tm('paste.detail');
 useHead({ title: textValue.title1 });
+// FIXME: `useRobotsRule({ noindex: true, nofollow: true })` generates
+// `<meta name="robots" content="[object Object]">` currently
+useRobotsRule('noindex, nofollow');
 
 const isImg = (name) => {
   const suffixIndex = name.lastIndexOf('.');
