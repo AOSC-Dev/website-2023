@@ -25,6 +25,7 @@ $common-margin: 24px;
 );
 
 .heti {
+  // TODO: link style
   > :not(h2) {
     margin-inline: $common-margin;
   }

@@ -24,7 +24,8 @@ const navigationList = computed(() => {
         localLink.news,
         localLink.gallery,
         useTIndex(localLink.contact, 1),
-        useTIndex(linkValue.AOSCWiki, 1)
+        useTIndex(linkValue.AOSCWiki, 1),
+        { title: ['芝士中心'], url: '/support' }
       ],
       show: true
     },
