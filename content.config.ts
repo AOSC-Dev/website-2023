@@ -1,11 +1,14 @@
 import { defineCollection, defineContentConfig, z } from '@nuxt/content';
 
-const newsSchema = z.object({
+const contentSchema = z.object({
   title: z.string(),
-  date: z.date(),
-  categories: z.array(z.string()),
+  description: z.string(),
+  date: z.optional(z.date()),
+  categories: z.optional(z.array(z.string())),
   important: z.optional(z.boolean()),
-  home: z.optional(z.boolean())
+  home: z.optional(z.boolean()),
+  tags: z.optional(z.array(z.string())),
+  img: z.optional(z.string()),
 });
 
 export default defineContentConfig({
@@ -17,7 +20,7 @@ export default defineContentConfig({
         exclude: ['**/_*']
       },
       type: 'page',
-      schema: newsSchema
+      schema: contentSchema
     }),
     en: defineCollection({
       source: {
@@ -26,7 +29,7 @@ export default defineContentConfig({
         exclude: ['**/_*']
       },
       type: 'page',
-      schema: newsSchema
+      schema: contentSchema
     }),
     gallery: defineCollection({
       source: 'all/gallery.yml',

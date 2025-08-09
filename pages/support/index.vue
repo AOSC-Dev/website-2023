@@ -1,36 +1,42 @@
 <script lang="ts" setup>
-import { Charset, Document } from 'flexsearch';
+import { Document, Charset } from 'flexsearch';
 
 const { locale } = useI18n();
 useHead({ title: '支持中心' });
 
 const supportCategoryList = [
   {
-    path: 'system',
+    path: '/support/quick-start',
+    name: '快速上手',
+    description: '就感觉到快',
+    icon: 'ic:baseline-rocket'
+  },
+  {
+    path: '/support',
     name: '系统',
     description: '安安装系统的流程与可能遇到的问题',
     icon: 'ic:baseline-settings'
   },
   {
-    path: 'software',
+    path: '/support/software',
     name: '软件',
     description: '使用 Aoska、oma、Flatpak 等安安装软件',
     icon: 'ic:baseline-install-desktop'
   },
   {
-    path: 'hardware',
+    path: '/support',
     name: '硬件',
     description: 'CPU、冰箱贴与安安 Fumo',
     icon: 'ic:baseline-hardware'
   },
   {
-    path: 'infra',
+    path: '/support',
     name: '周边设施',
     description: 'BBS、AOSCC 注册系统等服务',
     icon: 'ic:baseline-apps'
   },
   {
-    path: '8d',
+    path: '/support',
     name: '你知道吗？',
     description: '你 8d 吗',
     icon: 'ic:baseline-question-mark'
@@ -44,11 +50,12 @@ const supportCategoryList = [
 ];
 
 const query = ref('');
-const queryCategory = ref('all');
+const queryCategory = ref('/support');
 
 const queryCategoryList = [
-  { path: 'all', name: 'ALL' },
-  { path: 'news', name: '新闻' }
+  { path: '/', name: 'ALL' },
+  { path: '/news', name: '新闻' },
+  { path: '/support', name: '支持中心' }
 ];
 
 const ananImgPrefix = '/support/anan/';
@@ -114,7 +121,8 @@ const storeDict = store.value?.reduce(
 const results = computed(() =>
   storeDict
     ? index
-        .search(query.value, { merge: true, limit: 10 })
+        .search(query.value, { merge: true, suggest: true })
+        .filter((item) => item.id.toString().startsWith(queryCategory.value))
         .map((item) => storeDict[item.id])
     : null
 );
@@ -133,17 +141,12 @@ const queryState: Ref<ananReactionType> = computed(() => {
 <template>
   <div>
     <category-second title="芝士中心" />
-    <div class="m-6">
-      <p>这里应该会有一些说明性的文字或者 banner，不过可能也可以没有这块</p>
-      <p>还是希望搜索能出现在页面偏上方一些，因为更好展示候选</p>
-    </div>
-    <category-second title="问问安安" />
     <div class="mx-6 my-2 flex items-center gap-4">
       <img :src="ananReactionList[queryState].img" class="h-32 w-32" />
       <div class="flex-grow">
         <span>{{ ananReactionList[queryState].text }}</span>
         <div class="mt-2 flex">
-          <el-select v-model="queryCategory" class="max-w-[5em]">
+          <el-select v-model="queryCategory" class="max-w-[6.5em]">
             <el-option
               v-for="category in queryCategoryList"
               :key="category.path"
@@ -156,11 +159,20 @@ const queryState: Ref<ananReactionType> = computed(() => {
               inputmode="search"
               placeholder="请输入文字"
               class="max-full" />
-            <div v-if="results?.length" class="relative">
+            <div v-if="results?.length || queryState === 'oma'" class="relative">
               <!--TODO: investigate z-index?-->
               <ul
                 class="absolute z-1 w-full border-1 border-(--primary) bg-white px-3 py-1">
-                <li v-for="result in results" :key="result.id">
+                <NuxtLinkLocale
+                  v-if="queryState === 'oma'"
+                  to="/support/software#oma"
+                  class="hover:no-underline">
+                  <div class="border-2 border-(--primary) p-1 hover:bg-[#eee]">
+                    <div>这里可以是特殊的提示</div>
+                    <div>前往 oma 版块 →</div>
+                  </div>
+                </NuxtLinkLocale>
+                <li v-for="result in results?.slice(0, 10)" :key="result.id">
                   <span v-for="title in result.titles" :key="title">
                     {{ title }} >
                   </span>
@@ -175,17 +187,18 @@ const queryState: Ref<ananReactionType> = computed(() => {
       </div>
     </div>
     <category-second title="支持类别" />
-    <div class="m-6 grid grid-cols-3 gap-6">
-      <div
+    <div class="grid grid-cols-3">
+      <NuxtLinkLocale
         v-for="category in supportCategoryList"
         :key="category.path"
-        class="flex items-center gap-4">
+        :to="category.path"
+        class="flex items-center gap-4 px-6 py-4 hover:bg-[#ddd] hover:no-underline">
         <Icon :name="category.icon" size="24" />
         <div>
           <div>{{ category.name }}</div>
           <div class="text-[10pt]">{{ category.description }}</div>
         </div>
-      </div>
+      </NuxtLinkLocale>
     </div>
     <div class="grid grid-cols-2">
       <div class="border-r-1 border-white">

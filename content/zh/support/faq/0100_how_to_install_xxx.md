@@ -21,4 +21,4 @@ title: 如何安安装 QQ、微信、WPS Office...
 
 ## oma
 
-这里可以链接到 oma 的页面之类，还没有做
+这里可以链接到 oma 的页面之类，[gogo →](/support/software#oma)

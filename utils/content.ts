@@ -16,7 +16,7 @@ export const queryCollectionCategory = (
       ZhCollectionItem | EnCollectionItem
     >
   )
-    .select('path', 'title', 'date')
+    .select('path', 'title', 'description', 'date', 'img')
     .where('path', 'LIKE', `/${category}%`)
     .order('date', 'DESC')
     .limit(limit);
