@@ -46,7 +46,7 @@ MIPS PMON 相关更改稍后撤出八月更新范畴，等待九月更新。
 bash-config PATH/MANPATH 处理问题讨论
 ---
 
-背景：bash-config 先前会在非 WSL 环境下，针对交互 Bash 会话充值 PATH，导致 Gentoo Prefix 及 nix-installer 无法使用（这两个软件都会先调整 PATH，而后再启动 Bash）。
+背景：bash-config 先前会在非 WSL 环境下，针对交互 Bash 会话重置 PATH，导致 Gentoo Prefix 及 nix-installer 无法使用（这两个软件都会先调整 PATH，而后再启动 Bash）。
 
 要解决这个问题，需要去除 unset PATH 的行为，但这也会造成问题：bashrc 是可以重复执行的，会导致 PATH 内容冗余并不断经过追加 (append) 增长。0.8.0 提出了初步修复，但没有正确处理 PATH 优先级，无法确保 PATH 顺序的正确性——尤其是现在的 SDDM 包中在启动会话时将 `/usr/bin` 放在了 `/usr/local/bin` 中。
 
