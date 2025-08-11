@@ -1,11 +1,11 @@
 <template>
   <h2 :id="props.id">
-    <a
+    <AppLink
       v-if="props.id && generate"
-      :href="`#${props.id}`"
+      :to="`${$route.path}#${props.id}`"
     >
       <slot mdc-unwrap="p" />
-    </a>
+    </AppLink>
     <slot v-else />
   </h2>
 </template>
