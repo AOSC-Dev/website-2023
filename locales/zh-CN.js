@@ -1,6 +1,5 @@
 import gallery from './zh-cn/json/page/gallery.json';
 import allUniversalLink from './zh-cn/json/allUniversalLink.json';
-import AppSupport from './zh-cn/json/components/AppSupport.json';
 import mascot from './zh-cn/json/page/mascot.json';
 import news from './zh-cn/json/page/news.json';
 import sponsors from './zh-cn/json/page/sponsors.json';
@@ -32,7 +31,6 @@ export default {
   allUniversalLink,
   NewsCategoryList,
   CopyButton,
-  AppSupport,
   sponsors,
   mascot,
   news,
