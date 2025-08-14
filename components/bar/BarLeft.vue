@@ -61,6 +61,7 @@ const openMenuList = new Set();
 const menuDivRef = useTemplateRef('menuDiv');
 const menuRef = useTemplateRef('menu');
 const rowHeight = 32;
+const chunkPading = 6;
 const rowHeightpx = `${rowHeight}px`;
 
 const route = useRoute();
@@ -70,24 +71,29 @@ const openMenu = (MenuOpenEvent) => {
     (item) => item.title === MenuOpenEvent
   );
   let height =
-    result.children.length * rowHeight + menuDivRef.value.clientHeight;
+    result.children.length * rowHeight +
+    chunkPading +
+    menuDivRef.value.clientHeight;
   for (const item of openMenuList) {
     if (highlyIsQualified(height)) {
       break;
     } else {
-      height =
-        height -
-        navigationList.value.find((item1) => item1.title === item).children
-          .length *
-          rowHeight;
+      height = height - item[1] * rowHeight - chunkPading;
       openMenuList.delete(item);
-      menuRef.value.close(item);
+      console.log(item[0]);
+      menuRef.value.close(item[0]);
     }
   }
-  openMenuList.add(MenuOpenEvent);
+  openMenuList.add([MenuOpenEvent, result.children.length]);
 };
+
 const closeMenu = (MenuOpenEvent) => {
-  openMenuList.delete(MenuOpenEvent);
+  for (const arr of openMenuList) {
+    if (arr[0] === MenuOpenEvent) {
+      openMenuList.delete(arr);
+      break; // 删除后跳出循环，因为我们只删除第一个
+    }
+  }
 };
 
 const highlyIsQualified = (height) => {
@@ -146,17 +152,13 @@ onMounted(() => {
   // 初次加载的时候尝试打开当前栏目分类
   // 记一下目前所在分类的title
   let thisTitle = null;
-  let thisColumnIsShow = false;
   for (const item of navigationList.value.values()) {
-    const resule = item.children.find(
-      (item1) => item1.url === route.path.replace(/\/+$/, '')
+    const resule = item.children.find((item1) =>
+      route.path.includes(item1.url)
     );
     if (resule) {
       height = height + item.children.length * rowHeight;
-      if (highlyIsQualified(height)) {
-        // 记下可以展开，但先不展开，因为要给这个放到队列尾
-        thisColumnIsShow = true;
-      }
+      // 展开但不进入队列，因为要给这个放到队列尾
       thisTitle = item.title;
       break;
     }
@@ -164,9 +166,9 @@ onMounted(() => {
   // 然后在剩余空间里按顺序遍历栏目，能展开尽量展开
   for (const item of navigationList.value) {
     if (thisTitle !== item.title) {
-      height = height + item.children.length * rowHeight;
-      if (highlyIsQualified(height)) {
-        openMenuList.add(item.title);
+      const cache_h = height + item.children.length * rowHeight + chunkPading;
+      if (highlyIsQualified(cache_h)) {
+        height = cache_h;
         menuRef.value.open(item.title);
       } else {
         break;
@@ -174,8 +176,7 @@ onMounted(() => {
     }
   }
   // 剩余栏目展开完毕，展开当前所在栏目，此时屏幕缩小优先关闭其他栏目
-  if (thisColumnIsShow) {
-    openMenuList.add(thisTitle);
+  if (thisTitle !== null) {
     menuRef.value.open(thisTitle);
   }
 
@@ -196,7 +197,7 @@ const returnFromTop = (() => {
         backToTopBtnShow.value = false;
       }
       timeoutID = undefined;
-    }, 20);
+    }, 70);
   };
 })();
 
