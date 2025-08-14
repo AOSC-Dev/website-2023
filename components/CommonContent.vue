@@ -8,6 +8,7 @@ const { locale } = useI18n();
 const scrollStore = useScrollStore();
 const contentRef = useTemplateRef('contentRef');
 
+
 const contentPath = computed(() => {
   if (props.path) return props.path;
 
