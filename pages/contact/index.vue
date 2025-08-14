@@ -1,3 +1,0 @@
-<template>
-  <common-content />
-</template>
