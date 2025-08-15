@@ -1,59 +1,70 @@
 <script setup>
-const { tm } = useI18n();
+const { tm, locale } = useI18n();
 
-const navigationList = computed(() => {
+const getComp = computed(() => {
   const textValue = tm('BarLeft');
   const linkValue = tm('allUniversalLink');
   const localLink = linkValue.local;
 
   return [
-    {
-      title: textValue.title1,
-      children: [
-        localLink.aoscOs,
-        localLink.afterglow,
-        localLink.liblol,
-        localLink.oma,
-        localLink.l10n
-      ],
-      show: true
-    },
-    {
-      title: textValue.title2,
-      children: [
-        localLink.news,
-        localLink.gallery,
-        useTIndex(localLink.contact, 1),
-        useTIndex(linkValue.AOSCWiki, 1)
-      ],
-      show: true
-    },
-    {
-      title: textValue.title3,
-      children: [
-        localLink.about,
-        localLink.events,
-        localLink.internship,
-        localLink.sponsors,
-        localLink.crowdsourcing,
-        localLink.guidelines,
-        localLink.mascot
-      ],
-      show: true
-    },
-    {
-      title: textValue.title4,
-      children: [
-        localLink.paste,
-        linkValue.forum,
-        useTIndex(linkValue.GitHub, 1),
-        linkValue.mail20,
-        linkValue.buildbots,
-        linkValue.buildit
-      ],
-      show: true
-    }
+    [
+      {
+        title: textValue.title1,
+        children: [
+          localLink.aoscOs,
+          localLink.afterglow,
+          localLink.liblol,
+          localLink.oma,
+          localLink.l10n
+        ],
+        show: true
+      },
+      {
+        title: textValue.title2,
+        children: [
+          localLink.news,
+          localLink.gallery,
+          useTIndex(localLink.contact, 1),
+          useTIndex(linkValue.AOSCWiki, 1)
+        ],
+        show: true
+      },
+      {
+        title: textValue.title3,
+        children: [
+          localLink.about,
+          localLink.events,
+          localLink.internship,
+          localLink.sponsors,
+          localLink.crowdsourcing,
+          localLink.guidelines,
+          localLink.mascot
+        ],
+        show: true
+      },
+      {
+        title: textValue.title4,
+        children: [
+          localLink.paste,
+          linkValue.forum,
+          useTIndex(linkValue.GitHub, 1),
+          linkValue.mail20,
+          linkValue.buildbots,
+          linkValue.buildit
+        ],
+        show: true
+      }
+    ],
+    ['0', '1', '2', '3']
   ];
+});
+
+const navigationList = computed(() => {
+  return getComp.value[0];
+});
+
+const defaultOpeneds = computed(() => {
+  return getComp.value[1];
 });
 
 const openMenuList = new Set();
@@ -67,33 +78,34 @@ const rowHeightpx = `${rowHeight}px`;
 const route = useRoute();
 
 const openMenu = (MenuOpenEvent) => {
-  const result = navigationList.value.find(
-    (item) => item.title === MenuOpenEvent
-  );
   let height =
-    result.children.length * rowHeight +
+    navigationList.value[MenuOpenEvent].children.length * rowHeight +
     chunkPading +
     menuDivRef.value.clientHeight;
   for (const item of openMenuList) {
     if (highlyIsQualified(height)) {
       break;
     } else {
-      height = height - item[1] * rowHeight - chunkPading;
-      openMenuList.delete(item);
-      console.log(item[0]);
-      menuRef.value.close(item[0]);
+      height -=
+        navigationList.value[item].children.length * rowHeight - chunkPading;
+      closeMenu(item);
     }
   }
-  openMenuList.add([MenuOpenEvent, result.children.length]);
+  openMenuList.add(MenuOpenEvent);
+};
+
+const deleteSetItem = (target, setList) => {
+  for (const item of setList) {
+    if (item === target) {
+      setList.delete(item);
+      break;
+    }
+  }
 };
 
 const closeMenu = (MenuOpenEvent) => {
-  for (const arr of openMenuList) {
-    if (arr[0] === MenuOpenEvent) {
-      openMenuList.delete(arr);
-      break; // 删除后跳出循环，因为我们只删除第一个
-    }
-  }
+  deleteSetItem(MenuOpenEvent, openMenuList);
+  menuRef.value.close(MenuOpenEvent);
 };
 
 const highlyIsQualified = (height) => {
@@ -112,7 +124,9 @@ const highlyIsQualified = (height) => {
 const { $mitt } = useNuxtApp();
 onMounted(() => {
   $mitt.on('routeSwitching', () => {
-    retractMenuBar();
+    nextTick(() => {
+      retractMenuBar();
+    });
   });
 });
 onBeforeUnmount(() => {
@@ -126,15 +140,14 @@ const retractMenuBar = () => {
       break;
     } else {
       if (openMenuList.size === 1) break;
-      height =
-        height -
-        navigationList.value.find((item1) => item1.title === item).children
-          .length *
-          rowHeight;
-      openMenuList.delete(item);
-      menuRef.value.close(item);
+      height -=
+        navigationList.value[item].children.length * rowHeight - chunkPading;
+      closeMenu(item);
     }
   }
+  // for (const item of openMenuList) {
+  //   menuRef.value.open(item);
+  // }
 };
 onMounted(() => {
   // 每次缩放改变的时候，判断有没有栏目需要缩回去，先展开的，优先缩进
@@ -151,35 +164,30 @@ onMounted(() => {
   let height = menuDivRef.value.clientHeight;
   // 初次加载的时候尝试打开当前栏目分类
   // 记一下目前所在分类的title
-  let thisTitle = null;
-  for (const item of navigationList.value.values()) {
-    const resule = item.children.find((item1) =>
-      route.path.includes(item1.url)
-    );
-    if (resule) {
-      height = height + item.children.length * rowHeight;
-      // 展开但不进入队列，因为要给这个放到队列尾
-      thisTitle = item.title;
-      break;
+  let thisElSubEnum = null;
+  for (const [index, item] of navigationList.value.entries()) {
+    if (thisElSubEnum === null) {
+      if (item.children.find((item1) => route.path.includes(item1.url))) {
+        // 当前所在不入列尾
+        thisElSubEnum = index;
+      } else {
+        openMenuList.add(String(index));
+      }
+    } else {
+      openMenuList.add(String(index));
     }
   }
   // 然后在剩余空间里按顺序遍历栏目，能展开尽量展开
-  for (const item of navigationList.value) {
-    if (thisTitle !== item.title) {
-      const cache_h = height + item.children.length * rowHeight + chunkPading;
-      if (highlyIsQualified(cache_h)) {
-        height = cache_h;
-        menuRef.value.open(item.title);
-      } else {
-        break;
-      }
+  // 默认全部展开，根据空间从下向上依次关闭，跳过当前栏目
+  for (const [index, item] of reverseIterator(navigationList.value)) {
+    if (highlyIsQualified(height)) {
+      break;
+    }
+    if (thisElSubEnum !== index) {
+      height = height - (item.children.length * rowHeight + chunkPading);
+      closeMenu(String(index));
     }
   }
-  // 剩余栏目展开完毕，展开当前所在栏目，此时屏幕缩小优先关闭其他栏目
-  if (thisTitle !== null) {
-    menuRef.value.open(thisTitle);
-  }
-
   // 判断当前所在位置是否需要回到顶部按钮
   returnFromTop();
   // 挂载上面监听器
@@ -223,12 +231,13 @@ const backToTopBtnShow = ref(false);
       <el-menu
         ref="menu"
         class="my-el-menu"
+        :default-openeds="defaultOpeneds"
         @close="closeMenu"
         @open="openMenu">
         <el-sub-menu
           v-for="(item, index) in navigationList"
           :key="`barleft-1-link-${index}`"
-          :index="item.title">
+          :index="String(index)">
           <template #title>
             <span>{{ item.title }}</span>
           </template>
