@@ -72,6 +72,10 @@ export const requestPostJson = (() => {
   };
 })();
 
+export function* reverseIterator(arr) {
+  let i = arr.length - 1;
+  while (i >= 0) yield [i, arr[i--]];
+}
 export const BToMB = (byteSize, fixed = 3) => {
   return (byteSize / 1024 / 1024).toFixed(fixed);
 };
