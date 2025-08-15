@@ -11,14 +11,9 @@
 //   }
 // );
 
-export const highlightElement = (dom: Ref<HTMLDivElement>) => {
-  if (isRef(dom)) {
-    if (dom.value) {
-      dom.value.animate({ opacity: [1, 0.3, 1] }, 1500);
-    } else {
-      console.log('dom不存在');
-    }
-  }
+export const highlightElement = (dom: Ref<HTMLElement> | HTMLElement) => {
+  const domElement = isRef(dom) ? dom.value : dom;
+  domElement?.animate({ opacity: [1, 0.3, 1] }, 1500);
 };
 
 export default highlightElement;

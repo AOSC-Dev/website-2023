@@ -163,16 +163,13 @@
       "title": [
         "Release Notes"
       ],
-      "url": "/aosc-os/relnote",
-      "hash": [
-        "#issuance-note"
-      ]
+      "url": "/aosc-os/relnote"
     },
-    "aoscRelnoteAsahi": {
+    "aoscAsahiRelnote": {
       "title": [
         "Release Notes"
       ],
-      "url": "/aosc-os/relnote/asahi"
+      "url": "/aosc-os/asahi/relnote"
     },
     "aoscLivekitRelnote": {
       "title": [
@@ -222,10 +219,7 @@
       "title": [
         "Release Notes"
       ],
-      "url": "/afterglow/relnote",
-      "hash": [
-        "#issuance-note"
-      ]
+      "url": "/afterglow/relnote"
     },
     "afterglowRequirements": {
       "title": [

@@ -1,7 +1,0 @@
-{
-  "index": {
-    "p1": "libLoL (LoongArch on LoongArch) is a runtime designed to provide old world ABI compatibility. The old world ABI is often used in commercial software designed for the Loongnix reference distribution provided by Loongson and Unison UOS, such as Tencent QQ Linux version, Kingsoft WPS for Linux and Loongson browser. Since these applications have not yet been ported to the New World ABI, this runtime is intended to provide users of the New World distribution with the convenience of running the above applications.",
-    "p2": "After installing libLoL, you can install and run old-world ABI applications directly.",
-    "title1": "libLoL compatibility layer"
-  }
-}

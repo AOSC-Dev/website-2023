@@ -7,10 +7,7 @@ const localLink = linkValue.local;
 const distroList = [
   {
     img: '/distros/aosc-os.svg',
-    links: [
-      useHIndex(localLink.download, 0),
-      useHIndex(localLink.aoscRelnote, 0)
-    ],
+    links: [useHIndex(localLink.download, 0), localLink.aoscRelnote],
     description: textValue.description1,
     title: textValue.title3
   },

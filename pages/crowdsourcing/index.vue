@@ -9,7 +9,7 @@ useHead({ title: textValue.title1 });
 <template>
   <div>
     <category-second :title="textValue.title1" />
-    <div class="p-6">
+    <div class="heti">
       <p>
         <span>{{ textValue.p1.text[0] }}</span>
         <link-standard :link="useTIndex(localLink.guidelines, 1)" />
@@ -23,7 +23,7 @@ useHead({ title: textValue.title1 });
     </div>
 
     <category-second :title="textValue.title2" />
-    <div class="p-6 py-6 pl-16">
+    <div class="heti">
       <app-ul-ordinary :lis="textValue.ul1.li" my-key="crowdsourcing-1" />
     </div>
 
