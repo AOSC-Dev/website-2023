@@ -17,4 +17,4 @@ home: true
 
 [填写问卷 >>](https://f.wps.cn/g/Us73Jtxb/)
 
-![问卷二维码](/assets/aoscc/aoscc-2025-feedback-qrcode.png)
+![问卷二维码](/assets/news/aoscc-2025-feedback-qrcode.png)
