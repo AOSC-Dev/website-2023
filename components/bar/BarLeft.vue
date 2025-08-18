@@ -1,5 +1,5 @@
 <script setup>
-const { tm, locale } = useI18n();
+const { tm, _locale } = useI18n();
 
 const getComp = computed(() => {
   const textValue = tm('BarLeft');
@@ -75,6 +75,8 @@ const rowHeight = 32;
 const chunkPading = 6;
 const rowHeightpx = `${rowHeight}px`;
 
+const thisElSubEnum = ref(undefined);
+
 const route = useRoute();
 
 const openMenu = (MenuOpenEvent) => {
@@ -87,67 +89,75 @@ const openMenu = (MenuOpenEvent) => {
       break;
     } else {
       height -=
-        navigationList.value[item].children.length * rowHeight - chunkPading;
+        navigationList.value[item].children.length * rowHeight + chunkPading;
       closeMenu(item);
     }
   }
   openMenuList.add(MenuOpenEvent);
 };
 
-const deleteSetItem = (target, setList) => {
-  for (const item of setList) {
-    if (item === target) {
-      setList.delete(item);
-      break;
-    }
-  }
-};
-
 const closeMenu = (MenuOpenEvent) => {
-  deleteSetItem(MenuOpenEvent, openMenuList);
+  openMenuList.delete(MenuOpenEvent);
   menuRef.value.close(MenuOpenEvent);
 };
 
-const highlyIsQualified = (height) => {
+const highlyIsQualified = (
+  height,
+  mainHeight = menuDivRef.value.parentNode.parentNode.nextElementSibling
+    .clientHeight
+) => {
   // 在中心内容长度小于window.innerHeight时，回到首页弹窗不可能出来
   // 此时高度比较参照中心内容长度即可，不需要算上弹窗和底栏
   // 中心内容长度大于window.innerHeight时，总长度要加上底栏和弹窗和1px的弹窗下边距与window.innerHeight对比
-  if (
-    height + rowHeight * 2 + 1 < window.innerHeight &&
-    height <
-      menuDivRef.value.parentNode.parentNode.nextElementSibling.clientHeight
-  )
-    return true;
+  if (height < mainHeight) return true;
   return false;
 };
 
 const { $mitt } = useNuxtApp();
 onMounted(() => {
-  $mitt.on('routeSwitching', () => {
-    nextTick(() => {
-      retractMenuBar();
-    });
+  $mitt.on('mainDomChange', (newHeight) => {
+    retractMenuBar(newHeight);
   });
 });
 onBeforeUnmount(() => {
-  $mitt.off('routeSwitching');
+  $mitt.off('mainDomChange');
 });
 
-const retractMenuBar = () => {
+const changeThisElSubEnum = () => {
+  let thisElSubEnmu_cache = undefined;
+  if (route.path !== '/') {
+    for (const [index, item] of navigationList.value.entries()) {
+      if (item.children.find((item1) => route.path.includes(item1.url))) {
+        // 记录当前所在
+        thisElSubEnmu_cache = index;
+        break;
+      }
+    }
+    if (thisElSubEnum.value !== undefined)
+      openMenuList.add(String(thisElSubEnum.value));
+
+    openMenuList.delete(String(thisElSubEnmu_cache));
+    thisElSubEnum.value = thisElSubEnmu_cache;
+  }
+};
+
+const autoFold = (newHeight) => {
   let height = menuDivRef.value.clientHeight;
   for (const item of openMenuList) {
-    if (highlyIsQualified(height)) {
+    if (highlyIsQualified(height, newHeight)) {
       break;
     } else {
       if (openMenuList.size === 1) break;
       height -=
-        navigationList.value[item].children.length * rowHeight - chunkPading;
+        navigationList.value[item].children.length * rowHeight + chunkPading;
       closeMenu(item);
     }
   }
-  // for (const item of openMenuList) {
-  //   menuRef.value.open(item);
-  // }
+};
+
+const retractMenuBar = (newHeight) => {
+  changeThisElSubEnum(newHeight);
+  autoFold(newHeight);
 };
 onMounted(() => {
   // 每次缩放改变的时候，判断有没有栏目需要缩回去，先展开的，优先缩进
@@ -156,42 +166,32 @@ onMounted(() => {
     return () => {
       if (timeoutID !== undefined) clearTimeout(timeoutID);
       timeoutID = setTimeout(() => {
-        retractMenuBar();
+        autoFold();
         timeoutID = undefined;
       }, 40);
     };
   })();
-  let height = menuDivRef.value.clientHeight;
-  // 初次加载的时候尝试打开当前栏目分类
-  // 记一下目前所在分类的title
-  let thisElSubEnum = null;
-  for (const [index, item] of navigationList.value.entries()) {
-    if (thisElSubEnum === null) {
-      if (item.children.find((item1) => route.path.includes(item1.url))) {
-        // 当前所在不入列尾
-        thisElSubEnum = index;
-      } else {
-        openMenuList.add(String(index));
-      }
-    } else {
-      openMenuList.add(String(index));
-    }
-  }
-  // 然后在剩余空间里按顺序遍历栏目，能展开尽量展开
-  // 默认全部展开，根据空间从下向上依次关闭，跳过当前栏目
-  for (const [index, item] of reverseIterator(navigationList.value)) {
-    if (highlyIsQualified(height)) {
-      break;
-    }
-    if (thisElSubEnum !== index) {
-      height = height - (item.children.length * rowHeight + chunkPading);
-      closeMenu(String(index));
-    }
+  // 默认全部展开，找到并记一下目前所在栏目
+  for (let i = 0; i < navigationList.value.length; i++) {
+    openMenuList.add(String(i));
   }
   // 判断当前所在位置是否需要回到顶部按钮
-  returnFromTop();
-  // 挂载上面监听器
+  // 挂载监听器
   window.addEventListener('scroll', returnFromTop);
+
+  // 当前会触发一次retractMenuBar无需手动处理
+  // // 然后在剩余空间里按顺序遍历栏目，能展开尽量展开
+  // // 默认全部展开，根据空间从下向上依次关闭，跳过当前栏目
+  // let height = menuDivRef.value.clientHeight;
+  // for (const [index, item] of reverseIterator(navigationList.value)) {
+  //   if (highlyIsQualified(height)) {
+  //     break;
+  //   }
+  //   if (thisElSubEnum.value !== index) {
+  //     height -= item.children.length * rowHeight + chunkPading;
+  //     closeMenu(String(index));
+  //   }
+  // }
 });
 
 const returnFromTop = (() => {
@@ -234,6 +234,7 @@ const backToTopBtnShow = ref(false);
         :default-openeds="defaultOpeneds"
         @close="closeMenu"
         @open="openMenu">
+        <!-- 它的 index 要求是字符串不然控制台发警告 -->
         <el-sub-menu
           v-for="(item, index) in navigationList"
           :key="`barleft-1-link-${index}`"

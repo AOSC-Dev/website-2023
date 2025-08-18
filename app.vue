@@ -31,23 +31,21 @@ router.afterEach((to, _from) => {
 });
 
 const { $mitt } = useNuxtApp();
-const bodyRef = useTemplateRef('mainBody');
+const mainRef = useTemplateRef('mainBody');
+const heightRef = useTemplateRef('dMainBody');
 onMounted(() => {
-  const mutationObserver =
-    window.MutationObserver ||
-    window.WebKitMutationObserver ||
-    window.MozMutationObserver;
-  const observer = new mutationObserver(() => {
-    $mitt.emit('routeSwitching');
-  });
-  observer.observe(bodyRef.value, {
-    childList: true
-  });
+  new ResizeObserver(() => {
+    $mitt.emit('mainDomChange', mainRef.value.clientHeight);
+  }).observe(heightRef.value);
 });
 </script>
 
 <template>
   <NuxtLayout>
-    <div ref="mainBody" class="flex-1 pl-[1px]"><NuxtPage /></div>
+    <div ref="mainBody" class="flex-1 pl-[1px]">
+      <div ref="dMainBody">
+        <NuxtPage />
+      </div>
+    </div>
   </NuxtLayout>
 </template>
