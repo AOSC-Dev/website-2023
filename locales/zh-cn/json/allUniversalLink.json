@@ -452,6 +452,11 @@
         "title": ["中国科学技术大学 Linux 用户组 (LUG@USTC)"],
         "url": "https://lug.ustc.edu.cn/",
         "img": "lug-ustc"
+      },
+      "sysu": {
+        "title": ["中山大学网络与信息中心 & Matrix 开发团队"],
+        "url": "https://mirror.sysu.edu.cn/",
+        "img": "sysu"
       }
     },
     "developmentEquipment": {
