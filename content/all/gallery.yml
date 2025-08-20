@@ -1,4 +1,149 @@
 gallery:
+  - title: AOSCC 2024
+    album:
+      - desc: "Pre-session: Bagging up the goodies"
+        date: July 12, 2024
+        file: 2024-aoscc-bagging-up-the-goodies.jpg
+      - desc: "Pre-session: The venue"
+        date: July 12, 2024
+        file: 2024-aoscc-pre-session.jpg
+      - desc: "Voting for Core 12's codename"
+        date: July 13, 2024
+        file: 2024-aoscc-codename-poll.jpg
+      - desc: "Core 12's codename: localhost!"
+        date: July 13, 2024
+        file: 2024-aoscc-core-12-localhost.jpg
+      - desc: "The AOSCC 2024 live crew"
+        date: July 13, 2024
+        file: 2024-aoscc-live-crew.jpg
+      - desc: "The AOSCC 2024 live crew: power supplies"
+        date: July 13, 2024
+        file: 2024-aoscc-live-crew-power-supplies.jpg
+      - desc: "Cyan on AOSC OS's offline installer"
+        date: July 13, 2024
+        file: 2024-aoscc-cyan-offline-installer.jpg
+      - desc: "Wang Miao on libLoL (1)"
+        date: July 13, 2024
+        file: 2024-aoscc-shankerwangmiao-liblol-1.jpg
+      - desc: "Wang Miao on libLoL (2)"
+        date: July 13, 2024
+        file: 2024-aoscc-shankerwangmiao-liblol-2.jpg
+      - desc: "Wang Miao on libLoL (3)"
+        date: July 13, 2024
+        file: 2024-aoscc-shankerwangmiao-liblol-3.jpg
+      - desc: "Revy on RevyOS and RISC-V device adaptation"
+        date: July 14, 2024
+        file: 2024-aoscc-revy-riscv-bsp.jpg
+      - desc: "TechCiel on LUG@JLU"
+        date: July 14, 2024
+        file: 2024-aoscc-techciel-jlu-lug.jpg
+      - desc: "xen0n on the state of the LoongArch community: Are We Loong Yet?"
+        date: July 14, 2024
+        file: 2024-aoscc-xen0n-are-we-loong-yet.jpg
+      - desc: "Liu Yang on Box64"
+        date: July 14, 2024
+        file: 2024-aoscc-yang-liu-box64.jpg
+      - desc: "Key signing party"
+        date: July 13, 2024
+        file: 2024-aoscc-key-signing.jpg
+      - desc: "black_desk sharing his thoughts on software engineering"
+        date: July 14, 2024
+        file: 2024-aoscc-black-desk-program-designs.jpg
+      - desc: "Experimenting with photo-generated random source at the lucky draw"
+        date: July 13, 2024
+        file: 2024-aoscc-lucky-draw-experiment.jpg
+      - desc: "AOSCC 2024 demo corner (1)"
+        date: July 13, 2024
+        file: 2024-aoscc-demo-corner-1.jpg
+      - desc: "AOSCC 2024 demo corner (2)"
+        date: July 13, 2024
+        file: 2024-aoscc-demo-corner-2.jpg
+      - desc: "AOSCC 2024 demo corner (3)"
+        date: July 13, 2024
+        file: 2024-aoscc-demo-corner-3.jpg
+      - desc: "AOSCC 2024 demo corner (4)"
+        date: July 13, 2024
+        file: 2024-aoscc-demo-corner-4.jpg
+      - desc: "AOSCC 2024 demo corner: Bad Apple!"
+        date: July 13, 2024
+        file: 2024-aoscc-demo-kp920-bad-apple.jpg
+      - desc: "AOSCC 2024 demo corner: Loongson 2F all-in-one"
+        date: July 13, 2024
+        file: 2024-aoscc-demo-retro-loongson-2f.jpg
+      - desc: "Venue poster"
+        date: July 13, 2024
+        file: 2024-aoscc-poster.jpg
+      - desc: "Signing wall"
+        date: July 14, 2024
+        file: 2024-aoscc-signing-wall.jpg
+      - desc: "AOSCC 2024 Closing: TechCiel"
+        date: July 14, 2024
+        file: 2024-aoscc-techciel-closing.jpg
+      - desc: "AOSCC 2024 Closing: Mingcong Bai"
+        date: July 14, 2024
+        file: 2024-aoscc-bai-closing.jpg
+  - title: AOSCC 2023
+    album:
+      - desc: "From the audience: AOSCC 2023 (1)"
+        date: July 15, 2023
+        file: 2023-aoscc-question-bai.jpg
+      - desc: "From the audience: AOSCC 2023 (2)"
+        date: July 15, 2023
+        file: 2023-aoscc-question-yu.jpg
+      - desc: "The live crew at AOSCC 2023"
+        date: July 15, 2023
+        file: 2023-aoscc-live-crew.jpg
+      - desc: "Q&A with Looongson employees and community members"
+        date: July 15, 2023
+        file: 2023-aoscc-loongson-qa.jpg
+      - desc: "Mingcong Bai's yearly review on AOSC"
+        date: July 15, 2023
+        file: 2023-aoscc-bai-keynote.jpg
+      - desc: "Zixing Liu on his job at Canonical"
+        date: July 16, 2023
+        file: 2023-aoscc-liushuyu-canonical.jpg
+      - desc: "W. A. on ShanghaiTech's network and storage infrastructure"
+        date: July 15, 2023
+        file: 2023-aoscc-aw-infra.jpg
+      - desc: "Changyuan Yu on SHLUG"
+        date: July 16, 2023
+        file: 2023-aoscc-changyuan-yu-shlug.jpg
+      - desc: "Wu Wei on RISC-V's ecosystem"
+        date: July 16, 2023
+        file: 2023-aoscc-wei-wu-riscv.jpg
+      - desc: "Yunqiang Su on CIP United and MIPS"
+        date: July 16, 2023
+        file: 2023-aoscc-yunqiang-su-mips.jpg
+      - desc: "The 信创 trio at the venue"
+        date: July 16, 2023
+        file: 2023-aoscc-ports-trio.jpg
+      - desc: "Cyan mimicking himself in a meme photo"
+        date: July 16, 2023
+        file: 2023-aoscc-cyan-meme.jpg
+      - desc: "Camber Huang at the reception desk"
+        date: July 15, 2023
+        file: 2023-aoscc-camber-reception.jpg
+      - desc: "A panning view over the venue"
+        date: July 15, 2023
+        file: 2023-aoscc-venue-pan.jpg
+      - desc: "Device demonstration corner"
+        date: July 15, 2023
+        file: 2023-aoscc-demo-corner.jpg
+      - desc: "Gaming on an Loongson 3A5000 machine"
+        date: July 15, 2023
+        file: 2023-aoscc-loongarch-gaming.jpg
+      - desc: "Phytium D2000 laptop at the demonstration corner"
+        date: July 15, 2023
+        file: 2023-aoscc-phytium-laptop.jpg
+      - desc: "IBM ThinkPad X40 at the demonstration corner"
+        date: July 15, 2023
+        file: 2023-aoscc-retro-thinkpad-x40.jpg
+      - desc: "Sony VAIO UX at the demonstration corner"
+        date: July 15, 2023
+        file: 2023-aoscc-retro-vaio-ux.jpg
+      - desc: "Poster at the venue"
+        date: July 15, 2023
+        file: 2023-aoscc-poster.jpg
   - title: AOSCC 2022
     album:
       - desc: "Attending Virtual AOSCC 2022 at CIP United (1)"
