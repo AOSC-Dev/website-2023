@@ -5,5 +5,6 @@ export default <RouterConfig>{
   scrollBehavior(to, _from, savedPosition) {
     if (savedPosition) return savedPosition;
     else if (to.hash) useScrollStore().scrollOrSet(to.hash);
+    else return { top: 0 };
   }
 };
