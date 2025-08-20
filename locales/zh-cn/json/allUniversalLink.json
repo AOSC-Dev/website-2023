@@ -278,6 +278,10 @@
     "title": ["自动化设施"],
     "url": "https://buildit.aosc.io/"
   },
+  "packages": {
+    "title": ["软件包查询站"],
+    "url": "https://packages.aosc.io/"
+  },
   "forum": {
     "title": ["社区论坛"],
     "url": "https://bbs.aosc.io/"

@@ -23,6 +23,7 @@ const getComp = computed(() => {
         title: textValue.title2,
         children: [
           localLink.news,
+          localLink.events,
           localLink.gallery,
           useTIndex(localLink.contact, 1),
           useTIndex(linkValue.AOSCWiki, 1)
@@ -33,7 +34,6 @@ const getComp = computed(() => {
         title: textValue.title3,
         children: [
           localLink.about,
-          localLink.events,
           localLink.internship,
           localLink.sponsors,
           localLink.crowdsourcing,
@@ -50,7 +50,8 @@ const getComp = computed(() => {
           useTIndex(linkValue.GitHub, 1),
           linkValue.mail20,
           linkValue.buildbots,
-          linkValue.buildit
+          linkValue.buildit,
+          linkValue.packages
         ],
         show: true
       }
