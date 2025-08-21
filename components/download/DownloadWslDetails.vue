@@ -29,7 +29,13 @@ function latestTarball(tarballs, arch) {
       window-mode="popup"
       theme="dark"
       animation="on" />
-    <p class="mb-0">{{ textValue.text2 }}</p>
+    <p class="mb-0">
+      {{ textValue.text2 }}
+      <AppLink to="https://learn.microsoft.com/windows/wsl/build-custom-distro">
+        {{ textValue.mordenDistributionLinkText }}
+      </AppLink>
+      {{ textValue.text3 }}
+    </p>
     <el-container>
       <el-select
         v-model="selected_source_url"
