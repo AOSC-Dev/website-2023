@@ -72,6 +72,13 @@ $common-margin: 24px;
     max-width: calc(100% - 2 * $common-margin);
     table-layout: auto;
   }
+
+  // 标题要显示在顶上，和原先的反过来
+  caption {
+    caption-side: top;
+    margin-block-start: -4px;
+    margin-block-end: 2px;
+  }
 }
 
 .category-second,
