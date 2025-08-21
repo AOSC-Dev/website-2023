@@ -6,7 +6,7 @@ const props = defineProps({
   },
   class: {
     type: String,
-    default: 'list-disc'
+    default: ''
   },
   myKey: {
     type: String,
@@ -14,7 +14,7 @@ const props = defineProps({
   },
   liClass: {
     type: String,
-    default: 'list-disc'
+    default: ''
   }
 });
 </script>
@@ -24,7 +24,7 @@ const props = defineProps({
     <li
       v-for="(item, index) in lis"
       :key="`${myKey}-li-${index}`"
-      :class="Array.isArray(item) ? 'list-none' : liClass">
+      :class="Array.isArray(item) ? 'app-li-none' : liClass">
       <span v-if="typeof item === 'string'">{{ item }}</span>
       <span v-else-if="Array.isArray(item)">
         <app-ul-ordinary
@@ -36,3 +36,8 @@ const props = defineProps({
     </li>
   </ul>
 </template>
+<style lang="scss">
+li.app-li-none {
+  list-style-type: none;
+}
+</style>
