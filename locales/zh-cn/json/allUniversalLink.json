@@ -17,7 +17,7 @@
     }
   },
   "AOSCPackages": {
-    "title": ["查询软件包信息"],
+    "title": ["查询软件包信息", "软件包查询站"],
     "url": "https://packages.aosc.io/"
   },
   "asahiLinux": {
@@ -155,15 +155,6 @@
       "url": "/afterglow/requirements",
       "hash": ["#afterlowRequirementsTitle"]
     },
-    "afterglowIsa": {
-      "title": ["架构支持规格表"],
-      "url": "/afterglow/isa"
-    },
-    "afterlowIsaTitle": {
-      "title": ["星霞 OS 架构支持规格表"],
-      "url": "/afterglow/isa",
-      "hash": ["#afterlowIsaTitle"]
-    },
     "about": {
       "title": ["关于社区"],
       "url": "/about"
@@ -277,10 +268,6 @@
   "buildit": {
     "title": ["自动化设施"],
     "url": "https://buildit.aosc.io/"
-  },
-  "packages": {
-    "title": ["软件包查询站"],
-    "url": "https://packages.aosc.io/"
   },
   "forum": {
     "title": ["社区论坛"],
@@ -597,7 +584,7 @@
     "title": ["社区 Weblate 平台"],
     "url": "https://weblate.aosc.io/"
   },
-   "l10nWorkGuide": {
+  "l10nWorkGuide": {
     "title": [
       {
         "texts": ["大陆简中自由软件本地化工作指南", "1.5.4 版"],

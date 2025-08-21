@@ -5,7 +5,7 @@ import pangu
 # 假设 A 是你提供的处理字符串的函数
 def A(ss):
     # 这里是你自己的逻辑
-    return pangu.spacing_text(ss) # 示例：将字符串转为大写
+    return pangu.spacing_text(ss) # 过一边盘古
 
 # 递归处理 JSON 数据中的字符串
 def process_json(data):

@@ -51,7 +51,7 @@ const getComp = computed(() => {
           linkValue.mail20,
           linkValue.buildbots,
           linkValue.buildit,
-          linkValue.packages
+          useTIndex(linkValue.AOSCPackages, 1)
         ],
         show: true
       }
@@ -250,7 +250,7 @@ const backToTopBtnShow = ref(false);
               :to="item2.url"
               class="hover:no-underline">
               <el-menu-item
-                :index="getSpecifiedTitle(item2)"
+                :index="`${index}-${index2}`"
                 class="my-el-menu-item"
                 :class="{
                   'my-el-menu-item-hover': route.path
