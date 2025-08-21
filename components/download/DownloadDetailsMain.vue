@@ -72,6 +72,7 @@ const mediaWritersInfo = setNestedKeyValue(
         {{ textValue.text4 }}
       </AppLink>
     </el-container>
+    <AppLink to="/aosc-os/relnote">{{ textValue.checkLatestRelnote }}</AppLink>
 
     <app-h2>{{ textValue.title2 }}</app-h2>
     <p>{{ textValue.text6 }}</p>
@@ -89,7 +90,10 @@ const mediaWritersInfo = setNestedKeyValue(
       </AppLink>
     </el-container>
     <p>
-      {{ textValue.text10 }}{{ spaceWord(fileType) }}{{ textValue.text11 }}
+      {{ textValue.text10 }}{{ spaceWord(fileType) }}{{ textValue.text10_1 }}
+    </p>
+    <p>
+      {{ textValue.text11 }}
       <link-standard :link="linkValue.balenaEtcher" />
       {{ textValue.text12 }}
       <link-standard :link="linkValue.usbimager" />
