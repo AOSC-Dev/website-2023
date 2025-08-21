@@ -14,11 +14,34 @@
         "The community's continued operation also relies on donations from community friends in their personal capacity. Over the years, they have donated various hardware to the community, actively participated in crowdfunding projects initiated by the community, and supported the efficient operation of various community projects while also alleviating much of the financial pressure on community contributors.",
         "Prior to 2025, the community did not have a process for acknowledging individual donors, and some friends requested to remain anonymous, so this list is not exhaustive. We hereby express our gratitude to all individual donors who have not left their names."
       ],
-      "table": {
+
+      "tableServerHardDrive": {
         "caption": "Hard drives for software source cold storage servers (February 6, 2025)",
-        "table": [
+        "tr": [
           ["冲浪的小鱼", "黄逸君", "kf", "刘璨贤"],
           ["okami2012", "要塞姬Ilikara", "Yo Kaslana", "梓瑶"]
+        ]
+      },
+      "tableAoscc2025": {
+        "caption": "AOSCC 2025 conference expenses (July 19, 2025)",
+        "tr": [
+          ["Alpine 中文小群", "baka", "Camelia Atelier@CLS", "ChiyoYuki"],
+          ["冲浪的小鱼", "Christine Gu", "Deng", "邓子 (Deng Yichao)"],
+          ["Frank@xdlinux", "禾风之水", "imgradeone", "KF"],
+          ["林子", "lz差不多是条咸鱼了", "猫叔", "喵酱Catty"],
+          [
+            "Mikura Kyouka",
+            "内蒙古合诚网络科技有限公司",
+            "内蒙古墨云网络科技有限公司",
+            "匿"
+          ],
+          [
+            "nobootleg",
+            "曲阜师范大学计算机爱好者协会",
+            "蚊子 (Mozz.ie)",
+            "御坂云见#17535"
+          ],
+          ["自言者一么", "", "", ""]
         ]
       }
     }
