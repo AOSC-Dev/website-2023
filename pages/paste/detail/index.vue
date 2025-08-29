@@ -1,12 +1,10 @@
 <script setup>
-import CodeHighlight from '~/components/copy/CodeHighlight.vue';
-
 const route = useRoute();
 const details = ref(null);
 const imgSuffixList = ['jpg', 'jpeg', 'png', 'gif'];
 const failReason = ref('');
 
-const { tm } = useI18n();
+const { tm, locale } = useI18n();
 const textValue = tm('paste.detail');
 useHead({ title: textValue.title1 });
 // FIXME: `useRobotsRule({ noindex: true, nofollow: true })` generates
@@ -54,7 +52,7 @@ const returnHref = () => window.location.href;
   <ShowLoading :is-ready="isReady" class="w-[100%]">
     <div v-if="details != null">
       <category-second :title="textValue.title1" />
-      <div class="p-[2em]">
+      <div class="flex flex-col p-[2em]">
         <div class="flex flex-col">
           <div class="flex justify-between">
             <div>
@@ -62,8 +60,10 @@ const returnHref = () => window.location.href;
               <div ref="div2">{{ textValue.div2 + details.expDate }}</div>
             </div>
             <button
-              class="theme-bg-color-primary-static px-[3em] py-[1em] text-white"
-              @click="copyToClipboard(returnHref())">
+              class="theme-bg-color-primary-static cursor-pointer px-[3em] py-[1em] text-white"
+              @click="
+                copyToClipboard(locale, returnHref(), textValue.message2)
+              ">
               {{ textValue.button1 }}
             </button>
           </div>
@@ -81,23 +81,26 @@ const returnHref = () => window.location.href;
                     v-if="isImg(filename)"
                     :src="getAttachUrl(filename)"
                     class="w-full" />
-                  <a
-                    v-else
-                    class="text-link"
-                    :href="getAttachUrl(filename)"
-                    target="_blank">
+                  <AppLink v-else :to="getAttachUrl(filename)" target="_blank">
                     {{ filename }}
-                  </a>
+                  </AppLink>
                 </span>
               </div>
             </li>
           </ul>
         </div>
-        <CodeHighlight
-          class="mt-4 justify-between bg-[#ccccccc3]/15"
-          button-class="mr-3"
-          :code-text="details.content"
-          :language="details.language" />
+        <LazyMonacoEditor
+          v-model="details.content"
+          :options="{ readOnly: true }"
+          hydrate-on-visible
+          class="theme-border-primary h-[50vh] rounded-none border-2"
+          :lang="details.language" />
+
+        <button
+          class="theme-bg-color-primary-static mt-[10px] ml-auto cursor-pointer px-[3em] py-[1em] text-white"
+          @click="copyToClipboard(locale, details.content, textValue.message3)">
+          {{ textValue.button3 }}
+        </button>
       </div>
     </div>
     <el-result v-if="failReason != ''" icon="warning" :title="failReason">

@@ -1,4 +1,5 @@
 <script setup>
+const { locale } = useI18n();
 const props = defineProps({
   contentTarget: {
     type: String,
@@ -13,7 +14,7 @@ const props = defineProps({
     class="cursor-pointer !bg-(--primary)"
     v-bind="props"
     name="ep-document-copy"
-    @click="copyToClipboard(props.contentTarget)" />
+    @click="copyToClipboard(locale, props.contentTarget)" />
 </template>
 
 <style scoped></style>

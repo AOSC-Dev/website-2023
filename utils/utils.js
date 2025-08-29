@@ -1,5 +1,4 @@
 import axios from 'axios';
-
 export const requestGetJson = (() => {
   let keys = {};
   let promise = {};
@@ -80,14 +79,30 @@ export const BToMB = (byteSize, fixed = 3) => {
   return (byteSize / 1024 / 1024).toFixed(fixed);
 };
 
-export const copyToClipboard = (text) => {
+export const copyToClipboard = (locale, text, name = '') => {
+  const lang = (() => {
+    switch (locale) {
+      case 'zh':
+        return {
+          copy: '复制',
+          success: '成功',
+          failure: '失败'
+        };
+      case 'en':
+        return {
+          copy: 'copy',
+          success: 'success',
+          failure: 'failure'
+        };
+    }
+  })();
   navigator.clipboard
     .writeText(text)
     .then(() => {
-      ElMessage.success('复制成功');
+      ElMessage.success(`${lang.copy}${name}${lang.success}`);
     })
     .catch((err) => {
-      ElMessage.success(`复制失败:${err}`);
+      ElMessage.success(`${lang.copy}${failure}:${err}`);
     });
 };
 
