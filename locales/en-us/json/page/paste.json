@@ -18,10 +18,13 @@
   },
   "detail": {
     "message1": "Getting pasteboard exception (server internal error)",
+    "message2": " share link ",
+    "message3": " full text ",
     "title1": "Public pasteboard",
     "div1": "title:",
     "div2": "Expiration time:",
     "button1": "Copy share link",
-    "button2": "return"
+    "button2": "return",
+    "button3": "Copy full text"
   }
 }
