@@ -10,7 +10,7 @@ home: true
 ![pinyin-completion-0.3.0](/assets/news/pinyin-completion-0.3.0.webp)
 > 这些个年…… 小登连双拼五笔都不会了，真是一代不如一代咯——
 
-Bash 拼音补全 ([bash-pinyin-completion-rs](https://https://github.com/AOSC-Dev/bash-pinyin-completion-rs)) v0.3.0 发布啦，本次更新的主要内容有：
+Bash 拼音补全 ([bash-pinyin-completion-rs](https://github.com/AOSC-Dev/bash-pinyin-completion-rs)) v0.3.0 发布啦，本次更新的主要内容有：
 
 - 增强补全接口兼容性，适配更多程序的补全功能
 - 新增双拼补全功能，支持多种常用方案
