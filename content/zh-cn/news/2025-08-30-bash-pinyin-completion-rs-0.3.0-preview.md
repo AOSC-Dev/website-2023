@@ -1,7 +1,7 @@
 ---
 categories:
   - advisories
-title: "小熊猫包管理 (oma) v1.20 测试公告"
+title: "Bash 拼音补全 v0.3.0 更新日志"
 date: 2025-08-30T15:45:00+08:00
 important: false
 home: true
