@@ -99,6 +99,7 @@ const initSinglePopoverData = (items, index) => {
   });
   return items;
 };
+// #endregion
 
 // #region AOSC OS
 const aoscOsNavigationList = [
@@ -177,80 +178,6 @@ const getNewVersionArch = (arch, type) => {
   list = list.sort(isoVersionCmp);
   return list[0];
 };
-(async () => {
-  // Installer and LiveKit
-  const [res, err] = await requestGetJson(
-    'https://releases.aosc.io/manifest/livekit.json'
-  );
-  if (res) {
-    versionArch.value = res.data;
-    antong1List.value.forEach((v) => {
-      v.installer = getNewVersionArch(v.title, 'installer');
-      v.livekit = getNewVersionArch(v.title, 'livekit');
-    });
-    antong2List.value.forEach((v) => {
-      v.installer = getNewVersionArch(v.title, 'installer');
-      v.livekit = getNewVersionArch(v.title, 'livekit');
-    });
-    xingxia1List.value.forEach((v) => {
-      v.livekit = getNewVersionArch(v.title, 'livekit');
-    });
-    xingxia2List.value.forEach((v) => {
-      v.livekit = getNewVersionArch(v.title, 'livekit');
-    });
-  } else if (err) {
-    ElMessage.warning(textValue.errors.aosc);
-  }
-
-  // Apple silicon
-  const [siliconRes, siliconError] = await requestGetJson(
-    'https://releases.aosc.io/os-arm64/asahi/installer_data.json'
-  );
-  if (siliconError) {
-    console.log(siliconError);
-    ElMessage.warning(textValue.errors.apple);
-  } else if (siliconRes) {
-    const appleSiliconDateRaw =
-      siliconRes.data.os_list[0].name.match(/\((.*)\)/)[1];
-    appleSiliconDate.value = `${appleSiliconDateRaw.substring(0, 4)}/${parseInt(
-      appleSiliconDateRaw.substring(4, 6)
-    )}/${parseInt(appleSiliconDateRaw.substring(6, 8))}`;
-  }
-
-  // oma
-  const [omaRes, omaResError] = await requestGetJson(
-    'https://packages.aosc.io/packages/oma?type=json'
-  );
-  if (omaResError) {
-    console.log(omaResError);
-    ElMessage.warning(textValue.errors.oma);
-  } else if (omaRes) {
-    omaVersion.value = omaRes.data.pkg.version;
-  }
-
-  // Mirrors
-  const [recipeResponse, recipeError] = await requestGetJson(
-    'https://releases.aosc.io/manifest/recipe.json'
-  );
-  const [recipeI18nResponse, recipeI18nError] = await requestGetJson(
-    'https://releases.aosc.io/manifest/recipe-i18n.json'
-  );
-  if (recipeError || recipeI18nError) {
-    ElMessage.warning(textValue.errors.mirrors);
-    console.log(recipeError, recipeI18nError);
-  } else {
-    recipe.value = recipeResponse.data;
-    recipeI18n.value = recipeI18nResponse.data;
-    sources.value = sources.value.concat(
-      recipe.value.mirrors.map((mirror) => ({
-        name: recipeI18n.value['zh-CN'][mirror['name-tr']],
-        loc: recipeI18n.value['zh-CN'][mirror['loc-tr']],
-        url: mirror.url
-      }))
-    );
-  }
-})();
-// #endregion
 
 // #region Afterglow OS
 const afterglowOsNavigationList = ref([
@@ -348,6 +275,79 @@ const omaNavigationList = [
 ];
 const omaInstallScript = 'curl -sSf https://repo.aosc.io/get-oma.sh | sudo sh';
 // #endregion
+
+// #region Fetch
+// Installer and LiveKit
+const { data, error: err } = await useFetch(
+  'https://releases.aosc.io/manifest/livekit.json'
+);
+if (data) {
+  versionArch.value = data.value;
+  antong1List.value.forEach((v) => {
+    v.installer = getNewVersionArch(v.title, 'installer');
+    v.livekit = getNewVersionArch(v.title, 'livekit');
+  });
+  antong2List.value.forEach((v) => {
+    v.installer = getNewVersionArch(v.title, 'installer');
+    v.livekit = getNewVersionArch(v.title, 'livekit');
+  });
+  xingxia1List.value.forEach((v) => {
+    v.livekit = getNewVersionArch(v.title, 'livekit');
+  });
+  xingxia2List.value.forEach((v) => {
+    v.livekit = getNewVersionArch(v.title, 'livekit');
+  });
+} else if (err) {
+  console.warn(textValue.errors.aosc);
+}
+
+// Apple silicon
+const { data: siliconRes, error: siliconError } = await useFetch(
+  'https://releases.aosc.io/os-arm64/asahi/installer_data.json'
+);
+if (siliconError.value) {
+  console.log(111, siliconError.value);
+  console.warn(textValue.errors.apple);
+} else if (siliconRes.value) {
+  const appleSiliconDateRaw =
+    siliconRes.value.os_list[0].name.match(/\((.*)\)/)[1];
+  appleSiliconDate.value = `${appleSiliconDateRaw.substring(0, 4)}/${parseInt(
+    appleSiliconDateRaw.substring(4, 6)
+  )}/${parseInt(appleSiliconDateRaw.substring(6, 8))}`;
+}
+
+// oma
+const { data: omaRes, error: omaResError } = await useFetch(
+  'https://packages.aosc.io/packages/oma?type=json'
+);
+if (omaResError.value) {
+  console.log(omaResError.value);
+  console.warn(textValue.errors.oma);
+} else if (omaRes.value) {
+  omaVersion.value = omaRes.value.pkg.version;
+}
+const { data: recipeResponse, error: recipeError } = await useFetch(
+  'https://releases.aosc.io/manifest/recipe.json'
+);
+const { data: recipeI18nResponse, error: recipeI18nError } = await useFetch(
+  'https://releases.aosc.io/manifest/recipe-i18n.json'
+);
+if (recipeError.value || recipeI18nError.value) {
+  console.warn(textValue.errors.mirrors);
+  console.log(recipeError.value, recipeI18nError.value);
+} else {
+  recipe.value = recipeResponse.value;
+  recipeI18n.value = recipeI18nResponse.value;
+  sources.value = sources.value.concat(
+    recipe.value.mirrors.map((mirror) => ({
+      name: recipeI18n.value['zh-CN'][mirror['name-tr']],
+      loc: recipeI18n.value['zh-CN'][mirror['loc-tr']],
+      url: mirror.url
+    }))
+  );
+}
+// #endregion
+
 </script>
 
 <template>
