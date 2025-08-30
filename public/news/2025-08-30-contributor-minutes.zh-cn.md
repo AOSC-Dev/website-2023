@@ -104,6 +104,8 @@ k8s 及云服务相关软件包维护讨论
 KDE 中文搜索功能测试
 ---
 
+测试由 [SignKirigami](https://github.com/prcups) 实现的 KDE 中文搜索功能（KRunner 集成），[krunner-pinyin-search](https://github.com/prcups/krunner-pinyin-search)：
+
 - 主 KRunner、默认应用菜单（“应用程序启动器”）功能正常
     - 安同 OS 默认菜单、全屏应用菜单不可用，应该是源码中硬编码插件范围导致的，需要打补丁
 - 默认搜索关键字长度设置为了 3，应该更低
