@@ -20,6 +20,7 @@ import DownloadDetails from './zh-cn/json/components/download/DownloadDetails.js
 import DownloadDetailsAppleSiliconInstruction from './zh-cn/json/components/download/DownloadDetailsAppleSiliconInstruction.json';
 import DownloadDetailsMain from './zh-cn/json/components/download/DownloadDetailsMain.json';
 import seo from './zh-cn/json/seo.json';
+import CommonContent from './zh-cn/json/components/CommonContent.json';
 
 export default {
   DownloadButtonGroup,
@@ -43,5 +44,6 @@ export default {
   download,
   gallery,
   paste,
-  seo
+  seo,
+  CommonContent
 };
