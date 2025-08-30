@@ -53,9 +53,12 @@ const submit = async () => {
     formdata.append('fileList', toRaw(file.raw), file.name);
   });
   formdata.append('expDate', pasteFormData.value.expDate);
-  const [res, err] = await requestPostJson('/pasteApi/paste', formdata);
-  if (res) {
-    const results = res.data;
+  const { data, error } = await useFetch('/pasteApi/paste', {
+    method: 'post',
+    body: formdata
+  });
+  if (data.value) {
+    const results = data.value;
     if (results.code == 0) {
       pasteRes.value = results.data.id;
       router.push({
@@ -67,14 +70,14 @@ const submit = async () => {
     } else {
       alert(results.message);
     }
+  } else if (error.status === 413) {
+    ElMessage.error({
+      showClose: true,
+      duration: 10000,
+      message: `${textValue.message3}`
+    });
   } else {
-    if (err.status === 413) {
-      ElMessage.error({
-        showClose: true,
-        duration: 10000,
-        message: `${textValue.message3}`
-      });
-    }
+    ElMessage.error(error.value.message);
   }
   submiting.value = false;
 };

@@ -1,8 +1,6 @@
 <script setup>
 const route = useRoute();
-const details = ref(null);
 const imgSuffixList = ['jpg', 'jpeg', 'png', 'gif'];
-const failReason = ref('');
 
 const { tm, locale } = useI18n();
 const textValue = tm('paste.detail');
@@ -21,36 +19,24 @@ const getAttachUrl = (name) => {
   return `/pasteContent/${route.query.id}/files/${name}`;
 };
 
-const isReady = ref(false);
-
-onBeforeMount(async () => {
-  const [res, _err] = await requestGetJson('/pasteApi/paste', {
-    id: route.query.id
-  });
-
-  if (res) {
-    const results = res.data;
-    if (results.code != 0) {
-      failReason.value = results.message;
-    } else {
-      // 此处是正常返回值
-      details.value = results.data;
-    }
-  } else {
-    failReason.value = `${textValue.message1}`;
-  }
-  isReady.value = true;
+const { data, status } = await useFetch('/pasteApi/paste', {
+  query: { id: route.query.id },
+  server: false
 });
 
-const back = () => {
-  failReason.value = '';
-};
+const details = computed(() => data.value.data);
+const failReason = computed(() =>
+  data.value?.code !== 0 ? (data.value?.message ?? textValue.message1) : ''
+);
+
 const returnHref = () => window.location.href;
 </script>
 
 <template>
-  <ShowLoading :is-ready="isReady" class="w-[100%]">
-    <div v-if="details != null">
+  <ShowLoading
+    :is-ready="status === 'success' || status === 'error'"
+    class="w-[100%]">
+    <div v-if="status === 'success' && data.code === 0">
       <category-second :title="textValue.title1" />
       <div class="flex flex-col p-[2em]">
         <div class="flex flex-col">
@@ -103,17 +89,7 @@ const returnHref = () => window.location.href;
         </button>
       </div>
     </div>
-    <el-result v-if="failReason != ''" icon="warning" :title="failReason">
-      <template #extra>
-        <el-button
-          v-if="failReason === '密码错误' || failReason === '需要密码'"
-          ref="button2"
-          type="primary"
-          @click="back">
-          {{ textValue.button2 }}
-        </el-button>
-      </template>
-    </el-result>
+    <el-result v-else icon="warning" :title="failReason" />
   </ShowLoading>
 </template>
 
