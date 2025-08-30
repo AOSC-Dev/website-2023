@@ -1,13 +1,13 @@
 <script lang="ts" setup>
+import { textContent } from 'minimark'; // Nuxt Content v3 依赖
 import { useScrollStore } from '~/stores/scroll';
 
 const props = defineProps<{ path?: string }>();
 
 const route = useRoute();
-const { locale } = useI18n();
+const { locale, defaultLocale, t } = useI18n();
 const scrollStore = useScrollStore();
 const contentRef = useTemplateRef('contentRef');
-
 
 const contentPath = computed(() => {
   if (props.path) return props.path;
@@ -21,7 +21,49 @@ const contentPath = computed(() => {
 
 const { data: page, error } = await useAsyncData(
   computed(() => `${locale.value}:${contentPath.value}`),
-  () => queryCollection(locale.value).path(contentPath.value).first()
+  async () => {
+    let content = await queryCollection(locale.value)
+      .path(contentPath.value)
+      .first();
+
+    // 如果当前语言下没有对应文件就试试用默认语言的
+    let fallback = false;
+    if (!content && locale.value !== defaultLocale) {
+      content = await queryCollection(defaultLocale)
+        .path(contentPath.value)
+        .first();
+
+      if (content) fallback = true;
+    }
+
+    if (!content)
+      throw createError({
+        statusMessage: 'Query Content Failed',
+        data: {
+          query: { locale: locale.value, path: contentPath.value },
+          fallback: fallback
+        }
+      });
+
+    // 第一个元素是 h2 的话就拿 h2 的内容作为标题（因为 Nuxt
+    // Content 会从路径生成标题所以无法判断元数据里有无标题）
+    if (content.body.value?.[0]?.[0] === 'h2') {
+      // 有可能有嵌套，所以用一下 minimark 的函数
+      // 如果 Nuxt Content 把 minimark 换了这里也要换
+      content.title = textContent(content.body.value[0]);
+      // 这个 h2，不需要了
+      content.body.value.shift();
+    }
+
+    if (fallback)
+      content.body.value.unshift([
+        'info',
+        {},
+        ['p', {}, t('CommonContent.fallbackHint')]
+      ]);
+
+    return content;
+  }
 );
 useHead({ title: page.value?.title });
 
@@ -41,7 +83,6 @@ watch(contentRef, () => {
 <template>
   <article v-if="page">
     <category-second
-      v-if="page.body.value[0][0] !== 'h2'"
       :id="page.title"
       :title="page.title"
       :right-text="page.date?.substring(0, 10)"
