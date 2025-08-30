@@ -105,6 +105,12 @@ export default defineNuxtConfig({
       }
     }
   },
+  
+  nitro: {
+    prerender: {
+      ignore: ["/paste/detail"],
+    }
+  },
 
   i18n: {
     vueI18n: '~/i18n.config.ts',
