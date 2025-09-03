@@ -9,13 +9,13 @@ export const BToMB = (byteSize, fixed = 3) => {
 export const copyToClipboard = (locale, text, name = '') => {
   const lang = (() => {
     switch (locale) {
-      case 'zh':
+      case 'zh-cn':
         return {
           copy: '复制',
           success: '成功',
           failure: '失败'
         };
-      case 'en':
+      case 'en-us':
         return {
           copy: 'copy',
           success: 'success',

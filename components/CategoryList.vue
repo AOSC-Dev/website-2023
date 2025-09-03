@@ -9,11 +9,13 @@ const props = defineProps<{
 }>();
 
 const { data, error, status } = await useAsyncData(
-  computed(
-    () =>
-      `${locale.value}:CategoryList:${props.category}:${props.limit}:${props.filters?.map((obj) => `${obj.key}-${obj.value}`).join('--')}`
-  ),
-  queryCollectionCategory(props.category, props.limit, props.filters)
+  `${locale.value}:CategoryList:${props.category}:${props.limit}:${props.filters?.map((obj) => `${obj.key}-${obj.value}`).join('--')}`,
+  queryCollectionCategory(
+    locale.value,
+    props.category,
+    props.limit,
+    props.filters
+  )
 );
 </script>
 

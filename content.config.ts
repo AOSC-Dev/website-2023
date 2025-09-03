@@ -1,6 +1,9 @@
 import { defineCollection, defineContentConfig, z } from '@nuxt/content';
+import type { DefinedCollection } from '@nuxt/content';
+import { nuxtI18nLocales } from './i18n/config';
+import type { NuxtI18nCode, NuxtI18nContentCode } from './i18n/config';
 
-const newsSchema = z.object({
+const pageSchama = z.object({
   title: z.string(),
   date: z.date(),
   categories: z.array(z.string()),
@@ -8,26 +11,25 @@ const newsSchema = z.object({
   home: z.optional(z.boolean())
 });
 
+const definePageCollection = (locale: NuxtI18nCode) =>
+  defineCollection({
+    source: {
+      include: `${locale}/**`,
+      prefix: '/', // prefixes are handled by @nuxtjs/i18n
+      exclude: ['**/_*']
+    },
+    type: 'page',
+    schema: pageSchama
+  });
+
 export default defineContentConfig({
   collections: {
-    zh: defineCollection({
-      source: {
-        include: 'zh/**',
-        prefix: '/', // prefixes handled by @nuxtjs/i18n
-        exclude: ['**/_*']
-      },
-      type: 'page',
-      schema: newsSchema
-    }),
-    en: defineCollection({
-      source: {
-        include: 'en/**',
-        prefix: '/',
-        exclude: ['**/_*']
-      },
-      type: 'page',
-      schema: newsSchema
-    }),
+    ...Object.fromEntries(
+      nuxtI18nLocales.map((locale) => [
+        locale.contentCode,
+        definePageCollection(locale.code)
+      ])
+    ),
     gallery: defineCollection({
       source: 'all/gallery.yml',
       type: 'data',
@@ -42,5 +44,5 @@ export default defineContentConfig({
         )
       })
     })
-  }
+  } as { [key in NuxtI18nContentCode | 'gallery']: DefinedCollection }
 });
