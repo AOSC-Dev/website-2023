@@ -4,7 +4,7 @@ categories:
 title: "AOSCC 2025 日程预告"
 date: 2025-07-13T18:00:00+08:00
 important: false
-home: true
+home: false
 ---
 
 欢迎（再次）光临有史以来讲者最多、分享课题最丰富的 AOSCC！今年，我们请来了多家社区、校园社团和企业的一线工作者分享他们的工作经验和思考。

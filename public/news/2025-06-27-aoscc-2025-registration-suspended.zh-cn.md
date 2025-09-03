@@ -4,7 +4,7 @@ categories:
 title: "AOSCC 2025 注册提前截止"
 date: 2025-06-27T18:30:00+08:00
 important: true
-home: true
+home: false
 ---
 ![](/assets/news/aoscc-2025-registration.png)
 
