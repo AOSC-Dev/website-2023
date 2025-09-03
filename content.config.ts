@@ -1,6 +1,6 @@
 import { defineCollection, defineContentConfig, z } from '@nuxt/content';
 import type { DefinedCollection } from '@nuxt/content';
-import { nuxtI18nLocales } from './i18n/config';
+import { nuxtI18nLocales, i18nCodeToContent } from './i18n/config';
 import type { NuxtI18nCode, NuxtI18nContentCode } from './i18n/config';
 
 const pageSchama = z.object({
@@ -26,7 +26,7 @@ export default defineContentConfig({
   collections: {
     ...Object.fromEntries(
       nuxtI18nLocales.map((locale) => [
-        locale.contentCode,
+        i18nCodeToContent(locale.code),
         definePageCollection(locale.code)
       ])
     ),
