@@ -1,4 +1,5 @@
 <script setup>
+const config = useRuntimeConfig();
 const route = useRoute();
 const imgSuffixList = ['jpg', 'jpeg', 'png', 'gif'];
 
@@ -15,18 +16,20 @@ const isImg = (name) => {
   return imgSuffixList.find((v) => v === suffix) !== undefined;
 };
 
-const getAttachUrl = (name) => {
-  return `/pasteContent/${route.query.id}/files/${name}`;
-};
+console.log(route.fullPath);
+const { data, status } = await useAsyncData(
+  route.fullPath,
+  () =>
+    Promise.all([
+      $fetch(`${config.public.pasteApi}/${route.query.id}`),
+      $fetch(`${config.public.pasteApi}/${route.query.id}/content`)
+    ]),
+  { server: false }
+);
 
-const { data, status } = await useFetch('/pasteApi/paste', {
-  query: { id: route.query.id },
-  server: false
-});
-
-const details = computed(() => data.value.data);
+const details = computed(() => data.value?.[0].msg);
 const failReason = computed(() =>
-  data.value?.code !== 0 ? (data.value?.message ?? textValue.message1) : ''
+  data.value?.[0].code !== 0 ? (data.value?.[0].msg ?? textValue.message1) : ''
 );
 
 const returnHref = () => window.location.href;
@@ -36,14 +39,19 @@ const returnHref = () => window.location.href;
   <ShowLoading
     :is-ready="status === 'success' || status === 'error'"
     class="w-[100%]">
-    <div v-if="status === 'success' && data.code === 0">
+    <div v-if="status === 'success' && data?.[0]?.code === 0">
       <category-second :title="textValue.title1" />
       <div class="flex flex-col p-[2em]">
         <div class="flex flex-col">
           <div class="flex justify-between">
             <div>
               <div ref="div1">{{ textValue.div1 + details.title }}</div>
-              <div ref="div2">{{ textValue.div2 + details.expDate }}</div>
+              <div ref="div2">
+                {{
+                  textValue.div2 +
+                  new Date(details.expiration*1000).toISOString().split('T')[0]
+                }}
+              </div>
             </div>
             <button
               class="theme-bg-color-primary-static cursor-pointer px-[3em] py-[1em] text-white"
@@ -55,20 +63,17 @@ const returnHref = () => window.location.href;
           </div>
           <ul class="el-upload-list el-upload-list--text">
             <li
-              v-for="filename in details.fileList"
-              :key="filename"
+              v-for="url in details.attachments"
+              :key="url"
               class="el-upload-list__item is-ready">
               <div class="flex items-center">
                 <el-icon class="mr-2">
                   <ElIconDocument />
                 </el-icon>
                 <span>
-                  <img
-                    v-if="isImg(filename)"
-                    :src="getAttachUrl(filename)"
-                    class="w-full" />
-                  <AppLink v-else :to="getAttachUrl(filename)" target="_blank">
-                    {{ filename }}
+                  <img v-if="isImg(url)" :src="url" class="w-full" />
+                  <AppLink v-else :to="url" target="_blank">
+                    {{ url }}
                   </AppLink>
                 </span>
               </div>
@@ -76,7 +81,7 @@ const returnHref = () => window.location.href;
           </ul>
         </div>
         <LazyMonacoEditor
-          v-model="details.content"
+          v-model="data[1]"
           :options="{ readOnly: true }"
           hydrate-on-visible
           class="theme-border-primary h-[50vh] rounded-none border-2"
