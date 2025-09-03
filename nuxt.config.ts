@@ -69,6 +69,12 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2025-06-22',
 
+  runtimeConfig:{
+    public: {
+      pasteApi: process.env.PASTE_API || 'https://paste.aosc.io'
+    }
+  },
+
   vite: {
     resolve: {
       alias: {
@@ -86,14 +92,6 @@ export default defineNuxtConfig({
     },
     server: {
       proxy: {
-        '/pasteApi': {
-          target: 'https://aosc.io',
-          changeOrigin: true
-        },
-        '/pasteContent': {
-          target: 'https://aosc.io',
-          changeOrigin: true
-        },
         '/galleryFile': {
           target: 'https://aosc.io',
           changeOrigin: true

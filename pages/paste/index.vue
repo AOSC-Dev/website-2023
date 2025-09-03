@@ -1,7 +1,7 @@
 <script setup>
-import dayjs from 'dayjs';
 import hljs from 'highlight.js/lib/core';
 
+const config = useRuntimeConfig();
 const { tm } = useI18n();
 const textValue = tm('paste.index');
 // const linkValue = tm('allUniversalLink');
@@ -10,12 +10,18 @@ useHead({ title: textValue.title1 });
 const languageList = ref(hljs.listLanguages());
 
 const router = useRouter();
+
+const getFutureDate = (days) =>
+  new Date(new Date().setDate(new Date().getDate() + days))
+    .toISOString()
+    .split('T')[0];
+
 const pasteFormData = ref({
   title: '',
   content: '',
   language: 'plaintext',
   // 如果不选择日期，默认保留一周
-  expDate: dayjs().add(7, 'day').format('YYYY-MM-DD')
+  expDate: getFutureDate(7)
 });
 const getFormDataSize = () =>
   Object.values(pasteFormData.value).reduce(
@@ -50,25 +56,25 @@ const submit = async () => {
   formdata.append('content', pasteFormData.value.content);
   formdata.append('language', pasteFormData.value.language);
   selectedFileList.value.forEach((file) => {
-    formdata.append('fileList', toRaw(file.raw), file.name);
+    formdata.append('file', toRaw(file.raw), file.name);
   });
-  formdata.append('expDate', pasteFormData.value.expDate);
-  const { data, error } = await useFetch('/pasteApi/paste', {
+  formdata.append('expiration', Date.parse(pasteFormData.value.expDate) / 1000);
+  const { data, error } = await useFetch(config.public.pasteApi + '/', {
     method: 'post',
     body: formdata
   });
   if (data.value) {
     const results = data.value;
     if (results.code == 0) {
-      pasteRes.value = results.data.id;
+      pasteRes.value = results.msg.id;
       router.push({
         path: '/paste/detail',
         query: {
-          id: results.data.id
+          id: results.msg.id
         }
       });
     } else {
-      alert(results.message);
+      alert(results.msg);
     }
   } else if (error.status === 413) {
     ElMessage.error({
@@ -77,7 +83,7 @@ const submit = async () => {
       message: `${textValue.message3}`
     });
   } else {
-    ElMessage.error(error.value.message);
+    ElMessage.error(`${error.value.message}: ${error.value.data.msg}`);
   }
   submiting.value = false;
 };
@@ -118,7 +124,7 @@ const handleChange = (uploadFile, uploadFiles) => {
             required
             type="date"
             class="theme-border-primary rounded-none border-2"
-            :min="dayjs().add(1, 'day').format('YYYY-MM-DD')" />
+            :min="getFutureDate(1)" />
         </div>
         <button
           class="theme-bg-color-secondary-primary rounded-none px-[50px] py-[10px] text-white"
