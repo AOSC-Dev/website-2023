@@ -4,7 +4,7 @@ categories:
 title: "让我们说中文：Bash 拼音补全功能开放测试"
 date: 2025-06-12T23:19:13-08:00
 important: false
-home: true
+home: false
 ---
 ![](/assets/news/pinyin-completion.png)
 
