@@ -84,8 +84,8 @@ home: true
 ### Localising news articles
 
 To localize a news article, just add a file with the same name to the
-corresponding language folder such as `/content/zh/`, i.e.:
+corresponding language folder such as `/content/zh-cn/`, i.e.:
 
 ```
-/content/zh/news/2024-09-18-aosc-os-relnote.md
+/content/zh-cn/news/2024-09-18-aosc-os-relnote.md
 ```

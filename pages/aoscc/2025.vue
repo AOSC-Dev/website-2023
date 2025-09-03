@@ -1,9 +1,10 @@
 <script setup lang="ts">
-const { locale } = useI18n();
+// const { locale } = useI18n();
 
 const { data, status } = await useAsyncData(
-  computed(() => `${locale.value}:aoscc-index`),
-  () => queryCollection(locale.value).path('/aoscc/2025-index').first()
+  // TODO: update when there's an Engligh version
+  // `${locale.value}:aoscc-index`,
+  () => queryCollectionLocale('zh-cn').path('/aoscc/2025-index').first()
 );
 </script>
 

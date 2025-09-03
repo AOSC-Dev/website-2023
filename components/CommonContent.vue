@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { textContent } from 'minimark'; // Nuxt Content v3 依赖
 import { useScrollStore } from '~/stores/scroll';
+import { queryCollectionLocale } from '~/utils/content';
 
 const props = defineProps<{ path?: string }>();
 
@@ -12,7 +13,8 @@ const contentRef = useTemplateRef('contentRef');
 const contentPath = computed(() => {
   if (props.path) return props.path;
 
-  // For `prefix_except_default`
+  // `prefix_except_default` 会移除默认语言的 URL 路径前缀
+  // 但是请求时使用的路径对应文件夹路径，都有前缀
   const prefix = `/${locale.value}`;
   return route.path.startsWith(prefix)
     ? route.path.substring(prefix.length) || '/'
@@ -20,16 +22,16 @@ const contentPath = computed(() => {
 });
 
 const { data: page, error } = await useAsyncData(
-  computed(() => `${locale.value}:${contentPath.value}`),
+  `${locale.value}:CommonContent:${contentPath.value}`,
   async () => {
-    let content = await queryCollection(locale.value)
+    let content = await queryCollectionLocale(locale.value)
       .path(contentPath.value)
       .first();
 
     // 如果当前语言下没有对应文件就试试用默认语言的
     let fallback = false;
     if (!content && locale.value !== defaultLocale) {
-      content = await queryCollection(defaultLocale)
+      content = await queryCollectionLocale(defaultLocale)
         .path(contentPath.value)
         .first();
 
@@ -38,7 +40,7 @@ const { data: page, error } = await useAsyncData(
 
     if (!content)
       throw createError({
-        statusMessage: 'Query Content Failed',
+        statusMessage: 'Query content failed',
         data: {
           query: { locale: locale.value, path: contentPath.value },
           fallback: fallback

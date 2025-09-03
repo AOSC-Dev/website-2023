@@ -22,7 +22,7 @@ import DownloadDetailsMain from './zh-cn/json/components/download/DownloadDetail
 import seo from './zh-cn/json/seo.json';
 import CommonContent from './zh-cn/json/components/CommonContent.json';
 
-export default {
+export default defineI18nLocale(() => ({
   DownloadButtonGroup,
   DownloadButton,
   DownloadDetails,
@@ -46,4 +46,4 @@ export default {
   paste,
   seo,
   CommonContent
-};
+}));

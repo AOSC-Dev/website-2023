@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import tailwindcss from '@tailwindcss/vite';
+import { nuxtI18nLocales, nuxtI18nDefaultLocale } from './i18n/config';
 
 export default defineNuxtConfig({
   site: {
@@ -113,21 +114,10 @@ export default defineNuxtConfig({
   },
 
   i18n: {
-    vueI18n: '~/i18n.config.ts',
+    vueI18n: 'config.ts',
     strategy: 'prefix_except_default',
-    defaultLocale: 'zh',
-    locales: [
-      {
-        code: 'zh',
-        language: 'zh-CN',
-        name: '简体中文'
-      },
-      {
-        code: 'en',
-        language: 'en-US',
-        name: 'English(en-US)'
-      }
-    ],
+    defaultLocale: nuxtI18nDefaultLocale,
+    locales: [...nuxtI18nLocales],
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: 'i18n_redirected',

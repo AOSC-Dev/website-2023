@@ -1,23 +1,20 @@
-import type {
-  CollectionQueryBuilder,
-  EnCollectionItem,
-  ZhCollectionItem
-} from '@nuxt/content';
+import { nuxtI18nLocales } from '~/i18n/config';
+import type { NuxtI18nCode } from '~/i18n/config';
+
+export const queryCollectionLocale = (locale: NuxtI18nCode) =>
+  queryCollection(
+    nuxtI18nLocales.filter((l) => l.code === locale)[0].contentCode
+  );
 
 export const queryCollectionCategory = (
+  locale: NuxtI18nCode,
   category?: string,
   limit: number = 0,
   filters?: Array<{ key: string; value: string }>
 ) => {
-  const { locale } = useI18n();
-
-  let q = (
-    queryCollection(locale.value) as CollectionQueryBuilder<
-      ZhCollectionItem | EnCollectionItem
-    >
-  )
+  let q = queryCollectionLocale(locale)
     .select('path', 'title', 'date')
-    .where('path', 'LIKE', `/${category}%`)
+    .where('path', 'LIKE', `/${category || ''}%`)
     .order('date', 'DESC')
     .limit(limit);
 
