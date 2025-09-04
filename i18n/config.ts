@@ -5,17 +5,6 @@ export default {
   fallbackLoacle: 'zh-cn'
 };
 
-export const i18nCodeToContent = (
-  locale: NuxtI18nCode
-): NuxtI18nContentCode => {
-  switch (locale) {
-    case 'zh-cn':
-      return 'zhCN';
-    case 'en-us':
-      return 'enUS';
-  }
-};
-
 export const nuxtI18nDefaultLocale = 'zh-cn';
 
 // 这个非常的规律，但是动态生成的话 TypeScript 看不出来它很规律，暂时不太有想法
@@ -34,6 +23,17 @@ export const nuxtI18nLocales = [
   }
 ] as const;
 
-export type NuxtI18nCode = (typeof nuxtI18nLocales)[number]['code'];
+const codeMap = {
+  'zh-cn': 'zhCN',
+  'en-us': 'enUS'
+} as const;
 
-export type NuxtI18nContentCode = 'enUS' | 'zhCN';
+export const i18nCodeToContent = <T extends NuxtI18nCode>(
+  locale: T
+): (typeof codeMap)[T] => {
+  return codeMap[locale];
+};
+
+export type NuxtI18nCode = keyof typeof codeMap
+
+export type NuxtI18nContentCode = (typeof codeMap)[keyof typeof codeMap];
