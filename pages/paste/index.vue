@@ -21,7 +21,7 @@ const pasteFormData = ref({
   content: '',
   language: 'plaintext',
   // 如果不选择日期，默认保留一周
-  expDate: getFutureDate(7)
+  expDate: import.meta.client ? getFutureDate(7) : ''
 });
 const getFormDataSize = () =>
   Object.values(pasteFormData.value).reduce(

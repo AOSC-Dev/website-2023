@@ -16,7 +16,6 @@ const isImg = (name) => {
   return imgSuffixList.find((v) => v === suffix) !== undefined;
 };
 
-console.log(route.fullPath);
 const { data, status } = await useAsyncData(
   route.fullPath,
   () =>
