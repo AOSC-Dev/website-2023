@@ -28,12 +28,8 @@ const codeMap = {
   'en-us': 'enUS'
 } as const;
 
-export const i18nCodeToContent = <T extends NuxtI18nCode>(
-  locale: T
-): (typeof codeMap)[T] => {
-  return codeMap[locale];
-};
+export const i18nCodeToContent = (locale: NuxtI18nCode) => codeMap[locale];
 
-export type NuxtI18nCode = keyof typeof codeMap
+export type NuxtI18nCode = keyof typeof codeMap;
 
 export type NuxtI18nContentCode = (typeof codeMap)[keyof typeof codeMap];
