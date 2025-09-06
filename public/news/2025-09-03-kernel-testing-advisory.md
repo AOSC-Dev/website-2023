@@ -1,6 +1,6 @@
 ---
 categories:
-  - minutes
+  - advisories
 title: "安同 OS 测试公告：内核更新"
 date: 2025-09-03T15:30:00+08:00
 important: false
