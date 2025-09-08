@@ -1,4 +1,3 @@
 #! /bin/bash
 
-npm run generate
-cp -r dist website
+npm run generate && cp -r dist website
