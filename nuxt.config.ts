@@ -70,7 +70,7 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2025-06-22',
 
-  runtimeConfig:{
+  runtimeConfig: {
     public: {
       pasteApi: process.env.PASTE_API || 'https://paste.aosc.io'
     }
@@ -104,10 +104,10 @@ export default defineNuxtConfig({
       }
     }
   },
-  
+
   nitro: {
     prerender: {
-      ignore: ["/paste/detail"],
+      ignore: ['/paste/detail']
     }
   },
 

@@ -4,61 +4,44 @@ on:
   push:
     branches:
       - master # default branch
+      - chore-nuxt-deploy # Test only
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v5
       - name: Use Node.js 22
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: '22'
-      - name: Cache NPM dependencies
-        uses: actions/cache@v4
+
+      # https://github.com/actions/cache/blob/v4/examples.md#node---npm
+      - name: Get npm cache directory
+        id: npm-cache-dir
+        shell: bash
+        run: echo "dir=$(npm config get cache)" >> ${GITHUB_OUTPUT}
+      - uses: actions/cache@v4
+        id: npm-cache # use this to check for `cache-hit` ==> if: steps.npm-cache.outputs.cache-hit != 'true'
         with:
-          path: node_modules
-          key: ${{ runner.OS }}-npm-cache
+          path: ${{ steps.npm-cache-dir.outputs.dir }}
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.OS }}-npm-cache
-      - name: Setup SSH Private Key
-        env:
-          KEY: ${{ secrets.KEY }}
-          IP: ${{ secrets.IP }}
-        run: |
-          mkdir -p ~/.ssh/
-          echo "$KEY" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan $IP >> ~/.ssh/known_hosts
-      - name: Install deps
-        run: |
-          sudo apt install expect tcl-expect -y
-      - name: Upload website
-        env:
-          IP: ${{ secrets.IP }}
-        run: |
-          rm -rf website*
+            ${{ runner.os }}-node-
 
-          # Build utilities
-          git submodule update --init
-          pushd utils/make-news-index
-          go build -o make-news-index
-          popd
+      - name: Install dependencies
+        run: npm ci
+          
+      - name: Build
+        run: npm run generate
 
-          # Build news index
-          pushd public
-          ../utils/make-news-index/make-news-index
-          popd
-
-          # Build website
-          npm i
-          npm run build
-
-          zip -r website.zip website/
-          scp website.zip aosc@$IP:/home/aosc/web/
-      - name: Unzip website
-        run: |
-          cd deploy
-          ./unzipServer.sh
+      - name: Copy files via SSH
+        uses: appleboy/scp-action@v1
+        with:
+          host: ${{ secrets.IP }}
+          username: aosc
+          key: ${{ secrets.KEY }}
+          source: "dist/*"
+          target: /home/aosc/web/website-nuxt #Test bnly
+          rm: true
+          strip_components: 1
