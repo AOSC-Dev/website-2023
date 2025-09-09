@@ -286,8 +286,12 @@ const { data, error } = await useAsyncData(() => {
     $fetch('https://releases.aosc.io/manifest/recipe-i18n.json')
   ]);
 });
+
+// SSG 时得有数据
+if (error.value && import.meta.server) throw createError(error);
+
 const versionArch = ref(data.value?.[0] ? data.value?.[0] : []);
-const versionArchErr = error.value?.[0];
+const versionArchErr = error.value;
 if (versionArch.value.length !== 0) {
   antong1List.value.forEach((v) => {
     v.installer = getNewVersionArch(v.title, 'installer');
@@ -309,7 +313,7 @@ if (versionArch.value.length !== 0) {
 
 // Apple silicon
 const siliconRes = ref(data.value?.[1]);
-const siliconError = error.value?.[1];
+const siliconError = error.value;
 if (siliconError) {
   console.warn(textValue.errors.apple);
 } else if (siliconRes.value) {
@@ -322,7 +326,7 @@ if (siliconError) {
 
 // oma
 const omaRes = ref(data.value?.[2]);
-const omaResError = error.value?.[2];
+const omaResError = error.value;
 if (omaResError) {
   console.log(omaResError);
   console.warn(textValue.errors.oma);
@@ -331,9 +335,9 @@ if (omaResError) {
 }
 
 const recipeResponse = ref(data.value?.[3]);
-const recipeError = error.value?.[3];
+const recipeError = error.value;
 const recipeI18nResponse = ref(data.value?.[4]);
-const recipeI18nError = error.value?.[4];
+const recipeI18nError = error.value;
 if (recipeError || recipeI18nError) {
   console.warn(textValue.errors.mirrors);
   console.log(recipeError, recipeI18nError);
