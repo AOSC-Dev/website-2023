@@ -3,7 +3,7 @@ const config = useRuntimeConfig();
 const route = useRoute();
 const imgSuffixList = ['jpg', 'jpeg', 'png', 'gif'];
 
-const { tm, locale } = useI18n();
+const { tm } = useI18n();
 const textValue = tm('paste.detail');
 useHead({ title: textValue.title1 });
 // FIXME: `useRobotsRule({ noindex: true, nofollow: true })` generates
@@ -55,7 +55,7 @@ const returnHref = () => window.location.href;
             <button
               class="theme-bg-color-primary-static cursor-pointer px-[3em] py-[1em] text-white"
               @click="
-                copyToClipboard(locale, returnHref(), textValue.message2)
+                copyToClipboard(returnHref(), textValue.message2)
               ">
               {{ textValue.button1 }}
             </button>
@@ -88,7 +88,7 @@ const returnHref = () => window.location.href;
 
         <button
           class="theme-bg-color-primary-static mt-[10px] ml-auto cursor-pointer px-[3em] py-[1em] text-white"
-          @click="copyToClipboard(locale, details.content, textValue.message3)">
+          @click="copyToClipboard( details.content, textValue.message3)">
           {{ textValue.button3 }}
         </button>
       </div>
