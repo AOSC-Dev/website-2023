@@ -72,7 +72,7 @@ const mediaWritersInfo = setNestedKeyValue(
         {{ textValue.text4 }}
       </AppLink>
     </el-container>
-    <AppLink to="/aosc-os/relnote">{{ textValue.checkLatestRelnote }}</AppLink>
+    <LinkStandard :link="useTIndex(locallink.aoscRelnote, 1)" />
 
     <app-h2>{{ textValue.title2 }}</app-h2>
     <p>{{ textValue.text6 }}</p>
