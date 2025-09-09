@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - master # default branch
-      - chore-nuxt-deploy # Test only
 
 jobs:
   build:
@@ -42,6 +41,6 @@ jobs:
           username: aosc
           key: ${{ secrets.KEY }}
           source: "dist/*"
-          target: /home/aosc/web/website-nuxt #Test bnly
+          target: /home/aosc/web/website
           rm: true
           strip_components: 1
