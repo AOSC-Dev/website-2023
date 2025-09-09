@@ -7,7 +7,6 @@
   "fileType": ["LiveKit Rescue Startup Disk", "Installation disk"],
   "placeholder1": "Please select the download source",
   "text4": "download",
-  "checkLatestRelnote": "Refer to the latest issuance notes...",
   "text6": "We recommend that you check the SHA-256 checksum of relevant files after downloading. The details are as follows:",
   "text7": "Copy SHA-256 Checksum",
   "text8": "To make",

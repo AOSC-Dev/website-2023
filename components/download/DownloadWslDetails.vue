@@ -31,9 +31,7 @@ function latestTarball(tarballs, arch) {
       animation="on" />
     <p class="mb-0">
       {{ textValue.text2 }}
-      <AppLink to="https://learn.microsoft.com/windows/wsl/build-custom-distro">
-        {{ textValue.mordenDistributionLinkText }}
-      </AppLink>
+      <LinkStandard :link="linkValue.mordenDistribution" />
       {{ textValue.text3 }}
     </p>
     <el-container>
@@ -67,16 +65,13 @@ function latestTarball(tarballs, arch) {
       {{ textValue.manualDownload.description }}
     </div>
 
-    <AppLink
-      to="https://github.com/AOSC-Dev/AOSCOSLauncher/releases/latest"
-      target="_blank"
-      class="el-button max-w-min hover:no-underline">
-      {{ textValue.manualDownload.githubLink }}
-    </AppLink>
 
-    <AppLink :to="`/aosc-os/wsl/relnote`">
-      {{ textValue.viewReleaseNotes }}
-    </AppLink>
+    <LinkStandard
+      :link="linkValue.AOSCOSLauncher"
+      target="_blank"
+      class="el-button max-w-min hover:no-underline" />
+
+    <LinkStandard :link="localLink.aoscWslRelnote"/>
 
     <app-h2>{{ textValue.title2 }}</app-h2>
     <p>{{ textValue.text6 }}</p>

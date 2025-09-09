@@ -1,7 +1,6 @@
 {
   "title1": "下载 WSL 版安同 OS",
   "text2": "为满足不同用户的喜爱和需要，我们还提供了 WSL 现代发行版 ",
-  "mordenDistributionLinkText": "(Modern Distribution)",
   "text3": " 分发所需的 .wsl 文件一键包：",
   "text4": "WSL 一键包（敬请期待）",
   "title2": "系统需求",
@@ -17,8 +16,7 @@
     "aarch64": "下载 AArch64"
   },
   "manualDownload": {
-    "description": "如无法使用上述两种方式，也可手动下载 AppX 侧载包部署：",
-    "githubLink": "GitHub Releases（无须使用 Microsoft Store）"
+    "description": "如无法使用上述两种方式，也可手动下载 AppX 侧载包部署："
   },
   "viewReleaseNotes": "查阅最新发行注记..."
 }

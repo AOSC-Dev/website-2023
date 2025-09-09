@@ -1,7 +1,6 @@
 {
   "title1": "Download WSL version of Antong OS",
   "text2": "To meet the love and needs of different users, we also provide the following ways to install or download the WSL version of Antong OS (AOSC OS on WSL):",
-  "mordenDistributionLinkText": "(Modern Distribution)",
   "text3": " One click package for distributing the required. wsl files: ",
   "text4": "WSL one-click package (stay tuned)",
   "title2": "System requirements",
@@ -17,8 +16,7 @@
     "aarch64": "Download AArch64"
   },
   "manualDownload": {
-    "description": "If you can't use the methods above, you can also manually download the AppX package for sideloading:",
-    "githubLink": "GitHub Releases (Microsoft Store not required)"
+    "description": "If you can't use the methods above, you can also manually download the AppX package for sideloading:"
   },
   "viewReleaseNotes": "View the latest release notes..."
 }

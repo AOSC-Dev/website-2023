@@ -92,6 +92,10 @@
     "title": ["配置需求"],
     "url": "https://asahilinux.org/docs/Feature-Support/"
   },
+  "mordenDistribution": {
+    "title": ["(Modern Distribution)"],
+    "url": "https://learn.microsoft.com/windows/wsl/build-custom-distro"
+  },
   "local": {
     "download": {
       "title": ["系统下载", "下载 oma"],
@@ -104,7 +108,7 @@
       "hash": ["#aoscOsIsaTableTitle"]
     },
     "aoscRelnote": {
-      "title": ["发行注记"],
+      "title": ["发行注记", "查阅最新发行注记..."],
       "url": "/aosc-os/relnote"
     },
     "aoscAsahiRelnote": {
@@ -120,7 +124,7 @@
       "url": "/aosc-os/livekit/requirements"
     },
     "aoscWslRelnote": {
-      "title": ["发行注记"],
+      "title": ["发行注记","查阅最新发行注记..."],
       "url": "/aosc-os/wsl/relnote"
     },
     "aoscWslRequirements": {
