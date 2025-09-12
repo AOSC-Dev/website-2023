@@ -1,0 +1,32 @@
+{
+  "index": {
+    "title1": "Community crowdfunding",
+    "title2": "Supplementary regulations",
+    "p1": {
+      "text": [
+        "According to the community",
+        "According to the requirements, the community does not accept donations as community and project operating funds. However, since our community is a volunteer community without operating capital, it often requires financial and material support for daily operations of the community and the purchase of large items for specific projects (such as servers for construction and AOSCC annual gatherings, etc.). Therefore, we accept donations of money, items (such as computer cases, power supplies and hard drives, etc.) and services (such as website server resources, etc.) for specific projects and purchase plans."
+      ]
+    },
+    "p2": {
+      "text": ["You can check it out on the wiki site", " ."]
+    },
+    "ul1": {
+      "li": [
+        "Financial and material donations must be used for specific community projects (for example: building a server for an AOSC OS port or upgrading a build).",
+        "The community will acknowledge donors, but donors will not automatically become community contributors (who enjoy benefits such as a personal homepage on the community portal, Git write access, and an @aosc.io email address). Donors enjoy the following rights:",
+        [
+          "Donors can request access to their crowdfunding equipment and services.",
+          "The community will inform the donor of specific matters regarding the subsequent use, maintenance and replacement of the equipment."
+        ],
+        "Once the required amount and items are collected, the crowdfunding project is deemed completed.",
+        "If additional funds are raised, the additional funds will be refunded in the order of donations until they are paid off.",
+        [
+          "If the donor does not accept a refund, the crowdfunding content can be adjusted as needed."
+        ],
+        "If the crowdfunding project is cancelled, the full amount of the donation will be refunded to the donor."
+      ]
+    },
+    "title3": "Crowdfunding records"
+  }
+}
