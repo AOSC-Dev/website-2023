@@ -181,7 +181,7 @@ const getNewVersionArch = (arch, type) => {
 // #region Afterglow OS
 const afterglowOsNavigationList = ref([
   {
-    title: textValue.y3.x0.p3,
+    title: textValue.afterglow.stayTuned,
     notLink: true
   },
   localLink.afterglowRelnote,
@@ -357,15 +357,15 @@ if (recipeError || recipeI18nError) {
 
 <template>
   <div>
-    <category-second id="aosc-os-download" :title="textValue.y0.p1" />
+    <category-second id="aosc-os-download" :title="textValue.operatingSystem" />
 
     <!-- AOSC OS -->
     <div
       ref="aoscOsDownload"
       class="aosc-os-container flex flex-wrap justify-between gap-6 p-[30px]">
       <TitleComponent
-        :title="textValue.y1.x0.p1"
-        :description="textValue.y1.x0.p2"
+        :title="textValue.aoscOs.name"
+        :description="textValue.aoscOs.description"
         :navigation-list="aoscOsNavigationList" />
       <div class="flex flex-col justify-end gap-2">
         <DownloadButtonGroup
@@ -398,13 +398,13 @@ if (recipeError || recipeI18nError) {
         class="wsl-container flex flex-col justify-between p-[24px_30px] text-white">
         <div>
           <TitleComponent
-            :title="textValue.y2.x0.p1"
-            :description="textValue.y2.x0.p2"
+            :title="textValue.wsl.name"
+            :description="textValue.wsl.description"
             small-title />
           <span
             class="cursor-pointer text-[11pt] hover:underline"
             @click="wslDialogState = true">
-            {{ textValue.y2.x0.p3 }}
+            {{ textValue.wsl.detail }}
           </span>
         </div>
 
@@ -428,13 +428,13 @@ if (recipeError || recipeI18nError) {
       <div
         class="apple-silicon-container flex flex-1 flex-col justify-between p-[24px_30px]">
         <TitleComponent
-          :title="textValue.y2.x1.p1"
-          :description="textValue.y2.x1.p2"
+          :title="textValue.appleSilicon.name"
+          :description="textValue.appleSilicon.description"
           :navigation-list="appleSiliconNavigationList"
           small-title />
         <div class="self-end">
           <DownloadButton
-            :arch-name="textValue.y2.x1.b0"
+            :arch-name="textValue.appleSilicon.download"
             :popover-data="
               antong1List.filter((i) => i.title === 'arm64')[0].popoverData
             "
@@ -451,8 +451,8 @@ if (recipeError || recipeI18nError) {
       ref="afterglowDownload"
       class="afterglow-container flex flex-wrap justify-between gap-6 p-[30px] text-white">
       <TitleComponent
-        :title="textValue.y3.x0.p1"
-        :description="textValue.y3.x0.p2"
+        :title="textValue.afterglow.name"
+        :description="textValue.afterglow.description"
         :navigation-list="afterglowOsNavigationList" />
       <div class="flex flex-col justify-end gap-2">
         <DownloadButtonGroup

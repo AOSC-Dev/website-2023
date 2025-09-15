@@ -1,32 +1,21 @@
 {
   "index": {
-    "y0": {
-      "p1": "operating system"
+    "operatingSystem": "操作系统",
+    "aoscOs": { "name": "安同 OS", "description": "称心得意的桌面操作系统" },
+    "wsl": {
+      "name": "WSL",
+      "description": "在 Windows 上使用安同 OS",
+      "detail": "其他下载方式与支持详情..."
     },
-    "y1": {
-      "x0": {
-        "p1": "Antong OS",
-        "p2": "A satisfying desktop operating system"
-      }
+    "appleSilicon": {
+      "name": "Apple Silicon",
+      "description": "适用于基于 Apple 芯片的 Mac 设备",
+      "download": "下载"
     },
-    "y2": {
-      "x0": {
-        "p1": "WSL",
-        "p2": "Using Antong OS on Windows",
-        "p3": "Other download methods and support details..."
-      },
-      "x1": {
-        "p1": "Apple Silicon",
-        "p2": "For Mac devices based on Apple chips",
-        "b0": "download"
-      }
-    },
-    "y3": {
-      "x0": {
-        "p1": "Xingxia OS",
-        "p2": "Old equipment can also shine and heat",
-        "p3": "Stay tuned"
-      }
+    "afterglow": {
+      "name": "星霞 OS",
+      "description": "老设备也能发光发热",
+      "stayTuned": "敬请期待"
     },
     "sources": [
       {
