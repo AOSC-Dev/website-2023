@@ -1,13 +1,13 @@
 {
   "index": {
-    "operatingSystem": "操作系统",
+    "operatingSystemsTitle": "操作系统",
     "aoscOs": { "name": "安同 OS", "description": "称心得意的桌面操作系统" },
-    "wsl": {
+    "aoscOsWsl": {
       "name": "WSL",
       "description": "在 Windows 上使用安同 OS",
       "detail": "其他下载方式与支持详情..."
     },
-    "appleSilicon": {
+    "aoscOsAppleSilicon": {
       "name": "Apple Silicon",
       "description": "适用于基于 Apple 芯片的 Mac 设备",
       "download": "下载"
@@ -17,7 +17,7 @@
       "description": "老设备也能发光发热",
       "stayTuned": "敬请期待"
     },
-    "sources": [
+    "downloadSources": [
       {
         "name": "官方源",
         "loc": "香港特别行政区",
@@ -29,40 +29,40 @@
         "url": "https://mirrors.cernet.edu.cn/anthon/aosc-os/"
       }
     ],
-    "errors": {
+    "downloadErrors": {
       "aosc": "AOSC OS 版本信息获取失败",
       "apple": "AOSC OS Apple Silicon 版本信息获取失败",
       "oma": "oma 版本信息获取失败",
       "mirrors": "镜像信息获取失败",
       "isBug": "内部错误，请报告"
     },
-    "archGroupInfo": {
-      "first": {
+    "portTierInfo": {
+      "primaryIsa": {
         "name": "一级架构",
         "description": "“一级架构”是我们支持水平最高的一类目标架构，各类更新及时且特性完整，亦最受维护者关注、测试设备充分"
       },
-      "second": {
+      "secondaryIsa": {
         "name": "二级架构",
         "description": "“二级架构”功能相对完整，但由于设备数量稀少、普遍性能较差或受维护者关注度不足，虽会及时响应安全更新，但其他类型更新、测试及反馈响应度可能略逊于一级架构"
       }
     },
-    "contents": {
-      "antong1": [
+    "helpContent": {
+      "aoscOsIsaInfoPrimary": [
         "适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备",
         "适用于兼容 Armv8-A 及以上版本的 64 位 Arm 设备",
         "适用于兼容龙架构 (LoongArch) 指令集及 128 位向量扩展 (LSX) 的 64 位设备"
       ],
-      "antong2": [
+      "aoscOsIsaInfoSecondary": [
         "适用于兼容 Power ISA v2.07 及以上版本的 64 位、小端序模式设备",
         "适用于兼容 RVA20 Architecture Profile 的 64 位 RISC-V 设备",
         "适用于基于 MIPS 的龙芯三号设备"
       ],
-      "xingxia1": [
+      "afterglowIsaInfoPrimary": [
         "适用于兼容 i486 (Intel486) 的 32 位 x86 设备",
         "适用于基于 MIPS 并支持 LoongMMI 指令集扩展的龙芯二号 (2F) 设备",
         "适用于兼容 PowerPC 指令集的 32 位大端序设备（IBM CHRP/PReP 或 Apple Macintosh 及兼容平台）"
       ],
-      "xingxia2": [
+      "afterglowIsaInfoSecondary": [
         "适用于兼容 ARMv4 指令集的 Arm 设备",
         "适用于兼容 ARMv6 指令集及 Thumb-2、NEON 扩展的 Arm 设备",
         "适用于兼容 ARMv7 指令集及 Thumb-2、NEON 扩展的 Arm 设备",
@@ -73,15 +73,15 @@
         "适用于兼容 SPARC V9 指令集及 VIS 1.0 扩展的 64 位 SPARC 设备"
       ]
     },
-    "labels": {
-      "antong1": ["x86-64", "AArch64", "LoongArch"],
-      "antong2": ["POWER（64 位）", "RISC-V（64 位）", "龙芯三号 (MIPS)"],
-      "xingxia1": [
+    "downloadButtons": {
+      "aoscOsPrimary": ["x86-64", "AArch64", "LoongArch"],
+      "aoscOsSecondary": ["POWER（64 位）", "RISC-V（64 位）", "龙芯三号 (MIPS)"],
+      "afterglowPrimary": [
         "x86（32 位）",
         "龙芯二号 (MIPS)",
         "PowerPC（32 位，大端序）"
       ],
-      "xingxia2": [
+      "afterglowSecondary": [
         "ARMv4",
         "ARMv6（硬浮点）",
         "ARMv7（硬浮点）",
@@ -92,27 +92,27 @@
         "SPARC（64 位）"
       ]
     },
-    "title2": "实用工具",
-    "title3": "安同 OS（二级架构）",
-    "p3": "星霞 OS",
-    "p4": "老设备也能发光发热",
-    "p5": "敬请期待...",
-    "p6": "功能完备的安同 OS 救援环境",
-    "p9": "小熊猫包管理 (oma)",
-    "p10": "简明好用的 APT 软件包管理界面",
-    "p11": [
+    "utilitiesTitle": "实用工具",
+    "aoscOsSecondaryIsaTitle": "安同 OS（二级架构）",
+    "afterglowTitle": "星霞 OS",
+    "afterglowTagline": "老设备也能发光发热",
+    "comingSoon": "敬请期待...",
+    "livekitTagline": "功能完备的安同 OS 救援环境",
+    "omaTitle": "小熊猫包管理 (oma)",
+    "omaTagline": "简明好用的 APT 软件包管理界面",
+    "omaSystemSupportInfo": [
       "使用终端运行该命令可在 Debian、Ubuntu、Linux Mint 及衍生版，以及 deepin、",
       "开放麒麟 (openKylin) 等发行版安装小熊猫包管理"
     ],
-    "p12": "安同 OS 支持支持众多处理器微架构。",
-    "p13": "除 x86-64、AArch64 及 LoongArch 外，",
-    "p14": "我们还支持一众存量较少或软件支持尚未完善的架构，",
-    "p15": "并发布镜像供各位玩家试用和评估。",
-    "otherDownloadButtons": {
+    "aoscOsSecondaryIsaText1": "安同 OS 支持支持众多处理器微架构。",
+    "aoscOsSecondaryIsaText2": "除 x86-64、AArch64 及 LoongArch 外，",
+    "aoscOsSecondaryIsaText3": "我们还支持一众存量较少或软件支持尚未完善的架构，",
+    "aoscOsSecondaryIsaText4": "并发布镜像供各位玩家试用和评估。",
+    "buttonOtherDownload": {
       "popoverData": {
-        "conten": "二级架构、Docker, 及虚拟机镜像等其他下载"
+        "content": "二级架构、Docker, 及虚拟机镜像等其他下载"
       },
-      "archName": "其他下载"
+      "otherDownload": "其他下载"
     }
   }
 }

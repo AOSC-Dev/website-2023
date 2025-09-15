@@ -1,14 +1,14 @@
 {
-  "navigationTextList": [
+  "footerNavigationTextList": [
     {
-      "title": "网页源码"
+      "siteSources": "网页源码"
     },
     {
-      "title": "报告内容问题"
+      "reportContentIssues": "报告内容问题"
     },
     {
-      "title": "返回主页"
+      "returnToHome": "返回主页"
     }
   ],
-  "antong": "安同开源社区"
+  "communityName": "安同开源社区"
 }

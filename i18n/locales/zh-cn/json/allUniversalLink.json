@@ -3,7 +3,7 @@
     "title": [""],
     "url": ""
   },
-  "aPeriod": "。",
+  "periodPoint": "。",
   "barFooter": {
     "navigation": {
       "websiteSourceCode": {
@@ -16,11 +16,11 @@
       }
     }
   },
-  "AOSCPackages": {
+  "aoscPackagesSite": {
     "title": ["查询软件包信息", "软件包查询站"],
     "url": "https://packages.aosc.io/"
   },
-  "asahiLinux": {
+  "asahiDocumentation": {
     "title": ["Asahi Linux 官方文档"],
     "url": "https://asahilinux.org/docs/"
   },
@@ -28,7 +28,7 @@
     "title": ["balenaEtcher"],
     "url": "https://etcher.balena.io/"
   },
-  "AOSCOSLauncher": {
+  "aoscOsLauncher": {
     "title": ["GitHub Releases（无须使用 Microsoft Store）"],
     "url": "https://github.com/AOSC-Dev/AOSCOSLauncher/releases/latest"
   },
@@ -36,11 +36,11 @@
     "title": ["usbimager"],
     "url": "https://gitlab.com/bztsrc/usbimager"
   },
-  "crowdfundingProjectRecord": {
+  "crowdfundingRecord": {
     "title": ["众筹项目记录"],
     "url": "https://wiki.aosc.io/community/crowdsourcing/"
   },
-  "systemSecurityIssuse": {
+  "reportSecurityIssuse": {
     "title": ["报告安全漏洞"],
     "url": "https://github.com/AOSC-Dev/aosc-os-abbs/issues/new?assignees=&labels=security&projects=&template=security-vulnerabilities-report.yml"
   },
@@ -76,15 +76,15 @@
     "title": ["加入频道"],
     "url": "irc://irc.libera.chat:6697/aosc-offtopic"
   },
-  "MatrixMain": {
+  "matrixMain": {
     "title": ["加入聊天室"],
     "url": "https://matrix.to/#/%23aosc:matrix.aosc.io"
   },
-  "MatrixRetro": {
+  "matrixRetro": {
     "title": ["加入聊天室"],
     "url": "https://matrix.to/#/%23retro:matrix.aosc.io"
   },
-  "MatrixTuosai": {
+  "matrixTuosai": {
     "title": ["加入聊天室"],
     "url": "https://matrix.to/#/%23offtopic:matrix.aosc.io"
   },
@@ -277,11 +277,11 @@
     "title": ["社区论坛"],
     "url": "https://bbs.aosc.io/"
   },
-  "QQtexture": {
+  "qqStickers": {
     "title": ["QQ 表情包"],
     "url": "https://zb.vip.qq.com/hybrid/emoticonmall/detail?id=239191"
   },
-  "Telegramtexture": {
+  "telegramStickers": {
     "title": ["Telegram 贴图包"],
     "url": "https://t.me/addstickers/AnAnTongTong"
   },
@@ -289,19 +289,19 @@
     "title": ["贴图包素材"],
     "url": "https://repo.aosc.io/mascots/zhaxia-stickers-v1.zip"
   },
-  "antongMascotsSetDraft": {
+  "antongMascotsCharacterSheet": {
     "title": ["下载设定稿"],
     "url": "https://repo.aosc.io/mascots/mascots.zip"
   },
-  "fumoMascotsSetDraft": {
+  "fumoMascotsCharacterSheetDownload": {
     "title": ["下载设定稿"],
     "url": "https://repo.aosc.io/mascots/fumo.zip"
   },
-  "tysontan": {
+  "tysonTtan": {
     "title": ["https://tysontan.com"],
     "url": "https://tysontan.com"
   },
-  "figuramc": {
+  "figura": {
     "title": ["Figura"],
     "url": "https://figuramc.org/"
   },
@@ -309,7 +309,7 @@
     "title": ["下载人物模型"],
     "url": "https://github.com/OvOla2/AnAn-Figura-avatar"
   },
-  "mailtoTysontan": {
+  "mailtoTysonTan": {
     "title": ["tysontan@tysontan.com"],
     "url": "mailto:tysontan@tysontan.com"
   },
@@ -330,7 +330,7 @@
     "url": "https://wiki.debian.org/Teams/Dpkg"
   },
   "sponsors": {
-    "servicesAndFacilities": {
+    "infrastructure": {
       "apernet": {
         "title": ["光圈网络 (Apernet Internet Laboratory)"],
         "url": "https://apernet.io/",
@@ -352,7 +352,7 @@
         "img": "microsoft"
       }
     },
-    "imageSource": {
+    "mirrors": {
       "pku": {
         "title": ["北京大学开源镜像站"],
         "url": "https://mirrors.pku.edu.cn/",
@@ -454,7 +454,7 @@
         "img": "sysu"
       }
     },
-    "developmentEquipment": {
+    "devices": {
       "bananaPi": {
         "title": ["Banana Pi 社区"],
         "url": "https://www.banana-pi.org/",
@@ -471,7 +471,7 @@
         "img": "pine64"
       }
     },
-    "softwareLicense": {
+    "licenses": {
       "codeweavers": {
         "title": ["CodeWeavers"],
         "url": "https://www.codeweavers.com/",
@@ -483,7 +483,7 @@
         "img": "jetbrains"
       }
     },
-    "oldServicesAndFacilities": {
+    "historicInfrastructure": {
       "fuslvz": {
         "title": ["FuslVZ"],
         "url": "https://fuslvz.ws/",
@@ -515,7 +515,7 @@
         "img": "xtom"
       }
     },
-    "oldSoftwareLicense": {
+    "historicSoftwareLicense": {
       "lanunion": {
         "title": ["重庆大学蓝盟"],
         "url": "http://lanunion.cqu.edu.cn/",
@@ -543,15 +543,15 @@
       }
     }
   },
-  "CambridgeED": {
+  "cambridgeEnglishDictionary": {
     "title": ["Cambridge English Dictionary"],
     "url": "https://dictionary.cambridge.org/dictionary/english/community"
   },
-  "AOSCWiki": {
+  "aoscWiki": {
     "title": ["AOSC 维基", "参考文档 (Wiki)"],
     "url": "https://wiki.aosc.io/zh"
   },
-  "GitHub": {
+  "githubOrg": {
     "title": ["GitHub 组织", "代码仓库"],
     "url": "https://github.com/AOSC-Dev/"
   },
@@ -559,11 +559,11 @@
     "title": ["AOSC 托腮群及招待点"],
     "url": "https://t.me/joinchat/BMnG9zvfjCgZUTIAoycKkg"
   },
-  "AOSCPastebin": {
+  "aoscPastebin": {
     "title": ["AOSC Pastebin"],
     "url": "https://pastebin.aosc.io/"
   },
-  "AOSCStickerPack": {
+  "aoscStickerPack": {
     "title": ["AOSCC 贴纸包"],
     "url": "https://github.com/AOSC-Dev/aoscc/tree/master/2019/stickers"
   },
@@ -610,7 +610,7 @@
       "title": ["兼容性数据库", "应用程序兼容性数据库"],
       "url": "https://liblol.aosc.io/docs/apps/"
     },
-    "sourceHomepage": {
+    "home": {
       "title": ["项目主页", "libLoL"],
       "url": "https://liblol.aosc.io/"
     },
