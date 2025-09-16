@@ -233,7 +233,7 @@ const aosccList = [
             ><b>2024 年：</b
             ><a
               class="text-[#0056cc] no-underline"
-              href="https://www.bilibili.com/video/BV1K142127oB"
+              href="https://www.bilibili.com/video/BV1Yx421D7d2"
               >北京大学 Linux 俱乐部与清华大学 TUNA 协会协办：Towards Modern
               Distro（白铭骢：从 AOSC OS 浅谈发行版社区的日常、雄心和无奈）</a
             ></li
