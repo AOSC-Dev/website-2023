@@ -61,7 +61,7 @@ AOSCC 是我社每年一度的线下聚会，公开邀请社区好友参与。�
 作为社区、校园乃至企业交流的一环，社区贡献者积极参与各公开会议、聚会活动。如下是我们的参与记录及录像：
 
 - **2024 年**：[开源之夏 2024 校园行：吉林大学（白铭骢：一个草根社区的自白——安同开源社区、开源产业与全民信创）](https://www.bilibili.com/video/BV1K142127oB)
-- **2024 年**：[北京大学 Linux 俱乐部与清华大学 TUNA 协会协办：Towards Modern Distro（白铭骢：从 AOSC OS 浅谈发行版社区的日常、雄心和无奈）](https://www.bilibili.com/video/BV1K142127oB)
+- **2024 年**：[北京大学 Linux 俱乐部与清华大学 TUNA 协会协办：Towards Modern Distro（白铭骢：从 AOSC OS 浅谈发行版社区的日常、雄心和无奈）](https://www.bilibili.com/video/BV1Yx421D7d2)
 - **2022 年**：[FOSDEM 2022（白铭骢：AOSC OS/Retro - Our Ongoing Quest for the Possibility of Modern Linux on Vintage Hardware）](https://repo.aosc.io/aosc-documentation/fosdem/2022/20210113-slides.odp)
 - **2018 年**：[学生开源年会 (SOSCON18)（白铭骢、黎民雍：从宣传队到大社团——安同开源社区的历史、项目和文化综述）](https://repo.aosc.io/aosc-documentation/campus/2018/soscon/slide.pdf)
 - **2014 年**：[香港开源人年会 (HKOSC 2014)（叶晓星：安同開源社區——開源青春，開源中國）](https://repo.aosc.io/aosc-documentation/others/hkosc-2014/HK_Presentation.pdf)
