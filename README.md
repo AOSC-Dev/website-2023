@@ -4,7 +4,7 @@ AOSC Portal
 [简体中文自述文件 >>](/README.zh-cn.md)
 
 The Portal website for AOSC since 2024 (designed in 2023, hence the name),
-built using Vue.js.
+built using [Nuxt](https://nuxt.com/).
 
 At a glance
 ---
@@ -23,8 +23,6 @@ Windows home page from 2001 - 2004:
 - [Reference 1, Windows XP home from late 2001](https://web.archive.org/web/20011211230629/http://microsoft.com/windowsxp/default.asp)
 - [Reference 2, Windows XP mid-cycle home from 2004](https://web.archive.org/web/20040204080626/http://www.microsoft.com/china/windows/default.mspx)
 
-Technically speaking, this a statically generated site built with Nuxt.
-
 This website is not yet optimised for mobile, legacy (Afterglow-targeted),
 and functionally-limited browsers. We are currently evaluating plans to
 implement a purpose-specific site to help with these scenarios.
@@ -32,16 +30,19 @@ implement a purpose-specific site to help with these scenarios.
 Deployment and testing
 ---
 
-This website is deployed to our Web server using a GitHub workflow. It should
-also be deployed in conjunction with [website-2023-utils](https://github.com/AOSC-Dev/website-2023-utils).
-Please follow also the instructions there.
+This website is deployed to our Web server using a GitHub workflow. The paste
+backend is deployed to paste.aosc.io using [paste-server-rs](https://github.com/AOSC-Dev/website-2023-utils/tree/master/paste-server-rs).
 
-To test the website locally, you would need a Node.js + NPM toolchain and a
-deployment of the aforementioned [website-2023-utils](https://github.com/AOSC-Dev/website-2023-utils).
-To install Node.js + NPM on AOSC OS:
+To test the website locally, you would need a Node.js + NPM toolchain. To
+install Node.js + NPM on AOSC OS:
 
 ```
 oma install nodejs
+```
+
+Install dependencies:
+```
+npm install
 ```
 
 Then, build and preview the website locally:
@@ -50,6 +51,10 @@ Then, build and preview the website locally:
 npm run generate
 npm run preview
 ```
+
+If you need to test the paste page, please set `PASTE_API=http://localhost:2334`
+in your environmental variables or the `.env` file. For the deployment of
+paste-server-rs, please refer to [website-2023-utils](https://github.com/AOSC-Dev/website-2023-utils).
 
 Submitting news
 ---
