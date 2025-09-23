@@ -1,8 +1,7 @@
 {
-  "commentTranslate.hover.enabled": true,
   "i18n-ally.localesPaths": [
-    "i18n",
     "i18n/locales"
   ],
-  "i18n-ally.keystyle": "nested"
+  "i18n-ally.namespace": true,
+  "i18n-ally.pathMatcher": "{locale}/{namespaces}.json"
 }

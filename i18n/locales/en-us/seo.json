@@ -1,12 +1,12 @@
 {
   "heading": {
-    "siteTitle": "社区门户"
+    "siteTitle": "Community Portal"
   },
   "site": {
-    "siteName": "安同开源社区 (AOSC)"
+    "siteName": "Anthon Open Source Community (AOSC)"
   },
   "seo": {
-    "siteDescription": "安同开源社区（Anthon Open Source Community，简称 AOSC）是一个由计算机爱好者志愿组织工作，主要活动于线上的开源社区。",
-    "siteTwitterCreator": "@aosc_dev_cn"
+    "siteDescription": "Anthon Open Source Community (AOSC) is a volunteer-run online open source community of computer enthusiasts.",
+    "siteTwitterCreator": "@aosc_dev"
   }
 }
