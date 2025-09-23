@@ -1,4 +1,4 @@
 {
-  "span1": "what is this",
-  "span2": ["Collapse Architecture", "Expand Architecture"]
+  "downloadWhatIsThis": "这是什么",
+  "downloadDropdownExpandButton": ["收起架构", "展开架构"]
 }

@@ -1,67 +1,65 @@
 {
-  "index": {
-    "title1": "community mascot",
-    "title2": "sticker pack",
-    "title3": "An An and Tong Tong set up draft",
-    "title4": "An An's story",
-    "title5": "Fumo Design Draft",
-    "title6": "Minecraft Character Model (Figure)",
-    "p1": "Scan the QR code to get the WeChat sticker package",
-    "p2": "The original design draft of the community mascots An An and Tong Tong was designed by Titanium Mountain and authorized under the CC BY-SA 4.0 International license. Titanium Mountain provides free and licensed mascot design services for free and open-source software projects. Interested parties please contact:",
-    "p3": "The Fumo puppet design draft of community mascot An An was designed by Yukata, the artist of the \"Tomato Scrambled Eggs\" club, on commission from the user, and is licensed under the CC BY-SA 4.0 International license.",
-    "p4": "The \"Tomato Scrambled Eggs\" community provides paid and optional commercial two-dimensional image fumo design services. If you are interested, please click here",
-    "p5": "(Common contact information)|",
-    "p6": "The Minecraft character model of the community mascot Anan was designed by community friend @ Anmuxi and is designed for ",
-    "p7": " production. This character model is licensed under CC BY-SA 4.0 International license.",
-    "p8": "seek advice from",
-    "ps1": [
-      "    \"Lobster lobster lobster! \"",
-      "An An was originally a rabbit, but one morning he woke up and found that he had become a human with rabbit ears and a rabbit tail...",
-      "... She seemed unable to remember anything else."
+  "mascotIndex": {
+    "titleMain": "社区吉祥物",
+    "titleStickerPack": "贴图包",
+    "titleCharacterSheet": "安安和同同设定稿",
+    "titleBackStory": "安安的故事",
+    "titleFumo": "Fumo 设定稿",
+    "titleFigura": "Minecraft 人物模型 (Figura)",
+    "textWeChatStickerPackQrCode": "扫码获取微信贴图包",
+    "textCharacterSheetLicense": "社区吉祥物安安和同同的原始设定稿由钛山设计，使用 CC BY-SA 4.0 International 许可证进行授权。钛山为自由及开源软件项目提供免费且许可开放的吉祥物设计服务。有意者敬请联系：",
+    "textFumoLicense": "社区吉祥物安安的 Fumo 布偶设定稿由“番茄炒蛋”社团画师 Yukata 受用户委托设计，使用 CC BY-SA 4.0 International 许可证进行授权。",
+    "textFumoReference": "“番茄炒蛋”社团提供付费可选商用的二次元形象 Fumo 化设计服务，有意请点击",
+    "textFumoContact": "（常用联系方式）、",
+    "textFiguraText1": "社区吉祥物安安的 Minecraft 人物模型由社区好友 @安慕希 设计，面向",
+    "textFiguraText2": "模组制作。本人物模型使用 CC BY-SA 4.0 International 许可证进行授权。",
+    "textFiguraText3": "咨询",
+    "textMascotTagline": [
+      "龙虾龙虾龙虾！”",
+      "安安本来是只兔子，但有一天早上醒来发现自己变成了长着兔耳和兔尾巴的人类……",
+      "…… 别的她似乎都记不起来了。"
     ],
-    "ul1": {
+    "textMascotBasicInfoList": {
       "li": [
-        "Birthday: December 1",
-        "age:???",
-        "Hair color: black",
-        "Eye color: black",
-        "Favorite color: red, yellow, blue, white and black",
-        "Favorite food: Salted fish claypot rice, jelly, ice cream...",
-        "Pets: Tongtong, lobster"
+        "生日：12 月 1 日",
+        "年龄：???",
+        "发色：黑",
+        "瞳色：黑",
+        "最喜欢的颜色：红黄蓝白黑",
+        "最喜欢的食物：咸鱼煲仔饭、果冻、冰淇淋……",
+        "宠物：同同、龙虾"
       ]
     },
-    "ps2": [
-      "An An is introverted, but he shows a completely different personality among his companions: warm-hearted, patient, and a troublemaker."
+    "textMascotCharacteristics": [
+      "安安性格内向，但在同伴间会展现出截然不同的性格：热心肠，耐心，还是个造梗狂魔。"
     ],
-    "ul2": {
+    "textMascotCharacteristicsList1": {
       "li": [
-        "An An was very stubborn when she was a child, and a few years ago she caused a scene in the Linux enthusiast community, which she regretted greatly. Then, she decided to concentrate on learning open source related skills, but still maintained some of her persistence.",
-        "Although social interaction has been very limited for several years, An An has made many friends in the community.",
-        "She doesn't like to interfere with other people's choices and always tells her friends that \"whatever suits you is the best.\""
+        "安安小时候非常固执，数年前在 Linux 爱好者社区里大闹了一场，令她后悔不已。而后，她决定潜心学习开源相关技能，但仍然保持了自己的一些执着。",
+        "尽管几年来社交非常有限，但安安还是在社区里交到了许多朋友。",
+        "她不喜欢干预他人的选择，总和朋友们说“适合自己的就是最好的”。"
       ]
     },
-    "ul3": {
+    "textMascotCharacteristicsList2": {
       "li": [
-        "She believes that the meaning of the community lies in sharing fun and skills, and she is constantly working hard to make Linux more practical.",
-        "Instead of writing a diary, An An prefers to organize her memories by collecting various memes in the community.",
-        "An An is a hopeless workaholic and must listen to music while working. She is extremely serious when working and has very strict requirements on herself, but she never negates the work results of others."
+        "她认为社区的意义在于分享乐趣和技能，自己也为了让 Linux 更为实用不断努力着。",
+        "与其写日记，安安更喜欢通过收集社区里的各种梗来整理自己的记忆。",
+        "安安是个无可救药的工作狂，工作时必须听着音乐。她工作时格外认真，对自己的要求也非常严格，但从来不会否定其他人的工作成果。"
       ]
     },
-    "ps3": [
-      "She is multilingual and a localization and typography enthusiast."
-    ],
-    "ul4": {
+    "textMascotLanguageSkils": ["她通晓多种语言，是个本地化和文字排版爱好者。"],
+    "textMascotLanguageSkilsList1": {
       "li": [
-        "An An likes to collect beautiful fonts and believes that elegant text should be backed by good fonts.",
-        "She also likes to think about language and has very strict requirements on the faithfulness and elegance of translations."
+        "安安喜欢收集好看的字体，认为优雅的文字也要有好字体的衬托。",
+        "她也喜好言语上的推敲，对翻译的信达雅要求十分苛刻。"
       ]
     },
-    "ps4": ["Her hobby is tinkering with various antique computers."],
-    "ul5": {
+    "textMascotRetroComputingHobby": ["她的业余爱好是折腾各种古董电脑。"],
+    "textMascotRetroComputingHobbyList1": {
       "li": [
-        "An An's cabinets are filled with all kinds of antique computers and weird equipment, and she has given each one a variety of nonsensical names.",
-        "Because there are always more than ten devices running at home, the indoor temperature is always higher than the outdoor temperature.",
-        "An An has a pet server named \"Lobster\" at home."
+        "安安家柜子里都放满了各种古董电脑和古怪设备，她还给每台都起了各种无厘头的名字。",
+        "因为家里总运转着超过十台设备，室内温度总会比室外高出一截。",
+        "安安家里有台叫“龙虾”的宠物服务器。"
       ]
     }
   }

@@ -1,13 +1,13 @@
 {
   "index": {
-    "operatingSystem": "操作系统",
+    "operatingSystemsTitle": "操作系统",
     "aoscOs": { "name": "安同 OS", "description": "称心得意的桌面操作系统" },
-    "wsl": {
+    "aoscOsWsl": {
       "name": "WSL",
       "description": "在 Windows 上使用安同 OS",
       "detail": "其他下载方式与支持详情..."
     },
-    "appleSilicon": {
+    "aoscOsAppleSilicon": {
       "name": "Apple Silicon",
       "description": "适用于基于 Apple 芯片的 Mac 设备",
       "download": "下载"
@@ -17,102 +17,102 @@
       "description": "老设备也能发光发热",
       "stayTuned": "敬请期待"
     },
-    "sources": [
+    "downloadSources": [
+      {
+        "name": "官方源",
+        "loc": "香港特别行政区",
+        "url": "https://releases.aosc.io/"
+      },
       {
         "name": "MirrorZ",
-        "loc": "automatic",
-        "url": "https://m.mirrorz.org/anthon/aosc-os/"
-      },
-      {
-        "name": "Official source",
-        "loc": "Hong Kong Special Administrative Region",
-        "url": "https://releases.aosc.io/"
+        "loc": "自动",
+        "url": "https://mirrors.cernet.edu.cn/anthon/aosc-os/"
       }
     ],
-    "errors": {
-      "aosc": "AOSC OS version information failed to obtain",
-      "apple": "AOSC OS Apple Silicon version information failed",
-      "oma": "oma version information failed to obtain",
-      "mirrors": "Mirror information acquisition failed",
-      "isBug": "Internal error, please report"
+    "downloadErrors": {
+      "aosc": "AOSC OS 版本信息获取失败",
+      "apple": "AOSC OS Apple Silicon 版本信息获取失败",
+      "oma": "oma 版本信息获取失败",
+      "mirrors": "镜像信息获取失败",
+      "isBug": "内部错误，请报告"
     },
-    "archGroupInfo": {
-      "first": {
-        "name": "First-level architecture",
-        "description": "\"First-level architecture\" is the type of target architecture that we support the highest level. All kinds of updates are timely and have complete characteristics. They are also the most concerned by maintainers and sufficient testing equipment."
+    "portTierInfo": {
+      "primaryIsa": {
+        "name": "一级架构",
+        "description": "“一级架构”是我们支持水平最高的一类目标架构，各类更新及时且特性完整，亦最受维护者关注、测试设备充分"
       },
-      "second": {
-        "name": "Secondary architecture",
-        "description": "The \"secondary architecture\" functions are relatively complete, but due to the scarce number of equipment, generally poor performance or insufficient attention from maintainers, although it will respond to security updates in a timely manner, other types of updates, tests and feedback responses may be slightly inferior to those of the first-level architecture."
+      "secondaryIsa": {
+        "name": "二级架构",
+        "description": "“二级架构”功能相对完整，但由于设备数量稀少、普遍性能较差或受维护者关注度不足，虽会及时响应安全更新，但其他类型更新、测试及反馈响应度可能略逊于一级架构"
       }
     },
-    "contents": {
-      "antong1": [
-        "For x86 devices compatible with AMD64 or Intel 64 instruction set extensions",
-        "Suitable for 64-bit Arm devices compatible with Armv8-A and above",
-        "64-bit devices that are compatible with the LoongArch instruction set and 128-bit vector extension (LSX)"
+    "helpContent": {
+      "aoscOsIsaInfoPrimary": [
+        "适用于兼容 AMD64 或 Intel 64 指令集扩展的 x86 设备",
+        "适用于兼容 Armv8-A 及以上版本的 64 位 Arm 设备",
+        "适用于兼容龙架构 (LoongArch) 指令集及 128 位向量扩展 (LSX) 的 64 位设备"
       ],
-      "antong2": [
-        "Suitable for 64-bit, small-endian device compatible with Power ISA v2.07 and above",
-        "For 64-bit RISC-V devices compatible with RVA20 Architecture Profile",
-        "Suitable for MIPS-based Loongson 3 equipment"
+      "aoscOsIsaInfoSecondary": [
+        "适用于兼容 Power ISA v2.07 及以上版本的 64 位、小端序模式设备",
+        "适用于兼容 RVA20 Architecture Profile 的 64 位 RISC-V 设备",
+        "适用于基于 MIPS 的龙芯三号设备"
       ],
-      "xingxia1": [
-        "For 32-bit x86 devices compatible with i486 (Intel486)",
-        "Suitable for LoongMMI instruction set extensions based on MIPS and supports LoongMMI instruction set",
-        "Suitable for 32-bit large-endian devices (IBM CHRP/PReP or Apple Macintosh and compatible platforms) that are compatible with PowerPC instruction sets"
+      "afterglowIsaInfoPrimary": [
+        "适用于兼容 i486 (Intel486) 的 32 位 x86 设备",
+        "适用于基于 MIPS 并支持 LoongMMI 指令集扩展的龙芯二号 (2F) 设备",
+        "适用于兼容 PowerPC 指令集的 32 位大端序设备（IBM CHRP/PReP 或 Apple Macintosh 及兼容平台）"
       ],
-      "xingxia2": [
-        "For Arm devices compatible with ARMv4 instruction sets",
-        "Suitable for Arm devices compatible with ARMv6 instruction set and Thumb-2 and NEON extensions",
-        "Suitable for Arm devices compatible with ARMv7 instruction set and Thumb-2 and NEON extensions",
-        "Suitable for devices based on DEC Alpha (formerly Alpha AXP) instruction set architecture",
-        "Suitable for devices compatible with IA-64 instruction set architecture (Itanium)",
-        "For devices compatible with Motorola 68020 and equipped with a memory management unit (MMU)",
-        "Suitable for 64-bit large-endian devices (IBM CHRP/PReP and Apple Macintosh and compatible platforms) that are compatible with PowerPC instruction sets",
-        "Suitable for 64-bit SPARC devices compatible with SPARC V9 instruction set and VIS 1.0 extension"
+      "afterglowIsaInfoSecondary": [
+        "适用于兼容 ARMv4 指令集的 Arm 设备",
+        "适用于兼容 ARMv6 指令集及 Thumb-2、NEON 扩展的 Arm 设备",
+        "适用于兼容 ARMv7 指令集及 Thumb-2、NEON 扩展的 Arm 设备",
+        "适用于基于 DEC Alpha（原称 Alpha AXP）指令集架构的设备",
+        "适用于兼容 IA-64 指令集架构的设备（安腾，Itanium）",
+        "用于兼容 Motorola 68020 且搭载内存管理单元 (MMU) 的设备",
+        "适用于兼容 PowerPC 指令集的 64 位大端序设备（IBM CHRP/PReP 及 Apple Macintosh 及兼容平台）",
+        "适用于兼容 SPARC V9 指令集及 VIS 1.0 扩展的 64 位 SPARC 设备"
       ]
     },
-    "labels": {
-      "antong1": ["x86-64", "AArch64", "LoongArch"],
-      "antong2": ["POWER (64 bits)", "RISC-V (64-bit)", "Loongson 3 (MIPS)"],
-      "xingxia1": [
-        "x86 (32 bits)",
-        "Loongson 2 (MIPS)",
-        "PowerPC (32-bit, big-endian)"
+    "downloadButtons": {
+      "aoscOsPrimary": ["x86-64", "AArch64", "LoongArch"],
+      "aoscOsSecondary": ["POWER（64 位）", "RISC-V（64 位）", "龙芯三号 (MIPS)"],
+      "afterglowPrimary": [
+        "x86（32 位）",
+        "龙芯二号 (MIPS)",
+        "PowerPC（32 位，大端序）"
       ],
-      "xingxia2": [
+      "afterglowSecondary": [
         "ARMv4",
-        "ARMv6 (hard floating point)",
-        "ARMv7 (hard floating point)",
+        "ARMv6（硬浮点）",
+        "ARMv7（硬浮点）",
         "DEC Alpha",
         "IA-64",
         "Motorola 68000",
-        "PowerPC (64-bit, big-endian)",
-        "SPARC (64-bit)"
+        "PowerPC（64 位，大端序）",
+        "SPARC（64 位）"
       ]
     },
-    "title2": "Practical Tools",
-    "title3": "Antong OS (secondary architecture)",
-    "p3": "Xingxia OS",
-    "p4": "Old equipment can also shine and heat",
-    "p5": "Stay tuned...",
-    "p6": "Full-featured Antong OS rescue environment",
-    "p9": "Little Panda Package Management (oma)",
-    "p10": "Concise and easy-to-use APT package management interface",
-    "p11": [
-      "Run this command using the terminal to run it in Debian, Ubuntu, Linux Mint and derivatives, as well as deepin,",
-      "OpenKylin (openKylin) and other distributions to install the red panda package management"
+    "utilitiesTitle": "实用工具",
+    "aoscOsSecondaryIsaTitle": "安同 OS（二级架构）",
+    "afterglowTitle": "星霞 OS",
+    "afterglowTagline": "老设备也能发光发热",
+    "comingSoon": "敬请期待...",
+    "livekitTagline": "功能完备的安同 OS 救援环境",
+    "omaTitle": "小熊猫包管理 (oma)",
+    "omaTagline": "简明好用的 APT 软件包管理界面",
+    "omaSystemSupportInfo": [
+      "使用终端运行该命令可在 Debian、Ubuntu、Linux Mint 及衍生版，以及 deepin、",
+      "开放麒麟 (openKylin) 等发行版安装小熊猫包管理"
     ],
-    "p12": "Antong OS supports many processor microarchitectures.",
-    "p13": "Except for x86-64, AArch64 and LoongArch,",
-    "p14": "We also support a number of architectures with low stock or software support that are not yet perfect.",
-    "p15": "And release a mirror for players to try and evaluate.",
-    "otherDownloadButtons": {
+    "aoscOsSecondaryIsaText1": "安同 OS 支持支持众多处理器微架构。",
+    "aoscOsSecondaryIsaText2": "除 x86-64、AArch64 及 LoongArch 外，",
+    "aoscOsSecondaryIsaText3": "我们还支持一众存量较少或软件支持尚未完善的架构，",
+    "aoscOsSecondaryIsaText4": "并发布镜像供各位玩家试用和评估。",
+    "buttonOtherDownload": {
       "popoverData": {
-        "conten": "Secondary architecture, Docker, and virtual machine images and other downloads"
+        "content": "二级架构、Docker, 及虚拟机镜像等其他下载"
       },
-      "archName": "Other downloads"
+      "otherDownload": "其他下载"
     }
   }
 }

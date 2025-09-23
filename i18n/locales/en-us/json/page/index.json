@@ -1,24 +1,24 @@
 {
-  "columnTextList": [
+  "indexSpecialColumns": [
     {
-      "title": "Work efficiently",
-      "description": "Designed with the primary goal of being usable right out of the box, Antong OS is a powerful assistant for your daily work. From text office to server operation and maintenance, photography post-production to 3D modeling, class notes to document translation, our system helps you deploy quickly, work efficiently, and create to your heart's content."
+      "title": "高效工作",
+      "description": "以开箱即用作为主要设计目标，安同 OS 是您日常工作的得力助手。从文字办公到服务器运维，摄影后期到 3D 建模，课堂笔记到文档翻译，我们的系统助您快速部署、高效工作、尽情创作。"
     },
     {
-      "title": "High compatibility",
-      "description": "We believe that the operating system is the stage for applications and productivity. In addition to the officially verified software provided in the software source, Antong OS also supports cross-distribution ecosystems such as Ruyi Linglong, Flatpak, Snap and AppImage, expanding the scope of software support. In addition, the Spiral project improves compatibility of Debian and Ubuntu packages."
+      "title": "高兼容性",
+      "description": "我们相信，操作系统是应用程序和生产力的舞台。除软件源中提供的经官方验证的软件外，安同 OS 还支持如意玲珑、Flatpak、Snap 和 AppImage 等跨发行版生态，扩充软件支持的范畴。此外，Spiral 项目可改善 Debian 及 Ubuntu 软件包的兼容性。"
     },
     {
-      "title": "Easy to manage",
-      "description": "From installation to system updates, from component management to routine maintenance, Antong OS has many built-in easy-to-use management tools to help you manage it easily and use it comfortably. The built-in Red Panda Package Management (oma), with its concise and user-friendly interface, makes system management as low-risk, time-consuming and highly reliable as possible."
+      "title": "易于管理",
+      "description": "从安装到系统更新，从组件管理到日常维护，安同 OS 内建许多易于使用的管理工具，助您轻松管理、舒心使用。内建的小熊猫包管理 (oma) 以其简明且人性化的界面，让系统管理尽可能低风险、低耗时、高可靠。"
     },
     {
-      "title": "Follow like a shadow",
-      "description": "Our company has always been known for its friendly and responsible support work. Respecting users' time and energy is our working principle. The community is also a strong backing for information sharing - in various community chat groups, we are always ready to help you solve problems."
+      "title": "如影随形",
+      "description": "我社一向以友好负责的支持工作著称，尊重用户的时间与精力是我们的工作准则。社区也是信息共享的强大后盾 —— 在各社区聊天群组，我们时刻准备着为您排忧解难。"
     }
   ],
-  "title": "Portal",
-  "title1": "Key points of information",
-  "title2": "Column: First introduction to Antong OS",
-  "link2": "For details, see: Is Antong OS right for me?"
+  "indexTitle": "社区门户",
+  "indexNewsHighlights": "资讯要点",
+  "indexSpecialTitle": "专栏：初识安同 OS",
+  "indexSpecialReadMore": "详情请见：安同 OS 适合我吗？"
 }

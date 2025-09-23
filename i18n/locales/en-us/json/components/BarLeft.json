@@ -1,7 +1,7 @@
 {
-  "title1": "community projects",
-  "title2": "Information and support",
-  "title3": "Affairs and Culture",
-  "title4": "Service facilities",
-  "span1": "back up"
+  "barLeftProjects": "社区项目",
+  "barLeftNews": "资讯与支持",
+  "barLeftCulture": "事务与文化",
+  "barLeftInfrastructures": "服务设施",
+  "barLeftReturnToTop": "回到顶部"
 }

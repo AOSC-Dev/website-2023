@@ -1,8 +1,8 @@
 {
-  "label1": "System installation disk",
-  "label2": "LiveKit Rescue Startup Disk",
-  "label3": "Apple Silicon Installation Wizard",
-  "label4": "Device mirroring",
-  "label5": "Docker",
-  "label6": "Virtual machine image"
+  "downloadInstallerName": "系统安装盘",
+  "downloadLivekitName": "LiveKit 救援启动盘",
+  "downloadAppleSiliconInstruction": "Apple Silicon 安装向导",
+  "downloadDeviceImages": "设备镜像",
+  "downloadDockerContainers": "Docker",
+  "downloadVmImages": "虚拟机镜像"
 }

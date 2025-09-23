@@ -1,30 +1,24 @@
 {
-  "index": {
-    "message1": "Content cannot be empty",
-    "message2": [
-      "Clipboard size exceeds 10MiB limit: text takes up",
-      ", the attachment is occupied"
-    ],
-    "message3": "Submission size exceeds server limit, this may be a bug, please report it!",
-    "message4": [
-      "Each clipboard size must not exceed 10MiB, upload",
-      "This limit will be exceeded later!"
-    ],
-    "message5": "File added successfully:",
-    "title1": "Public pasteboard",
-    "button1": "submit",
-    "placeholder1": "title",
-    "div1": ["Drag files here", "Or click to upload"]
+  "pasteIndex": {
+    "promptContentEmpty": "内容不能为空",
+    "promptContentTooLarge": ["剪贴板大小超出了 10MiB 限制：文本占用了", "、附件占用了"],
+    "promptContentServerSizeLimit": "提交内容大小超出了服务器限制，这可能是一个错误，请报告！",
+    "promptContentSizeTooLargeWithAttachment": ["每个剪贴板大小不得超过 10MiB，上传", "后会超出该限制！"],
+    "promptFileAddSuccess": "成功添加文件:",
+    "pageTitle": "公共粘贴板",
+    "buttonSubmit": "提交",
+    "placeholderTitle": "标题",
+    "promptAttachmentInstruction": ["将文件拖拽到此处", "或点击上传"]
   },
-  "detail": {
-    "message1": "Getting pasteboard exception (server internal error)",
-    "message2": " share link ",
-    "message3": " full text ",
-    "title1": "Public pasteboard",
-    "div1": "title:",
-    "div2": "Expiration time:",
-    "button1": "Copy share link",
-    "button2": "return",
-    "button3": "Copy full text"
+  "pasteDetail": {
+    "promptFetchError": "获取粘贴板异常（服务器内部错误）",
+    "pasteShareLink":"共享连接",
+    "pasteFullContent":"全文",
+    "pageTitle": "公共粘贴板",
+    "pasteTitle": "标题：",
+    "pasteExpiration": "过期时间：",
+    "buttonCopyLink": "复制共享链接",
+    "buttonReturn": "返回",
+    "buttonCopyFullContent":"复制全文"
   }
 }

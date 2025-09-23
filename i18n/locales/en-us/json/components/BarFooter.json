@@ -1,14 +1,14 @@
 {
-  "navigationTextList": [
+  "footerNavigationTextList": [
     {
-      "title": "Web page source code"
+      "siteSources": "网页源码"
     },
     {
-      "title": "Report a content issue"
+      "reportContentIssues": "报告内容问题"
     },
     {
-      "title": "Return to home page"
+      "returnToHome": "返回主页"
     }
   ],
-  "antong": "Antong open source community"
+  "communityName": "安同开源社区"
 }

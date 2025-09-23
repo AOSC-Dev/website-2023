@@ -1,10 +1,10 @@
 {
-  "index": {
-    "title": "News",
-    "title1": "User Announcement",
-    "title2": "News",
-    "title3": "community journal",
-    "title4": "meeting minutes",
-    "all": "View all"
+  "newsIndex": {
+    "headingMain": "新闻资讯",
+    "headingAdvisories": "用户公告",
+    "headingNews": "新闻资讯",
+    "headingPeriodicals": "社区期刊",
+    "headingMinutes": "会议纪要",
+    "seeAll": "查看全部"
   }
 }

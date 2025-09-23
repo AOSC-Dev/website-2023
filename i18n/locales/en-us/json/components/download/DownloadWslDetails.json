@@ -1,22 +1,22 @@
 {
-  "title1": "Download WSL version of Antong OS",
-  "text2": "To meet the love and needs of different users, we also provide the following ways to install or download the WSL version of Antong OS (AOSC OS on WSL):",
-  "text3": " One click package for distributing the required. wsl files: ",
-  "text4": "WSL one-click package (stay tuned)",
-  "title2": "System requirements",
-  "text6": "The WSL version of Antong OS (AOSC OS on WSL) can be used for devices running Windows. The basic system requirements are similar to Antong OS. However, since it relies on technical architectures such as WSL and WSLg, there are certain requirements for Windows system component versions, in addition to device processors, graphics cards, storage and Internet connections.",
-  "text7": "For details of specific requirements, please refer to",
-  "text8": "WSL version of Antong OS system configuration requirements table",
-  "title3": "Help and support",
-  "text11": "If you have problems installing or using the OS, please",
-  "text13": "Contact us.",
-  "selectSourcePlaceholder": "Select a download source",
-  "download": {
-    "x86_64": "Download x86-64",
-    "aarch64": "Download AArch64"
+  "downloadWslDetailTitle": "下载 WSL 版安同 OS",
+  "downloadWslDetailText1": "为满足不同用户的喜爱和需要，我们还提供了 WSL 现代发行版 ",
+  "downloadWslDetailText2": " 分发所需的 .wsl 文件一键包：",
+  "downloadWslDetailOneClickButton": "WSL 一键包（敬请期待）",
+  "downloadWslDetailSysReqTitle": "系统需求",
+  "downloadWslDetailSysReqText1": "WSL 版安同 OS (AOSC OS on WSL) 可用于运行 Windows 的设备，其基本系统需求与安同 OS 类似，但由于其依赖 WSL 及 WSLg 等技术架构运行，因此除对设备处理器、显卡、存储和互联网连接外，对 Windows 系统组件版本等均有一定的需求。",
+  "downloadWslDetailSysReqText2": "欲知具体需求详情，请参阅",
+  "downloadWslDetailSysReqText3": "WSL 版安同 OS 系统配置需求表",
+  "downloadWslDetailHelpAndSupportTitle": "帮助与支持",
+  "downloadWslDetailHelpAndSupportText1": "如果您在安装或使用安同 OS 时遇到问题，请于",
+  "downloadWslDetailHelpAndSupportText2": "与我们联系。",
+  "downloadWslDetailMirrorPlaceholder": "请选择下载源",
+  "downloadWslDetailArch": {
+    "x86_64": "x86-64",
+    "aarch64": "AArch64"
   },
-  "manualDownload": {
-    "description": "If you can't use the methods above, you can also manually download the AppX package for sideloading:"
+  "downloadWslDetailManualDownload": {
+    "description": "如无法使用上述两种方式，也可手动下载 AppX 侧载包部署："
   },
-  "viewReleaseNotes": "View the latest release notes..."
+  "downloadWslDetailRelNote": "查阅最新发行注记..."
 }
