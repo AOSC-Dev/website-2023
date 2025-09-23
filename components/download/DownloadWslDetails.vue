@@ -22,7 +22,7 @@ function latestTarball(tarballs, arch) {
 
 <template>
   <div class="flex flex-col gap-2 pb-1">
-    <app-h2>{{ textValue.title1 }}</app-h2>
+    <app-h2>{{ textValue.downloadWslDetailTitle }}</app-h2>
     <ms-store-badge
       class="h-[48px] w-fit [&::part(img)]:h-[48px]"
       productid="9NMDF21NV65Z"
@@ -30,14 +30,14 @@ function latestTarball(tarballs, arch) {
       theme="dark"
       animation="on" />
     <p class="mb-0">
-      {{ textValue.text2 }}
+      {{ textValue.downloadWslDetailText1 }}
       <LinkStandard :link="linkValue.mordenDistribution" />
-      {{ textValue.text3 }}
+      {{ textValue.downloadWslDetailText2 }}
     </p>
     <el-container>
       <el-select
         v-model="selected_source_url"
-        :placeholder="textValue.selectSourcePlaceholder">
+        :placeholder="textValue.downloadWslDetailMirrorPlaceholder">
         <el-option
           v-for="source in sources"
           :key="source.name"
@@ -51,41 +51,41 @@ function latestTarball(tarballs, arch) {
         :to="`${selected_source_url}${latestTarball(recipeWsl.tarballs, 'amd64').path}`"
         target="_blank"
         class="flex h-[32px] items-center border-r bg-[var(--secondary)] px-[15px] text-nowrap text-white hover:bg-[var(--primary)] hover:no-underline">
-        {{ textValue.download.x86_64 }}
+        {{ textValue.downloadWslDetailArch.x86_64 }}
       </AppLink>
       <AppLink
         :to="`${selected_source_url}${latestTarball(recipeWsl.tarballs, 'arm64').path}`"
         target="_blank"
         class="flex h-[32px] items-center bg-[var(--secondary)] px-[15px] text-nowrap text-white hover:bg-[var(--primary)] hover:no-underline">
-        {{ textValue.download.aarch64 }}
+        {{ textValue.downloadWslDetailArch.aarch64 }}
       </AppLink>
     </el-container>
 
     <div class="col-span-2">
-      {{ textValue.manualDownload.description }}
+      {{ textValue.downloadWslDetailManualDownload.description }}
     </div>
 
 
     <LinkStandard
-      :link="linkValue.AOSCOSLauncher"
+      :link="linkValue.aoscOsLauncher"
       target="_blank"
       class="el-button max-w-min hover:no-underline" />
 
     <LinkStandard :link="localLink.aoscWslRelnote"/>
 
-    <app-h2>{{ textValue.title2 }}</app-h2>
-    <p>{{ textValue.text6 }}</p>
+    <app-h2>{{ textValue.downloadWslDetailSysReqTitle }}</app-h2>
+    <p>{{ textValue.downloadWslDetailSysReqText1 }}</p>
     <p>
-      {{ textValue.text7 }}
+      {{ textValue.downloadWslDetailSysReqText1 }}
       <link-standard :link="useTIndex(localLink.aoscWslRequirements, 1)" />
-      {{ linkValue.aPeriod }}
+      {{ linkValue.periodPoint }}
     </p>
 
-    <app-h2>{{ textValue.title3 }}</app-h2>
+    <app-h2>{{ textValue.downloadWslDetailHelpAndSupportTitle }}</app-h2>
     <p>
-      {{ textValue.text11 }}
+      {{ textValue.downloadWslDetailHelpAndSupportText1 }}
       <link-standard :link="useTIndex(localLink.contact, 2)" />
-      {{ textValue.text13 }}
+      {{ textValue.downloadWslDetailHelpAndSupportText2 }}
     </p>
   </div>
 </template>

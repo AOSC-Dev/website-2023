@@ -326,7 +326,7 @@
     "title": ["Download the character model"],
     "url": "https://github.com/OvOla2/AnAn-Figura-avatar"
   },
-  "mailtoTysontan": {
+  "mailtoTysonTan": {
     "title": ["tysontan@tysontan.com"],
     "url": "mailto:tysontan@tysontan.com"
   },
@@ -351,7 +351,7 @@
     "url": "https://wiki.debian.org/Teams/Dpkg"
   },
   "sponsors": {
-    "servicesAndFacilities": {
+    "infrastructure": {
       "apernet": {
         "title": ["Apernet Internet Laboratory"],
         "url": "https://apernet.io/",
@@ -524,7 +524,7 @@
         "img": "jetbrains"
       }
     },
-    "oldServicesAndFacilities": {
+    "historicInfrastructure": {
       "fuslvz": {
         "title": ["FuslVZ"],
         "url": "https://fuslvz.ws/",

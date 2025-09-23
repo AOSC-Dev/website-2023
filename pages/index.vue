@@ -21,7 +21,7 @@ const columnBorderlessList = [
       </app-link>
       <!-- 资讯要点 -->
       <div>
-        <CategorySecond :title="textValue.title1" />
+        <CategorySecond :title="textValue.indexNewsHighlights" />
         <article>
           <CategoryList
             category="news"
@@ -35,10 +35,10 @@ const columnBorderlessList = [
       </div>
       <!-- 专栏 -->
       <div id="topic">
-        <CategorySecond :title="textValue.title2" />
+        <CategorySecond :title="textValue.indexSpecialTitle" />
         <article class="p-[1em] leading-6">
           <div
-            v-for="(item, index) in textValue.columnTextList"
+            v-for="(item, index) in textValue.indexSpecialColumns"
             :key="item.title"
             class="flex items-center pb-[15px]">
             <div class="mr-[20px] ml-[0.5em] basis-[50px]">

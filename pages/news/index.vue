@@ -1,9 +1,9 @@
 <script setup>
 const { tm } = useI18n();
-const textValue = tm('news.index');
+const textValue = tm('news.newsIndex');
 // const linkValue = tm('allUniversalLink');
 const newsLimit = 10;
-useHead({ title: textValue.title });
+useHead({ title: textValue.headingMain });
 const filters = (newsCategory) => [{ key: 'categories', value: `%"${newsCategory}"%` }];
 </script>
 
@@ -11,8 +11,8 @@ const filters = (newsCategory) => [{ key: 'categories', value: `%"${newsCategory
   <div class="flex flex-wrap *:w-1/2">
     <div>
       <category-second
-        :title="textValue.title1"
-        :right-text="textValue.all"
+        :title="textValue.headingAdvisories"
+        :right-text="textValue.seeAll"
         right-url="/news/list/advisories"
         :show-right-chevron="true" />
       <category-list
@@ -23,8 +23,8 @@ const filters = (newsCategory) => [{ key: 'categories', value: `%"${newsCategory
     </div>
     <div class="">
       <category-second
-        :title="textValue.title2"
-        :right-text="textValue.all"
+        :title="textValue.headingNews"
+        :right-text="textValue.seeAll"
         right-url="/news/list/news"
         class="border-l border-l-white"
         :show-right-chevron="true" />
@@ -36,8 +36,8 @@ const filters = (newsCategory) => [{ key: 'categories', value: `%"${newsCategory
     </div>
     <div>
       <category-second
-        :title="textValue.title3"
-        :right-text="textValue.all"
+        :title="textValue.headingPeriodicals"
+        :right-text="textValue.seeAll"
         right-url="/news/list/journals"
         :show-right-chevron="true" />
       <category-list
@@ -49,8 +49,8 @@ const filters = (newsCategory) => [{ key: 'categories', value: `%"${newsCategory
 
     <div class="">
       <category-second
-        :title="textValue.title4"
-        :right-text="textValue.all"
+        :title="textValue.headingMinutes"
+        :right-text="textValue.seeAll"
         right-url="/news/list/minutes"
         :show-right-chevron="true"
         class="border-l border-l-white" />

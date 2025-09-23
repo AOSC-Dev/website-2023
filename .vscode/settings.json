@@ -1,3 +1,7 @@
 {
-  "commentTranslate.hover.enabled": true
+  "commentTranslate.hover.enabled": true,
+  "i18n-ally.localesPaths": [
+    "i18n",
+    "i18n/locales"
+  ]
 }

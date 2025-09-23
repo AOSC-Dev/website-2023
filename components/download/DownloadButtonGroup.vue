@@ -16,7 +16,7 @@ const expand = ref(false);
       <span v-if="title" class="text-[10pt] font-[450]">{{ title }}</span>
       <el-popover placement="top" width="233" :content="description">
         <template #reference>
-          <span class="text-[8pt] font-[450]">（{{ textValue.span1 }}？）</span>
+          <span class="text-[8pt] font-[450]">（{{ textValue.downloadWhatIsThis }}？）</span>
         </template>
       </el-popover>
     </div>
@@ -25,7 +25,7 @@ const expand = ref(false);
       v-if="buttonProps.length > 3"
       class="theme-bg-color-secondary-primary mb-1 flex cursor-pointer items-center justify-center py-1 text-[11pt]"
       @click="expand = !expand">
-      <span>{{ expand ? textValue.span2[0] : textValue.span2[1] }}</span>
+      <span>{{ expand ? textValue.downloadDropdownExpandButton[0] : textValue.downloadDropdownExpandButton[1] }}</span>
       <Icon
         name="stash:caret-down"
         size="24px"

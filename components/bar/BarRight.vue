@@ -8,24 +8,24 @@ const distroList = [
   {
     img: '/distros/aosc-os.svg',
     links: [useHIndex(localLink.download, 0), localLink.aoscRelnote],
-    description: textValue.description1,
-    title: textValue.title3
+    description: textValue.barRightAoscOsTagline,
+    title: textValue.barRightAoscOsTitle
   },
   {
     img: '/distros/afterglow.svg',
     links: [useHIndex(localLink.download, 1), localLink.afterglowRelnote],
-    description: textValue.description2,
-    title: textValue.title4
+    description: textValue.barRightAfterglowTagLine,
+    title: textValue.barRightAfterglowTitle
   }
 ];
 
 const commonLinkList = [
   useTIndex(useHIndex(localLink.contact, 0), 3),
   useTIndex(localLink.paste, 1),
-  useTIndex(linkValue.AOSCPackages),
+  useTIndex(linkValue.aoscPackagesSite),
   useTIndex(localLink.events, 1),
   useTIndex(localLink.internship, 1),
-  linkValue.systemSecurityIssuse,
+  linkValue.reportSecurityIssuse,
   linkValue.howToMirror,
   useTIndex(localLink.crowdsourcing, 1)
 ];
@@ -45,7 +45,7 @@ const commonLinkList = [
     </AppLink>
     <div class="flex grow flex-col">
       <CategorySecond
-        :title="textValue.title1"
+        :title="textValue.barRightOsSolutions"
         class="border-l border-solid border-content-main-bg" />
       <article
         class="theme-border-secondary border-l pt-[1em] pb-[0.5em] pl-[1em]">
@@ -72,7 +72,7 @@ const commonLinkList = [
           </div>
         </div>
       </article>
-      <CategorySecond :title="textValue.title2" />
+      <CategorySecond :title="textValue.barRightQuickLinks" />
       <div class="theme-border-secondary flex grow flex-col border-l">
         <link-standard
           v-for="(item, index) in commonLinkList"

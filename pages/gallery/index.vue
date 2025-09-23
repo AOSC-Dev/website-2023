@@ -1,6 +1,6 @@
 <script setup>
 const { t } = useI18n();
-useHead({ title: t('gallery.title') });
+useHead({ title: t('gallery.galleryTitle') });
 
 const { data: galleryList } = useAsyncData(() =>
   queryCollection('gallery').first()

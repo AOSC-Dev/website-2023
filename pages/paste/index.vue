@@ -3,9 +3,9 @@ import hljs from 'highlight.js/lib/core';
 
 const config = useRuntimeConfig();
 const { tm } = useI18n();
-const textValue = tm('paste.index');
+const textValue = tm('paste.pasteIndex');
 // const linkValue = tm('allUniversalLink');
-useHead({ title: textValue.title1 });
+useHead({ title: textValue.pageTitle });
 
 const languageList = ref(hljs.listLanguages());
 
@@ -37,7 +37,7 @@ const pasteRes = ref(null);
 const submiting = ref(false);
 const submit = async () => {
   if (pasteFormData.value.content == '') {
-    ElMessage.error(textValue.message1);
+    ElMessage.error(textValue.promptContentEmpty);
     return;
   }
   const formdataSize = getFormDataSize();
@@ -46,7 +46,7 @@ const submit = async () => {
     ElMessage.error({
       showClose: true,
       duration: 10000,
-      message: `${textValue.message2[0]}${formdataSize}B (${BToMB(formdataSize)}MiB)${textValue.message2[1]}${toailFileSize}B (${BToMB(toailFileSize)}MiB)`
+      message: `${textValue.promptContentTooLarge[0]}${formdataSize}B (${BToMB(formdataSize)}MiB)${textValue.promptContentTooLarge[1]}${toailFileSize}B (${BToMB(toailFileSize)}MiB)`
     });
   }
   submiting.value = true;
@@ -81,7 +81,7 @@ const submit = async () => {
     ElMessage.error({
       showClose: true,
       duration: 10000,
-      message: `${textValue.message3}`
+      message: `${textValue.promptContentServerSizeLimit}`
     });
   } else {
     ElMessage.error(`${error.value.message}: ${error.value.data.msg}`);
@@ -98,17 +98,17 @@ const handleChange = (uploadFile, uploadFiles) => {
     ElMessage.error({
       showClose: true,
       duration: 10000,
-      message: `${textValue.message4[0]}'${uploadFile.name}'${textValue.message4[1]}`
+      message: `${textValue.promptContentSizeTooLargeWithAttachment[0]}'${uploadFile.name}'${textValue.promptContentSizeTooLargeWithAttachment[1]}`
     });
     selectedFileList.value.pop();
     // showSize();
-  } else ElMessage.success(`${textValue.message5}'${uploadFile.name}'`);
+  } else ElMessage.success(`${textValue.promptFileAddSuccess}'${uploadFile.name}'`);
 };
 </script>
 
 <template>
   <div v-loading="submiting">
-    <category-second :title="textValue.title1" />
+    <category-second :title="textValue.pageTitle" />
     <div class="px-[10%] py-[30px]">
       <div class="mb-[10px] flex justify-between">
         <div class="flex">
@@ -130,14 +130,14 @@ const handleChange = (uploadFile, uploadFiles) => {
         <button
           class="theme-bg-color-secondary-primary rounded-none px-[50px] py-[10px] text-white"
           @click="submit">
-          {{ textValue.button1 }}
+          {{ textValue.buttonSubmit }}
         </button>
       </div>
       <input
         v-model="pasteFormData.title"
         type="text"
         class="theme-border-primary mb-[10px] w-full rounded-none border-2 py-[10px]"
-        :placeholder="textValue.placeholder1" />
+        :placeholder="textValue.placeholderTitle" />
       <!-- 内容编辑器 -->
       <LazyMonacoEditor
         v-model="pasteFormData.content"
@@ -155,8 +155,8 @@ const handleChange = (uploadFile, uploadFiles) => {
         <div class="my-[-26px] h-[26px]">
           <el-icon size="24"><el-icon-upload-filled /></el-icon>
           <div ref="div1" class="el-upload__text">
-            <span>{{ textValue.div1[0] }}</span>
-            <em>{{ textValue.div1[1] }}</em>
+            <span>{{ textValue.promptAttachmentInstruction[0] }}</span>
+            <em>{{ textValue.promptAttachmentInstruction[1] }}</em>
           </div>
         </div>
       </el-upload>

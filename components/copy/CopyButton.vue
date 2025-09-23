@@ -18,7 +18,7 @@ defineProps({
       {{ content }}
     </code>
     <el-button color="gray" plain @click="copyToClipboard(content)">
-      {{ buttonText ? buttonText : textValue.buttonTextDefault }}
+      {{ buttonText ? buttonText : textValue.copyButton }}
     </el-button>
   </el-container>
 </template>

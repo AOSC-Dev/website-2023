@@ -7,26 +7,26 @@ const linkValue = tm('allUniversalLink');
 <template>
   <div class="flex flex-col gap-2">
     <p>
-      {{ textValue.text1 }}
-      <link-standard :link="linkValue.asahiLinux" />
-      {{ linkValue.aPeriod }}
+      {{ textValue.downloadDetailsAppleSiliconText1 }}
+      <link-standard :link="linkValue.asahiDocumentation" />
+      {{ linkValue.periodPoint }}
     </p>
-    <p>{{ textValue.text2 }}</p>
+    <p>{{ textValue.downloadDetailsAppleSiliconText2 }}</p>
     <CopyButton content="curl https://releases.aosc.io/install-asahi | sh" />
-    <p>{{ textValue.text3 }}</p>
+    <p>{{ textValue.downloadDetailsAppleSiliconText3 }}</p>
     <el-descriptions size="small">
-      <el-descriptions-item :label="textValue.label1">
+      <el-descriptions-item :label="textValue.downloadDetailsAppleSiliconUsername">
         aosc
       </el-descriptions-item>
-      <el-descriptions-item :label="textValue.label2">
+      <el-descriptions-item :label="textValue.downloadDetailsAppleSiliconPassword">
         anthon
       </el-descriptions-item>
     </el-descriptions>
 
     <p>
-      {{ textValue.text4 }}
+      {{ textValue.downloadDetailsAppleSiliconText4 }}
       <link-standard :link="useTIndex(linkValue.contact, 2)" />
-      {{ textValue.text5 }}
+      {{ textValue.downloadDetailsAppleSiliconText5 }}
     </p>
   </div>
 </template>

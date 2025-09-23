@@ -32,7 +32,7 @@ const dialogTab = ref(props.initialTab);
   <el-tabs v-model="dialogTab" class="pb-2 *:px-2">
     <el-tab-pane
       :disabled="!isaInfo.installer"
-      :label="textValue.label1"
+      :label="textValue.downloadInstallerName"
       name="installer">
       <DownloadDetailsMain
         :arch="isaInfo.label"
@@ -43,7 +43,7 @@ const dialogTab = ref(props.initialTab);
     </el-tab-pane>
     <el-tab-pane
       :disabled="!isaInfo.livekit"
-      :label="textValue.label2"
+      :label="textValue.downloadLivekitName"
       name="livekit">
       <DownloadDetailsMain
         :arch="isaInfo.label"
@@ -54,18 +54,18 @@ const dialogTab = ref(props.initialTab);
     </el-tab-pane>
     <el-tab-pane
       v-if="isaInfo.title === 'arm64'"
-      :label="textValue.label3"
+      :label="textValue.downloadAppleSiliconInstruction"
       name="apple-silicon-instruction">
       <DownloadDetailsAppleSiliconInstruction />
     </el-tab-pane>
     <el-tab-pane
       v-if="isaInfo.title === 'arm64'"
-      :label="textValue.label4"
+      :label="textValue.downloadDeviceImages"
       name="apple-silicon-image"
       disabled>
       <!-- TODO -->
     </el-tab-pane>
-    <el-tab-pane :label="textValue.label5" name="docker" disabled />
-    <el-tab-pane :label="textValue.label6" name="vm" disabled />
+    <el-tab-pane :label="textValue.downloadDockerContainers" name="docker" disabled />
+    <el-tab-pane :label="textValue.downloadVmImages" name="vm" disabled />
   </el-tabs>
 </template>

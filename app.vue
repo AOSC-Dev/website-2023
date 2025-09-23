@@ -4,8 +4,8 @@ const router = useRouter();
 const { t } = useI18n();
 
 useHead({
-  title: t('seo.head.title'),
-  titleTemplate: (title) => `${title} | ${t('seo.site.name')}`,
+  title: t('seo.heading.siteTitle'),
+  titleTemplate: (title) => `${title} | ${t('seo.site.siteName')}`,
   link: [{ rel: 'icon', type: 'image/svg+xml', href: '/aosc.svg' }],
   script: [
     {
@@ -20,9 +20,9 @@ useHead({
 });
 
 useSeoMeta({
-  description: t('seo.seo.description'),
+  description: t('seo.seo.siteDescription'),
   ogImage: '/aosc.svg',
-  ogSiteName: t('seo.site.name')
+  ogSiteName: t('seo.site.siteName')
 });
 
 router.afterEach((to, _from) => {

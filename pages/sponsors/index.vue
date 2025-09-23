@@ -1,49 +1,49 @@
 <script setup>
 const { tm } = useI18n();
-const textValue = tm('sponsors.index');
+const textValue = tm('sponsors.sponsorsIndex');
 const linkValue = tm('allUniversalLink');
-useHead({ title: textValue.title7 });
-const linkDevelopmentEquipment = linkValue.sponsors.developmentEquipment;
+useHead({ title: textValue.title });
+const linkDevelopmentEquipment = linkValue.sponsors.devices;
 const sponsorList = [
   {
-    title: textValue.title1,
-    list: [...Object.values(linkValue.sponsors.servicesAndFacilities)]
+    title: textValue.infrastructure,
+    list: [...Object.values(linkValue.sponsors.infrastructure)]
   },
   {
-    title: textValue.title2,
-    list: [...Object.values(linkValue.sponsors.imageSource)]
+    title: textValue.mirrors,
+    list: [...Object.values(linkValue.sponsors.mirrors)]
   },
   {
-    title: textValue.title3,
+    title: textValue.devices,
     list: [
       linkDevelopmentEquipment.bananaPi,
-      linkValue.sponsors.servicesAndFacilities.loongson,
+      linkValue.sponsors.infrastructure.loongson,
       linkDevelopmentEquipment.plctlab,
       linkDevelopmentEquipment.pine64
     ]
   },
   {
-    title: textValue.title4,
-    list: [...Object.values(linkValue.sponsors.softwareLicense)]
+    title: textValue.licenses,
+    list: [...Object.values(linkValue.sponsors.licenses)]
   },
   {
     title: textValue.individualDonors.title
   },
   {
-    title: textValue.title5,
-    list: [...Object.values(linkValue.sponsors.oldServicesAndFacilities)]
+    title: textValue.historicInfrastructure,
+    list: [...Object.values(linkValue.sponsors.historicInfrastructure)]
   },
   {
-    title: textValue.title6,
-    list: [...Object.values(linkValue.sponsors.oldSoftwareLicense)]
+    title: textValue.historicMirrors,
+    list: [...Object.values(linkValue.sponsors.historicSoftwareLicense)]
   }
 ];
 </script>
 
 <template>
   <div>
-    <category-second :title="textValue.title7" />
-    <div class="p-6">{{ textValue.p1 }}</div>
+    <category-second :title="textValue.title" />
+    <div class="p-6">{{ textValue.introduction }}</div>
 
     <div v-for="item in sponsorList" :key="item.title">
       <category-second :title="item.title" />
@@ -74,7 +74,7 @@ const sponsorList = [
       </div>
       <div v-else class="heti">
         <p
-          v-for="description in textValue.individualDonors.description"
+          v-for="description in textValue.individualDonors.introduction"
           :key="description">
           {{ description }}
         </p>
