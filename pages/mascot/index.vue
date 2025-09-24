@@ -1,8 +1,7 @@
 <script setup>
-const { tm } = useI18n();
-const textValue = tm('mascot.mascotIndex');
+const {t, tm } = useI18n();
 const linkValue = tm('allUniversalLink');
-useHead({ title: textValue.titleMain });
+useHead({ title: t('mascot.mascotIndex.titleMain') });
 
 const navigationList = [
   linkValue.qqStickers,
@@ -13,20 +12,20 @@ const navigationList = [
 
 <template>
   <div class="grid grid-cols-1">
-    <category-second :title="textValue.titleMain" />
+    <category-second :title="t('mascot.mascotIndex.titleMain')" />
 
     <div><img class="imgScale1 w-full" src="/mascot/anan.png" /></div>
 
     <div class="grid grid-cols-2">
-      <category-second :title="textValue.titleCharacterSheet" />
+      <category-second :title="t('mascot.mascotIndex.titleCharacterSheet')" />
       <category-second
-        :title="textValue.titleFigura"
+        :title="t('mascot.mascotIndex.titleFigura')"
         class="border-l border-l-white" />
 
       <div class="flex">
         <div
           class="p-[1.75rem] text-[0.8rem] xl:text-[1.07rem] 2xl:text-[1.2rem]">
-          <p>{{ textValue.textCharacterSheetLicense }}</p>
+          <p>{{ t('mascot.mascotIndex.textCharacterSheetLicense') }}</p>
           <div class="mt-[1rem] flex flex-row justify-between">
             <div class="w-[50%]">
               <link-button
@@ -44,9 +43,9 @@ const navigationList = [
         <div
           class="flex flex-col justify-between p-[1.75rem] text-[0.8rem] xl:text-[1.07rem] 2xl:text-[1.2rem]">
           <p>
-            <span>{{ textValue.textFiguraText1 }}</span>
+            <span>{{ t('mascot.mascotIndex.textFiguraText1') }}</span>
             <link-standard :link="linkValue.figura" />
-            <span>{{ textValue.textFiguraText2 }}</span>
+            <span>{{ t('mascot.mascotIndex.textFiguraText2') }}</span>
           </p>
 
           <div class="mt-[1rem] flex flex-row justify-between">
@@ -61,9 +60,9 @@ const navigationList = [
         </div>
       </div>
 
-      <category-second :title="textValue.titleStickerPack" />
+      <category-second :title="t('mascot.mascotIndex.titleStickerPack')" />
       <category-second
-        :title="textValue.titleFumo"
+        :title="t('mascot.mascotIndex.titleFumo')"
         class="border-l border-l-white" />
       <div class="flex">
         <div class="grid grid-cols-2 p-[1.75rem]">
@@ -74,7 +73,7 @@ const navigationList = [
 
             <p
               class="text-center text-[0.95em] xl:text-[1.3em] 2xl:text-[1.5em]">
-              {{ textValue.textWeChatStickerPackQrCode }}
+              {{ t('mascot.mascotIndex.textWeChatStickerPackQrCode') }}
             </p>
           </div>
           <div
@@ -96,13 +95,13 @@ const navigationList = [
         <div
           class="flex flex-col justify-between p-[1.75rem] text-[0.8rem] xl:text-[1.07rem] 2xl:text-[1.2rem]">
           <div>
-            <p>{{ textValue.textFumoLicense }}</p>
+            <p>{{ t('mascot.mascotIndex.textFumoLicense') }}</p>
             <p>
-              <span>{{ textValue.textFumoReference }}</span>
+              <span>{{ t('mascot.mascotIndex.textFumoReference') }}</span>
               <link-standard :link="linkValue.tomatoScrambledEggsGoofish" />
-              <span>{{ textValue.textFumoContact }}</span>
+              <span>{{ t('mascot.mascotIndex.textFumoContact') }}</span>
               <link-standard :link="linkValue.tomatoScrambledEggsHuaJia" />
-              <span>{{ textValue.textFiguraText3 }}</span>
+              <span>{{ t('mascot.mascotIndex.textFiguraText3') }}</span>
             </p>
           </div>
 
@@ -120,30 +119,30 @@ const navigationList = [
         </div>
       </div>
     </div>
-    <category-second :title="textValue.titleBackStory" />
+    <category-second :title="t('mascot.mascotIndex.titleBackStory')" />
     <div class="flex p-[1.75rem]">
       <!-- 左边 -->
       <div class="basis-1/2 pr-[1.75rem]">
         <p
-          v-for="(item, index) in textValue.textMascotTagline"
+          v-for="(item, index) in tm('mascot.mascotIndex.textMascotTagline')"
           :key="`mascot-index-1-p-${index}`">
           {{ item }}
         </p>
 
         <app-ul-ordinary
           li-class="my-[1rem]"
-          :lis="textValue.textMascotBasicInfoList.li"
+          :lis="tm('mascot.mascotIndex.textMascotBasicInfoList.li')"
           class="list-inside list-disc"
           :my-key="`mascot-index-1`" />
 
         <p
-          v-for="(item, index) in textValue.textMascotCharacteristics"
+          v-for="(item, index) in tm('mascot.mascotIndex.textMascotCharacteristics')"
           :key="`mascot-index-2-p-${index}`">
           {{ item }}
         </p>
         <app-ul-ordinary
           li-class="my-[1rem]"
-          :lis="textValue.textMascotCharacteristicsList1.li"
+          :lis="tm('mascot.mascotIndex.textMascotCharacteristicsList1.li')"
           class="list-inside list-disc"
           :my-key="`mascot-index-2`" />
       </div>
@@ -152,27 +151,27 @@ const navigationList = [
       <div class="basis-1/2 pl-[1.75rem]">
         <app-ul-ordinary
           li-class="my-[1rem]"
-          :lis="textValue.textMascotCharacteristicsList2.li"
+          :lis="tm('mascot.mascotIndex.textMascotCharacteristicsList2.li')"
           class="list-inside list-disc"
           :my-key="`mascot-index-3`" />
         <p
-          v-for="(item, index) in textValue.textMascotLanguageSkils"
+          v-for="(item, index) in tm('mascot.mascotIndex.textMascotLanguageSkils')"
           :key="`mascot-index-3-p-${index}`">
           {{ item }}
         </p>
         <app-ul-ordinary
           li-class="my-[1rem]"
-          :lis="textValue.textMascotLanguageSkilsList1.li"
+          :lis="tm('mascot.mascotIndex.textMascotLanguageSkilsList1.li')"
           class="list-inside list-disc"
           :my-key="`mascot-index-4`" />
         <p
-          v-for="(item, index) in textValue.textMascotRetroComputingHobby"
+          v-for="(item, index) in tm('mascot.mascotIndex.textMascotRetroComputingHobby')"
           :key="`mascot-index-4-p-${index}`">
           {{ item }}
         </p>
         <app-ul-ordinary
           li-class="my-[1rem]"
-          :lis="textValue.textMascotRetroComputingHobbyList1.li"
+          :lis="tm('mascot.mascotIndex.textMascotRetroComputingHobbyList1.li')"
           class="list-inside list-disc"
           :my-key="`mascot-index-5`" />
       </div>

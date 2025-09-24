@@ -1,6 +1,5 @@
 <script setup>
-const { tm } = useI18n();
-const textValue = tm('CopyButton');
+const { t } = useI18n();
 
 defineProps({
   content: { type: String, required: true },
@@ -18,7 +17,7 @@ defineProps({
       {{ content }}
     </code>
     <el-button color="gray" plain @click="copyToClipboard(content)">
-      {{ buttonText ? buttonText : textValue.copyButton }}
+      {{ buttonText ? buttonText : t('CopyButton.copyButton') }}
     </el-button>
   </el-container>
 </template>

@@ -1,6 +1,5 @@
 <script setup>
-const { tm } = useI18n();
-const textValue = tm('DownloadWslDetails');
+const { t, tm } = useI18n();
 const linkValue = tm('allUniversalLink');
 const localLink = linkValue.local;
 
@@ -22,7 +21,7 @@ function latestTarball(tarballs, arch) {
 
 <template>
   <div class="flex flex-col gap-2 pb-1">
-    <app-h2>{{ textValue.downloadWslDetailTitle }}</app-h2>
+    <app-h2>{{ t('DownloadWslDetails.downloadWslDetailTitle') }}</app-h2>
     <ms-store-badge
       class="h-[48px] w-fit [&::part(img)]:h-[48px]"
       productid="9NMDF21NV65Z"
@@ -30,14 +29,16 @@ function latestTarball(tarballs, arch) {
       theme="dark"
       animation="on" />
     <p class="mb-0">
-      {{ textValue.downloadWslDetailText1 }}
+      {{ t('DownloadWslDetails.downloadWslDetailText1') }}
       <LinkStandard :link="linkValue.mordenDistribution" />
-      {{ textValue.downloadWslDetailText2 }}
+      {{ t('DownloadWslDetails.downloadWslDetailText2') }}
     </p>
     <el-container>
       <el-select
         v-model="selected_source_url"
-        :placeholder="textValue.downloadWslDetailMirrorPlaceholder">
+        :placeholder="
+          t('DownloadWslDetails.downloadWslDetailMirrorPlaceholder')
+        ">
         <el-option
           v-for="source in sources"
           :key="source.name"
@@ -51,41 +52,42 @@ function latestTarball(tarballs, arch) {
         :to="`${selected_source_url}${latestTarball(recipeWsl.tarballs, 'amd64').path}`"
         target="_blank"
         class="flex h-[32px] items-center border-r bg-[var(--secondary)] px-[15px] text-nowrap text-white hover:bg-[var(--primary)] hover:no-underline">
-        {{ textValue.downloadWslDetailArch.x86_64 }}
+        {{ t('DownloadWslDetails.downloadWslDetailArch.x86_64') }}
       </AppLink>
       <AppLink
         :to="`${selected_source_url}${latestTarball(recipeWsl.tarballs, 'arm64').path}`"
         target="_blank"
         class="flex h-[32px] items-center bg-[var(--secondary)] px-[15px] text-nowrap text-white hover:bg-[var(--primary)] hover:no-underline">
-        {{ textValue.downloadWslDetailArch.aarch64 }}
+        {{ t('DownloadWslDetails.downloadWslDetailArch.aarch64') }}
       </AppLink>
     </el-container>
 
     <div class="col-span-2">
-      {{ textValue.downloadWslDetailManualDownload.description }}
+      {{ t('DownloadWslDetails.downloadWslDetailManualDownload.description') }}
     </div>
-
 
     <LinkStandard
       :link="linkValue.aoscOsLauncher"
       target="_blank"
       class="el-button max-w-min hover:no-underline" />
 
-    <LinkStandard :link="localLink.aoscWslRelnote"/>
+    <LinkStandard :link="localLink.aoscWslRelnote" />
 
-    <app-h2>{{ textValue.downloadWslDetailSysReqTitle }}</app-h2>
-    <p>{{ textValue.downloadWslDetailSysReqText1 }}</p>
+    <app-h2>{{ t('DownloadWslDetails.downloadWslDetailSysReqTitle') }}</app-h2>
+    <p>{{ t('DownloadWslDetails.downloadWslDetailSysReqText1') }}</p>
     <p>
-      {{ textValue.downloadWslDetailSysReqText1 }}
+      {{ t('DownloadWslDetails.downloadWslDetailSysReqText1') }}
       <link-standard :link="useTIndex(localLink.aoscWslRequirements, 1)" />
       {{ linkValue.periodPoint }}
     </p>
 
-    <app-h2>{{ textValue.downloadWslDetailHelpAndSupportTitle }}</app-h2>
+    <app-h2>
+      {{ t('DownloadWslDetails.downloadWslDetailHelpAndSupportTitle') }}
+    </app-h2>
     <p>
-      {{ textValue.downloadWslDetailHelpAndSupportText1 }}
+      {{ t('DownloadWslDetails.downloadWslDetailHelpAndSupportText1') }}
       <link-standard :link="useTIndex(localLink.contact, 2)" />
-      {{ textValue.downloadWslDetailHelpAndSupportText2 }}
+      {{ t('DownloadWslDetails.downloadWslDetailHelpAndSupportText2') }}
     </p>
   </div>
 </template>

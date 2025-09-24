@@ -1,12 +1,11 @@
 <script setup>
 // #region Common
 
-const { tm } = useI18n();
-const textValue = tm('download.index');
+const { t,tm } = useI18n();
 const linkValue = tm('allUniversalLink');
 const localLink = linkValue.local;
 const route = useRoute();
-useHead({ title: textValue.title1 });
+useHead({ title: t('download.index.utilitiesTitle') });
 // #endregion
 
 // #region Highlight
@@ -37,7 +36,7 @@ useHighlightWatch(switchHash);
 // #region remote
 const recipe = ref({});
 const recipeI18n = ref({});
-const sources = ref(textValue.downloadSources);
+const sources = ref(tm('download.index.downloadSources'));
 
 const getAntongDate = () => {
   if (versionArch.value.length === 0) return '...';
@@ -133,10 +132,10 @@ const antong1List = ref(
             title: 'loongarch64'
           }
         ],
-        textValue.helpContent.aoscOsIsaInfoPrimary,
+        tm('download.index.helpContent.aoscOsIsaInfoPrimary'),
         'popoverData.content'
       ),
-      textValue.downloadButtons.aoscOsPrimary,
+      tm('download.index.downloadButtons.aoscOsPrimary'),
       'label'
     ),
     1
@@ -157,10 +156,10 @@ const antong2List = ref(
             title: 'loongson3'
           }
         ],
-        textValue.helpContent.aoscOsIsaInfoSecondary,
+        tm('download.index.helpContent.aoscOsIsaInfoSecondary'),
         'popoverData.content'
       ),
-      textValue.downloadButtons.aoscOsSecondary,
+      tm('download.index.downloadButtons.aoscOsSecondary'),
       'label'
     ),
     2
@@ -181,7 +180,7 @@ const getNewVersionArch = (arch, type) => {
 // #region Afterglow OS
 const afterglowOsNavigationList = ref([
   {
-    title: textValue.afterglow.stayTuned,
+    title: t('download.index.afterglow.stayTuned'),
     notLink: true
   },
   localLink.afterglowRelnote,
@@ -201,10 +200,10 @@ const xingxia1List = ref(
           title: 'powerpc'
         }
       ],
-      textValue.helpContent.afterglowIsaInfoPrimary,
+      tm('download.index.helpContent.afterglowIsaInfoPrimary'),
       'popoverData.content'
     ),
-    textValue.downloadButtons.afterglowPrimary,
+    tm('download.index.downloadButtons.afterglowPrimary'),
     'label'
   )
 );
@@ -237,10 +236,10 @@ const xingxia2List = ref(
           title: 'sparc64'
         }
       ],
-      textValue.helpContent.afterglowIsaInfoSecondary,
+      tm('download.index.helpContent.afterglowIsaInfoSecondary'),
       'popoverData.content'
     ),
-    textValue.downloadButtons.afterglowSecondary,
+    tm('download.index.downloadButtons.afterglowSecondary'),
     'label'
   )
 );
@@ -308,14 +307,14 @@ if (versionArch.value.length !== 0) {
     v.livekit = getNewVersionArch(v.title, 'livekit');
   });
 } else if (versionArchErr) {
-  console.warn(textValue.downloadErrors.aosc);
+  console.warn(t('download.index.downloadErrors.aosc'));
 }
 
 // Apple silicon
 const siliconRes = ref(data.value?.[1]);
 const siliconError = error.value;
 if (siliconError) {
-  console.warn(textValue.downloadErrors.apple);
+  console.warn(t('download.index.downloadErrors.apple'));
 } else if (siliconRes.value) {
   const appleSiliconDateRaw =
     siliconRes.value.os_list[0].name.match(/\((.*)\)/)[1];
@@ -329,7 +328,7 @@ const omaRes = ref(data.value?.[2]);
 const omaResError = error.value;
 if (omaResError) {
   console.log(omaResError);
-  console.warn(textValue.downloadErrors.oma);
+  console.warn(t('download.index.downloadErrors.oma'));
 } else if (omaRes.value) {
   omaVersion.value = omaRes.value.pkg.version;
 }
@@ -339,7 +338,7 @@ const recipeError = error.value;
 const recipeI18nResponse = ref(data.value?.[4]);
 const recipeI18nError = error.value;
 if (recipeError || recipeI18nError) {
-  console.warn(textValue.downloadErrors.mirrors);
+  console.warn(t('download.index.downloadErrors.mirrors'));
   console.log(recipeError, recipeI18nError);
 } else {
   recipe.value = recipeResponse.value;
@@ -357,20 +356,20 @@ if (recipeError || recipeI18nError) {
 
 <template>
   <div>
-    <category-second id="aosc-os-download" :title="textValue.operatingSystemsTitle" />
+    <category-second id="aosc-os-download" :title="t('download.index.operatingSystemsTitle')" />
 
     <!-- AOSC OS -->
     <div
       ref="aoscOsDownload"
       class="aosc-os-container flex flex-wrap justify-between gap-6 p-[30px]">
       <TitleComponent
-        :title="textValue.aoscOs.name"
-        :description="textValue.aoscOs.description"
+        :title="t('download.index.aoscOs.name')"
+        :description="t('download.index.aoscOs.description')"
         :navigation-list="aoscOsNavigationList" />
       <div class="flex flex-col justify-end gap-2">
         <DownloadButtonGroup
-          :title="textValue.portTierInfo.primaryIsa.name"
-          :description="textValue.portTierInfo.primaryIsa.description"
+          :title="t('download.index.portTierInfo.primaryIsa.name')"
+          :description="t('download.index.portTierInfo.primaryIsa.description')"
           :button-props="
             antong1List.map((item) => ({
               archName: item.label,
@@ -380,8 +379,8 @@ if (recipeError || recipeI18nError) {
             }))
           " />
         <DownloadButtonGroup
-          :title="textValue.portTierInfo.secondaryIsa.name"
-          :description="textValue.portTierInfo.secondaryIsa.description"
+          :title="t('download.index.portTierInfo.secondaryIsa.name')"
+          :description="t('download.index.portTierInfo.secondaryIsa.description')"
           :button-props="
             antong2List.map((item) => ({
               archName: item.label,
@@ -398,13 +397,13 @@ if (recipeError || recipeI18nError) {
         class="wsl-container flex flex-col justify-between p-[24px_30px] text-white">
         <div>
           <TitleComponent
-            :title="textValue.aoscOsWsl.name"
-            :description="textValue.aoscOsWsl.description"
+            :title="t('download.index.aoscOsWsl.name')"
+            :description="t('download.index.aoscOsWsl.description')"
             small-title />
           <span
             class="cursor-pointer text-[11pt] hover:underline"
             @click="wslDialogState = true">
-            {{ textValue.aoscOsWsl.detail }}
+            {{ t('download.index.aoscOsWsl.detail') }}
           </span>
         </div>
 
@@ -428,13 +427,13 @@ if (recipeError || recipeI18nError) {
       <div
         class="apple-silicon-container flex flex-1 flex-col justify-between p-[24px_30px]">
         <TitleComponent
-          :title="textValue.aoscOsAppleSilicon.name"
-          :description="textValue.aoscOsAppleSilicon.description"
+          :title="t('download.index.aoscOsAppleSilicon.name')"
+          :description="t('download.index.aoscOsAppleSilicon.description')"
           :navigation-list="appleSiliconNavigationList"
           small-title />
         <div class="self-end">
           <DownloadButton
-            :arch-name="textValue.aoscOsAppleSilicon.download"
+            :arch-name="t('download.index.aoscOsAppleSilicon.download')"
             :popover-data="
               antong1List.filter((i) => i.title === 'arm64')[0].popoverData
             "
@@ -451,13 +450,13 @@ if (recipeError || recipeI18nError) {
       ref="afterglowDownload"
       class="afterglow-container flex flex-wrap justify-between gap-6 p-[30px] text-white">
       <TitleComponent
-        :title="textValue.afterglow.name"
-        :description="textValue.afterglow.description"
+        :title="t('download.index.afterglow.name')"
+        :description="t('download.index.afterglow.description')"
         :navigation-list="afterglowOsNavigationList" />
       <div class="flex flex-col justify-end gap-2">
         <DownloadButtonGroup
-          :title="textValue.portTierInfo.primaryIsa.name"
-          :description="textValue.portTierInfo.primaryIsa.description"
+          :title="t('download.index.portTierInfo.primaryIsa.name')"
+          :description="t('download.index.portTierInfo.primaryIsa.description')"
           :button-props="
             xingxia1List.map((item) => ({
               archName: item.label,
@@ -468,8 +467,8 @@ if (recipeError || recipeI18nError) {
             }))
           " />
         <DownloadButtonGroup
-          :title="textValue.portTierInfo.secondaryIsa.name"
-          :description="textValue.portTierInfo.secondaryIsa.description"
+          :title="t('download.index.portTierInfo.secondaryIsa.name')"
+          :description="t('download.index.portTierInfo.secondaryIsa.description')"
           :button-props="
             xingxia2List.map((item) => ({
               archName: item.label,
@@ -485,13 +484,13 @@ if (recipeError || recipeI18nError) {
     <category-second
       id="oma-download"
       class="highlight"
-      :title="textValue.utilitiesTitle" />
+      :title="t('download.index.utilitiesTitle')" />
 
     <!-- oma -->
     <div id="oma-download" ref="omaDownload" class="oma-container p-[30px]">
       <TitleComponent
-        :title="textValue.omaTitle"
-        :description="textValue.omaTagLine"
+        :title="t('download.index.omaTitle')"
+        :description="t('download.index.omaTagLine')"
         :navigation-list="omaNavigationList" />
       <CopyCodeHighlight
         class="mt-4 w-fit bg-black/60 py-2 pr-6"
@@ -501,9 +500,9 @@ if (recipeError || recipeI18nError) {
         button-class="ml-6 mt-[2px] bg-white"
         :code-text="omaInstallScript" />
       <p class="mt-[6px] text-[10pt]">
-        <span>{{ textValue.omaSystemSupportInfo[0] }}</span>
+        <span>{{ tm('download.index.omaSystemSupportInfo')[0] }}</span>
         <br />
-        <span>{{ textValue.omaSystemSupportInfo[1] }}</span>
+        <span>{{ tm('download.index.omaSystemSupportInfo')[1] }}</span>
       </p>
     </div>
   </div>
