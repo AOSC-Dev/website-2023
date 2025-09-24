@@ -76,5 +76,5 @@ AOSCC 2025 年度线下聚会将于 7 月 26-27 日在上海交通大学举行�
 
 - QQ：2879378668
 - 微信：MingcongBai
-- Telegram：[@JeffBai](https://t.me/tru_co)
+- Telegram：[@JeffBai](https://t.me/JeffBai)
 - 邮箱：[jeffbai@aosc.io](mailto:jeffbai@aosc.io)
