@@ -1,9 +1,8 @@
 <script setup>
-const { tm } = useI18n();
-const textValue = tm('index');
+const { t, tm } = useI18n();
 const linkValue = tm('allUniversalLink');
 const localLink = linkValue.local;
-useHead({ title: textValue.title });
+useHead({ title: t('index.indexTitle') });
 
 const columnBorderlessList = [
   '/icons/key-enter.min.svg',
@@ -21,7 +20,7 @@ const columnBorderlessList = [
       </app-link>
       <!-- 资讯要点 -->
       <div>
-        <CategorySecond :title="textValue.indexNewsHighlights" />
+        <CategorySecond :title="t('index.indexNewsHighlights')" />
         <article>
           <CategoryList
             category="news"
@@ -35,10 +34,10 @@ const columnBorderlessList = [
       </div>
       <!-- 专栏 -->
       <div id="topic">
-        <CategorySecond :title="textValue.indexSpecialTitle" />
+        <CategorySecond :title="t('index.indexSpecialTitle')" />
         <article class="p-[1em] leading-6">
           <div
-            v-for="(item, index) in textValue.indexSpecialColumns"
+            v-for="(item, index) in tm('index.indexSpecialColumns')"
             :key="item.title"
             class="flex items-center pb-[15px]">
             <div class="mr-[20px] ml-[0.5em] basis-[50px]">

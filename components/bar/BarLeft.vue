@@ -1,15 +1,14 @@
 <script setup>
-const { tm, _locale } = useI18n();
+const { t,tm, _locale } = useI18n();
 
 const getComp = computed(() => {
-  const textValue = tm('BarLeft');
   const linkValue = tm('allUniversalLink');
   const localLink = linkValue.local;
 
   return [
     [
       {
-        title: textValue.barLeftProjects,
+        title: t('BarLeft.barLeftProjects'),
         children: [
           localLink.aoscOs,
           localLink.afterglow,
@@ -20,7 +19,7 @@ const getComp = computed(() => {
         show: true
       },
       {
-        title: textValue.barLeftNews,
+        title: t('BarLeft.barLeftNews'),
         children: [
           localLink.news,
           localLink.events,
@@ -31,7 +30,7 @@ const getComp = computed(() => {
         show: true
       },
       {
-        title: textValue.barLeftCulture,
+        title: t('BarLeft.barLeftCulture'),
         children: [
           localLink.about,
           localLink.internship,
@@ -43,7 +42,7 @@ const getComp = computed(() => {
         show: true
       },
       {
-        title: textValue.barLeftInfrastructures,
+        title: t('BarLeft.barLeftInfrastructures'),
         children: [
           localLink.paste,
           linkValue.forum,

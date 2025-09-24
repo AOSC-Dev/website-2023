@@ -1,6 +1,5 @@
 <script setup>
-const { tm } = useI18n();
-const textValue = tm('BarRight');
+const { t, tm } = useI18n();
 const linkValue = tm('allUniversalLink');
 
 const localLink = linkValue.local;
@@ -8,14 +7,14 @@ const distroList = [
   {
     img: '/distros/aosc-os.svg',
     links: [useHIndex(localLink.download, 0), localLink.aoscRelnote],
-    description: textValue.barRightAoscOsTagline,
-    title: textValue.barRightAoscOsTitle
+    description: t('BarRight.barRightAoscOsTagline'),
+    title: t('BarRight.barRightAoscOsTitle')
   },
   {
     img: '/distros/afterglow.svg',
     links: [useHIndex(localLink.download, 1), localLink.afterglowRelnote],
-    description: textValue.barRightAfterglowTagLine,
-    title: textValue.barRightAfterglowTitle
+    description: t('BarRight.barRightAfterglowTagLine'),
+    title: t('BarRight.barRightAfterglowTitle')
   }
 ];
 
@@ -45,7 +44,7 @@ const commonLinkList = [
     </AppLink>
     <div class="flex grow flex-col">
       <CategorySecond
-        :title="textValue.barRightOsSolutions"
+        :title="t('BarRight.barRightOsSolutions')"
         class="border-l border-solid border-content-main-bg" />
       <article
         class="theme-border-secondary border-l pt-[1em] pb-[0.5em] pl-[1em]">
@@ -72,7 +71,7 @@ const commonLinkList = [
           </div>
         </div>
       </article>
-      <CategorySecond :title="textValue.barRightQuickLinks" />
+      <CategorySecond :title="t('BarRight.barRightQuickLinks')" />
       <div class="theme-border-secondary flex grow flex-col border-l">
         <link-standard
           v-for="(item, index) in commonLinkList"

@@ -1,6 +1,5 @@
 <script setup>
-const { tm } = useI18n();
-const textValue = tm('DownloadButton');
+const { t } = useI18n();
 
 const props = defineProps({
   archName: {
@@ -58,7 +57,8 @@ const firstLineFontSize = props.firstLineFontSize + 'pt';
 const secondLineFontSize = props.secondLineFontSize + 'pt';
 
 const dialogTitle = computed(
-  () => `${textValue.downloadDetailsTitle}${textValue.downloadAoscOsName} - ${props.isaInfo?.label}`
+  () =>
+    `${t('DownloadButton.downloadDetailsTitle')}${t('DownloadButton.downloadAoscOsName')} - ${props.isaInfo?.label}`
 );
 
 const onClick = () => {

@@ -1,18 +1,17 @@
 <script setup>
-const route = useRoute();
-const { tm } = useI18n();
-const textValue = tm('news.index');
+const { t } = useI18n();
 
+const route = useRoute();
 const title = computed(() => {
   switch (route.params.category) {
     case 'advisories':
-      return textValue.title1;
+      return t('news.newsIndex.headingAdvisories');
     case 'news':
-      return textValue.title2;
+      return t('news.newsIndex.headingNews');
     case 'journals':
-      return textValue.title3;
+      return t('news.newsIndex.headingPeriodicals');
     case 'minutes':
-      return textValue.title4;
+      return t('news.newsIndex.headingMinutes');
     default:
       return '';
   }
