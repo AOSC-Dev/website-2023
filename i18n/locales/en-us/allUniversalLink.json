@@ -124,7 +124,7 @@
       "url": "/aosc-os/livekit/requirements"
     },
     "aoscWslRelnote": {
-      "title": ["发行注记","查阅最新发行注记..."],
+      "title": ["发行注记", "查阅最新发行注记..."],
       "url": "/aosc-os/wsl/relnote"
     },
     "aoscWslRequirements": {

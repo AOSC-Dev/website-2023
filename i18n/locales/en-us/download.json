@@ -33,7 +33,7 @@
       "aosc": "AOSC OS 版本信息获取失败",
       "apple": "AOSC OS Apple Silicon 版本信息获取失败",
       "oma": "oma 版本信息获取失败",
-      "mirrors": "镜像信息获取失败",
+      "mirrors": "镜像信息获取失败"
     },
     "portTierInfo": {
       "primaryIsa": {
