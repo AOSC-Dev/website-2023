@@ -1,14 +1,3 @@
 {
-  "footerNavigationTextList": [
-    {
-      "siteSources": "网页源码"
-    },
-    {
-      "reportContentIssues": "报告内容问题"
-    },
-    {
-      "returnToHome": "返回主页"
-    }
-  ],
   "communityName": "安同开源社区"
 }

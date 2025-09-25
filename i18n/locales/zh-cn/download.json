@@ -33,8 +33,7 @@
       "aosc": "AOSC OS 版本信息获取失败",
       "apple": "AOSC OS Apple Silicon 版本信息获取失败",
       "oma": "oma 版本信息获取失败",
-      "mirrors": "镜像信息获取失败",
-      "isBug": "内部错误，请报告"
+      "mirrors": "镜像信息获取失败"
     },
     "portTierInfo": {
       "primaryIsa": {
@@ -75,7 +74,11 @@
     },
     "downloadButtons": {
       "aoscOsPrimary": ["x86-64", "AArch64", "LoongArch"],
-      "aoscOsSecondary": ["POWER（64 位）", "RISC-V（64 位）", "龙芯三号 (MIPS)"],
+      "aoscOsSecondary": [
+        "POWER（64 位）",
+        "RISC-V（64 位）",
+        "龙芯三号 (MIPS)"
+      ],
       "afterglowPrimary": [
         "x86（32 位）",
         "龙芯二号 (MIPS)",
@@ -93,26 +96,11 @@
       ]
     },
     "utilitiesTitle": "实用工具",
-    "aoscOsSecondaryIsaTitle": "安同 OS（二级架构）",
-    "afterglowTitle": "星霞 OS",
-    "afterglowTagline": "老设备也能发光发热",
-    "comingSoon": "敬请期待...",
-    "livekitTagline": "功能完备的安同 OS 救援环境",
     "omaTitle": "小熊猫包管理 (oma)",
     "omaTagLine": "简明好用的 APT 软件包管理界面",
     "omaSystemSupportInfo": [
       "使用终端运行该命令可在 Debian、Ubuntu、Linux Mint 及衍生版，以及 deepin、",
       "开放麒麟 (openKylin) 等发行版安装小熊猫包管理"
-    ],
-    "aoscOsSecondaryIsaText1": "安同 OS 支持支持众多处理器微架构。",
-    "aoscOsSecondaryIsaText2": "除 x86-64、AArch64 及 LoongArch 外，",
-    "aoscOsSecondaryIsaText3": "我们还支持一众存量较少或软件支持尚未完善的架构，",
-    "aoscOsSecondaryIsaText4": "并发布镜像供各位玩家试用和评估。",
-    "buttonOtherDownload": {
-      "popoverData": {
-        "content": "二级架构、Docker, 及虚拟机镜像等其他下载"
-      },
-      "otherDownload": "其他下载"
-    }
+    ]
   }
 }
