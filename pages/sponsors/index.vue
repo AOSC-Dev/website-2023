@@ -1,5 +1,5 @@
 <script setup>
-const { t,tm } = useI18n();
+const { t, tm } = useI18n();
 const linkValue = tm('allUniversalLink');
 useHead({ title: t('sponsors.sponsorsIndex.title') });
 const linkDevelopmentEquipment = linkValue.sponsors.devices;
@@ -46,7 +46,9 @@ const sponsorList = [
 
     <div v-for="item in sponsorList" :key="item.title">
       <category-second :title="item.title" />
-      <div v-if="item.title !== t('sponsors.sponsorsIndex.individualDonors.title')" class="p-6">
+      <div
+        v-if="item.title !== t('sponsors.sponsorsIndex.individualDonors.title')"
+        class="p-6">
         <div class="grid grid-cols-4 gap-6 p-2">
           <app-link
             v-for="sponsor in item.list"
@@ -73,16 +75,22 @@ const sponsorList = [
       </div>
       <div v-else class="heti">
         <p
-          v-for="description in tm('sponsors.sponsorsIndex.individualDonors.introduction')"
+          v-for="description in tm(
+            'sponsors.sponsorsIndex.individualDonors.introduction'
+          )"
           :key="description">
           {{ description }}
         </p>
         <AppTableOrdinary
-          :table-value="tm('sponsors.sponsorsIndex.individualDonors.tableAoscc2025')"
+          :table-value="
+            tm('sponsors.sponsorsIndex.individualDonors.tableAoscc2025')
+          "
           my-key="sponsors-index-1" />
         <br />
         <AppTableOrdinary
-          :table-value="tm('sponsors.sponsorsIndex.individualDonors.tableServerHardDrive')"
+          :table-value="
+            tm('sponsors.sponsorsIndex.individualDonors.tableServerHardDrive')
+          "
           my-key="sponsors-index-1" />
       </div>
     </div>

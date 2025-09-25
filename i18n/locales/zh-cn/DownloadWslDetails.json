@@ -14,5 +14,5 @@
   },
   "downloadWslDetailManualDownload": {
     "description": "如无法使用上述两种方式，也可手动下载 AppX 侧载包部署："
-  },
+  }
 }

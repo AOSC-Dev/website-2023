@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 const { locale } = useI18n();
-// 
+//
 
 const props = defineProps<{
   category?: string;

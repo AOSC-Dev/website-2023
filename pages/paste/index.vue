@@ -2,7 +2,7 @@
 import hljs from 'highlight.js/lib/core';
 
 const config = useRuntimeConfig();
-const { t,tm } = useI18n();
+const { t, tm } = useI18n();
 // const linkValue = tm('allUniversalLink');
 useHead({ title: t('paste.pasteIndex.pageTitle') });
 
@@ -101,7 +101,10 @@ const handleChange = (uploadFile, uploadFiles) => {
     });
     selectedFileList.value.pop();
     // showSize();
-  } else ElMessage.success(`${t('paste.pasteIndex.promptFileAddSuccess')}'${uploadFile.name}'`);
+  } else
+    ElMessage.success(
+      `${t('paste.pasteIndex.promptFileAddSuccess')}'${uploadFile.name}'`
+    );
 };
 </script>
 
@@ -154,7 +157,9 @@ const handleChange = (uploadFile, uploadFiles) => {
         <div class="my-[-26px] h-[26px]">
           <el-icon size="24"><el-icon-upload-filled /></el-icon>
           <div ref="div1" class="el-upload__text">
-            <span>{{ tm('paste.pasteIndex.promptAttachmentInstruction')[0] }}</span>
+            <span>
+              {{ tm('paste.pasteIndex.promptAttachmentInstruction')[0] }}
+            </span>
             <em>{{ tm('paste.pasteIndex.promptAttachmentInstruction')[1] }}</em>
           </div>
         </div>

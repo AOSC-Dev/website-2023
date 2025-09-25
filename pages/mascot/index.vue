@@ -1,5 +1,5 @@
 <script setup>
-const {t, tm } = useI18n();
+const { t, tm } = useI18n();
 const linkValue = tm('allUniversalLink');
 useHead({ title: t('mascot.mascotIndex.titleMain') });
 
@@ -136,7 +136,9 @@ const navigationList = [
           :my-key="`mascot-index-1`" />
 
         <p
-          v-for="(item, index) in tm('mascot.mascotIndex.textMascotCharacteristics')"
+          v-for="(item, index) in tm(
+            'mascot.mascotIndex.textMascotCharacteristics'
+          )"
           :key="`mascot-index-2-p-${index}`">
           {{ item }}
         </p>
@@ -155,7 +157,9 @@ const navigationList = [
           class="list-inside list-disc"
           :my-key="`mascot-index-3`" />
         <p
-          v-for="(item, index) in tm('mascot.mascotIndex.textMascotLanguageSkils')"
+          v-for="(item, index) in tm(
+            'mascot.mascotIndex.textMascotLanguageSkils'
+          )"
           :key="`mascot-index-3-p-${index}`">
           {{ item }}
         </p>
@@ -165,7 +169,9 @@ const navigationList = [
           class="list-inside list-disc"
           :my-key="`mascot-index-4`" />
         <p
-          v-for="(item, index) in tm('mascot.mascotIndex.textMascotRetroComputingHobby')"
+          v-for="(item, index) in tm(
+            'mascot.mascotIndex.textMascotRetroComputingHobby'
+          )"
           :key="`mascot-index-4-p-${index}`">
           {{ item }}
         </p>

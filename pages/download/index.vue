@@ -1,7 +1,7 @@
 <script setup>
 // #region Common
 
-const { t,tm } = useI18n();
+const { t, tm } = useI18n();
 const linkValue = tm('allUniversalLink');
 const localLink = linkValue.local;
 const route = useRoute();
@@ -356,7 +356,9 @@ if (recipeError || recipeI18nError) {
 
 <template>
   <div>
-    <category-second id="aosc-os-download" :title="t('download.index.operatingSystemsTitle')" />
+    <category-second
+      id="aosc-os-download"
+      :title="t('download.index.operatingSystemsTitle')" />
 
     <!-- AOSC OS -->
     <div
@@ -380,7 +382,9 @@ if (recipeError || recipeI18nError) {
           " />
         <DownloadButtonGroup
           :title="t('download.index.portTierInfo.secondaryIsa.name')"
-          :description="t('download.index.portTierInfo.secondaryIsa.description')"
+          :description="
+            t('download.index.portTierInfo.secondaryIsa.description')
+          "
           :button-props="
             antong2List.map((item) => ({
               archName: item.label,
@@ -468,7 +472,9 @@ if (recipeError || recipeI18nError) {
           " />
         <DownloadButtonGroup
           :title="t('download.index.portTierInfo.secondaryIsa.name')"
-          :description="t('download.index.portTierInfo.secondaryIsa.description')"
+          :description="
+            t('download.index.portTierInfo.secondaryIsa.description')
+          "
           :button-props="
             xingxia2List.map((item) => ({
               archName: item.label,
