@@ -1,11 +1,9 @@
 <script setup>
 const { t } = useI18n();
-
+// const linkValue = tm('allUniversalLink');
 const newsLimit = 10;
 useHead({ title: t('news.newsIndex.headingMain') });
-const filters = (newsCategory) => [
-  { key: 'categories', value: `%"${newsCategory}"%` }
-];
+const filters = (newsCategory) => [{ key: 'categories', value: `%"${newsCategory}"%` }];
 </script>
 
 <template>

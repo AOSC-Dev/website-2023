@@ -1,5 +1,6 @@
 <script setup>
-const { t, tm } = useI18n();
+const { t,tm } = useI18n();
+const textValue = tm('mascot.mascotIndex');
 const linkValue = tm('allUniversalLink');
 useHead({ title: t('mascot.mascotIndex.titleMain') });
 
@@ -124,27 +125,25 @@ const navigationList = [
       <!-- 左边 -->
       <div class="basis-1/2 pr-[1.75rem]">
         <p
-          v-for="(item, index) in tm('mascot.mascotIndex.textMascotTagline')"
+          v-for="(item, index) in textValue.textMascotTagline"
           :key="`mascot-index-1-p-${index}`">
           {{ item }}
         </p>
 
         <app-ul-ordinary
           li-class="my-[1rem]"
-          :lis="tm('mascot.mascotIndex.textMascotBasicInfoList.li')"
+          :lis="textValue.textMascotBasicInfoList.li"
           class="list-inside list-disc"
           :my-key="`mascot-index-1`" />
 
         <p
-          v-for="(item, index) in tm(
-            'mascot.mascotIndex.textMascotCharacteristics'
-          )"
+          v-for="(item, index) in textValue.textMascotCharacteristics"
           :key="`mascot-index-2-p-${index}`">
           {{ item }}
         </p>
         <app-ul-ordinary
           li-class="my-[1rem]"
-          :lis="tm('mascot.mascotIndex.textMascotCharacteristicsList1.li')"
+          :lis="textValue.textMascotCharacteristicsList1.li"
           class="list-inside list-disc"
           :my-key="`mascot-index-2`" />
       </div>
@@ -153,31 +152,27 @@ const navigationList = [
       <div class="basis-1/2 pl-[1.75rem]">
         <app-ul-ordinary
           li-class="my-[1rem]"
-          :lis="tm('mascot.mascotIndex.textMascotCharacteristicsList2.li')"
+          :lis="textValue.textMascotCharacteristicsList2.li"
           class="list-inside list-disc"
           :my-key="`mascot-index-3`" />
         <p
-          v-for="(item, index) in tm(
-            'mascot.mascotIndex.textMascotLanguageSkils'
-          )"
+          v-for="(item, index) in textValue.textMascotLanguageSkils"
           :key="`mascot-index-3-p-${index}`">
           {{ item }}
         </p>
         <app-ul-ordinary
           li-class="my-[1rem]"
-          :lis="tm('mascot.mascotIndex.textMascotLanguageSkilsList1.li')"
+          :lis="textValue.textMascotLanguageSkilsList1.li"
           class="list-inside list-disc"
           :my-key="`mascot-index-4`" />
         <p
-          v-for="(item, index) in tm(
-            'mascot.mascotIndex.textMascotRetroComputingHobby'
-          )"
+          v-for="(item, index) in textValue.textMascotRetroComputingHobby"
           :key="`mascot-index-4-p-${index}`">
           {{ item }}
         </p>
         <app-ul-ordinary
           li-class="my-[1rem]"
-          :lis="tm('mascot.mascotIndex.textMascotRetroComputingHobbyList1.li')"
+          :lis="textValue.textMascotRetroComputingHobbyList1.li"
           class="list-inside list-disc"
           :my-key="`mascot-index-5`" />
       </div>

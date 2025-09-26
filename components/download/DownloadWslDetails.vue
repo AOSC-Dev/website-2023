@@ -1,5 +1,5 @@
 <script setup>
-const { t, tm } = useI18n();
+const { t,tm } = useI18n();
 const linkValue = tm('allUniversalLink');
 const localLink = linkValue.local;
 
@@ -36,9 +36,7 @@ function latestTarball(tarballs, arch) {
     <el-container>
       <el-select
         v-model="selected_source_url"
-        :placeholder="
-          t('DownloadWslDetails.downloadWslDetailMirrorPlaceholder')
-        ">
+        :placeholder="t('DownloadWslDetails.downloadWslDetailMirrorPlaceholder')">
         <el-option
           v-for="source in sources"
           :key="source.name"
@@ -66,12 +64,13 @@ function latestTarball(tarballs, arch) {
       {{ t('DownloadWslDetails.downloadWslDetailManualDownload.description') }}
     </div>
 
+
     <LinkStandard
       :link="linkValue.aoscOsLauncher"
       target="_blank"
       class="el-button max-w-min hover:no-underline" />
 
-    <LinkStandard :link="localLink.aoscWslRelnote" />
+    <LinkStandard :link="localLink.aoscWslRelnote"/>
 
     <app-h2>{{ t('DownloadWslDetails.downloadWslDetailSysReqTitle') }}</app-h2>
     <p>{{ t('DownloadWslDetails.downloadWslDetailSysReqText1') }}</p>
@@ -81,9 +80,7 @@ function latestTarball(tarballs, arch) {
       {{ linkValue.periodPoint }}
     </p>
 
-    <app-h2>
-      {{ t('DownloadWslDetails.downloadWslDetailHelpAndSupportTitle') }}
-    </app-h2>
+    <app-h2>{{ t('DownloadWslDetails.downloadWslDetailHelpAndSupportTitle') }}</app-h2>
     <p>
       {{ t('DownloadWslDetails.downloadWslDetailHelpAndSupportText1') }}
       <link-standard :link="useTIndex(localLink.contact, 2)" />

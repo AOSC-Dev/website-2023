@@ -1,41 +1,41 @@
 <script setup>
-const { t, tm } = useI18n();
+const { t,tm } = useI18n();
+const textValue = tm('sponsors.sponsorsIndex');
 const linkValue = tm('allUniversalLink');
-const sponsorsLink=linkValue.sponsors;
 useHead({ title: t('sponsors.sponsorsIndex.title') });
-const linkDevelopmentEquipment = sponsorsLink.devices;
+const linkDevelopmentEquipment = linkValue.sponsors.devices;
 const sponsorList = [
   {
     title: t('sponsors.sponsorsIndex.infrastructure'),
-    list: [...Object.values(sponsorsLink.infrastructure)]
+    list: [...Object.values(linkValue.sponsors.infrastructure)]
   },
   {
     title: t('sponsors.sponsorsIndex.mirrors'),
-    list: [...Object.values(sponsorsLink.mirrors)]
+    list: [...Object.values(linkValue.sponsors.mirrors)]
   },
   {
     title: t('sponsors.sponsorsIndex.devices'),
     list: [
       linkDevelopmentEquipment.bananaPi,
-      sponsorsLink.infrastructure.loongson,
+      linkValue.sponsors.infrastructure.loongson,
       linkDevelopmentEquipment.plctlab,
       linkDevelopmentEquipment.pine64
     ]
   },
   {
     title: t('sponsors.sponsorsIndex.licenses'),
-    list: [...Object.values(sponsorsLink.licenses)]
+    list: [...Object.values(linkValue.sponsors.licenses)]
   },
   {
     title: t('sponsors.sponsorsIndex.individualDonors.title')
   },
   {
     title: t('sponsors.sponsorsIndex.historicInfrastructure'),
-    list: [...Object.values(sponsorsLink.historicInfrastructure)]
+    list: [...Object.values(linkValue.sponsors.historicInfrastructure)]
   },
   {
     title: t('sponsors.sponsorsIndex.historicMirrors'),
-    list: [...Object.values(sponsorsLink.historicSoftwareLicense)]
+    list: [...Object.values(linkValue.sponsors.historicSoftwareLicense)]
   }
 ];
 </script>
@@ -47,9 +47,7 @@ const sponsorList = [
 
     <div v-for="item in sponsorList" :key="item.title">
       <category-second :title="item.title" />
-      <div
-        v-if="item.title !== t('sponsors.sponsorsIndex.individualDonors.title')"
-        class="p-6">
+      <div v-if="item.title !== t('sponsors.sponsorsIndex.individualDonors.title')" class="p-6">
         <div class="grid grid-cols-4 gap-6 p-2">
           <app-link
             v-for="sponsor in item.list"
@@ -76,22 +74,16 @@ const sponsorList = [
       </div>
       <div v-else class="heti">
         <p
-          v-for="description in tm(
-            'sponsors.sponsorsIndex.individualDonors.introduction'
-          )"
+          v-for="description in textValue.individualDonors.introduction"
           :key="description">
           {{ description }}
         </p>
         <AppTableOrdinary
-          :table-value="
-            tm('sponsors.sponsorsIndex.individualDonors.tableAoscc2025')
-          "
+          :table-value="textValue.individualDonors.tableAoscc2025"
           my-key="sponsors-index-1" />
         <br />
         <AppTableOrdinary
-          :table-value="
-            tm('sponsors.sponsorsIndex.individualDonors.tableServerHardDrive')
-          "
+          :table-value="textValue.individualDonors.tableServerHardDrive"
           my-key="sponsors-index-1" />
       </div>
     </div>
