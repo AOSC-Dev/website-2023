@@ -1,7 +1,5 @@
 <script setup>
 const { t, tm } = useI18n();
-const linkValue = tm('allUniversalLink');
-const localLink = linkValue.local;
 useHead({ title: t('index.indexTitle') });
 
 const columnBorderlessList = [
@@ -28,7 +26,7 @@ const columnBorderlessList = [
             :filters="[{ key: 'home', value: 1 }]" />
           <div
             class="px-[15px] py-[10px] text-right leading-6 font-[12pt] text-link">
-            <link-standard :link="useTIndex(localLink.news, 1)" />
+            <link-standard-test :title="t('index.viewNews')" url="/news" />
           </div>
         </article>
       </div>
@@ -49,7 +47,9 @@ const columnBorderlessList = [
             </div>
           </div>
           <div class="px-[15px] text-right text-[12pt] leading-6">
-            <link-standard :link="useTIndex(localLink.aoscRightForMe, 1)" />
+            <link-standard-test
+              :title="t('index.aoscRightForMe')"
+              url="/aosc-os/right-for-me" />
           </div>
         </article>
       </div>

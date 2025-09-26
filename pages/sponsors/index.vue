@@ -1,40 +1,41 @@
 <script setup>
 const { t, tm } = useI18n();
 const linkValue = tm('allUniversalLink');
+const sponsorsLink=linkValue.sponsors;
 useHead({ title: t('sponsors.sponsorsIndex.title') });
-const linkDevelopmentEquipment = linkValue.sponsors.devices;
+const linkDevelopmentEquipment = sponsorsLink.devices;
 const sponsorList = [
   {
     title: t('sponsors.sponsorsIndex.infrastructure'),
-    list: [...Object.values(linkValue.sponsors.infrastructure)]
+    list: [...Object.values(sponsorsLink.infrastructure)]
   },
   {
     title: t('sponsors.sponsorsIndex.mirrors'),
-    list: [...Object.values(linkValue.sponsors.mirrors)]
+    list: [...Object.values(sponsorsLink.mirrors)]
   },
   {
     title: t('sponsors.sponsorsIndex.devices'),
     list: [
       linkDevelopmentEquipment.bananaPi,
-      linkValue.sponsors.infrastructure.loongson,
+      sponsorsLink.infrastructure.loongson,
       linkDevelopmentEquipment.plctlab,
       linkDevelopmentEquipment.pine64
     ]
   },
   {
     title: t('sponsors.sponsorsIndex.licenses'),
-    list: [...Object.values(linkValue.sponsors.licenses)]
+    list: [...Object.values(sponsorsLink.licenses)]
   },
   {
     title: t('sponsors.sponsorsIndex.individualDonors.title')
   },
   {
     title: t('sponsors.sponsorsIndex.historicInfrastructure'),
-    list: [...Object.values(linkValue.sponsors.historicInfrastructure)]
+    list: [...Object.values(sponsorsLink.historicInfrastructure)]
   },
   {
     title: t('sponsors.sponsorsIndex.historicMirrors'),
-    list: [...Object.values(linkValue.sponsors.historicSoftwareLicense)]
+    list: [...Object.values(sponsorsLink.historicSoftwareLicense)]
   }
 ];
 </script>
