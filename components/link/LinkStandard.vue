@@ -1,24 +1,31 @@
 <script setup lang="js">
 const route = useRoute();
 const props = defineProps({
-  link: {
-    type: Object,
+  title: {
+    type: [Object, String],
     required: true
+  },
+  hash: {
+    type: [String, null],
+    default: null
+  },
+  url: {
+    type: [String, null],
+    default: null
   }
 });
-const linkTitle = getSpecifiedTitle(props.link);
 </script>
 
 <template>
   <app-link
     :to="
-      link.url
-        ? Number.isFinite(link.hIndex)
-          ? `${link.url}${link.hash[link.hIndex]}`
-          : link.url
-        : `${route.path.replace(/\/+$/, '')}${link.hash}`
+      url
+        ? hash === null
+          ? `${url}${hash}`
+          : url
+        : `${route.path.replace(/\/+$/, '')}${hash}`
     ">
-    <app-show v-if="typeof linkTitle === 'object'" :title="linkTitle" />
-    <span v-else>{{ linkTitle }}</span>
+    <app-show v-if="typeof props.title === 'object'" :title="props.title" />
+    <span v-else>{{ props.title }}</span>
   </app-link>
 </template>
