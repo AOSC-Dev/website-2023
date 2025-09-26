@@ -2,7 +2,8 @@
 import hljs from 'highlight.js/lib/core';
 
 const config = useRuntimeConfig();
-const { t, tm } = useI18n();
+const { t,tm } = useI18n();
+const textValue = tm('paste.pasteIndex');
 // const linkValue = tm('allUniversalLink');
 useHead({ title: t('paste.pasteIndex.pageTitle') });
 
@@ -45,7 +46,7 @@ const submit = async () => {
     ElMessage.error({
       showClose: true,
       duration: 10000,
-      message: `${tm('paste.pasteIndex.promptContentTooLarge')[0]}${formdataSize}B (${BToMB(formdataSize)}MiB)${tm('paste.pasteIndex.promptContentTooLarge')[1]}${toailFileSize}B (${BToMB(toailFileSize)}MiB)`
+      message: `${textValue.promptContentTooLarge[0]}${formdataSize}B (${BToMB(formdataSize)}MiB)${textValue.promptContentTooLarge[1]}${toailFileSize}B (${BToMB(toailFileSize)}MiB)`
     });
   }
   submiting.value = true;
@@ -97,14 +98,11 @@ const handleChange = (uploadFile, uploadFiles) => {
     ElMessage.error({
       showClose: true,
       duration: 10000,
-      message: `${tm('paste.pasteIndex.promptContentSizeTooLargeWithAttachment')[0]}'${uploadFile.name}'${tm('paste.pasteIndex.promptContentSizeTooLargeWithAttachment')[1]}`
+      message: `${textValue.promptContentSizeTooLargeWithAttachment[0]}'${uploadFile.name}'${textValue.promptContentSizeTooLargeWithAttachment[1]}`
     });
     selectedFileList.value.pop();
     // showSize();
-  } else
-    ElMessage.success(
-      `${t('paste.pasteIndex.promptFileAddSuccess')}'${uploadFile.name}'`
-    );
+  } else ElMessage.success(`${t('paste.pasteIndex.promptFileAddSuccess')}'${uploadFile.name}'`);
 };
 </script>
 
@@ -157,10 +155,8 @@ const handleChange = (uploadFile, uploadFiles) => {
         <div class="my-[-26px] h-[26px]">
           <el-icon size="24"><el-icon-upload-filled /></el-icon>
           <div ref="div1" class="el-upload__text">
-            <span>
-              {{ tm('paste.pasteIndex.promptAttachmentInstruction')[0] }}
-            </span>
-            <em>{{ tm('paste.pasteIndex.promptAttachmentInstruction')[1] }}</em>
+            <span>{{ textValue.promptAttachmentInstruction[0] }}</span>
+            <em>{{ textValue.promptAttachmentInstruction[1] }}</em>
           </div>
         </div>
       </el-upload>

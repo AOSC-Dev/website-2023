@@ -1,6 +1,6 @@
 <script setup>
 const { t, tm } = useI18n();
-
+const textValue = tm('DownloadButtonGroup');
 defineProps({
   title: { type: String, default: '' },
   description: { type: String, default: '' },
@@ -29,8 +29,8 @@ const expand = ref(false);
       <span>
         {{
           expand
-            ? tm('DownloadButtonGroup.downloadDropdownExpandButton')[0]
-            : tm('DownloadButtonGroup.downloadDropdownExpandButton')[1]
+            ? textValue.downloadDropdownExpandButton[0]
+            : textValue.downloadDropdownExpandButton[1]
         }}
       </span>
       <Icon

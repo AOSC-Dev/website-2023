@@ -1,7 +1,8 @@
 <script setup>
 // #region Common
 
-const { t, tm } = useI18n();
+const { t,tm } = useI18n();
+const textValue = tm('download.index');
 const linkValue = tm('allUniversalLink');
 const localLink = linkValue.local;
 const route = useRoute();
@@ -36,7 +37,7 @@ useHighlightWatch(switchHash);
 // #region remote
 const recipe = ref({});
 const recipeI18n = ref({});
-const sources = ref(tm('download.index.downloadSources'));
+const sources = ref(textValue.downloadSources);
 
 const getAntongDate = () => {
   if (versionArch.value.length === 0) return '...';
@@ -132,10 +133,10 @@ const antong1List = ref(
             title: 'loongarch64'
           }
         ],
-        tm('download.index.helpContent.aoscOsIsaInfoPrimary'),
+        textValue.helpContent.aoscOsIsaInfoPrimary,
         'popoverData.content'
       ),
-      tm('download.index.downloadButtons.aoscOsPrimary'),
+      textValue.downloadButtons.aoscOsPrimary,
       'label'
     ),
     1
@@ -156,10 +157,10 @@ const antong2List = ref(
             title: 'loongson3'
           }
         ],
-        tm('download.index.helpContent.aoscOsIsaInfoSecondary'),
+        textValue.helpContent.aoscOsIsaInfoSecondary,
         'popoverData.content'
       ),
-      tm('download.index.downloadButtons.aoscOsSecondary'),
+      textValue.downloadButtons.aoscOsSecondary,
       'label'
     ),
     2
@@ -200,10 +201,10 @@ const xingxia1List = ref(
           title: 'powerpc'
         }
       ],
-      tm('download.index.helpContent.afterglowIsaInfoPrimary'),
+      textValue.helpContent.afterglowIsaInfoPrimary,
       'popoverData.content'
     ),
-    tm('download.index.downloadButtons.afterglowPrimary'),
+    textValue.downloadButtons.afterglowPrimary,
     'label'
   )
 );
@@ -236,10 +237,10 @@ const xingxia2List = ref(
           title: 'sparc64'
         }
       ],
-      tm('download.index.helpContent.afterglowIsaInfoSecondary'),
+      textValue.helpContent.afterglowIsaInfoSecondary,
       'popoverData.content'
     ),
-    tm('download.index.downloadButtons.afterglowSecondary'),
+    textValue.downloadButtons.afterglowSecondary,
     'label'
   )
 );
@@ -356,9 +357,7 @@ if (recipeError || recipeI18nError) {
 
 <template>
   <div>
-    <category-second
-      id="aosc-os-download"
-      :title="t('download.index.operatingSystemsTitle')" />
+    <category-second id="aosc-os-download" :title="t('download.index.operatingSystemsTitle')" />
 
     <!-- AOSC OS -->
     <div
@@ -382,9 +381,7 @@ if (recipeError || recipeI18nError) {
           " />
         <DownloadButtonGroup
           :title="t('download.index.portTierInfo.secondaryIsa.name')"
-          :description="
-            t('download.index.portTierInfo.secondaryIsa.description')
-          "
+          :description="t('download.index.portTierInfo.secondaryIsa.description')"
           :button-props="
             antong2List.map((item) => ({
               archName: item.label,
@@ -472,9 +469,7 @@ if (recipeError || recipeI18nError) {
           " />
         <DownloadButtonGroup
           :title="t('download.index.portTierInfo.secondaryIsa.name')"
-          :description="
-            t('download.index.portTierInfo.secondaryIsa.description')
-          "
+          :description="t('download.index.portTierInfo.secondaryIsa.description')"
           :button-props="
             xingxia2List.map((item) => ({
               archName: item.label,
@@ -506,9 +501,9 @@ if (recipeError || recipeI18nError) {
         button-class="ml-6 mt-[2px] bg-white"
         :code-text="omaInstallScript" />
       <p class="mt-[6px] text-[10pt]">
-        <span>{{ tm('download.index.omaSystemSupportInfo')[0] }}</span>
+        <span>{{ textValue.omaSystemSupportInfo[0] }}</span>
         <br />
-        <span>{{ tm('download.index.omaSystemSupportInfo')[1] }}</span>
+        <span>{{ textValue.omaSystemSupportInfo[1] }}</span>
       </p>
     </div>
   </div>

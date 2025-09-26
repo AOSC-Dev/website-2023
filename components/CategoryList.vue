@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 const { locale } = useI18n();
-//
+// const textValue = tm('NewsCategoryList');
 
 const props = defineProps<{
   category?: string;

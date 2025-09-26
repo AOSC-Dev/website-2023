@@ -1,7 +1,7 @@
 <script setup>
 const nowYear = new Date().getFullYear();
 
-const { t, tm } = useI18n();
+const { tm, t } = useI18n();
 const linkValue = tm('allUniversalLink');
 const navigationList = [
   ...Object.values(linkValue.barFooter.navigation),

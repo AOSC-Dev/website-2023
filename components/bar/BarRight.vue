@@ -1,5 +1,5 @@
 <script setup>
-const { t, tm } = useI18n();
+const { t,tm } = useI18n();
 const linkValue = tm('allUniversalLink');
 
 const localLink = linkValue.local;

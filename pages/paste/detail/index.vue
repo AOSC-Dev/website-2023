@@ -1,9 +1,9 @@
 <script setup>
-const { t } = useI18n();
-
 const config = useRuntimeConfig();
 const route = useRoute();
 const imgSuffixList = ['jpg', 'jpeg', 'png', 'gif'];
+const { t } = useI18n();
+
 useHead({ title: t('paste.pasteDetail.pageTitle') });
 // FIXME: `useRobotsRule({ noindex: true, nofollow: true })` generates
 // `<meta name="robots" content="[object Object]">` currently
@@ -27,9 +27,7 @@ const { data, status } = await useAsyncData(
 
 const details = computed(() => data.value?.[0].msg);
 const failReason = computed(() =>
-  data.value?.[0].code !== 0
-    ? (data.value?.[0].msg ?? t('paste.pasteDetail.promptFetchError'))
-    : ''
+  data.value?.[0].code !== 0 ? (data.value?.[0].msg ?? t('paste.pasteDetail.promptFetchError')) : ''
 );
 
 const returnHref = () => window.location.href;
@@ -45,25 +43,18 @@ const returnHref = () => window.location.href;
         <div class="flex flex-col">
           <div class="flex justify-between">
             <div>
-              <div ref="div1">
-                {{ t('paste.pasteDetail.pasteTitle') + details.title }}
-              </div>
+              <div ref="div1">{{ t('paste.pasteDetail.pasteTitle') + details.title }}</div>
               <div ref="div2">
                 {{
                   t('paste.pasteDetail.pasteExpiration') +
-                  new Date(details.expiration * 1000)
-                    .toISOString()
-                    .split('T')[0]
+                  new Date(details.expiration*1000).toISOString().split('T')[0]
                 }}
               </div>
             </div>
             <button
               class="theme-bg-color-primary-static cursor-pointer px-[3em] py-[1em] text-white"
               @click="
-                copyToClipboard(
-                  returnHref(),
-                  t('paste.pasteDetail.pasteShareLink')
-                )
+                copyToClipboard(returnHref(), t('paste.pasteDetail.pasteShareLink'))
               ">
               {{ t('paste.pasteDetail.buttonCopyLink') }}
             </button>
@@ -96,12 +87,7 @@ const returnHref = () => window.location.href;
 
         <button
           class="theme-bg-color-primary-static mt-[10px] ml-auto cursor-pointer px-[3em] py-[1em] text-white"
-          @click="
-            copyToClipboard(
-              details.content,
-              t('paste.pasteDetail.pasteFullContent')
-            )
-          ">
+          @click="copyToClipboard( details.content, t('paste.pasteDetail.pasteFullContent'))">
           {{ t('paste.pasteDetail.buttonCopyFullContent') }}
         </button>
       </div>

@@ -57,8 +57,7 @@ const firstLineFontSize = props.firstLineFontSize + 'pt';
 const secondLineFontSize = props.secondLineFontSize + 'pt';
 
 const dialogTitle = computed(
-  () =>
-    `${t('DownloadButton.downloadDetailsTitle')}${t('DownloadButton.downloadAoscOsName')} - ${props.isaInfo?.label}`
+  () => `${t('DownloadButton.downloadDetailsTitle')}${t('DownloadButton.downloadAoscOsName')} - ${props.isaInfo?.label}`
 );
 
 const onClick = () => {

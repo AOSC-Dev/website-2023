@@ -1,5 +1,5 @@
 <script setup>
-const { t, tm, _locale } = useI18n();
+const { t,tm, _locale } = useI18n();
 
 const getComp = computed(() => {
   const linkValue = tm('allUniversalLink');
