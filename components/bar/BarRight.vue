@@ -7,14 +7,14 @@ const distroList = [
   {
     img: '/distros/aosc-os.svg',
     links: [useHIndex(localLink.download, 0), localLink.aoscRelnote],
-    description: t('BarRight.barRightAoscOsTagline'),
-    title: t('BarRight.barRightAoscOsTitle')
+    description: t('BarRight.aoscOsTagline'),
+    title: t('BarRight.aoscOsTitle')
   },
   {
     img: '/distros/afterglow.svg',
     links: [useHIndex(localLink.download, 1), localLink.afterglowRelnote],
-    description: t('BarRight.barRightAfterglowTagLine'),
-    title: t('BarRight.barRightAfterglowTitle')
+    description: t('BarRight.afterglowTagLine'),
+    title: t('BarRight.afterglowTitle')
   }
 ];
 
@@ -44,7 +44,7 @@ const commonLinkList = [
     </AppLink>
     <div class="flex grow flex-col">
       <CategorySecond
-        :title="t('BarRight.barRightOsSolutions')"
+        :title="t('BarRight.osSolutions')"
         class="border-l border-solid border-content-main-bg" />
       <article
         class="theme-border-secondary border-l pt-[1em] pb-[0.5em] pl-[1em]">
@@ -71,7 +71,7 @@ const commonLinkList = [
           </div>
         </div>
       </article>
-      <CategorySecond :title="t('BarRight.barRightQuickLinks')" />
+      <CategorySecond :title="t('BarRight.quickLinks')" />
       <div class="theme-border-secondary flex grow flex-col border-l">
         <link-standard
           v-for="(item, index) in commonLinkList"

@@ -4,7 +4,7 @@ const route = useRoute();
 const imgSuffixList = ['jpg', 'jpeg', 'png', 'gif'];
 const { t } = useI18n();
 
-useHead({ title: t('paste.pasteDetail.pageTitle') });
+useHead({ title: t('paste.detail.pageTitle') });
 // FIXME: `useRobotsRule({ noindex: true, nofollow: true })` generates
 // `<meta name="robots" content="[object Object]">` currently
 useRobotsRule('noindex, nofollow');
@@ -27,7 +27,7 @@ const { data, status } = await useAsyncData(
 
 const details = computed(() => data.value?.[0].msg);
 const failReason = computed(() =>
-  data.value?.[0].code !== 0 ? (data.value?.[0].msg ?? t('paste.pasteDetail.promptFetchError')) : ''
+  data.value?.[0].code !== 0 ? (data.value?.[0].msg ?? t('paste.detail.promptFetchError')) : ''
 );
 
 const returnHref = () => window.location.href;
@@ -38,15 +38,15 @@ const returnHref = () => window.location.href;
     :is-ready="status === 'success' || status === 'error'"
     class="w-[100%]">
     <div v-if="status === 'success' && data?.[0]?.code === 0">
-      <category-second :title="t('paste.pasteDetail.pageTitle')" />
+      <category-second :title="t('paste.detail.pageTitle')" />
       <div class="flex flex-col p-[2em]">
         <div class="flex flex-col">
           <div class="flex justify-between">
             <div>
-              <div ref="div1">{{ t('paste.pasteDetail.pasteTitle') + details.title }}</div>
+              <div ref="div1">{{ t('paste.detail.pasteTitle') + details.title }}</div>
               <div ref="div2">
                 {{
-                  t('paste.pasteDetail.pasteExpiration') +
+                  t('paste.detail.pasteExpiration') +
                   new Date(details.expiration*1000).toISOString().split('T')[0]
                 }}
               </div>
@@ -54,9 +54,9 @@ const returnHref = () => window.location.href;
             <button
               class="theme-bg-color-primary-static cursor-pointer px-[3em] py-[1em] text-white"
               @click="
-                copyToClipboard(returnHref(), t('paste.pasteDetail.pasteShareLink'))
+                copyToClipboard(returnHref(), t('paste.detail.pasteShareLink'))
               ">
-              {{ t('paste.pasteDetail.buttonCopyLink') }}
+              {{ t('paste.detail.buttonCopyLink') }}
             </button>
           </div>
           <ul class="el-upload-list el-upload-list--text">
@@ -87,8 +87,8 @@ const returnHref = () => window.location.href;
 
         <button
           class="theme-bg-color-primary-static mt-[10px] ml-auto cursor-pointer px-[3em] py-[1em] text-white"
-          @click="copyToClipboard( details.content, t('paste.pasteDetail.pasteFullContent'))">
-          {{ t('paste.pasteDetail.buttonCopyFullContent') }}
+          @click="copyToClipboard( details.content, t('paste.detail.pasteFullContent'))">
+          {{ t('paste.detail.buttonCopyFullContent') }}
         </button>
       </div>
     </div>

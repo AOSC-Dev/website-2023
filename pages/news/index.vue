@@ -2,7 +2,7 @@
 const { t } = useI18n();
 // const linkValue = tm('allUniversalLink');
 const newsLimit = 10;
-useHead({ title: t('news.newsIndex.headingMain') });
+useHead({ title: t('news.index.headingMain') });
 const filters = (newsCategory) => [{ key: 'categories', value: `%"${newsCategory}"%` }];
 </script>
 
@@ -10,8 +10,8 @@ const filters = (newsCategory) => [{ key: 'categories', value: `%"${newsCategory
   <div class="flex flex-wrap *:w-1/2">
     <div>
       <category-second
-        :title="t('news.newsIndex.headingAdvisories')"
-        :right-text="t('news.newsIndex.seeAll')"
+        :title="t('news.index.headingAdvisories')"
+        :right-text="t('news.index.seeAll')"
         right-url="/news/list/advisories"
         :show-right-chevron="true" />
       <category-list
@@ -22,8 +22,8 @@ const filters = (newsCategory) => [{ key: 'categories', value: `%"${newsCategory
     </div>
     <div class="">
       <category-second
-        :title="t('news.newsIndex.headingNews')"
-        :right-text="t('news.newsIndex.seeAll')"
+        :title="t('news.index.headingNews')"
+        :right-text="t('news.index.seeAll')"
         right-url="/news/list/news"
         class="border-l border-l-white"
         :show-right-chevron="true" />
@@ -35,8 +35,8 @@ const filters = (newsCategory) => [{ key: 'categories', value: `%"${newsCategory
     </div>
     <div>
       <category-second
-        :title="t('news.newsIndex.headingPeriodicals')"
-        :right-text="t('news.newsIndex.seeAll')"
+        :title="t('news.index.headingPeriodicals')"
+        :right-text="t('news.index.seeAll')"
         right-url="/news/list/journals"
         :show-right-chevron="true" />
       <category-list
@@ -48,8 +48,8 @@ const filters = (newsCategory) => [{ key: 'categories', value: `%"${newsCategory
 
     <div class="">
       <category-second
-        :title="t('news.newsIndex.headingMinutes')"
-        :right-text="t('news.newsIndex.seeAll')"
+        :title="t('news.index.headingMinutes')"
+        :right-text="t('news.index.seeAll')"
         right-url="/news/list/minutes"
         :show-right-chevron="true"
         class="border-l border-l-white" />

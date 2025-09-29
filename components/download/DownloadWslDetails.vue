@@ -21,7 +21,7 @@ function latestTarball(tarballs, arch) {
 
 <template>
   <div class="flex flex-col gap-2 pb-1">
-    <app-h2>{{ t('DownloadWslDetails.downloadWslDetailTitle') }}</app-h2>
+    <app-h2>{{ t('DownloadWslDetails.title') }}</app-h2>
     <ms-store-badge
       class="h-[48px] w-fit [&::part(img)]:h-[48px]"
       productid="9NMDF21NV65Z"
@@ -29,14 +29,14 @@ function latestTarball(tarballs, arch) {
       theme="dark"
       animation="on" />
     <p class="mb-0">
-      {{ t('DownloadWslDetails.downloadWslDetailText1') }}
+      {{ t('DownloadWslDetails.text1') }}
       <LinkStandard :link="linkValue.mordenDistribution" />
-      {{ t('DownloadWslDetails.downloadWslDetailText2') }}
+      {{ t('DownloadWslDetails.text2') }}
     </p>
     <el-container>
       <el-select
         v-model="selected_source_url"
-        :placeholder="t('DownloadWslDetails.downloadWslDetailMirrorPlaceholder')">
+        :placeholder="t('DownloadWslDetails.mirrorPlaceholder')">
         <el-option
           v-for="source in sources"
           :key="source.name"
@@ -61,7 +61,7 @@ function latestTarball(tarballs, arch) {
     </el-container>
 
     <div class="col-span-2">
-      {{ t('DownloadWslDetails.downloadWslDetailManualDownload.description') }}
+      {{ t('DownloadWslDetails.manualDownload.description') }}
     </div>
 
 
@@ -72,19 +72,19 @@ function latestTarball(tarballs, arch) {
 
     <LinkStandard :link="localLink.aoscWslRelnote"/>
 
-    <app-h2>{{ t('DownloadWslDetails.downloadWslDetailSysReqTitle') }}</app-h2>
-    <p>{{ t('DownloadWslDetails.downloadWslDetailSysReqText1') }}</p>
+    <app-h2>{{ t('DownloadWslDetails.sysReqTitle') }}</app-h2>
+    <p>{{ t('DownloadWslDetails.sysReqText1') }}</p>
     <p>
-      {{ t('DownloadWslDetails.downloadWslDetailSysReqText1') }}
+      {{ t('DownloadWslDetails.sysReqText1') }}
       <link-standard :link="useTIndex(localLink.aoscWslRequirements, 1)" />
       {{ linkValue.periodPoint }}
     </p>
 
-    <app-h2>{{ t('DownloadWslDetails.downloadWslDetailHelpAndSupportTitle') }}</app-h2>
+    <app-h2>{{ t('DownloadWslDetails.helpAndSupportTitle') }}</app-h2>
     <p>
-      {{ t('DownloadWslDetails.downloadWslDetailHelpAndSupportText1') }}
+      {{ t('DownloadWslDetails.helpAndSupportText1') }}
       <link-standard :link="useTIndex(localLink.contact, 2)" />
-      {{ t('DownloadWslDetails.downloadWslDetailHelpAndSupportText2') }}
+      {{ t('DownloadWslDetails.helpAndSupportText2') }}
     </p>
   </div>
 </template>

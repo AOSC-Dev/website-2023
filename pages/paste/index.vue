@@ -3,9 +3,9 @@ import hljs from 'highlight.js/lib/core';
 
 const config = useRuntimeConfig();
 const { t,tm } = useI18n();
-const textValue = tm('paste.pasteIndex');
+const textValue = tm('paste.index');
 // const linkValue = tm('allUniversalLink');
-useHead({ title: t('paste.pasteIndex.pageTitle') });
+useHead({ title: t('paste.index.pageTitle') });
 
 const languageList = ref(hljs.listLanguages());
 
@@ -37,7 +37,7 @@ const pasteRes = ref(null);
 const submiting = ref(false);
 const submit = async () => {
   if (pasteFormData.value.content == '') {
-    ElMessage.error(t('paste.pasteIndex.promptContentEmpty'));
+    ElMessage.error(t('paste.index.promptContentEmpty'));
     return;
   }
   const formdataSize = getFormDataSize();
@@ -81,7 +81,7 @@ const submit = async () => {
     ElMessage.error({
       showClose: true,
       duration: 10000,
-      message: `${t('paste.pasteIndex.promptContentServerSizeLimit')}`
+      message: `${t('paste.index.promptContentServerSizeLimit')}`
     });
   } else {
     ElMessage.error(`${error.value.message}: ${error.value.data.msg}`);
@@ -102,13 +102,13 @@ const handleChange = (uploadFile, uploadFiles) => {
     });
     selectedFileList.value.pop();
     // showSize();
-  } else ElMessage.success(`${t('paste.pasteIndex.promptFileAddSuccess')}'${uploadFile.name}'`);
+  } else ElMessage.success(`${t('paste.index.promptFileAddSuccess')}'${uploadFile.name}'`);
 };
 </script>
 
 <template>
   <div v-loading="submiting">
-    <category-second :title="t('paste.pasteIndex.pageTitle')" />
+    <category-second :title="t('paste.index.pageTitle')" />
     <div class="px-[10%] py-[30px]">
       <div class="mb-[10px] flex justify-between">
         <div class="flex">
@@ -130,14 +130,14 @@ const handleChange = (uploadFile, uploadFiles) => {
         <button
           class="theme-bg-color-secondary-primary rounded-none px-[50px] py-[10px] text-white"
           @click="submit">
-          {{ t('paste.pasteIndex.buttonSubmit') }}
+          {{ t('paste.index.buttonSubmit') }}
         </button>
       </div>
       <input
         v-model="pasteFormData.title"
         type="text"
         class="theme-border-primary mb-[10px] w-full rounded-none border-2 py-[10px]"
-        :placeholder="t('paste.pasteIndex.placeholderTitle')" />
+        :placeholder="t('paste.index.placeholderTitle')" />
       <!-- 内容编辑器 -->
       <LazyMonacoEditor
         v-model="pasteFormData.content"

@@ -5,13 +5,13 @@ const { t } = useI18n();
 const title = computed(() => {
   switch (route.params.category) {
     case 'advisories':
-      return t('news.newsIndex.headingAdvisories');
+      return t('news.index.headingAdvisories');
     case 'news':
-      return t('news.newsIndex.headingNews');
+      return t('news.index.headingNews');
     case 'journals':
-      return t('news.newsIndex.headingPeriodicals');
+      return t('news.index.headingPeriodicals');
     case 'minutes':
-      return t('news.newsIndex.headingMinutes');
+      return t('news.index.headingMinutes');
     default:
       return '';
   }

@@ -1,7 +1,7 @@
 {
-  "barLeftProjects": "社区项目",
-  "barLeftNews": "资讯与支持",
-  "barLeftCulture": "事务与文化",
-  "barLeftInfrastructures": "服务设施",
-  "barLeftReturnToTop": "回到顶部"
+  "projects": "社区项目",
+  "news": "资讯与支持",
+  "culture": "事务与文化",
+  "infrastructures": "服务设施",
+  "returnToTop": "回到顶部"
 }

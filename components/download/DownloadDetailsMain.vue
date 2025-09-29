@@ -18,8 +18,8 @@ const props = defineProps({
 const selected_source_url = ref(props.sources[0].url);
 
 const fileType = props.path.includes('livekit')
-  ? textValue.downloadDetailsDownloadType[0]
-  : textValue.downloadDetailsDownloadType[1];
+  ? textValue.downloadType[0]
+  : textValue.downloadType[1];
 
 const mediaWriterVersion = '0.3.3'; // FIXME: Currently unable to get dynamic Media Writer version
 const mediaWritersInfo = setNestedKeyValue(
@@ -37,25 +37,25 @@ const mediaWritersInfo = setNestedKeyValue(
       extension: 'dmg'
     }
   ],
-  textValue.downloadDetailsMediaWriterButtonText,
+  textValue.mediaWriterButtonText,
   'name'
 );
 </script>
 
 <template>
   <div class="download-details-main flex flex-col gap-2">
-    <app-h2>{{ t('DownloadDetailsMain.downloadDetailsBasicInfoTitle') }}</app-h2>
+    <app-h2>{{ t('DownloadDetailsMain.basicInfoTitle') }}</app-h2>
     <p>
-      {{ t('DownloadDetailsMain.downloadDetailsBasicInfoText1') }}{{ spaceWord(arch) }}{{ spaceWord(t('DownloadDetailsMain.downloadDetailsBasicInfoText2'))
+      {{ t('DownloadDetailsMain.basicInfoText1') }}{{ spaceWord(arch) }}{{ spaceWord(t('DownloadDetailsMain.basicInfoText2'))
       }}{{ fileType }}，{{ content }}{{ linkValue.periodPoint }}
     </p>
     <p>
-      {{ t('DownloadDetailsMain.downloadDetailsBasicInfoText3') }}
+      {{ t('DownloadDetailsMain.basicInfoText3') }}
     </p>
     <el-container>
       <el-select
         v-model="selected_source_url"
-        :placeholder="t('DownloadDetailsMain.downloadDetailsMirrorPlaceholder')">
+        :placeholder="t('DownloadDetailsMain.mirrorPlaceholder')">
         <el-option
           v-for="source in sources"
           :key="source.name"
@@ -69,16 +69,16 @@ const mediaWritersInfo = setNestedKeyValue(
         :to="`${selected_source_url}${path}`"
         target="_blank"
         class="flex h-[32px] items-center bg-[var(--secondary)] px-[15px] text-nowrap text-white hover:bg-[var(--primary)] hover:no-underline">
-        {{ t('DownloadDetailsMain.downloadDetailsDownloadButton') }}
+        {{ t('DownloadDetailsMain.downloadButton') }}
       </AppLink>
     </el-container>
     <LinkStandard :link="useTIndex(locallink.aoscRelnote, 1)" />
 
-    <app-h2>{{ t('DownloadDetailsMain.downloadDetailsHashVerifyTitle') }}</app-h2>
-    <p>{{ t('DownloadDetailsMain.downloadDetailsHashVerifyText1') }}</p>
-    <CopyButton :content="sha256sum" :button-text="t('DownloadDetailsMain.downloadDetailsHashVerifyText2')" />
+    <app-h2>{{ t('DownloadDetailsMain.hashVerifyTitle') }}</app-h2>
+    <p>{{ t('DownloadDetailsMain.hashVerifyText1') }}</p>
+    <CopyButton :content="sha256sum" :button-text="t('DownloadDetailsMain.hashVerifyText2')" />
 
-    <p>{{ t('DownloadDetailsMain.downloadDetailsHashVerifyText3') }}{{ spaceWord(fileType) }}{{ t('DownloadDetailsMain.downloadDetailsHashVerifyText4') }}</p>
+    <p>{{ t('DownloadDetailsMain.hashVerifyText3') }}{{ spaceWord(fileType) }}{{ t('DownloadDetailsMain.hashVerifyText4') }}</p>
     <el-container class="flex-wrap">
       <AppLink
         v-for="info in mediaWritersInfo"
@@ -90,21 +90,21 @@ const mediaWritersInfo = setNestedKeyValue(
       </AppLink>
     </el-container>
     <p>
-      {{ t('DownloadDetailsMain.downloadDetailsHashVerifyText5') }}{{ spaceWord(fileType) }}{{ t('DownloadDetailsMain.downloadDetailsHashVerifyText6') }}
+      {{ t('DownloadDetailsMain.hashVerifyText5') }}{{ spaceWord(fileType) }}{{ t('DownloadDetailsMain.hashVerifyText6') }}
     </p>
     <p>
-      {{ t('DownloadDetailsMain.downloadDetailsHashVerifyText7') }}
+      {{ t('DownloadDetailsMain.hashVerifyText7') }}
       <link-standard :link="linkValue.balenaEtcher" />
-      {{ t('DownloadDetailsMain.downloadDetailsHashVerifyText8') }}
+      {{ t('DownloadDetailsMain.hashVerifyText8') }}
       <link-standard :link="linkValue.usbimager" />
-      {{ t('DownloadDetailsMain.downloadDetailsHashVerifyText9') }}{{ spaceWord(fileType) }}{{ linkValue.periodPoint }}
+      {{ t('DownloadDetailsMain.hashVerifyText9') }}{{ spaceWord(fileType) }}{{ linkValue.periodPoint }}
     </p>
 
-    <app-h2>{{ t('DownloadDetailsMain.downloadDetailsHashVerifyText10') }}</app-h2>
+    <app-h2>{{ t('DownloadDetailsMain.hashVerifyText10') }}</app-h2>
     <p>
-      <span>{{ t('DownloadDetailsMain.downloadDetailsHashVerifyText11') }}</span>
+      <span>{{ t('DownloadDetailsMain.hashVerifyText11') }}</span>
       <link-standard :link="useTIndex(locallink.contact, 2)" />
-      <span>{{ t('DownloadDetailsMain.downloadDetailsHashVerifyText12') }}</span>
+      <span>{{ t('DownloadDetailsMain.hashVerifyText12') }}</span>
     </p>
   </div>
 </template>

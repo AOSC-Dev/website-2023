@@ -6,26 +6,26 @@ const linkValue = tm('allUniversalLink');
 <template>
   <div class="flex flex-col gap-2">
     <p>
-      {{ t('DownloadDetailsAppleSiliconInstruction.downloadDetailsAppleSiliconText1') }}
+      {{ t('DownloadDetailsAppleSiliconInstruction.text1') }}
       <link-standard :link="linkValue.asahiDocumentation" />
       {{ linkValue.periodPoint }}
     </p>
-    <p>{{ t('DownloadDetailsAppleSiliconInstruction.downloadDetailsAppleSiliconText2') }}</p>
+    <p>{{ t('DownloadDetailsAppleSiliconInstruction.text2') }}</p>
     <CopyButton content="curl https://releases.aosc.io/install-asahi | sh" />
-    <p>{{ t('DownloadDetailsAppleSiliconInstruction.downloadDetailsAppleSiliconText3') }}</p>
+    <p>{{ t('DownloadDetailsAppleSiliconInstruction.text3') }}</p>
     <el-descriptions size="small">
-      <el-descriptions-item :label="t('DownloadDetailsAppleSiliconInstruction.downloadDetailsAppleSiliconUsername')">
+      <el-descriptions-item :label="t('DownloadDetailsAppleSiliconInstruction.username')">
         aosc
       </el-descriptions-item>
-      <el-descriptions-item :label="t('DownloadDetailsAppleSiliconInstruction.downloadDetailsAppleSiliconPassword')">
+      <el-descriptions-item :label="t('DownloadDetailsAppleSiliconInstruction.password')">
         anthon
       </el-descriptions-item>
     </el-descriptions>
 
     <p>
-      {{ t('DownloadDetailsAppleSiliconInstruction.downloadDetailsAppleSiliconText4') }}
+      {{ t('DownloadDetailsAppleSiliconInstruction.text4') }}
       <link-standard :link="useTIndex(linkValue.contact, 2)" />
-      {{ t('DownloadDetailsAppleSiliconInstruction.downloadDetailsAppleSiliconText5') }}
+      {{ t('DownloadDetailsAppleSiliconInstruction.text5') }}
     </p>
   </div>
 </template>

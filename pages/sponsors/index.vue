@@ -1,20 +1,20 @@
 <script setup>
 const { t,tm } = useI18n();
-const textValue = tm('sponsors.sponsorsIndex');
+const textValue = tm('sponsors.index');
 const linkValue = tm('allUniversalLink');
-useHead({ title: t('sponsors.sponsorsIndex.title') });
+useHead({ title: t('sponsors.index.title') });
 const linkDevelopmentEquipment = linkValue.sponsors.devices;
 const sponsorList = [
   {
-    title: t('sponsors.sponsorsIndex.infrastructure'),
+    title: t('sponsors.index.infrastructure'),
     list: [...Object.values(linkValue.sponsors.infrastructure)]
   },
   {
-    title: t('sponsors.sponsorsIndex.mirrors'),
+    title: t('sponsors.index.mirrors'),
     list: [...Object.values(linkValue.sponsors.mirrors)]
   },
   {
-    title: t('sponsors.sponsorsIndex.devices'),
+    title: t('sponsors.index.devices'),
     list: [
       linkDevelopmentEquipment.bananaPi,
       linkValue.sponsors.infrastructure.loongson,
@@ -23,18 +23,18 @@ const sponsorList = [
     ]
   },
   {
-    title: t('sponsors.sponsorsIndex.licenses'),
+    title: t('sponsors.index.licenses'),
     list: [...Object.values(linkValue.sponsors.licenses)]
   },
   {
-    title: t('sponsors.sponsorsIndex.individualDonors.title')
+    title: t('sponsors.index.individualDonors.title')
   },
   {
-    title: t('sponsors.sponsorsIndex.historicInfrastructure'),
+    title: t('sponsors.index.historicInfrastructure'),
     list: [...Object.values(linkValue.sponsors.historicInfrastructure)]
   },
   {
-    title: t('sponsors.sponsorsIndex.historicMirrors'),
+    title: t('sponsors.index.historicMirrors'),
     list: [...Object.values(linkValue.sponsors.historicSoftwareLicense)]
   }
 ];
@@ -42,12 +42,12 @@ const sponsorList = [
 
 <template>
   <div>
-    <category-second :title="t('sponsors.sponsorsIndex.title')" />
-    <div class="p-6">{{ t('sponsors.sponsorsIndex.introduction') }}</div>
+    <category-second :title="t('sponsors.index.title')" />
+    <div class="p-6">{{ t('sponsors.index.introduction') }}</div>
 
     <div v-for="item in sponsorList" :key="item.title">
       <category-second :title="item.title" />
-      <div v-if="item.title !== t('sponsors.sponsorsIndex.individualDonors.title')" class="p-6">
+      <div v-if="item.title !== t('sponsors.index.individualDonors.title')" class="p-6">
         <div class="grid grid-cols-4 gap-6 p-2">
           <app-link
             v-for="sponsor in item.list"
