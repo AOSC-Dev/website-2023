@@ -43,7 +43,7 @@ def extract_all_keys_from_json(data, modify_link, parent_key='', separator='.'):
             keys.append(new_key)
             # 只递归处理字典，不处理数组
             if isinstance(value, dict):
-                if not 'url' in value or not modify_link:
+                if (not 'url' in value and not 'hash' in value) or not modify_link:
                     keys.extend(extract_all_keys_from_json(
                         value, modify_link, new_key, separator))
     return keys
@@ -156,7 +156,7 @@ def check_unused_keys(root_dirs, locales_path, modify_link):
                                 f"  ←  反向传播: {parent_key} 被标记为已使用（因为 {key} 被使用）")
 
                     # 如果值是非字符串（对象或数组），进行正向传播（标记所有子节点为已使用）
-                    if not isinstance(key_status[key]['value'], str):
+                    if not isinstance(key_status[key]['value'], str) and not modify_link:
                         for other_key in all_keys:
                             if other_key != key and other_key.startswith(key + '.'):
                                 if not key_status[other_key]['found']:
@@ -177,7 +177,7 @@ def check_unused_keys(root_dirs, locales_path, modify_link):
                     used_keys.append({
                         'key': key
                     })
-            if modify_link:
+            if modify_link and len(unused_keys) > 0:
                 delete_json_key(locale_file, unused_keys)
 
         except Exception as e:
@@ -207,15 +207,11 @@ def delete_json_key(json_file_path, key_path_list):
             for i in range(len(keys) - 1):
                 if keys[i] in current and isinstance(current[keys[i]], dict):
                     current = current[keys[i]]
-                else:
-                    # 如果路径不存在，直接返回
-                    return
 
             # 删除目标键
             target_key = keys[-1]
             if target_key in current:
                 del current[target_key]
-
         # 写回JSON文件
         with open(json_file_path, 'w', encoding='utf-8') as file:
             json.dump(data, file, indent=4, ensure_ascii=False)
