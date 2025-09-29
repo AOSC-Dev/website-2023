@@ -111,7 +111,7 @@ export default defineNuxtConfig({
   },
 
   i18n: {
-    vueI18n: 'config.ts',
+    vueI18n: 'vueI18n.config.ts',
     strategy: 'prefix_except_default',
     defaultLocale: nuxtI18nDefaultLocale,
     locales: [...nuxtI18nLocales],
