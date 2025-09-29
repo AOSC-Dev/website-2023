@@ -5,6 +5,14 @@ import argparse
 from pathlib import Path
 from typing import Dict, List, Any, Union
 
+# 本脚本作用查询未用的key:val对 -m参数单独查询 allUniversalLink 不加 -m 则忽略 allUniversalLink 查询其他所有json
+
+# json中所有字符串应使用t('')非字符串目前仍采用tm('')脚本直接运行对于非字符串的 key:val 会输出错误信息
+# 你需要先运行同目录下的 linkValueToTorTM 并加上 --modifyTm(-m) 参数以将所有的非字符串 key:val 对变成 tm('')的引用方式
+# 此时脚本就可以正确输出 key:val 对的使用情况了
+
+# tips: 先运行一次此脚本，如果输出已经是0就不必往下运行，如果输出少量未使用 key:val 则可以手动查看，如果是大量请按照上面提示进行
+
 
 def find_vue_files(root_dirs):
     """

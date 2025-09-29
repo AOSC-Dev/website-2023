@@ -4,6 +4,8 @@ import argparse
 from pathlib import Path
 import json
 
+# 此脚本没有做多参数处理，处理 pages/ components/ 需要运行两次！
+
 
 def process_vue_file(file_path, locales_path):
     """
