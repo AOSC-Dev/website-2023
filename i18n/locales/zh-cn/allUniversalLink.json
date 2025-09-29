@@ -1,8 +1,4 @@
 {
-  "": {
-    "title": [""],
-    "url": ""
-  },
   "periodPoint": "。",
   "barFooter": {
     "navigation": {
@@ -47,46 +43,6 @@
   "howToMirror": {
     "title": ["镜像源支持"],
     "url": "https://wiki.aosc.io/zh/developer/infrastructure/knowledge-base/00002-how-to-mirror/'"
-  },
-  "telegramMain": {
-    "title": ["加入群组"],
-    "url": "https://t.me/aosc_main"
-  },
-  "telegramRetro": {
-    "title": ["加入群组"],
-    "url": "https://t.me/aosc_retro"
-  },
-  "telegramTuosai": {
-    "title": ["加入群组"],
-    "url": "https://t.me/aosc_tuosai"
-  },
-  "discord": {
-    "title": ["加入聊天室"],
-    "url": "https://discord.gg/VYPHgt9"
-  },
-  "ircMain": {
-    "title": ["加入频道"],
-    "url": "irc://irc.libera.chat:6697/aosc"
-  },
-  "ircRetro": {
-    "title": ["加入频道"],
-    "url": "irc://irc.libera.chat:6697/aosc-retro"
-  },
-  "ircTuosai": {
-    "title": ["加入频道"],
-    "url": "irc://irc.libera.chat:6697/aosc-offtopic"
-  },
-  "matrixMain": {
-    "title": ["加入聊天室"],
-    "url": "https://matrix.to/#/%23aosc:matrix.aosc.io"
-  },
-  "matrixRetro": {
-    "title": ["加入聊天室"],
-    "url": "https://matrix.to/#/%23retro:matrix.aosc.io"
-  },
-  "matrixTuosai": {
-    "title": ["加入聊天室"],
-    "url": "https://matrix.to/#/%23offtopic:matrix.aosc.io"
   },
   "asahiRequirements": {
     "title": ["配置需求"],
@@ -145,10 +101,7 @@
       "title": ["安同 OS 适合我吗？"],
       "url": "/aosc-os/right-for-me"
     },
-    "afterglowRelnote": {
-      "title": ["发行注记"],
-      "url": "/afterglow/relnote"
-    },
+    "afterglowRelnote": { "title": ["发行注记"], "url": "/afterglow/relnote" },
     "afterglowRequirements": {
       "title": [
         "系统配置需求",
@@ -159,47 +112,20 @@
       "url": "/afterglow/requirements",
       "hash": ["#afterlowRequirementsTitle"]
     },
-    "about": {
-      "title": ["关于社区"],
-      "url": "/about"
-    },
+    "about": { "title": ["关于社区"], "url": "/about" },
     "contact": {
       "title": ["各聊天群组", "联系方式", "社区聊天群组", "报告系统使用问题"],
       "url": "/contact",
       "hash": ["#main"]
     },
-    "home": {
-      "title": ["社区门户", "返回主页"],
-      "url": "/"
-    },
-    "aoscOs": {
-      "title": ["安同 OS"],
-      "url": "/aosc-os"
-    },
-    "afterglow": {
-      "title": ["星霞 OS"],
-      "url": "/afterglow"
-    },
-    "liblol": {
-      "title": ["libLoL 兼容层"],
-      "url": "/liblol"
-    },
-    "oma": {
-      "title": ["小熊猫包管理 (oma)", "详细介绍"],
-      "url": "/oma"
-    },
-    "l10n": {
-      "title": ["软件本地化"],
-      "url": "/l10n"
-    },
-    "news": {
-      "title": ["新闻资讯", "查阅最新社区资讯"],
-      "url": "/news"
-    },
-    "gallery": {
-      "title": ["活动相册"],
-      "url": "/gallery"
-    },
+    "home": { "title": ["社区门户", "返回主页"], "url": "/" },
+    "aoscOs": { "title": ["安同 OS"], "url": "/aosc-os" },
+    "afterglow": { "title": ["星霞 OS"], "url": "/afterglow" },
+    "liblol": { "title": ["libLoL 兼容层"], "url": "/liblol" },
+    "oma": { "title": ["小熊猫包管理 (oma)", "详细介绍"], "url": "/oma" },
+    "l10n": { "title": ["软件本地化"], "url": "/l10n" },
+    "news": { "title": ["新闻资讯", "查阅最新社区资讯"], "url": "/news" },
+    "gallery": { "title": ["活动相册"], "url": "/gallery" },
     "events": {
       "title": [
         "社区活动",
@@ -222,44 +148,17 @@
       "url": "/internship",
       "hash": ["#todo", "#ospp"]
     },
-    "sponsors": {
-      "title": ["赞助方一览"],
-      "url": "/sponsors"
-    },
+    "sponsors": { "title": ["赞助方一览"], "url": "/sponsors" },
     "crowdsourcing": {
       "title": ["社区众筹", "赞助硬件或服务"],
       "url": "/crowdsourcing"
     },
     "guidelines": {
-      "title": [
-        "人际关系准则",
-        {
-          "texts": ["人际关系准则"],
-          "book": [0]
-        }
-      ],
+      "title": ["人际关系准则", { "texts": ["人际关系准则"], "book": [0] }],
       "url": "/guidelines"
     },
-    "mascot": {
-      "title": ["社区吉祥物"],
-      "url": "/mascot"
-    },
-    "paste": {
-      "title": ["公共粘贴板", "使用公共剪贴板"],
-      "url": "/paste"
-    }
-  },
-  "aosccWiki": {
-    "title": [""],
-    "url": "https://wiki.aosc.io/zh/community/aoscc/"
-  },
-  "bilibili": {
-    "title": [""],
-    "url": "https://www.bilibili.com/video/"
-  },
-  "aoscDocumentation": {
-    "title": [""],
-    "url": "https://repo.aosc.io/aosc-documentation/"
+    "mascot": { "title": ["社区吉祥物"], "url": "/mascot" },
+    "paste": { "title": ["公共粘贴板", "使用公共剪贴板"], "url": "/paste" }
   },
   "mail20": {
     "title": ["贡献者邮箱"],
@@ -269,14 +168,8 @@
     "title": ["构建服务器"],
     "url": "https://wiki.aosc.io/developer/infrastructure/buildbots/"
   },
-  "buildit": {
-    "title": ["自动化设施"],
-    "url": "https://buildit.aosc.io/"
-  },
-  "forum": {
-    "title": ["社区论坛"],
-    "url": "https://bbs.aosc.io/"
-  },
+  "buildit": { "title": ["自动化设施"], "url": "https://buildit.aosc.io/" },
+  "forum": { "title": ["社区论坛"], "url": "https://bbs.aosc.io/" },
   "qqStickers": {
     "title": ["QQ 表情包"],
     "url": "https://zb.vip.qq.com/hybrid/emoticonmall/detail?id=239191"
@@ -301,10 +194,7 @@
     "title": ["https://tysontan.com"],
     "url": "https://tysontan.com"
   },
-  "figura": {
-    "title": ["Figura"],
-    "url": "https://figuramc.org/"
-  },
+  "figura": { "title": ["Figura"], "url": "https://figuramc.org/" },
   "ananMcFigura": {
     "title": ["下载人物模型"],
     "url": "https://github.com/OvOla2/AnAn-Figura-avatar"
@@ -324,10 +214,6 @@
   "omaSourceGithub": {
     "title": ["代码仓库", "小熊猫包管理 (oma)", "源代码"],
     "url": "https://github.com/AOSC-Dev/oma"
-  },
-  "dpkgWiki": {
-    "title": ["dpkg"],
-    "url": "https://wiki.debian.org/Teams/Dpkg"
   },
   "sponsors": {
     "infrastructure": {
@@ -504,16 +390,8 @@
         "url": "https://www.qingcloud.com/",
         "img": "qingcloud"
       },
-      "sb": {
-        "title": ["SB Blog"],
-        "url": "https://sb.sb/",
-        "img": "sb-blog"
-      },
-      "xtom": {
-        "title": ["xTom"],
-        "url": "https://xtom.com/",
-        "img": "xtom"
-      }
+      "sb": { "title": ["SB Blog"], "url": "https://sb.sb/", "img": "sb-blog" },
+      "xtom": { "title": ["xTom"], "url": "https://xtom.com/", "img": "xtom" }
     },
     "historicSoftwareLicense": {
       "lanunion": {
@@ -543,10 +421,6 @@
       }
     }
   },
-  "cambridgeEnglishDictionary": {
-    "title": ["Cambridge English Dictionary"],
-    "url": "https://dictionary.cambridge.org/dictionary/english/community"
-  },
   "aoscWiki": {
     "title": ["AOSC 维基", "参考文档 (Wiki)"],
     "url": "https://wiki.aosc.io/zh"
@@ -555,56 +429,8 @@
     "title": ["GitHub 组织", "代码仓库"],
     "url": "https://github.com/AOSC-Dev/"
   },
-  "aoscReceptionPoint": {
-    "title": ["AOSC 托腮群及招待点"],
-    "url": "https://t.me/joinchat/BMnG9zvfjCgZUTIAoycKkg"
-  },
-  "aoscPastebin": {
-    "title": ["AOSC Pastebin"],
-    "url": "https://pastebin.aosc.io/"
-  },
-  "aoscStickerPack": {
-    "title": ["AOSCC 贴纸包"],
-    "url": "https://github.com/AOSC-Dev/aoscc/tree/master/2019/stickers"
-  },
-  "contributorConvention": {
-    "title": [
-      {
-        "texts": ["贡献者公约"],
-        "book": [0]
-      }
-    ],
-    "url": "https://www.contributor-covenant.org/version/1/4/code-of-conduct/"
-  },
-  "thisPageSupport": {
-    "title": ["支持文档"],
-    "hash": "#support"
-  },
-  "thisPageFeatures": {
-    "title": ["系统特性"],
-    "hash": "#features"
-  },
-  "weblate": {
-    "title": ["社区 Weblate 平台"],
-    "url": "https://weblate.aosc.io/"
-  },
-  "l10nWorkGuide": {
-    "title": [
-      {
-        "texts": ["大陆简中自由软件本地化工作指南", "1.5.4 版"],
-        "book": [0]
-      }
-    ],
-    "url": "https://repo.aosc.io/aosc-l10n/zh_CN_l10n_1.5.4.pdf"
-  },
-  "dkcli": {
-    "title": ["dkcli"],
-    "url": "https://github.com/AOSC-Dev/dkcli"
-  },
-  "memtest": {
-    "title": ["Memtest86+"],
-    "url": "https://www.memtest.org"
-  },
+  "thisPageSupport": { "title": ["支持文档"], "hash": "#support" },
+  "thisPageFeatures": { "title": ["系统特性"], "hash": "#features" },
   "liblol": {
     "apps": {
       "title": ["兼容性数据库", "应用程序兼容性数据库"],
@@ -640,9 +466,5 @@
         "url": "https://liblol.aosc.io/docs/dev/design/"
       }
     }
-  },
-  "summerOspp": {
-    "title": [""],
-    "url": "https://summer-ospp.ac.cn/"
   }
 }

@@ -3,6 +3,7 @@ import json
 import re
 import argparse
 from pathlib import Path
+from typing import Dict, List, Any, Union
 
 
 def find_vue_files(root_dirs):
@@ -23,7 +24,7 @@ def find_vue_files(root_dirs):
     return vue_files
 
 
-def extract_all_keys_from_json(data, parent_key='', separator='.'):
+def extract_all_keys_from_json(data, modify_link, parent_key='', separator='.'):
     """
     递归提取JSON中的所有key路径，只处理字典key，不处理数组索引
     """
@@ -34,176 +35,186 @@ def extract_all_keys_from_json(data, parent_key='', separator='.'):
             keys.append(new_key)
             # 只递归处理字典，不处理数组
             if isinstance(value, dict):
-                keys.extend(extract_all_keys_from_json(
-                    value, new_key, separator))
+                if not 'url' in value or not modify_link:
+                    keys.extend(extract_all_keys_from_json(
+                        value, modify_link, new_key, separator))
     return keys
 
 
-def find_key_in_vue_files(key, vue_files):
-    """
-    在Vue文件中查找key是否被使用，使用带引号的key进行查找
-    """
-    found_in_files = []
-
-    # 构建带引号的key
-    quoted_key = f"'{key}'"
-
-    # 构建匹配模式：t('key') 或 tm('key')
-    patterns = [
-        rf"t\s*\(\s*{re.escape(quoted_key)}\s*\)",
-        rf"tm\s*\(\s*{re.escape(quoted_key)}\s*\)"
-    ]
-
-    for vue_file in vue_files:
-        try:
-            with open(vue_file, 'r', encoding='utf-8') as f:
-                content = f.read()
-
-            for pattern in patterns:
-                if re.search(pattern, content):
-                    # 找到key的使用，提取上下文
-                    match = re.search(pattern, content)
-                    if match:
-                        # 获取匹配行前后的内容
-                        start = max(0, match.start() - 50)
-                        end = min(len(content), match.end() + 50)
-                        context = content[start:end].replace('\n', ' ')
-                        found_in_files.append({
-                            'file': vue_file,
-                            'context': context,
-                            'line': content[:match.start()].count('\n') + 1
-                        })
-                        break  # 找到一个匹配就跳出内层循环
-        except Exception as e:
-            print(f"读取文件 {vue_file} 时出错: {e}")
-
-    return found_in_files
-
-
-def check_unused_keys(root_dirs, locales_path):
+def check_unused_keys(root_dirs, locales_path, modify_link):
     """
     检查locales目录下JSON文件中可能废弃的key
     """
     # 获取所有Vue文件
     vue_files = find_vue_files(root_dirs)
     print(f"在 {len(root_dirs)} 个目录中找到 {len(vue_files)} 个.vue文件")
-    
+
     # 获取所有locales文件
     locale_files = []
     for root, dirs, files in os.walk(locales_path):
         for file in files:
             if file.endswith('.json'):
-                locale_files.append(os.path.join(root, file))
-    
+                if (file.find('allUniversalLink') != -1) == modify_link:
+                    locale_files.append(os.path.join(root, file))
+
     print(f"找到 {len(locale_files)} 个locales文件")
-    
+
     # 存储所有未使用的key
     unused_keys = []
     used_keys = []
-    
     for locale_file in locale_files:
-        if locale_file.find('allUniversalLink') == -1:
-            try:
-                with open(locale_file, 'r', encoding='utf-8') as f:
-                    data = json.load(f)
-                
-                # 提取文件名作为基础key
-                base_key = os.path.splitext(os.path.basename(locale_file))[0]
-                print(f"\n检查文件: {locale_file} (基础key: {base_key})")
-                
-                # 提取所有key路径
-                all_keys = extract_all_keys_from_json(data, base_key)
-                print(f"  找到 {len(all_keys)} 个key")
-                
-                # 按key长度排序，从长到短，这样我们可以先检查深层key
-                all_keys.sort(key=lambda x: len(x.split('.')), reverse=True)
-                
-                # 存储已经检查过的key和它们的使用状态
-                key_status = {}
-                
-                # 第一遍：检查每个key的使用情况
-                for key in all_keys:
-                    # 获取key对应的值
-                    value = get_value_from_json(data, key.split(f"{base_key}.", 1)[1])
-                    # 根据值类型决定查找模式
-                    if isinstance(value, str):
-                        # 字符串值：查找t和tm两种形式
-                        patterns = [
-                            rf"t\s*\(\s*'{re.escape(key)}'\s*\)",
-                            rf"tm\s*\(\s*'{re.escape(key)}'\s*\)"
-                        ]
-                    else:
-                        # 非字符串值：只查找tm形式
-                        patterns = [
-                            rf"tm\s*\(\s*'{re.escape(key)}'\s*\)"
-                        ]
-                    
-                    found = False
-                    for vue_file in vue_files:
-                        try:
-                            with open(vue_file, 'r', encoding='utf-8') as f:
-                                content = f.read()
-                            
-                            for pattern in patterns:
-                                if re.search(pattern, content):
-                                    found = True
-                                    break
-                            if found:
+        try:
+            with open(locale_file, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+
+            # 提取文件名作为基础key
+            base_key = os.path.splitext(os.path.basename(locale_file))[0]
+            print(f"\n检查文件: {locale_file} (基础key: {base_key})")
+
+            # 提取所有key路径
+            all_keys = extract_all_keys_from_json(
+                data, modify_link, base_key)
+            print(f"  找到 {len(all_keys)} 个key")
+
+            # 按key长度排序，从长到短，这样我们可以先检查深层key
+            all_keys.sort(key=lambda x: len(x.split('.')), reverse=True)
+
+            # 存储已经检查过的key和它们的使用状态
+            key_status = {}
+
+            # 第一遍：检查每个key的使用情况
+            for key in all_keys:
+
+                # 获取key对应的值
+                value = get_value_from_json(
+                    data, key.split(f"{base_key}.", 1)[1])
+                # 根据值类型决定查找模式
+                if isinstance(value, str):
+                    # 字符串值：查找t和tm两种形式
+                    patterns = [
+                        rf"t\s*\(\s*'{re.escape(key)}'\s*\)",
+                        rf"tm\s*\(\s*'{re.escape(key)}'\s*\)"
+                    ]
+                else:
+                    # 非字符串值：只查找tm形式
+                    patterns = [
+                        rf"tm\s*\(\s*'{re.escape(key)}'\s*\)"
+                    ]
+
+                if modify_link:
+                    patterns = [
+                        rf".*[lL][iI][nN][kK].*\.{re.escape(key.split('.')[-1])}"
+                    ]
+
+                found = False
+                for vue_file in vue_files:
+                    try:
+                        with open(vue_file, 'r', encoding='utf-8') as f:
+                            content = f.read()
+
+                        for pattern in patterns:
+                            if re.search(pattern, content):
+                                found = True
                                 break
-                        except Exception as e:
-                            print(f"读取文件 {vue_file} 时出错: {e}")
-                    
-                    key_status[key] = {
-                        'found': found,
-                        'value': value,
-                        'type': type(value).__name__
-                    }
-                    
-                    if found:
-                        print(f"  ✓  使用的key: {key}")
-                    else:
-                        print(f"  ⚠️  未使用的key: {key}")
-                
-                # 第二遍：传播使用状态
-                # 按key长度排序，从短到长，这样我们可以先传播浅层key
-                all_keys.sort(key=lambda x: len(x.split('.')))
-                
-                for key in all_keys:
-                    if key_status[key]['found']:
-                        # 如果key被使用，进行反向传播（标记所有父节点为已使用）
-                        key_parts = key.split('.')
-                        for i in range(1, len(key_parts)):
-                            parent_key = '.'.join(key_parts[:i])
-                            if parent_key in key_status and not key_status[parent_key]['found']:
-                                key_status[parent_key]['found'] = True
-                                print(f"  ←  反向传播: {parent_key} 被标记为已使用（因为 {key} 被使用）")
-                        
-                        # 如果值是非字符串（对象或数组），进行正向传播（标记所有子节点为已使用）
-                        if not isinstance(key_status[key]['value'], str):
-                            for other_key in all_keys:
-                                if other_key != key and other_key.startswith(key + '.'):
-                                    if not key_status[other_key]['found']:
-                                        key_status[other_key]['found'] = True
-                                        print(f"  →  正向传播: {other_key} 被标记为已使用（因为 {key} 是非字符串对象）")
-                
-                # 第三遍：收集结果
-                for key in all_keys:
-                    if not key_status[key]['found']:
-                        unused_keys.append({
-                            'file': locale_file,
-                            'key': key,
-                            'value': key_status[key]['value'],
-                            'type': key_status[key]['type']
-                        })
-                    else:
-                        used_keys.append({
-                            'key': key
-                        })
-                        
-            except Exception as e:
-                print(f"处理文件 {locale_file} 时出错: {e}")
-    
+                        if found:
+                            break
+                    except Exception as e:
+                        print(f"读取文件 {vue_file} 时出错: {e}")
+
+                key_status[key] = {
+                    'found': found,
+                    'value': value,
+                    'type': type(value).__name__
+                }
+
+                if found:
+                    print(f"  ✓  使用的key: {key}")
+                else:
+                    print(f"  ⚠️  未使用的key: {key}")
+
+            # 第二遍：传播使用状态
+            # 按key长度排序，从短到长，这样我们可以先传播浅层key
+            all_keys.sort(key=lambda x: len(x.split('.')))
+
+            for key in all_keys:
+                if key_status[key]['found']:
+                    # 如果key被使用，进行反向传播（标记所有父节点为已使用）
+                    key_parts = key.split('.')
+                    for i in range(1, len(key_parts)):
+                        parent_key = '.'.join(key_parts[:i])
+                        if parent_key in key_status and not key_status[parent_key]['found']:
+                            key_status[parent_key]['found'] = True
+                            print(
+                                f"  ←  反向传播: {parent_key} 被标记为已使用（因为 {key} 被使用）")
+
+                    # 如果值是非字符串（对象或数组），进行正向传播（标记所有子节点为已使用）
+                    if not isinstance(key_status[key]['value'], str):
+                        for other_key in all_keys:
+                            if other_key != key and other_key.startswith(key + '.'):
+                                if not key_status[other_key]['found']:
+                                    key_status[other_key]['found'] = True
+                                    print(
+                                        f"  →  正向传播: {other_key} 被标记为已使用（因为 {key} 是非字符串对象）")
+
+            # 第三遍：收集结果
+            for key in all_keys:
+                if not key_status[key]['found']:
+                    unused_keys.append({
+                        'file': locale_file,
+                        'key': key,
+                        'value': key_status[key]['value'],
+                        'type': key_status[key]['type']
+                    })
+                else:
+                    used_keys.append({
+                        'key': key
+                    })
+            if modify_link:
+                delete_json_key(locale_file, unused_keys)
+
+        except Exception as e:
+            print(f"处理文件 {locale_file} 时出错: {e}")
     return unused_keys, used_keys
+
+
+def delete_json_key(json_file_path, key_path_list):
+    """
+    删除JSON文件中指定嵌套路径的键值对
+
+    参数:
+        json_file_path: JSON文件路径
+        key_path: 嵌套键路径，格式如 "a.b.c"
+    """
+    try:
+        # 读取JSON文件
+        with open(json_file_path, 'r', encoding='utf-8') as file:
+            data = json.load(file)
+        for key_path in key_path_list:
+            # 分割键路径
+            keys = key_path['key'].split('.')
+            keys.pop(0)
+            current = data
+
+            # 遍历到目标键的父级
+            for i in range(len(keys) - 1):
+                if keys[i] in current and isinstance(current[keys[i]], dict):
+                    current = current[keys[i]]
+                else:
+                    # 如果路径不存在，直接返回
+                    return
+
+            # 删除目标键
+            target_key = keys[-1]
+            if target_key in current:
+                del current[target_key]
+
+        # 写回JSON文件
+        with open(json_file_path, 'w', encoding='utf-8') as file:
+            json.dump(data, file, indent=4, ensure_ascii=False)
+
+    except Exception as e:
+        print(f"操作失败: {e}")
+
 
 def get_value_from_json(data, key_path):
     """
@@ -291,6 +302,8 @@ def main():
     parser = argparse.ArgumentParser(description='检查locales目录下可能废弃的key')
     parser.add_argument('root_dirs', help='Vue项目根目录路径，多个目录用逗号或分号分隔')
     parser.add_argument('locales_path', help='locales文件目录路径')
+    parser.add_argument('--modifyLink', '-m', action='store_true',
+                        default=False, help='输出 alllink 使用情况')
     parser.add_argument('--output', '-o', help='输出报告文件路径')
     parser.add_argument('--verbose', '-v', action='store_true', help='详细输出模式')
 
@@ -299,6 +312,7 @@ def main():
     root_dirs = parse_root_dirs(args.root_dirs)
     locales_path = args.locales_path
     output_file = args.output
+    modify_link = args.modifyLink
     verbose = args.verbose
 
     if not root_dirs:
@@ -313,7 +327,8 @@ def main():
     print(f"使用locales目录: {locales_path}")
 
     # 执行检查
-    unused_keys, used_keys = check_unused_keys(root_dirs, locales_path)
+    unused_keys, used_keys = check_unused_keys(
+        root_dirs, locales_path, modify_link)
 
     # 生成报告
     report = generate_report(unused_keys, used_keys, output_file)
