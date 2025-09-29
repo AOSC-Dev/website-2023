@@ -1,6 +1,5 @@
 <script setup>
 const { tm, locale, setLocale, locales } = useI18n();
-// const textValue = tm('BarHeader');
 const navigationList = computed(() => {
   const linkValue = tm('allUniversalLink');
   return [linkValue.local.download, linkValue.forum, linkValue.local.about];
