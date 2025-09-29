@@ -16,7 +16,7 @@ const expand = ref(false);
       <el-popover placement="top" width="233" :content="description">
         <template #reference>
           <span class="text-[8pt] font-[450]">
-            （{{ t('DownloadButtonGroup.downloadWhatIsThis') }}？）
+            （{{ t('DownloadButtonGroup.whatIsThis') }}？）
           </span>
         </template>
       </el-popover>
@@ -29,8 +29,8 @@ const expand = ref(false);
       <span>
         {{
           expand
-            ? textValue.downloadDropdownExpandButton[0]
-            : textValue.downloadDropdownExpandButton[1]
+            ? textValue.dropdownExpandButton[0]
+            : textValue.dropdownExpandButton[1]
         }}
       </span>
       <Icon

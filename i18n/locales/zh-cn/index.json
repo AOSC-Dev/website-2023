@@ -1,5 +1,5 @@
 {
-  "indexSpecialColumns": [
+  "specialColumns": [
     {
       "title": "高效工作",
       "description": "以开箱即用作为主要设计目标，安同 OS 是您日常工作的得力助手。从文字办公到服务器运维，摄影后期到 3D 建模，课堂笔记到文档翻译，我们的系统助您快速部署、高效工作、尽情创作。"
@@ -17,8 +17,8 @@
       "description": "我社一向以友好负责的支持工作著称，尊重用户的时间与精力是我们的工作准则。社区也是信息共享的强大后盾 —— 在各社区聊天群组，我们时刻准备着为您排忧解难。"
     }
   ],
-  "indexTitle": "社区门户",
-  "indexNewsHighlights": "资讯要点",
+  "title": "社区门户",
+  "newsHighlights": "资讯要点",
   "viewNews":"查阅最新社区资讯",
   "aoscRightForMe":"详情请见：安同 OS 适合我吗？",
   "indexSpecialTitle": "专栏：初识安同 OS"

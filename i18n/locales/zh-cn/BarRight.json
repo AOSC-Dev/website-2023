@@ -1,8 +1,8 @@
 {
-  "barRightAoscOsTagline": "可靠、简明、精制",
-  "barRightAfterglowTagLine": "承前启后",
-  "barRightOsSolutions": "系统方案",
-  "barRightQuickLinks": "常用链接",
-  "barRightAoscOsTitle": "安同 OS",
-  "barRightAfterglowTitle": "星霞 OS"
+  "aoscOsTagline": "可靠、简明、精制",
+  "afterglowTagLine": "承前启后",
+  "osSolutions": "系统方案",
+  "quickLinks": "常用链接",
+  "aoscOsTitle": "安同 OS",
+  "afterglowTitle": "星霞 OS"
 }

@@ -8,7 +8,7 @@ const getComp = computed(() => {
   return [
     [
       {
-        title: t('BarLeft.barLeftProjects'),
+        title: t('BarLeft.projects'),
         children: [
           localLink.aoscOs,
           localLink.afterglow,
@@ -19,7 +19,7 @@ const getComp = computed(() => {
         show: true
       },
       {
-        title: t('BarLeft.barLeftNews'),
+        title: t('BarLeft.news'),
         children: [
           localLink.news,
           localLink.events,
@@ -30,7 +30,7 @@ const getComp = computed(() => {
         show: true
       },
       {
-        title: t('BarLeft.barLeftCulture'),
+        title: t('BarLeft.culture'),
         children: [
           localLink.about,
           localLink.internship,
@@ -42,7 +42,7 @@ const getComp = computed(() => {
         show: true
       },
       {
-        title: t('BarLeft.barLeftInfrastructures'),
+        title: t('BarLeft.infrastructures'),
         children: [
           localLink.paste,
           linkValue.forum,
@@ -224,7 +224,7 @@ const backToTopBtnShow = ref(false);
             behavior: 'smooth' 
         })">
         <el-icon class="my-auto ml-4" size="20"><el-icon-top /></el-icon>
-        <span class="mr-4">{{ $t('BarLeft.barLeftReturnToTop') }}</span>
+        <span class="mr-4">{{ $t('BarLeft.returnToTop') }}</span>
       </div>
     </Transition>
     <div ref="menuDiv">

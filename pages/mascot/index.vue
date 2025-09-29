@@ -1,8 +1,8 @@
 <script setup>
 const { t,tm } = useI18n();
-const textValue = tm('mascot.mascotIndex');
+const textValue = tm('mascot.index');
 const linkValue = tm('allUniversalLink');
-useHead({ title: t('mascot.mascotIndex.titleMain') });
+useHead({ title: t('mascot.index.titleMain') });
 
 const navigationList = [
   linkValue.qqStickers,
@@ -13,20 +13,20 @@ const navigationList = [
 
 <template>
   <div class="grid grid-cols-1">
-    <category-second :title="t('mascot.mascotIndex.titleMain')" />
+    <category-second :title="t('mascot.index.titleMain')" />
 
     <div><img class="imgScale1 w-full" src="/mascot/anan.png" /></div>
 
     <div class="grid grid-cols-2">
-      <category-second :title="t('mascot.mascotIndex.titleCharacterSheet')" />
+      <category-second :title="t('mascot.index.titleCharacterSheet')" />
       <category-second
-        :title="t('mascot.mascotIndex.titleFigura')"
+        :title="t('mascot.index.titleFigura')"
         class="border-l border-l-white" />
 
       <div class="flex">
         <div
           class="p-[1.75rem] text-[0.8rem] xl:text-[1.07rem] 2xl:text-[1.2rem]">
-          <p>{{ t('mascot.mascotIndex.textCharacterSheetLicense') }}</p>
+          <p>{{ t('mascot.index.textCharacterSheetLicense') }}</p>
           <div class="mt-[1rem] flex flex-row justify-between">
             <div class="w-[50%]">
               <link-button
@@ -44,9 +44,9 @@ const navigationList = [
         <div
           class="flex flex-col justify-between p-[1.75rem] text-[0.8rem] xl:text-[1.07rem] 2xl:text-[1.2rem]">
           <p>
-            <span>{{ t('mascot.mascotIndex.textFiguraText1') }}</span>
+            <span>{{ t('mascot.index.textFiguraText1') }}</span>
             <link-standard :link="linkValue.figura" />
-            <span>{{ t('mascot.mascotIndex.textFiguraText2') }}</span>
+            <span>{{ t('mascot.index.textFiguraText2') }}</span>
           </p>
 
           <div class="mt-[1rem] flex flex-row justify-between">
@@ -61,9 +61,9 @@ const navigationList = [
         </div>
       </div>
 
-      <category-second :title="t('mascot.mascotIndex.titleStickerPack')" />
+      <category-second :title="t('mascot.index.titleStickerPack')" />
       <category-second
-        :title="t('mascot.mascotIndex.titleFumo')"
+        :title="t('mascot.index.titleFumo')"
         class="border-l border-l-white" />
       <div class="flex">
         <div class="grid grid-cols-2 p-[1.75rem]">
@@ -74,7 +74,7 @@ const navigationList = [
 
             <p
               class="text-center text-[0.95em] xl:text-[1.3em] 2xl:text-[1.5em]">
-              {{ t('mascot.mascotIndex.textWeChatStickerPackQrCode') }}
+              {{ t('mascot.index.textWeChatStickerPackQrCode') }}
             </p>
           </div>
           <div
@@ -96,13 +96,13 @@ const navigationList = [
         <div
           class="flex flex-col justify-between p-[1.75rem] text-[0.8rem] xl:text-[1.07rem] 2xl:text-[1.2rem]">
           <div>
-            <p>{{ t('mascot.mascotIndex.textFumoLicense') }}</p>
+            <p>{{ t('mascot.index.textFumoLicense') }}</p>
             <p>
-              <span>{{ t('mascot.mascotIndex.textFumoReference') }}</span>
+              <span>{{ t('mascot.index.textFumoReference') }}</span>
               <link-standard :link="linkValue.tomatoScrambledEggsGoofish" />
-              <span>{{ t('mascot.mascotIndex.textFumoContact') }}</span>
+              <span>{{ t('mascot.index.textFumoContact') }}</span>
               <link-standard :link="linkValue.tomatoScrambledEggsHuaJia" />
-              <span>{{ t('mascot.mascotIndex.textFiguraText3') }}</span>
+              <span>{{ t('mascot.index.textFiguraText3') }}</span>
             </p>
           </div>
 
@@ -120,7 +120,7 @@ const navigationList = [
         </div>
       </div>
     </div>
-    <category-second :title="t('mascot.mascotIndex.titleBackStory')" />
+    <category-second :title="t('mascot.index.titleBackStory')" />
     <div class="flex p-[1.75rem]">
       <!-- 左边 -->
       <div class="basis-1/2 pr-[1.75rem]">
