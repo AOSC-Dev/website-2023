@@ -111,19 +111,21 @@ def check_unused_keys(root_dirs, locales_path, modify_link):
 
                 if modify_link:
                     patterns = [
-                        rf".*[lL][iI][nN][kK].*\.{re.escape(key.split('.')[-1])}"
+                        rf"^(?!.*const).*[lL][iI][nN][kK].*\.{re.escape(key.split('.')[-1])}(?![A-Za-z.])"
                     ]
 
                 found = False
                 for vue_file in vue_files:
                     try:
                         with open(vue_file, 'r', encoding='utf-8') as f:
-                            content = f.read()
-
-                        for pattern in patterns:
-                            if re.search(pattern, content):
-                                found = True
-                                break
+                            for line_num, line in enumerate(f, 1):
+                                for pattern in patterns:
+                                    if re.search(pattern, line):
+                                        found = True
+                                        print(f"在 {vue_file} 的第 {line_num} 行找到匹配: {line.strip()}")
+                                        break  # 找到匹配就跳出内层循环
+                                if found:  # 如果已经找到匹配，跳出外层循环
+                                     break
                         if found:
                             break
                     except Exception as e:
@@ -156,7 +158,7 @@ def check_unused_keys(root_dirs, locales_path, modify_link):
                                 f"  ←  反向传播: {parent_key} 被标记为已使用（因为 {key} 被使用）")
 
                     # 如果值是非字符串（对象或数组），进行正向传播（标记所有子节点为已使用）
-                    if not isinstance(key_status[key]['value'], str) and not modify_link:
+                    if not isinstance(key_status[key]['value'], str):
                         for other_key in all_keys:
                             if other_key != key and other_key.startswith(key + '.'):
                                 if not key_status[other_key]['found']:
