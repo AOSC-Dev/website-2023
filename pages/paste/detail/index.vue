@@ -2,7 +2,7 @@
 const config = useRuntimeConfig();
 const route = useRoute();
 const imgSuffixList = ['jpg', 'jpeg', 'png', 'gif'];
-const { t } = useI18n();
+const { t, locale } = useI18n();
 
 useHead({ title: t('paste.detail.pageTitle') });
 // FIXME: `useRobotsRule({ noindex: true, nofollow: true })` generates
@@ -54,7 +54,7 @@ const returnHref = () => window.location.href;
             <button
               class="theme-bg-color-primary-static cursor-pointer px-[3em] py-[1em] text-white"
               @click="
-                copyToClipboard(returnHref(), t('paste.detail.pasteShareLink'))
+                copyToClipboard(locale, returnHref(), t('paste.detail.pasteShareLink'))
               ">
               {{ t('paste.detail.buttonCopyLink') }}
             </button>
@@ -87,7 +87,7 @@ const returnHref = () => window.location.href;
 
         <button
           class="theme-bg-color-primary-static mt-[10px] ml-auto cursor-pointer px-[3em] py-[1em] text-white"
-          @click="copyToClipboard( details.content, t('paste.detail.pasteFullContent'))">
+          @click="copyToClipboard(locale, details.content, t('paste.detail.pasteFullContent'))">
           {{ t('paste.detail.buttonCopyFullContent') }}
         </button>
       </div>

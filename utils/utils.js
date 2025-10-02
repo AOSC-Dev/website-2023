@@ -6,8 +6,7 @@ export const BToMB = (byteSize, fixed = 3) => {
   return (byteSize / 1024 / 1024).toFixed(fixed);
 };
 
-export const copyToClipboard = (text, name = '') => {
-  const { locale } = useI18n();
+export const copyToClipboard = (locale, text, name = '') => {
   const lang = (() => {
     switch (locale) {
       case 'zh-cn':
@@ -24,7 +23,6 @@ export const copyToClipboard = (text, name = '') => {
         };
     }
   })();
-
   navigator.clipboard
     .writeText(text)
     .then(() => {
