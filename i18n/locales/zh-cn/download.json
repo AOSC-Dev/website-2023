@@ -1,5 +1,6 @@
 {
   "index": {
+    "title": "下载中心",
     "operatingSystemsTitle": "操作系统",
     "aoscOs": { "name": "安同 OS", "description": "称心得意的桌面操作系统" },
     "aoscOsWsl": {
