@@ -20,5 +20,6 @@ const linkTitle = getSpecifiedTitle(props.link);
     ">
     <app-show v-if="typeof linkTitle === 'object'" :title="linkTitle" />
     <span v-else>{{ linkTitle }}</span>
+    <slot />
   </app-link>
 </template>

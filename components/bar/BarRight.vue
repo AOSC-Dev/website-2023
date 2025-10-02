@@ -1,5 +1,5 @@
 <script setup>
-const { t,tm } = useI18n();
+const { t, tm } = useI18n();
 const linkValue = tm('allUniversalLink');
 
 const localLink = linkValue.local;
@@ -77,7 +77,9 @@ const commonLinkList = [
           v-for="(item, index) in commonLinkList"
           :key="`BarRight-1-link-${index}`"
           class="flex h-[2rem] cursor-pointer flex-row items-center justify-between bg-white px-[1rem] odd:bg-[#fefaf6] hover:bg-leftbar-bg"
-          :link="item" />
+          :link="item">
+          <Icon name="ic-baseline-open-in-new" />
+        </link-standard>
       </div>
     </div>
   </div>
