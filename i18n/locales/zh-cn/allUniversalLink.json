@@ -54,7 +54,7 @@
   },
   "local": {
     "download": {
-      "title": ["系统下载", "下载 oma"],
+      "title": ["下载中心", "下载 oma"],
       "url": "/download",
       "hash": ["#aosc-os-download", "#afterglow-download", "#oma-download"]
     },
