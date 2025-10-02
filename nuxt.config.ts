@@ -90,6 +90,12 @@ export default defineNuxtConfig({
     },
     server: {
       proxy: {
+        // For test only
+        '/pasteApi': {
+          target: 'https://paste.aosc.io',
+          changeOrigin: true,
+          rewrite:  (path) => path.replace(/^\/pasteApi/, '')
+        },
         '/galleryFile': {
           target: 'https://aosc.io',
           changeOrigin: true
