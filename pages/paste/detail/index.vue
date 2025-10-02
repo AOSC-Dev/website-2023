@@ -87,7 +87,7 @@ const returnHref = () => window.location.href;
 
         <button
           class="theme-bg-color-primary-static mt-[10px] ml-auto cursor-pointer px-[3em] py-[1em] text-white"
-          @click="copyToClipboard(locale, details.content, t('paste.detail.pasteFullContent'))">
+          @click="copyToClipboard(locale, data[1], t('paste.detail.pasteFullContent'))">
           {{ t('paste.detail.buttonCopyFullContent') }}
         </button>
       </div>
