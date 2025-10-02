@@ -1,5 +1,6 @@
 <script setup>
-const { t,tm, _locale } = useI18n();
+import { Icon } from '#components';
+const { t, tm, _locale } = useI18n();
 
 const getComp = computed(() => {
   const linkValue = tm('allUniversalLink');
@@ -238,6 +239,12 @@ const backToTopBtnShow = ref(false);
         <el-sub-menu
           v-for="(item, index) in navigationList"
           :key="`barleft-1-link-${index}`"
+          :expand-open-icon="
+            h(Icon, { name: 'bi:chevron-double-up', size: 16 })
+          "
+          :expand-close-icon="
+            h(Icon, { name: 'bi:chevron-double-down', size: 16 })
+          "
           :index="String(index)">
           <template #title>
             <span>{{ item.title }}</span>
