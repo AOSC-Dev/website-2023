@@ -4,7 +4,7 @@ categories:
 title: "安同 OS 九月发行更新发布"
 date: 2024-09-18T12:00:00+08:00
 important: true
-home: true
+home: false
 ---
 ![](/assets/news/mid-autumn-aosc-os.png)
 

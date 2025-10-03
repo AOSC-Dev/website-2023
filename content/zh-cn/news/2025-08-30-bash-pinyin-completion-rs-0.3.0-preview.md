@@ -4,7 +4,7 @@ categories:
 title: "Bash 拼音补全 v0.3.0 更新日志"
 date: 2025-08-30T15:45:00+08:00
 important: false
-home: true
+home: false
 ---
 
 ![pinyin-completion-0.3.0](/assets/news/pinyin-completion-0.3.0.webp)
