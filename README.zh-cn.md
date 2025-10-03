@@ -3,7 +3,7 @@
 
 [English readme file >>](/README.md)
 
-本仓库存放自 2024 年末启用的社区门户网站（设计稿 2023 年完成，故此得名）。本网站使用 [Nuxt](https://nuxt.com/) 构建。
+本仓库存放自 2024 年末启用的社区门户网站，本网站使用 [Nuxt](https://nuxt.com/) 构建。
 
 简述
 ---
@@ -20,7 +20,7 @@
 部署及测试
 ---
 
-本网站使用 GitHub workflow 自动部署到我们的网站服务器。其中剪贴板后端为部署在 paste.aosc.io 的 [paste-server-rs](https://github.com/AOSC-Dev/website-2023-utils/tree/master/paste-server-rs)。
+本网站使用 GitHub workflow 自动部署到我们的网站服务器。其中剪贴板后端为部署在 paste.aosc.io 的 [paste-server-rs](https://github.com/AOSC-Dev/website-utils/tree/master/paste-server-rs)。
 
 本地测试时，您需要安装 Node.js + NPM 工具链，安同 OS 用户可使用如下命令安装：
 
@@ -40,7 +40,7 @@ npm run generate
 npm run preview
 ```
 
-如果您需要测试剪贴板页面，请创建并修改 `.env` 文件或直接设置环境变量 `PASTE_API=http://localhost:2334`。对于 paste-server-rs 的部署请参考 [website-2023-utils](https://github.com/AOSC-Dev/website-2023-utils)
+如果您需要测试剪贴板页面，请创建并修改 `.env` 文件或直接设置环境变量 `PASTE_API=http://localhost:2334`。对于 paste-server-rs 的部署请参考 [website-utils](https://github.com/AOSC-Dev/website-utils)
 
 提交新闻
 ---

@@ -3,8 +3,7 @@ AOSC Portal
 
 [简体中文自述文件 >>](/README.zh-cn.md)
 
-The Portal website for AOSC since 2024 (designed in 2023, hence the name),
-built using [Nuxt](https://nuxt.com/).
+The Portal website for AOSC since 2024, built using [Nuxt](https://nuxt.com/).
 
 At a glance
 ---
@@ -31,7 +30,7 @@ Deployment and testing
 ---
 
 This website is deployed to our Web server using a GitHub workflow. The paste
-backend is deployed to paste.aosc.io using [paste-server-rs](https://github.com/AOSC-Dev/website-2023-utils/tree/master/paste-server-rs).
+backend is deployed to paste.aosc.io using [paste-server-rs](https://github.com/AOSC-Dev/website-utils/tree/master/paste-server-rs).
 
 To test the website locally, you would need a Node.js + NPM toolchain. To
 install Node.js + NPM on AOSC OS:
@@ -54,7 +53,7 @@ npm run preview
 
 If you need to test the paste page, please set `PASTE_API=http://localhost:2334`
 in your environmental variables or the `.env` file. For the deployment of
-paste-server-rs, please refer to [website-2023-utils](https://github.com/AOSC-Dev/website-2023-utils).
+paste-server-rs, please refer to [website-utils](https://github.com/AOSC-Dev/website-utils).
 
 Submitting news
 ---
