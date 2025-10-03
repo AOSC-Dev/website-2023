@@ -223,14 +223,15 @@ const backToTopBtnShow = ref(false);
     <Transition name="anim-button">
       <div
         v-show="backToTopBtnShow"
-        class="to-top-color mb-[1px] flex justify-between leading-8 text-white"
+        class="to-top-color mb-[1px] px-2 flex justify-between leading-8 text-white"
         onclick="window.scrollTo({
             top: 0,
             left: 0,
             behavior: 'smooth' 
         })">
-        <el-icon class="my-auto ml-4" size="20"><el-icon-top /></el-icon>
-        <span class="mr-4">{{ $t('BarLeft.returnToTop') }}</span>
+        <!-- <el-icon class="my-auto ml-4" size="20"><el-icon-top /></el-icon> -->
+        <Icon name="bi:chevron-bar-up" size="20" class="my-auto" />
+        <span>{{ $t('BarLeft.returnToTop') }}</span>
       </div>
     </Transition>
     <div ref="menuDiv">
