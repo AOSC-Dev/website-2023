@@ -72,6 +72,7 @@ const openMenuList = new Set();
 
 const menuDivRef = useTemplateRef('menuDiv');
 const menuRef = useTemplateRef('menu');
+const stickyNavRef = useTemplateRef('stickyNav');
 const rowHeight = 32;
 const chunkPading = 6;
 const rowHeightpx = `${rowHeight}px`;
@@ -104,8 +105,10 @@ const closeMenu = (MenuOpenEvent) => {
 
 const highlyIsQualified = (
   height,
-  mainHeight = menuDivRef.value.parentNode.parentNode.nextElementSibling
-    .clientHeight
+  mainHeight = window.innerHeight -
+    stickyNavRef.value.getBoundingClientRect().top -
+    // 需要 BarFooter + margin 高度，目前是 2.5rem。应该找个地方统一定义一下比较好
+    parseFloat(getComputedStyle(document.documentElement).fontSize) * 2.5
 ) => {
   // 在中心内容长度小于window.innerHeight时，回到首页弹窗不可能出来
   // 此时高度比较参照中心内容长度即可，不需要算上弹窗和底栏
@@ -116,6 +119,7 @@ const highlyIsQualified = (
 
 const { $mitt } = useNuxtApp();
 onMounted(() => {
+  autoFold();
   $mitt.on('mainDomChange', (newHeight) => {
     retractMenuBar(newHeight);
   });
@@ -144,7 +148,8 @@ const changeThisElSubEnum = () => {
 
 const autoFold = (newHeight) => {
   let height = menuDivRef.value.clientHeight;
-  for (const item of openMenuList) {
+  // Set 有顺序，这里就从后往前关
+  for (const item of [...openMenuList].reverse()) {
     if (highlyIsQualified(height, newHeight)) {
       break;
     } else {
@@ -158,7 +163,7 @@ const autoFold = (newHeight) => {
 
 const retractMenuBar = (newHeight) => {
   changeThisElSubEnum(newHeight);
-  autoFold(newHeight);
+  autoFold();
 };
 onMounted(() => {
   // 每次缩放改变的时候，判断有没有栏目需要缩回去，先展开的，优先缩进
