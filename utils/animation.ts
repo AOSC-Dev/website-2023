@@ -13,7 +13,7 @@
 
 export const highlightElement = (dom: Ref<HTMLElement> | HTMLElement) => {
   const domElement = isRef(dom) ? dom.value : dom;
-  domElement?.animate({ opacity: [1, 0.3, 1] }, 1500);
+  domElement?.animate({ opacity: [1, 0.3, 1] }, 500);
 };
 
 export default highlightElement;
