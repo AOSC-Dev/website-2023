@@ -73,10 +73,11 @@ function latestTarball(tarballs, arch) {
     <LinkStandard :link="localLink.aoscWslRelnote"/>
 
     <app-h2>{{ t('DownloadWslDetails.sysReqTitle') }}</app-h2>
-    <p>{{ t('DownloadWslDetails.sysReqText1') }}</p>
     <p>
       {{ t('DownloadWslDetails.sysReqText1') }}
-      <link-standard :link="useTIndex(localLink.aoscWslRequirements, 1)" />
+    </p>
+    <p>
+      {{ t('DownloadWslDetails.sysReqText2') }}<link-standard :link="useTIndex(localLink.aoscWslRequirements, 1)" />
       {{ linkValue.periodPoint }}
     </p>
 
