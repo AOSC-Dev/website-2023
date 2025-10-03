@@ -4,7 +4,7 @@ categories:
 title: "安记冰室・八月号暨 AOSCC 2025 特刊"
 date: 2025-08-17T22:00:00+08:00
 important: false
-home: true
+home: false
 ---
 
 本期编者：ZeroAurora Camber  

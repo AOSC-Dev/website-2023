@@ -4,7 +4,7 @@ categories:
 title: "安同 OS 测试公告：内核更新"
 date: 2025-09-03T15:30:00+08:00
 important: false
-home: true
+home: false
 ---
 
 ![testing-topic-kernel-firmware-20250903](/assets/news/testing-topic-kernel-firmware-20250903.webp)
