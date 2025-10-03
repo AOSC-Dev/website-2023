@@ -1,0 +1,66 @@
+:root {
+  --primary: #8d8d8d;
+  --secondary: #8d8d8d;
+  background-color: #dddddd;
+}
+
+// Dark mode fallback
+/*
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: #727272;
+    --secondary: #727272;
+    background-color: #222222;
+  }
+}
+*/
+
+.spring {
+  --primary: #718c71;
+  --secondary: #7f9e7f;
+  background-image: url(/backgrounds/spring.svg);
+}
+
+.summer {
+  --primary: #577c8a;
+  --secondary: #6a8a96;
+  background-image: url(/backgrounds/summer.svg);
+}
+
+.autumn {
+  --primary: #a59571;
+  --secondary: #b4a582;
+  background-image: url(/backgrounds/autumn.svg);
+}
+
+.winter {
+  --primary: #757791;
+  --secondary: #80829b;
+  background-image: url(/backgrounds/winter.svg);
+}
+
+.dark {
+  &.spring {
+    --primary: #517a47;
+    --secondary: #779f68;
+    background-image: url(/backgrounds/spring.svg);
+  }
+
+  &.summer {
+    --primary: #346c75;
+    --secondary: #6699a1;
+    background-image: url(/backgrounds/summer.svg);
+  }
+
+  &.autumn {
+    --primary: #422c24;
+    --secondary: #5c4b41;
+    background-image: url(/backgrounds/autumn.svg);
+  }
+
+  &.winter {
+    --primary: #003049;
+    --secondary: #5c4b41; // FIX: Same color as autumn's?
+    background-image: url(/backgrounds/winter.svg);
+  }
+}

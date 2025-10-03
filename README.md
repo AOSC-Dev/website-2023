@@ -3,8 +3,7 @@ AOSC Portal
 
 [简体中文自述文件 >>](/README.zh-cn.md)
 
-The Portal website for AOSC since 2024 (designed in 2023, hence the name),
-built using Vue.js.
+The Portal website for AOSC since 2024, built using [Nuxt](https://nuxt.com/).
 
 At a glance
 ---
@@ -23,11 +22,6 @@ Windows home page from 2001 - 2004:
 - [Reference 1, Windows XP home from late 2001](https://web.archive.org/web/20011211230629/http://microsoft.com/windowsxp/default.asp)
 - [Reference 2, Windows XP mid-cycle home from 2004](https://web.archive.org/web/20040204080626/http://www.microsoft.com/china/windows/default.mspx)
 
-Technically speaking, this website is built as a client-side rendered Web
-application. In the near future, we plan to refactor this website into one
-that is powered by server-side rendering or static site generator to help
-with performance and indexability.
-
 This website is not yet optimised for mobile, legacy (Afterglow-targeted),
 and functionally-limited browsers. We are currently evaluating plans to
 implement a purpose-specific site to help with these scenarios.
@@ -35,31 +29,38 @@ implement a purpose-specific site to help with these scenarios.
 Deployment and testing
 ---
 
-This website is deployed to our Web server using a GitHub workflow. It should
-also be deployed in conjunction with [website-2023-utils](https://github.com/AOSC-Dev/website-2023-utils).
-Please follow also the instructions there.
+This website is deployed to our Web server using a GitHub workflow. The paste
+backend is deployed to paste.aosc.io using [paste-server-rs](https://github.com/AOSC-Dev/website-utils/tree/master/paste-server-rs).
 
-To test the website locally, you would need a Node.js + NPM toolchain and a
-deployment of the aforementioned [website-2023-utils](https://github.com/AOSC-Dev/website-2023-utils).
-To install Node.js + NPM on AOSC OS:
+To test the website locally, you would need a Node.js + NPM toolchain. To
+install Node.js + NPM on AOSC OS:
 
 ```
 oma install nodejs
 ```
 
-Then, build and serve the website locally:
+Install dependencies:
+```
+npm install
+```
+
+Then, build and preview the website locally:
 
 ```
-npm i
-npm run dev
+npm run generate
+npm run preview
 ```
+
+If you need to test the paste page, please set `PASTE_API=http://localhost:2334`
+in your environmental variables or the `.env` file. For the deployment of
+paste-server-rs, please refer to [website-utils](https://github.com/AOSC-Dev/website-utils).
 
 Submitting news
 ---
 
-All news articles are written in Markdown and stored in `/public/news`, with
-extra assets (images, etc.) stored in `/assets/...`. All assets should be
-referenced from the site (`/assets/...`, not `https://...`).
+All news articles are written in Markdown and stored in `/content/{language}/news`, with
+extra assets (images, etc.) stored in `/public/...`. All assets should be
+referenced from the site (`/...`, not `https://...`).
 
 News articles should contain a header:
 
@@ -86,8 +87,9 @@ home: true
 
 ### Localising news articles
 
-To localise a news article, use a language code suffix such as `.zh-cn`, i.e.:
+To localize a news article, just add a file with the same name to the
+corresponding language folder such as `/content/zh-cn/`, i.e.:
 
 ```
-2024-09-18-aosc-os-relnote.zh-cn.md
+/content/zh-cn/news/2024-09-18-aosc-os-relnote.md
 ```

@@ -4,6 +4,7 @@ pasteServer/*
 makeCategory/*
 deploy/*
 website/*
-utils/*
 auto-imports.d.ts
 components.d.ts
+content/*
+fileServe/*

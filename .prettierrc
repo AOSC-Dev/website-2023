@@ -2,11 +2,11 @@
   "semi": true,
   "bracketSameLine": true,
   "arrowParens": "always",
-  "htmlWhitespaceSensitivity": "strict",
+  "htmlWhitespaceSensitivity": "ignore",
   "vueIndentScriptAndStyle": false,
   "singleQuote": true,
   "trailingComma": "none",
   "printWidth": 80,
   "plugins": ["prettier-plugin-tailwindcss"],
-  "tailwindStylesheet": "./src/style.css"
+  "tailwindStylesheet": "./assets/css/main.css"
 }

@@ -1,0 +1,224 @@
+$line-space: 22px;
+$bg-color: rgba(224, 224, 224, 0.1);
+$th-bg-color: rgba(224, 224, 224, 0.3);
+$blue: #37b2ff;
+$yellow: #feea1e;
+$orange: orange;
+$purple: #e699e6;
+$green: #a7ecad;
+$bg-secondary: #3f6075;
+$common-margin: 24px;
+
+@use 'heti' with (
+  $line-length: none,
+  $darkmode: 'manual',
+  $manualmode-dark-selector: 'body.dark &',
+  $font-size-h2: normal,
+  $line-height-size-h2: normal,
+  $std-block-unit: 16px,
+
+  // TODO: discussion on website font config
+  // Heti's default font family displays Chinese quotes half-width
+  //   so they have been removed for backward compatibility.
+  $_font-stack-sans: '',
+  $_font-stack-serif: ''
+);
+
+.heti {
+  > :not(h2) {
+    margin-inline: $common-margin;
+  }
+
+  > :first-child:not(h2) {
+    margin-block-start: $common-margin !important;
+  }
+
+  margin-bottom: $common-margin;
+
+  h2 {
+    margin-block: $common-margin;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    > a {
+      color: inherit;
+    }
+  }
+
+  p {
+    text-align: left;
+  }
+
+  a {
+    color: var(--color-link);
+  }
+
+  img {
+    margin-inline: auto;
+    max-width: 70%;
+  }
+
+  blockquote {
+    > :first-child {
+      margin-top: 0;
+    }
+
+    > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  table {
+    max-width: calc(100% - 2 * $common-margin);
+    table-layout: auto;
+  }
+
+  // 标题要显示在顶上，和原先的反过来
+  caption {
+    caption-side: top;
+    margin-block-start: -4px;
+    margin-block-end: 2px;
+  }
+}
+
+.category-second,
+.heti h2 {
+  font-weight: normal;
+  background-color: var(--secondary);
+  display: flex;
+  height: 2rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px;
+  color: white;
+  user-select: none;
+
+  > a:hover {
+    border-block-end: inherit;
+    padding-block-end: 0;
+
+    &::after {
+      content: '¶';
+    }
+  }
+}
+
+:root {
+  --font-family-monospace:
+    'Source Code Pro', 'Menlo', 'Consolas', 'DejaVu Sans Mono', -apple-system,
+    monospace;
+}
+
+.theme-bg-color-secondary-static {
+  background-color: var(--secondary);
+}
+
+.theme-bg-color-primary-static {
+  background-color: var(--primary);
+}
+
+.theme-bg-color-primary-secondary {
+  background-color: var(--primary);
+}
+
+.theme-bg-color-primary-secondary:hover {
+  background-color: var(--secondary);
+}
+
+.theme-bg-color-secondary-primary {
+  background-color: var(--secondary);
+}
+
+.theme-bg-color-secondary-primary:hover {
+  background-color: var(--primary);
+}
+
+.theme-border-primary {
+  border-color: var(--primary);
+}
+
+.theme-border-secondary {
+  border-color: var(--secondary);
+}
+
+@layer utilities {
+  .container-p p:not(:last-of-type) {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.theme-text-primary {
+  color: var(--primary);
+}
+
+table {
+  width: 100%;
+  max-width: 100%;
+  font-size: 12pt;
+  background-color: #fff;
+  overflow: auto;
+  border-collapse: collapse;
+
+  tr {
+    th,
+    td {
+      border: 1px solid $bg-secondary;
+    }
+  }
+}
+
+thead {
+  text-align: left;
+}
+
+th {
+  font-weight: bold;
+  background-color: $th-bg-color;
+  border-bottom: 1px dashed #eee;
+}
+
+tr:nth-child(2n + 1) {
+  background-color: $bg-color;
+  border-bottom: 1px solid #fff;
+}
+
+th,
+td {
+  padding: 6px 7px;
+  line-height: 24px;
+}
+
+td {
+  min-width: 120px;
+  border: 1px dashed #fff;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: fit-content;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 30px;
+  padding-bottom: 8px;
+  background: linear-gradient(currentColor 0 0) 0 100%/0% 3px no-repeat;
+  animation: l2 2s linear infinite;
+  background-color: rgba(122, 122, 122, 0);
+}
+
+.loader:before {
+  content: 'Loading...';
+}
+
+@keyframes l2 {
+  to {
+    background-size: 100% 3px;
+  }
+}
+
+.language-menu {
+  margin-top: -7px;
+}
