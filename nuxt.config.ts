@@ -110,7 +110,6 @@ export default defineNuxtConfig({
 
   nitro: {
     prerender: {
-      ignore: ['/paste/detail'],
       // https://github.com/nuxt/nuxt/issues/15462#issuecomment-2995718316
       autoSubfolderIndex: false
     }
