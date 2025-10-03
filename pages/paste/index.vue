@@ -2,7 +2,7 @@
 import hljs from 'highlight.js/lib/core';
 
 const config = useRuntimeConfig();
-const { t,tm } = useI18n();
+const { t, tm } = useI18n();
 const textValue = tm('paste.index');
 // const linkValue = tm('allUniversalLink');
 useHead({ title: t('paste.index.pageTitle') });
@@ -102,7 +102,10 @@ const handleChange = (uploadFile, uploadFiles) => {
     });
     selectedFileList.value.pop();
     // showSize();
-  } else ElMessage.success(`${t('paste.index.promptFileAddSuccess')}'${uploadFile.name}'`);
+  } else
+    ElMessage.success(
+      `${t('paste.index.promptFileAddSuccess')}'${uploadFile.name}'`
+    );
 };
 </script>
 
@@ -120,12 +123,16 @@ const handleChange = (uploadFile, uploadFiles) => {
               {{ item }}
             </option>
           </select>
-          <input
-            v-model="pasteFormData.expDate"
-            required
-            type="date"
-            class="theme-border-primary rounded-none border-2"
-            :min="getFutureDate(1)" />
+          <ElPopover placement="top" :content="t('paste.expirationDateTooltip')">
+            <template #reference>
+              <input
+                v-model="pasteFormData.expDate"
+                required
+                type="date"
+                class="theme-border-primary rounded-none border-2"
+                :min="getFutureDate(1)" />
+            </template>
+          </ElPopover>
         </div>
         <button
           class="theme-bg-color-secondary-primary rounded-none px-[50px] py-[10px] text-white"
