@@ -53,7 +53,7 @@ const sponsorList = [
             v-for="sponsor in item.list"
             :key="sponsor.title"
             class="cursor-pointer text-center"
-            :href="sponsor.url"
+            :to="sponsor.url"
             target="_blank">
             <div class="min-h-[91.74px]">
               <img
