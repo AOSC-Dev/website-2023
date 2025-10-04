@@ -1,3 +1,18 @@
+<script setup lang="ts">
+const { $mitt } = useNuxtApp();
+const mainRef = useTemplateRef('mainBody');
+const heightRef = useTemplateRef('dMainBody');
+
+let observer: ResizeObserver | null = null;
+onMounted(() => {
+  observer = new ResizeObserver(() => {
+    $mitt.emit('mainDomChange', mainRef.value?.clientHeight);
+  });
+  if (heightRef.value) observer.observe(heightRef.value);
+});
+onBeforeUnmount(() => observer?.disconnect());
+</script>
+
 <template>
   <div>
     <div
@@ -8,7 +23,11 @@
           class="sticky top-0 w-[15%] min-w-[12rem] bg-leftbar-bg *:text-nowrap">
           <BarLeft class="sticky top-0 min-w-[100%] *:text-nowrap" />
         </div>
-        <slot />
+        <div ref="mainBody" class="flex-1">
+          <div ref="dMainBody">
+            <slot />
+          </div>
+        </div>
       </div>
     </div>
     <BarFooter class="fixed bottom-0 h-[2rem] min-w-[960px]" />

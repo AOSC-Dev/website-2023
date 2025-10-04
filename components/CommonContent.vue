@@ -40,7 +40,8 @@ const { data: page, error } = await useAsyncData(
 
     if (!content)
       throw createError({
-        statusMessage: 'Query content failed',
+        statusCode: 404,
+        statusMessage: 'Page not found',
         data: {
           query: { locale: locale.value, path: contentPath.value },
           fallback: fallback
@@ -69,13 +70,7 @@ const { data: page, error } = await useAsyncData(
 );
 useHead({ title: page.value?.title });
 
-if (error.value || !page.value) {
-  throw createError({
-    statusCode: 404,
-    statusMessage: 'Page Not Found',
-    fatal: true
-  });
-}
+if (error.value) throw error.value;
 
 watch(contentRef, () => {
   if (route.hash) scrollStore.scrollAndClear();
