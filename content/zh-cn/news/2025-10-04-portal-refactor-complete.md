@@ -1,6 +1,6 @@
 ---
 categories:
-  - journals
+  - news
 title: "社区门户已完成重构！"
 date: 2025-10-04T00:00:00+08:00
 important: true
