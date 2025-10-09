@@ -1,11 +1,16 @@
+# syntax=docker.io/docker/dockerfile:1
+
 FROM node:lts AS builder
 
 WORKDIR /app
 
+# 结合 deploy/nginx-example.conf 配置测试用
+ENV PASTE_API=/api/paste
+
 COPY package.json package-lock.json ./
 RUN npm install
 
-COPY . .
+COPY --exclude=deploy . .
 RUN npm run generate
 
 FROM nginx:1.24.0
