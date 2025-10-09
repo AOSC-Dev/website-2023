@@ -1,0 +1,15 @@
+.git
+.github
+.idea
+.vscode
+node_modules
+.nuxt
+.output
+.data
+*.log
+Dockerfile
+.dockerignore
+README.md
+README.zh-cn.md
+developUtils
+scripts
