@@ -40,7 +40,12 @@ npm run generate
 npm run preview
 ```
 
-如果您需要测试剪贴板页面，请创建并修改 `.env` 文件或直接设置环境变量 `PASTE_API=http://localhost:2334`。对于 paste-server-rs 的部署请参考 [website-utils](https://github.com/AOSC-Dev/website-utils)
+如果您需要测试剪贴板页面，请创建并修改 `.env` 文件或直接设置环境变量 `PASTE_API=http://localhost:2334`。对于 paste-server-rs 的部署请参考 [website-utils](https://github.com/AOSC-Dev/website-utils)。
+
+如果您需要测试 nginx 相关配置或在独立环境测试完整预览，请使用：
+```
+docker compose up --build
+```
 
 提交新闻
 ---
