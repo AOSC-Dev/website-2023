@@ -55,6 +55,12 @@ If you need to test the paste page, please set `PASTE_API=http://localhost:2334`
 in your environmental variables or the `.env` file. For the deployment of
 paste-server-rs, please refer to [website-utils](https://github.com/AOSC-Dev/website-utils).
 
+If you need to test nginx related configuration or test the complete preview in
+an independent environment, please use:
+```
+docker compose up --build
+```
+
 Submitting news
 ---
 
