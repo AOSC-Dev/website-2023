@@ -5,8 +5,10 @@
 node_modules
 .nuxt
 .output
+dist
 .data
 *.log
+.env
 Dockerfile
 .dockerignore
 README.md

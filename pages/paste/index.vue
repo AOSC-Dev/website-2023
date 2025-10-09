@@ -59,7 +59,7 @@ const submit = async () => {
     formdata.append('file', toRaw(file.raw), file.name);
   });
   formdata.append('expiration', Date.parse(pasteFormData.value.expDate) / 1000);
-  const { data, error } = await useFetch(config.public.pasteApi + '/', {
+  const { data, error } = await useFetch(config.public.pasteApi, {
     method: 'post',
     timeout: 36000 + Math.ceil((formdataSize + toailFileSize) / 1048576) * 6000,
     body: formdata
