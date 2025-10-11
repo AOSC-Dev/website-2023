@@ -4,6 +4,7 @@ FROM node:lts AS builder
 
 WORKDIR /app
 
+ENV NODE_OPTIONS=--max-old-space-size=4096
 # 结合 deploy/nginx-example.conf 配置测试用
 ENV PASTE_API=/api/paste
 
