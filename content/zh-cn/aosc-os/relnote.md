@@ -74,4 +74,4 @@ title: 发行注记：2026 年 10 月
 
 - 修复安装后的系统中用户记录文件 (`/etc/passwd`) 未包含文件末换行，导致 `useradd` 等命令报错的问题
 - 规避微星 MAG B660M MORTAR DDR4 在安装系统后引导不可用的问题
-- 更换救援与恢复环境默认壁纸为[来自 Cyanoxygen 的 2026H1 投稿《小山傍大山 I》](https://bbs.aosc.io/uploads/default/original/1X/d40034484bc4459b329770bc7cd6765db1657214.jpeg)
+- 更换救援与恢复环境默认壁纸为[来自 Cyanoxygen 的 2026H1 投稿《小山傍大山 I》](https://bbs.aosc.io/uploads/default/original/1X/55bbda890cb90a43e026d5713bff8cb12a1736f1.jpeg)
