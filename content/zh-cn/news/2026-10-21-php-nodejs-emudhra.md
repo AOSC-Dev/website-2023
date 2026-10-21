@@ -2,7 +2,7 @@
 categories:
   - security
 title: "安同 OS 重要安全公告 (2026/10/21)：PHP 及 eMudhra 证书"
-date: 2026-10-13T22:20:00+08:00
+date: 2026-10-21T23:30:00+08:00
 important: true
 home: false
 ---
